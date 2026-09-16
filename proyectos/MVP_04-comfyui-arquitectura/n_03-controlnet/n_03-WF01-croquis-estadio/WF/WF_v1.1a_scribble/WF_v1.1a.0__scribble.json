@@ -1,0 +1,625 @@
+﻿{
+    "last_node_id":  11,
+    "last_link_id":  14,
+    "nodes":  [
+                  {
+                      "id":  1,
+                      "type":  "CheckpointLoaderSimple",
+                      "pos":  [
+                                  40,
+                                  60
+                              ],
+                      "size":  [
+                                   280,
+                                   128
+                               ],
+                      "flags":  {
+
+                                },
+                      "order":  0,
+                      "mode":  0,
+                      "inputs":  [
+
+                                 ],
+                      "outputs":  [
+                                      {
+                                          "name":  "MODEL",
+                                          "type":  "MODEL",
+                                          "links":  [
+                                                        8
+                                                    ]
+                                      },
+                                      {
+                                          "name":  "CLIP",
+                                          "type":  "CLIP",
+                                          "links":  [
+                                                        1,
+                                                        2
+                                                    ]
+                                      },
+                                      {
+                                          "name":  "VAE",
+                                          "type":  "VAE",
+                                          "links":  [
+                                                        13
+                                                    ]
+                                      }
+                                  ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "CheckpointLoaderSimple"
+                                     },
+                      "widgets_values":  [
+                                             "architecturerealmix_v11.safetensors"
+                                         ]
+                  },
+                  {
+                      "id":  2,
+                      "type":  "LoadImage",
+                      "pos":  [
+                                  40,
+                                  248
+                              ],
+                      "size":  [
+                                   280,
+                                   106
+                               ],
+                      "flags":  {
+
+                                },
+                      "order":  1,
+                      "mode":  0,
+                      "inputs":  [
+
+                                 ],
+                      "outputs":  [
+                                      {
+                                          "name":  "IMAGE",
+                                          "type":  "IMAGE",
+                                          "links":  [
+                                                        3
+                                                    ]
+                                      },
+                                      {
+                                          "name":  "MASK",
+                                          "type":  "MASK",
+                                          "links":  [
+
+                                                    ]
+                                      }
+                                  ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "LoadImage"
+                                     },
+                      "widgets_values":  [
+                                             "croquis001.jpg"
+                                         ]
+                  },
+                  {
+                      "id":  3,
+                      "type":  "CLIPTextEncode",
+                      "pos":  [
+                                  420,
+                                  60
+                              ],
+                      "size":  [
+                                   280,
+                                   84
+                               ],
+                      "flags":  {
+
+                                },
+                      "order":  4,
+                      "mode":  0,
+                      "inputs":  [
+                                     {
+                                         "name":  "clip",
+                                         "type":  "CLIP",
+                                         "link":  1
+                                     }
+                                 ],
+                      "outputs":  [
+                                      {
+                                          "name":  "CONDITIONING",
+                                          "type":  "CONDITIONING",
+                                          "links":  [
+                                                        4
+                                                    ]
+                                      }
+                                  ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "CLIPTextEncode"
+                                     },
+                      "widgets_values":  [
+                                             "architecturerealmix style, interior of a large sports venue, tiered seating rising on multiple levels, concrete grandstands, steel roof trusses overhead, open sky visible above, rows of empty seats, architectural photography, dramatic upward perspective, photorealistic, 8K, highly detailed, warm ambient lighting"
+                                         ]
+                  },
+                  {
+                      "id":  4,
+                      "type":  "CLIPTextEncode",
+                      "pos":  [
+                                  420,
+                                  204
+                              ],
+                      "size":  [
+                                   280,
+                                   84
+                               ],
+                      "flags":  {
+
+                                },
+                      "order":  5,
+                      "mode":  0,
+                      "inputs":  [
+                                     {
+                                         "name":  "clip",
+                                         "type":  "CLIP",
+                                         "link":  2
+                                     }
+                                 ],
+                      "outputs":  [
+                                      {
+                                          "name":  "CONDITIONING",
+                                          "type":  "CONDITIONING",
+                                          "links":  [
+                                                        5
+                                                    ]
+                                      }
+                                  ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "CLIPTextEncode"
+                                     },
+                      "widgets_values":  [
+                                             "low quality, blurry, distorted, ugly, bad architecture, cartoon, sketch, exterior, outside, aerial, bird eye, facade, street, outdoor, building exterior, roof from above, cityscape"
+                                         ]
+                  },
+                  {
+                      "id":  5,
+                      "type":  "ControlNetLoader",
+                      "pos":  [
+                                  40,
+                                  414
+                              ],
+                      "size":  [
+                                   280,
+                                   84
+                               ],
+                      "flags":  {
+
+                                },
+                      "order":  2,
+                      "mode":  0,
+                      "inputs":  [
+
+                                 ],
+                      "outputs":  [
+                                      {
+                                          "name":  "CONTROL_NET",
+                                          "type":  "CONTROL_NET",
+                                          "links":  [
+                                                        6
+                                                    ]
+                                      }
+                                  ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "ControlNetLoader"
+                                     },
+                      "widgets_values":  [
+                                             "control_v11p_sd15_scribble.safetensors"
+                                         ]
+                  },
+                  {
+                      "id":  6,
+                      "type":  "ImageScale",
+                      "pos":  [
+                                  420,
+                                  348
+                              ],
+                      "size":  [
+                                   280,
+                                   162
+                               ],
+                      "flags":  {
+
+                                },
+                      "order":  6,
+                      "mode":  0,
+                      "inputs":  [
+                                     {
+                                         "name":  "image",
+                                         "type":  "IMAGE",
+                                         "link":  3
+                                     }
+                                 ],
+                      "outputs":  [
+                                      {
+                                          "name":  "IMAGE",
+                                          "type":  "IMAGE",
+                                          "links":  [
+                                                        7
+                                                    ]
+                                      }
+                                  ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "ImageScale"
+                                     },
+                      "widgets_values":  [
+                                             "lanczos",
+                                             512,
+                                             512,
+                                             "center"
+                                         ]
+                  },
+                  {
+                      "id":  7,
+                      "type":  "ControlNetApplyAdvanced",
+                      "pos":  [
+                                  800,
+                                  60
+                              ],
+                      "size":  [
+                                   280,
+                                   224
+                               ],
+                      "flags":  {
+
+                                },
+                      "order":  7,
+                      "mode":  0,
+                      "inputs":  [
+                                     {
+                                         "name":  "positive",
+                                         "type":  "CONDITIONING",
+                                         "link":  4
+                                     },
+                                     {
+                                         "name":  "negative",
+                                         "type":  "CONDITIONING",
+                                         "link":  5
+                                     },
+                                     {
+                                         "name":  "control_net",
+                                         "type":  "CONTROL_NET",
+                                         "link":  6
+                                     },
+                                     {
+                                         "name":  "image",
+                                         "type":  "IMAGE",
+                                         "link":  7
+                                     },
+                                     {
+                                         "name":  "vae",
+                                         "type":  "VAE",
+                                         "link":  null
+                                     }
+                                 ],
+                      "outputs":  [
+                                      {
+                                          "name":  "positive",
+                                          "type":  "CONDITIONING",
+                                          "links":  [
+                                                        9
+                                                    ]
+                                      },
+                                      {
+                                          "name":  "negative",
+                                          "type":  "CONDITIONING",
+                                          "links":  [
+                                                        10
+                                                    ]
+                                      }
+                                  ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "ControlNetApplyAdvanced"
+                                     },
+                      "widgets_values":  [
+                                             1,
+                                             0,
+                                             1
+                                         ]
+                  },
+                  {
+                      "id":  8,
+                      "type":  "EmptyLatentImage",
+                      "pos":  [
+                                  40,
+                                  558
+                              ],
+                      "size":  [
+                                   280,
+                                   136
+                               ],
+                      "flags":  {
+
+                                },
+                      "order":  3,
+                      "mode":  0,
+                      "inputs":  [
+
+                                 ],
+                      "outputs":  [
+                                      {
+                                          "name":  "LATENT",
+                                          "type":  "LATENT",
+                                          "links":  [
+                                                        11
+                                                    ]
+                                      }
+                                  ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "EmptyLatentImage"
+                                     },
+                      "widgets_values":  [
+                                             512,
+                                             512,
+                                             1
+                                         ]
+                  },
+                  {
+                      "id":  9,
+                      "type":  "KSampler",
+                      "pos":  [
+                                  1180,
+                                  60
+                              ],
+                      "size":  [
+                                   280,
+                                   306
+                               ],
+                      "flags":  {
+
+                                },
+                      "order":  8,
+                      "mode":  0,
+                      "inputs":  [
+                                     {
+                                         "name":  "model",
+                                         "type":  "MODEL",
+                                         "link":  8
+                                     },
+                                     {
+                                         "name":  "positive",
+                                         "type":  "CONDITIONING",
+                                         "link":  9
+                                     },
+                                     {
+                                         "name":  "negative",
+                                         "type":  "CONDITIONING",
+                                         "link":  10
+                                     },
+                                     {
+                                         "name":  "latent_image",
+                                         "type":  "LATENT",
+                                         "link":  11
+                                     }
+                                 ],
+                      "outputs":  [
+                                      {
+                                          "name":  "LATENT",
+                                          "type":  "LATENT",
+                                          "links":  [
+                                                        12
+                                                    ]
+                                      }
+                                  ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "KSampler"
+                                     },
+                      "widgets_values":  [
+                                             42,
+                                             "fixed",
+                                             30,
+                                             7,
+                                             "euler",
+                                             "normal",
+                                             1
+                                         ]
+                  },
+                  {
+                      "id":  10,
+                      "type":  "VAEDecode",
+                      "pos":  [
+                                  1560,
+                                  60
+                              ],
+                      "size":  [
+                                   280,
+                                   80
+                               ],
+                      "flags":  {
+
+                                },
+                      "order":  9,
+                      "mode":  0,
+                      "inputs":  [
+                                     {
+                                         "name":  "samples",
+                                         "type":  "LATENT",
+                                         "link":  12
+                                     },
+                                     {
+                                         "name":  "vae",
+                                         "type":  "VAE",
+                                         "link":  13
+                                     }
+                                 ],
+                      "outputs":  [
+                                      {
+                                          "name":  "IMAGE",
+                                          "type":  "IMAGE",
+                                          "links":  [
+                                                        14
+                                                    ]
+                                      }
+                                  ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "VAEDecode"
+                                     },
+                      "widgets_values":  [
+
+                                         ]
+                  },
+                  {
+                      "id":  11,
+                      "type":  "SaveImage",
+                      "pos":  [
+                                  1940,
+                                  60
+                              ],
+                      "size":  [
+                                   280,
+                                   84
+                               ],
+                      "flags":  {
+
+                                },
+                      "order":  10,
+                      "mode":  0,
+                      "inputs":  [
+                                     {
+                                         "name":  "images",
+                                         "type":  "IMAGE",
+                                         "link":  14
+                                     }
+                                 ],
+                      "outputs":  [
+                                      {
+                                          "name":  "images",
+                                          "type":  "IMAGE",
+                                          "links":  [
+
+                                                    ]
+                                      }
+                                  ],
+                      "properties":  {
+                                         "Node name for S\u0026R":  "SaveImage"
+                                     },
+                      "widgets_values":  [
+                                             "n_03-v1.1a.2-scribble-"
+                                         ]
+                  }
+              ],
+    "links":  [
+                  [
+                      1,
+                      1,
+                      1,
+                      3,
+                      0,
+                      "CLIP"
+                  ],
+                  [
+                      2,
+                      1,
+                      1,
+                      4,
+                      0,
+                      "CLIP"
+                  ],
+                  [
+                      3,
+                      2,
+                      0,
+                      6,
+                      0,
+                      "IMAGE"
+                  ],
+                  [
+                      4,
+                      3,
+                      0,
+                      7,
+                      0,
+                      "CONDITIONING"
+                  ],
+                  [
+                      5,
+                      4,
+                      0,
+                      7,
+                      1,
+                      "CONDITIONING"
+                  ],
+                  [
+                      6,
+                      5,
+                      0,
+                      7,
+                      2,
+                      "CONTROL_NET"
+                  ],
+                  [
+                      7,
+                      6,
+                      0,
+                      7,
+                      3,
+                      "IMAGE"
+                  ],
+                  [
+                      8,
+                      1,
+                      0,
+                      9,
+                      0,
+                      "MODEL"
+                  ],
+                  [
+                      9,
+                      7,
+                      0,
+                      9,
+                      1,
+                      "CONDITIONING"
+                  ],
+                  [
+                      10,
+                      7,
+                      1,
+                      9,
+                      2,
+                      "CONDITIONING"
+                  ],
+                  [
+                      11,
+                      8,
+                      0,
+                      9,
+                      3,
+                      "LATENT"
+                  ],
+                  [
+                      12,
+                      9,
+                      0,
+                      10,
+                      0,
+                      "LATENT"
+                  ],
+                  [
+                      13,
+                      1,
+                      2,
+                      10,
+                      1,
+                      "VAE"
+                  ],
+                  [
+                      14,
+                      10,
+                      0,
+                      11,
+                      0,
+                      "IMAGE"
+                  ]
+              ],
+    "groups":  [
+
+               ],
+    "config":  {
+
+               },
+    "extra":  {
+
+              },
+    "version":  0.4
+}

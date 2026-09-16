@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Mock — Presupuesto cliente (NOTAS con línea de tiempo)</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: Helvetica, Arial, sans-serif;
+    background: #9aa5a0;
+    display: flex;
+    justify-content: center;
+    padding: 32px 16px;
+  }
+  .page {
+    width: 794px;            /* A4 @96dpi */
+    min-height: 1123px;
+    background: #fff;
+    box-shadow: 0 6px 24px rgba(0,0,0,.3);
+    position: relative;
+    overflow: visible;
+    padding-bottom: 60px;
+  }
+  .content { padding: 0 46px; }
+
+  /* ---- header ---- */
+  .header-band { background: #eef3f0; height: 86px; position: relative; }
+  .header-accent { background: #0f6e56; height: 4px; }
+  .header-inner { padding: 20px 46px; display: flex; justify-content: space-between; align-items: center; }
+  .brand { display: flex; align-items: center; gap: 14px; }
+  .logo { width: 54px; height: 42px; background: #0f6e56; border-radius: 6px; color: #fff; font-weight: bold; font-size: 12px; display: flex; align-items: center; justify-content: center; letter-spacing: 1px; }
+  .brand b { font-size: 26px; color: #1a2421; }
+  .brand small { display: block; font-size: 11px; color: #5e6b66; font-weight: normal; }
+  .meta { text-align: right; font-size: 11px; color: #5e6b66; line-height: 1.5; }
+  .meta b { color: #1a2421; font-size: 13px; }
+
+  .section-label { color: #0f6e56; font-size: 11px; font-weight: bold; letter-spacing: 1px; }
+  .title { font-size: 30px; color: #1a2421; font-weight: bold; margin: 4px 0 2px; }
+  .sub { color: #5e6b66; font-size: 13px; margin-bottom: 4px; }
+  hr { border: none; border-top: 1px solid #c9c0ae; margin: 12px 0 22px; }
+  hr.thin { border-top: 1px solid #e4ddd2; margin: 6px 0; }
+
+  .h2 { color: #0f6e56; font-size: 14px; font-weight: bold; letter-spacing: 1px; margin: 8px 0 10px; }
+  .h3 { color: #1a2421; font-size: 17px; font-weight: bold; margin: 18px 0 8px; }
+
+  /* ---- etapas incluidas ---- */
+  .etapa { margin-bottom: 10px; }
+  .etapa-head { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid #e4ddd2; padding-bottom: 4px; }
+  .etapa-head .name { font-weight: bold; color: #1a2421; font-size: 14px; }
+  .etapa-head .name .art { font-weight: normal; font-style: italic; color: #5e6b66; font-size: 11px; margin-left: 6px; }
+  .etapa-head .amt { font-weight: bold; color: #1a2421; font-size: 14px; }
+  .etapa .def { color: #5e6b66; font-size: 11px; font-style: italic; margin-top: 4px; line-height: 1.45; }
+
+  /* ---- recuadro verde ---- */
+  .green-box { background: #0a4f3d; color: #fff; padding: 14px 18px; margin: 22px 0 20px; }
+  .green-box .lbl { font-size: 11px; letter-spacing: 1px; }
+  .green-box .row { display: flex; justify-content: space-between; align-items: baseline; margin-top: 2px; }
+  .green-box .total { font-size: 27px; font-weight: bold; }
+  .green-box .hint { font-size: 12px; color: #d2e8e0; }
+
+  /* ---- modalidad de pago ---- */
+  .pay-row { display: flex; justify-content: space-between; font-size: 13px; color: #1a2421; border-bottom: 1px solid #e4ddd2; padding: 5px 0; }
+  .pay-note { font-size: 12px; color: #5e6b66; margin: 8px 0 16px; }
+
+  /* ---- NOTAS / cronograma de pagos ---- */
+  .timeline { background: #f6f9f7; border: 1px solid #dce6e0; border-radius: 8px; padding: 18px 20px 18px; }
+  .tl-crono { font-size: 11px; color: #0f6e56; font-weight: bold; letter-spacing: 1.5px; margin-bottom: 14px; }
+
+  /* pagos: todos en ámbar, con conectores punteados hacia el gantt */
+  .pago-axis { position: relative; height: 72px; margin-bottom: 0; }
+  .pago-item { position: absolute; top: 0; z-index: 2; }
+  .pago-item.pi1 { left: 0; text-align: left; }
+  .pago-item.pi2 { left: 37.5%; transform: translateX(-50%); text-align: center; }
+  .pago-item.pi3 { right: 0; text-align: right; }
+  .pago-item .dot { display: inline-block; width: 14px; height: 14px; background: #e7a51c; border-radius: 3px; transform: rotate(45deg); box-shadow: 0 0 0 2px #fbe9c3; margin-bottom: 5px; }
+  .pago-item .lbl { display: block; font-size: 11px; font-weight: bold; color: #1a2421; letter-spacing: .3px; }
+  .pago-item .amt { display: block; font-size: 12px; font-weight: bold; color: #b57d00; margin-top: 2px; }
+  .pago-item .sub { display: block; font-size: 10px; color: #5e6b66; font-style: italic; margin-top: 2px; line-height: 1.35; }
+
+  .conn { position: absolute; top: 16px; bottom: -8px; border-left: 1.5px dashed #e7a51c; z-index: 1; }
+  .conn.c1 { left: 0; }
+  .conn.c2 { left: 37.5%; }
+  .conn.c3 { left: 100%; }
+
+  /* gantt de avance */
+  .gantt { position: relative; }
+  .gantt-bar { display: flex; height: 30px; position: relative; }
+  .gantt-bar .seg { display: flex; align-items: center; justify-content: center; color: #fff; font-size: 10px; font-weight: bold; letter-spacing: .4px; white-space: nowrap; }
+  .gantt-bar .seg1 { width: 25%; background: #57a58c; border-radius: 6px 0 0 6px; }
+  .gantt-bar .seg-reunion { width: 25%; background: #9aa5a0; }
+  .gantt-bar .seg2 { width: 50%; background: #0f6e56; border-radius: 0 6px 6px 0; }
+  .gantt-bar .hito { position: absolute; width: 15px; height: 15px; background: #e7a51c; border-radius: 3px; transform: rotate(45deg); border: 2px solid #fff; box-shadow: 0 0 0 2px #e7a51c; top: 7px; z-index: 3; }
+  .gantt-bar .hito.encargo { left: 0; margin-left: -8px; }
+  .gantt-bar .hito.reunion { left: 37.5%; margin-left: -8px; }
+  .gantt-bar .hito.entrega { left: 100%; margin-left: -8px; }
+
+  .seg-names { display: flex; margin-top: 6px; }
+  .seg-names .sn { width: 25%; text-align: center; font-size: 10px; font-weight: bold; color: #1a2421; letter-spacing: .3px; }
+  .seg-names .sn3 { width: 50%; }
+
+  .week-scale { display: flex; margin-top: 6px; }
+  .week-scale .wk { width: 25%; text-align: center; font-size: 9px; color: #879190; border-left: 1px solid #dce6e0; padding-top: 3px; }
+  .week-scale .wk:first-child { border-left: none; }
+  .week-total { margin-top: 4px; text-align: right; font-size: 9px; color: #b57d00; font-style: italic; }
+
+  .tl-row { display: flex; margin-top: 12px; }
+  .tl-cell { font-size: 11px; color: #1a2421; }
+  .tl-cell.s1 { width: 25%; padding-right: 14px; }
+  .tl-cell.s2 { width: 25%; padding-right: 14px; }
+  .tl-cell.s3 { width: 50%; }
+  .tl-cell .t { font-weight: bold; font-size: 12px; }
+  .tl-cell .d { color: #5e6b66; font-style: italic; line-height: 1.4; margin-top: 2px; }
+
+  /* ---- footer ---- */
+  .footer { position: absolute; bottom: 0; left: 0; right: 0; padding: 10px 46px; border-top: 1px solid #e4ddd2; display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 10px; color: #879190; }
+  .footer .notas-label { font-size: 9px; font-weight: bold; letter-spacing: 1.5px; color: #aeb3a4; white-space: nowrap; }
+  .footer .footer-note { flex: 1; text-align: center; font-size: 9px; line-height: 1.4; }
+  .footer > span:last-child { white-space: nowrap; }
+</style>
+</head>
+<body>
+  <div class="page">
+    <div class="header-band">
+      <div class="header-inner">
+        <div class="brand">
+          <div class="logo">LOGO</div>
+          <div>
+            <b>Estudio Pi</b>
+            <small>Presupuesto de honorarios · CPAU 31416</small>
+          </div>
+        </div>
+        <div class="meta">
+          <div><b>Fecha: 08-08-2026</b></div>
+        </div>
+      </div>
+      <div class="header-accent"></div>
+    </div>
+
+    <div class="content">
+      <div style="margin-top:26px;">
+        <div class="section-label">OBRA</div>
+        <div class="title">Ampliación y remodelación</div>
+        <div class="sub">Cliente: Sr. Pérez &nbsp;·&nbsp; Dirección: Av. Corrientes 1234</div>
+        <hr>
+      </div>
+
+      <div class="section-label">PRESUPUESTO DE HONORARIOS POR</div>
+      <div class="h3" style="margin-top:2px;">Croquis preliminares, croquis avanzados y anteproyecto</div>
+      <hr class="thin" style="margin:8px 0 20px;">
+
+      <div class="h2">ETAPAS INCLUIDAS</div>
+
+      <div class="etapa">
+        <div class="etapa-head">
+          <div class="name">Croquis preliminares <span class="art">Art. 3.8</span></div>
+          <div class="amt">$ 58.164</div>
+        </div>
+        <div class="def">Conjunto de planos esquemáticos de arquitectura como preliminar interpretación del programa convenido.</div>
+      </div>
+
+      <div class="etapa">
+        <div class="etapa-head">
+          <div class="name">Croquis avanzados <span class="art">Art. 3.8</span></div>
+          <div class="amt">$ 66.473</div>
+        </div>
+        <div class="def">Planos de arquitectura con equipamiento, planos esquemáticos completos de instalaciones (sanit./elect.), estructura, volumetrías (3D) esquemáticas y memoria descriptiva (detalles/notas), siempre bajo el cumplimiento de los reglamentos vigentes.</div>
+      </div>
+
+      <div class="green-box">
+        <div class="lbl">HONORARIOS PROFESIONALES</div>
+        <div class="row">
+          <span class="total">$ 124.637</span>
+          <span class="hint">por etapas incluidas</span>
+        </div>
+      </div>
+
+      <div class="h3" style="margin-top:0;">Modalidad de pago</div>
+      <div class="pay-row"><span>40% encargo (antes de los croquis preliminares)</span><span>$ 49.855</span></div>
+      <div class="pay-row"><span>30% en la reunión intermedia (luego del análisis de las variantes)</span><span>$ 37.391</span></div>
+      <div class="pay-row"><span>30% contra entrega de la documentación</span><span>$ 37.391</span></div>
+      <div class="pay-note">*efectivo o transferencia - se entrega factura "C"</div>
+
+      <div class="timeline">
+        <div class="tl-crono">CRONOGRAMA DE PAGOS</div>
+
+        <div class="pago-axis">
+          <div class="conn c1"></div>
+          <div class="conn c2"></div>
+          <div class="conn c3"></div>
+          <div class="pago-item pi1">
+            <span class="dot"></span>
+            <span class="lbl">ENCARGO · 40%</span>
+            <span class="amt">$ 49.855</span>
+            <span class="sub">de Croquis Preliminares</span>
+          </div>
+          <div class="pago-item pi2">
+            <span class="dot"></span>
+            <span class="lbl">REUNIÓN INTERMEDIA · 30%</span>
+            <span class="amt">$ 37.391</span>
+            <span class="sub">análisis de variantes</span>
+          </div>
+          <div class="pago-item pi3">
+            <span class="dot"></span>
+            <span class="lbl">CONTRA ENTREGA · 30%</span>
+            <span class="amt">$ 37.391</span>
+            <span class="sub">entrega de la documentación</span>
+          </div>
+        </div>
+
+        <div class="gantt">
+          <div class="gantt-bar">
+            <div class="seg seg1"></div>
+            <div class="seg seg-reunion"></div>
+            <div class="seg seg2"></div>
+            <div class="hito encargo"></div>
+            <div class="hito reunion"></div>
+            <div class="hito entrega"></div>
+          </div>
+          <div class="seg-names">
+            <div class="sn">CROQUIS PRELIMINARES</div>
+            <div class="sn">REUNIÓN</div>
+            <div class="sn sn3">CROQUIS AVANZADOS</div>
+          </div>
+          <div class="week-scale">
+            <div class="wk">Sem 1</div>
+            <div class="wk">Sem 2</div>
+            <div class="wk">Sem 3</div>
+            <div class="wk">Sem 4</div>
+          </div>
+          <div class="week-total">~ 4 semanas · 1 mes</div>
+        </div>
+
+        <div class="tl-row">
+          <div class="tl-cell s1">
+            <div class="d">5 días hábiles · planos y memoria descriptiva.</div>
+          </div>
+          <div class="tl-cell s2">
+            <div class="d">1 semana · coordinación y ajustes.</div>
+          </div>
+          <div class="tl-cell s3">
+            <div class="d">10 días hábiles · planos, renders 3D, esquemáticos de instalaciones (eléctricas y sanitarias) y diagrama estructural.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <span class="notas-label">NOTAS</span>
+      <span class="footer-note">INCLUYE honorarios profesionales únicamente por las tareas antes detalladas. NO INCLUYE Ejecución, dirección de obra, tasas, IVA, sellados u otras tramitaciones municipales/provinciales.</span>
+      <span>Estudio Pi · 08-08-2026</span>
+    </div>
+  </div>
+</body>
+</html>

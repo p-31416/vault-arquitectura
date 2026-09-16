@@ -1,0 +1,43 @@
+name: vaultworm-arq — digest de raw
+
+on:
+  schedule:
+    - cron: "0 2 * * *" # diario 23:00 AR (02:00 UTC siguiente día) — 1 digest/día
+  workflow_dispatch:
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Install opencode
+        run: npm ci --prefix .opencode || npm install
+
+      - name: Run @vaultworm-arq digest
+        env:
+          OPENCODE_API_KEY: ${{ secrets.OPENCODE_API_KEY }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          npx opencode run "@vaultworm-arq digest" || npx opencode run "@vaultworm-arq"
+
+      - name: Commit digest if changed
+        run: |
+          git config user.name "p-31416"
+          git config user.email "proyectopi.31416@gmail.com"
+          git add raw/vaultworm-arq/ || true
+          git diff --cached --quiet || git commit -m "vaultworm-arq digest $(date +%Y-%m-%d)"
+          git push || echo "no remote or nothing to push"
+
+      - name: Upload digest artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: vaultworm-arq-digest
+          path: raw/vaultworm-arq/

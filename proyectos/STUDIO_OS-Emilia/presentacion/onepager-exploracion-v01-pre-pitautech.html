@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STUDIO OS — Reunión de exploración</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: { sans: ['Inter','sans-serif'], serif: ['Instrument Serif','serif'] },
+      colors: { ink: '#1a1a1e', stone: '#8a867e', paper: '#fafaf7', accent: '#c8a96a', accent2: '#2b2b2e' }
+    }
+  }
+}
+</script>
+<style>
+html { scroll-behavior: smooth; }
+@media print { nav, .no-print { display:none !important; } section { break-inside: avoid; } body { background:white; } }
+</style>
+</head>
+<body class="bg-paper text-ink font-sans antialiased">
+<!-- NAV -->
+<nav class="fixed top-0 w-full bg-paper/90 backdrop-blur border-b border-stone/20 z-50">
+  <div class="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-7 h-7 bg-accent2 rounded-sm flex items-center justify-center text-white font-serif text-sm">S</div>
+      <span class="font-semibold tracking-widest text-xs">STUDIO OS</span>
+      <span class="text-stone text-xs hidden sm:inline">· Reunión de exploración</span>
+    </div>
+    <div class="hidden md:flex gap-5 text-xs tracking-wide text-stone">
+      <a href="#recuento" class="hover:text-ink">Recuento</a>
+      <a href="#areas" class="hover:text-ink">6 áreas</a>
+      <a href="#titular" class="hover:text-ink">Titular</a>
+      <a href="#cerebro" class="hover:text-ink">Cerebro</a>
+      <a href="#cierre" class="hover:text-ink">Lunes</a>
+    </div>
+    <a href="#cierre" class="bg-accent2 text-white text-xs px-4 py-2 rounded-full">Plan lunes →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="pt-28 pb-14 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="inline-flex items-center gap-2 bg-white border border-stone/20 rounded-full px-3 py-1 text-xs mb-6">
+      <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
+      Reunión de exploración · 2 hs · Online · Recuento breve
+    </div>
+    <h1 class="font-serif text-5xl md:text-6xl leading-[0.95] mb-4">
+      Del estudio que<br>
+      <span class="italic font-light">aprende y evoluciona.</span>
+    </h1>
+    <p class="text-lg text-stone max-w-2xl leading-relaxed mb-6">
+      Hoy hacemos un recuento breve y general para que el <span class="text-ink font-medium">plan del lunes llegue ajustado a su estudio</span>. El diagnóstico es la documentación del proyecto — como en arquitectura.
+    </p>
+    <div class="flex flex-wrap gap-3 items-center">
+      <div class="bg-accent2 text-white text-xs px-4 py-2 rounded-full">Aporte titular: 2 hs/semana · lun plan / vie avances</div>
+      <span class="text-xs text-stone">A definir definitivo el lunes — hoy dejamos la base</span>
+    </div>
+    <!-- diagnóstico como doc -->
+    <div class="mt-10 grid md:grid-cols-3 gap-4">
+      <div class="bg-white border border-stone/15 rounded-2xl p-5">
+        <div class="text-xs tracking-widest text-stone mb-2">DIAGNÓSTICO ES</div>
+        <div class="font-serif text-lg leading-tight">Documentación<br>del proyecto</div>
+        <p class="text-xs text-stone mt-2">Relevamiento · criterios · plan por áreas · roadmap. Base para construir con claridad.</p>
+      </div>
+      <div class="bg-white border border-stone/15 rounded-2xl p-5">
+        <div class="text-xs tracking-widest text-stone mb-2">HOY</div>
+        <div class="font-serif text-lg leading-tight">Recuento breve<br>y general</div>
+        <p class="text-xs text-stone mt-2">Escucha, mapeo y foco en dónde suma el titular. Sin propuesta cerrada.</p>
+      </div>
+      <div class="bg-accent text-white rounded-2xl p-5">
+        <div class="text-xs tracking-widest text-white/70 mb-2">LUNES</div>
+        <div class="font-serif text-lg leading-tight">Plan ajustado<br>a su estudio</div>
+        <p class="text-xs text-white/80 mt-2">Mapa, 6 áreas priorizadas, maqueta 2×1h/sem y próximos pasos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VARA -->
+<section class="px-6 pb-10">
+  <div class="max-w-6xl mx-auto bg-white border border-stone/15 rounded-2xl px-6 py-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+    <div>
+      <div class="text-xs tracking-widest text-stone mb-1">VARA QUE INSPIRA</div>
+      <p class="font-medium">Estudios que ya potencian su flujo de esta manera</p>
+      <p class="text-sm text-stone">Diseñamos circulaciones que potencian personas, información y herramientas.</p>
+    </div>
+    <div class="flex items-center gap-2 text-xs bg-emerald-50 text-emerald-700 px-3 py-1.5 rounded-full whitespace-nowrap">
+      ✓ Vara clara — hoy: tu estudio
+    </div>
+  </div>
+</section>
+
+<!-- RECUENTO -->
+<section id="recuento" class="px-6 pb-10">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="font-serif text-3xl mb-2">Recuento de hoy</h2>
+    <p class="text-sm text-stone mb-6">General y positivo. Todo se puede mejorar y potenciar.</p>
+    <div class="grid md:grid-cols-3 gap-4">
+      <div class="bg-white border border-stone/15 rounded-2xl p-5">
+        <div class="w-8 h-8 bg-stone/10 rounded-lg flex items-center justify-center text-sm mb-3">◈</div>
+        <h3 class="font-semibold text-sm mb-1">Administración y gestión</h3>
+        <p class="text-xs text-stone leading-relaxed">Presupuestos en Excel/Sheets con potencial de medición. Carpetas con oportunidad de orden, versionado y respaldo, permisos cuidados y visión de simultaneidad.</p>
+      </div>
+      <div class="bg-white border border-stone/15 rounded-2xl p-5">
+        <div class="w-8 h-8 bg-stone/10 rounded-lg flex items-center justify-center text-sm mb-3">⬢</div>
+        <h3 class="font-semibold text-sm mb-1">Técnica y recursos</h3>
+        <p class="text-xs text-stone leading-relaxed">Bloques y recursos con potencial de estándar que multiplica valor. Mismo tiempo, mayor claridad. Siguiente paso: automatizaciones que ahorran repetición.</p>
+      </div>
+      <div class="bg-white border border-stone/15 rounded-2xl p-5">
+        <div class="w-8 h-8 bg-stone/10 rounded-lg flex items-center justify-center text-sm mb-3">◎</div>
+        <h3 class="font-semibold text-sm mb-1">Representación y obra</h3>
+        <p class="text-xs text-stone leading-relaxed">Láminas con oportunidad de potenciar composición. Seguimiento de obra y contactos con potencial de centralización y consulta ágil.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 AREAS -->
+<section id="areas" class="px-6 pb-10">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex items-baseline justify-between mb-6">
+      <h2 class="font-serif text-3xl">6 áreas para potenciar</h2>
+      <span class="text-xs text-stone hidden md:inline">Cada área · oportunidad · conversación proactiva</span>
+    </div>
+    <div class="grid md:grid-cols-3 gap-4">
+      <!-- 1 -->
+      <div class="bg-white border border-stone/15 rounded-2xl p-5 hover:border-accent/40 transition">
+        <div class="text-xs tracking-widest text-accent font-semibold mb-2">01 — ADMINISTRATIVA</div>
+        <h3 class="font-semibold text-sm mb-2">Presupuestos que se potencian</h3>
+        <p class="text-xs text-stone leading-relaxed mb-3">Excel/Sheets como base sólida. Oportunidad de sumar medición, trazabilidad y claridad. Facturación junto a contador en siguiente etapa.</p>
+        <div class="bg-paper rounded-xl px-3 py-2 text-xs italic text-stone">¿Cómo te resulta hoy? ¿Qué te gustaría medir?</div>
+      </div>
+      <!-- 2 -->
+      <div class="bg-white border border-stone/15 rounded-2xl p-5 hover:border-accent/40 transition">
+        <div class="text-xs tracking-widest text-accent font-semibold mb-2">02 — GESTIÓN DE PROYECTOS</div>
+        <h3 class="font-semibold text-sm mb-2">Carpetas con claridad</h3>
+        <p class="text-xs text-stone leading-relaxed mb-3">Oportunidad de sumar versionado, flujo producción/respaldo y permisos cuidados. Vista clara de proyectos en simultáneo.</p>
+        <div class="bg-paper rounded-xl px-3 py-2 text-xs italic text-stone">¿Cómo te imaginas carpetas con versión y respaldo?</div>
+      </div>
+      <!-- 3 -->
+      <div class="bg-white border border-stone/15 rounded-2xl p-5 hover:border-accent/40 transition">
+        <div class="text-xs tracking-widest text-accent font-semibold mb-2">03 — TÉCNICA / DOCUMENTACIÓN</div>
+        <h3 class="font-semibold text-sm mb-2">Estándares que multiplican</h3>
+        <p class="text-xs text-stone leading-relaxed mb-3">Bloques y criterios con potencial de unificar. Hacerlo con estándar lleva el mismo tiempo y ahorra repetición.</p>
+        <div class="bg-paper rounded-xl px-3 py-2 text-xs italic text-stone">¿Qué estándar unificarías primero?</div>
+      </div>
+      <!-- 4 -->
+      <div class="bg-white border border-stone/15 rounded-2xl p-5 hover:border-accent/40 transition">
+        <div class="text-xs tracking-widest text-accent font-semibold mb-2">04 — MODELADO</div>
+        <h3 class="font-semibold text-sm mb-2">Evolución a medida</h3>
+        <p class="text-xs text-stone leading-relaxed mb-3">Base 3D actual. Oportunidad de sumar Rhino en la etapa que mejor acompañe al estudio.</p>
+        <div class="bg-paper rounded-xl px-3 py-2 text-xs italic text-stone">¿Cuándo te imaginas sumar Rhino?</div>
+      </div>
+      <!-- 5 -->
+      <div class="bg-white border border-stone/15 rounded-2xl p-5 hover:border-accent/40 transition">
+        <div class="text-xs tracking-widest text-accent font-semibold mb-2">05 — VISUALIZACIÓN</div>
+        <h3 class="font-semibold text-sm mb-2">Láminas que comunican</h3>
+        <p class="text-xs text-stone leading-relaxed mb-3">Oportunidad de potenciar composición. Lámina técnica + lámina de exploración en paralelo, con criterio.</p>
+        <div class="bg-paper rounded-xl px-3 py-2 text-xs italic text-stone">¿Qué lámina te gustaría potenciar?</div>
+      </div>
+      <!-- 6 -->
+      <div class="bg-white border border-stone/15 rounded-2xl p-5 hover:border-accent/40 transition">
+        <div class="text-xs tracking-widest text-accent font-semibold mb-2">06 — OBRA + PROVEEDORES</div>
+        <h3 class="font-semibold text-sm mb-2">Información centralizada</h3>
+        <p class="text-xs text-stone leading-relaxed mb-3">Oportunidad de centralizar incidencias y contactos para consulta ágil. Base actual: WhatsApp y agenda.</p>
+        <div class="bg-paper rounded-xl px-3 py-2 text-xs italic text-stone">¿Cómo te serviría tenerlo centralizado?</div>
+      </div>
+    </div>
+    <div class="mt-4 bg-accent2 text-white rounded-2xl px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-3">
+      <div>
+        <div class="text-xs tracking-widest text-white/60">TRANSVERSAL</div>
+        <div class="font-serif text-lg">Cerebro digital — base consultable que aprende</div>
+      </div>
+      <div class="text-xs text-white/70 bg-white/10 rounded-full px-3 py-1.5">PLUS que potencia las 6 áreas</div>
+    </div>
+  </div>
+</section>
+
+<!-- TITULAR -->
+<section id="titular" class="px-6 pb-10">
+  <div class="max-w-6xl mx-auto">
+    <div class="bg-white border border-stone/15 rounded-2xl overflow-hidden">
+      <div class="px-6 md:px-8 py-8">
+        <div class="inline-block bg-accent text-white text-xs tracking-widest px-3 py-1 rounded-full mb-4">FOCO — TITULAR</div>
+        <h2 class="font-serif text-3xl md:text-4xl leading-tight mb-3">Tu criterio suma<br><span class="italic font-light">sin abrir CAD.</span></h2>
+        <p class="text-sm text-stone max-w-2xl">Exploramos dónde te resulta más natural sumar — mensaje, referente e idea — con herramientas que acompañan.</p>
+      </div>
+      <div class="grid md:grid-cols-5 gap-0 border-t border-stone/15 divide-y md:divide-y-0 md:divide-x divide-stone/15">
+        <div class="p-6">
+          <div class="text-xs tracking-widest text-stone mb-2">01</div>
+          <h4 class="font-semibold text-sm mb-2">Punto de entrada</h4>
+          <p class="text-xs text-stone leading-relaxed">Croquis, imagen, moodboard, referente, GPT/Codex. Oportunidad de sumar tablet sobre imagen + voz a texto.</p>
+        </div>
+        <div class="p-6">
+          <div class="text-xs tracking-widest text-stone mb-2">02</div>
+          <h4 class="font-semibold text-sm mb-2">Portal al día</h4>
+          <p class="text-xs text-stone leading-relaxed">Últimos renders y planos siempre visibles (copia desde Drive). Acompaña sin esperar al día siguiente.</p>
+        </div>
+        <div class="p-6">
+          <div class="text-xs tracking-widest text-stone mb-2">03</div>
+          <h4 class="font-semibold text-sm mb-2">Sin abrir CAD</h4>
+          <p class="text-xs text-stone leading-relaxed">Visualizador CAD + conversión automática cuando suma. Validás con fluidez.</p>
+        </div>
+        <div class="p-6">
+          <div class="text-xs tracking-widest text-stone mb-2">04</div>
+          <h4 class="font-semibold text-sm mb-2">Canvas de aprobación</h4>
+          <p class="text-xs text-stone leading-relaxed">Notas, imágenes y marcas en canvas. Queda trazado como aprobación, sin ser cuello de botella.</p>
+        </div>
+        <div class="p-6">
+          <div class="text-xs tracking-widest text-stone mb-2">05</div>
+          <h4 class="font-semibold text-sm mb-2">Iterar con autonomía</h4>
+          <p class="text-xs text-stone leading-relaxed">Explorar materialidad, volumetría o composición con variantes para curar. Canal a definir (Discord/Telegram).</p>
+        </div>
+      </div>
+      <div class="bg-paper px-6 md:px-8 py-4 flex flex-wrap gap-2 text-xs">
+        <span class="bg-white border border-stone/20 rounded-full px-3 py-1.5">Tablet sobre imagen</span>
+        <span class="bg-white border border-stone/20 rounded-full px-3 py-1.5">Voz a texto</span>
+        <span class="bg-white border border-stone/20 rounded-full px-3 py-1.5">Portal web interno</span>
+        <span class="bg-white border border-stone/20 rounded-full px-3 py-1.5">Visualizador CAD</span>
+        <span class="bg-white border border-stone/20 rounded-full px-3 py-1.5">Canvas + aprobación</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CEREBRO -->
+<section id="cerebro" class="px-6 pb-10">
+  <div class="max-w-6xl mx-auto bg-white border border-stone/15 rounded-2xl p-6 md:p-8">
+    <div class="flex flex-col md:flex-row gap-8 items-start">
+      <div class="flex-1">
+        <div class="text-xs tracking-widest text-stone mb-2">CEREBRO DIGITAL — PLUS</div>
+        <h3 class="font-serif text-2xl mb-3">Un sistema que aprende con el uso</h3>
+        <p class="text-sm text-stone leading-relaxed mb-4">Guardás de manera habitual en Drive. El sistema indexa, conecta información y responde. Sin pasos extra. Mejora en cada iteración.</p>
+        <div class="flex items-center gap-2 text-xs">
+          <span class="bg-paper border border-stone/15 rounded-full px-3 py-1.5">Guardar</span>
+          <span class="text-stone">→</span>
+          <span class="bg-paper border border-stone/15 rounded-full px-3 py-1.5">Indexar</span>
+          <span class="text-stone">→</span>
+          <span class="bg-paper border border-stone/15 rounded-full px-3 py-1.5">Consultar</span>
+          <span class="text-stone">→</span>
+          <span class="bg-accent text-white rounded-full px-3 py-1.5">Mejorar</span>
+        </div>
+      </div>
+      <div class="flex-1 bg-paper rounded-2xl p-5">
+        <div class="text-xs tracking-widest text-stone mb-3">EJEMPLO DE CONSULTA</div>
+        <div class="bg-white rounded-xl p-4 border border-stone/15">
+          <div class="text-sm italic text-stone mb-2">“Proyectos con hormigón visto y proveedores”</div>
+          <div class="text-xs text-emerald-700 bg-emerald-50 rounded-full inline-block px-2 py-1">→ Respuesta en 2 minutos, con trazabilidad</div>
+        </div>
+        <p class="text-xs text-stone mt-3">Sin push/pull. Lo técnico lo acompaña el laboratorio, lo intuitivo queda para el estudio.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAPACIDAD -->
+<section class="px-6 pb-10">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-4">
+    <div class="bg-white border border-stone/15 rounded-2xl p-6">
+      <div class="text-xs tracking-widest text-stone mb-2">CAPACIDAD QUE SUMA — EN PARALELO</div>
+      <h3 class="font-semibold mb-3">Mismas herramientas, mayor valor</h3>
+      <ul class="space-y-2 text-sm text-stone leading-relaxed">
+        <li class="flex gap-2"><span class="text-accent">·</span> Bloques con cómputo a planilla + trazabilidad</li>
+        <li class="flex gap-2"><span class="text-accent">·</span> Lámina técnica + lámina de exploración en simultáneo</li>
+        <li class="flex gap-2"><span class="text-accent">·</span> Composición y visualización con criterio</li>
+        <li class="flex gap-2"><span class="text-accent">·</span> Curaduría y diseño del plan — estudiamos cuellos en simultáneo</li>
+      </ul>
+      <p class="text-xs text-stone mt-4 bg-paper rounded-xl px-3 py-2">Luego: capacitación y mantenimiento. Hoy: exploración y maqueta.</p>
+    </div>
+    <div class="bg-accent2 text-white rounded-2xl p-6">
+      <div class="text-xs tracking-widest text-white/60 mb-2">CAPA ONLINE-FIRST</div>
+      <h3 class="font-semibold mb-3">Flujo que acompaña</h3>
+      <ul class="space-y-2 text-sm text-white/80 leading-relaxed">
+        <li>· Drive + script que acompaña (ordena, nombra, detecta duplicados)</li>
+        <li>· VPS Leantime para seguimiento y simultaneidad</li>
+        <li>· GPT / Codex con potencial de conexión</li>
+        <li>· Portfolio web interno — oportunidad de sumar dominio/mail</li>
+      </ul>
+      <p class="text-xs text-white/60 mt-4">Escala y simultaneidad se definen por proyecto (caso de referencia + próximo a desarrollar).</p>
+    </div>
+  </div>
+</section>
+
+<!-- CIERRE -->
+<section id="cierre" class="px-6 pb-14">
+  <div class="max-w-6xl mx-auto bg-white border border-stone/15 rounded-2xl overflow-hidden">
+    <div class="bg-accent2 text-white px-6 md:px-8 py-8">
+      <div class="text-xs tracking-widest text-white/60 mb-2">PROMESA</div>
+      <h2 class="font-serif text-3xl md:text-4xl leading-tight mb-3">El lunes: plan ajustado<br><span class="italic font-light text-white/80">a su estudio.</span></h2>
+      <p class="text-sm text-white/70 max-w-2xl">Documentación del proyecto: relevamiento, criterios, plan por áreas, roadmap y próximos pasos. Hoy recuento breve, lunes plano completo.</p>
+    </div>
+    <div class="px-6 md:px-8 py-6 grid md:grid-cols-2 gap-6">
+      <div>
+        <div class="text-xs tracking-widest text-stone mb-3">HOY ACORDAMOS</div>
+        <ul class="space-y-2 text-sm">
+          <li class="flex gap-2"><span class="text-emerald-500">✓</span> Caso de estudio de referencia + próximo proyecto + tipología</li>
+          <li class="flex gap-2"><span class="text-emerald-500">✓</span> 3–5 croquis para explorar + punto de entrada preferido</li>
+          <li class="flex gap-2"><span class="text-emerald-500">✓</span> Referente con dedicación semanal y permisos cuidados</li>
+          <li class="flex gap-2"><span class="text-emerald-500">✓</span> 2 espacios semanales · lun plan / vie avances</li>
+        </ul>
+      </div>
+      <div>
+        <div class="text-xs tracking-widest text-stone mb-3">LUNES ENTREGAMOS</div>
+        <ul class="space-y-2 text-sm text-stone">
+          <li>· Mapa y 6 áreas priorizadas</li>
+          <li>· Maqueta 2×1h/sem y roadmap por etapas</li>
+          <li>· Portal y vault sin fricción</li>
+          <li>· Herramientas del laboratorio, información cuidada</li>
+        </ul>
+        <div class="mt-4 bg-paper rounded-xl px-4 py-3 text-xs">
+          <span class="font-semibold">Siguiente etapa:</span> encuentro con titular del estudio a coordinar con propuesta lista.
+        </div>
+      </div>
+    </div>
+    <div class="px-6 md:px-8 pb-6 flex flex-wrap gap-3 no-print">
+      <a href="javascript:window.print()" class="bg-accent2 text-white text-sm px-5 py-2.5 rounded-full">Descargar PDF (Imprimir)</a>
+      <span class="text-xs text-stone py-2.5">HTML scroll + PDF breve — para compartir por WhatsApp después de la call</span>
+    </div>
+  </div>
+</section>
+
+<footer class="px-6 pb-10">
+  <div class="max-w-6xl mx-auto text-center text-xs text-stone border-t border-stone/15 pt-6">
+    STUDIO OS — Arquitectura del estudio que aprende · Reunión de exploración · Plan ajustado lunes
+  </div>
+</footer>
+</body>
+</html>

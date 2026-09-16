@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="220" viewBox="0 0 700 220" font-family="Inter,system-ui,sans-serif">
+<rect width="700" height="220" rx="18" fill="#f6f4ef"/>
+<text x="350" y="30" text-anchor="middle" font-size="13" letter-spacing="3" fill="#5a5e56">LA IA RECUERDA · VOS PROYECTÁS</text>
+<g font-size="12" font-weight="600" fill="#11120f" text-anchor="middle">
+<rect x="20" y="70" width="110" height="60" rx="12" fill="#fff" stroke="#11120f" stroke-width="2"/><text x="75" y="95">Reunión</text><text x="75" y="112" font-weight="400" fill="#5a5e56">Meet</text>
+<rect x="160" y="70" width="110" height="60" rx="12" fill="#fff" stroke="#11120f" stroke-width="2"/><text x="215" y="95">Fathom</text><text x="215" y="112" font-weight="400" fill="#5a5e56">transcripción</text>
+<rect x="300" y="70" width="130" height="60" rx="12" fill="#fff" stroke="#9ab0a2" stroke-width="2"/><text x="365" y="95">Vault</text><text x="365" y="112" font-weight="400" fill="#5a5e56">memoria</text>
+<rect x="460" y="70" width="110" height="60" rx="12" fill="#fff" stroke="#11120f" stroke-width="2"/><text x="515" y="95">Leantime</text><text x="515" y="112" font-weight="400" fill="#5a5e56">tareas</text>
+<rect x="290" y="155" width="140" height="36" rx="18" fill="#11120f"/><text x="360" y="178" fill="#fff">Agenda → próxima</text>
+</g>
+<g stroke="#c9a98a" stroke-width="2" fill="none">
+<line x1="130" y1="100" x2="158" y2="100"/><polygon points="158,100 150,95 150,105" fill="#c9a98a"/>
+<line x1="270" y1="100" x2="298" y2="100"/><polygon points="298,100 290,95 290,105" fill="#c9a98a"/>
+<line x1="430" y1="100" x2="458" y2="100"/><polygon points="458,100 450,95 450,105" fill="#c9a98a"/>
+<line x1="515" y1="130" x2="515" y2="153" stroke="#9ab0a2"/><polygon points="515,153 510,145 520,145" fill="#9ab0a2"/>
+</g>
+</svg>

@@ -21,3 +21,26 @@ __pycache__/
 # Config local
 .env
 *.local.ps1
+
+# Obsidian (config local, no va a git)
+.obsidian/
+*.canvas
+
+# Temporales y pruebas en raíz
+/temp/
+Resumen_*.txt
+banner_pitautech.jpg
+estadio_*.png
+n_03-*.png
+Sin*.canvas
+
+# Salidas generadas ComfyUI — binarios efímeros (referenciar desde activos/ si hace falta)
+proyectos/MVP_04-comfyui-arquitectura/**/salidas/
+proyectos/MVP_04-comfyui-arquitectura/**/outputs-salidas/
+proyectos/MVP_04-comfyui-arquitectura/**/inputs-croquis/
+
+# Cache y builds
+raw/research-cache/
+**/dist/
+**/build/
+**/coverage/

@@ -6,67 +6,14 @@ Eres el gestor del vault de conocimiento de un **estudio de arquitectura interna
 
 **Prioridad máxima**: Los archivos binarios (planos DWG/PDF, renders, fotos, videos, modelos BIM) **nunca entran a git**. Todo ese contenido vive en `/activos/` (gitignored). Los `.md` del vault contienen únicamente texto con referencias a rutas de archivos binarios.
 
-## Contexto del estudio
+## Contexto del estudio — Argentina
 
-Estudio de arquitectura de **escala internacional**, con las siguientes características operativas:
-- **Múltiples oficinas** en distintos países (con sus respectivas legislaciones, idiomas, husos horarios)
-- **Proyectos simultáneos** en distintas fases (concurso → briefing → concepto → DD → planning → obra → entrega)
-- **Equipos multidisciplinarios**: arquitectos, urbanistas, interioristas, paisajistas, BIM managers, ingenieros, contractors
-- **Documentación masiva**: planos, memorias, renders, contratos, permisos, certificaciones
-- **BIM como estándar**: modelos Revit centralizados, familias propias, plantillas normalizadas
-- **Regulaciones variables**: cada país/ciudad tiene su propio código de edificación, permisos, impuestos
+Estudio de arquitectura **argentino** (ver contexto completo en [[wiki/estudio/00-index|estudio]]). **Planos = documentos legales** (Ley 24.335): cada plano es instrumento contractual y registral.
 
 ## Estructura del vault
 
-```
-vault-arquitectura/
-│
-├── AGENTS.md                    ← Este archivo (schema y reglas)
-├── .gitignore                   ← /activos/, /bims/ excluidos
-├── index.md                     ← Catálogo maestro del vault
-├── log.md                       ← Registro cronológico de operaciones
-│
-├── proyectos/                   ← DOCUMENTACIÓN DE PROYECTOS (SOLO .md)
-│   ├── index.md                 ← Índice de todos los proyectos
-│   └── <cliente>-<proyecto>/    ← Un proyecto = una carpeta (ej: "big-google-london")
-│       ├── index.md             ← Ficha del proyecto (frontmatter + resumen)
-│       ├── documentacion/       ← Memorias, informes, reportes en .md
-│       ├── contratos/           ← Resúmenes de contratos (originales PDF en /activos/)
-│       ├── permisos/            ← Tracking de permisos y licencias
-│       ├── entregables/         ← Control de entregas por fase
-│       ├── financiero/          ← Presupuesto, facturación, costes
-│       └── reuniones/           ← Notas de reuniones internas y con cliente
-│
-│   └── template/                ← Template para nuevos proyectos
-│
-├── activos/                     ← BINARIOS — EXCLUIDOS DE GIT
-│   ├── proyectos/               ← <proyecto>/planos/, renders/, fotos/, videos/
-│   ├── bims/                    ← Modelos .rvt centrales
-│   ├── documentos-legales/      ← PDFs escaneados de contratos, permisos
-│   ├── marketing/               ← Portfolio, renders para web, brochures
-│   └── recursos-humanos/        ← CVs, fotos de equipo
-│
-├── bims/                        ← DOCUMENTACIÓN BIM (texto)
-│   ├── familias/                ← Familias Revit creadas/parametrizadas
-│   ├── plantillas/              ← Plantillas de proyecto, sheets, views
-│   └── standard/                ← Convenciones, naming, LOD, parametros compartidos
-│
-├── wiki/                        ← CONOCIMIENTO COMPILADO
-│   ├── index.md                 ← Catálogo de la wiki
-│   ├── metodologias/            ← BIM, LEAN, Design Thinking, PMI, etc.
-│   ├── regulaciones/            ← Códigos de edificación por país/ciudad
-│   ├── software/                ← Revit, Rhino, Grasshopper, Twinmotion, etc.
-│   ├── oficina/                 ← Procedimientos internos, org chart, IT
-│   ├── clientes/                ← Gestión de clientes, CRM, relationship
-│   └── proyectos/               ← Lecciones aprendidas, post-mortems
-│
-├── legal/                       ← PLANTILLAS Y PRECEDENTES LEGALES
-├── finanzas/                    ← CONTABILIDAD, PRESUPUESTOS GLOBALES
-├── hr/                          ← PERSONAL, ROLES, RECLUTAMIENTO
-├── marketing/                   ← MARCA, PORTFOLIO, PREMIOS, PUBLICACIONES
-├── scripts/                     ← AUTOMATIZACIÓN (Python, Dynamo, n8n workflows)
-└── .opencode/skills/            ← Skills personalizados para Opencode
-```
+Ver árbol canónico y reglas en [[wiki/glosario/interno/standares/oficina/estructura-carpetas|estructura-carpetas]].
+Puertas de entrada: [[00-index|00-index]], [[wiki/00-index|wiki]], [[proyectos/00-index|proyectos]].
 
 ## Convenciones
 
@@ -118,7 +65,6 @@ fecha_creacion: YYYY-MM-DD
 ultima_actualizacion: YYYY-MM-DD
 tags: [tag1, tag2]
 idioma: es|en|...          # (opcional) para vaults multilingüe
-oficina: copenhagen|nyc|london|... # (opcional) oficina responsable
 ---
 ```
 
@@ -126,11 +72,21 @@ oficina: copenhagen|nyc|london|... # (opcional) oficina responsable
 
 - Snake case: `codigo-edificacion-londres.md`
 - Prefijo de fecha opcional: `2026-06-28-reunion-google.md`
-- Usar [[wikilinks]] de Obsidian para referencias cruzadas
+- Usar [[wikilinks]] de Obsidian para referencias cruzadas, con esta convención (lector principal: Obsidian):
+  - Entre archivos: ruta absoluta desde la raíz, sin extensión — `[[wiki/glosario/software/git|Git]]`. Prohibido `[[../...]]`, `./`, barras residuales (`\`, `/`) y extensiones.
+  - Índice dentro del mismo archivo: links nativos `[[#Encabezado exacto]]` — NUNCA slugs escritos a mano (`[Texto](#slug)` se rompe con tildes: `verificación`, `conexión`…).
+  - Carpetas no se enlazan: linkear a su `00-index.md` o dejar como texto en código.
+  - Excepción portable: si el doc debe leerse en GitHub web, usar `[Texto](#slug-ascii-sin-tildes)`.
 - Proyectos: `<cliente>-<proyecto>-<ciudad>.md`
+- **Archivos de log**: la entrada más nueva (más reciente en fecha) siempre al principio del archivo. Añadir "Más nuevo → más arriba" como guía visual.
+
+### Proyectos internos
+
+Cada proyecto interno (ej. `proyectos/MVP_01-dibujo_ia/`) puede tener su propio archivo `fram-{proyecto}-v.n_{version}.md` con convenciones específicas. Leer ese archivo antes de trabajar en el proyecto.
 
 ### Principios
 
+- **Lenguaje en positivo:** toda propuesta afirma valor creado y posibilidad abierta. Se evita la negación frontal ("no", "sin", "nunca"); se parafrasea en positivo ("incluye", "avanza con", "queda para siguiente ciclo", "oportunidad de"). Si una restricción debe explicitarse, se formula como lo que sí incluye/prioriza.
 - **Nunca edites archivos binarios** desde el vault. Los activos se gestionan con sus herramientas nativas (Revit, AutoCAD, Rhino).
 - **No copies binarios al vault**. Los binarios se referencian por ruta, no se duplican.
 - **La wiki es tuya**. Crea, actualiza, refunde páginas libremente.
@@ -139,43 +95,33 @@ oficina: copenhagen|nyc|london|... # (opcional) oficina responsable
 - **Prefiere integrar a duplicar**. Si un concepto ya existe, actualízalo.
 - **Incluye referencias oficiales** en páginas de metodologías, regulaciones y software. Enlaces a documentación original, normativas, repositorios.
 - **Proyecto cerrado** → mover a `proyectos/archived/<año>/` y actualizar estado.
-- **Multilenguaje**: si un documento aplica a una oficina específica, añadir `oficina:` al frontmatter.
+- **Verificar enlaces**: antes de incluir un URL oficial en cualquier documento del vault, chequear que NO devuelva 404/error. Usar `webfetch` o abrir el link para confirmar. Si docs.comfy.org usa el patrón `/built-in-nodes/<PascalCase>`, no `/node-reference/<kebab-case>`.
+- **HITL obligatorio para código y cargas al vault:** ningún agente escribe `wiki/` ni ejecuta/instala código sin tu `s` explícito (`¿Avanzo? s/N`). Todo código nuevo se entrega en **archivo paralelo didáctico**: `scripts/<slug>.py` (runnable) + `scripts/<slug>_notas.md` o `scripts/<slug>_explicado.py` con `# NOTA ES:` línea a línea para que aprendas Python leyendo (`sé leerlo`). El agente propone el comando exacto `P:\Anaconda\envs\comfyenv\python.exe scripts/...` y vos lo ejecutás en terminal. Sin `s` no hay `write` ni `bash`. Ver `.opencode/agents/sherlock.md` y `wiki/glosario/interno/pbooks/pbk-sherlock.md`.
 
 ## Workflows
 
-### Ingest de documento
+### Glosario — `wiki/glosario/`
 
-1. El usuario sube un raw file (minuta, PDF extraído, transcript) a la carpeta correspondiente
-2. Lees el archivo, identificas conceptos, tareas, decisiones
-3. Creas/actualizas la entrada en `wiki/` correspondiente
-4. Si aplica a un proyecto → actualizas `proyectos/<proyecto>/`
-5. Si genera tareas → las registras en el tablero correspondiente
-6. Actualizas `index.md` y `log.md`
+Conocimiento permanente en 5 ramas (software/entidades/referentes/conceptos/interno).
+Ver estructura, ramas y **reglas de calidad** en [[wiki/glosario/00-index|glosario]].
+Conducta del curador en `.opencode/agents/vaultworm-arq.md`.
 
-### Query
+### Ingest / Query / Lint
 
-1. Lees `index.md` para identificar páginas relevantes
-2. Lees las páginas identificadas
-3. Sintetizas respuesta con [[wikilinks]] a fuentes usadas
+Ver [[wiki/glosario/interno/pbooks/pbk-agentes-vaultarq|pbk-agentes-vaultarq]] (ingest de documento, query, lint trimestral).
 
-### Lint (trimestral)
+### Cierre de sesión — `raw/sessions/` (obligatorio)
 
-1. Revisar `index.md` contra páginas existentes
-2. Detectar páginas huérfanas
-3. Verificar que referencias a activos sigan existiendo
-4. Identificar proyectos que deberían archivarse
-5. Reportar hallazgos
+Al terminar **cada sesión**, documentar `raw/sessions/YYYY-MM-DD-sesion-<slug>.md`: qué se hizo, archivos modificados y análisis cerebro-digital (topics/entidades/hechos). Ver ejemplo canónico y detalle en [[wiki/glosario/interno/pbooks/pbk-agentes-vaultarq|pbk-agentes-vaultarq]].
 
-## Integración con BIM
+## ComfyUI — Generación de Imágenes con IA
 
-- `bims/` contiene SOLO documentación .md. Los modelos .rvt viven en:
-  - `C:\BIM\` (modelos centrales locales)
-  - `activos/bims/` (modelos compartidos, exportaciones)
-- Las familias Revit se documentan en `bims/familias/<nombre>.md`
-- Los estándares de modelado en `bims/standard/`
+Instalación `P:\00-repos\ComfyUI` + skill `corre-comfyui`. **Prohibido CUDA** (GPU AMD RX 570, todo por DirectML). Setup, modelos y flujos: ver [[wiki/glosario/interno/pbooks/pbk-comfyui|pbk-comfyui]].
+
+### Estructura estándar de carpetas de Workflows ComfyUI
+
+**Obligatorio leer `proyectos/MVP_04-comfyui-arquitectura/reglas-workflows-comfy.md` antes de crear o modificar cualquier workflow de ComfyUI** (estructura, nomenclatura, reglas técnicas).
 
 ## Scripts & Automatización
 
-- `scripts/` para automatizaciones del vault: indexación, extracción de metadatos, OCR de planos
-- Flujos n8n para integración con: CRM, ERP, calendario, email
-- Workflows de Dynamo para Revit se documentan, no se almacenan binarios
+Ver [[scripts/00-index|scripts/00-index]]: indexación, metadatos, OCR, n8n (CRM/ERP/calendario/email), Dynamo (solo docs).

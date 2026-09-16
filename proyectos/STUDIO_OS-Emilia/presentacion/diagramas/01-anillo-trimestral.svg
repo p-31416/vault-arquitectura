@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="420" viewBox="0 0 600 420" font-family="Inter,system-ui,sans-serif">
+<rect width="600" height="420" rx="18" fill="#f6f4ef"/>
+<text x="300" y="34" text-anchor="middle" font-size="13" letter-spacing="3" fill="#5a5e56">PROGRAMA 90 DÍAS — 60HS/MES</text>
+<circle cx="230" cy="230" r="110" fill="none" stroke="#e8e6e1" stroke-width="22"/>
+<path d="M 230 120 A 110 110 0 0 1 340 230" fill="none" stroke="#c9a98a" stroke-width="22" stroke-linecap="round"/>
+<path d="M 340 230 A 110 110 0 0 1 230 340" fill="none" stroke="#9ab0a2" stroke-width="22" stroke-linecap="round"/>
+<path d="M 230 340 A 110 110 0 0 1 120 230" fill="none" stroke="#11120f" stroke-width="22" stroke-linecap="round" opacity="0.85"/>
+<text x="230" y="222" text-anchor="middle" font-size="13" font-weight="600" fill="#11120f">Experiencia →</text>
+<text x="230" y="240" text-anchor="middle" font-size="13" font-weight="600" fill="#11120f">Conocimiento → Sistema</text>
+<rect x="370" y="110" width="190" height="66" rx="12" fill="#fff" stroke="#c9a98a" stroke-width="2"/>
+<text x="465" y="133" text-anchor="middle" font-size="12" font-weight="700" fill="#11120f">1 · OBSERVAR</text>
+<text x="465" y="151" text-anchor="middle" font-size="11" fill="#5a5e56">Vault + Nayara Brasil</text>
+<rect x="370" y="188" width="190" height="66" rx="12" fill="#fff" stroke="#9ab0a2" stroke-width="2"/>
+<text x="465" y="211" text-anchor="middle" font-size="12" font-weight="700" fill="#11120f">2 · EXPERIMENTAR</text>
+<text x="465" y="229" text-anchor="middle" font-size="11" fill="#5a5e56">Moodboard + agentes</text>
+<rect x="370" y="266" width="190" height="66" rx="12" fill="#fff" stroke="#11120f" stroke-width="2"/>
+<text x="465" y="289" text-anchor="middle" font-size="12" font-weight="700" fill="#11120f">3 · SISTEMATIZAR</text>
+<text x="465" y="307" text-anchor="middle" font-size="11" fill="#5a5e56">Protocolos + roadmap</text>
+<text x="300" y="390" text-anchor="middle" font-size="11" fill="#5a5e56">Cada proyecto deja huella → alimenta al siguiente</text>
+</svg>

@@ -1,0 +1,664 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studio OS × Emilia — Programa I+D Trimestral</title>
+<style>:root{--ink:#11120f;--muted:#5a5e56;--line:#e8e6e1;--sand:#f6f4ef;--clay:#c9a98a;--sage:#9ab0a2}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--sand);color:var(--ink);line-height:1.5}.wrap{max-width:1000px;margin:0 auto;padding:0 24px}header.top{position:sticky;top:0;z-index:20;background:#fff;border-bottom:3px solid var(--clay);box-shadow:0 2px 10px rgba(0,0,0,.08)}.bar{display:flex;justify-content:space-between;align-items:center;padding:12px 0;gap:12px;flex-wrap:wrap}.brand{font-weight:800;font-size:26px;color:var(--ink);letter-spacing:.02em}.brand i{font-weight:600;color:var(--ink);font-size:16px}.brand img{height:60px!important;width:auto;border-radius:10px;background:var(--ink);padding:6px 14px}nav.tabs{display:flex;gap:8px;flex-wrap:wrap;padding:12px 0 16px}nav.tabs button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:10px 16px;font-weight:600;font-size:13px;cursor:pointer}nav.tabs button.active{background:var(--ink);color:#fff;border-color:var(--ink)}.tab{display:none}.tab.active{display:block;animation:fade .35s ease}@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}.hero{padding:28px 0 8px}.eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}h1{font-size:40px;line-height:1;margin:8px 0;font-weight:700;letter-spacing:-.02em}h1 em{color:var(--clay);font-style:normal}.lead{color:var(--muted);font-size:15px;max-width:760px}.grid{display:grid;gap:14px}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}.g2{grid-template-columns:1fr 1fr}.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px}.card h3{margin:4px 0 6px;font-size:15px}.card p{margin:0;font-size:13px;color:var(--muted)}.k{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--clay);font-weight:700}.bignum{font-size:44px;font-weight:800;letter-spacing:-.03em;line-height:1}.bignum small{font-size:13px;font-weight:500;color:var(--muted);letter-spacing:0}img.diagram{width:100%;height:auto;border-radius:16px;border:1px solid var(--line);background:#fff}table{width:100%;border-collapse:collapse;background:#fff;border-radius:14px;overflow:hidden;border:1px solid var(--line);font-size:13px}th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);padding:10px 12px;background:var(--sand);border-bottom:1px solid var(--line)}td{padding:10px 12px;border-bottom:1px solid var(--line)}tr:last-child td{border:none}.total{background:var(--ink);color:#fff;font-weight:700}.total td{border:none}.bar{height:12px;background:#e9e7e2;border-radius:999px;overflow:hidden}.fill{height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,var(--clay),#e8c8a8);transition:width 1s ease}.cta{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}.btn{border-radius:999px;padding:11px 18px;font-weight:700;font-size:13px;border:1px solid var(--line);background:#fff;cursor:pointer}.btn.dark{background:var(--ink);color:#fff;border-color:var(--ink)}.glos{columns:2;gap:18px;font-size:13px}.glos div{break-inside:avoid;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:12px}.glos strong{display:block;font-size:13px}.glos span{color:var(--muted)}.glink{color:inherit;text-decoration:underline dotted;text-decoration-color:var(--clay);text-underline-offset:3px;cursor:pointer}
+.apx{font-size:.78em;color:var(--muted);font-weight:400;white-space:nowrap}
+.notepad{background:#fffdf4 repeating-linear-gradient(#fffdf4,#fffdf4 27px,#e5e0d2 28px);border:1px solid var(--line);border-radius:8px;padding:16px 18px 16px 46px;position:relative;box-shadow:0 2px 6px rgba(0,0,0,.06);font-size:13px;line-height:28px}
+.notepad:before{content:"";position:absolute;top:0;bottom:0;left:30px;width:2px;background:#e8a0a0;opacity:.6}
+.notepad ol{margin:0;padding-left:18px}
+.notepad .np-title{font-weight:800;letter-spacing:.06em;font-size:12px}
+.tool{display:flex;gap:9px;align-items:center}.chip{width:27px;height:27px;border-radius:8px;display:grid;place-items:center;font-weight:800;font-size:11px;color:#fff;flex:none;letter-spacing:.02em}td a{color:#8a6a4d;font-weight:700}@media(max-width:860px){.g3,.g4,.g2,.glos{grid-template-columns:1fr;columns:1}h1{font-size:30px}}@media print{header.top,nav.tabs,.cta{display:none}body{background:#fff}.tab{display:block!important;page-break-before:always;break-before:page}.tab:first-of-type{page-break-before:avoid;break-before:avoid}.card,table,img.diagram{page-break-inside:avoid;break-inside:avoid}img.diagram{max-width:100%}}</style>
+</head>
+<body>
+<main class="wrap">
+<nav class="tabs" role="tablist">
+<button class="active" data-t="filo">1 · Filosofía</button>
+<button data-t="metod">2 · Metodología</button>
+<button data-t="prop">3 · Propuesta</button>
+<button data-t="mes1">4 · Mes 1</button>
+<button data-t="met">5 · Métricas</button>
+<button data-t="stack">6 · Infraestructura</button>
+<button data-t="inv">7 · Inversión</button>
+<button data-t="glo">8 · Glosario</button>
+</nav>
+<!-- TAB 1 FILOSOFIA -->
+<section class="tab active" id="filo">
+<img src="banner_pitautech.jpg" alt="Pitautech — Studio OS" style="width:100%;height:auto;border-radius:18px;border:1px solid var(--line);margin:16px 0 4px">
+<div style="text-align:center;padding:12px 0 2px">
+<div style="font-size:14px;letter-spacing:.34em;color:#9a9e96;font-weight:600">PITAUTECH × EMILIA PIMENTA</div>
+</div>
+<div class="hero">
+<div class="eyebrow">FILOSOFIA - contexto HOY</div>
+<div class="card" style="background:#fff;border-left:6px solid var(--clay);margin:10px 0 0">
+<div class="k">Partnership I+D — a la par, adentro</div>
+<p style="font-size:13px;margin:6px 0 0">Investigamos cómo trabajan <b>BIG, Foster + Partners y ZHA</b> con sus labs internos y lo traemos a escala de tu estudio: <b>co-construimos con tus casos reales</b>. Lo específico queda tuyo y local; lo que funciona avanza hacia sistema que queda andando.</p>
+</div>
+<h1 style="font-size:34px">“<a href="https://big.dk/projects/yes-is-more-2231" style="color:inherit">YES is MORE</a>” <em>— Bjarke Ingels (BIG).</em>
+</h1>
+<p class="lead" style="font-size:14px;max-width:100%">Utopía pragmática: la arquitectura avanza cuando combina imaginación ambiciosa con lo que el mundo ya permite construir. <b>Utopía</b> = soñar en grande, sin recortar la idea. <b>Pragmatismo</b> = construirlo con lo disponible hoy. Este programa avanza con esa misma lógica.</p>
+</div>
+<div class="card" style="background:var(--ink);color:#fff;border-color:var(--ink)">
+<div class="k" style="color:var(--clay)">HOY · 4ª Revolución Industrial — rediseña el tiempo</div>
+<h3 style="color:#fff;font-size:17px;margin:6px 0">El tiempo se rediseña: distancia cero, velocidad industrial, un solo ritmo.</h3>
+<p style="color:#c9c9c5;font-size:13px;margin:0">La Revolución Industrial midió el tiempo en turnos; la era online lo redujo a distancia cero. Hoy, la IA trae la velocidad industrial al estudio: flujos agénticos que aceleran decisiones con eficiencia. Y ante la irrupción de la IA 4.0, la tercera pata es humana: sincronización social — compartir la información con un orden común. Por eso trabajamos con Pomodoro (<a href="https://pomofocus.io/" style="color:#fff">pomofocus.io</a>): 25 minutos de foco, un solo tiempo de producción.</p>
+</div>
+<div class="card" style="margin-top:14px;text-align:center">
+<div class="k">Qué es</div>
+<div style="font-size:34px;font-weight:800;letter-spacing:-.02em">
+<span style="color:var(--clay)">(META)</span>
+<span style="color:var(--ink)">ARQUITECTURA</span>
+</div>
+<p style="font-size:13px;color:var(--muted);max-width:700px;margin:8px auto 0">
+<b style="color:var(--clay)">META</b> = el sistema por encima del proyecto (cómo trabajamos).<br><b>ARQUITECTURA</b> = el proyecto mismo (qué construimos).<br>Juntas son <b style="color:var(--clay)">arquitectura de sistemas</b>: diseñamos la forma de diseñar, y cada proyecto mejora <b>EL</b> siguiente.</p>
+</div>
+<div class="grid g2" style="margin-top:14px">
+<div class="card">
+<div class="k">Momento vibecoding</div>
+<h3>HOY SE PUEDE: crear las propias herramientas</h3>
+<p>Antes se pedía un software y se esperaba años. Hoy se describe el flujo en palabras y sale un agente, un template, un tablero. <b>El estudio deja de alquilar herramientas y empieza a construir las propias</b> — simples, a medida, que quedan en casa.</p>
+<p style="font-size:11px;letter-spacing:.14em;font-weight:800;color:var(--clay);margin:10px 0 0">AQUÍ ENTRA EL CONOCIMIENTO TÉCNICO DE PITAUTECH</p>
+</div>
+<div class="card">
+<div class="k">Í INCORPORAMOS "I.A" - como un JR.</div>
+<h3>Limitada, iterable, con supervisión</h3>
+<p>Hace lo acotado (transcribir, ordenar, buscar), con reglas escritas y revisión tuya. Primera función: <b>recordar</b>. Nunca decide sola el proyecto.</p>
+<blockquote style="margin:12px 0 0;padding:10px 14px;border-left:3px solid var(--clay);background:#fff;border-radius:0 10px 10px 0;font-size:13px;color:var(--muted)">“¿Qué debería hacer una inteligencia artificial para que un arquitecto pueda dedicar más tiempo a pensar arquitectura?”</blockquote>
+</div>
+</div>
+</section>
+
+<!-- TAB 2 METODOLOGIA -->
+<section class="tab" id="metod">
+<div class="hero">
+<div class="eyebrow">MÉTODO</div>
+<h1>Método antes <em>que herramientas.</em></h1>
+<p class="lead">Cuatro verbos y un loop, con documento vivo en <a class="glink" data-goto="mes1">Mes 1</a>. Cada ITERACIÓN mejora el proceso, y eleva la práctica del Estudio — tangible, evaluable y abierto a debate.</p>
+</div>
+<div class="card" style="margin-top:14px">
+<div class="k">Partnership I+D — investigamos cómo trabajan los grandes y lo traemos a tu escala</div>
+<h3>Laboratorio embebido que co-construye adentro y deja sistema andando</h3>
+<div class="grid g3" style="margin-top:10px">
+<div class="card" style="background:#ffffff"><div class="k">Foster + Partners</div><h3>Applied R+D</h3><p>Investiga con cada equipo y convierte archivo de 600k+ en ML que libera rutina.</p></div>
+<div class="card" style="background:#efede8"><div class="k">BIG</div><h3>Design Technology</h3><p>Define roadmap e integra IA en flujos diarios Rhino / Grasshopper / Revit.</p></div>
+<div class="card" style="background:#11120f;color:#fff;border-color:#11120f"><div class="k" style="color:var(--clay)">ZHA</div><h3 style="color:#fff">CODE / ZHAI + Omniverse</h3><p style="color:#c9c9c5">Prototipa con archivo propio y lleva 10-15% de salidas a 3D.</p></div>
+</div>
+<p style="font-size:13px;margin:10px 0 0">Acá hacemos lo mismo a escala de tu estudio: observamos tu obra (Nayara), probamos con tus casos, medimos <b>Ahorro = T_manual − T_sistema</b> y dejamos Vault + agentes andando. Lo específico queda tuyo y local. (<a href="https://www.fosterandpartners.com/people/teams/applied-rplusd">Foster Applied R+D</a> · <a href="https://www.fosterandpartners.com/insights/plus-journal/towards-artificial-intelligence-in-architecture-how-machine-learning-can-change-the-way-we-approach-design">Towards AI in architecture</a>)</p>
+</div>
+<div class="grid g4" style="margin-top:14px">
+<div class="card" style="text-align:center;border-top:6px solid var(--clay)">
+<div style="font-size:26px;font-weight:800;letter-spacing:.04em">AUTOMATIZAR</div>
+<p>
+<b>la fricción</b> — nombrar, ordenar, transcribir, buscar. Lo repetitivo avanza hacia sistema.</p>
+</div>
+<div class="card" style="text-align:center;border-top:6px solid var(--sage)">
+<div style="font-size:26px;font-weight:800;letter-spacing:.04em">CONSERVAR</div>
+<p>
+<b>memoria y contexto</b> — la <a class="glink" data-goto="glo">Bóveda</a>: cada decisión, plano y foto queda guardada y conectada.</p>
+</div>
+<div class="card" style="text-align:center;border-top:6px solid var(--ink)">
+<div style="font-size:26px;font-weight:800;letter-spacing:.04em">GANAR</div>
+<p>
+<b>horas de pensamiento creativo</b> — ahí ninguna máquina reemplaza al arquitecto. Proyectar.</p>
+</div>
+<div class="card" style="text-align:center;border-top:6px solid var(--clay);background:var(--ink);color:#fff;border-color:var(--ink)">
+<div style="font-size:26px;font-weight:800;letter-spacing:.04em">APRENDER</div>
+<p style="color:#c9c9c5">
+<b style="color:#fff">lo vivido vuelve al sistema</b> — cada proyecto deja recetas que mejoran el siguiente.</p>
+</div>
+</div>
+<div class="card" style="margin-top:14px">
+<div class="k">Proceso iterativo — la información vuelve y alimenta al sistema</div>
+<svg viewBox="0 0 680 190" style="width:100%;height:auto" role="img" aria-label="Loop Observar Experimentar Sistematizar Aprender">
+<defs>
+<marker id="ah" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+<polygon points="0,0 8,4 0,8" fill="#c9a98a"/>
+</marker>
+</defs>
+<g font-size="12" font-weight="700" text-anchor="middle">
+<rect x="10" y="60" width="140" height="64" rx="14" fill="#fff" stroke="#c9a98a" stroke-width="2.5"/>
+<text x="80" y="86" fill="#11120f">1 · OBSERVAR</text>
+<text x="80" y="104" font-weight="400" fill="#5a5e56" font-size="11">relevamiento de procesos</text>
+<rect x="185" y="60" width="140" height="64" rx="14" fill="#fff" stroke="#9ab0a2" stroke-width="2.5"/>
+<text x="255" y="86" fill="#11120f">2 · EXPERIMENTAR</text>
+<text x="255" y="104" font-weight="400" fill="#5a5e56" font-size="11">hipótesis + MVP = demo</text>
+<rect x="360" y="60" width="140" height="64" rx="14" fill="#fff" stroke="#11120f" stroke-width="2.5"/>
+<text x="430" y="86" fill="#11120f">3 · SISTEMATIZAR</text>
+<text x="430" y="104" font-weight="400" fill="#5a5e56" font-size="11">registros y nomenclaturas</text>
+<rect x="525" y="60" width="145" height="64" rx="14" fill="#11120f" stroke="#11120f" stroke-width="2.5"/>
+<text x="597" y="86" fill="#fff">+ APRENDER</text>
+<text x="597" y="104" font-weight="400" fill="#9ab0a2" font-size="11">conclusiones y mejoras</text>
+</g>
+<g stroke="#c9a98a" stroke-width="2" fill="none">
+<line x1="150" y1="92" x2="183" y2="92" marker-end="url(#ah)"/>
+<line x1="325" y1="92" x2="358" y2="92" marker-end="url(#ah)"/>
+<line x1="500" y1="92" x2="523" y2="92" marker-end="url(#ah)"/>
+<path d="M 597 124 L 597 160 L 80 160 L 80 126" stroke="#9ab0a2" stroke-dasharray="6 5" marker-end="url(#ah)"/>
+<text x="340" y="152" text-anchor="middle" font-size="12" font-weight="800" letter-spacing="6" fill="#c9a98a">ITERAR</text>
+</g>
+<text x="340" y="180" text-anchor="middle" font-size="11" fill="#5a5e56">Lo procesado vuelve a la Bóveda → el próximo proyecto arranca más arriba</text>
+</svg>
+<p style="font-size:12px;color:var(--muted);margin:6px 0 0">Observar (cómo trabajas hoy) — Experimentar (hipótesis + demo) — Sistematizar (siempre auditable) — Aprender (objetivos y métricas).</p>
+</div>
+<div class="grid g3" style="margin-top:14px">
+<div class="card">
+<div class="k">Tableros <a class="glink" data-goto="glo">kanban</a> — ver glosario</div> <h3>Todo a la vista, nada en la cabeza</h3> <p>Cada tarea con responsable, fecha y estado. Así se ve:</p> <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px;font-size:11px;text-align:center"> <div style="background:var(--sand);border:1px solid var(--line);border-radius:10px;padding:8px"><b>Por hacer</b><div style="background:#fff;border:1px solid var(--line);border-radius:8px;padding:6px;margin-top:6px">Transcribir reunión</div><div style="background:#fff;border:1px solid var(--line);border-radius:8px;padding:6px;margin-top:6px">Curar 20 referentes</div></div> <div style="background:var(--sand);border:1px solid var(--line);border-radius:10px;padding:8px"><b>Haciendo</b><div style="background:#fff;border:1px solid var(--clay);border-radius:8px;padding:6px;margin-top:6px">Cargar tareas</div></div> <div style="background:var(--sand);border:1px solid var(--line);border-radius:10px;padding:8px"><b>Hecho</b><div style="background:#fff;border:1px solid var(--sand);border-radius:8px;padding:6px;margin-top:6px;text-decoration:line-through">Agenda creada</div></div> </div>
+</div>
+<div class="card">
+<div class="k">Metodología lean</div>
+<h3>Quitar desperdicio, no sumar trabajo</h3>
+<p>Si un paso no agrega valor (retrabajo, búsquedas eternas, copiar datos a mano), se elimina o se automatiza. Así aplica <a class="glink" data-goto="glo">LEAN</a> a nuestro método: menos desperdicio, más arquitectura.</p>
+</div>
+<div class="card">
+<div class="k">APRENDER DE LOS MEJORES: Google / Pixar</div>
+<h3>Metodologías ágiles con entregables</h3>
+<p>Sprints cortos con entregable y debate franco: así trabajan los mejores. Ver <a class="glink" data-goto="glo">Ágil</a> en glosario.</p>
+</div>
+</div>
+</section>
+<!-- TAB 3 PROPUESTA DE TRABAJO -->
+<section class="tab" id="prop">
+<div class="hero">
+<div class="eyebrow">PROPUESTA DE TRABAJO - global + ejemplo vivo</div>
+<h1>El plan global. <em>Y un ejemplo vivo.</em></h1>
+<p class="lead">90 días, ~64hs por mes. Primero el mapa completo; después, cómo se ve un día real con agentes.</p>
+<div class="card" style="margin-top:14px;background:var(--ink);color:#fff;border-color:var(--ink)">
+<div class="k" style="color:var(--clay)">Laboratorio — a la par, adentro</div>
+<h3 style="color:#fff">Investigación y desarrollo con tu equipo, a escala de tu estudio</h3>
+<p style="color:#c9c9c5">I+D embebido que co-construye con tu equipo: investigación guiada por proyectos reales, a la par de cada equipo, para liberar a los arquitectos hacia proyecto. Así trabaja Foster + Partners con su grupo Applied R+D (ex Specialist Modelling Group, desde 1997) (<a href="https://www.fosterandpartners.com/people/teams/applied-rplusd" style="color:#fff">fosterandpartners.com</a>). Acá hacemos lo mismo a escala de tu estudio: observamos tu obra, probamos con tus casos, medimos y dejamos el sistema andando. Lo específico (datos, clientes) queda local y tuyo; patrones genéricos avanzan al template. Decisiones en ADR con tu veto.</p>
+</div>
+</div>
+<h3 style="margin:6px 0 8px">Global trimestral — +190hs <span class="apx">~</span></h3>
+<table>
+<tr><th>Mes</th><th>Foco</th><th>Qué queda andando</th></tr>
+<tr><td><b>1 · OBSERVAR</b> — ~64hs</td><td>¿Cómo trabaja realmente el estudio?</td><td>Bóveda encendida + representación + estándares CAD sobre Nayara (Brasil)</td></tr>
+<tr><td><b>2 · EXPERIMENTAR</b> — ~64hs</td><td>¿Qué podemos transformar?</td><td>Primeras automatizaciones con ahorro medido + moodboards ComfyUI</td></tr>
+<tr><td><b>3 · SISTEMATIZAR</b> — ~64hs</td><td>¿Qué avanza hacia sistema?</td><td>Procesos verificados + documentación + roadmap 2027</td></tr>
+</table>
+<p style="font-size:13px;margin-top:10px"><b>Quick wins desde el Mes 1:</b> no es solo observar — cada semana deja un entregable tangible.</p>
+<h3 style="margin:22px 0 8px">Ejemplo vivo — agente <a href="https://www.fathom.video/">FATHOM</a> + <a href="https://cal.com/">CAL.COM</a> <span style="font-size:13px;font-weight:400;color:var(--muted)">[agendamiento de reuniones, transcripción y análisis automatizado]</span></h3>
+<p class="muted" style="font-size:13px">Una reunión, de punta a punta, sin tocar nada a mano:</p>
+<div class="grid g2" style="margin-top:12px">
+<div class="card">
+<div class="k">Paso 1 · Pedís</div>
+<h3>Por texto o por voz</h3>
+<p>“Creá una reunión con Emilia y Juan (mails) para el jueves a las 10, tema Nayara.” Listo, seguís dibujando.</p>
+</div>
+<div class="card">
+<div class="k">Paso 2 · El agente agenda</div>
+<h3>Cal.com + Meet + invitaciones</h3>
+<p>El agente crea la reunión virtual, reserva sala y envía las invitaciones a cada invitado. Sin coordinar por chat.</p>
+</div>
+</div>
+<div class="grid g2" style="margin-top:12px">
+<div class="card">
+<div class="k">Paso 3 · Se graba sola</div>
+<h3>Fathom transcribe</h3>
+<p>Terminada la reunión, el agente descarga la transcripción directo a la bóveda del estudio. Nada se pierde.</p>
+</div>
+<div class="card">
+<div class="k">Paso 4 · Otro agente digiere</div>
+<h3>Digest + pasos a seguir</h3>
+<p>Un segundo agente analiza la reunión: resume lo decidido y extrae los pasos a seguir con responsables.</p>
+</div>
+</div>
+<div class="card" style="margin-top:12px;background:var(--ink);color:#fff;border-color:var(--ink)">
+<div class="k" style="color:var(--clay)">Paso 5 · Vuelca en Leantime</div>
+<h3 style="color:#fff">Tablero kanban con OKRs, milestones y sprints</h3>
+<p style="color:#c9c9c5">Cada paso a seguir entra como tarea y subtarea, con tiempos y objetivos. El lunes el tablero ya dice quién hace qué.</p>
+</div>
+<div class="notepad" style="margin-top:14px">
+<div class="np-title">CÓMO DESGLOSA EL AGENTE — <a class="glink" data-goto="glo">I+D</a> COMO MÉTODO CIENTÍFICO</div>
+<ol>
+<li><b>Observar</b> — qué está ocurriendo.</li>
+<li><b>Preguntar</b> — qué queremos mejorar.</li>
+<li><b>Hipótesis</b> — qué creemos que podría funcionar.</li>
+<li><b>Investigar</b> — qué tecnologías y métodos existen.</li>
+<li><b>Experimento</b> — construir y probar el flujo.</li>
+<li><b>Resultado</b> — qué ocurrió.</li>
+<li><b>Evaluar</b> — impacto, esfuerzo, limitaciones.</li>
+<li><b>Protocolo</b> — si funciona, escribirlo.</li>
+<li><b>Implementar</b> — llevarlo al sistema real.</li>
+<li><b>Aprender</b> — registrar qué se descubrió.</li>
+</ol>
+</div>
+
+</section>
+<!-- TAB 7 MES 1 -->
+<section class="tab" id="mes1">
+<div class="hero">
+<div class="eyebrow">MES 1 - observar primero</div>
+<h1>Mes 1: mirar, medir, <em>implementación (dejarlo funcionando).</em></h1>
+<p class="lead">Objetivo mínimo: 16hs <span class="apx">~</span> / 20 días hábiles / mes — ejemplos reales: Nayara (representación y CAD) + MAGENTTA vinícola (investigación y moodboard).</p>
+</div>
+<div class="card">
+<div class="k">Plantilla trimestral · método científico</div>
+<h3>Observar → preguntar → hipótesis → experimento → resultado → receta</h3>
+<p>Cada experimento genera conocimiento sobre una forma de trabajar. Lo que funciona avanza hacia protocolo y queda en la bóveda; lo que no, también se registra y se descarta sin culpa.</p>
+</div>
+<h3 style="margin:18px 0 8px">Semana por semana</h3>
+<table>
+<tr><th>Semana</th><th>Qué avanza</th><th>Entregable</th></tr>
+<tr><td><b>S1 · Vault / Obsidian</b> — puesta en marcha del sistema <span class="apx">~16hs</span></td><td>Agenda de reuniones + transcripción automática a la bóveda, orden de archivos, instalación en tu PC + instalación de infraestructura y configuraciones técnicas (ver <a class="glink" data-goto="stack">infraestructura</a>)</td><td>Bóveda + 1 reunión muestra</td></tr>
+<tr><td colspan="3" style="font-size:12px;color:var(--muted);background:var(--sand)"><p style="font-size:12px;color:var(--muted)">Agentes incluidos en la propuesta — <b>agenda</b> (Cal.com + Meet, 5hs de desarrollo, valorado en USD 50) · <b>Fathom → bóveda</b> (6hs, USD 60) · <b>digest</b> (4hs, USD 40) — <b>total agentes valorados en USD 150*</b>.<br><span style="font-size:11px">*Valor comercial de referencia en mercado. Incluidos en esta propuesta partnership sin costo adicional.</span></p></td></tr>
+<tr><td><b>S2 · Representación arquitectónica</b> — definición de standards GRAFICOS del estudio <span class="apx">~16hs</span></td><td>20–30 referentes + demo de moodboard (MAGENTTA: investigación)</td><td>Carpeta + códigos visuales (futuro LoRa)</td></tr>
+<tr><td><b>S3 · Estándares CAD</b> <span class="apx">~16hs</span></td><td>Capas, bloques, bloques dinámicos, cotas + set láminas/rótulos, DWS/DWT (estándares y templates en AutoCAD) + NOTA quick win (sugerido, medir impacto), sobre Nayara</td><td>Estándares + fichas guía</td></tr>
+<tr><td><b>S4 · Introducción ComfyUI, 1 flujo mínimo</b> <span class="apx">~16hs</span></td><td>Introducción ComfyUI (1 flujo mínimo) + evaluación mensual + documentación y entregables que reducen la curva de aprendizaje de JRs + plan de implementación + roadmap</td><td>Flujo + doc + accesos + roadmap</td></tr>
+</table>
+<div class="grid g2" style="margin-top:14px">
+<div class="card">
+<div class="k">Milestones semanales</div>
+<h3>Entregable cada viernes</h3>
+<p>M1 (día 5) bóveda + primera reunión adentro · M2 (día 10) sistema visual validado · M3 (día 15) Nayara con estándares · M4 (día 20) todo enseñable + roadmap.</p>
+</div>
+<div class="card">
+<div class="k">OKRs del mes</div>
+<h3>3 objetivos medibles</h3>
+<p>Adopción real (el estudio carga solo) · números reales (tiempos medidos, no estimados) · herramientas que liberan ≥12hs/mes <span class="apx">~</span> desde el día 20.</p>
+</div>
+</div>
+<p style="font-size:13px;margin-top:12px"><b>Reuniones:</b> 1 reunión semanal online + 2 presenciales al mes — cronograma a coordinar con el cliente.</p>
+</section>
+<!-- TAB 4 METRICAS -->
+<section class="tab" id="met">
+<div class="hero">
+<div class="eyebrow">MÉTRICAS - cómo medimos el retorno</div>
+<h1>0.6h/día <span class="apx">~</span> <em>ya liberada.</em> Retorno para siempre.</h1>
+<p class="lead">Ahorro = T_manual − T_sistema · ROI = Ahorro_mes / T_invertido · Humano vs Máquina · Capacidad = Ahorro / 60hs.</p>
+</div>
+<h3 style="margin:6px 0 8px">Desglose — 3 flujos sin solaparse (cada minuto se cuenta una vez)</h3>
+<div class="grid g4" style="margin-top:12px">
+<div class="card" style="text-align:center"><div class="bignum" data-count="4">0<small>h</small></div><div class="k">Agendar y preparar</div><p>8 × 30min (15+15)</p><div style="font-size:11px;color:var(--muted)">(agente CAL.COM MCP)</div></div>
+<div class="card" style="text-align:center"><div class="bignum" data-count="6">0<small>h</small></div><div class="k">Transcripción</div><p>8 × 45min (60→15)</p><div style="font-size:11px;color:var(--muted)">(agente FATHOM MCP)</div></div>
+<div class="card" style="text-align:center"><div class="bignum" data-count="2.2">0<small>h</small></div><div class="k">Vault</div><p>10 × 13min (15→2)</p><div style="font-size:11px;color:var(--muted)">(agente bookworm)</div></div>
+<div class="card" style="text-align:center;background:var(--ink);color:#fff;border-color:var(--ink)"><div class="bignum" data-count="12.2" style="color:#fff">0<small style="color:#9ab0a2">hs/mes</small></div><div class="k">Total medido</div><p style="color:#c9c9c5">objetivo >=12hs/mes (3hs/sem medidos)</p></div>
+</div>
+<p style="font-size:12px;color:var(--muted)">Nota: solo se mide el impacto de estos 3 agentes para tener una métrica posible.</p>
+<div class="grid g2" style="margin-top:14px">
+<div class="card"><div class="k">Humano vs máquina</div><h3>El humano revisa, la máquina ejecuta</h3><p>Buscar un plano: 15min a mano → 2min con bóveda (0.5 humano + 1.5 máquina). Ahorro: 13min por búsqueda.</p></div>
+<div class="card"><div class="k">Log por agente</div><h3>Cada minuto queda registrado</h3><p>Sherlock (búsqueda) · Fathom (captura + minuta + tareas) · Bóveda (carga a Leantime) · n8n (tiempo estimado).</p></div>
+</div>
+<h3 style="margin:22px 0 8px">Retorno para siempre — +190hs que vuelven solas</h3>
+<img class="diagram" src="diagramas/04-roi-payback.svg" alt="Acumulado y ritmo mensual, base Mes 0 en 12hs, mas 10hs por mes, payback Mes 6" style="width:100%;height:auto">
+<p style="font-size:13px;margin:12px 0 0"><b>En Mes 6 recuperas la inversión</b> (acumulado 222hs ≥ 190hs); <b>desde Mes 3 el ritmo estable de ~40hs/mes permanece</b> — las 12hs base siguen y cada mes suma +10hs nuevas (+2,5hs/mes por semana). Barras = ritmo del mes · línea = acumulado. Acumulado Mes 3 = 102hs (12+20+30+40). Ver <a class="glink" data-goto="glo"><b>payback</b></a> en glosario.</p>
+</section>
+<!-- TAB 5 INFRAESTRUCTURA -->
+<section class="tab" id="stack">
+<div class="hero">
+<div class="eyebrow">INFRAESTRUCTURA - propia y lista</div>
+<h1>INFRAESTRUCTURA PROPIA <em>LISTA.</em>
+</h1>
+<p class="lead">PITAUTECH aporta el servidor, las automatizaciones y los tableros ya instalados. El estudio solo suma su suscripción de IA y su cuenta de reuniones. Sin licencias sorpresa. A futuro (2027) puede evaluarse stack local del estudio + túnel + IA local para anonimato total (requiere mantenimiento IT por PITAUTECH).</p>
+</div>
+<div class="grid g2">
+<div class="card" style="background:var(--ink);color:#fff;border-color:var(--ink)">
+<div class="k" style="color:var(--clay)">PITAUTECH aporta — incluido en el programa</div>
+<h3 style="color:#fff">VPS + n8n + Leantime + Bóveda</h3>
+<p style="color:#c9c9c5">Servidor, base de datos, automatizaciones, tablero y bóveda ya instalados y mantenidos por PITAUTECH durante los 3 meses.</p>
+</div>
+<div class="card">
+<div class="k">El estudio aporta — su cuenta</div>
+<h3>Reuniones + IA</h3>
+<p>Su cuenta de Google Meet (reuniones) + su suscripción OpenAI o IA que usen. Quedan a su nombre, PITAUTECH solo las conecta.</p>
+</div>
+</div>
+<table style="margin-top:14px">
+<tr>
+<th>Pieza (palabras simples)</th>
+<th>Qué hace por vos</th>
+<th>Si lo pagás en la nube</th>
+<th>Acá</th>
+</tr>
+<tr>
+<td>
+<div class="tool">
+<span class="chip" style="background:#0b6bcb">C</span>
+<span>
+<b>
+<a href="https://contabo.com/">VPS Contabo</a>
+</b> — la compu encendida 24h</span>
+</div>
+</td>
+<td>Guarda agentes, corre automatizaciones de noche — 4 vCPUs, 8 GB RAM y 100 GB SSD, relocalizado para menos latencia = más rápido</td>
+<td>8 USD/mes · Contabo</td>
+<td>
+<b>+PITAUTECH</b>
+</td>
+</tr>
+<tr>
+<td>
+<div class="tool">
+<span class="chip" style="background:#EA4B71">n8</span>
+<span>
+<b>
+<a href="https://n8n.io/">n8n</a>
+</b> — el cadete digital</span>
+</div>
+</td>
+<td>Lleva y trae: reunión → minuta → tareas → agenda, solo</td>
+<td>Starter €24/mes (2.500 ejecuciones) · Pro €60/mes (10.000) — <a href="https://n8n.io/pricing">n8n.io/pricing</a>
+</td>
+<td>
+<b>Autohospedado, ilimitado · +PITAUTECH</b>
+</td>
+</tr>
+<tr>
+<td>
+<div class="tool">
+<span class="chip" style="background:#336791">Pg</span>
+<span>
+<b>
+<a href="https://www.postgresql.org/">Postgres</a>
+</b> — el archivo ordenado</span>
+</div>
+</td>
+<td>Guarda tareas, proyectos y decisiones sin perder nada</td>
+<td>—</td>
+<td>
+<b>Incluido en VPS · +PITAUTECH</b>
+</td>
+</tr>
+<tr>
+<td>
+<div class="tool">
+<span class="chip" style="background:#DC382D">Re</span>
+<span>
+<b>
+<a href="https://redis.io/">Redis</a>
+</b> — la memoria rápida</span>
+</div>
+</td>
+<td>Los agentes responden al instante, hacen cola sin trabarse</td>
+<td>—</td>
+<td>
+<b>Incluido en VPS · +PITAUTECH</b>
+</td>
+</tr>
+<tr>
+<td>
+<b>Almacenamiento agentes</b> — el placard</td>
+<td>Fotos, planos, minutas y versiones, con espacio para crecer</td>
+<td>~5–10 USD/mes según uso</td>
+<td>
+<b>Incluido en VPS · +PITAUTECH</b>
+</td>
+</tr>
+<tr>
+<td>
+<b>Flujos n8n</b> — las recetas</td>
+<td>Automatizaciones a medida del estudio, versionadas</td>
+<td>—</td>
+<td>
+<b>PITAUTECH las construye · +mantenimiento</b>
+</td>
+</tr>
+<tr>
+<td>
+<div class="tool">
+<span class="chip" style="background:#2f6f4e">Lt</span>
+<span>
+<b>
+<a href="https://leantime.io/">Leantime + 1 asiento</a>
+</b> — el tablero</span>
+</div>
+</td>
+<td>Tareas, sprints y calendario en un solo lugar</td>
+<td>Pro $10/usuario/mes ($8 anual) — <a href="https://leantime.io/pricing">leantime.io/pricing</a>
+</td>
+<td>
+<b>Instalado + 1 asiento gratuito · +PITAUTECH</b>
+</td>
+</tr>
+<tr>
+<td>
+<div class="tool">
+<span class="chip" style="background:#7C3AED">Ob</span>
+<span>
+<b>
+<a href="https://obsidian.md/">Bóveda (Obsidian)</a>
+</b> — la memoria</span>
+</div>
+</td>
+<td>Todo buscable: reuniones, planos, referentes</td>
+<td>Obsidian gratis (Sync opcional $4/mes, no requerido)</td>
+<td>
+<b>Instalada · PITAUTECH la deja andando</b>
+</td>
+</tr>
+<tr>
+<td>
+<div class="tool">
+<span class="chip" style="background:#11120f">Oc</span>
+<span>
+<b>
+<a href="https://opencode.ai/">OpenCode</a>
+</b> — fábrica de agentes + vibecoding</span>
+</div>
+</td>
+<td>Crea agentes a medida del estudio y desarrolla software con IA (vibecoding): minutas, automatizaciones y herramientas propias</td>
+<td>~10 USD/mes<br><span style="font-size:11px">NOTA OPENCODE: +75 proveedores de LLM (OpenAI, Anthropic, Google) + modelos locales.</span></td>
+<td>
+<b>Instalado local · +PITAUTECH</b>
+</td>
+</tr>
+<tr>
+<td>
+<div class="tool">
+<span class="chip" style="background:#6467F2">Or</span>
+<span>
+<b>
+<a href="https://openrouter.ai/models">OpenRouter</a>
+</b> — pago por uso</span>
+</div>
+</td>
+<td>Acceso unificado a +400 modelos (OpenAI, Anthropic, Google, Meta) en una sola API: texto, imagen, audio, video y voz</td>
+<td>Pago por uso (centavos por consulta)</td>
+<td>
+<b>+PITAUTECH</b>
+</td>
+</tr>
+<tr>
+<td>
+<b>Antigravity + tu IA</b> — tu lápiz</td>
+<td>Editor + tu suscripción (ej. <a href="https://openai.com/">ChatGPT Plus</a> ~20 USD/mes o API por uso)</td>
+<td>ChatGPT Plus ~20 USD/mes o API por uso, según tu plan</td>
+<td>
+<b>PC LOCAL · PITAUTECH la conecta</b>
+</td>
+</tr>
+<tr>
+<td>
+<div class="tool">
+<span class="chip" style="background:#5b5bd6">Cm</span>
+<span>
+<b>ComfyUI</b> — el tablero de dibujo IA</span>
+</div>
+</td>
+<td>Moodboards, imágenes y videos para arquitectura, con modelos IA locales</td>
+<td>Gratis local · nube por uso (GPU)</td>
+<td>
+<b>PC LOCAL · +PITAUTECH</b>
+</td>
+</tr>
+<tr>
+<td>
+<div class="tool">
+<span class="chip" style="background:#000000">Ca</span>
+<span>
+<b><a href="https://cal.com/">Cal.com en VPS + tu cuenta</a></b> — el secretario de reuniones</span>
+</div>
+</td>
+<td>Link de reserva → se agenda solo → Meet → minuta a la bóveda, sin coordinar por chat</td>
+<td>Teams $12/usuario/mes anual ($15 mensual) · Individual gratis — <a href="https://cal.com/pricing">cal.com/pricing</a></td>
+<td>
+<b>Instalado en VPS + cuenta cliente · +PITAUTECH</b>
+</td>
+</tr>
+<tr>
+<td>
+<div class="tool">
+<span class="chip" style="background:#0F9D58">G</span>
+<span>
+<b>Cuenta Google del estudio</b> — Drive + Calendar + Meet</span>
+</div>
+</td>
+<td>Archivos, calendario y videollamadas donde ya trabajan</td>
+<td>Gratis con cuenta Google</td>
+<td>
+<b>+ESTUDIO · PITAUTECH la conecta</b>
+</td>
+</tr>
+<tr class="total">
+<td>Ahorro nube vs aportado</td>
+<td>n8n €24–60 + Leantime $10 + Sync $4 + VPS $8 + OpenCode ~$10 + Cal.com $12 ≈ 65–110 USD/mes</td>
+<td>que AHORRAS</td>
+</tr>
+</table>
+<p style="font-size:13px;margin-top:10px"><b>Todas las herramientas quedan conectadas en un ecosistema:</b> se dejan de usar herramientas sueltas y dispersas.</p>
+<p style="font-size:12px;color:var(--muted)">Referencias: <a href="https://n8n.io/pricing">n8n.io/pricing</a> (Starter €24/mes, Pro €60/mes, anual −17%) · <a href="https://leantime.io/pricing">leantime.io/pricing</a> (Pro $10/usuario/mes, $8 anual) · <a href="https://contabo.com/">Contabo VPS</a> 8 USD · OpenCode ~10 USD · <a href="https://cal.com/pricing">Cal.com</a> Teams $12/usuario/mes anual. Precios públicos verificados sep-2026, pueden variar.</p>
+<div class="cta">
+<button class="btn dark" onclick="window.print()">Imprimir / Guardar PDF</button>
+</div>
+</section>
+<!-- TAB 6 INVERSION -->
+<section class="tab" id="inv">
+<div class="hero">
+<div class="eyebrow">INVERSIóN - 4 pagos</div>
+<h1>1.800 USD <em>trimestrales.</em> +190hs <span class="apx">~</span>.</h1>
+</div>
+<table>
+<tr>
+<th>Hito</th>
+<th>Total</th>
+<th>Cuándo</th>
+<th>Fecha tentativa</th>
+</tr>
+<tr>
+<td>Adelanto Mes 1</td>
+<td>
+<b>USD 300</b>
+</td>
+<td>Al firmar contrato de servicio (50%)</td>
+<td>16/09</td>
+</tr>
+<tr>
+<td>Fin Mes 1</td>
+<td>
+<b>USD 600</b>
+</td>
+<td>Cierre S4 + clase</td>
+<td>16/10</td>
+</tr>
+<tr>
+<td>Fin Mes 2</td>
+<td>
+<b>USD 600</b>
+</td>
+<td>Cierre Mes 2</td>
+<td>16/11</td>
+</tr>
+<tr>
+<td>Saldo entregable</td>
+<td>
+<b>USD 300</b>
+</td>
+<td>Entrega Mes 3</td>
+<td>16/12</td>
+</tr>
+<tr class="total">
+<td>TRIMESTRAL</td>
+<td>~USD 1.800</td>
+<td>300/600/600/300</td>
+<td>-</td>
+</tr>
+</table>
+<p style="font-size:13px;margin:10px 0 0">+ ABONAR en EFECTIVO / transferencia en pesos al cambio del día. (promedio dólar blue/oficial). *se emite factura C</p>
+<p style="font-size:13px;margin:4px 0 0">* mantenimiento sistema bonificado.</p>
+<p style="font-size:11px;color:var(--muted)">* Fechas tentativas a definir por cliente.</p>
+<p style="font-size:12px;color:var(--muted)">Mantenimiento Sep/Oct/Nov + mediados Dic · Reunión continuidad 15 días antes del cierre · Modelos locales, trazabilidad con registro versionado · Contrato + política privacidad a enviar aceptada la propuesta</p>
+<div class="cta">
+<button class="btn dark" onclick="window.print()">Imprimir / Guardar PDF</button>
+</div>
+<div style="text-align:center;padding:20px 0">
+<div style="font-weight:800;font-size:20px">Más arquitectura. Menos fricción.</div>
+<div style="color:var(--muted);font-size:12px">Construir un estudio que aprenda de cada proyecto</div>
+</div>
+</section>
+
+<!-- TAB 8 GLOSARIO -->
+<section class="tab" id="glo">
+<div class="hero">
+<div class="eyebrow">GLOSARIO - palabras en común</div>
+<h2 style="display:inline-block;font-size:32px;margin:8px 0;padding-bottom:6px;border-bottom:4px solid var(--clay)">Glosario</h2>
+<p class="lead">16 palabras para hablar igual.</p>
+</div>
+<div style="font-size:15px;line-height:2.2">
+<div><strong>Partnership</strong> — I+D embebido que co-construye adentro y deja sistema andando.</div>
+<div><strong>Bóveda</strong> — Memoria del estudio. Todo queda guardado y buscable.</div>
+<div><strong>Metaarquitecto</strong> — Rol que diseña el sistema que diseña arquitectura.</div>
+<div><strong>JR iterable</strong> — IA con reglas exactas, límites claros, mejora cada semana.</div>
+<div><strong>Fathom → Bóveda</strong> — Reunión grabada → minuta → tareas → Leantime → agenda.</div>
+<div><strong>Quick win</strong> — Victoria rápida tangible cada viernes.</div>
+<div><strong>Sprint</strong> — 16hs/semana <span class="apx">~</span> con entregable. Daily async sin reunión.</div>
+<div><strong>Ahorro</strong> — T_manual − T_sistema. Lo que libera cada sistema.</div>
+<div><strong>Retorno para siempre</strong> — +190hs <span class="apx">~</span> → 36hs/mes <span class="apx">~</span>. Payback 7 meses, ganancia desde mes 8.</div>
+<div><strong>Payback</strong> — mes en que lo liberado iguala lo invertido (acumulado ≥ inversión). Acá mes 7 con 216hs.</div>
+<div><strong>Iterar</strong> — repetir el loop cada vez mejor: en IA y programación, probar, medir, ajustar y volver a probar.</div> <div><strong>Kanban</strong> — tablero de 3 columnas (por hacer, haciendo, hecho) donde cada tarea se ve y avanza.</div> <div><strong>Lean</strong> — quitar todo lo que no agrega valor: menos desperdicio, más arquitectura.</div> <div><strong>Ágil</strong> — trabajar en sprints cortos con entregable y debate franco, como Google y Pixar.</div> <div><strong>I+D</strong> — Investigación y Desarrollo: observar, probar, medir y convertir lo que funciona en sistema.</div> <div><strong>LoRa</strong> — micro-entrenamiento con tus imágenes para fijar un estilo o material propio (fase futura).</div> <div><strong>MCP</strong> — el enchufe estándar que conecta a los agentes con sus herramientas (Cal.com, Fathom, bóveda).</div>
+</div>
+</section>
+</main>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('nav.tabs button').forEach(function(b) {
+    b.addEventListener('click', function() {
+      document.querySelectorAll('nav.tabs button').forEach(function(x) { x.classList.remove('active'); });
+      document.querySelectorAll('.tab').forEach(function(x) { x.classList.remove('active'); });
+      b.classList.add('active');
+      var s = document.getElementById(b.dataset.t);
+      if (s) { s.classList.add('active'); }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      document.querySelectorAll('#met .fill').forEach(function(f) {
+        f.style.width = '0';
+        setTimeout(function() { f.style.width = f.dataset.w; }, 150);
+      });
+    });
+  });
+  var io = new IntersectionObserver(function(es) {
+    es.forEach(function(e) {
+      if (e.isIntersecting) {
+        var el = e.target;
+        var end = parseInt(el.dataset.count, 10);
+        var t0 = performance.now();
+        var small = el.querySelector('small').outerHTML;
+        var step = function(t) {
+          var p = Math.min(1, (t - t0) / 900);
+          el.innerHTML = (Math.round(end * p * 10) / 10) + small;
+          if (p < 1) { requestAnimationFrame(step); }
+        };
+        requestAnimationFrame(step);
+        io.unobserve(el);
+      }
+    });
+  }, { threshold: 0.4 });
+  document.querySelectorAll('[data-goto]').forEach(function(a) {
+    a.addEventListener('click', function(ev) {
+      ev.preventDefault();
+      document.querySelectorAll('nav.tabs button').forEach(function(x) { x.classList.remove('active'); });
+      document.querySelectorAll('.tab').forEach(function(x) { x.classList.remove('active'); });
+      var t = document.getElementById(a.dataset.goto);
+      var nb = document.querySelector('nav.tabs button[data-t="' + a.dataset.goto + '"]');
+      if (t) { t.classList.add('active'); }
+      if (nb) { nb.classList.add('active'); }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+  document.querySelectorAll('.bignum').forEach(function(el) { io.observe(el); });
+  setTimeout(function() {
+    document.querySelectorAll('.fill').forEach(function(f) { f.style.width = f.dataset.w; });
+  }, 400);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STUDIO OS — Reunión de exploración | Pitautech</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: { sans: ['Inter','sans-serif'], serif: ['Instrument Serif','serif'] },
+      colors: { ink: '#1a1a1e', stone: '#8a867e', paper: '#fafaf7', accent: '#c8a96a', accent2: '#1e1e22' }
+    }
+  }
+}
+</script>
+<style>
+html { scroll-behavior: smooth; }
+@media print { nav, .no-print { display:none !important; } section { break-inside: avoid; } body { background:white; } }
+</style>
+</head>
+<body class="bg-paper text-ink font-sans antialiased">
+<!-- NAV -->
+<nav class="fixed top-0 w-full bg-paper/90 backdrop-blur border-b border-stone/20 z-50">
+  <div class="max-w-6xl mx-auto px-6 py-2.5 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <img src="banner_pitautech.jpg" alt="Pitautech" class="h-7 w-auto rounded-sm object-contain bg-white">
+      <span class="font-semibold tracking-widest text-xs">STUDIO OS</span>
+      <span class="text-stone text-xs hidden sm:inline">· Reunión de exploración</span>
+    </div>
+    <div class="hidden md:flex gap-5 text-xs tracking-wide text-stone">
+      <a href="#relevamiento" class="hover:text-ink">Relevamiento</a>
+      <a href="#areas" class="hover:text-ink">6 áreas</a>
+      <a href="#titular" class="hover:text-ink">Titular</a>
+      <a href="#cerebro" class="hover:text-ink">Cerebro</a>
+      <a href="#cierre" class="hover:text-ink">Lunes</a>
+    </div>
+    <a href="#cierre" class="bg-accent2 text-white text-xs px-4 py-2 rounded-full">Plan lunes →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="pt-24 pb-10 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-6">
+      <div class="inline-flex items-center gap-2 bg-white border border-stone/20 rounded-full px-3 py-1 text-xs w-fit">
+        <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
+        Reunión de exploración · 2 hs · Online · Relevamiento hasta hoy
+      </div>
+      <img src="banner_pitautech.jpg" alt="Pitautech — ecosistema white-label para arquitectos" class="h-8 w-auto object-contain hidden md:block opacity-90">
+    </div>
+    <h1 class="font-serif text-5xl md:text-6xl leading-[0.95] mb-4">
+      Del estudio que<br>
+      <span class="italic font-light">aprende y evoluciona.</span>
+    </h1>
+    <p class="text-lg text-stone max-w-2xl leading-relaxed mb-6">
+      Hoy hacemos un recuento breve y general para que el <span class="text-ink font-medium">plan del lunes llegue ajustado a tu estudio</span>. El diagnóstico es el croquis preliminar del sistema — como en arquitectura.
+    </p>
+    <div class="flex flex-wrap gap-3 items-center">
+      <div class="bg-accent2 text-white text-xs px-4 py-2 rounded-full">Compromiso: 2 encuentros semanales de 1 h · lun plan / vie avances</div>
+      <span class="text-xs text-stone">A definir definitivo el lunes — hoy dejamos la base · Mínimo 2 hs/semana</span>
+    </div>
+    <!-- diagnóstico como croquis preliminar -->
+    <div class="mt-10 grid md:grid-cols-3 gap-4">
+      <div class="bg-white border border-stone/15 rounded-2xl p-5">
+        <div class="text-xs tracking-widest text-stone mb-2">DIAGNÓSTICO ES</div>
+        <div class="font-serif text-lg leading-tight">Croquis preliminar<br>del sistema</div>
+        <p class="text-xs text-stone mt-2">Previsualización factible donde va cada cosa. Cumple códigos y normas de desarrollo, como un croquis que ya verifica normativa y viabilidad.</p>
+      </div>
+      <div class="bg-white border border-stone/15 rounded-2xl p-5">
+        <div class="text-xs tracking-widest text-stone mb-2">HOY</div>
+        <div class="font-serif text-lg leading-tight">Relevamiento<br>hasta hoy</div>
+        <p class="text-xs text-stone mt-2">Escucha, mapeo y foco en dónde sumás vos. Sin propuesta cerrada, con lenguaje de arquitectura.</p>
+      </div>
+      <div class="bg-accent text-white rounded-2xl p-5">
+        <div class="text-xs tracking-widest text-white/70 mb-2">LUNES</div>
+        <div class="font-serif text-lg leading-tight">Plan ajustado<br>a tu estudio</div>
+        <p class="text-xs text-white/80 mt-2">Mapa, 6 áreas con capacidad de mejorar, maqueta 2×1h/sem y próximos pasos. Delineamos el plan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- META-ARQUITECTO -->
+<section class="px-6 pb-10">
+  <div class="max-w-6xl mx-auto bg-white border border-stone/15 rounded-2xl overflow-hidden">
+    <div class="grid md:grid-cols-5 gap-0">
+      <div class="md:col-span-3 p-6 md:p-8">
+        <div class="text-xs tracking-widest text-accent font-semibold mb-2">CONCEPTO — META-ARQUITECTO · ARQUITECTO AUMENTADO</div>
+        <h2 class="font-serif text-2xl leading-tight mb-3">Vos seguís decidiendo.<br><span class="italic font-light">El sistema te potencia.</span></h2>
+        <p class="text-sm text-stone leading-relaxed mb-3">
+          Imaginate un estudio donde <span class="text-ink font-medium">no perdés nada de lo que ya sabés hacer</span>. Vos seguís pensando con el croquis, la conversación y el ojo clínico de siempre — eso se mantiene. Lo que suma es un <span class="text-ink font-medium">arquitecto aumentado</span>: tu criterio + un sistema que recuerda, busca, clasifica y propone.
+        </p>
+        <p class="text-sm text-stone leading-relaxed">
+          En el mundo, los estudios que marcan tendencia ya no solo diseñan edificios, <span class="text-ink font-medium">diseñan los sistemas que los ayudan a diseñar</span>. Eso es ser <span class="font-semibold">meta-arquitecto</span>: diseñar el proceso que produce arquitectura con más información, velocidad y control. La IA genera variantes, vos curás y validás.
+        </p>
+      </div>
+      <div class="md:col-span-2 bg-paper p-6 md:p-8 border-t md:border-t-0 md:border-l border-stone/15 flex flex-col justify-center">
+        <div class="text-xs tracking-widest text-stone mb-3">CÓMO LO PIENSAN</div>
+        <ul class="space-y-2.5 text-xs leading-relaxed">
+          <li><span class="font-semibold">ZHA · Schumacher:</span> parametricismo — diseñan reglas que generan arquitectura</li>
+          <li><span class="font-semibold">Foster + Partners:</span> 600k planos entrenan IA, fachadas que responden al clima</li>
+          <li><span class="font-semibold">UNStudio:</span> práctica basada en conocimiento, 11 modelos de diseño</li>
+          <li><span class="font-semibold">Karpathy — Software 2.0:</span> curás ejemplos, el sistema aprende</li>
+        </ul>
+        <p class="text-xs text-stone mt-4 italic">Fuentes: Sureste Informa 2026 · Editeca 2026 · Escola Sert COAC · Patrik Schumacher · Foster R+D · Karpathy 2017/2026</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REFERENTES -->
+<section class="px-6 pb-10">
+  <div class="max-w-6xl mx-auto bg-white border border-stone/15 rounded-2xl px-6 py-6">
+    <div class="flex items-center justify-between mb-4">
+      <div class="text-xs tracking-widest text-stone">REFERENTES INTERNACIONALES — VARA QUE INSPIRA</div>
+      <span class="text-xs bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full">✓ Vara clara — hoy: tu estudio</span>
+    </div>
+    <p class="text-sm text-stone mb-4">Estudios que ya potencian su flujo — cada uno con su enfoque. Patrón común: <span class="text-ink font-medium">la IA genera, vos decidís.</span></p>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <div class="bg-paper rounded-xl p-3 border border-stone/10"><div class="font-semibold text-xs mb-1">ZHA</div><div class="text-xs text-stone leading-relaxed">Parametricismo con IA — 100s de ideas, elegís 10%</div></div>
+      <div class="bg-paper rounded-xl p-3 border border-stone/10"><div class="font-semibold text-xs mb-1">Foster + Partners</div><div class="text-xs text-stone leading-relaxed">Data-driven — fachadas que responden al clima</div></div>
+      <div class="bg-paper rounded-xl p-3 border border-stone/10"><div class="font-semibold text-xs mb-1">BIG</div><div class="text-xs text-stone leading-relaxed">Circulaciones + diagramas — a mano + IA que prueba formas</div></div>
+      <div class="bg-paper rounded-xl p-3 border border-stone/10"><div class="font-semibold text-xs mb-1">MVRDV</div><div class="text-xs text-stone leading-relaxed">Data + carbono — bocetos con estilo propio + CarbonSpace</div></div>
+      <div class="bg-paper rounded-xl p-3 border border-stone/10"><div class="font-semibold text-xs mb-1">UNStudio</div><div class="text-xs text-stone leading-relaxed">Knowledge-based — 100s de variantes/día</div></div>
+      <div class="bg-paper rounded-xl p-3 border border-stone/10"><div class="font-semibold text-xs mb-1">Gensler</div><div class="text-xs text-stone leading-relaxed">Research masivo — gemelos digitales de ciudades</div></div>
+      <div class="bg-paper rounded-xl p-3 border border-stone/10"><div class="font-semibold text-xs mb-1">OMA / AMO</div><div class="text-xs text-stone leading-relaxed">Research lab — data antes de diseñar</div></div>
+      <div class="bg-accent text-white rounded-xl p-3"><div class="font-semibold text-xs mb-1">Patrón</div><div class="text-xs leading-relaxed">Diseñan circulaciones que potencian personas, información y herramientas.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- RELEVAMIENTO HASTA HOY -->
+<section id="relevamiento" class="px-6 pb-10">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="font-serif text-3xl mb-1">Relevamiento hasta hoy</h2>
+    <p class="text-sm text-stone mb-6">General y positivo. Todo se puede mejorar y potenciar — como un croquis que verifica y previsualiza.</p>
+    <div class="grid md:grid-cols-3 gap-4">
+      <div class="bg-white border border-stone/15 rounded-2xl p-5">
+        <div class="w-8 h-8 bg-stone/10 rounded-lg flex items-center justify-center text-sm mb-3">◈</div>
+        <h3 class="font-semibold text-sm mb-1">Administración y gestión</h3>
+        <p class="text-xs text-stone leading-relaxed">Presupuestos en Excel/Sheets con potencial de medición. Carpetas con oportunidad de orden, respaldo y visión de simultaneidad.</p>
+      </div>
+      <div class="bg-white border border-stone/15 rounded-2xl p-5">
+        <div class="w-8 h-8 bg-stone/10 rounded-lg flex items-center justify-center text-sm mb-3">⬢</div>
+        <h3 class="font-semibold text-sm mb-1">Técnica y recursos</h3>
+        <p class="text-xs text-stone leading-relaxed">Bloques y recursos con potencial de estándar que multiplica valor. Mismo tiempo, mayor claridad. Siguiente paso: automatizaciones.</p>
+      </div>
+      <div class="bg-white border border-stone/15 rounded-2xl p-5">
+        <div class="w-8 h-8 bg-stone/10 rounded-lg flex items-center justify-center text-sm mb-3">◎</div>
+        <h3 class="font-semibold text-sm mb-1">Representación y obra</h3>
+        <p class="text-xs text-stone leading-relaxed">Presentaciones con oportunidad de potenciar composición. Seguimiento de obra y contactos con potencial de centralización ágil.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 AREAS CON CAPACIDAD DE MEJORAR -->
+<section id="areas" class="px-6 pb-10">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex items-baseline justify-between mb-6">
+      <h2 class="font-serif text-3xl">6 áreas con capacidad de mejorar</h2>
+      <span class="text-xs text-stone hidden md:inline">💡 Idea · ❓ Tema de charla hoy</span>
+    </div>
+    <div class="grid md:grid-cols-3 gap-4">
+      <!-- 1 -->
+      <div class="bg-white border border-stone/15 rounded-2xl p-5 hover:border-accent/40 transition">
+        <div class="text-xs tracking-widest text-accent font-semibold mb-2">01 — PRESUPUESTOS</div>
+        <h3 class="font-semibold text-sm mb-2">Presupuestos que se potencian</h3>
+        <p class="text-xs text-stone leading-relaxed mb-3">Excel/Sheets como base sólida. Oportunidad de sumar claridad y medición, con facturación junto a contador en siguiente etapa.</p>
+        <div class="bg-amber-50 border border-amber-200 rounded-xl px-3 py-2 text-xs mb-2">💡 <span class="font-semibold">Idea:</span> Calculadora de honorarios + calculadora de presupuestos rápidos (MVP)</div>
+        <div class="bg-paper rounded-xl px-3 py-2 text-xs italic text-stone">❓ ¿Cómo te resulta hoy Excel/Sheets? ¿Qué te gustaría medir?</div>
+      </div>
+      <!-- 2 -->
+      <div class="bg-white border border-stone/15 rounded-2xl p-5 hover:border-accent/40 transition">
+        <div class="text-xs tracking-widest text-accent font-semibold mb-2">02 — GESTIÓN DE PROYECTOS</div>
+        <h3 class="font-semibold text-sm mb-2">Gestión con claridad</h3>
+        <p class="text-xs text-stone leading-relaxed mb-3">Oportunidad de sumar respaldo, permisos cuidados y vista clara de proyectos en simultáneo con dashboards.</p>
+        <div class="bg-amber-50 border border-amber-200 rounded-xl px-3 py-2 text-xs mb-2">💡 <span class="font-semibold">Idea:</span> Gestor Leantime — tareas, horas, dashboards y simultaneidad</div>
+        <div class="bg-paper rounded-xl px-3 py-2 text-xs italic text-stone">❓ ¿Cómo te imaginás una vista con dashboards al día?</div>
+      </div>
+      <!-- 3 -->
+      <div class="bg-white border border-stone/15 rounded-2xl p-5 hover:border-accent/40 transition">
+        <div class="text-xs tracking-widest text-accent font-semibold mb-2">03 — TÉCNICA / DOCUMENTACIÓN</div>
+        <h3 class="font-semibold text-sm mb-2">Estándares que multiplican</h3>
+        <p class="text-xs text-stone leading-relaxed mb-3">Bloques y criterios con potencial de unificar. Mismo tiempo, mayor valor después, base para automatizaciones.</p>
+        <div class="bg-amber-50 border border-amber-200 rounded-xl px-3 py-2 text-xs mb-2">💡 <span class="font-semibold">Idea:</span> Estándares + comandos y automatizaciones que acompañan</div>
+        <div class="bg-paper rounded-xl px-3 py-2 text-xs italic text-stone">❓ ¿Qué criterio te gustaría unificar primero?</div>
+      </div>
+      <!-- 4 -->
+      <div class="bg-white border border-stone/15 rounded-2xl p-5 hover:border-accent/40 transition">
+        <div class="text-xs tracking-widest text-accent font-semibold mb-2">04 — MODELADO</div>
+        <h3 class="font-semibold text-sm mb-2">Base 3D con evolución</h3>
+        <p class="text-xs text-stone leading-relaxed mb-3">Base 3D AutoCAD con potencial de expansión genérica: Rhino + Grasshopper, Revit y otras cuando acompañe.</p>
+        <div class="bg-amber-50 border border-amber-200 rounded-xl px-3 py-2 text-xs mb-2">💡 <span class="font-semibold">Idea:</span> Propuesta y ventajas a futuro, a tu ritmo</div>
+        <div class="bg-paper rounded-xl px-3 py-2 text-xs italic text-stone">❓ ¿Qué te imaginas sumando más adelante?</div>
+      </div>
+      <!-- 5 -->
+      <div class="bg-white border border-stone/15 rounded-2xl p-5 hover:border-accent/40 transition">
+        <div class="text-xs tracking-widest text-accent font-semibold mb-2">05 — VISUALIZACIÓN</div>
+        <h3 class="font-semibold text-sm mb-2">Presentaciones que comunican</h3>
+        <p class="text-xs text-stone leading-relaxed mb-3">Más que láminas: imágenes, videos, web, portfolio e Instagram — mismos recursos para todo el ecosistema.</p>
+        <div class="bg-amber-50 border border-amber-200 rounded-xl px-3 py-2 text-xs mb-2">💡 <span class="font-semibold">Idea:</span> Recursos que sirven para web, portfolio e Instagram a la vez</div>
+        <div class="bg-paper rounded-xl px-3 py-2 text-xs italic text-stone">❓ ¿Qué presentación te gustaría potenciar?</div>
+      </div>
+      <!-- 6 -->
+      <div class="bg-white border border-stone/15 rounded-2xl p-5 hover:border-accent/40 transition">
+        <div class="text-xs tracking-widest text-accent font-semibold mb-2">06 — OBRA + PROVEEDORES</div>
+        <h3 class="font-semibold text-sm mb-2">Libro digital y seguimiento</h3>
+        <p class="text-xs text-stone leading-relaxed mb-3">Oportunidad de sumar libro digital de obra, seguimiento de proveedores y dashboards personalizados.</p>
+        <div class="bg-amber-50 border border-amber-200 rounded-xl px-3 py-2 text-xs mb-2">💡 <span class="font-semibold">Idea:</span> Pitautech — ecosistema white-label para arquitectos</div>
+        <div class="bg-paper rounded-xl px-3 py-2 text-xs italic text-stone">❓ ¿Cómo te serviría tener obra y proveedores en un dashboard?</div>
+      </div>
+    </div>
+    <div class="mt-4 bg-accent2 text-white rounded-2xl px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-3">
+      <div>
+        <div class="text-xs tracking-widest text-white/60">TRANSVERSAL</div>
+        <div class="font-serif text-lg">Cerebro digital — base consultable que aprende</div>
+      </div>
+      <div class="text-xs text-white/70 bg-white/10 rounded-full px-3 py-1.5">PLUS que potencia las 6 áreas</div>
+    </div>
+  </div>
+</section>
+
+<!-- TITULAR -->
+<section id="titular" class="px-6 pb-10">
+  <div class="max-w-6xl mx-auto">
+    <div class="bg-white border border-stone/15 rounded-2xl overflow-hidden">
+      <div class="px-6 md:px-8 py-8">
+        <div class="inline-block bg-accent text-white text-xs tracking-widest px-3 py-1 rounded-full mb-4">FOCO — VOS</div>
+        <h2 class="font-serif text-3xl md:text-4xl leading-tight mb-3">Tu criterio suma<br><span class="italic font-light">sin abrir CAD.</span></h2>
+        <p class="text-sm text-stone max-w-2xl">Exploramos dónde te resulta más natural sumar — mensaje, referente e idea — con herramientas que acompañan. Vos elegís cómo entrar.</p>
+      </div>
+      <div class="grid md:grid-cols-5 gap-0 border-t border-stone/15 divide-y md:divide-y-0 md:divide-x divide-stone/15">
+        <div class="p-6">
+          <div class="text-xs tracking-widest text-stone mb-2">01</div>
+          <h4 class="font-semibold text-sm mb-2">Punto de entrada</h4>
+          <p class="text-xs text-stone leading-relaxed">Croquis, imagen, moodboard, referente, GPT/Codex. Oportunidad de sumar tablet sobre imagen + voz a texto.</p>
+        </div>
+        <div class="p-6">
+          <div class="text-xs tracking-widest text-stone mb-2">02</div>
+          <h4 class="font-semibold text-sm mb-2">Portal al día</h4>
+          <p class="text-xs text-stone leading-relaxed">Últimos renders y planos siempre visibles. Acompaña sin esperar al día siguiente.</p>
+        </div>
+        <div class="p-6">
+          <div class="text-xs tracking-widest text-stone mb-2">03</div>
+          <h4 class="font-semibold text-sm mb-2">Validás con fluidez</h4>
+          <p class="text-xs text-stone leading-relaxed">Visualizador CAD y conversión automática cuando suma. Validás sin fricción.</p>
+        </div>
+        <div class="p-6">
+          <div class="text-xs tracking-widest text-stone mb-2">04</div>
+          <h4 class="font-semibold text-sm mb-2">Canvas de aprobación</h4>
+          <p class="text-xs text-stone leading-relaxed">Notas, imágenes y marcas en canvas. Queda trazado como aprobación.</p>
+        </div>
+        <div class="p-6">
+          <div class="text-xs tracking-widest text-stone mb-2">05</div>
+          <h4 class="font-semibold text-sm mb-2">Iterás con autonomía</h4>
+          <p class="text-xs text-stone leading-relaxed">Explorás materialidad, volumetría o composición con variantes para curar. Canal a definir.</p>
+        </div>
+      </div>
+      <div class="bg-paper px-6 md:px-8 py-4 flex flex-wrap gap-2 text-xs">
+        <span class="bg-white border border-stone/20 rounded-full px-3 py-1.5">Tablet sobre imagen</span>
+        <span class="bg-white border border-stone/20 rounded-full px-3 py-1.5">Voz a texto</span>
+        <span class="bg-white border border-stone/20 rounded-full px-3 py-1.5">Portal web interno</span>
+        <span class="bg-white border border-stone/20 rounded-full px-3 py-1.5">Visualizador CAD</span>
+        <span class="bg-white border border-stone/20 rounded-full px-3 py-1.5">Canvas + aprobación</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CEREBRO -->
+<section id="cerebro" class="px-6 pb-10">
+  <div class="max-w-6xl mx-auto bg-white border border-stone/15 rounded-2xl p-6 md:p-8">
+    <div class="flex flex-col md:flex-row gap-8 items-start">
+      <div class="flex-1">
+        <div class="text-xs tracking-widest text-stone mb-2">CEREBRO DIGITAL — PLUS QUE APRENDE</div>
+        <h3 class="font-serif text-2xl mb-3">Un sistema que aprende con vos</h3>
+        <p class="text-sm text-stone leading-relaxed mb-3">Inspirado en <span class="text-ink font-medium">Karpathy — Software 2.0</span>: antes escribías cada regla, ahora curás ejemplos y el sistema aprende. En tu estudio, le mostrás croquis, detalles, proveedores y fotos de obra — el sistema arma una memoria privada que te encuentra lo que necesitás.</p>
+        <p class="text-sm text-stone leading-relaxed mb-4">Vos seguís curando y validando. Cuanto más lo usás, mejor te conoce. Queda adentro del estudio y te ahorra búsquedas y traducciones.</p>
+        <div class="flex flex-wrap items-center gap-2 text-xs">
+          <span class="bg-paper border border-stone/15 rounded-full px-3 py-1.5">Guardás habitual</span>
+          <span class="text-stone">→</span>
+          <span class="bg-paper border border-stone/15 rounded-full px-3 py-1.5">Se indexa</span>
+          <span class="text-stone">→</span>
+          <span class="bg-paper border border-stone/15 rounded-full px-3 py-1.5">Consultás</span>
+          <span class="text-stone">→</span>
+          <span class="bg-accent text-white rounded-full px-3 py-1.5">Mejora con vos</span>
+        </div>
+        <p class="text-xs text-stone mt-3">Beneficios: encontrás detalles en segundos, recuperás proveedores sin depender de memoria, recibís propuestas que vos validás.</p>
+      </div>
+      <div class="flex-1 bg-paper rounded-2xl p-5">
+        <div class="text-xs tracking-widest text-stone mb-3">EJEMPLO DE CONSULTA</div>
+        <div class="bg-white rounded-xl p-4 border border-stone/15">
+          <div class="text-sm italic text-stone mb-2">“Proyectos con hormigón visto y proveedores”</div>
+          <div class="text-xs text-emerald-700 bg-emerald-50 rounded-full inline-block px-2 py-1">→ Respuesta en 2 minutos, con trazabilidad</div>
+        </div>
+        <p class="text-xs text-stone mt-3">Sin pasos técnicos extra. Lo complejo lo acompaña el laboratorio, lo simple queda para vos.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAPACIDAD -->
+<section class="px-6 pb-10">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-4">
+    <div class="bg-white border border-stone/15 rounded-2xl p-6">
+      <div class="text-xs tracking-widest text-stone mb-2">CAPACIDAD QUE SUMA — EN PARALELO</div>
+      <h3 class="font-semibold mb-3">Mismas herramientas, mayor valor</h3>
+      <ul class="space-y-2 text-sm text-stone leading-relaxed">
+        <li class="flex gap-2"><span class="text-accent">·</span> Bloques con cómputo a planilla + trazabilidad</li>
+        <li class="flex gap-2"><span class="text-accent">·</span> Presentaciones técnicas + de exploración en simultáneo</li>
+        <li class="flex gap-2"><span class="text-accent">·</span> Imágenes, videos, web, portfolio e Instagram — mismos recursos</li>
+        <li class="flex gap-2"><span class="text-accent">·</span> Curaduría y diseño del plan — estudiamos cuellos en simultáneo</li>
+      </ul>
+      <p class="text-xs text-stone mt-4 bg-paper rounded-xl px-3 py-2">Luego: capacitación y mantenimiento. Hoy: relevamiento y maqueta.</p>
+    </div>
+    <div class="bg-accent2 text-white rounded-2xl p-6">
+      <div class="text-xs tracking-widest text-white/60 mb-2">CAPA QUE ACOMPAÑA</div>
+      <h3 class="font-semibold mb-3">Flujo online-first</h3>
+      <ul class="space-y-2 text-sm text-white/80 leading-relaxed">
+        <li>· Drive con acompañamiento (ordena, nombra, detecta duplicados)</li>
+        <li>· Leantime para seguimiento y simultaneidad con dashboards</li>
+        <li>· GPT / Codex con potencial de conexión</li>
+        <li>· Portfolio web interno — oportunidad de sumar dominio/mail</li>
+      </ul>
+      <p class="text-xs text-white/60 mt-4">Escala y simultaneidad se definen por proyecto (caso de referencia + próximo a desarrollar). Delineamos el plan el lunes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CIERRE -->
+<section id="cierre" class="px-6 pb-14">
+  <div class="max-w-6xl mx-auto bg-white border border-stone/15 rounded-2xl overflow-hidden">
+    <div class="bg-accent2 text-white px-6 md:px-8 py-8">
+      <div class="flex items-center justify-between gap-4">
+        <div>
+          <div class="text-xs tracking-widest text-white/60 mb-2">PROMESA</div>
+          <h2 class="font-serif text-3xl md:text-4xl leading-tight mb-3">El lunes: plan ajustado<br><span class="italic font-light text-white/80">a tu estudio.</span></h2>
+          <p class="text-sm text-white/70 max-w-2xl">Relevamiento hasta hoy + croquis preliminar del sistema. Delineamos el plan por áreas, con roadmap y próximos pasos.</p>
+        </div>
+        <img src="banner_pitautech.jpg" alt="Pitautech" class="hidden md:block h-16 w-auto rounded-lg object-contain bg-white p-1">
+      </div>
+    </div>
+    <div class="px-6 md:px-8 py-6 grid md:grid-cols-2 gap-6">
+      <div>
+        <div class="text-xs tracking-widest text-stone mb-3">HOY ACORDAMOS</div>
+        <ul class="space-y-2 text-sm">
+          <li class="flex gap-2"><span class="text-emerald-500">✓</span> Caso de estudio de referencia + próximo proyecto + tipología</li>
+          <li class="flex gap-2"><span class="text-emerald-500">✓</span> 3–5 croquis para explorar + punto de entrada que te sirva</li>
+          <li class="flex gap-2"><span class="text-emerald-500">✓</span> Referente con dedicación semanal y permisos cuidados</li>
+          <li class="flex gap-2"><span class="text-emerald-500">✓</span> Compromiso: 2 encuentros semanales de 1 h</li>
+        </ul>
+      </div>
+      <div>
+        <div class="text-xs tracking-widest text-stone mb-3">LUNES DELINEAMOS</div>
+        <ul class="space-y-2 text-sm text-stone">
+          <li>· Mapa y 6 áreas con capacidad de mejorar priorizadas</li>
+          <li>· Maqueta 2×1h/sem y roadmap por etapas</li>
+          <li>· Portal y cerebro sin fricción, con trazabilidad</li>
+          <li>· Herramientas del laboratorio, información cuidada</li>
+        </ul>
+        <div class="mt-4 bg-paper rounded-xl px-4 py-3 text-xs">
+          <span class="font-semibold">Siguiente etapa:</span> encuentro con titular del estudio a coordinar con propuesta lista.
+        </div>
+      </div>
+    </div>
+    <div class="px-6 md:px-8 pb-6 flex flex-wrap gap-3 no-print">
+      <a href="javascript:window.print()" class="bg-accent2 text-white text-sm px-5 py-2.5 rounded-full">Descargar PDF (Imprimir)</a>
+      <span class="text-xs text-stone py-2.5">HTML scroll + PDF breve — para compartir por WhatsApp después de la call</span>
+    </div>
+  </div>
+</section>
+
+<footer class="px-6 pb-10">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 border-t border-stone/15 pt-6">
+    <div class="text-xs text-stone">STUDIO OS — Arquitectura del estudio que aprende · Relevamiento hasta hoy · Plan ajustado lunes</div>
+    <img src="banner_pitautech.jpg" alt="Pitautech" class="h-6 w-auto object-contain opacity-70">
+  </div>
+  <div class="max-w-6xl mx-auto text-center text-xs text-stone/60 mt-3">Voseo rioplatense · Tono positivo · Todo se puede mejorar y potenciar</div>
+</footer>
+</body>
+</html>

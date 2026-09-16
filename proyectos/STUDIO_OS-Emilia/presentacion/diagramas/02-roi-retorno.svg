@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="360" viewBox="0 0 600 360" font-family="Inter,system-ui,sans-serif" role="img" aria-label="Retorno para siempre 190hs a 396hs ano, payback mes 7">
+<rect width="600" height="360" rx="18" fill="#11120f"/>
+<text x="40" y="42" font-size="13" letter-spacing="3" fill="#c9a98a">RETORNO PARA SIEMPRE — 190HS → 396HS/AÑO</text>
+<g font-size="12" fill="#c9c9c5">
+<text x="40" y="90">Mes 1 · 12hs/mes</text><rect x="200" y="74" width="110" height="18" rx="9" fill="#c9a98a"/><text x="320" y="88" fill="#fff">0.20</text>
+<text x="40" y="130">Mes 3 · 36hs/mes</text><rect x="200" y="114" width="220" height="18" rx="9" fill="#c9a98a"/><text x="430" y="128" fill="#fff">0.38 · 72hs</text>
+<text x="40" y="170">Mes 7 · payback</text><rect x="200" y="154" width="330" height="18" rx="9" fill="#9ab0a2"/><text x="430" y="168" fill="#11120f" font-weight="700">1.14 · 216hs</text>
+<text x="40" y="210">Mes 12 · 396hs</text><rect x="200" y="194" width="360" height="18" rx="9" fill="#fff"/><text x="410" y="208" fill="#11120f" font-weight="700">2.08 · 3.960 USD/año</text>
+</g>
+<text x="40" y="260" font-size="12" fill="#9ab0a2">7 meses recuperas la inversión · desde mes 8 cada mes libera 36hs netas para siempre</text>
+<text x="40" y="290" font-size="12" fill="#c9c9c5">12hs/mes = 3hs/sem = 0.6h/día hábil · 3 agentes medidos (Cal.com + Fathom + Vault)</text>
+<text x="40" y="322" font-size="11" fill="#5a5e56">Ahorro = T_manual − T_sistema · Payback = acumulado ≥ inversión · Ver glosario payback</text>
+</svg>

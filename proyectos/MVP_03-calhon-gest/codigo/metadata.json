@@ -1,0 +1,5 @@
+{
+  "name": "GestorIArq - Fee Calculator",
+  "description": "A web application for architects to calculate fees for municipal procedures based on square meters. The fee per square meter is calculated on a sliding scale.",
+  "requestFramePermissions": []
+}

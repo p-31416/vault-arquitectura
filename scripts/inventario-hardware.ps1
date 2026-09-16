@@ -1,4 +1,4 @@
-#Requires -Version 5.1
+﻿#Requires -Version 5.1
 <#
 .SYNOPSIS
   Inventario hardware + software para Vault Cerebro (estudio arquitectura).
@@ -218,3 +218,13 @@ $text | Out-File -LiteralPath $mdPath -Encoding utf8
 Write-Host ""
 Write-Host "Guardado: $mdPath" -ForegroundColor Green
 Write-Host "Guardado: $jsonPath" -ForegroundColor Green
+# --- Copia .txt y abre en Bloc de notas para doble-click (usuario pidio txt directo) ---
+try {
+  $txtPath = $mdPath -replace '\.md$','.txt'
+  Copy-Item -LiteralPath $mdPath -Destination $txtPath -Force -ErrorAction SilentlyContinue
+  Write-Host "Guardado: $txtPath" -ForegroundColor Green
+  Start-Process notepad.exe -ArgumentList "`"$txtPath`"" -ErrorAction SilentlyContinue | Out-Null
+} catch {}
+Write-Host ""
+Write-Host "Listo - Presiona Enter para cerrar..." -ForegroundColor Cyan
+Read-Host | Out-Null

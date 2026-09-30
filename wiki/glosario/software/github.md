@@ -10,10 +10,10 @@ tags: [glosario, software, github]
 
 > GitHub como plataforma (web) — repos, PAT, scopes.
 
-- [PAT classic](#pat-classic)
-- [Scopes mínimos](#scopes-mínimos)
-- [Conceptos relacionados](#conceptos-relacionados)
-- [Referencias](#referencias)
+- [[PAT classic]])
+- [[Scopes mínimos]])
+- [[Conceptos relacionados]])
+- [[Referencias]])
 
 ## PAT classic
 

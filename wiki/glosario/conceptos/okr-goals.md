@@ -9,13 +9,13 @@ tags: [glosario, concepto, okr, goals, metricas, leantime]
 
 > Objectives & Key Results (Doerr/Grove): objetivos inspiradores + 3–5 resultados clave medibles. En Leantime viven como **GOALS**; en el vault se revisan mensualmente junto a la retro grande.
 
-- [Definición](#definición)
-- [Anatomía de un buen OKR](#anatomía-de-un-buen-okr)
-- [OKRs propuestos para el estudio](#okrs-propuestos-para-el-estudio)
-- [Cadencia de revisión](#cadencia-de-revisión)
-- [OKR → Goals de Leantime](#okr--goals-de-leantime)
-- [Conceptos relacionados](#conceptos-relacionados)
-- [Referencias](#referencias)
+- [[Definición]])
+- [[Anatomía de un buen OKR]])
+- [[OKRs propuestos para el estudio]])
+- [[Cadencia de revisión]])
+- [[OKR → Goals de Leantime]])
+- [[Conceptos relacionados]])
+- [[Referencias]])
 
 ## Definición
 

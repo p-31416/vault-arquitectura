@@ -12,11 +12,11 @@ origen: https://www.zha.com/people/patrik-schumacher
 
 > Principal de ZHA — acuñó el parametricismo (Bienal Venecia 2008) y lidera la firma desde 2016.
 
-- [Quién es](#quién-es)
-- [Por qué es referente para el estudio](#por-qué-es-referente-para-el-estudio)
-- [Bibliografía](#bibliografía)
-- [Conceptos relacionados](#conceptos-relacionados)
-- [Referencias](#referencias)
+- [[Quién es]])
+- [[Por qué es referente para el estudio]])
+- [[Bibliografía]])
+- [[Conceptos relacionados]])
+- [[Referencias]])
 
 ## Quién es
 

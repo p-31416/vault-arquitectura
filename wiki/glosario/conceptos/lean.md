@@ -9,12 +9,12 @@ tags: [glosario, concepto, lean, lean-construction, desperdicio, valor]
 
 > Maximizar valor, minimizar desperdicio, flujo pull y perfección continua. Raíz de todo lo demás: Kanban, LPS, Kaizen y 5S son Lean aplicado.
 
-- [Definición](#definición)
-- [5 principios](#5-principios)
-- [8 desperdicios en el estudio](#8-desperdicios-en-el-estudio)
-- [Lean Construction (diferencia con fábrica)](#lean-construction-diferencia-con-fábrica)
-- [Conceptos relacionados](#conceptos-relacionados)
-- [Referencias](#referencias)
+- [[Definición]])
+- [[5 principios]])
+- [[8 desperdicios en el estudio]])
+- [[Lean Construction (diferencia con fábrica)]])
+- [[Conceptos relacionados]])
+- [[Referencias]])
 
 ## Definición
 

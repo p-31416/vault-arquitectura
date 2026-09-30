@@ -11,15 +11,15 @@ idioma: es
 
 > Qué hace Sherlock, dónde vive su código y cómo pedirle trabajo. Definición viva en `.opencode/agents/sherlock.md`; este pbook es el índice razonado + backlog futuro.
 
-- [Qué hace](#qué-hace)
-- [Dónde vive el código](#dónde-vive-el-código)
-- [Cómo está conformado (código)](#cómo-está-conformado-código)
-- [Flujo HITL](#flujo-hitl)
-- [Bilingüe y doc oficial primero](#bilingüe-y-doc-oficial-primero)
-- [Piloto 2026-09-09](#piloto-2026-09-09)
-- [Backlog — futuro](#backlog--futuro)
-- [Conceptos relacionados](#conceptos-relacionados)
-- [Referencias](#referencias)
+- [[Qué hace]])
+- [[Dónde vive el código]])
+- [[Cómo está conformado (código)]])
+- [[Flujo HITL]])
+- [[Bilingüe y doc oficial primero]])
+- [[Piloto 2026-09-09]])
+- [[#Backlog — futuro]]
+- [[Conceptos relacionados]])
+- [[Referencias]])
 
 ## Qué hace
 

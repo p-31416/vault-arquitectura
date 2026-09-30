@@ -9,6 +9,8 @@ estado: backlog
 
 # Spec — Agentes del vault corriendo online (GitHub Actions, sin VPS)
 
+> **Estado al 2026-09-29: BACKLOG INTACTO — sin `.github/workflows/`, no bloquea Mes 1. Pendiente intacto del spec §4.**
+
 > **Objetivo:** que `@vaultworm-arq` (y futuros agentes) se ejecuten en la nube cuando la PC no está online — sin instalar nada en un VPS. Backlog pendiente, recuperable.
 
 ## 0. Resumen en 1 línea

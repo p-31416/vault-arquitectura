@@ -10,10 +10,10 @@ tags: [glosario, software, gh]
 
 > CLI `gh` separada de `github` (web).
 
-- [Auth — GH_TOKEN vs GITHUB_TOKEN](#auth--gh_token-vs-github_token)
-- [Login](#login)
-- [Conceptos relacionados](#conceptos-relacionados)
-- [Referencias](#referencias)
+- [[Auth — GH_TOKEN vs GITHUB_TOKEN]])
+- [[Login]])
+- [[Conceptos relacionados]])
+- [[Referencias]])
 
 ## Auth — GH_TOKEN vs GITHUB_TOKEN
 

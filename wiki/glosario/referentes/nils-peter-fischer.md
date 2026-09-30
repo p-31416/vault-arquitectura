@@ -12,11 +12,11 @@ origen: https://www.zha.com/people/nils-fischer
 
 > Director ZHA — fundador del Computational Design Research Group (CODE) y del Technology Lab; evidencia proyectual, no académica.
 
-- [Quién es](#quién-es)
-- [Por qué es referente para el estudio](#por-qué-es-referente-para-el-estudio)
-- [Obra clave](#obra-clave)
-- [Conceptos relacionados](#conceptos-relacionados)
-- [Referencias](#referencias)
+- [[Quién es]])
+- [[Por qué es referente para el estudio]])
+- [[Obra clave]])
+- [[Conceptos relacionados]])
+- [[Referencias]])
 
 ## Quién es
 

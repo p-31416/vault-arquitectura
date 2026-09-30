@@ -12,11 +12,11 @@ origen: https://www.zha.com/people/ulrich-blum
 
 > Co-Head de ZHA Analytics + Insights — big data, IA e IoT aplicados a workplace paramétrico; profesor en Münster.
 
-- [Quién es](#quién-es)
-- [Por qué es referente para el estudio](#por-qué-es-referente-para-el-estudio)
-- [Charlas y casos](#charlas-y-casos)
-- [Conceptos relacionados](#conceptos-relacionados)
-- [Referencias](#referencias)
+- [[Quién es]])
+- [[Por qué es referente para el estudio]])
+- [[Charlas y casos]])
+- [[Conceptos relacionados]])
+- [[Referencias]])
 
 ## Quién es
 

@@ -1,0 +1,2677 @@
+{
+  "archivo": "REP-ARAOZ.copia-trabajo.dwg",
+  "path": "P:\\00-repos\\proyecto-pi\\vault-arquitectura\\activos\\caddy-salidas\\REP-ARAOZ.copia-trabajo.dwg",
+  "fecha": "2026-09-30T00:06:19",
+  "autocad_version": "26.0s (LMS Tech)",
+  "insunits": 6,
+  "extmin": [
+    -90.7186456785964,
+    -10.86307692307692,
+    0.0
+  ],
+  "extmax": [
+    590.4210227018957,
+    834.0,
+    0.0
+  ],
+  "layouts": [
+    {
+      "name": "Model",
+      "tab_order": 0,
+      "is_model": true,
+      "active": false
+    },
+    {
+      "name": "REP-PTipo-A1",
+      "tab_order": 1,
+      "is_model": false,
+      "active": true
+    }
+  ],
+  "layers": [
+    {
+      "name": "0",
+      "color_aci": 7,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "ROT-HOJA",
+      "color_aci": 5,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "ROT-TXT",
+      "color_aci": 174,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "ROT-VP",
+      "color_aci": 130,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "A-TERRENO",
+      "color_aci": 163,
+      "linetype": "Continuous",
+      "frozen": true,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "REP-EJES",
+      "color_aci": 81,
+      "linetype": "DASHDOTX2",
+      "frozen": false,
+      "locked": true,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "A-EJES",
+      "color_aci": 90,
+      "linetype": "DASHDOT",
+      "frozen": false,
+      "locked": true,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "REP-COTAS",
+      "color_aci": 41,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "Defpoints",
+      "color_aci": 7,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "SIMB-CARP",
+      "color_aci": 33,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "A-COTA-1-50",
+      "color_aci": 250,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "E-EJES",
+      "color_aci": 10,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": true,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "A-MURO-MED",
+      "color_aci": 11,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": true,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "0-REF",
+      "color_aci": 7,
+      "linetype": "Continuous",
+      "frozen": true,
+      "locked": true,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "A-MURO-MAMP",
+      "color_aci": 24,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "A-SOLADOS",
+      "color_aci": 250,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "A-CARP-02",
+      "color_aci": 251,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "E-COL",
+      "color_aci": 5,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "E-COL-H",
+      "color_aci": 251,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": true,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "CONDUCTOS",
+      "color_aci": 3,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "E-COL-EJES",
+      "color_aci": 254,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": true,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "AR-CUADRO DE VANO",
+      "color_aci": 1,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "ARQ-ARAOZ|TEXTO",
+      "color_aci": 7,
+      "linetype": "Continuous",
+      "frozen": true,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "ARQ-ARAOZ|A-TERRENO",
+      "color_aci": 163,
+      "linetype": "Continuous",
+      "frozen": true,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "ARQ-ARAOZ|NUMLOC",
+      "color_aci": 3,
+      "linetype": "Continuous",
+      "frozen": true,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "ARQ-ARAOZ|FLECHA",
+      "color_aci": 8,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "ARQ-ARAOZ|ESCALERA",
+      "color_aci": 4,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "ARQ-ARAOZ|CARP",
+      "color_aci": 2,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "ARQ-ARAOZ|COTAS",
+      "color_aci": 3,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "ARQ-ARAOZ|PROYECCIONES",
+      "color_aci": 9,
+      "linetype": "ARQ-ARAOZ|DASHED",
+      "frozen": true,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "ARQ-ARAOZ|MUROS",
+      "color_aci": 7,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "ARQ-ARAOZ|MUROS-VISTA",
+      "color_aci": 4,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "ARQ-ARAOZ|HATCHMUROS",
+      "color_aci": 1,
+      "linetype": "Continuous",
+      "frozen": true,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "ARQ-ARAOZ|CONDUCTOS",
+      "color_aci": 3,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "ARQ-ARAOZ|INCENDIO",
+      "color_aci": 5,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "ARQ-ARAOZ|ASCENSOR",
+      "color_aci": 2,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "ARQ-ARAOZ|BASICO",
+      "color_aci": 1,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "ARQ-ARAOZ|VANOS",
+      "color_aci": 1,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "ARQ-ARAOZ|REP-EJES",
+      "color_aci": 254,
+      "linetype": "ARQ-ARAOZ|DASHDOTX2",
+      "frozen": true,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "ARQ-ARAOZ|EJES",
+      "color_aci": 2,
+      "linetype": "ARQ-ARAOZ|DASHDOT",
+      "frozen": false,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "ARQ-ARAOZ|ESTRUCTURA",
+      "color_aci": 6,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "ARQ-ARAOZ|000-cotas estructrua",
+      "color_aci": 5,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "ANOTA\u00c7\u00c3O",
+      "color_aci": 33,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "ESQUADRIAS",
+      "color_aci": 250,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "SIMB-MURO",
+      "color_aci": 251,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "A-LETRA-GENERAL",
+      "color_aci": 154,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "A-LETRA-DETALLES",
+      "color_aci": 154,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "A-SIMBOLO-NPT-PLANTA",
+      "color_aci": 251,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "A-EQUIP-",
+      "color_aci": 8,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "IE-EJEX",
+      "color_aci": 32,
+      "linetype": "DASHDOT",
+      "frozen": true,
+      "locked": true,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "A-EJES-VACIOS",
+      "color_aci": 113,
+      "linetype": "DASHDOT",
+      "frozen": false,
+      "locked": true,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "E-TAB",
+      "color_aci": 166,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "E-TAB-H",
+      "color_aci": 251,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": true,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "E-COL-TXT",
+      "color_aci": 250,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": true,
+      "visible": false,
+      "on": true
+    }
+  ],
+  "blocks_defined": [
+    {
+      "name": "_Dot",
+      "entity_count": 2
+    },
+    {
+      "name": "M2_COTA",
+      "entity_count": 3
+    },
+    {
+      "name": "_Open90",
+      "entity_count": 3
+    },
+    {
+      "name": "Tabela_Esquadrias",
+      "entity_count": 10
+    },
+    {
+      "name": "*U4",
+      "entity_count": 30
+    },
+    {
+      "name": "*D5",
+      "entity_count": 9
+    },
+    {
+      "name": "_ArchTick",
+      "entity_count": 1
+    },
+    {
+      "name": "SIMBOLO DE EJE",
+      "entity_count": 9
+    },
+    {
+      "name": "*D8",
+      "entity_count": 9
+    },
+    {
+      "name": "*D9",
+      "entity_count": 9
+    },
+    {
+      "name": "*D10",
+      "entity_count": 9
+    },
+    {
+      "name": "*D11",
+      "entity_count": 9
+    },
+    {
+      "name": "C40.20",
+      "entity_count": 6
+    },
+    {
+      "name": "*D13",
+      "entity_count": 9
+    },
+    {
+      "name": "*D14",
+      "entity_count": 9
+    },
+    {
+      "name": "*D15",
+      "entity_count": 9
+    },
+    {
+      "name": "*D16",
+      "entity_count": 9
+    },
+    {
+      "name": "*D17",
+      "entity_count": 10
+    },
+    {
+      "name": "*D18",
+      "entity_count": 9
+    },
+    {
+      "name": "PUERTA BATIENTE",
+      "entity_count": 46
+    },
+    {
+      "name": "*D20",
+      "entity_count": 10
+    },
+    {
+      "name": "*D21",
+      "entity_count": 9
+    },
+    {
+      "name": "*D22",
+      "entity_count": 9
+    },
+    {
+      "name": "*D23",
+      "entity_count": 9
+    },
+    {
+      "name": "*D24",
+      "entity_count": 10
+    },
+    {
+      "name": "ARQ-ARAOZ",
+      "entity_count": 1
+    },
+    {
+      "name": "*D26",
+      "entity_count": 9
+    },
+    {
+      "name": "*D27",
+      "entity_count": 9
+    },
+    {
+      "name": "*D28",
+      "entity_count": 9
+    },
+    {
+      "name": "*D30",
+      "entity_count": 9
+    },
+    {
+      "name": "*D31",
+      "entity_count": 9
+    },
+    {
+      "name": "*D32",
+      "entity_count": 9
+    },
+    {
+      "name": "*D33",
+      "entity_count": 9
+    },
+    {
+      "name": "*D34",
+      "entity_count": 6
+    },
+    {
+      "name": "*D35",
+      "entity_count": 7
+    },
+    {
+      "name": "*D36",
+      "entity_count": 6
+    },
+    {
+      "name": "*D37",
+      "entity_count": 6
+    },
+    {
+      "name": "*U38",
+      "entity_count": 46
+    },
+    {
+      "name": "*U39",
+      "entity_count": 46
+    },
+    {
+      "name": "_Oblique",
+      "entity_count": 1
+    },
+    {
+      "name": "_DotSmall",
+      "entity_count": 1
+    },
+    {
+      "name": "ele03",
+      "entity_count": 21
+    },
+    {
+      "name": "VENTANA BAJA SIMPLE",
+      "entity_count": 14
+    },
+    {
+      "name": "*D45",
+      "entity_count": 7
+    },
+    {
+      "name": "*D46",
+      "entity_count": 6
+    },
+    {
+      "name": "*D47",
+      "entity_count": 7
+    },
+    {
+      "name": "*D48",
+      "entity_count": 7
+    },
+    {
+      "name": "*D49",
+      "entity_count": 7
+    },
+    {
+      "name": "*D50",
+      "entity_count": 7
+    },
+    {
+      "name": "*D51",
+      "entity_count": 7
+    },
+    {
+      "name": "*D52",
+      "entity_count": 7
+    },
+    {
+      "name": "*D53",
+      "entity_count": 9
+    },
+    {
+      "name": "*D54",
+      "entity_count": 7
+    },
+    {
+      "name": "*D55",
+      "entity_count": 7
+    },
+    {
+      "name": "*U56",
+      "entity_count": 14
+    },
+    {
+      "name": "*D57",
+      "entity_count": 10
+    },
+    {
+      "name": "*D58",
+      "entity_count": 9
+    },
+    {
+      "name": "*U59",
+      "entity_count": 14
+    },
+    {
+      "name": "*D60",
+      "entity_count": 10
+    },
+    {
+      "name": "*D61",
+      "entity_count": 7
+    },
+    {
+      "name": "*D62",
+      "entity_count": 7
+    },
+    {
+      "name": "*D63",
+      "entity_count": 6
+    },
+    {
+      "name": "*D64",
+      "entity_count": 7
+    },
+    {
+      "name": "*D65",
+      "entity_count": 7
+    },
+    {
+      "name": "*U66",
+      "entity_count": 14
+    },
+    {
+      "name": "*D67",
+      "entity_count": 7
+    },
+    {
+      "name": "*D68",
+      "entity_count": 9
+    },
+    {
+      "name": "_None",
+      "entity_count": 0
+    },
+    {
+      "name": "SIMBOLO NIVEL PISO CORTE",
+      "entity_count": 12
+    },
+    {
+      "name": "*D71",
+      "entity_count": 6
+    },
+    {
+      "name": "*D72",
+      "entity_count": 7
+    },
+    {
+      "name": "*D73",
+      "entity_count": 9
+    },
+    {
+      "name": "*U74",
+      "entity_count": 46
+    },
+    {
+      "name": "*U75",
+      "entity_count": 46
+    },
+    {
+      "name": "*D76",
+      "entity_count": 7
+    },
+    {
+      "name": "*D77",
+      "entity_count": 9
+    },
+    {
+      "name": "*D78",
+      "entity_count": 10
+    },
+    {
+      "name": "*D79",
+      "entity_count": 9
+    },
+    {
+      "name": "*D80",
+      "entity_count": 9
+    },
+    {
+      "name": "*D81",
+      "entity_count": 9
+    },
+    {
+      "name": "*D82",
+      "entity_count": 9
+    },
+    {
+      "name": "*D83",
+      "entity_count": 9
+    },
+    {
+      "name": "*D84",
+      "entity_count": 9
+    },
+    {
+      "name": "*D85",
+      "entity_count": 9
+    },
+    {
+      "name": "*D87",
+      "entity_count": 7
+    },
+    {
+      "name": "*D88",
+      "entity_count": 7
+    },
+    {
+      "name": "*D89",
+      "entity_count": 10
+    },
+    {
+      "name": "*D90",
+      "entity_count": 9
+    },
+    {
+      "name": "*D92",
+      "entity_count": 10
+    },
+    {
+      "name": "*D93",
+      "entity_count": 6
+    },
+    {
+      "name": "*D94",
+      "entity_count": 7
+    },
+    {
+      "name": "*D95",
+      "entity_count": 9
+    },
+    {
+      "name": "*D96",
+      "entity_count": 9
+    },
+    {
+      "name": "*D97",
+      "entity_count": 9
+    },
+    {
+      "name": "*D98",
+      "entity_count": 9
+    },
+    {
+      "name": "*D99",
+      "entity_count": 10
+    },
+    {
+      "name": "*D100",
+      "entity_count": 9
+    },
+    {
+      "name": "*D101",
+      "entity_count": 9
+    },
+    {
+      "name": "*D102",
+      "entity_count": 9
+    },
+    {
+      "name": "*D103",
+      "entity_count": 9
+    },
+    {
+      "name": "*D104",
+      "entity_count": 10
+    },
+    {
+      "name": "*D105",
+      "entity_count": 9
+    },
+    {
+      "name": "*D106",
+      "entity_count": 7
+    },
+    {
+      "name": "*D107",
+      "entity_count": 7
+    },
+    {
+      "name": "*D108",
+      "entity_count": 7
+    },
+    {
+      "name": "*U109",
+      "entity_count": 14
+    },
+    {
+      "name": "*U110",
+      "entity_count": 14
+    },
+    {
+      "name": "*D111",
+      "entity_count": 7
+    },
+    {
+      "name": "*D112",
+      "entity_count": 10
+    },
+    {
+      "name": "*D113",
+      "entity_count": 6
+    },
+    {
+      "name": "*D114",
+      "entity_count": 6
+    },
+    {
+      "name": "*D115",
+      "entity_count": 6
+    },
+    {
+      "name": "*D116",
+      "entity_count": 10
+    },
+    {
+      "name": "*U117",
+      "entity_count": 14
+    },
+    {
+      "name": "*U118",
+      "entity_count": 14
+    },
+    {
+      "name": "*D119",
+      "entity_count": 6
+    },
+    {
+      "name": "*D120",
+      "entity_count": 9
+    },
+    {
+      "name": "*D121",
+      "entity_count": 10
+    },
+    {
+      "name": "*D122",
+      "entity_count": 7
+    },
+    {
+      "name": "*D123",
+      "entity_count": 6
+    },
+    {
+      "name": "*D124",
+      "entity_count": 6
+    },
+    {
+      "name": "*D125",
+      "entity_count": 7
+    },
+    {
+      "name": "*D126",
+      "entity_count": 7
+    },
+    {
+      "name": "*D127",
+      "entity_count": 10
+    },
+    {
+      "name": "*D128",
+      "entity_count": 9
+    },
+    {
+      "name": "*D129",
+      "entity_count": 10
+    },
+    {
+      "name": "*D130",
+      "entity_count": 9
+    },
+    {
+      "name": "*D131",
+      "entity_count": 10
+    },
+    {
+      "name": "*D132",
+      "entity_count": 6
+    },
+    {
+      "name": "*D133",
+      "entity_count": 10
+    },
+    {
+      "name": "*D134",
+      "entity_count": 9
+    },
+    {
+      "name": "*U135",
+      "entity_count": 46
+    },
+    {
+      "name": "*D136",
+      "entity_count": 10
+    },
+    {
+      "name": "*D137",
+      "entity_count": 9
+    },
+    {
+      "name": "*D138",
+      "entity_count": 9
+    },
+    {
+      "name": "*U139",
+      "entity_count": 46
+    },
+    {
+      "name": "*D140",
+      "entity_count": 7
+    },
+    {
+      "name": "*D141",
+      "entity_count": 9
+    },
+    {
+      "name": "*D142",
+      "entity_count": 9
+    },
+    {
+      "name": "*D143",
+      "entity_count": 7
+    },
+    {
+      "name": "*D144",
+      "entity_count": 7
+    },
+    {
+      "name": "*U145",
+      "entity_count": 46
+    },
+    {
+      "name": "*U146",
+      "entity_count": 14
+    },
+    {
+      "name": "*D147",
+      "entity_count": 10
+    },
+    {
+      "name": "*D148",
+      "entity_count": 6
+    },
+    {
+      "name": "*D149",
+      "entity_count": 6
+    },
+    {
+      "name": "*D150",
+      "entity_count": 7
+    },
+    {
+      "name": "*D151",
+      "entity_count": 7
+    },
+    {
+      "name": "*D152",
+      "entity_count": 7
+    },
+    {
+      "name": "*D153",
+      "entity_count": 7
+    },
+    {
+      "name": "*D154",
+      "entity_count": 6
+    },
+    {
+      "name": "*D155",
+      "entity_count": 6
+    },
+    {
+      "name": "*D156",
+      "entity_count": 7
+    },
+    {
+      "name": "*D157",
+      "entity_count": 7
+    },
+    {
+      "name": "*D158",
+      "entity_count": 8
+    },
+    {
+      "name": "*D159",
+      "entity_count": 9
+    },
+    {
+      "name": "*D160",
+      "entity_count": 7
+    },
+    {
+      "name": "*U161",
+      "entity_count": 46
+    },
+    {
+      "name": "*D162",
+      "entity_count": 7
+    },
+    {
+      "name": "*D163",
+      "entity_count": 7
+    },
+    {
+      "name": "*D164",
+      "entity_count": 7
+    },
+    {
+      "name": "*D165",
+      "entity_count": 9
+    },
+    {
+      "name": "*D166",
+      "entity_count": 9
+    },
+    {
+      "name": "*D167",
+      "entity_count": 7
+    },
+    {
+      "name": "*D168",
+      "entity_count": 7
+    },
+    {
+      "name": "*D169",
+      "entity_count": 7
+    },
+    {
+      "name": "*D170",
+      "entity_count": 7
+    },
+    {
+      "name": "*D171",
+      "entity_count": 7
+    },
+    {
+      "name": "*D172",
+      "entity_count": 6
+    },
+    {
+      "name": "*D173",
+      "entity_count": 7
+    },
+    {
+      "name": "*D174",
+      "entity_count": 9
+    },
+    {
+      "name": "*D175",
+      "entity_count": 10
+    },
+    {
+      "name": "*D176",
+      "entity_count": 9
+    },
+    {
+      "name": "*D177",
+      "entity_count": 9
+    },
+    {
+      "name": "*D178",
+      "entity_count": 7
+    },
+    {
+      "name": "*D179",
+      "entity_count": 6
+    },
+    {
+      "name": "*D180",
+      "entity_count": 7
+    },
+    {
+      "name": "*D181",
+      "entity_count": 9
+    },
+    {
+      "name": "*D182",
+      "entity_count": 10
+    },
+    {
+      "name": "*D183",
+      "entity_count": 9
+    },
+    {
+      "name": "*D184",
+      "entity_count": 9
+    },
+    {
+      "name": "*D185",
+      "entity_count": 10
+    },
+    {
+      "name": "*U186",
+      "entity_count": 46
+    },
+    {
+      "name": "*D187",
+      "entity_count": 7
+    },
+    {
+      "name": "*U188",
+      "entity_count": 14
+    },
+    {
+      "name": "*D189",
+      "entity_count": 6
+    },
+    {
+      "name": "*D190",
+      "entity_count": 7
+    },
+    {
+      "name": "*D191",
+      "entity_count": 6
+    },
+    {
+      "name": "*U192",
+      "entity_count": 14
+    },
+    {
+      "name": "*D193",
+      "entity_count": 7
+    },
+    {
+      "name": "*D194",
+      "entity_count": 10
+    },
+    {
+      "name": "*D195",
+      "entity_count": 10
+    },
+    {
+      "name": "*D196",
+      "entity_count": 9
+    },
+    {
+      "name": "*D197",
+      "entity_count": 10
+    },
+    {
+      "name": "*D198",
+      "entity_count": 10
+    },
+    {
+      "name": "*D199",
+      "entity_count": 7
+    },
+    {
+      "name": "*D200",
+      "entity_count": 10
+    },
+    {
+      "name": "*D201",
+      "entity_count": 9
+    },
+    {
+      "name": "*U202",
+      "entity_count": 46
+    },
+    {
+      "name": "*D203",
+      "entity_count": 10
+    },
+    {
+      "name": "*D204",
+      "entity_count": 9
+    },
+    {
+      "name": "*D205",
+      "entity_count": 9
+    },
+    {
+      "name": "*D206",
+      "entity_count": 9
+    },
+    {
+      "name": "*D207",
+      "entity_count": 10
+    },
+    {
+      "name": "*D208",
+      "entity_count": 7
+    },
+    {
+      "name": "*D209",
+      "entity_count": 9
+    },
+    {
+      "name": "*D210",
+      "entity_count": 10
+    },
+    {
+      "name": "*D211",
+      "entity_count": 9
+    },
+    {
+      "name": "*D212",
+      "entity_count": 9
+    },
+    {
+      "name": "*D213",
+      "entity_count": 9
+    },
+    {
+      "name": "*D214",
+      "entity_count": 9
+    },
+    {
+      "name": "*D215",
+      "entity_count": 9
+    },
+    {
+      "name": "*U216",
+      "entity_count": 12
+    },
+    {
+      "name": "*D217",
+      "entity_count": 7
+    },
+    {
+      "name": "*D218",
+      "entity_count": 7
+    },
+    {
+      "name": "*D219",
+      "entity_count": 10
+    },
+    {
+      "name": "*D220",
+      "entity_count": 10
+    },
+    {
+      "name": "*D221",
+      "entity_count": 10
+    },
+    {
+      "name": "*D222",
+      "entity_count": 10
+    },
+    {
+      "name": "*D223",
+      "entity_count": 10
+    },
+    {
+      "name": "*D224",
+      "entity_count": 10
+    },
+    {
+      "name": "*D225",
+      "entity_count": 10
+    },
+    {
+      "name": "*D226",
+      "entity_count": 10
+    },
+    {
+      "name": "*D227",
+      "entity_count": 10
+    },
+    {
+      "name": "*D228",
+      "entity_count": 6
+    },
+    {
+      "name": "_DotBlank",
+      "entity_count": 2
+    },
+    {
+      "name": "*D230",
+      "entity_count": 10
+    },
+    {
+      "name": "*D231",
+      "entity_count": 9
+    },
+    {
+      "name": "*U233",
+      "entity_count": 9
+    },
+    {
+      "name": "*U234",
+      "entity_count": 9
+    },
+    {
+      "name": "*U235",
+      "entity_count": 9
+    },
+    {
+      "name": "*D237",
+      "entity_count": 10
+    },
+    {
+      "name": "*D238",
+      "entity_count": 9
+    },
+    {
+      "name": "*D239",
+      "entity_count": 9
+    },
+    {
+      "name": "*D240",
+      "entity_count": 9
+    },
+    {
+      "name": "*D241",
+      "entity_count": 10
+    },
+    {
+      "name": "*D242",
+      "entity_count": 10
+    },
+    {
+      "name": "*D243",
+      "entity_count": 10
+    },
+    {
+      "name": "*D244",
+      "entity_count": 7
+    },
+    {
+      "name": "*D245",
+      "entity_count": 10
+    },
+    {
+      "name": "*D246",
+      "entity_count": 9
+    },
+    {
+      "name": "*D247",
+      "entity_count": 10
+    },
+    {
+      "name": "*D248",
+      "entity_count": 10
+    },
+    {
+      "name": "*D249",
+      "entity_count": 9
+    },
+    {
+      "name": "*D250",
+      "entity_count": 10
+    },
+    {
+      "name": "*D251",
+      "entity_count": 9
+    },
+    {
+      "name": "*D252",
+      "entity_count": 10
+    },
+    {
+      "name": "*D253",
+      "entity_count": 9
+    },
+    {
+      "name": "*D254",
+      "entity_count": 9
+    },
+    {
+      "name": "*D255",
+      "entity_count": 10
+    },
+    {
+      "name": "*D256",
+      "entity_count": 10
+    },
+    {
+      "name": "*D257",
+      "entity_count": 10
+    },
+    {
+      "name": "*D258",
+      "entity_count": 9
+    },
+    {
+      "name": "*D259",
+      "entity_count": 10
+    },
+    {
+      "name": "*D260",
+      "entity_count": 9
+    },
+    {
+      "name": "*U261",
+      "entity_count": 9
+    },
+    {
+      "name": "*U262",
+      "entity_count": 9
+    },
+    {
+      "name": "*D263",
+      "entity_count": 7
+    },
+    {
+      "name": "*D264",
+      "entity_count": 7
+    },
+    {
+      "name": "*D265",
+      "entity_count": 6
+    },
+    {
+      "name": "*D266",
+      "entity_count": 6
+    },
+    {
+      "name": "*D267",
+      "entity_count": 10
+    },
+    {
+      "name": "*D268",
+      "entity_count": 10
+    },
+    {
+      "name": "*D269",
+      "entity_count": 6
+    },
+    {
+      "name": "*D270",
+      "entity_count": 6
+    },
+    {
+      "name": "*D271",
+      "entity_count": 7
+    },
+    {
+      "name": "*D272",
+      "entity_count": 10
+    },
+    {
+      "name": "*D273",
+      "entity_count": 10
+    },
+    {
+      "name": "*D276",
+      "entity_count": 7
+    },
+    {
+      "name": "*D277",
+      "entity_count": 6
+    },
+    {
+      "name": "*D278",
+      "entity_count": 6
+    },
+    {
+      "name": "*D279",
+      "entity_count": 9
+    },
+    {
+      "name": "SIMB-MURO",
+      "entity_count": 3
+    },
+    {
+      "name": "*D281",
+      "entity_count": 10
+    },
+    {
+      "name": "*U282",
+      "entity_count": 9
+    },
+    {
+      "name": "*U283",
+      "entity_count": 46
+    },
+    {
+      "name": "*D286",
+      "entity_count": 9
+    },
+    {
+      "name": "*D288",
+      "entity_count": 6
+    },
+    {
+      "name": "*D290",
+      "entity_count": 6
+    },
+    {
+      "name": "*D291",
+      "entity_count": 10
+    },
+    {
+      "name": "*D292",
+      "entity_count": 7
+    },
+    {
+      "name": "*D293",
+      "entity_count": 9
+    },
+    {
+      "name": "*D294",
+      "entity_count": 9
+    },
+    {
+      "name": "*D295",
+      "entity_count": 9
+    },
+    {
+      "name": "*D296",
+      "entity_count": 7
+    },
+    {
+      "name": "*D297",
+      "entity_count": 6
+    },
+    {
+      "name": "*D298",
+      "entity_count": 7
+    },
+    {
+      "name": "*D299",
+      "entity_count": 6
+    },
+    {
+      "name": "*D300",
+      "entity_count": 7
+    },
+    {
+      "name": "*D301",
+      "entity_count": 9
+    },
+    {
+      "name": "*D302",
+      "entity_count": 10
+    },
+    {
+      "name": "*D303",
+      "entity_count": 10
+    },
+    {
+      "name": "*D304",
+      "entity_count": 9
+    },
+    {
+      "name": "*D305",
+      "entity_count": 10
+    },
+    {
+      "name": "*D306",
+      "entity_count": 9
+    },
+    {
+      "name": "*D308",
+      "entity_count": 7
+    },
+    {
+      "name": "*D309",
+      "entity_count": 7
+    },
+    {
+      "name": "*D311",
+      "entity_count": 6
+    },
+    {
+      "name": "*D312",
+      "entity_count": 6
+    },
+    {
+      "name": "*D313",
+      "entity_count": 7
+    },
+    {
+      "name": "*U314",
+      "entity_count": 14
+    },
+    {
+      "name": "*D315",
+      "entity_count": 6
+    },
+    {
+      "name": "*D316",
+      "entity_count": 6
+    },
+    {
+      "name": "*D318",
+      "entity_count": 7
+    },
+    {
+      "name": "*D319",
+      "entity_count": 7
+    },
+    {
+      "name": "*D320",
+      "entity_count": 7
+    },
+    {
+      "name": "*D321",
+      "entity_count": 7
+    },
+    {
+      "name": "*D322",
+      "entity_count": 9
+    },
+    {
+      "name": "*D323",
+      "entity_count": 7
+    },
+    {
+      "name": "*D325",
+      "entity_count": 6
+    },
+    {
+      "name": "*D326",
+      "entity_count": 8
+    },
+    {
+      "name": "*D327",
+      "entity_count": 7
+    },
+    {
+      "name": "*D328",
+      "entity_count": 7
+    },
+    {
+      "name": "*U329",
+      "entity_count": 46
+    },
+    {
+      "name": "*D331",
+      "entity_count": 6
+    },
+    {
+      "name": "*D332",
+      "entity_count": 10
+    },
+    {
+      "name": "*D334",
+      "entity_count": 9
+    },
+    {
+      "name": "*D335",
+      "entity_count": 9
+    },
+    {
+      "name": "*D336",
+      "entity_count": 7
+    },
+    {
+      "name": "*D337",
+      "entity_count": 7
+    },
+    {
+      "name": "*D338",
+      "entity_count": 7
+    },
+    {
+      "name": "*D339",
+      "entity_count": 7
+    },
+    {
+      "name": "*D340",
+      "entity_count": 7
+    },
+    {
+      "name": "*D341",
+      "entity_count": 7
+    },
+    {
+      "name": "*D342",
+      "entity_count": 7
+    },
+    {
+      "name": "*D343",
+      "entity_count": 7
+    },
+    {
+      "name": "*D344",
+      "entity_count": 7
+    },
+    {
+      "name": "*D345",
+      "entity_count": 7
+    },
+    {
+      "name": "*D346",
+      "entity_count": 7
+    },
+    {
+      "name": "*D347",
+      "entity_count": 7
+    },
+    {
+      "name": "*D348",
+      "entity_count": 7
+    },
+    {
+      "name": "*D349",
+      "entity_count": 9
+    },
+    {
+      "name": "*D351",
+      "entity_count": 7
+    },
+    {
+      "name": "*D352",
+      "entity_count": 7
+    },
+    {
+      "name": "*D353",
+      "entity_count": 7
+    },
+    {
+      "name": "*D354",
+      "entity_count": 7
+    },
+    {
+      "name": "*D356",
+      "entity_count": 7
+    },
+    {
+      "name": "*U357",
+      "entity_count": 14
+    },
+    {
+      "name": "*U358",
+      "entity_count": 14
+    },
+    {
+      "name": "*D359",
+      "entity_count": 6
+    },
+    {
+      "name": "*D360",
+      "entity_count": 6
+    },
+    {
+      "name": "*U361",
+      "entity_count": 14
+    },
+    {
+      "name": "*U362",
+      "entity_count": 14
+    },
+    {
+      "name": "*U363",
+      "entity_count": 14
+    },
+    {
+      "name": "*D364",
+      "entity_count": 6
+    },
+    {
+      "name": "*D365",
+      "entity_count": 8
+    },
+    {
+      "name": "*D366",
+      "entity_count": 7
+    },
+    {
+      "name": "*D367",
+      "entity_count": 9
+    },
+    {
+      "name": "*D368",
+      "entity_count": 7
+    },
+    {
+      "name": "*D369",
+      "entity_count": 9
+    },
+    {
+      "name": "*D370",
+      "entity_count": 8
+    },
+    {
+      "name": "*D371",
+      "entity_count": 7
+    },
+    {
+      "name": "*D372",
+      "entity_count": 7
+    },
+    {
+      "name": "*D373",
+      "entity_count": 9
+    },
+    {
+      "name": "*D374",
+      "entity_count": 7
+    },
+    {
+      "name": "*D375",
+      "entity_count": 10
+    },
+    {
+      "name": "*D376",
+      "entity_count": 9
+    },
+    {
+      "name": "*D377",
+      "entity_count": 9
+    },
+    {
+      "name": "*D378",
+      "entity_count": 9
+    },
+    {
+      "name": "*D379",
+      "entity_count": 9
+    },
+    {
+      "name": "*D380",
+      "entity_count": 6
+    },
+    {
+      "name": "*D381",
+      "entity_count": 10
+    },
+    {
+      "name": "*D383",
+      "entity_count": 10
+    },
+    {
+      "name": "*D384",
+      "entity_count": 8
+    },
+    {
+      "name": "*D385",
+      "entity_count": 7
+    },
+    {
+      "name": "*D386",
+      "entity_count": 9
+    },
+    {
+      "name": "*D387",
+      "entity_count": 9
+    }
+  ],
+  "entities_per_type": {
+    "LINE": 619,
+    "HATCH": 23,
+    "CIRCLE": 14,
+    "TEXT": 83,
+    "POLYLINE": 60,
+    "MTEXT": 26,
+    "INSERT": 197,
+    "DIM": 291,
+    "AcDb2LineAngularDimension": 3
+  },
+  "entities_per_layer": {
+    "A-TERRENO": 4,
+    "0": 254,
+    "REP-EJES": 12,
+    "A-EJES": 13,
+    "Defpoints": 27,
+    "REP-COTAS": 152,
+    "E-EJES": 30,
+    "A-MURO-MED": 25,
+    "A-MURO-MAMP": 271,
+    "A-SOLADOS": 11,
+    "E-COL": 22,
+    "CONDUCTOS": 25,
+    "A-CARP-02": 52,
+    "A-COTA-1-50": 135,
+    "0-REF": 1,
+    "E-TAB": 6,
+    "A-SIMBOLO-NPT-PLANTA": 55,
+    "A-EQUIP-": 67,
+    "IE-EJEX": 14,
+    "A-EJES-VACIOS": 10,
+    "E-TAB-H": 8,
+    "SIMB-MURO": 122
+  },
+  "entities_per_layer_type": {
+    "A-TERRENO": {
+      "LINE": 4
+    },
+    "0": {
+      "LINE": 220,
+      "HATCH": 10,
+      "CIRCLE": 10,
+      "TEXT": 14
+    },
+    "REP-EJES": {
+      "LINE": 2,
+      "HATCH": 4,
+      "POLYLINE": 4,
+      "TEXT": 2
+    },
+    "A-EJES": {
+      "LINE": 4,
+      "TEXT": 6,
+      "AcDb2LineAngularDimension": 3
+    },
+    "Defpoints": {
+      "MTEXT": 26,
+      "INSERT": 1
+    },
+    "REP-COTAS": {
+      "DIM": 151,
+      "LINE": 1
+    },
+    "E-EJES": {
+      "INSERT": 20,
+      "DIM": 10
+    },
+    "A-MURO-MED": {
+      "LINE": 19,
+      "POLYLINE": 6
+    },
+    "A-MURO-MAMP": {
+      "LINE": 261,
+      "POLYLINE": 10
+    },
+    "A-SOLADOS": {
+      "LINE": 11
+    },
+    "E-COL": {
+      "INSERT": 21,
+      "LINE": 1
+    },
+    "CONDUCTOS": {
+      "LINE": 12,
+      "POLYLINE": 13
+    },
+    "A-CARP-02": {
+      "LINE": 12,
+      "INSERT": 40
+    },
+    "A-COTA-1-50": {
+      "DIM": 130,
+      "INSERT": 5
+    },
+    "0-REF": {
+      "INSERT": 1
+    },
+    "E-TAB": {
+      "LINE": 2,
+      "POLYLINE": 4
+    },
+    "A-SIMBOLO-NPT-PLANTA": {
+      "INSERT": 29,
+      "POLYLINE": 1,
+      "LINE": 16,
+      "TEXT": 3,
+      "CIRCLE": 3,
+      "HATCH": 3
+    },
+    "A-EQUIP-": {
+      "POLYLINE": 17,
+      "LINE": 31,
+      "CIRCLE": 1,
+      "HATCH": 2,
+      "TEXT": 16
+    },
+    "IE-EJEX": {
+      "LINE": 13,
+      "POLYLINE": 1
+    },
+    "A-EJES-VACIOS": {
+      "LINE": 10
+    },
+    "E-TAB-H": {
+      "POLYLINE": 4,
+      "HATCH": 4
+    },
+    "SIMB-MURO": {
+      "TEXT": 42,
+      "INSERT": 80
+    }
+  },
+  "sample_texts": [
+    [
+      "0",
+      "3"
+    ],
+    [
+      "0",
+      "4"
+    ],
+    [
+      "0",
+      "5"
+    ],
+    [
+      "0",
+      "2"
+    ],
+    [
+      "0",
+      "1"
+    ],
+    [
+      "0",
+      "INT |"
+    ],
+    [
+      "0",
+      "| INT"
+    ],
+    [
+      "A-EJES",
+      "L.O"
+    ],
+    [
+      "A-EJES",
+      "E.D.P"
+    ],
+    [
+      "A-EJES",
+      "L.O"
+    ],
+    [
+      "A-EJES",
+      "E.D.P"
+    ],
+    [
+      "A-EJES",
+      "E.D.P"
+    ],
+    [
+      "A-EJES",
+      "E.D.P"
+    ],
+    [
+      "REP-EJES",
+      "E.R.1"
+    ],
+    [
+      "REP-EJES",
+      "E.R.2"
+    ],
+    [
+      "0",
+      "3"
+    ],
+    [
+      "0",
+      "4"
+    ],
+    [
+      "0",
+      "5"
+    ],
+    [
+      "0",
+      "2"
+    ],
+    [
+      "0",
+      "1"
+    ],
+    [
+      "0",
+      "INT |"
+    ],
+    [
+      "0",
+      "| INT"
+    ],
+    [
+      "A-SIMBOLO-NPT-PLANTA",
+      "NPT+7.634"
+    ],
+    [
+      "A-EQUIP-",
+      "1"
+    ],
+    [
+      "A-SIMBOLO-NPT-PLANTA",
+      "NPT+7.634"
+    ]
+  ],
+  "entities_total": 1358,
+  "sample_inserts": [
+    [
+      "Defpoints",
+      "*U4",
+      [
+        -187.33612017320905,
+        -1.421560811068673,
+        0.0
+      ]
+    ],
+    [
+      "E-EJES",
+      "*U233",
+      [
+        0.0,
+        23.400000000000006,
+        0.0
+      ]
+    ],
+    [
+      "E-EJES",
+      "*U235",
+      [
+        1.0000000000000002,
+        23.500000000000007,
+        0.0
+      ]
+    ],
+    [
+      "E-EJES",
+      "*U282",
+      [
+        3.90000000000009,
+        23.400000000000002,
+        0.0
+      ]
+    ],
+    [
+      "E-EJES",
+      "*U233",
+      [
+        12.139999999999997,
+        23.400000000000006,
+        0.0
+      ]
+    ],
+    [
+      "E-EJES",
+      "*U233",
+      [
+        15.439999999999998,
+        23.400000000000006,
+        0.0
+      ]
+    ],
+    [
+      "E-COL",
+      "C40.20",
+      [
+        0.19999999999999996,
+        15.359940299988084,
+        0.0
+      ]
+    ],
+    [
+      "E-EJES",
+      "*U234",
+      [
+        0.0,
+        15.359940299988084,
+        0.0
+      ]
+    ],
+    [
+      "E-COL",
+      "C40.20",
+      [
+        3.8999992529686396,
+        23.29999618530276,
+        0.0
+      ]
+    ],
+    [
+      "A-CARP-02",
+      "*U39",
+      [
+        3.714969558715929,
+        19.779940299988084,
+        0.0
+      ]
+    ],
+    [
+      "A-CARP-02",
+      "*U161",
+      [
+        2.7699798583984374,
+        19.57993724822999,
+        0.0
+      ]
+    ],
+    [
+      "0-REF",
+      "ARQ-ARAOZ",
+      [
+        0.0,
+        -0.02995475617413995,
+        0.0
+      ]
+    ],
+    [
+      "E-COL",
+      "C40.20",
+      [
+        3.799999252968642,
+        20.60000381469725,
+        0.0
+      ]
+    ],
+    [
+      "E-COL",
+      "C40.20",
+      [
+        0.1999999999999999,
+        23.299999999999997,
+        0.0
+      ]
+    ],
+    [
+      "E-COL",
+      "C40.20",
+      [
+        12.139999999999997,
+        23.299996185302764,
+        0.0
+      ]
+    ],
+    [
+      "E-COL",
+      "C40.20",
+      [
+        15.239999999999998,
+        23.29999618530276,
+        0.0
+      ]
+    ],
+    [
+      "A-CARP-02",
+      "*U38",
+      [
+        3.714969558715929,
+        18.079940299988095,
+        0.0
+      ]
+    ],
+    [
+      "E-COL",
+      "C40.20",
+      [
+        0.0,
+        20.60000381469725,
+        0.0
+      ]
+    ],
+    [
+      "E-EJES",
+      "*U235",
+      [
+        1.0000000000000002,
+        20.600003814697256,
+        0.0
+      ]
+    ],
+    [
+      "E-COL",
+      "C40.20",
+      [
+        3.900000000000091,
+        15.359940299988086,
+        0.0
+      ]
+    ],
+    [
+      "A-CARP-02",
+      "*U139",
+      [
+        7.261493587493897,
+        16.55994029998814,
+        0.0
+      ]
+    ],
+    [
+      "A-CARP-02",
+      "*U110",
+      [
+        1.0576427329803715,
+        22.940492331221016,
+        0.0
+      ]
+    ],
+    [
+      "E-COL",
+      "C40.20",
+      [
+        12.240001494062891,
+        20.60000381469725,
+        0.0
+      ]
+    ],
+    [
+      "A-CARP-02",
+      "*U56",
+      [
+        4.967484796649072,
+        20.89051665459106,
+        0.0
+      ]
+    ],
+    [
+      "A-CARP-02",
+      "*U59",
+      [
+        6.035155391732001,
+        20.891727567409482,
+        0.0
+      ]
+    ],
+    [
+      "A-CARP-02",
+      "*U146",
+      [
+        7.876727396829056,
+        20.89173899864283,
+        0.0
+      ]
+    ],
+    [
+      "A-CARP-02",
+      "*U59",
+      [
+        10.004776802024098,
+        20.89173899864283,
+        0.0
+      ]
+    ],
+    [
+      "A-CARP-02",
+      "*U66",
+      [
+        10.519984796649673,
+        20.89051665459106,
+        0.0
+      ]
+    ],
+    [
+      "A-CARP-02",
+      "*U109",
+      [
+        13.825184572200657,
+        22.990492331221077,
+        0.0
+      ]
+    ],
+    [
+      "A-CARP-02",
+      "*U283",
+      [
+        9.399492311477669,
+        14.219989282217078,
+        0.0
+      ]
+    ],
+    [
+      "A-CARP-02",
+      "*U117",
+      [
+        1.4029390948148426,
+        15.92699837342129,
+        0.0
+      ]
+    ],
+    [
+      "A-CARP-02",
+      "*U118",
+      [
+        5.635155391731693,
+        15.949320642679261,
+        0.0
+      ]
+    ],
+    [
+      "A-CARP-02",
+      "*U75",
+      [
+        12.099492311477716,
+        12.279991304006558,
+        0.0
+      ]
+    ],
+    [
+      "E-EJES",
+      "*U233",
+      [
+        0.0,
+        0.10000000000000134,
+        0.0
+      ]
+    ],
+    [
+      "E-EJES",
+      "*U282",
+      [
+        3.900000000000091,
+        0.10000000000001208,
+        0.0
+      ]
+    ],
+    [
+      "E-EJES",
+      "*U233",
+      [
+        12.139999999999997,
+        0.10000000000000134,
+        0.0
+      ]
+    ],
+    [
+      "E-EJES",
+      "*U233",
+      [
+        15.439999999999998,
+        0.10000000000000134,
+        0.0
+      ]
+    ],
+    [
+      "E-EJES",
+      "*U234",
+      [
+        0.0,
+        8.140059700011923,
+        0.0
+      ]
+    ],
+    [
+      "A-COTA-1-50",
+      "C40.20",
+      [
+        3.8999992529686396,
+        0.20000381469724707,
+        0.0
+      ]
+    ],
+    [
+      "A-CARP-02",
+      "*U329",
+      [
+        3.714969558715929,
+        3.720059700011923,
+        0.0
+      ]
+    ],
+    [
+      "A-COTA-1-50",
+      "C40.20",
+      [
+        0.1999999999999999,
+        0.20000000000000986,
+        0.0
+      ]
+    ],
+    [
+      "A-COTA-1-50",
+      "C40.20",
+      [
+        15.239999999999998,
+        0.20000381469724707,
+        0.0
+      ]
+    ],
+    [
+      "A-COTA-1-50",
+      "C40.20",
+      [
+        12.139999999999997,
+        0.20000381469724351,
+        0.0
+      ]
+    ],
+    [
+      "A-CARP-02",
+      "*U38",
+      [
+        3.714969558715929,
+        5.420059700011912,
+        0.0
+      ]
+    ],
+    [
+      "E-EJES",
+      "*U235",
+      [
+        1.0000000000000002,
+        2.8999961853027507,
+        0.0
+      ]
+    ],
+    [
+      "A-COTA-1-50",
+      "C40.20",
+      [
+        12.240001494062891,
+        2.899996185302758,
+        0.0
+      ]
+    ],
+    [
+      "E-COL",
+      "C40.20",
+      [
+        15.439999999999998,
+        20.60000381469725,
+        0.0
+      ]
+    ],
+    [
+      "A-CARP-02",
+      "*U135",
+      [
+        11.849492311477661,
+        15.409940299988138,
+        0.0
+      ]
+    ],
+    [
+      "A-CARP-02",
+      "*U145",
+      [
+        9.019999999999996,
+        17.87992225798605,
+        0.0
+      ]
+    ],
+    [
+      "A-CARP-02",
+      "*U202",
+      [
+        13.249449189570596,
+        17.88008677784978,
+        0.0
+      ]
+    ]
+  ]
+}

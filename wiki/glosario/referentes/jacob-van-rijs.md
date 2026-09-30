@@ -12,11 +12,11 @@ origen: https://www.mvrdv.com
 
 > Co-fundador de MVRDV — vivienda, cultura y transformación con foco en reutilización y carbono.
 
-- [Quién es](#quién-es)
-- [Por qué es referente para el estudio](#por-qué-es-referente-para-el-estudio)
-- [Bibliografía](#bibliografía)
-- [Conceptos relacionados](#conceptos-relacionados)
-- [Referencias](#referencias)
+- [[Quién es]])
+- [[Por qué es referente para el estudio]])
+- [[Bibliografía]])
+- [[Conceptos relacionados]])
+- [[Referencias]])
 
 ## Quién es
 

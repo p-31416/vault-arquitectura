@@ -1,13 +1,32 @@
 ---
 tipo: log
 mvp: 04
-version: 1.0.0
+version: 1.0.2
 fecha_creacion: 2026-07-17
-ultima_actualizacion: 2026-07-17
+ultima_actualizacion: 2026-09-30
 tags: [mvp_04, log, bitacora]
 ---
 
-# MVP 04 — Bitácora v1.0.0
+# MVP 04 — Bitácora v1.0.2
+
+## v1.0.2 (2026-09-30) — n_06 moodboard Hamad: iteración WF_v5
+
+### Eventos
+
+| Fecha | Nivel | Evento | Detalle | Solución |
+|-------|-------|--------|---------|----------|
+| 2026-09-30 | n_06 | ✅ WF_v5 armado | `WF_v5_fachada_hormigon_madera` — corrige deriva tuscan de WF_v2_batch | Prompts Hamad hormigón visto + madera oscura, 1 ref=1 rama, `Canny 0.31/0.59 CN 0.90 denoise 0.40`, `ImageScale` orientado |
+| 2026-09-30 | n_06 | 🔄 WF_v2_batch corrido `351ff3db` | 3 refs Hamad → `n_06-B-02_00003/00004` + `n_06-B-03_00002` (376s, success) pero deriva a villa toscana | WF_v5 bloquea `tuscan/stone villa/cypress/travertine` en negativo, elimina `ImageBatch` |
+| 2026-09-30 | n_06 | ⏳ WF_v5 encolado `ec4c64a7` | `workflow_fachada_hormigon_madera.json` 27 nodos, 3 ramas paralelas, seeds 42/77/123 | En cola → `P:\00-repos\ComfyUI\output\n_06-C-0*.png` → `WF_v5/salidas/` |
+| 2026-09-10 | n_06 | ✅ WF_v1-v4 baseline | v1 Canny+CN, v2 batch, v3 escalera, v4 txt2img parque | Referencia para iteración |
+
+### Iteración WF_v2 → WF_v5
+
+- **Causa deriva:** prompt `tuscan/cypress` + `ImageBatch` híbrido + `denoise 0.6/0.75` alto + `512x512` recorta puente/voladizo.
+- **Corrige:** prompts Hamad (`exposed concrete`, `dark oiled wood slats`, `elevated volume`, `steel bridge`, `pine forest`), 1 imagen=1 rama (sin batch), `768x512/512x768` según orientación, `Canny 0.31/0.59 CN 0.90 denoise 0.40`.
+- **Docs nuevos:** `n_06-moodboard/WF/WF_v5_fachada_hormigon_madera/{00-README,01-index,02-WF-log-WFv5,03-nodos-WFv5,04-backlog,salidas/,workflow_fachada_hormigon_madera.json}`. Guardado también en librería Comfy `n_06-moodboard-WF_v5_fachada_hormigon_madera.json`.
+
+## v1.0.1 (2026-07-18)
 
 ## v1.0.1 (2026-07-18)
 

@@ -16,11 +16,43 @@
         "COMFYUI_URL": "http://127.0.0.1:8188"
       }
     },
+    "n8n-mcp": {
+      "type": "remote",
+      "url": "https://n8n.pitau.tech/mcp-server/http",
+      "headers": {
+        "Authorization": "Bearer {env:N8N_MCP_TOKEN}"
+      },
+      "enabled": true
+    },
     "fathom": {
       "type": "remote",
       "url": "https://api.fathom.ai/mcp",
       "enabled": true,
       "oauth": {}
+    },
+    "fathom-proyectopi": {
+      "type": "local",
+      "command": ["npx", "-y", "@luminarylane/fathom-mcp-server"],
+      "env": { "FATHOM_API_KEY": "{env:FATHOM_API_KEY_PROYECTOPI}" },
+      "enabled": true
+    },
+    "leantime": {
+      "type": "local",
+      "command": ["node", "P:/00-repos/npm-global/node_modules/leantime-mcp/bin/leantime-mcp.js", "https://pitau.tech/mcp", "--token", "{env:LEANTIME_TOKEN}", "--insecure"],
+      "enabled": true
+    },
+    "autodesk-help": {
+      "type": "remote",
+      "url": "https://developer.api.autodesk.com/knowledge/public/v1/mcp",
+      "enabled": true,
+      "timeout": 30000
+    },
+    "autocad": {
+      "type": "local",
+      "command": ["P:/00-repos/proyecto-pi/tools/autocad-mcp/.venv/Scripts/autocad-mcp.exe"],
+      "env": { "ACAD_MCP_OUTPUT_ROOT": "P:/00-repos/proyecto-pi/vault-arquitectura/activos/caddy-salidas" },
+      "enabled": true,
+      "timeout": 20000
     }
   }
 }

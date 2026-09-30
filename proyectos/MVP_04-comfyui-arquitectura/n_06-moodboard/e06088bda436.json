@@ -1,0 +1,1126 @@
+{
+  "config": {},
+  "extra": {
+    "VHS_KeepIntermediate": true,
+    "VHS_MetadataImage": true,
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "ds": {
+      "offset": [
+        -246.0063653515213,
+        -9225.736670357252
+      ],
+      "scale": 1.0555305762610576
+    },
+    "frontendVersion": "1.42.6",
+    "ue_links": [],
+    "workflowRendererVersion": "Vue-corrected"
+  },
+  "groups": [
+    {
+      "bounding": [
+        -50,
+        8920,
+        1860,
+        630
+      ],
+      "color": "#3f789e",
+      "flags": {},
+      "font_size": 24,
+      "id": 1,
+      "title": "METHOD 1 - MOODBOARD VARIATION"
+    },
+    {
+      "bounding": [
+        -50,
+        9580,
+        1860.2560466874024,
+        717.8201489035728
+      ],
+      "color": "#3f789e",
+      "flags": {},
+      "font_size": 24,
+      "id": 2,
+      "title": "METHOD 2 - MOODBOARD ALTERATION"
+    },
+    {
+      "bounding": [
+        -1240,
+        8920,
+        1160,
+        1380
+      ],
+      "color": "#8A8",
+      "flags": {},
+      "font_size": 24,
+      "id": 3,
+      "title": "MOODBOARD SELECTS"
+    }
+  ],
+  "id": "9994178c-856f-479e-8ba6-cda3daf4a117",
+  "last_link_id": 748,
+  "last_node_id": 426,
+  "links": [
+    [
+      719,
+      392,
+      0,
+      395,
+      0,
+      "STRING"
+    ],
+    [
+      720,
+      392,
+      0,
+      396,
+      0,
+      "STRING"
+    ],
+    [
+      722,
+      406,
+      0,
+      401,
+      3,
+      "STRING"
+    ],
+    [
+      723,
+      409,
+      0,
+      403,
+      0,
+      "IMAGE"
+    ],
+    [
+      724,
+      402,
+      0,
+      403,
+      2,
+      "STRING"
+    ],
+    [
+      725,
+      403,
+      0,
+      404,
+      0,
+      "IMAGE"
+    ],
+    [
+      726,
+      401,
+      0,
+      405,
+      0,
+      "IMAGE"
+    ],
+    [
+      741,
+      420,
+      0,
+      392,
+      0,
+      "IMAGE"
+    ],
+    [
+      742,
+      421,
+      0,
+      392,
+      1,
+      "IMAGE"
+    ],
+    [
+      743,
+      422,
+      0,
+      392,
+      2,
+      "IMAGE"
+    ],
+    [
+      745,
+      420,
+      0,
+      409,
+      0,
+      "IMAGE"
+    ],
+    [
+      746,
+      422,
+      0,
+      409,
+      1,
+      "IMAGE"
+    ],
+    [
+      747,
+      425,
+      0,
+      409,
+      2,
+      "IMAGE"
+    ],
+    [
+      748,
+      395,
+      0,
+      401,
+      0,
+      "RECRAFT_V3_STYLE"
+    ]
+  ],
+  "nodes": [
+    {
+      "bgcolor": "#353",
+      "color": "#232",
+      "flags": {},
+      "id": 392,
+      "inputs": [
+        {
+          "label": "image0",
+          "link": 741,
+          "localized_name": "images.image0",
+          "name": "images.image0",
+          "type": "IMAGE"
+        },
+        {
+          "label": "image1",
+          "link": 742,
+          "localized_name": "images.image1",
+          "name": "images.image1",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image2",
+          "link": 743,
+          "localized_name": "images.image2",
+          "name": "images.image2",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image3",
+          "link": null,
+          "localized_name": "images.image3",
+          "name": "images.image3",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "link": null,
+          "localized_name": "style",
+          "name": "style",
+          "type": "COMBO",
+          "widget": {
+            "name": "style"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 9,
+      "outputs": [
+        {
+          "links": [
+            719,
+            720
+          ],
+          "localized_name": "style_id",
+          "name": "style_id",
+          "type": "STRING"
+        }
+      ],
+      "pos": [
+        -19.999980978901817,
+        9010.000347808234
+      ],
+      "properties": {
+        "Node name for S&R": "RecraftCreateStyleNode",
+        "cnr_id": "comfy-core",
+        "ver": "0.12.3"
+      },
+      "size": [
+        300,
+        220
+      ],
+      "type": "RecraftCreateStyleNode",
+      "widgets_values": [
+        "realistic_image"
+      ]
+    },
+    {
+      "flags": {
+        "collapsed": false
+      },
+      "id": 395,
+      "inputs": [
+        {
+          "link": 719,
+          "localized_name": "style_id",
+          "name": "style_id",
+          "type": "STRING",
+          "widget": {
+            "name": "style_id"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 11,
+      "outputs": [
+        {
+          "links": [
+            748
+          ],
+          "localized_name": "recraft_style",
+          "name": "recraft_style",
+          "type": "RECRAFT_V3_STYLE"
+        }
+      ],
+      "pos": [
+        310.00000298749205,
+        9010.000347808234
+      ],
+      "properties": {
+        "Node name for S&R": "RecraftStyleV3InfiniteStyleLibrary",
+        "cnr_id": "comfy-core",
+        "ver": "0.12.3"
+      },
+      "size": [
+        340,
+        90
+      ],
+      "title": "Recraft - Infinite Style Library",
+      "type": "RecraftStyleV3InfiniteStyleLibrary",
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "flags": {},
+      "id": 396,
+      "inputs": [
+        {
+          "link": 720,
+          "localized_name": "source",
+          "name": "source",
+          "type": "*"
+        }
+      ],
+      "mode": 0,
+      "order": 12,
+      "outputs": [
+        {
+          "links": null,
+          "localized_name": "STRING",
+          "name": "STRING",
+          "type": "STRING"
+        }
+      ],
+      "pos": [
+        310.00000298749205,
+        9330.000339269482
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewAny",
+        "cnr_id": "comfy-core",
+        "ver": "0.12.3"
+      },
+      "size": [
+        330,
+        160
+      ],
+      "title": "Preview Recraft Style ID",
+      "type": "PreviewAny",
+      "widgets_values": [
+        null,
+        null,
+        null
+      ]
+    },
+    {
+      "bgcolor": "#653",
+      "color": "#432",
+      "flags": {
+        "collapsed": false
+      },
+      "id": 401,
+      "inputs": [
+        {
+          "link": 748,
+          "localized_name": "recraft_style",
+          "name": "recraft_style",
+          "shape": 7,
+          "type": "RECRAFT_V3_STYLE"
+        },
+        {
+          "link": null,
+          "localized_name": "negative_prompt",
+          "name": "negative_prompt",
+          "shape": 7,
+          "type": "STRING"
+        },
+        {
+          "link": null,
+          "localized_name": "recraft_controls",
+          "name": "recraft_controls",
+          "shape": 7,
+          "type": "RECRAFT_CONTROLS"
+        },
+        {
+          "link": 722,
+          "localized_name": "prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "size",
+          "name": "size",
+          "type": "COMBO",
+          "widget": {
+            "name": "size"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "n",
+          "name": "n",
+          "type": "INT",
+          "widget": {
+            "name": "n"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 14,
+      "outputs": [
+        {
+          "links": [
+            726
+          ],
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE"
+        }
+      ],
+      "pos": [
+        679.9999858865419,
+        9010.000347808234
+      ],
+      "properties": {
+        "Node name for S&R": "RecraftTextToImageNode",
+        "cnr_id": "comfy-core",
+        "ver": "0.16.1"
+      },
+      "size": [
+        440,
+        330
+      ],
+      "type": "RecraftTextToImageNode",
+      "widgets_values": [
+        "a model wearing street wear with baggy sweater and cargo pants. The sneakers are the hero product. Low angel photography with modern skyscraper",
+        "1024x1024",
+        4,
+        983001818549775,
+        "randomize"
+      ]
+    },
+    {
+      "bgcolor": "#353",
+      "color": "#232",
+      "flags": {},
+      "id": 402,
+      "inputs": [],
+      "mode": 0,
+      "order": 0,
+      "outputs": [
+        {
+          "links": [
+            724
+          ],
+          "name": "STRING",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          }
+        }
+      ],
+      "pos": [
+        -19.999980978901817,
+        9850.000354306085
+      ],
+      "properties": {
+        "Run widget replace on values": false
+      },
+      "size": [
+        310,
+        210
+      ],
+      "title": "PROMPT",
+      "type": "PrimitiveNode",
+      "widgets_values": [
+        "Take the first two image as style references and use the pair of sneaker as the product reference. Generate a single image of entirely new photography with new talent and background, no texts. Change the background to snowy mountains"
+      ]
+    },
+    {
+      "bgcolor": "#653",
+      "color": "#432",
+      "flags": {},
+      "id": 403,
+      "inputs": [
+        {
+          "link": 723,
+          "localized_name": "image",
+          "name": "image",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "link": null,
+          "localized_name": "mask",
+          "name": "mask",
+          "shape": 7,
+          "type": "MASK"
+        },
+        {
+          "link": 724,
+          "localized_name": "prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "seed",
+          "name": "seed",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "quality",
+          "name": "quality",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "quality"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "background",
+          "name": "background",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "background"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "size",
+          "name": "size",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "size"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "n",
+          "name": "n",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "n"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model",
+          "name": "model",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "model"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 13,
+      "outputs": [
+        {
+          "links": [
+            725
+          ],
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE"
+        }
+      ],
+      "pos": [
+        350.00000192014807,
+        9670.000344653095
+      ],
+      "properties": {
+        "Node name for S&R": "OpenAIGPTImage1"
+      },
+      "size": [
+        400,
+        410
+      ],
+      "type": "OpenAIGPTImage1",
+      "widgets_values": [
+        "Take the first two image as style references and use the pair of sneaker as the product reference. Generate a single image of entirely new photography with new talent and background, no texts. Change the background to snowy mountains",
+        1824855344,
+        "randomize",
+        "medium",
+        "auto",
+        "auto",
+        1,
+        "gpt-image-2"
+      ]
+    },
+    {
+      "bgcolor": "#653",
+      "color": "#432",
+      "flags": {},
+      "id": 404,
+      "inputs": [
+        {
+          "link": 725,
+          "localized_name": "images",
+          "name": "images",
+          "type": "IMAGE"
+        },
+        {
+          "link": null,
+          "localized_name": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 15,
+      "outputs": [],
+      "pos": [
+        809.9999751896555,
+        9670.000344653095
+      ],
+      "properties": {},
+      "size": [
+        960,
+        600
+      ],
+      "type": "SaveImage",
+      "widgets_values": [
+        "Moodboard_alt"
+      ]
+    },
+    {
+      "bgcolor": "#653",
+      "color": "#432",
+      "flags": {
+        "collapsed": false
+      },
+      "id": 405,
+      "inputs": [
+        {
+          "link": 726,
+          "localized_name": "images",
+          "name": "images",
+          "type": "IMAGE"
+        },
+        {
+          "link": null,
+          "localized_name": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 16,
+      "outputs": [],
+      "pos": [
+        1149.999951661195,
+        9010.000347808234
+      ],
+      "properties": {
+        "Node name for S&R": "SaveImage",
+        "cnr_id": "comfy-core",
+        "enableTabs": false,
+        "hasSecondTab": false,
+        "secondTabOffset": 80,
+        "secondTabText": "Send Back",
+        "secondTabWidth": 65,
+        "tabWidth": 65,
+        "tabXOffset": 10,
+        "ver": "0.11.1"
+      },
+      "size": [
+        620,
+        510
+      ],
+      "type": "SaveImage",
+      "widgets_values": [
+        "Moodboard_var"
+      ]
+    },
+    {
+      "bgcolor": "#353",
+      "color": "#232",
+      "flags": {},
+      "id": 406,
+      "inputs": [],
+      "mode": 0,
+      "order": 1,
+      "outputs": [
+        {
+          "links": [
+            722
+          ],
+          "name": "STRING",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          }
+        }
+      ],
+      "pos": [
+        -19.999980978901817,
+        9290.000340336826
+      ],
+      "properties": {
+        "Run widget replace on values": false
+      },
+      "size": [
+        300,
+        220
+      ],
+      "title": "PROMPT",
+      "type": "PrimitiveNode",
+      "widgets_values": [
+        "a model wearing street wear with baggy sweater and cargo pants. The sneakers are the hero product. Low angel photography with modern skyscraper"
+      ]
+    },
+    {
+      "bgcolor": "#353",
+      "color": "#232",
+      "flags": {},
+      "id": 409,
+      "inputs": [
+        {
+          "label": "image0",
+          "link": 745,
+          "localized_name": "images.image0",
+          "name": "images.image0",
+          "type": "IMAGE"
+        },
+        {
+          "label": "image1",
+          "link": 746,
+          "localized_name": "images.image1",
+          "name": "images.image1",
+          "type": "IMAGE"
+        },
+        {
+          "label": "image2",
+          "link": 747,
+          "localized_name": "images.image2",
+          "name": "images.image2",
+          "shape": 7,
+          "type": "IMAGE"
+        },
+        {
+          "label": "image3",
+          "link": null,
+          "localized_name": "images.image3",
+          "name": "images.image3",
+          "shape": 7,
+          "type": "IMAGE"
+        }
+      ],
+      "mode": 0,
+      "order": 10,
+      "outputs": [
+        {
+          "links": [
+            723
+          ],
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE"
+        }
+      ],
+      "pos": [
+        -19.999980978901817,
+        9670.000344653095
+      ],
+      "properties": {
+        "Node name for S&R": "BatchImagesNode"
+      },
+      "size": [
+        230,
+        120
+      ],
+      "type": "BatchImagesNode",
+      "widgets_values": []
+    },
+    {
+      "flags": {},
+      "id": 410,
+      "inputs": [
+        {
+          "link": null,
+          "localized_name": "style_id",
+          "name": "style_id",
+          "type": "STRING",
+          "widget": {
+            "name": "style_id"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 2,
+      "outputs": [
+        {
+          "links": [],
+          "localized_name": "recraft_style",
+          "name": "recraft_style",
+          "type": "RECRAFT_V3_STYLE"
+        }
+      ],
+      "pos": [
+        310.00000298749205,
+        9200.00034273835
+      ],
+      "properties": {
+        "Node name for S&R": "RecraftStyleV3InfiniteStyleLibrary",
+        "cnr_id": "comfy-core",
+        "ver": "0.12.3"
+      },
+      "size": [
+        330,
+        90
+      ],
+      "title": "Recraft - Infinite Style Library (Manual)",
+      "type": "RecraftStyleV3InfiniteStyleLibrary",
+      "widgets_values": [
+        "02f005e2-50c2-4aa4-bae2-e8ccf0915e6a"
+      ]
+    },
+    {
+      "bgcolor": "#653",
+      "color": "#432",
+      "flags": {},
+      "id": 411,
+      "inputs": [],
+      "mode": 0,
+      "order": 3,
+      "outputs": [],
+      "pos": [
+        310.00000298749205,
+        8660.00037883155
+      ],
+      "properties": {},
+      "size": [
+        340,
+        250
+      ],
+      "title": "Style ID",
+      "type": "MarkdownNote",
+      "widgets_values": [
+        "After running the workflow once, you can view your ID in the \"Preview Recraft Style ID\" node.\n\nTo avoid creating a new style ID on each job, copy/paste the ID into the \"Recraft - Infinite Style Library (Manual)\". Connect the output into the Recraft Text to Image input.\n\nThen, bypass `CTRL/CMD + B` the 'Recraft Create Style' API node."
+      ]
+    },
+    {
+      "flags": {},
+      "id": 420,
+      "inputs": [
+        {
+          "link": null,
+          "localized_name": "image",
+          "name": "image",
+          "type": "COMBO",
+          "widget": {
+            "name": "image"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "choose file to upload",
+          "name": "upload",
+          "type": "IMAGEUPLOAD",
+          "widget": {
+            "name": "upload"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 4,
+      "outputs": [
+        {
+          "links": [
+            741,
+            745
+          ],
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE"
+        },
+        {
+          "links": null,
+          "localized_name": "MASK",
+          "name": "MASK",
+          "type": "MASK"
+        }
+      ],
+      "pos": [
+        -1139.9999510932712,
+        9040.000354235744
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "size": [
+        410,
+        540
+      ],
+      "type": "LoadImage",
+      "widgets_values": [
+        "9b8f84040f4cdd20ffa5a5b8dd48cd6939fc6ffffcc3dd4706f2d17e4f968a37.jpg",
+        "image"
+      ]
+    },
+    {
+      "flags": {},
+      "id": 421,
+      "inputs": [
+        {
+          "link": null,
+          "localized_name": "image",
+          "name": "image",
+          "type": "COMBO",
+          "widget": {
+            "name": "image"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "choose file to upload",
+          "name": "upload",
+          "type": "IMAGEUPLOAD",
+          "widget": {
+            "name": "upload"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 5,
+      "outputs": [
+        {
+          "links": [
+            742
+          ],
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE"
+        },
+        {
+          "links": null,
+          "localized_name": "MASK",
+          "name": "MASK",
+          "type": "MASK"
+        }
+      ],
+      "pos": [
+        -699.9999917461287,
+        9040.000354235744
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "size": [
+        410,
+        540
+      ],
+      "type": "LoadImage",
+      "widgets_values": [
+        "24b6e4662067900ef420d921a62a4d642b513218b0f290b267bb32eaed2a9333.jpg",
+        "image"
+      ]
+    },
+    {
+      "flags": {},
+      "id": 422,
+      "inputs": [
+        {
+          "link": null,
+          "localized_name": "image",
+          "name": "image",
+          "type": "COMBO",
+          "widget": {
+            "name": "image"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "choose file to upload",
+          "name": "upload",
+          "type": "IMAGEUPLOAD",
+          "widget": {
+            "name": "upload"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 6,
+      "outputs": [
+        {
+          "links": [
+            743,
+            746
+          ],
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE"
+        },
+        {
+          "links": null,
+          "localized_name": "MASK",
+          "name": "MASK",
+          "type": "MASK"
+        }
+      ],
+      "pos": [
+        -1139.9999510932712,
+        9630.00034572044
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "size": [
+        410,
+        540
+      ],
+      "type": "LoadImage",
+      "widgets_values": [
+        "a0d28a9ecaa66d9bb0725142f488ce6343532b4ea42767972975aa4c3f678f79.jpg",
+        "image"
+      ]
+    },
+    {
+      "flags": {},
+      "id": 425,
+      "inputs": [
+        {
+          "link": null,
+          "localized_name": "image",
+          "name": "image",
+          "type": "COMBO",
+          "widget": {
+            "name": "image"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "choose file to upload",
+          "name": "upload",
+          "type": "IMAGEUPLOAD",
+          "widget": {
+            "name": "upload"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 7,
+      "outputs": [
+        {
+          "links": [
+            747
+          ],
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE"
+        },
+        {
+          "links": null,
+          "localized_name": "MASK",
+          "name": "MASK",
+          "type": "MASK"
+        }
+      ],
+      "pos": [
+        -699.9999917461287,
+        9630.00034572044
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "size": [
+        410,
+        540
+      ],
+      "type": "LoadImage",
+      "widgets_values": [
+        "8ac0fe3f12161e7cc35a346eca40d1962bf477a8ad24239af55d2abfc5ab6ae6.png",
+        "image"
+      ]
+    },
+    {
+      "bgcolor": "#653",
+      "color": "#432",
+      "flags": {},
+      "id": 426,
+      "inputs": [],
+      "mode": 0,
+      "order": 8,
+      "outputs": [],
+      "pos": [
+        -1239.9999917930222,
+        8660.00037883155
+      ],
+      "properties": {},
+      "size": [
+        610,
+        250
+      ],
+      "title": "Quick Intro",
+      "type": "MarkdownNote",
+      "widgets_values": [
+        "Delete example images and drag in your moodboard images. Connect any combination of them into the batch image nodes on the right for each method:\n\n**METHOD 1 - MOODBOARD VARIATION**\n\n**METHOD 2 - MOODBOARD ALTERATION**\n\n**Choose the method to suit your use case, and bypass all nodes in the other method**"
+      ]
+    }
+  ],
+  "revision": 0,
+  "version": 0.4
+}

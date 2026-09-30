@@ -2,7 +2,7 @@
 tipo: readme
 mvp: 01
 fecha_creacion: 2026-06-30
-ultima_actualizacion: 2026-06-30
+ultima_actualizacion: 2026-09-29
 tags: [readme, mvp_01, guia, reglas]
 ---
 
@@ -32,7 +32,13 @@ MVP_01-dibujo_ia/
 │   ├── lisp-local.lsp        ←   Código AutoLISP activo (comando `LOC`)
 │   └── bak-lisp-local.lsp    ←   Backup pre-modificación
 │
-├── n_02-.../                 ← Próximo nivel
+├── n_02-mcp_test_local/      ← Nivel 2 — Lenguaje natural vía MCP
+│   ├── 00-filo-n_02.md       ←   Manifiesto (hipótesis del usuario)
+│   ├── 01-spec-n_02.md       ←   Hipótesis operacionalizada (régimen laxo)
+│   ├── 02-ft-n_02.md         ←   Protocolo y métricas
+│   └── 03-log-n_02.md        ←   Bitácora (Exp-00 pendiente — AutoCAD no corría)
+│
+├── n_03-.../                 ← Próximo nivel
 └── ...
 ```
 

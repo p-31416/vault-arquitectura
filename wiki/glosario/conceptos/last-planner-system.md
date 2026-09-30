@@ -9,14 +9,14 @@ tags: [glosario, concepto, last-planner, lean-construction, ppc, obra]
 
 > Sistema de planificación por compromisos de Ballard & Howell (años 90): produce flujo predecible y aprendizaje rápido. Es **el método de obra** del vault; Agile/Kanban gobiernan el estudio, LPS gobierna la obra y el legajo.
 
-- [Definición](#definición)
-- [Las 5 conversaciones](#las-5-conversaciones)
-- [Los 8 elementos clave](#los-8-elementos-clave)
-- [PPC y análisis de incumplidos](#ppc-y-análisis-de-incumplidos)
-- [LPS en diseño](#lps-en-diseño)
-- [LPS → Leantime + vault](#lps--leantime--vault)
-- [Conceptos relacionados](#conceptos-relacionados)
-- [Referencias](#referencias)
+- [[Definición]])
+- [[Las 5 conversaciones]])
+- [[Los 8 elementos clave]])
+- [[PPC y análisis de incumplidos]])
+- [[LPS en diseño]])
+- [[LPS → Leantime + vault]])
+- [[Conceptos relacionados]])
+- [[Referencias]])
 
 ## Definición
 

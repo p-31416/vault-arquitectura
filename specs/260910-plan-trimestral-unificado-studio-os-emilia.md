@@ -11,6 +11,8 @@ tags: [plan, trimestral, 190hs, 60hs-mes, ptech, studio-os, vigente, lectura-spe
 
 # Plan trimestral unificado — Studio OS Emilia · +190hs (3×~64hs) · Sep-Dic 2026
 
+> **Estado al 2026-09-29: VIGENTE Y ACTIVO — plan canónico, contrato firmado 24/09 activa la ejecución. Pendiente: Mes 1 (M1-M4) + métricas ahorro/ROI + mantenimiento §8.**
+
 > **Lectura única en `/specs` (Obsidian):** [[specs/260910-plan-trimestral-unificado-studio-os-emilia|este plan]] concentra filosofía, programa 90 días, detalle Mes 1-3, calendario, métricas y mantenimiento. Fuente filosofía: [[wiki/glosario/interno/standares/ptech-filosofia|ptech-filosofia]] (extraída de `raw/brainstorm/Pitautech_Propuesta_I+D_Arquitectura_Vault.md`). Detalle operativo Mes 1: [[specs/260909-esquema-mes1-60hs-studio-os-emilia|esquema Mes 1]]. Propuesta cliente: [[proyectos/STUDIO_OS-Emilia/presentacion/05-propuesta-comercial-viernes|05-propuesta-comercial-viernes]].
 
 ## Índice
@@ -209,6 +211,8 @@ Demo genérica para entender el flujo (no sobre Nayara aún):
 **Privacidad desde el inicio:** análisis de imágenes con **modelos locales**. Si se usa modelo comercial, queda anotado con metadatos (imagen + nomenclatura + versionado automático + doc WF-log). Política de privacidad mini a entregar el viernes junto con contrato de servicio básico (pendiente que me pases el documento para adaptar).
 
 **RunPod:** documentado como entidad [[wiki/glosario/entidades/runpod|RunPod]] (ver §10 y `ptech-filosofia`), para flujos ComfyUI a futuro con escalado.
+
+**Backlog — Infra futura (no bloquea Mes 1-2):** evaluar **VPS/Cloud + Storage para Nextcloud** self-hosted como evolución de Drive (datos del estudio bajo control). Incluye: VPS pequeño + volumen S3-compatible/B2, sizing, costos mensuales, backup/offsite, SSO con Google, migración Drive → Nextcloud, y métrica de soberanía vs. costo. Queda como tema backlog para Mes 3 / roadmap 2027 (etiqueta `backlog/infra`).
 
 ---
 

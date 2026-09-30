@@ -12,6 +12,8 @@ estado: plan
 
 # Plan de acción — Investigación web + Moodboard + YouTube (AutoCAD / ComfyUI) — @sherlock
 
+> **Estado al 2026-09-29: PARCIAL — `@sherlock` + skill `deep-research` existen. Pendiente: pilotos AutoCAD (9 stubs) + ComfyUI (6 nodos) + YouTube `cTdHYiD28F4` → `wiki/raw/` con gate HITL.**
+
 > Unifica 3 pedidos en 1 ejecución trazable: (1) agente GENERAL `@sherlock` para cualquier tema (humano/redes/legado/papers/software SIEMPRE al manual oficial, bilingüe ES/EN+IT con fuentes en idioma original), (2) moodboard `n_06-moodboard` Recraft+GPT, (3) transcript YouTube `cTdHYiD28F4` vía `@contenidos`. Define herramienta, flujo terminal y gates HITL con código paralelo didáctico sin violar `AGENTS.md` ni glosario.
 
 ## 0. Resumen en 1 línea

@@ -30,6 +30,8 @@ Catálogo de comandos, funciones y variables de todos los softwares del estudio.
 | **pandoc** | [[wiki/glosario/software/pandoc|pandoc]] — md→pdf, digest→Telegram |
 | **Telegram** | [[wiki/glosario/software/telegram|telegram]] — bot, sendDocument, vaultworm_arqbot |
 | **n8n** | [[wiki/glosario/software/n8n|n8n]] — webhook, Telegram Trigger (futuro) |
+| **MCP autodesk-help** | [[wiki/glosario/software/mcp-autodesk-help|mcp-autodesk-help]] — ayuda oficial Autodesk, solo lectura |
+| **MCP autocad** | [[wiki/glosario/software/mcp-autocad|mcp-autocad]] — control AutoCAD 2027 vía COM |
 
 ## Crear una entrada nueva
 

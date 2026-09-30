@@ -11,11 +11,11 @@ idioma: es
 
 > Bot API para envío del digest (PDF) + feedback loop con Emilia — `vaultworm_arqbot`.
 
-- [BotFather y token](#botfather-y-token)
-- [sendDocument](#senddocument)
-- [vaultworm_arqbot — flujo digest](#vaultworm_arqbot--flujo-digest)
-- [Conceptos relacionados](#conceptos-relacionados)
-- [Referencias](#referencias)
+- [[BotFather y token]])
+- [[sendDocument]])
+- [[vaultworm_arqbot — flujo digest]])
+- [[Conceptos relacionados]])
+- [[Referencias]])
 
 ## BotFather y token
 

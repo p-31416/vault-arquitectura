@@ -10,10 +10,10 @@ tags: [glosario, software, faster-whisper]
 
 > Fork optimizado de OpenAI Whisper (CTranslate2) para transcripción local en CPU/GPU. Migrado de `faster-whisper/` (index.md + transcribe.md) a archivo único.
 
-- [Descripción](#descripcion)
-- [transcribe](#transcribe)
-- [Conceptos relacionados](#conceptos-relacionados)
-- [Referencias](#referencias)
+- [[Descripción]])
+- [[transcribe]])
+- [[Conceptos relacionados]])
+- [[Referencias]])
 
 ## Descripción
 

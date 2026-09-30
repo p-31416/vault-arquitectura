@@ -2,21 +2,22 @@
 tipo: software
 software: opencode
 fecha_creacion: 2026-09-07
-ultima_actualizacion: 2026-09-09
-tags: [glosario, software, opencode, zen]
+ultima_actualizacion: 2026-09-27
+tags: [glosario, software, opencode, zen, mcp]
 ---
 
 # opencode
 
 > Agente del vault (Zen free tier) — `OPENCODE_API_KEY`.
 
-- [Zen free tier](#zen-free-tier)
-- [OPENCODE_API_KEY](#opencode_api_key)
-- [Agentes del vault](#agentes-del-vault)
-- [Subagents](#subagents)
-- [Permissions y modo](#permissions-y-modo)
-- [Conceptos relacionados](#conceptos-relacionados)
-- [Referencias](#referencias)
+- [[#Zen free tier]]
+- [[#OPENCODE_API_KEY]]
+- [[#Agentes del vault]]
+- [[#Subagents]]
+- [[#Permissions y modo]]
+- [[#Servidores MCP del vault]]
+- [[#Conceptos relacionados]]
+- [[#Referencias]]
 
 ## Zen free tier
 
@@ -55,13 +56,35 @@ Registro completo (misión, triggers, permisos, cómo agregar uno): [[wiki/glosa
 
 Cada agente declara `permission:` por herramienta (`read/grep/glob` allow, `bash` deny en ambos). `edit: allow` con `write` restringido a sus rutas: vaultworm-arq solo `raw/vaultworm-arq/` + `wiki/glosario/**` con `¿Avanzo?`; brainstormy solo `raw/brainstorm/` + `wiki/` si hay teoría nueva. Secrets vía `{env:}` nunca hardcodeados — ver capa OpenCode en [[wiki/glosario/interno/pbooks/pbk-config_ctas_git_github_opencode|pbk-config_ctas_git_github_opencode]].
 
+## Servidores MCP del vault
+
+Inventario canónico de servidores MCP declarados en `opencode.json` raíz. Esta sección **solo los menciona**: el detalle (herramientas, parámetros, límites, demos) vive en páginas dedicadas por servidor.
+
+| Servidor | Tipo | URL / comando | Uso | Estado |
+|---|---|---|---|---|
+| `comfyui` | local | `npx -y comfyui-mcp` + `COMFYUI_URL: http://127.0.0.1:8188` | Generación de imágenes con ComfyUI local | ✅ |
+| `n8n-mcp` | remote | `https://n8n.pitau.tech/mcp-server/http` + Bearer `{env:N8N_MCP_TOKEN}` | Automatización n8n | ✅ |
+| `fathom` | remote | `https://api.fathom.ai/mcp` + oauth | Reuniones Fathom → specs → Leantime | ✅ |
+| `leantime` | local | `node …/npm-global/node_modules/leantime-mcp/bin/leantime-mcp.js` + `--token {env:LEANTIME_TOKEN} --insecure` | PM Lean + Agile en el vault | ✅ |
+| `autodesk-help` | remote | `https://developer.api.autodesk.com/knowledge/public/v1/mcp` | Ayuda oficial Autodesk (solo lectura) — ver [[wiki/glosario/software/mcp-autodesk-help]] | ✅ |
+| `autocad` | local | `…/tools/autocad-mcp/.venv/Scripts/autocad-mcp.exe` + `ACAD_MCP_OUTPUT_ROOT` | Control AutoCAD 2027 vía COM — ver [[wiki/glosario/software/mcp-autocad]] | ✅ / ⚠️ pendiente prueba 2027 |
+
+Para agregar/quitar servidores: editar `opencode.json`, reiniciar la sesión OpenCode, verificar con `opencode mcp list`.
+
+## Conceptos relacionados
+
 ## Conceptos relacionados
 
 - [[wiki/glosario/conceptos/cerebro-digital-karpathy]]
 - [[wiki/glosario/software/github-cli]]
+- [[wiki/glosario/software/mcp-autodesk-help|mcp-autodesk-help]]
+- [[wiki/glosario/software/mcp-autocad|mcp-autocad]]
 
 ## Referencias
 
 - Providers / Zen: https://opencode.ai/docs/providers (verificado 2026-09-07 — 200)
+- MCP servers: https://opencode.ai/docs/mcp-servers/ (verificado 2026-09-27 — 200)
+- Detalle MCP Autodesk Help: [[wiki/glosario/software/mcp-autodesk-help]]
+- Detalle MCP autocad: [[wiki/glosario/software/mcp-autocad]]
 - Mastra Zen: https://mastra.ai/models/providers/opencode (verificado 2026-09-07 — 200)
 - Docker Zen: https://docs.docker.com/ai/docker-agent/providers/opencode-zen (verificado 2026-09-07 — 200)

@@ -9,13 +9,13 @@ tags: [glosario, concepto, agile, scrum, sprints, arquitectura]
 
 > Scrum/Kanban adaptados al estudio: sprints de diseño de 1–2 semanas, backlog de entregables, demo con comitente. Ritmo sin perder incumbencia profesional ni valor legal del plano.
 
-- [Definición](#definición)
-- [Scrum mínimo viable](#scrum-mínimo-viable)
-- [Adaptación a fases de obra](#adaptación-a-fases-de-obra)
-- [Sprints en Leantime](#sprints-en-leantime)
-- [Límites y advertencias](#límites-y-advertencias)
-- [Conceptos relacionados](#conceptos-relacionados)
-- [Referencias](#referencias)
+- [[Definición]])
+- [[Scrum mínimo viable]])
+- [[Adaptación a fases de obra]])
+- [[Sprints en Leantime]])
+- [[Límites y advertencias]])
+- [[Conceptos relacionados]])
+- [[Referencias]])
 
 ## Definición
 

@@ -1,0 +1,1670 @@
+{
+  "config": {},
+  "extra": {
+    "ds": {
+      "offset": [
+        337.4329614805545,
+        -2361.5544423870565
+      ],
+      "scale": 1.586309297171502
+    }
+  },
+  "groups": [
+    {
+      "bounding": [
+        -1.1901776556718107,
+        1120.2508761160682,
+        1466.7878324849182,
+        801.8054962212896
+      ],
+      "color": "#3f789e",
+      "flags": {},
+      "id": 1,
+      "title": "Moodboard 01: Ethereal Romanticism"
+    },
+    {
+      "bounding": [
+        1534.3470300605138,
+        1122.6356042140064,
+        1536.1140087312842,
+        799.7843917211312
+      ],
+      "color": "#8AA",
+      "flags": {},
+      "id": 2,
+      "title": "Moodboard 02: Digitally Broken Realism"
+    },
+    {
+      "bounding": [
+        2.883757332677823,
+        1987.0997516564955,
+        1462.8538541523083,
+        810.3181416217433
+      ],
+      "color": "#88A",
+      "flags": {},
+      "id": 3,
+      "title": "Moodboard 03: Neon Dreams"
+    },
+    {
+      "bounding": [
+        1536.1427036263492,
+        1989.9334259970028,
+        1532.8378989996784,
+        806.2593842128972
+      ],
+      "color": "#8A8",
+      "flags": {},
+      "id": 4,
+      "title": "Moodboard 04: Technicolor Madhouse"
+    },
+    {
+      "bounding": [
+        3.5094842410891887,
+        2876.037547820353,
+        1464.7048559087982,
+        815.7622043322476
+      ],
+      "color": "#A88",
+      "flags": {},
+      "id": 5,
+      "title": "Moodboard 05: Country Club Surrealism"
+    },
+    {
+      "bounding": [
+        1538.223816840167,
+        2875.326177305479,
+        1535.4272679068379,
+        818.8253927638725
+      ],
+      "color": "#b06634",
+      "flags": {},
+      "id": 6,
+      "title": "Moodboard 06: Liminal Nightmare"
+    }
+  ],
+  "id": "68208f9e-333b-4616-a06a-db1265c78297",
+  "last_link_id": 79,
+  "last_node_id": 95,
+  "links": [
+    [
+      1,
+      1,
+      0,
+      2,
+      0,
+      "IMAGE"
+    ],
+    [
+      37,
+      44,
+      0,
+      45,
+      0,
+      "IMAGE"
+    ],
+    [
+      42,
+      50,
+      0,
+      51,
+      0,
+      "IMAGE"
+    ],
+    [
+      50,
+      59,
+      0,
+      60,
+      0,
+      "IMAGE"
+    ],
+    [
+      55,
+      65,
+      0,
+      66,
+      0,
+      "IMAGE"
+    ],
+    [
+      60,
+      71,
+      0,
+      72,
+      0,
+      "IMAGE"
+    ],
+    [
+      62,
+      77,
+      0,
+      1,
+      5,
+      "STRING"
+    ],
+    [
+      63,
+      78,
+      0,
+      44,
+      5,
+      "STRING"
+    ],
+    [
+      64,
+      79,
+      0,
+      1,
+      0,
+      "STRING"
+    ],
+    [
+      65,
+      80,
+      0,
+      44,
+      0,
+      "STRING"
+    ],
+    [
+      66,
+      81,
+      0,
+      50,
+      5,
+      "STRING"
+    ],
+    [
+      67,
+      82,
+      0,
+      50,
+      0,
+      "STRING"
+    ],
+    [
+      68,
+      83,
+      0,
+      59,
+      5,
+      "STRING"
+    ],
+    [
+      69,
+      84,
+      0,
+      59,
+      0,
+      "STRING"
+    ],
+    [
+      71,
+      85,
+      0,
+      65,
+      5,
+      "STRING"
+    ],
+    [
+      72,
+      86,
+      0,
+      65,
+      0,
+      "STRING"
+    ],
+    [
+      73,
+      87,
+      0,
+      71,
+      5,
+      "STRING"
+    ],
+    [
+      74,
+      88,
+      0,
+      71,
+      0,
+      "STRING"
+    ]
+  ],
+  "nodes": [
+    {
+      "bgcolor": "#653",
+      "color": "#432",
+      "flags": {},
+      "id": 1,
+      "inputs": [
+        {
+          "link": 64,
+          "localized_name": "prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model",
+          "name": "model",
+          "type": "COMFY_DYNAMICCOMBO_V3",
+          "widget": {
+            "name": "model"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.aspect_ratio",
+          "name": "model.aspect_ratio",
+          "type": "COMBO",
+          "widget": {
+            "name": "model.aspect_ratio"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.resolution",
+          "name": "model.resolution",
+          "type": "COMBO",
+          "widget": {
+            "name": "model.resolution"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.creativity",
+          "name": "model.creativity",
+          "type": "COMBO",
+          "widget": {
+            "name": "model.creativity"
+          }
+        },
+        {
+          "link": 62,
+          "localized_name": "model.moodboard_id",
+          "name": "model.moodboard_id",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "model.moodboard_id"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.moodboard_strength",
+          "name": "model.moodboard_strength",
+          "shape": 7,
+          "type": "FLOAT",
+          "widget": {
+            "name": "model.moodboard_strength"
+          }
+        },
+        {
+          "label": "style_reference",
+          "link": null,
+          "localized_name": "model.style_reference",
+          "name": "model.style_reference",
+          "shape": 7,
+          "type": "KREA_STYLE_REF"
+        },
+        {
+          "link": null,
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 13,
+      "outputs": [
+        {
+          "links": [
+            1
+          ],
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE"
+        }
+      ],
+      "pos": [
+        545.0229880143827,
+        1264.6943217524092
+      ],
+      "properties": {
+        "Node name for S&R": "Krea2ImageNode"
+      },
+      "shape": 2,
+      "size": [
+        400,
+        354.65625
+      ],
+      "type": "Krea2ImageNode",
+      "widgets_values": [
+        "soft-focus contemporary impressionist portrait of a young man with messy dark hair, shown in an intimate close-up with his face, neck, and shoulders filling the frame in a loose diagonal composition. His head tips upward in a long, exhausted sigh, lips parted, expression emotionally fried, while one arm flings outward to the side holding a bright aluminum energy drink can, the gesture reading as both dependence and dismissal. He wears a loose white tee or thin hoodie that dissolves into the background. Pale diffused light, blush pink, ivory, pearl, and cool blue-gray tones, smoky dark hair masses, visible loose brushstrokes, feathered edges, hazy bloom, and partially unfinished passages create a romantic painterly image with a Gen Z undertone of overstimulation and caffeinated burnout.",
+        "Krea 2 Large",
+        "1:1",
+        "1K",
+        "medium",
+        "7947e7b8-750e-4dbd-877a-d554d86f85d1",
+        0.35,
+        25736235,
+        "randomize"
+      ]
+    },
+    {
+      "flags": {},
+      "id": 2,
+      "inputs": [
+        {
+          "link": 1,
+          "localized_name": "images",
+          "name": "images",
+          "type": "IMAGE"
+        },
+        {
+          "link": null,
+          "localized_name": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 19,
+      "outputs": [],
+      "pos": [
+        1000.7364996854219,
+        1264.6943217524092
+      ],
+      "properties": {},
+      "shape": 2,
+      "size": [
+        417.640625,
+        545.625
+      ],
+      "type": "SaveImage",
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "bgcolor": "#653",
+      "color": "#432",
+      "flags": {},
+      "id": 44,
+      "inputs": [
+        {
+          "link": 65,
+          "localized_name": "prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model",
+          "name": "model",
+          "type": "COMFY_DYNAMICCOMBO_V3",
+          "widget": {
+            "name": "model"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.aspect_ratio",
+          "name": "model.aspect_ratio",
+          "type": "COMBO",
+          "widget": {
+            "name": "model.aspect_ratio"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.resolution",
+          "name": "model.resolution",
+          "type": "COMBO",
+          "widget": {
+            "name": "model.resolution"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.creativity",
+          "name": "model.creativity",
+          "type": "COMBO",
+          "widget": {
+            "name": "model.creativity"
+          }
+        },
+        {
+          "link": 63,
+          "localized_name": "model.moodboard_id",
+          "name": "model.moodboard_id",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "model.moodboard_id"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.moodboard_strength",
+          "name": "model.moodboard_strength",
+          "shape": 7,
+          "type": "FLOAT",
+          "widget": {
+            "name": "model.moodboard_strength"
+          }
+        },
+        {
+          "label": "style_reference",
+          "link": null,
+          "localized_name": "model.style_reference",
+          "name": "model.style_reference",
+          "shape": 7,
+          "type": "KREA_STYLE_REF"
+        },
+        {
+          "link": null,
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 14,
+      "outputs": [
+        {
+          "links": [
+            37
+          ],
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE"
+        }
+      ],
+      "pos": [
+        2084.414886356095,
+        1264.6943217524092
+      ],
+      "properties": {
+        "Node name for S&R": "Krea2ImageNode"
+      },
+      "shape": 2,
+      "size": [
+        400,
+        354.65625
+      ],
+      "type": "Krea2ImageNode",
+      "widgets_values": [
+        "a single red-and-yellow tulip bending diagonally across the frame, covered in dew droplets, sharply lit against a deep dark background. Part of the bloom is corrupted by dense pixel glitches, broken RGB blocks, and digital compression artifacts, as if the flower is dissolving into data. Glossy petal texture contrasts with chromatic fringing, neon bloom, and fine analog grain, giving the image a vivid, high-contrast, glitched-botanical feel.",
+        "Krea 2 Large",
+        "1:1",
+        "1K",
+        "medium",
+        "176345d7-b1e0-4b44-bf06-ce4d7b8b8062",
+        0.35,
+        1039717954,
+        "randomize"
+      ]
+    },
+    {
+      "flags": {},
+      "id": 45,
+      "inputs": [
+        {
+          "link": 37,
+          "localized_name": "images",
+          "name": "images",
+          "type": "IMAGE"
+        },
+        {
+          "link": null,
+          "localized_name": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 20,
+      "outputs": [],
+      "pos": [
+        2566.6523117165934,
+        1264.6943217524092
+      ],
+      "properties": {},
+      "shape": 2,
+      "size": [
+        417.640625,
+        545.625
+      ],
+      "type": "SaveImage",
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "bgcolor": "#653",
+      "color": "#432",
+      "flags": {},
+      "id": 50,
+      "inputs": [
+        {
+          "link": 67,
+          "localized_name": "prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model",
+          "name": "model",
+          "type": "COMFY_DYNAMICCOMBO_V3",
+          "widget": {
+            "name": "model"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.aspect_ratio",
+          "name": "model.aspect_ratio",
+          "type": "COMBO",
+          "widget": {
+            "name": "model.aspect_ratio"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.resolution",
+          "name": "model.resolution",
+          "type": "COMBO",
+          "widget": {
+            "name": "model.resolution"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.creativity",
+          "name": "model.creativity",
+          "type": "COMBO",
+          "widget": {
+            "name": "model.creativity"
+          }
+        },
+        {
+          "link": 66,
+          "localized_name": "model.moodboard_id",
+          "name": "model.moodboard_id",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "model.moodboard_id"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.moodboard_strength",
+          "name": "model.moodboard_strength",
+          "shape": 7,
+          "type": "FLOAT",
+          "widget": {
+            "name": "model.moodboard_strength"
+          }
+        },
+        {
+          "label": "style_reference",
+          "link": null,
+          "localized_name": "model.style_reference",
+          "name": "model.style_reference",
+          "shape": 7,
+          "type": "KREA_STYLE_REF"
+        },
+        {
+          "link": null,
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 15,
+      "outputs": [
+        {
+          "links": [
+            42
+          ],
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE"
+        }
+      ],
+      "pos": [
+        545.0229880143827,
+        2154.2253489171894
+      ],
+      "properties": {
+        "Node name for S&R": "Krea2ImageNode"
+      },
+      "shape": 2,
+      "size": [
+        400,
+        354.65625
+      ],
+      "type": "Krea2ImageNode",
+      "widgets_values": [
+        "Inside a filthy media lab, a woman with neural implants leans back in total neural immersion as a stream of pirate video erupts across stacked CRT monitors around her, cables draped like veins, intimate but chaotic interior scene, aggressive red-violet-cyan lighting, body and machine blending into signal noise, chromatic aberration, glitch effect, candid techno-grit, saturated neon, coarse grain",
+        "Krea 2 Large",
+        "1:1",
+        "1K",
+        "medium",
+        "aa2178a3-36f1-47f6-8d2a-c3578d5329af",
+        0.35,
+        1121547250,
+        "randomize"
+      ]
+    },
+    {
+      "flags": {},
+      "id": 51,
+      "inputs": [
+        {
+          "link": 42,
+          "localized_name": "images",
+          "name": "images",
+          "type": "IMAGE"
+        },
+        {
+          "link": null,
+          "localized_name": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 21,
+      "outputs": [],
+      "pos": [
+        1000.7364996854219,
+        2154.2253489171894
+      ],
+      "properties": {},
+      "shape": 2,
+      "size": [
+        417.640625,
+        545.625
+      ],
+      "type": "SaveImage",
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "bgcolor": "#653",
+      "color": "#432",
+      "flags": {},
+      "id": 59,
+      "inputs": [
+        {
+          "link": 69,
+          "localized_name": "prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model",
+          "name": "model",
+          "type": "COMFY_DYNAMICCOMBO_V3",
+          "widget": {
+            "name": "model"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.aspect_ratio",
+          "name": "model.aspect_ratio",
+          "type": "COMBO",
+          "widget": {
+            "name": "model.aspect_ratio"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.resolution",
+          "name": "model.resolution",
+          "type": "COMBO",
+          "widget": {
+            "name": "model.resolution"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.creativity",
+          "name": "model.creativity",
+          "type": "COMBO",
+          "widget": {
+            "name": "model.creativity"
+          }
+        },
+        {
+          "link": 68,
+          "localized_name": "model.moodboard_id",
+          "name": "model.moodboard_id",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "model.moodboard_id"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.moodboard_strength",
+          "name": "model.moodboard_strength",
+          "shape": 7,
+          "type": "FLOAT",
+          "widget": {
+            "name": "model.moodboard_strength"
+          }
+        },
+        {
+          "label": "style_reference",
+          "link": null,
+          "localized_name": "model.style_reference",
+          "name": "model.style_reference",
+          "shape": 7,
+          "type": "KREA_STYLE_REF"
+        },
+        {
+          "link": null,
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 16,
+      "outputs": [
+        {
+          "links": [
+            50
+          ],
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE"
+        }
+      ],
+      "pos": [
+        2084.414886356095,
+        2154.2253489171894
+      ],
+      "properties": {
+        "Node name for S&R": "Krea2ImageNode"
+      },
+      "shape": 2,
+      "size": [
+        400,
+        354.65625
+      ],
+      "type": "Krea2ImageNode",
+      "widgets_values": [
+        "Photograph, staged 1960s Technicolor fantasy film still of a solemn medieval knight in chainmail and polished silver helmet riding a white horse through a moonlit rocky dreamscape, three-quarter composition from slightly below eye level, horse filling the foreground left while the rider sits upright and still, soft theatrical studio lighting with glowing rim highlights, violet-blue painted backdrop mountains, misty atmosphere, shallow focus, velvety shadows, muted jewel-tone palette, analog film grain, slight lens softness, halation, practical costume texture, storybook medieval romance with a nostalgic early-cinema matte-painting fantasy quality.",
+        "Krea 2 Large",
+        "1:1",
+        "1K",
+        "medium",
+        "b6edb7f2-1f75-4dd6-8774-09c7e4f415cc",
+        0.35,
+        1686490302,
+        "randomize"
+      ]
+    },
+    {
+      "flags": {
+        "collapsed": false
+      },
+      "id": 60,
+      "inputs": [
+        {
+          "link": 50,
+          "localized_name": "images",
+          "name": "images",
+          "type": "IMAGE"
+        },
+        {
+          "link": null,
+          "localized_name": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 22,
+      "outputs": [],
+      "pos": [
+        2566.6523117165934,
+        2154.2253489171894
+      ],
+      "properties": {},
+      "shape": 2,
+      "size": [
+        417.640625,
+        545.625
+      ],
+      "type": "SaveImage",
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "bgcolor": "#653",
+      "color": "#432",
+      "flags": {},
+      "id": 65,
+      "inputs": [
+        {
+          "link": 72,
+          "localized_name": "prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model",
+          "name": "model",
+          "type": "COMFY_DYNAMICCOMBO_V3",
+          "widget": {
+            "name": "model"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.aspect_ratio",
+          "name": "model.aspect_ratio",
+          "type": "COMBO",
+          "widget": {
+            "name": "model.aspect_ratio"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.resolution",
+          "name": "model.resolution",
+          "type": "COMBO",
+          "widget": {
+            "name": "model.resolution"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.creativity",
+          "name": "model.creativity",
+          "type": "COMBO",
+          "widget": {
+            "name": "model.creativity"
+          }
+        },
+        {
+          "link": 71,
+          "localized_name": "model.moodboard_id",
+          "name": "model.moodboard_id",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "model.moodboard_id"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.moodboard_strength",
+          "name": "model.moodboard_strength",
+          "shape": 7,
+          "type": "FLOAT",
+          "widget": {
+            "name": "model.moodboard_strength"
+          }
+        },
+        {
+          "label": "style_reference",
+          "link": null,
+          "localized_name": "model.style_reference",
+          "name": "model.style_reference",
+          "shape": 7,
+          "type": "KREA_STYLE_REF"
+        },
+        {
+          "link": null,
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 17,
+      "outputs": [
+        {
+          "links": [
+            55
+          ],
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE"
+        }
+      ],
+      "pos": [
+        545.0229880143827,
+        3048.472881861134
+      ],
+      "properties": {
+        "Node name for S&R": "Krea2ImageNode"
+      },
+      "shape": 2,
+      "size": [
+        400,
+        354.65625
+      ],
+      "type": "Krea2ImageNode",
+      "widgets_values": [
+        "Two immaculate college students sit next to the tennis net at night under blazing court lights, one eating fries from a silver trophy cup, the other holding a champagne bottle like a water bottle, high-contrast artificial lighting, saturated green court and electric white outfits, glossy textures, sharp shadows, surreal preppy pop decadence",
+        "Krea 2 Large",
+        "1:1",
+        "1K",
+        "medium",
+        "dba7dbec-86cc-4ec1-8195-5a486ce15939",
+        0.35,
+        1564896885,
+        "randomize"
+      ]
+    },
+    {
+      "flags": {},
+      "id": 66,
+      "inputs": [
+        {
+          "link": 55,
+          "localized_name": "images",
+          "name": "images",
+          "type": "IMAGE"
+        },
+        {
+          "link": null,
+          "localized_name": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 23,
+      "outputs": [],
+      "pos": [
+        1000.7364996854219,
+        3052.5257432814797
+      ],
+      "properties": {},
+      "shape": 2,
+      "size": [
+        417.640625,
+        545.625
+      ],
+      "type": "SaveImage",
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "bgcolor": "#653",
+      "color": "#432",
+      "flags": {},
+      "id": 71,
+      "inputs": [
+        {
+          "link": 74,
+          "localized_name": "prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model",
+          "name": "model",
+          "type": "COMFY_DYNAMICCOMBO_V3",
+          "widget": {
+            "name": "model"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.aspect_ratio",
+          "name": "model.aspect_ratio",
+          "type": "COMBO",
+          "widget": {
+            "name": "model.aspect_ratio"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.resolution",
+          "name": "model.resolution",
+          "type": "COMBO",
+          "widget": {
+            "name": "model.resolution"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.creativity",
+          "name": "model.creativity",
+          "type": "COMBO",
+          "widget": {
+            "name": "model.creativity"
+          }
+        },
+        {
+          "link": 73,
+          "localized_name": "model.moodboard_id",
+          "name": "model.moodboard_id",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "model.moodboard_id"
+          }
+        },
+        {
+          "link": null,
+          "localized_name": "model.moodboard_strength",
+          "name": "model.moodboard_strength",
+          "shape": 7,
+          "type": "FLOAT",
+          "widget": {
+            "name": "model.moodboard_strength"
+          }
+        },
+        {
+          "label": "style_reference",
+          "link": null,
+          "localized_name": "model.style_reference",
+          "name": "model.style_reference",
+          "shape": 7,
+          "type": "KREA_STYLE_REF"
+        },
+        {
+          "link": null,
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 18,
+      "outputs": [
+        {
+          "links": [
+            60
+          ],
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE"
+        }
+      ],
+      "pos": [
+        2084.414886356095,
+        3048.472881861134
+      ],
+      "properties": {
+        "Node name for S&R": "Krea2ImageNode"
+      },
+      "shape": 2,
+      "size": [
+        400,
+        354.65625
+      ],
+      "type": "Krea2ImageNode",
+      "widgets_values": [
+        "A tiny blue house sits inside a shopping mall atrium after closing, with a full-size moon hanging too low above its roof, artificial trees casting impossible shadows, a yellow car parked beside an indoor slide, glossy tiled floor reflecting everything wrong, saturated children’s-book colors, eerie flash photography, surreal nostalgia.",
+        "Krea 2 Large",
+        "1:1",
+        "1K",
+        "medium",
+        "3b1eac6e-fe46-49dc-8fd7-3a2bc3c2f445",
+        0.35,
+        717056163,
+        "randomize"
+      ]
+    },
+    {
+      "flags": {},
+      "id": 72,
+      "inputs": [
+        {
+          "link": 60,
+          "localized_name": "images",
+          "name": "images",
+          "type": "IMAGE"
+        },
+        {
+          "link": null,
+          "localized_name": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          }
+        }
+      ],
+      "mode": 0,
+      "order": 24,
+      "outputs": [],
+      "pos": [
+        2566.6523117165934,
+        3048.472881861134
+      ],
+      "properties": {},
+      "shape": 2,
+      "size": [
+        417.640625,
+        545.625
+      ],
+      "type": "SaveImage",
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "flags": {},
+      "id": 77,
+      "inputs": [],
+      "mode": 0,
+      "order": 0,
+      "outputs": [
+        {
+          "links": [
+            62
+          ],
+          "name": "STRING",
+          "type": "STRING",
+          "widget": {
+            "name": "model.moodboard_id"
+          }
+        }
+      ],
+      "pos": [
+        39.30405673323071,
+        1753.2760809129013
+      ],
+      "properties": {
+        "Run widget replace on values": false
+      },
+      "size": [
+        455.765625,
+        84
+      ],
+      "title": "Moodboard ID",
+      "type": "PrimitiveNode",
+      "widgets_values": [
+        "7947e7b8-750e-4dbd-877a-d554d86f85d1"
+      ]
+    },
+    {
+      "flags": {},
+      "id": 78,
+      "inputs": [],
+      "mode": 0,
+      "order": 1,
+      "outputs": [
+        {
+          "links": [
+            63
+          ],
+          "name": "STRING",
+          "type": "STRING",
+          "widget": {
+            "name": "model.moodboard_id"
+          }
+        }
+      ],
+      "pos": [
+        1582.4324157845213,
+        1751.8243712701988
+      ],
+      "properties": {
+        "Run widget replace on values": false
+      },
+      "size": [
+        452.390625,
+        84
+      ],
+      "title": "Moodboard ID",
+      "type": "PrimitiveNode",
+      "widgets_values": [
+        "176345d7-b1e0-4b44-bf06-ce4d7b8b8062"
+      ]
+    },
+    {
+      "flags": {},
+      "id": 79,
+      "inputs": [],
+      "mode": 0,
+      "order": 2,
+      "outputs": [
+        {
+          "links": [
+            64
+          ],
+          "name": "STRING",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          }
+        }
+      ],
+      "pos": [
+        39.30405673323071,
+        1264.6943217524092
+      ],
+      "properties": {
+        "Run widget replace on values": false
+      },
+      "size": [
+        367.140625,
+        409.59375
+      ],
+      "title": "prompt",
+      "type": "PrimitiveNode",
+      "widgets_values": [
+        "soft-focus contemporary impressionist portrait of a young man with messy dark hair, shown in an intimate close-up with his face, neck, and shoulders filling the frame in a loose diagonal composition. His head tips upward in a long, exhausted sigh, lips parted, expression emotionally fried, while one arm flings outward to the side holding a bright aluminum energy drink can, the gesture reading as both dependence and dismissal. He wears a loose white tee or thin hoodie that dissolves into the background. Pale diffused light, blush pink, ivory, pearl, and cool blue-gray tones, smoky dark hair masses, visible loose brushstrokes, feathered edges, hazy bloom, and partially unfinished passages create a romantic painterly image with a Gen Z undertone of overstimulation and caffeinated burnout."
+      ]
+    },
+    {
+      "flags": {},
+      "id": 80,
+      "inputs": [],
+      "mode": 0,
+      "order": 3,
+      "outputs": [
+        {
+          "links": [
+            65
+          ],
+          "name": "STRING",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          }
+        }
+      ],
+      "pos": [
+        1582.4324157845213,
+        1264.6943217524092
+      ],
+      "properties": {
+        "Run widget replace on values": false
+      },
+      "size": [
+        387.703125,
+        360.734375
+      ],
+      "title": "prompt",
+      "type": "PrimitiveNode",
+      "widgets_values": [
+        "a single red-and-yellow tulip bending diagonally across the frame, covered in dew droplets, sharply lit against a deep dark background. Part of the bloom is corrupted by dense pixel glitches, broken RGB blocks, and digital compression artifacts, as if the flower is dissolving into data. Glossy petal texture contrasts with chromatic fringing, neon bloom, and fine analog grain, giving the image a vivid, high-contrast, glitched-botanical feel."
+      ]
+    },
+    {
+      "flags": {},
+      "id": 81,
+      "inputs": [],
+      "mode": 0,
+      "order": 4,
+      "outputs": [
+        {
+          "links": [
+            66
+          ],
+          "name": "STRING",
+          "type": "STRING",
+          "widget": {
+            "name": "model.moodboard_id"
+          }
+        }
+      ],
+      "pos": [
+        39.30405673323071,
+        2643.144166705367
+      ],
+      "properties": {
+        "Run widget replace on values": false
+      },
+      "size": [
+        450.5625,
+        97.1875
+      ],
+      "title": "Moodboard ID",
+      "type": "PrimitiveNode",
+      "widgets_values": [
+        "aa2178a3-36f1-47f6-8d2a-c3578d5329af"
+      ]
+    },
+    {
+      "flags": {},
+      "id": 82,
+      "inputs": [],
+      "mode": 0,
+      "order": 5,
+      "outputs": [
+        {
+          "links": [
+            67
+          ],
+          "name": "STRING",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          }
+        }
+      ],
+      "pos": [
+        39.30405673323071,
+        2154.2253489171894
+      ],
+      "properties": {
+        "Run widget replace on values": false
+      },
+      "size": [
+        339.265625,
+        356.625
+      ],
+      "title": "prompt",
+      "type": "PrimitiveNode",
+      "widgets_values": [
+        "Inside a filthy media lab, a woman with neural implants leans back in total neural immersion as a stream of pirate video erupts across stacked CRT monitors around her, cables draped like veins, intimate but chaotic interior scene, aggressive red-violet-cyan lighting, body and machine blending into signal noise, chromatic aberration, glitch effect, candid techno-grit, saturated neon, coarse grain"
+      ]
+    },
+    {
+      "flags": {},
+      "id": 83,
+      "inputs": [],
+      "mode": 0,
+      "order": 6,
+      "outputs": [
+        {
+          "links": [
+            68
+          ],
+          "name": "STRING",
+          "type": "STRING",
+          "widget": {
+            "name": "model.moodboard_id"
+          }
+        }
+      ],
+      "pos": [
+        1582.4324157845213,
+        2627.6279529054673
+      ],
+      "properties": {
+        "Run widget replace on values": false
+      },
+      "size": [
+        455.1875,
+        88.6875
+      ],
+      "title": "Moodboard ID",
+      "type": "PrimitiveNode",
+      "widgets_values": [
+        "b6edb7f2-1f75-4dd6-8774-09c7e4f415cc"
+      ]
+    },
+    {
+      "flags": {},
+      "id": 84,
+      "inputs": [],
+      "mode": 0,
+      "order": 7,
+      "outputs": [
+        {
+          "links": [
+            69
+          ],
+          "name": "STRING",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          }
+        }
+      ],
+      "pos": [
+        1582.4324157845213,
+        2154.2253489171894
+      ],
+      "properties": {
+        "Run widget replace on values": false
+      },
+      "size": [
+        351.640625,
+        377.921875
+      ],
+      "title": "prompt",
+      "type": "PrimitiveNode",
+      "widgets_values": [
+        "Photograph, staged 1960s Technicolor fantasy film still of a solemn medieval knight in chainmail and polished silver helmet riding a white horse through a moonlit rocky dreamscape, three-quarter composition from slightly below eye level, horse filling the foreground left while the rider sits upright and still, soft theatrical studio lighting with glowing rim highlights, violet-blue painted backdrop mountains, misty atmosphere, shallow focus, velvety shadows, muted jewel-tone palette, analog film grain, slight lens softness, halation, practical costume texture, storybook medieval romance with a nostalgic early-cinema matte-painting fantasy quality."
+      ]
+    },
+    {
+      "flags": {},
+      "id": 85,
+      "inputs": [],
+      "mode": 0,
+      "order": 8,
+      "outputs": [
+        {
+          "links": [
+            71
+          ],
+          "name": "STRING",
+          "type": "STRING",
+          "widget": {
+            "name": "model.moodboard_id"
+          }
+        }
+      ],
+      "pos": [
+        39.30405673323071,
+        3539.1030783938986
+      ],
+      "properties": {
+        "Run widget replace on values": false
+      },
+      "size": [
+        451.578125,
+        84
+      ],
+      "title": "Moodboard ID",
+      "type": "PrimitiveNode",
+      "widgets_values": [
+        "dba7dbec-86cc-4ec1-8195-5a486ce15939"
+      ]
+    },
+    {
+      "flags": {},
+      "id": 86,
+      "inputs": [],
+      "mode": 0,
+      "order": 9,
+      "outputs": [
+        {
+          "links": [
+            72
+          ],
+          "name": "STRING",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          }
+        }
+      ],
+      "pos": [
+        39.30405673323071,
+        3048.472881861134
+      ],
+      "properties": {
+        "Run widget replace on values": false
+      },
+      "size": [
+        337.46875,
+        359.15625
+      ],
+      "title": "prompt",
+      "type": "PrimitiveNode",
+      "widgets_values": [
+        "Two immaculate college students sit next to the tennis net at night under blazing court lights, one eating fries from a silver trophy cup, the other holding a champagne bottle like a water bottle, high-contrast artificial lighting, saturated green court and electric white outfits, glossy textures, sharp shadows, surreal preppy pop decadence"
+      ]
+    },
+    {
+      "flags": {},
+      "id": 87,
+      "inputs": [],
+      "mode": 0,
+      "order": 10,
+      "outputs": [
+        {
+          "links": [
+            73
+          ],
+          "name": "STRING",
+          "type": "STRING",
+          "widget": {
+            "name": "model.moodboard_id"
+          }
+        }
+      ],
+      "pos": [
+        1582.4324157845213,
+        3535.0333855973017
+      ],
+      "properties": {
+        "Run widget replace on values": false
+      },
+      "size": [
+        455.046875,
+        84
+      ],
+      "title": "Moodboard ID",
+      "type": "PrimitiveNode",
+      "widgets_values": [
+        "3b1eac6e-fe46-49dc-8fd7-3a2bc3c2f445"
+      ]
+    },
+    {
+      "flags": {},
+      "id": 88,
+      "inputs": [],
+      "mode": 0,
+      "order": 11,
+      "outputs": [
+        {
+          "links": [
+            74
+          ],
+          "name": "STRING",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          }
+        }
+      ],
+      "pos": [
+        1582.4324157845213,
+        3048.472881861134
+      ],
+      "properties": {
+        "Run widget replace on values": false
+      },
+      "size": [
+        351.984375,
+        324.640625
+      ],
+      "title": "prompt",
+      "type": "PrimitiveNode",
+      "widgets_values": [
+        "A tiny blue house sits inside a shopping mall atrium after closing, with a full-size moon hanging too low above its roof, artificial trees casting impossible shadows, a yellow car parked beside an indoor slide, glossy tiled floor reflecting everything wrong, saturated children’s-book colors, eerie flash photography, surreal nostalgia."
+      ]
+    },
+    {
+      "bgcolor": "#000",
+      "color": "#222",
+      "flags": {
+        "collapsed": false
+      },
+      "id": 95,
+      "inputs": [],
+      "mode": 0,
+      "order": 12,
+      "outputs": [],
+      "pos": [
+        -588.7551699019884,
+        1150.465279293856
+      ],
+      "properties": {},
+      "size": [
+        520.671875,
+        1648.5625
+      ],
+      "type": "MarkdownNote",
+      "widgets_values": [
+        "# Krea Moodboards Workflow Notes\n\nThis workflow is for testing multiple Krea moodboard styles.\n\nEach section uses its own prompt, moodboard ID, and save node.\n\n\n## Before You Run\n\nAll moodboard sections may be active at once.\n\nIf you press run without bypassing anything, Comfy may try to generate every section.\n\nTo run only one moodboard section:\n\n- Drag-select the nodes you do not want to run.\n- Press `Cmd+B` to bypass them.\n\nYou can also right-click the canvas or group area and choose **Bypass Group**.\n\nLeave only the moodboard section you want to test active.\n\n\n## Changing The Moodboard\n\nMoodboards are customizable.\n\nYou can use your own Krea moodboard instead of the included examples.\n\nTo use your own moodboard:\n\n- Go to https://www.krea.ai/moodboards.\n- Create a new moodboard.\n- Add your reference images.\n- Share or publish the moodboard so it is live.\n- Copy the moodboard ID from the URL.\n- Paste that ID into the `moodboard_id` field in the Krea node.\n\nExample moodboard ID:\n\n`7947e7b8-750e-4dbd-877a-d554d86f85d1`\n\n\n## Basic Controls\n\n**prompt**  \nThe image prompt you want Krea to generate.\n\n**moodboard_id**  \nThe Krea moodboard style being used.\n\n**moodboard_strength**  \nHow strongly the moodboard affects the result.\n\n**aspect_ratio**  \nThe output shape.\n\n**seed**  \nChange or randomize this for new variations.\n\n\n## Suggested Workflow\n\n- Choose one moodboard section.\n- Bypass all other sections.\n- Edit the prompt if needed.\n- Add or replace the moodboard ID.\n- Run the workflow.\n- Compare the saved output."
+      ]
+    }
+  ],
+  "revision": 0,
+  "version": 0.4
+}

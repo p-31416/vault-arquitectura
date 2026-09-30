@@ -1,7 +1,7 @@
 ---
 tipo: legal
 fecha_creacion: 2026-09-12
-ultima_actualizacion: 2026-09-12
+ultima_actualizacion: 2026-09-21
 tags: [legal, contrato, studio-os]
 idioma: es
 ---
@@ -17,15 +17,15 @@ idioma: es
 
 ## 1. Objeto
 
-Programa I+D embebido Studio OS: capacidad de 3hs/día hábil durante 90 días (sep–dic 2026) con entregable tangible cada viernes — Vault vivo, referentes de representación, estándares CAD sobre caso real, flujos n8n/Leantime. Obligación de medios + entregables; no es locación por horas ni dirección de obra (no incluye firma de planos Ley 24.335).
+Programa I+D embebido Studio OS: **190 horas trimestrales totales (~16hs semanales promedio)** durante 90 días (firma 21/09–21/12/2026, trabajo anticipado desde mié 16/09) con entregable tangible cada viernes — Vault vivo, referentes de representación, estándares CAD sobre caso Nayara Alvares Campos (Brasil), flujos n8n/Leantime. **Anexo I cerrado Mes 1; Anexos II y III se completan la última semana de cada mes** hasta completar 190hs. Obligación de medios + entregables; no es locación por horas ni dirección de obra (no incluye firma de planos Ley 24.335).
 
 ## 2. Modalidad
 
-Híbrida: 2 presenciales/mes + virtuales semanales + viernes async. El CLIENTE aporta 2hs/sem de disponibilidad y accesos (Google, calendario). Franja 8:00–18:00.
+Híbrida: 2 presenciales/mes + virtuales semanales + viernes async. El CLIENTE aporta **3hs/sem** de disponibilidad y accesos (Google, calendario). Franja 8:00–18:00. Ritmo **~16hs semanales promedio, global 190hs**.
 
 ## 3. Precio y forma de pago
 
-Total cerrado **USD 1.800** en 4 hitos: 300 al firmar (adelanto) / 600 fin Mes 1 / 600 fin Mes 2 / 300 saldo Mes 3. Pagadero en pesos al cambio del día (promedio dólar blue/oficial) por efectivo o transferencia, con Factura C. Mora: se pausa el servicio hasta regularizar. Detalle fiscal en [[wiki/finanzas/terminos-facturacion|Términos fiscales]].
+Total cerrado **USD 1.800** en 4 hitos **fecha 16→ vencimiento 23 (1 semana margen)**: **300 (16/09→23/09) / 600 (16/10→23/10) / 600 (16/11→23/11) / 300 (16/12→23/12)**. Factura fecha 16 de cada mes, tipo de cambio **promedio Oficial BNA vendedor + MEP vendedor vía El Cronista del día de facturación** (fallback Ámbito/BNA). Pagadero en pesos por transferencia, con Factura C. **Mora 5% mensual + suspensión** hasta regularizar. Detalle fiscal en [[wiki/finanzas/terminos-facturacion|Términos fiscales]]. Hito1 fecha 16/09 con vencimiento 23/09; firma jurídica 21/09 con efectos económicos desde 16/09.
 
 ## 4. Propiedad intelectual
 
@@ -37,7 +37,7 @@ Rigen [[wiki/legal/nda|NDA]] + [[wiki/legal/tratamiento-datos|DPA]] + [[wiki/leg
 
 ## 6. Vigencia y cierre
 
-90 días + mantenimiento bonificado hasta mediados de dic 2026. Reunión de continuidad 15 días antes del cierre. Cualquiera puede terminar con aviso de 15 días; se abonan los hitos devengados. Al cierre: devolución/borrado certificado de datos y entrega del Vault exportable.
+90 días **firma 21/09–21/12/2026** + mantenimiento bonificado hasta mediados de dic 2026. Trabajo anticipado desde **mié 16/09** reconocido. Reunión de continuidad 15 días antes del cierre. Cualquiera puede terminar con **aviso de 20 días**; se abonan hitos devengados + horas del hito en curso prorrateadas + **40% sobre saldo pendiente** (ver contrato detallado). Al cierre: devolución/borrado certificado de datos y entrega del Vault exportable.
 
 ## 7. Ley y firmas
 

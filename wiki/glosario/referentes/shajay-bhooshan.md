@@ -12,11 +12,11 @@ origen: https://www.zha.com/people/shajay-bhooshan
 
 > Head de ZHA Computation and Design (CODE) — investigación practice-embedded: ML + fabricación robótica.
 
-- [Quién es](#quién-es)
-- [Por qué es referente para el estudio](#por-qué-es-referente-para-el-estudio)
-- [Bibliografía](#bibliografía)
-- [Conceptos relacionados](#conceptos-relacionados)
-- [Referencias](#referencias)
+- [[Quién es]])
+- [[Por qué es referente para el estudio]])
+- [[Bibliografía]])
+- [[Conceptos relacionados]])
+- [[Referencias]])
 
 ## Quién es
 

@@ -12,6 +12,8 @@ estado: plan
 
 # Spec — Moodboard L1+L2 local DirectML + vault-visual
 
+> **Estado al 2026-09-29: PLAN CON AVANCE EN SESIONES — `n_06-moodboard/` conserva 3 JSON originales, sin variante local ni `00-README/01-index/02-WF-log`. Pendiente: validación nodos al arranque ComfyUI + variante SD1.5 512 + ingesta vault-visual con ficha.**
+
 > Convierte `Advertising1 - Moodboard Creation.json` (Recraft + GPT-Image, API con costo) en variante 100% local RX 570 8GB DirectML (prohibido CUDA) + define ingesta vault-visual en 3 destinos con ficha 1:1. Estado MCP 2026-09-09: `http://127.0.0.1:8188` inalcanzable (ECONNREFUSED), validación de nodos pendiente al arranque.
 
 ## 0. Resumen en 1 línea

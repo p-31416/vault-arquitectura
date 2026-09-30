@@ -9,12 +9,12 @@ tags: [glosario, concepto, 5s, archivos, orden, lean]
 
 > Seiri–Seiton–Seiso–Seiketsu–Shitsuke aplicadas al vault: carpetas, nomenclatura, limpieza, estándar y disciplina. Primera herramienta Lean que se implementa — antes que cualquier otra.
 
-- [Definición](#definición)
-- [Las 5S](#las-5s)
-- [5S digital en el vault](#5s-digital-en-el-vault)
-- [5S física (oficina/obra)](#5s-física-oficinaobra)
-- [Conceptos relacionados](#conceptos-relacionados)
-- [Referencias](#referencias)
+- [[Definición]])
+- [[Las 5S]])
+- [[5S digital en el vault]])
+- [[5S física (oficina/obra)]])
+- [[Conceptos relacionados]])
+- [[Referencias]])
 
 ## Definición
 

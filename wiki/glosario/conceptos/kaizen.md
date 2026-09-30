@@ -9,12 +9,12 @@ tags: [glosario, concepto, kaizen, pdca, mejora-continua]
 
 > Kaizen = mejora continua en pasos pequeños con toda la gente. PDCA (Plan-Do-Check-Act, Shewhart/Deming) = motor que la hace sistemática. Ritual del vault: **"Victoria + Mejora" 15 min/semana, 3 victorias en log.md**.
 
-- [Definición](#definición)
-- [PDCA paso a paso](#pdca-paso-a-paso)
-- [Kaizen en construcción (lo repetible)](#kaizen-en-construcción-lo-repetible)
-- [Kaizen diario en el estudio](#kaizen-diario-en-el-estudio)
-- [Conceptos relacionados](#conceptos-relacionados)
-- [Referencias](#referencias)
+- [[Definición]])
+- [[PDCA paso a paso]])
+- [[Kaizen en construcción (lo repetible)]])
+- [[Kaizen diario en el estudio]])
+- [[Conceptos relacionados]])
+- [[Referencias]])
 
 ## Definición
 

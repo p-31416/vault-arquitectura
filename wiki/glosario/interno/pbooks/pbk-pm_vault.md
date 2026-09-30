@@ -10,15 +10,15 @@ tags: [pbook, pm, leantime, kanban, sprints, okr, vault, operacion]
 
 > Playbook operativo canónico: qué va en Leantime, qué va en el vault (git), cómo se hablan, rituales semanales y convenciones de nombres. Si hay duda entre este pbook y una ficha conceptual, **manda este pbook**.
 
-- [Principio: Leantime gestiona, el vault recuerda](#principio-leantime-gestiona-el-vault-recuerda)
-- [Mapa de objetos Leantime ↔ vault](#mapa-de-objetos-leantime--vault)
-- [Goals (OKR), Milestones y Sprints](#goals-okr-milestones-y-sprints)
-- [Kanban + LPS en el día a día](#kanban--lps-en-el-día-a-día)
-- [Rituales semanales](#rituales-semanales)
-- [Convenciones de nombres y etiquetas](#convenciones-de-nombres-y-etiquetas)
-- [MCP Leantime + agente del vault](#mcp-leantime--agente-del-vault)
-- [Conceptos relacionados](#conceptos-relacionados)
-- [Referencias](#referencias)
+- [[Principio: Leantime gestiona, el vault recuerda]])
+- [[Mapa de objetos Leantime ↔ vault]])
+- [[Goals (OKR), Milestones y Sprints]])
+- [[Kanban + LPS en el día a día]])
+- [[Rituales semanales]])
+- [[Convenciones de nombres y etiquetas]])
+- [[MCP Leantime + agente del vault]])
+- [[Conceptos relacionados]])
+- [[Referencias]])
 
 ## Principio: Leantime gestiona, el vault recuerda
 

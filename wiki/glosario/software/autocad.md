@@ -2,22 +2,23 @@
 tipo: software
 software: autocad
 fecha_creacion: 2026-09-07
-ultima_actualizacion: 2026-09-07
-tags: [glosario, software, autocad]
+ultima_actualizacion: 2026-09-27
+tags: [glosario, software, autocad, mcp]
 ---
 
 # AutoCAD
 
 > Glosario AutoCAD — comandos, funciones AutoLISP y variables del sistema. Migrado de `autocad/` (legacy) a archivo único.
 
-- [Convenciones](#convenciones)
-- [Comandos — PLINE](#pline--polilinea)
-- [Funciones — entmake](#entmake--crear-entidades-desde-autolisp)
-- [Comandos pendientes](#comandos-pendientes)
-- [Funciones pendientes](#funciones-pendientes)
-- [Variables del sistema](#variables-del-sistema)
-- [Conceptos relacionados](#conceptos-relacionados)
-- [Referencias](#referencias)
+- [[#Convenciones]]
+- [[#PLINE — Polilínea]]
+- [[#entmake — Crear entidades desde AutoLISP]]
+- [[#Comandos pendientes]]
+- [[#Funciones pendientes]]
+- [[#Variables del sistema]]
+- [[#Agente IA — Product Help MCP]]
+- [[#Conceptos relacionados]]
+- [[#Referencias]]
 
 ## Convenciones
 
@@ -172,6 +173,18 @@ Cada sublista es un **código DXF**:
 | `CLAYER` | Layer actual | MVP_02 |
 | `CELTYPE` | Tipo de línea actual | MVP_02 |
 | `LUNITS` | Unidades lineales | MVP_02 |
+
+---
+
+## Agente IA — Product Help MCP
+
+Consulta directa a la ayuda oficial Autodesk desde OpenCode, con fuente primaria en inglés y español.
+
+- **Ayuda oficial:** [[wiki/glosario/software/mcp-autodesk-help|mcp-autodesk-help]] — servidor `autodesk-help`, remoto, solo lectura.
+- **Dibujo activo:** [[wiki/glosario/software/mcp-autocad|mcp-autocad]] — servidor `autocad`, local, lee y edita el dibujo abierto vía COM.
+- **Uso sugerido:** resolver dudas de comandos, bloques dinámicos, DWS y flujos C2/C3 con citas oficiales.
+- **Ejemplo:** `Buscá en la ayuda de AutoCAD 2027, en es_ES, cómo crear un bloque dinámico con estados de visibilidad. use autodesk-help`
+- **Fuente raw:** documento maestro AutoCAD §10–11 (panorama MCP + configuración por cliente).
 
 ---
 

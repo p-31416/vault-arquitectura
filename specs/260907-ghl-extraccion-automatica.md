@@ -7,6 +7,8 @@ tags: [automatizacion, ghl, transcripcion, obs, faster-whisper, ingest]
 
 # Plan — Extracción automática de academia GHL (OBS → vault, sin licencia)
 
+> **Estado al 2026-09-29: HERRAMIENTA EXISTE — `scripts/transcribir_ghl.py` creado. Pendiente: verificar `ffmpeg` + `faster-whisper` instalados y 1 prueba end-to-end OBS → `.mp3/.txt/.srt` → `wiki/raw/`.**
+
 > Cómo grabar con OBS y que **el resto sea automático**: audio → transcript → `wiki/raw/` → vault + glosario + servicios Pitau Tech.
 
 ## Objetivo

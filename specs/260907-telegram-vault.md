@@ -9,6 +9,8 @@ estado: plan
 
 # Plan — Bot Telegram → Vault (raw/telegram/)
 
+> **Estado al 2026-09-29: REEMPLAZADO — `raw/telegram/` vacío, bot polling no implementado. El flujo Telegram vive ahora en `specs/260924-plan-os-emilia-n8n.md` (Router + `/sync` + `/agendar`). Pendiente: archivar este plan o migrar nomenclatura foro → n8n.**
+
 > **Objetivo:** Toda conversación con Emilia (diseño, obra, admin) queda en el vault sin copiar/pegar. Vos hablás en Telegram, el bot vuelca a `raw/telegram/` por día y tema, y un job marca tareas pendientes y qué interactuamos.
 
 ## 0. Resumen en 1 línea

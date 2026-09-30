@@ -9,6 +9,8 @@ estado: plan
 
 # Plan — Ingest GHL 6 etapas → Vault → Servicios Pitau Tech (para diagnóstico Emilia)
 
+> **Estado al 2026-09-29: SUPERADO EN LO COMERCIAL — propuesta y contrato Studio OS firmados por otra vía; ingest pendiente: `wiki/estudio/metodologia-ciclo-6-etapas.md` y `wiki/glosario/software/gohighlevel/` no existen. Pendiente: decidir archivar o correr 1 ingest piloto.**
+
 > **Objetivo HOY:** definir la propuesta de **diagnóstico** para Emilia (asociada estudio grande) usando el ciclo de 6 etapas de GHL, transcrito sin descarga directa, y alimentar el vault sin desperdigar conocimiento.
 
 ## 0. Resumen en 1 línea

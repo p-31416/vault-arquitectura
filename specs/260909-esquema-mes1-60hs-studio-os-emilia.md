@@ -5,11 +5,13 @@ cliente: Emilia Pimenta
 fase: briefing
 fecha_creacion: 2026-09-09
 ultima_actualizacion: 2026-09-11
-estado: propuesta
+estado: entregado
 tags: [esquema, comercial, mes1, 60hs, trimestral, studio-os, fundador, okrs, milestones, ptech]
 ---
 
 # Esquema Mes 1 — Studio OS Emilia · 60hs · 3h/día × 20 días · Programa trimestral 180hs
+
+> **Estado al 2026-09-29: PROPUESTA ENTREGADA — contrato firmado 24/09/2026, vigencia 16/09–16/12/2026, adelanto USD 300 abonado 22/09. Pendiente: ejecución M1-M4 + tracking 60hs + ahorro ≥12hs/mes.**
 
 > **Lectura Obsidian:** [[specs/260909-esquema-mes1-60hs-studio-os-emilia]] · Base: [[wiki/glosario/interno/standares/ptech-filosofia|Filosofía Pitautech]] + [[proyectos/STUDIO_OS-Emilia/presentacion/03-propuesta-viernes-esquema]] + [[proyectos/STUDIO_OS-Emilia/presentacion/04-propuesta-viernes-lab-partnership]] + [[plan]] + [[proyectos/STUDIO_OS-Emilia/04-plan-studio-os]]
 > **Reunión propuesta:** 2026-09-12 · **Arranque a definir el viernes** · **Modalidad:** híbrida (virtual + presencial cada 15 días) · **Programa:** 90 días trimestral

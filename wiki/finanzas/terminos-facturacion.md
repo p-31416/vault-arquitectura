@@ -1,7 +1,7 @@
 ---
 tipo: finanza
 fecha_creacion: 2026-09-12
-ultima_actualizacion: 2026-09-12
+ultima_actualizacion: 2026-09-21
 tags: [finanza, facturacion, monotributo, studio-os]
 idioma: es
 ---
@@ -16,9 +16,9 @@ PITAUTECH, CUIT [A COMPLETAR], monotributista, emite **Factura C** sin IVA discr
 
 ## Precio y vencimientos
 
-Total USD 1.800 en 4 hitos: 300 al firmar / 600 fin Mes 1 / 600 fin Mes 2 / 300 saldo Mes 3 (tentativos 16/09, 16/10, 16/11, 16/12). Cada hito se factura en pesos al cambio del día (promedio dólar blue/oficial), efectivo o transferencia. Mora: pausa del servicio hasta regularizar.
+Total USD 1.800 en 4 hitos **fecha 16→vencimiento 23 (margen 1 semana)**: **300 (16/09→23/09) / 600 (16/10→23/10) / 600 (16/11→23/11) / 300 (16/12→23/12)**. Factura fecha 16 de cada mes (Hito1 emitido 21/09 con fecha 16/09), tipo cambio **promedio Oficial BNA vendedor + MEP vendedor vía El Cronista del día de facturación** (fallback Ámbito/BNA). Cada hito se factura en pesos por transferencia. **Mora 5% mensual + suspensión** hasta regularizar. Firma 21/09 con efectos económicos desde 16/09 (trabajo anticipado mié 16/09).
 
-> Nota: el tipo de cambio promedio blue/oficial es referencia comercial pactada; ante AFIP el comprobante se emite en ARS al valor liquidado.
+> Nota: el tipo de cambio promedio Oficial+MEP es referencia comercial pactada; ante AFIP el comprobante se emite en ARS al valor liquidado.
 
 ## Referencias
 

@@ -10,10 +10,10 @@ tags: [glosario, software, git]
 
 > Índice interno — `git` como herramienta única del vault.
 
-- [Config y precedencia](#config-y-precedencia)
-- [includeIf gitdir](#includeif-gitdir)
-- [Conceptos relacionados](#conceptos-relacionados)
-- [Referencias](#referencias)
+- [[Config y precedencia]])
+- [[includeIf gitdir]])
+- [[Conceptos relacionados]])
+- [[Referencias]])
 
 ## Config y precedencia
 

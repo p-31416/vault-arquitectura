@@ -11,12 +11,12 @@ idioma: es
 
 > Conversor universal de documentos — pipeline digest `.md` → PDF para envío por Telegram.
 
-- [Instalación](#instalación)
-- [md → pdf](#md--pdf)
-- [pdf-engine](#pdf-engine)
-- [Uso en digest vaultworm-arq](#uso-en-digest-vaultworm-arq)
-- [Conceptos relacionados](#conceptos-relacionados)
-- [Referencias](#referencias)
+- [[Instalación]])
+- [[md → pdf]])
+- [[pdf-engine]])
+- [[Uso en digest vaultworm-arq]])
+- [[Conceptos relacionados]])
+- [[Referencias]])
 
 ## Instalación
 

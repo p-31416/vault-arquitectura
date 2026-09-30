@@ -1,0 +1,233 @@
+{
+  "archivo": "ia-cad-test.dwg",
+  "path": "P:\\00-repos\\proyecto-pi\\vault-arquitectura\\activos\\caddy-salidas\\ia-cad-test.dwg",
+  "fecha": "2026-09-30T00:05:55",
+  "autocad_version": "26.0s (LMS Tech)",
+  "insunits": 6,
+  "extmin": [
+    -3.2589759656081503,
+    -0.5024999999999545,
+    -1.3552527156068805e-18
+  ],
+  "extmax": [
+    4.149999581451993,
+    4.383584486725191,
+    0.0
+  ],
+  "layouts": [
+    {
+      "name": "Layout1",
+      "tab_order": 1,
+      "is_model": false,
+      "active": false
+    },
+    {
+      "name": "Layout2",
+      "tab_order": 2,
+      "is_model": false,
+      "active": false
+    },
+    {
+      "name": "Model",
+      "tab_order": 0,
+      "is_model": true,
+      "active": true
+    }
+  ],
+  "layers": [
+    {
+      "name": "0",
+      "color_aci": 7,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "A-MURO",
+      "color_aci": 7,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "A-PTA-",
+      "color_aci": 1,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "A-AREA",
+      "color_aci": 5,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "A-CARP",
+      "color_aci": 1,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "A-MOB",
+      "color_aci": 3,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "Defpoints",
+      "color_aci": 7,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "SIMB-CARP",
+      "color_aci": 33,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "A-COTA-1-50",
+      "color_aci": 250,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "A-CARP-02",
+      "color_aci": 251,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": false,
+      "visible": false,
+      "on": true
+    },
+    {
+      "name": "AR-CUADRO DE VANO",
+      "color_aci": 1,
+      "linetype": "Continuous",
+      "frozen": false,
+      "locked": false,
+      "visible": false,
+      "on": true
+    }
+  ],
+  "blocks_defined": [
+    {
+      "name": "M2_COTA",
+      "entity_count": 3
+    },
+    {
+      "name": "_Open90",
+      "entity_count": 3
+    },
+    {
+      "name": "_ArchTick",
+      "entity_count": 1
+    },
+    {
+      "name": "PUERTA BATIENTE",
+      "entity_count": 46
+    },
+    {
+      "name": "*U6",
+      "entity_count": 46
+    },
+    {
+      "name": "_DotSmall",
+      "entity_count": 1
+    },
+    {
+      "name": "VENTANA BAJA SIMPLE",
+      "entity_count": 14
+    },
+    {
+      "name": "_None",
+      "entity_count": 0
+    },
+    {
+      "name": "*U10",
+      "entity_count": 14
+    }
+  ],
+  "entities_per_type": {
+    "POLYLINE": 4,
+    "LINE": 3,
+    "TEXT": 1,
+    "INSERT": 2
+  },
+  "entities_per_layer": {
+    "A-AREA": 2,
+    "A-MURO": 5,
+    "A-MOB": 1,
+    "A-CARP": 2
+  },
+  "entities_per_layer_type": {
+    "A-AREA": {
+      "POLYLINE": 1,
+      "TEXT": 1
+    },
+    "A-MURO": {
+      "POLYLINE": 2,
+      "LINE": 2,
+      "INSERT": 1
+    },
+    "A-MOB": {
+      "POLYLINE": 1
+    },
+    "A-CARP": {
+      "LINE": 1,
+      "INSERT": 1
+    }
+  },
+  "sample_texts": [
+    [
+      "A-AREA",
+      "LOCAL 4x4 - 16m2"
+    ]
+  ],
+  "entities_total": 10,
+  "sample_inserts": [
+    [
+      "A-CARP",
+      "PUERTA BATIENTE",
+      [
+        1.5,
+        0.0,
+        0.0
+      ]
+    ],
+    [
+      "A-MURO",
+      "VENTANA BAJA SIMPLE",
+      [
+        2.0,
+        4.0,
+        0.0
+      ]
+    ]
+  ]
+}

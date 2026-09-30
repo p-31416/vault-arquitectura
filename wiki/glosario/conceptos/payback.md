@@ -10,12 +10,12 @@ idioma: es
 
 > El payback mide en cuánto tiempo una inversión recupera su costo inicial mediante los ahorros que libera cada mes.
 
-- [Definición](#definición)
-- [Fórmula Pitautech](#fórmula-pitautech)
-- [Cómo se lee en el programa Studio OS](#cómo-se-lee-en-el-programa-studio-os)
-- [Ejemplo trimestral vigente](#ejemplo-trimestral-vigente)
-- [Conceptos relacionados](#conceptos-relacionados)
-- [Referencias](#referencias)
+- [[Definición]])
+- [[Fórmula Pitautech]])
+- [[Cómo se lee en el programa Studio OS]])
+- [[Ejemplo trimestral vigente]])
+- [[Conceptos relacionados]])
+- [[Referencias]])
 
 ## Definición
 

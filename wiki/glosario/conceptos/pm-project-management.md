@@ -9,12 +9,12 @@ tags: [glosario, concepto, pm, pmbok, project-management]
 
 > Disciplina paraguas: alcance, cronograma, costo, calidad, riesgos, interesados. El vault usa PM liviano (Leantime) + LPS en obra; PMBOK como referencia, no como burocracia.
 
-- [Definición](#definición)
-- [Áreas mínimas para el estudio](#áreas-mínimas-para-el-estudio)
-- [PMBOK vs Lean vs Agile (cuándo usar cada uno)](#pmbok-vs-lean-vs-agile-cuándo-usar-cada-uno)
-- [PM → Leantime + vault](#pm--leantime--vault)
-- [Conceptos relacionados](#conceptos-relacionados)
-- [Referencias](#referencias)
+- [[Definición]])
+- [[Áreas mínimas para el estudio]])
+- [[PMBOK vs Lean vs Agile (cuándo usar cada uno)]])
+- [[PM → Leantime + vault]])
+- [[Conceptos relacionados]])
+- [[Referencias]])
 
 ## Definición
 

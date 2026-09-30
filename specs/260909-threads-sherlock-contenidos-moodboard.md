@@ -12,6 +12,8 @@ estado: plan
 
 # PLAN — 3 Threads paralelos (2026-09-09) — @sherlock / @contenidos / Moodboard
 
+> **Estado al 2026-09-29: THREAD 1 HECHO — `raw/research/2026-09-09-karpathy-legado.md` + `big-bjarke-ingels.md` + `00-index.md` existen. Pendiente: Thread 2 (@contenidos → `raw/contenidos/`, hoy solo `_template.md`) + Thread 3 (variante local moodboard).**
+
 > Copiá cada bloque `Instrucción para terminal` tal cual en una terminal distinta con `opencode` abierto en `P:\00-repos\proyecto-pi\vault-arquitectura` (`.\with-env.ps1 opencode` si Windows). Cada thread es independiente, respeta `AGENTS.md:98-99` HITL (`¿Avanzo? s/N` + código `scripts/<slug>.py` + `scripts/<slug>_notas.md` `# NOTA ES`).
 
 ## Thread 1 — @sherlock solo BUSCA (humano/redes legado, alta prioridad)

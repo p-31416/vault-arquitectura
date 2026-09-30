@@ -21,6 +21,43 @@ Un **framework de documentación de estándares AutoCAD** para el estudio. Captu
 
 Todo sale de la práctica real del estudio y queda documentado con **registro de decisiones** (ADR = Architecture Decision Record).
 
+## Documentos: qué pregunta responde cada uno
+
+| Archivo | Pregunta | Contenido |
+|---------|----------|-----------|
+| `00-filo` | **¿POR QUÉ?** | Filosofía, principios, propósito del estándar |
+| `01-spec` | **¿QUÉ?** | Catálogo universal: capas, bloques, estilos. Cada item con nombre, color, linetype, lineweight |
+| `02-ft` | **¿CÓMO?** | Metodología: comandos, pasos, AutoLISP |
+| `03-log` | **¿CUÁNDO?** | Bitácora de decisiones e iteraciones |
+| `SET-{tipo}` | **¿AQUÍ Y AHORA?** | Aplicación concreta del spec+ft a un tipo de plano. Norma: `SET_0x-XXX_Descripcion.md` (ej: `SET_01-REP_Replanteo.md`, `SET_02-EST_Estructura.md`). Numerados por orden de aparición. |
+
+## Flujo de conocimiento iterativo
+
+> **Regla de agentes**: `@sherlock` escribe en `raw/` (solo BUSCA: `raw/research/` + `raw/sessions/` + `raw/reports/`; NUNCA toca `wiki/`). `@vaultworm-arq` analiza los crudos de `raw/` y escribe en `wiki/` (solo con `s` explícita). `@contenidos` genera versión legible intermedia en `raw/contenidos/`.
+
+```
+@sherlock investiga → raw/research/*.md (+ raw/sessions/, raw/reports/)
+      ↓
+@vaultworm-arq analiza crudos raw/ → digest → propone wiki entries + links
+      ↓
+@sherlock investiga más (referencias del digest) → nuevo raw/research/
+      ↓
+@vaultworm-arq re-analiza → digest actualizado
+      ↓
+...hasta convergencia → `s` → wiki/ canonizado
+      ↓
+Manuales de uso + lecturas sugeridas
+```
+
+- **`raw/docs/`**: crudos de Perplexia y otras fuentes → procesados por @sherlock → `raw/sessions/`
+- **`raw/sessions/`**: sesiones de trabajo con registro verbatim
+- **`raw/vaultworm-arq/`**: digest de análisis
+- **`raw/brainstorm/`**: sesiones de brainstorming
+
+## Crudos de referencia
+
+- `docs/` contiene archivos crudos de Perplexia sobre AutoCAD, cursos, MCP, licencias → fuente primaria para sherlock
+
 ## Cómo está organizado
 
 ```
@@ -61,3 +98,4 @@ Cada nivel `n_XX-*/` sigue el mismo esquema de MVP_01:
 3. **Un estándar no documentado no existe**: si no está acá, no es oficial.
 4. **AutoLISP aplica el estándar**, no lo reemplaza. El `.md` explica qué hace y por qué.
 5. **Sync automático**: cuando un nivel se consolida, pasa a `wiki/`.
+6. **Norma SET**: `SET_0x-XXX_Descripcion.md` donde `0x` = orden de aparición (01, 02...), `XXX` = disciplina (REP, EST, ARQ, ELE, SAN, MUN, GEN), `Descripcion` = nombre corto. Foco actual: `SET_01-REP_Replanteo.md` únicamente.

@@ -11,6 +11,8 @@ estado: plan
 
 # PLAN — Dos agentes: @fathom-pm y @contenidos
 
+> **Estado al 2026-09-29: AGENTES EXISTEN — `.opencode/agents/fathom-pm.md`, `contenidos.md`, `sherlock.md` creados; Fathom MCP conectado; 11 reuniones en `raw/reuniones/`. Pendiente: prueba formal @fathom-pm con 1 reunión real → `specs/` + cierre loop Leantime (bloqueado por `pitau.tech` 404) + verificación skills espejo y registro en `pbk-agentes-vaultarq`.**
+
 > Decisión SOL 2026-09-09: UN solo agente no alcanza. DOS agentes separados con triggers propios. Nombres: `@fathom-pm` + `@contenidos`. Reemplaza el planteo de agente único anterior (ver `log.md`).
 
 ## SPEC

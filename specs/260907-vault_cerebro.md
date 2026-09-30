@@ -11,6 +11,8 @@ idioma: es
 
 # Plan: Vault Cerebro — Creatividad con Orden para Estudios de Arquitectura
 
+> **Estado al 2026-09-29: VISIÓN VIGENTE, EJECUCIÓN PARCIAL — vault operativo, Fathom con 11 reuniones en `raw/`, agentes creados, contrato Emilia firmado. Pendiente: usuario Leantime Emilia (`pitau.tech` en revisión 404), sync GitHub Actions, guía enseñable S1.**
+
 ## Resumen ejecutivo
 
 Vault Cerebro mapea procesos del estudio para identificar dónde el uso de IA genera beneficio concreto. Pensado para quien recién comienza a organizarse —sin importar trayectoria— y busca transformar tareas dispersas en flujo con calidad verificada, trazabilidad y mejora semanal.

@@ -10,16 +10,16 @@ tags: [pbook, agentes, opencode, vaultworm-arq, brainstormy, subagent]
 
 > Registro de qué agentes existen, qué hacen, cómo están configurados (código) y cuándo corren. Definición viva en `.opencode/agents/*.md`; este pbook es el índice razonado.
 
-- [Agentes (tabla)](#agentes-tabla)
-- [vaultworm-arq — bibliotecario](#vaultworm-arq--bibliotecario)
-- [brainstormy — facilitador](#brainstormy--facilitador)
-- [fathom-pm — PM de reuniones](#fathom-pm--pm-de-reuniones)
-- [contenidos — curador academia](#contenidos--curador-academia)
-- [Comparativa](#comparativa)
-- [Cómo agregar un agente nuevo](#cómo-agregar-un-agente-nuevo)
-- [Ejecución online (backlog)](#ejecución-online-backlog)
-- [Conceptos relacionados](#conceptos-relacionados)
-- [Referencias](#referencias)
+- [[Agentes (tabla)]])
+- [[vaultworm-arq — bibliotecario]])
+- [[brainstormy — facilitador]])
+- [[fathom-pm — PM de reuniones]])
+- [[contenidos — curador academia]])
+- [[Comparativa]])
+- [[Cómo agregar un agente nuevo]])
+- [[Ejecución online (backlog)]])
+- [[Conceptos relacionados]])
+- [[Referencias]])
 
 ## Agentes (tabla)
 

@@ -9,12 +9,12 @@ tags: [glosario, concepto, retrospectiva, rituales, mejora-continua]
 
 > Ritual de cierre de sprint: qué funcionó, qué no, 1 experimento para el próximo. 30 min máximo. Sin retrospectiva, el sprint es solo un calendario.
 
-- [Definición](#definición)
-- [Formato 30 min](#formato-30-min)
-- [Reglas](#reglas)
-- [Retro en Leantime + vault](#retro-en-leantime--vault)
-- [Conceptos relacionados](#conceptos-relacionados)
-- [Referencias](#referencias)
+- [[Definición]])
+- [[Formato 30 min]])
+- [[Reglas]])
+- [[Retro en Leantime + vault]])
+- [[Conceptos relacionados]])
+- [[Referencias]])
 
 ## Definición
 

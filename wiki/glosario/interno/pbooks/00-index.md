@@ -13,6 +13,7 @@ Colección de guías operativas y procedimientos técnicos para el día a día d
 ## Infraestructura, Cuentas y Entorno
 
 - [[pbk-config_ctas_git_github_opencode|Gestión y Separación de Cuentas (Git, GitHub, OpenCode)]] — Matriz de identidades, rutas de credenciales, archivos de configuración, verificación en 30 seg y conexión/desconexión de proveedores IA.
+- [[pbk-instalacion-codex|Réplica vault con Codex (Windows)]] — **Canónico**: CLI+Desktop, sandbox elevated/unelevated, MCPs espejo (Fathom/Leantime/Autodesk/AutoCAD), rutina sin PC (n8n vs Actions). Ref Brais Codex 101.
 
 ## PM y gestión del estudio
 
@@ -21,6 +22,7 @@ Colección de guías operativas y procedimientos técnicos para el día a día d
 ## Agentes del vault
 
 - [[pbk-agentes-vaultarq|Agentes del vault (vaultworm-arq, brainstormy)]] — Qué son, qué hacen, cómo están configurados, triggers, invocación y cómo agregar uno nuevo.
+- [[pbk-codex_101_Brais|Codex 101 con Brais Moure (MoureDev)]] — **2026-09-30**: Curso Codex + GPT-5.6 (Sol/Terra/Luna): instalación, auth ChatGPT, CLI vs Desktop/IDE/Cloud, AGENTS.md, MCPs, skills y puente al vault. Fuente https://www.youtube.com/watch?v=af1KAQCD7mk
 
 ## ComfyUI y Generación IA
 

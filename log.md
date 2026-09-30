@@ -9,6 +9,15 @@ tags: [log, historico]
 
 Más nuevo → más arriba
 
+## 2026-09-30 — Codex 101 Brais + pbook instalación Codex (canónico) — Codex CLI + GPT-5.6
+
+- **Video corregido:** `https://www.youtube.com/watch?v=af1KAQCD7mk` (Brais Moure — Codex + GPT-5.6) verificado 200 — corrige `irR8437xihg` previo (opencode). Guardado en `raw/contenidos/2026-09-30-codex-101-brais.md` (propuesta HITL) + deprecado `raw/contenidos/2026-09-30-opencode-101-brais-codex.md` → `descartado-corregido`.
+- **Nuevos pbooks canónicos:** `wiki/glosario/interno/pbooks/pbk-codex_101_Brais.md` (Codex 101 Brais: install.sh/ps1, npm, Sign in with ChatGPT, CLI/Desktop/IDE/Cloud, AGENTS.md, MCPs, Skills, Sol/Terra/Luna) + `wiki/glosario/interno/pbooks/pbk-instalacion-codex.md` (réplica vault Windows: CLI+Desktop, sandbox elevated/unelevated, MCPs espejo fathom/fathom-proyectopi/leantime/autodesk-help/autocad vía `~/.codex/config.toml`, rutina sin PC n8n Cron 07:00 vs GitHub Actions 10 UTC) + alias `pbk-codex-instalacion.md` → canónico. Curado por `@contenidos`.
+- **Índice:** `wiki/glosario/interno/pbooks/00-index.md` — añade `pbk-instalacion-codex` en Infraestructura + `pbk-codex_101_Brais` en Agentes.
+- **Proyectos:** `proyectos/STUDIO_OS-Emilia/documentacion/playbook-instalacion-codex-replica-vault.md` v1.0 ahora apunta al canónico `pbk-instalacion-codex` + ref Brais.
+- **Verificación:** refs 200 sin 404 (developers.openai.com/codex/*, github.com/openai/codex, youtube af1KAQCD7mk). MCPs Codex listos para Emilia: `fathom` (OAuth Emilia) + `fathom-proyectopi` + `leantime` + `autocad` + `autodesk-help` — `.env` se configura en su PC.
+- **AFECTA:** `raw/contenidos/2026-09-30-codex-101-brais.md`, `raw/contenidos/2026-09-30-opencode-101-brais-codex.md`, `wiki/glosario/interno/pbooks/pbk-codex_101_Brais.md`, `wiki/glosario/interno/pbooks/pbk-instalacion-codex.md`, `wiki/glosario/interno/pbooks/pbk-codex-instalacion.md`, `wiki/glosario/interno/pbooks/00-index.md`, `proyectos/STUDIO_OS-Emilia/documentacion/playbook-instalacion-codex-replica-vault.md`, `log.md`.
+
 ## 2026-09-10 — AGENTS.md slim 393→125 (9 pasos)
 
 - P1 Contexto AR → `wiki/estudio/00-index.md` (sección primera, íntegro); AGENTS 2 líneas.

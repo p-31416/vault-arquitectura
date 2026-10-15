@@ -1,4 +1,4 @@
-﻿---
+---
 tipo: readme
 mvp: 02
 fecha_creacion: 2026-06-30
@@ -75,6 +75,19 @@ MVP_02-autocad-standards/
 ├── n_04-templates/           â† Nivel 4 — Templates (DWT) y config inicial
 └── n_XX-.../                 â† Próximos niveles
 ```
+
+## SETs desarrollados
+
+| SET | Tipo | Escala | Estado |
+|-----|------|--------|--------|
+| `SET_01-REP_Replanteo` | Plano de replanteo arquitectónico | 1:50 | spec + ft escritos · 9/10 DoD |
+| `SET_02-GEST_DGIUR_USO` | Plano de uso para trámite municipal | 1:100 | spec v0.2 escrito · resto pendiente |
+
+Cada SET tiene su carpeta con `README.md`, `01-spec`, `02-ft`, `docs/` y `lisp/`. El **spec define el QUÉ** y el **ft el CÓMO**.
+
+### Nota sobre SET_02 y el organismo
+
+El nombre del SET dice `DGIUR`, pero el documento oficial que gobierna su alcance es el **Anexo III de la DGHP** (`IF-2025-11263770-GCABA-DGHP`). Son organismos distintos: la DGIUR interpreta el uso del suelo, la DGHP habilita la actividad económica. El nombre se mantiene por decisión del estudio y la discrepancia queda asentada en `SET_02-GEST_DGIUR_USO/01-spec-SET_02.md` §10.2. Si el SET llega a cubrir ambos trámites, hacen falta checklists separados.
 
 Cada nivel `n_XX-*/` sigue el mismo esquema de MVP_01:
 

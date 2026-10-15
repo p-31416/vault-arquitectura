@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Grafo YT 3D — path: wiki/fuentes</title>
+<script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+<script src="https://unpkg.com/3d-force-graph@1.73.0/dist/3d-force-graph.min.js"></script>
+<style>
+body { margin: 0; font-family: sans-serif; background: #000; color: #eee; }
+#bar { padding: 8px 12px; background: #111; font-size: 14px; }
+#bar code { background: #222; padding: 2px 6px; border-radius: 4px; color: #f1c40f; }
+#layout { display: flex; }
+#side { width: 280px; min-width: 280px; background: #141414; padding: 12px; height: 92vh; overflow-y: auto; border-right: 2px solid #f1c40f; }
+#side h3 { margin: 4px 0 8px; font-size: 16px; color: #f1c40f; }
+.tagbtn { display: block; width: 100%; text-align: left; margin: 5px 0; padding: 9px 10px; background: #222; color: #f1c40f; border: 2px solid #444; border-radius: 8px; cursor: pointer; font-size: 15px; font-weight: bold; }
+.tagbtn small { color: #fff; font-weight: normal; }
+.tagbtn.activo { border-color: #f1c40f; background: #3a3000; }
+#btn-todos { display: block; width: 100%; margin: 8px 0; padding: 9px; background: #f1c40f; color: #000; border: none; border-radius: 8px; cursor: pointer; font-size: 15px; font-weight: bold; }
+#detalle { font-size: 13px; color: #fff; margin-top: 10px; background: #000; padding: 8px; border-radius: 6px; }
+#main { flex: 1; }
+#graph { height: 92vh; }
+</style>
+</head>
+<body>
+<div id="bar">Vista 3D — filtro <code>path: wiki/fuentes</code> · cada esfera lleva su tema · links etiquetados</div>
+<div id="layout">
+<div id="side">
+<h3># temas (tocá para filtrar)</h3>
+<div id="tags"></div>
+<button id="btn-todos">◎ ver todos</button>
+<div id="detalle">Elegí un # para aislar su cúmulo.</div>
+</div>
+<div id="main"><div id="graph"></div></div>
+</div>
+<script>
+// NOTA ES: etiquetas 3D con sprites (siempre visibles). Links con label origen→destino. Panel lateral con alto contraste.
+const gData = {
+  nodes: [
+    {id: 'index', name: 'index-yt · 71', group: 'hub', val: 2, tag: 'indice'},
+    {id: 'tag-comfyui', name: 'comfyui', group: 'comfyui', val: 30, tag: 'comfyui'},
+    {id: 'tag-arq', name: 'arq', group: 'arq', val: 8, tag: 'arq'},
+    {id: 'tag-viz', name: 'viz', group: 'arq', val: 6, tag: 'viz'},
+    {id: 'tag-blender', name: 'blender', group: 'blender', val: 10, tag: 'blender'},
+    {id: 'tag-nanobanana', name: 'nanobanana', group: 'nano', val: 7, tag: 'nanobanana'},
+    {id: 'tag-llm', name: 'llm', group: 'nano', val: 7, tag: 'llm'},
+    {id: 'creador-comfyui', name: 'canal: ComfyUI', group: 'creador', val: 12, tag: 'creador'},
+    {id: 'creador-architutors', name: 'canal: architutors', group: 'creador', val: 5, tag: 'creador'},
+    {id: 'JWln_5jm4Ic', name: 'Nano Banana 4K ⏳', group: 'comfyui', val: 9, tag: 'comfyui+nanobanana+llm'},
+    {id: 'WFHlgwl6jno', name: 'Blender→cámara ⏳ PUENTE', group: 'blender', val: 12, tag: 'comfyui+blender'},
+    {id: 'cXXNUR_wu60', name: 'Comfy→Blender ⏳', group: 'blender', val: 8, tag: 'comfyui+blender'},
+    {id: 'RAMs89SS6cM', name: 'ComfyUI for Architects ✅', group: 'curada', val: 14, tag: 'comfyui+arq+viz'},
+    {id: 'QfvwVfKtpQ4', name: 'Comfy Agent ⏳', group: 'comfyui', val: 4, tag: 'comfyui+agents'},
+    {id: 'IQep_c2R19M', name: 'MCP local ⏳', group: 'comfyui', val: 6, tag: 'comfyui+llm'},
+    {id: 'EuAe-4nXFSk', name: 'Hunyuan 3D ⏳', group: 'blender', val: 4, tag: 'comfyui+ai-3d'},
+    {id: 'KRldrZ1yzCA', name: 'Game Changer arq ⏳', group: 'arq', val: 5, tag: 'comfyui+arq'},
+  ],
+  links: [
+    {source: 'index', target: 'tag-comfyui'}, {source: 'index', target: 'creador-comfyui'},
+    {source: 'JWln_5jm4Ic', target: 'tag-comfyui'}, {source: 'JWln_5jm4Ic', target: 'tag-nanobanana'},
+    {source: 'JWln_5jm4Ic', target: 'tag-llm'}, {source: 'JWln_5jm4Ic', target: 'creador-comfyui'},
+    {source: 'WFHlgwl6jno', target: 'tag-comfyui'}, {source: 'WFHlgwl6jno', target: 'tag-blender'},
+    {source: 'WFHlgwl6jno', target: 'creador-comfyui'},
+    {source: 'cXXNUR_wu60', target: 'tag-comfyui'}, {source: 'cXXNUR_wu60', target: 'tag-blender'},
+    {source: 'RAMs89SS6cM', target: 'tag-comfyui'}, {source: 'RAMs89SS6cM', target: 'tag-arq'},
+    {source: 'RAMs89SS6cM', target: 'tag-viz'}, {source: 'RAMs89SS6cM', target: 'creador-architutors'},
+    {source: 'QfvwVfKtpQ4', target: 'tag-comfyui'}, {source: 'IQep_c2R19M', target: 'tag-comfyui'},
+    {source: 'IQep_c2R19M', target: 'tag-llm'}, {source: 'EuAe-4nXFSk', target: 'tag-comfyui'},
+    {source: 'KRldrZ1yzCA', target: 'tag-comfyui'}, {source: 'KRldrZ1yzCA', target: 'tag-arq'},
+  ]
+};
+const colors = {hub: '#ffffff', comfyui: '#e67e22', arq: '#2ecc71', blender: '#3498db', nano: '#9b59b6', creador: '#95a5a6', curada: '#f1c40f'};
+const id = o => typeof o === 'object' ? o.id : o;
+let activo = null;
+function vecinos(tagId) {
+  const keep = new Set([tagId, 'index']);
+  gData.links.forEach(l => {
+    if (id(l.target) === tagId) keep.add(id(l.source));
+    if (id(l.source) === tagId) keep.add(id(l.target));
+  });
+  const vids = [...keep].filter(k => k.length === 11);
+  gData.links.forEach(l => { if (vids.includes(id(l.source))) keep.add(id(l.target)); });
+  return keep;
+}
+// etiqueta sutil siempre visible sobre cada esfera
+function etiqueta(texto, color) {
+  const c = document.createElement('canvas'); c.width = 512; c.height = 96;
+  const x = c.getContext('2d');
+  x.font = 'bold 34px sans-serif'; x.textAlign = 'center';
+  x.lineWidth = 6; x.strokeStyle = 'rgba(0,0,0,0.9)'; x.strokeText(texto, 256, 60);
+  x.fillStyle = color || '#fff'; x.fillText(texto, 256, 60);
+  const tex = new THREE.CanvasTexture(c);
+  const sp = new THREE.Sprite(new THREE.SpriteMaterial({map: tex, transparent: true, depthWrite: false}));
+  sp.scale.set(34, 6.4, 1);
+  return sp;
+}
+const Graph = ForceGraph3D()(document.getElementById('graph'))
+  .graphData(gData)
+  .nodeVal('val')
+  .nodeThreeObject(n => {
+    const g = new THREE.Group();
+    const r = Math.max(1.2, n.val * 0.45);
+    const esfera = new THREE.Mesh(
+      new THREE.SphereGeometry(r, 20, 20),
+      new THREE.MeshBasicMaterial({color: colors[n.group] || '#fff', transparent: true, opacity: (!activo || vecinos(activo).has(n.id)) ? 1 : 0.15})
+    );
+    g.add(esfera);
+    const lab = etiqueta((n.tag ? '#' : '') + (n.tag || n.name), '#ffffff');
+    lab.position.y = r + 3.4;
+    g.add(lab);
+    const lab2 = etiqueta(n.name, '#f1c40f');
+    lab2.position.y = r + 7.2; lab2.scale.set(26, 4.9, 1);
+    g.add(lab2);
+    return g;
+  })
+  .nodeLabel(n => n.name + '\ntema: ' + (n.tag || '-'))
+  .linkColor(() => 'rgba(255,255,255,0.9)')
+  .linkWidth(1.8)
+  .linkOpacity(1)
+  .linkDirectionalParticles(3)
+  .linkDirectionalParticleWidth(2)
+  // cada link referencia sus nodos al pasar el mouse
+  .linkLabel(l => id(l.source) + '  →  ' + id(l.target))
+  .linkHoverPrecision(3)
+  .linkVisibility(l => !activo || (vecinos(activo).has(id(l.source)) && vecinos(activo).has(id(l.target))))
+  .onNodeClick(n => {
+    if (n.id === 'RAMs89SS6cM') alert('Abriría: wiki/fuentes/comfyui-for-architects-architutors.md');
+  });
+const box = document.getElementById('tags');
+const det = document.getElementById('detalle');
+gData.nodes.filter(n => n.id.startsWith('tag-')).forEach(t => {
+  const n = gData.links.filter(l => id(l.target) === t.id || id(l.source) === t.id).length;
+  const b = document.createElement('button');
+  b.className = 'tagbtn';
+  b.innerHTML = '#' + t.tag + ' <small>(' + n + ' links)</small>';
+  b.onclick = () => {
+    activo = (activo === t.id) ? null : t.id;
+    document.querySelectorAll('.tagbtn').forEach(x => x.classList.remove('activo'));
+    if (activo) b.classList.add('activo');
+    Graph.refresh();
+    const vids = gData.links.filter(l => id(l.target) === t.id).map(l => id(l.source));
+    det.innerHTML = activo ? '<b>#' + t.tag + '</b><br>' + vids.map(v => '→ ' + v).join('<br>') : 'Elegí un # para aislar su cúmulo.';
+  };
+  box.appendChild(b);
+});
+document.getElementById('btn-todos').onclick = () => {
+  activo = null;
+  document.querySelectorAll('.tagbtn').forEach(x => x.classList.remove('activo'));
+  Graph.refresh();
+  det.innerHTML = 'Elegí un # para aislar su cúmulo.';
+};
+</script>
+</body>
+</html>

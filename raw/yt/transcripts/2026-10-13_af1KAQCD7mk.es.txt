@@ -1,0 +1,2338 @@
+[00:00:00] Bueno, gente, bienvenidos al taller de
+[00:00:03] Codex desde cero. Codex, quien no sepa
+[00:00:07] la herramienta de desarrollo con
+[00:00:08] inteligencia artificial de Open AI. Open
+[00:00:12] AI, supongo que todo el mundo la tiene
+[00:00:14] ubicada, es la empresa detrás de Chat
+[00:00:17] GPT, de los modelos GPT, que justamente
+[00:00:20] en este curso va a dar que hablar
+[00:00:22] también la parte de modelos, porque ya
+[00:00:24] no es que estemos ante una versión de
+[00:00:26] esta herramienta de desarrollo con
+[00:00:27] inteligencia artificial que es Codex,
+[00:00:29] sino que también acaba de lanzar nuevos
+[00:00:32] modelos. Lo primero que quiero decir es
+[00:00:34] que, vale, han sacado nuevos modelos,
+[00:00:37] han cambiado alguna cosa de la
+[00:00:39] herramienta, dependiendo en el momento
+[00:00:41] que se acabe viendo esto, pues bueno, ya
+[00:00:42] sabéis que pueden ir apareciendo
+[00:00:44] diferentes modificaciones de la
+[00:00:45] herramienta. Bueno, así es la vida del
+[00:00:47] desarrollador. El modelo ahora mismo que
+[00:00:50] hay es el 5.6, igual mañana viene el
+[00:00:53] 5.7, no pasa absolutamente nada. Lo lo
+[00:00:56] importante es acabar entendiendo
+[00:00:57] realmente cuáles son las bases tanto de
+[00:00:59] la herramienta como de los modelos y
+[00:01:00] después a medida que vayan
+[00:01:01] evolucionando, pues por supuesto lo
+[00:01:03] vamos a seguir acabar utilizando igual
+[00:01:05] de bien. ¿Vale? Vamos a entender primero
+[00:01:09] una cosa. Como siempre os digo, hay que
+[00:01:12] tener presente la web principal de la
+[00:01:14] herramienta. Ahora explicaré qué es esta
+[00:01:16] herramienta. Si tenéis dudas sobre qué
+[00:01:19] diferencias puede haber con otras que se
+[00:01:20] llaman parecido o bueno, que tienen
+[00:01:24] alguna semejanza aparente, aunque no la
+[00:01:26] tienen, ya os lo digo yo, pero bueno.
+[00:01:28] Web principal opengai.com/codex,
+[00:01:32] la tenéis también en español. Revisamos
+[00:01:34] muy rápido. ¿Qué es esto de codex? es la
+[00:01:36] herramienta de desarrollo con
+[00:01:38] inteligencia artificial de Open AI.
+[00:01:41] Tenemos un montón de funcionalidades que
+[00:01:43] eso es lo que vamos a ver a lo largo de
+[00:01:45] este curso. Vamos a ver y hacer un
+[00:01:47] repaso por toda la herramienta con
+[00:01:49] cuáles son esas funcionalidades
+[00:01:50] principales y vamos a desarrollar alguna
+[00:01:53] pequeña aplicación también para que
+[00:01:55] veáis cuál es el flujo, por supuesto, de
+[00:01:58] desarrollo y de interacción con toda la
+[00:02:00] herramienta. Lo primero os la podéis
+[00:02:03] descargar, la tenéis para todos los
+[00:02:04] sistemas operativos. Es una aplicación
+[00:02:06] gratuita. Lo siguiente que se va a
+[00:02:08] preguntar, Bray, si esto es de pago.
+[00:02:11] Bueno, calma. Lo primero también tener
+[00:02:13] en cuenta herramienta de codex. Es
+[00:02:16] posible que ahora alguien ya se
+[00:02:18] pregunte, Bris, pero esta es mejor que,
+[00:02:22] yo que sé, Cursor, que Google
+[00:02:25] Antigravity, que Cloud Code, pues bueno,
+[00:02:28] es una de las grandes herramientas. Si
+[00:02:30] yo hoy en día tuviera que hacer ahí una
+[00:02:32] especie de top no ordenado, pero sí
+[00:02:35] digamos las más famosas, pues por
+[00:02:37] supuesto tenemos a Codex, que es la
+[00:02:39] herramienta de codificación de Open AI,
+[00:02:41] tenemos a Cloud Code, que es la
+[00:02:42] herramienta de codificación de Antropic
+[00:02:45] y después ya tenemos a editores un poco
+[00:02:48] más al uso, aunque cada vez se están
+[00:02:50] volviendo más AI first, ¿no? más
+[00:02:52] orientados a inteligencia artificial
+[00:02:53] como es el todopoderoso Visual Studio
+[00:02:56] Code, Cursor y hasta Google que ha
+[00:02:58] sacado también su Google Antigravity.
+[00:03:01] Tenemos muchísimas más herramientas. Hoy
+[00:03:03] en día ya se está metiendo inteligencia
+[00:03:05] artificial en todas. Hay una mejor que
+[00:03:07] otra, ¿no? Para gustos hay colores. Yo
+[00:03:09] os voy a enseñar cómo funciona esta.
+[00:03:12] os corresponde a vosotros acabar
+[00:03:14] decidiendo si esta es una herramienta
+[00:03:16] que encaja con vuestra forma de
+[00:03:17] trabajar, si os gusta y adelante. La
+[00:03:20] única forma de acabar sacando
+[00:03:22] conclusiones, bueno, una es, por
+[00:03:24] supuesto, viendo este curso, pero la
+[00:03:25] mejor siempre es acabar probando. Por
+[00:03:28] eso yo también lo que os quiero contar
+[00:03:29] aquí es un poco, venga, os voy a
+[00:03:31] explicar cómo funciona esta herramienta,
+[00:03:33] pero es muy importante que vosotros
+[00:03:35] tengáis en cuenta que hasta que vosotros
+[00:03:37] pongáis a revisar cómo funciona con
+[00:03:39] vuestras propias manos, seguramente no
+[00:03:42] acabéis sacando las mejores conclusiones
+[00:03:44] para entender si esto es una herramienta
+[00:03:46] que encaja con vosotros o no. La
+[00:03:48] pregunta del millón, ¿brais es de pago?
+[00:03:50] ¿Es gratuita? porque ahora la IA ya hay
+[00:03:52] un montón de cosas de pago. Bueno, os
+[00:03:54] voy a dar aquí como dos características
+[00:03:56] bastante importantes. Primero, lo podéis
+[00:03:59] utilizar con la capa gratuita de CHG
+[00:04:01] GPT. CH GPT es gratuito. Entonces, codex
+[00:04:04] también lo podéis utilizar. Lo podéis
+[00:04:06] utilizar de manera infinita, ¿no? Pero
+[00:04:08] es que no la puedes utilizar de manera
+[00:04:09] infinita ni incluso pagando. Hay planes
+[00:04:12] que ahora mismo, por lo menos cuando
+[00:04:13] estamos haciendo esta clase, pues
+[00:04:15] empiezan en $8, 100. Yo lo que utilizo
+[00:04:18] ahora mismo para echar GPT es este plan.
+[00:04:21] el de $20 al mes. He de decir, y esto sí
+[00:04:24] que es importante, sobre todo si lo
+[00:04:25] comparamos con Cloud Code, que es un
+[00:04:27] poco la otra gran alternativa que
+[00:04:30] también se está utilizando mucho porque
+[00:04:32] es como de la competencia Open AI, que
+[00:04:34] es Antropic. El plan de $20 [carraspeo]
+[00:04:38] de Chat GPT o de Open AI
+[00:04:42] para ser de 20
+[00:04:45] dura bastante. El plan gratuito también
+[00:04:47] tiene un límite considerable, incluso el
+[00:04:50] plan de $8. En cambio, y esto no quiere
+[00:04:52] decir que la herramienta que ya codex
+[00:04:54] sea mejor que quizás Cloud Code por el
+[00:04:57] precio. Lo que creo que estoy seguro de
+[00:05:01] afirmar es que por el mismo precio, por
+[00:05:03] el plan este de $, por poner ahí uno de
+[00:05:06] pago, ¿no?
+[00:05:08] Me da la sensación de que los límites
+[00:05:10] son más altos, es decir, que podemos
+[00:05:12] utilizar muchos más tokens y desarrollar
+[00:05:15] durante más tiempo sin sin que nos
+[00:05:17] acaben, digamos, cortando el grifo.
+[00:05:19] ¿Vale? Por otro lado, está la opción
+[00:05:21] gratuita, así que la forma de probarlo.
+[00:05:24] Yo os recomiendo que aquí nadie se gaste
+[00:05:26] ni un duro en acabar utilizando esta
+[00:05:29] herramienta sin antes probarla y después
+[00:05:31] si la prueba y dice, "Okay, creo que me
+[00:05:33] compensa acabar gastando pues el plan de
+[00:05:37] $8 o el de 20 o el de 100, yo que sé."
+[00:05:39] Pues bueno, ahí ya cada uno con lo que
+[00:05:41] sea, ¿vale? Solo quiero que tengáis muy
+[00:05:44] en mente que esto lo podéis probar
+[00:05:46] gratuito y que, por supuesto, acabar
+[00:05:48] descargándola. también es gratis. Okay.
+[00:05:51] Por otro lado, justamente cuando estamos
+[00:05:54] grabando este curso acaba de suceder una
+[00:05:58] cosa y es que la aplicación de Codex
+[00:06:01] antes era una aplicación independiente,
+[00:06:03] es decir, tú te descargabas Codex y lo
+[00:06:05] instalabas. ¿Qué acaban de hacer hace
+[00:06:08] nada? Cuando estábamos grabando esto
+[00:06:10] acaban de unificar la aplicación de
+[00:06:12] escritorio de Chat GPT y la de Codex.
+[00:06:16] Esa es la grandísima diferencia. Tampoco
+[00:06:18] que nadie se líe o que alguien pienses
+[00:06:20] que antes se iba por separado y era
+[00:06:22] diferente, ¿no? Tranquilos. Por
+[00:06:24] supuesto, también existe la opción de
+[00:06:27] acabar e instalando la herramienta del
+[00:06:30] Codex, el Cli, el cliente, el Cili,
+[00:06:33] básicamente para trabajar con Codex
+[00:06:35] desde la terminal. Aquí lo que vamos a
+[00:06:37] hacer es utilizar la herramienta que
+[00:06:39] tiene interfaz gráfica, ¿vale?
+[00:06:41] Básicamente una herramienta que una vez
+[00:06:43] la instalas es esto, ¿okay? es una
+[00:06:45] herramienta orientada a desarrollo de
+[00:06:48] software, pero primando la parte de la
+[00:06:50] inteligencia artificial. Es decir, que
+[00:06:52] si queremos ver el código, lo tendremos
+[00:06:55] que ver revisando ahí los ficheros,
+[00:06:57] abriendo otro editor, todo eso os
+[00:06:59] explicaré cómo hacerlo, pero está más
+[00:07:01] orientado a sobre todo prontear e ir
+[00:07:04] viendo las diferencias y los ficheros
+[00:07:06] que cambien, es decir, ese desarrollo
+[00:07:07] más orientado a IA que más orientado a
+[00:07:09] código. Aún así, por favor, somos
+[00:07:12] desarrolladores, somos ingenieros de
+[00:07:14] software, tenemos que tener control
+[00:07:16] sobre lo que hacemos. Si pedimos cos a
+[00:07:18] la IA y aceptamos cambios sin revisar,
+[00:07:21] nadie nos va a acabar pagando un sueldo
+[00:07:23] por eso. Si no, estamos seguros de que
+[00:07:26] el código que está produciendo la IA es
+[00:07:27] justo lo que nosotros queríamos, ¿vale?
+[00:07:29] Así que muy importante la revisión, muy
+[00:07:32] importante utilizar la IA y estas
+[00:07:33] herramientas como copilotos. La IA no
+[00:07:35] nos tiene que manejar, no nos tiene que
+[00:07:37] dominar, nosotros tenemos que dominarlo.
+[00:07:39] ¿Vale?
+[00:07:40] La principal diferencia en el momento
+[00:07:42] que se ha incluido codex dentro de
+[00:07:44] CHGPT, básicamente esto. Tienes CH GPT,
+[00:07:49] lo abres y aquí tienes codex y si tú
+[00:07:52] pulsas en GPT trabajo, GPTW, nos lleva a
+[00:07:56] otra interfaz que cambia ligeramente,
+[00:07:58] que básicamente es chat GPT en su
+[00:08:00] versión Work, ¿vale? no es la versión de
+[00:08:03] código, sino sino la herramienta para
+[00:08:05] acabar interactuando con nuestra máquina
+[00:08:07] y trabajando con nuestro sistema de
+[00:08:08] ficheros, pero no tanto orientado a
+[00:08:10] código. ¿Vale? Tema del chat también
+[00:08:13] está aquí. Veis que en todos tienen una
+[00:08:15] opción chat. Este es el chat GPT de toda
+[00:08:17] la vida. Vais por ahí, se os abre una
+[00:08:19] ventana emergente y ahí tenéis el chat
+[00:08:21] de siempre, el chat GPT de siempre.
+[00:08:23] Nosotros vamos a aprender a trabajar con
+[00:08:25] Codics, como estáis viendo por aquí, que
+[00:08:27] es justamente la herramienta de
+[00:08:29] codificación. Okay, ya os digo que temas
+[00:08:32] importantes, codex no es que haya
+[00:08:35] cambiado, simplemente se ha unificado la
+[00:08:37] misma herramienta CH GPT, todo por aquí.
+[00:08:40] Ya está. Si tú tienes la herramienta de
+[00:08:42] chat GPT y instalas la última versión,
+[00:08:45] pues ya vas a tener esto por aquí. Fin
+[00:08:47] de la historia. Vale, no hay mucho más
+[00:08:50] misterio porque sé que en su momento
+[00:08:52] hubo bastante revuelo con esto de que
+[00:08:54] cambió la herramienta como si se fuera a
+[00:08:57] modificar completamente y no,
+[00:08:58] simplemente lo están unificando para
+[00:09:00] crear una especie de entorno con
+[00:09:02] inteligencia artificial de esta compañía
+[00:09:04] que es Open AI, ni más ni menos. Okay.
+[00:09:08] Vale. Temas importantes también, por
+[00:09:10] supuesto, el tema de la documentación.
+[00:09:13] Si todos queremos aprender a trabajar
+[00:09:16] con una herramienta bien,
+[00:09:19] una cosa es hacer este curso para dar
+[00:09:21] los primeros pasos, para que yo te
+[00:09:22] enseñe cómo funciona, para no tener que
+[00:09:24] enfrentarte a ese folio en blanco. Pero
+[00:09:29] por supuesto es imposible hacer en un
+[00:09:31] curso ni de una hora, ni de dos, ni de
+[00:09:33] 10, ni de 100 absolutamente todo lo que
+[00:09:36] va a acabar pasando con el
+[00:09:38] funcionamiento interno de la aplicación.
+[00:09:40] Y por supuesto, todo lo que quizás
+[00:09:43] mañana, pasado, dentro de un mes, se
+[00:09:45] acaba añadiendo. Lo mejor siempre os
+[00:09:48] vais por aquí, tenéis dentro de
+[00:09:50] desarrolladores tenéis el Chainlock, que
+[00:09:53] esto es para saber qué es lo que está
+[00:09:55] cambiando, qué es lo que está
+[00:09:57] modificando en la aplicación. En este
+[00:09:59] caso, en Codex tenéis la propia
+[00:10:01] documentación, documentación de la API,
+[00:10:03] pero aquí la que nos importa es la
+[00:10:05] documentación de codex developers.com.
+[00:10:08] Nos vamos a codex y aquí tenemos la
+[00:10:10] documentación. dentro de la
+[00:10:12] documentación hasta tenéis un primeros
+[00:10:14] pasos, tenéis toda la parte de hm
+[00:10:18] conceptos fundamentales, básicamente de
+[00:10:20] fundamentos y un montón de cosas que
+[00:10:23] vamos a ver hoy por aquí, skills,
+[00:10:25] permisos, personalización, bueno, un
+[00:10:28] montón de temas que yo os voy a
+[00:10:29] explicar, pero que por supuesto si
+[00:10:31] queréis entrar en profundidad,
+[00:10:34] la forma siempre es a través de la
+[00:10:35] documentación porque aquí es donde vais
+[00:10:38] a encontrar reflejado absolutamente
+[00:10:40] todo.
+[00:10:41] Okay. Vale, dicho esto, yo creo que lo
+[00:10:43] mejor es ir comenzando e ir viendo un
+[00:10:46] poquito que nos vamos a acabar
+[00:10:48] encontrando antes de meternos ya con el
+[00:10:50] tema de los modelos. ¿Vale? Hemos visto
+[00:10:52] que es codex, hemos visto la parte de
+[00:10:54] documentación, lo importante que es,
+[00:10:56] hemos visto descarga e instalación, que
+[00:10:59] básicamente es venirnos por aquí,
+[00:11:00] descargarlo para vuestro sistema
+[00:11:01] operativo, instalar y fin de la
+[00:11:04] historia. Y por supuesto, ya hemos visto
+[00:11:06] también cuál es la principal diferencia
+[00:11:08] a la hora de tenerlo todo integrado en
+[00:11:10] la misma aplicación, que simplemente
+[00:11:11] nosotros tenemos que seleccionar por
+[00:11:12] aquí codex y ya está. Vamos a ver una
+[00:11:15] vista muy muy rápida por la parte de la
+[00:11:18] interfaz, ¿vale? Si nosotros tuviéramos
+[00:11:20] algún proyecto abierto, lo veríamos
+[00:11:22] aquí. Esto ya os indicaré lo que es.
+[00:11:25] Estos son dos proyectos que yo he
+[00:11:26] abierto como ejemplo para después
+[00:11:27] haceros también alguna demostración,
+[00:11:29] pero nosotros vamos a trabajar también
+[00:11:31] con un proyecto desde cero. Tenemos la
+[00:11:34] opción de crear una nueva tarea, es
+[00:11:35] decir, levantar una nueva ventana de
+[00:11:37] contexto para empezar a prontear, a
+[00:11:39] escribirle por aquí pues lo que haga
+[00:11:41] falta, ¿okay? Es decir, nada que supongo
+[00:11:45] que no hayáis visto en cualquier
+[00:11:47] herramienta con inteligencia artificial.
+[00:11:49] Y creo que a medida que vamos avanzando
+[00:11:52] y que van apareciendo más herramientas o
+[00:11:54] que más eh se van actualizando, vemos
+[00:11:56] que prácticamente todas son iguales,
+[00:11:59] aunque cambien pequeñas cositas. ¿Vale?
+[00:12:01] ¿Qué más cositas tenemos? El tema de las
+[00:12:03] tareas programadas, ¿vale? Podemos
+[00:12:05] utilizar codex, igual que podemos
+[00:12:07] utilizar también la parte del Work para
+[00:12:10] crear tareas programadas, es decir,
+[00:12:11] tareas que se repiten en un cierto
+[00:12:13] momento y que nosotros le podemos pedir,
+[00:12:15] pues como veis aquí un resumen diario,
+[00:12:17] una revisión semanal, un monitor de
+[00:12:19] seguimiento, lo que nos ocurra para que
+[00:12:21] se ejecute, pues bueno, de manera
+[00:12:23] continuada en el momento que nosotros le
+[00:12:25] indiquemos. También tenemos la parte de
+[00:12:27] complementos, que esto lo veremos más en
+[00:12:28] profundidad después. Si tuviéramos
+[00:12:30] conectado, que para esto os hace falta
+[00:12:32] el cliente de GitHub, pues aquí también
+[00:12:35] tenéis como una visión muy rápida de las
+[00:12:38] P request en GitHub. La parte del chat
+[00:12:40] que hemos dicho y fin por esta parte la
+[00:12:43] podemos ocultar, la podemos acabar
+[00:12:45] mostrando. Vuelvo aquí a la nueva tarea.
+[00:12:47] ¿Qué cosas tenemos al otro lado? Tenemos
+[00:12:51] una parte inferior que esto es para
+[00:12:52] acceder a la terminal. Es decir,
+[00:12:53] nosotros como cualquier editor de código
+[00:12:56] prácticamente podemos utilizar la
+[00:12:57] terminal desde aquí. Así que si
+[00:12:59] necesitáramos la terminal para algo,
+[00:13:00] tenemos este acceso. También en la barra
+[00:13:03] derecha tendremos el acceso. Aquí
+[00:13:06] acabarán apareciendo más opciones, pero
+[00:13:08] para que veáis que integrado el propio
+[00:13:11] Codex tiene un navegador por aquí. ¿Por
+[00:13:15] qué? Porque Codex, una de las cosas que
+[00:13:17] puede acabar desarrollando, por
+[00:13:19] supuesto, son páginas web. Y si tenemos
+[00:13:21] la página web dentro realmente del
+[00:13:24] propio editor, pues podrá interactuar de
+[00:13:26] una forma también muy potente que os
+[00:13:27] acabaré enseñando. ¿Vale? Dentro de
+[00:13:29] estas pestañas, pues también podemos
+[00:13:31] acabar abriendo una terminal y, por
+[00:13:32] supuesto, podemos acabar cerrando todo
+[00:13:35] esto. Después, con respecto al propio
+[00:13:38] chat, ¿qué vamos a tener? la opción de
+[00:13:40] elegir un proyecto. En su día, pues yo
+[00:13:43] elegí estos dos proyectos que tengo aquí
+[00:13:44] abierto, que es la landing de Mour Pro y
+[00:13:47] un proyecto que se llama, y aquí
+[00:13:48] seguimos. Os lo enseñaré básicamente
+[00:13:50] para que después veáis un poquito cómo
+[00:13:51] podemos empezar a trabajar. O sin más,
+[00:13:54] yo voy a hacer esto. Voy aquí a darle a
+[00:13:57] nuevo proyecto. Podría empezar un
+[00:13:58] proyecto desde cero o utilizar una
+[00:14:00] carpeta existente. Yo os recomiendo que
+[00:14:01] utilicéis una carpeta asistente
+[00:14:03] básicamente para que seáis capaces de
+[00:14:06] decidir pues en qué lugar de vuestra
+[00:14:08] máquina queréis acabar trabajando o lo
+[00:14:11] que sea. Vale, yo sin más voy a ir por
+[00:14:13] aquí, voy a seleccionar, creo que tenía
+[00:14:17] una carpeta.
+[00:14:21] quería acabar entrando aquí en una
+[00:14:23] carpeta, no sé si en YouTube
+[00:14:26] o no sé si
+[00:14:28] que no sé dónde la acabé metiendo. Vale,
+[00:14:31] creo que la tengo por aquí en web. Vale,
+[00:14:33] perfecto. Yo creé aquí una carpeta que
+[00:14:36] se llama study calendar. ¿Por qué?
+[00:14:38] Porque bueno, a lo largo de este taller
+[00:14:40] vamos a acabar creando un calendario de
+[00:14:43] estudio. Va a ser la aplicación demo que
+[00:14:45] vamos a acabar haciendo de momento, que
+[00:14:47] no os preocupa absolutamente nada, pero
+[00:14:49] sin más ya ves lo que pasa cuando yo
+[00:14:51] abro un proyecto, que esto es una
+[00:14:52] carpeta que yo tengo en mi sistema
+[00:14:54] operativo y ya está. Vale, este nuestro
+[00:14:57] proyecto que absolutamente no tiene
+[00:14:58] nada, pero que en el momento que tú
+[00:15:00] acabas seleccionando uno de los
+[00:15:02] proyectos desde el chat, vas a ver con
+[00:15:04] cuál estás interactuando, que esto
+[00:15:06] realmente es bastante importante. ¿Qué
+[00:15:08] más cosas tenemos? Bueno, el tipo de
+[00:15:11] permisos que le vamos a dar a la gente,
+[00:15:14] porque por supuesto todo esto lo que va
+[00:15:17] a hacer es acabar interactuando con un
+[00:15:19] agente, con un modelo de inteligencia
+[00:15:20] artificial que va a ser capaz de lanzar
+[00:15:22] tareas por nosotros. ¿Vale? pues tenemos
+[00:15:25] desde el permiso más restrictivo que es
+[00:15:27] solicitar aprobación, es decir, que cada
+[00:15:29] cosa que vaya a hacer la inteligencia
+[00:15:31] artificial mediante el agente tengamos
+[00:15:34] nosotros que confirmarla para que no nos
+[00:15:37] la líe. Ey, voy a crear un fichero e voy
+[00:15:39] a ejecutar este comando, ey, voy a
+[00:15:40] escribir este código. Pues bueno, nos
+[00:15:42] tiene que ir preguntando y nosotros
+[00:15:44] tenemos que ir aprobándolo. Después
+[00:15:46] también tenemos estas aprobaciones.
+[00:15:47] Aprobación por mí, solicita aprobación
+[00:15:49] solo las acciones detectadas como
+[00:15:50] potencialmente inseguras. tenemos un
+[00:15:53] nivel un poquito menos restrictivo, que
+[00:15:55] es, bueno, pregúntame las cosas que de
+[00:15:56] verdad tú consideres que sí que pueden
+[00:15:58] ser un poquito graves. O sin más el
+[00:16:00] acceso completo. Es decir, nosotros
+[00:16:01] tiramos el prompt, le mandamos aquí las
+[00:16:04] movidas y se pone a trabajar en la gente
+[00:16:07] a lo loco, sin más, sin pedirnos
+[00:16:09] absolutamente ningún permiso para nadie.
+[00:16:12] Nosotros después sí que ya podemos
+[00:16:13] revisar al final, pero sin ese control
+[00:16:15] intermedio. Bueno, esto yo no os lo
+[00:16:18] recomiendo habitualmente. ¿Por qué?
+[00:16:20] Porque es lo que dice aquí, ey, que yo
+[00:16:22] puedo empezar a hacer cualquier cosa con
+[00:16:23] el sistema de ficheros, que yo puedo
+[00:16:25] acabar lanzando los comandos que me dé
+[00:16:27] la gana y yo puedo acabar interactuando
+[00:16:29] con internet y con las aplicaciones que
+[00:16:30] tengas como a mí me dé la gana. ¿Vale?
+[00:16:32] Si nosotros consideramos que, bueno, que
+[00:16:33] está okay, pues le decimos que le dé
+[00:16:35] acceso completo. Bueno, iremos viendo
+[00:16:37] cada uno de los tipos también para ir
+[00:16:39] entendiéndolo, ¿vale? ¿Qué más cosas
+[00:16:41] tenemos aquí? Este símbolo más. Bueno,
+[00:16:43] en este símbolo más es como el acceso
+[00:16:46] directo para añadir cosas. Nos dice
+[00:16:48] añadir carpetas. adjuntar Obsidian, que
+[00:16:51] es una herramienta que tengo yo de
+[00:16:53] gestión de documentación, diferentes
+[00:16:55] objetivos, esto lo veremos, el modo
+[00:16:57] plan, documentos, PDFs, bueno, vemos
+[00:16:59] aquí que tiene infinitas cosas que
+[00:17:01] nosotros le podemos acabar adjuntando
+[00:17:03] para darle contexto para así empezar a
+[00:17:05] trabajar, porque no se trata solo de
+[00:17:07] prontear, sino que nosotros, por
+[00:17:08] supuesto, podemos ir modificando esas
+[00:17:10] interacciones. Por otro lado, cosas que
+[00:17:12] podemos utilizar la ara, la veis por
+[00:17:14] aquí. En el momento que yo pongo la
+[00:17:15] ropa, es lo mismo que darle al botoncito
+[00:17:17] más. Y en el momento que yo pongo la
+[00:17:18] barra inclinada, pues aquí tenemos lo
+[00:17:20] que se llaman los comandos y las skills,
+[00:17:22] que ya veremos las principales luego y
+[00:17:24] entenderemos cómo funcionan las más
+[00:17:26] utilizadas, pero bueno, de momento que
+[00:17:28] veáis que hay ahí como esas dos
+[00:17:30] shortcuts que podemos acabar utilizando
+[00:17:32] muy rápidamente para interactuar con el
+[00:17:34] sistema de codic y después ya aquí al
+[00:17:36] lado derecho tenemos la selección de
+[00:17:38] modelos que vemos aquí. Bueno, ¿y cuáles
+[00:17:40] son los modelos? los modelos que podemos
+[00:17:41] utilizar, dado que esto es una
+[00:17:43] herramienta de Open AI, pues bueno, los
+[00:17:45] modelos que nosotros podemos acabar
+[00:17:47] utilizando, pues por supuesto son los de
+[00:17:49] Open AI. ¿Qué tenemos por aquí? Pues en
+[00:17:51] el momento que estamos haciendo este
+[00:17:53] curso, tenemos 5.4 mini, 5.4 que son
+[00:17:57] modelos antiguos que podemos utilizar,
+[00:17:59] que sí que van a utilizar menos
+[00:18:02] capacidad de cómputo que nos van a salir
+[00:18:03] con más baratos, pero son modelos más
+[00:18:05] inteligentes. 5.5, que hasta hace nada
+[00:18:08] era el estándar. Y ahora tenemos el
+[00:18:10] último modelo que ha salido, que es 5.6,
+[00:18:13] que vemos que aquí tenemos tres
+[00:18:14] divisiones. 5.6, sol, Terra y Luna. Por
+[00:18:18] favor, que cuando veis esto está el 5.7
+[00:18:21] o yo que sé cuál está, bueno, no pasa
+[00:18:23] nada. Se busca cómo han mejorado estos
+[00:18:27] modelos y ya está. Los modelos no dejan
+[00:18:28] de cambiar mes tras mes, así que que no
+[00:18:31] os preocupe. Lo que tenemos que entender
+[00:18:33] y es justo a donde vamos a pasar ahora
+[00:18:35] es que sí yo tengo que ver qué modelo
+[00:18:38] soporta, pero tengo que entender para
+[00:18:41] qué debo utilizar cada uno de los
+[00:18:43] modelos. Si no, esto no tendría ningún
+[00:18:45] sentido. Así que también es muy
+[00:18:47] importante y por eso le voy a dedicar
+[00:18:49] ahora unos minutos a explicar justamente
+[00:18:53] cuál es el estado del arte de estos
+[00:18:55] modelos. También en el momento que
+[00:18:56] nosotros seleccionamos el modelo, pues
+[00:18:58] tenemos como esa inteligencia, digamos,
+[00:19:01] ese esfuerzo desde ligero a ultra. ¿Qué
+[00:19:04] significa? Bueno, ligero va a consumir
+[00:19:08] menos de nuestro plan. Ultra va a
+[00:19:11] consumir más. Ligero va a responder
+[00:19:13] antes, ultra va a responder utilizando
+[00:19:16] más capacidad de cómputo, pero ligero es
+[00:19:18] menos inteligente que ultra. Entonces
+[00:19:21] aquí, pues bueno, tendremos que ir
+[00:19:23] haciendo nuestras pruebas para ver cuál
+[00:19:25] utilizar en cada momento. Aún así, yo os
+[00:19:28] voy a dar a lo largo del taller una
+[00:19:31] serie de tips de más o menos qué modelo
+[00:19:35] utilizar, con qué esfuerzo en cada caso
+[00:19:38] para según qué tipo de tareas. Esto es
+[00:19:40] algo, por supuesto, muy amplio, pero por
+[00:19:42] daros alguna pauta y que no tengáis que
+[00:19:44] decir, "Bueno, ¿qué tengo que utilizar?
+[00:19:46] Porque no sé ni lo que le tengo que
+[00:19:47] pedir, ¿vale?" Y después por otro lado
+[00:19:49] también tenéis esto, la velocidad, que
+[00:19:51] es decir, si sois ricos y decís, "Buena,
+[00:19:53] yo necesito que vaya muy rápido porque
+[00:19:55] yo que sé, este proyecto es muy
+[00:19:57] importante, aunque vaya a quemar aquí
+[00:19:59] más pasta del plan que tengo contratado,
+[00:20:02] aunque recuerdo, hay una capa gratuita,
+[00:20:04] ¿vale? pues le dais aquí a rápido y para
+[00:20:06] adelante. Esto es el modelo de
+[00:20:09] visualización avanzado. Incluso yo creo
+[00:20:11] que esto más orientado a by coding,
+[00:20:14] vamos a llamarlo así, han creado este
+[00:20:17] modelo simple donde yo voy por aquí y le
+[00:20:20] voy diciendo, "Bueno, pues empiezo aquí
+[00:20:22] y digo, vale, empiezo desde nada, no
+[00:20:25] necesito que sea muy listo hasta
+[00:20:27] necesito que sea inteligente a saco." Y
+[00:20:29] vemos cómo va cambiando por aquí el
+[00:20:31] modelo que tiene debajo y el propio
+[00:20:33] esfuerzo. Incluso aquí el rayito para
+[00:20:36] decir, "Bu, si esto lo necesito
+[00:20:38] desarrollar a fuego y como si fuera
+[00:20:41] rico, pues venga, le meto al rayito y ya
+[00:20:43] está." Bueno, em yo realmente lo voy a
+[00:20:47] dejar en el modo estándar porque yo sí
+[00:20:49] que quiero tener control de lo que voy
+[00:20:51] seleccionando en cada caso y justamente
+[00:20:53] esto está pensado para desarrolladores y
+[00:20:55] la parte esa con la interfaz más simple,
+[00:20:57] un poco para by coding, si no te estás
+[00:20:59] enterando muy bien de lo que estás
+[00:21:00] haciendo. Y por supuesto, pues mira, si
+[00:21:03] yo pulso por aquí, pues también le puedo
+[00:21:05] dar diferentes acciones en modo audio o
+[00:21:08] lo que sea. ¿Vale?
+[00:21:10] Este micrófono tiene un shortcut, ¿lo
+[00:21:13] veis? Si yo puso por aquí, pues también
+[00:21:14] le puedo dar diferentes acciones en modo
+[00:21:16] audio. Bueno, e está guay si queréis
+[00:21:19] acabar programando así, pues de una
+[00:21:21] manera más interactiva, más minority
+[00:21:24] report. Yo realmente no es que lo suelo
+[00:21:27] utilizar muchísimo, suelo escribir,
+[00:21:29] aunque entiendo que para según qué casos
+[00:21:31] también puede ser superútil. Más temas
+[00:21:34] de configuración para que entendamos muy
+[00:21:36] rápido la interfaz. Si nos vamos
+[00:21:38] simplemente a los settings, a las
+[00:21:40] preferencias, aquí os recomiendo que lo
+[00:21:42] veáis todo con calma. Por supuesto,
+[00:21:43] tenéis un montón de preferencias
+[00:21:45] generales. Entre ellas vais a encontrar
+[00:21:47] acabar eh añadiendo un comando si
+[00:21:51] queréis activar el micrófono para no
+[00:21:53] tener que dar al botoncito que sea una
+[00:21:55] combinación de teclas en vuestro teclado
+[00:21:57] o lo que sea. Tenéis la parte de
+[00:21:58] aparencia, apariencia, perdón. Incluso
+[00:22:01] hasta para la gente que esto lo utilice
+[00:22:03] pues más como codex que como CH GPT. Ya
+[00:22:05] os dije que antes eran dos aplicaciones
+[00:22:06] por separado. Pues bueno, tenemos aquí
+[00:22:08] un botoncito que lo que nos hace es
+[00:22:09] cambiar el icono y nos dice por aquí que
+[00:22:12] es el icono de codes.
+[00:22:13] El tamaño de las fuentes, el tema de la
+[00:22:16] voz, aquí lo tenéis para que sea el
+[00:22:18] shortcut, temas de configuración,
+[00:22:20] personalización, hasta tema de mascotas,
+[00:22:23] podéis lanzar vuestra mascota, que es
+[00:22:24] como una especie de asistente, eh,
+[00:22:27] bueno, en infinidad de cosas, ya lo veis
+[00:22:30] aquí, atajos de teclado, la propia
+[00:22:32] facturación, tema de la cuenta, los
+[00:22:34] complementos, los permisos que le dais
+[00:22:36] al navegador, el uso del ordenador, los
+[00:22:38] hooks, las conexiones, git, entornos,
+[00:22:40] Wordtrax, después alguna de estas
+[00:22:42] opciones es que son más avanzadas, os
+[00:22:44] las contaré por encima, pero bueno, que
+[00:22:46] veáis que aquí en la parte de
+[00:22:47] personalización darle una vuelta porque
+[00:22:49] está bastante guay. Si queréis mostrar
+[00:22:51] la mascota, aquí en la parte inferior,
+[00:22:53] ey, mostrar mascota. Y si le damos a
+[00:22:55] mostrar mascota, teóricamente debería
+[00:22:58] aparecer por aquí. Ra, ra ra. Tenemos la
+[00:23:00] mascota. Hola, soy Codex, no sé qué,
+[00:23:02] estoy a tu disposición. Bueno, e
+[00:23:06] queda para otro momento la mascota, si
+[00:23:08] queréis revisar vosotros cómo funciona
+[00:23:10] vuestra mascota, pero básicamente es
+[00:23:11] como una especie ahí de clipy, una
+[00:23:13] especie de asistente donde de verdad me
+[00:23:16] quiero parar es en la parte de modelos,
+[00:23:18] ¿vale? Os dije que si algo ha cambiado
+[00:23:21] hace poquito es justamente el tema de
+[00:23:23] los modelos.
+[00:23:26] puede seguir evolucionando y va a seguir
+[00:23:28] evolucionando, pero quiero explicar muy
+[00:23:30] rápido qué es esto y cuál es esta
+[00:23:32] división que ha salido ahora mismo, que
+[00:23:34] es GPT 5.6. Esto, si os vais a la web
+[00:23:36] principal de Open EI, pues en el blog
+[00:23:38] tienen como con cualquier lanzamiento
+[00:23:41] que hacen una explicación muy muy básica
+[00:23:44] y muy muy rápida, más o menos para que
+[00:23:45] entendamos cómo funciona cada uno de
+[00:23:47] estos modelos. Os dije que han sacado en
+[00:23:50] dentro de esta versión 5.6 sol, Terra y
+[00:23:54] Luna, ¿vale? Sol, el más potente, Terra,
+[00:23:57] potencia media, Luna, el menos potente.
+[00:24:00] Quiere decir que yo siempre tengo que
+[00:24:02] utilizar Sol, ¿no? Por lo mismo que
+[00:24:04] dijimos antes, cuanto más inteligente,
+[00:24:06] vamos a llamarlo así, un modelo, pues
+[00:24:08] más tiempo tarda en responder y más
+[00:24:12] consume de nuestro plan. Necesitamos el
+[00:24:14] modelo más inteligente para
+[00:24:15] absolutamente todas las tareas, ¿no?
+[00:24:18] Igual tú estás haciendo un pequeño
+[00:24:20] refactor, estás renombrando unas
+[00:24:22] variables, necesitas el modelo más
+[00:24:23] potente, ¿no? Igual puedes utilizar
+[00:24:25] Luna, que es un modelo ser simple. Eso
+[00:24:27] es algo que, por supuesto, la
+[00:24:29] experiencia os va a ir dando este
+[00:24:31] conocimiento, pero que más o menos
+[00:24:32] tenéis que entender lo siguiente. Aquí
+[00:24:33] podríamos leer, pero simplemente para
+[00:24:36] que hagamos una revisión super rápido.
+[00:24:38] ¿Veis que por aquí tenemos sol? que
+[00:24:40] vemos que sí, claro, a nivel de costes,
+[00:24:42] a nivel de puntuación, de inteligencia,
+[00:24:44] pues es el mejor. Después tenemos Luna,
+[00:24:46] después tenemos Terra. A medida que
+[00:24:48] vamos avanzando vais a ver otras
+[00:24:51] referencias. ¿Por qué? Porque se le va
+[00:24:52] teniendo en cuenta diferentes
+[00:24:54] parámetros. Pero también para que lo
+[00:24:56] tengáis en cuenta, bueno, igual conocéis
+[00:24:59] el modelo anterior GPT 5.5, pues ya veis
+[00:25:03] que más o menos dice que claro,
+[00:25:05] teóricamente pues este 5.6 deberían ser
+[00:25:08] mejor en todo. Bueno, dependiendo en qué
+[00:25:11] tener en cuenta que algo así como que
+[00:25:14] Luna es más menos que más digamos GPT
+[00:25:19] 5.5 5 y después tenéis a Terra, que es
+[00:25:22] más o menos como si fuera la
+[00:25:24] actualización de GPT 5.5, en cambio GPT
+[00:25:28] 5.6 y después tenemos Sol, que es el más
+[00:25:31] avanzado, que ya sería como la siguiente
+[00:25:33] generación, ¿vale? Aquí nos lo compara
+[00:25:36] con la competencia, con Opus, incluso
+[00:25:38] con Fable que vemos por aquí. Bueno, eh
+[00:25:41] aquí ya sabéis que dependiendo de cuál
+[00:25:44] sea la empresa que hace las
+[00:25:46] comparaciones, siempre va a acabar
+[00:25:48] ganando más menos el que sea de su
+[00:25:51] propiedad. Bueno, simplemente podéis
+[00:25:53] revisar esto un poquito por encima, pero
+[00:25:56] entender muy muy rápido que la forma de
+[00:25:59] acabar trabajando con esta herramienta a
+[00:26:02] nivel de modelos, por lo menos a nivel
+[00:26:05] de 5.6, es que vosotros tenéis el modelo
+[00:26:08] Sol, que es el más potente ahora mismo,
+[00:26:11] el Terra, que sería como el equivalente
+[00:26:13] al 5.5, pero un poquito mejorado, y el
+[00:26:16] Luna, que sería algo así como el mini
+[00:26:18] que teníamos antes para tareas pues más
+[00:26:20] simples. ¿Qué es lo ideal? Que vosotros
+[00:26:22] vayáis modificando el modelo dependiendo
+[00:26:24] de la tarea que tengáis que realizar. El
+[00:26:27] modelo para la gran mayoría de tareas es
+[00:26:30] terra, es decir, para estar programando
+[00:26:32] ahí pequeñas funcionalidades pin e ir
+[00:26:34] evolucionando vuestro software es cerra.
+[00:26:36] Para hacer temas de planificaciones,
+[00:26:38] para hacer tareas que se van a estirar
+[00:26:40] muchísimo más en el tiempo, pues por
+[00:26:42] supuesto aquí está Sol. Y para hacer
+[00:26:45] pequeñas cositas, utilizar Luna. Y así
+[00:26:47] veréis cómo en el momento que utilicéis
+[00:26:50] tanto planes gratuitos como planes de
+[00:26:52] pago, os van a durar muchísimo más.
+[00:26:54] Claro, ahora también es cierto que según
+[00:26:56] el plan que sea de pago o gratuito,
+[00:26:59] alguno de estos modelos puede que no
+[00:27:01] tengáis acceso, sobre todo los
+[00:27:02] gratuitos. ¿Por qué? Porque, bueno, nos
+[00:27:05] regalan las cosas, pero según hasta qué
+[00:27:07] punto. Y después también, ¿cuál sería mi
+[00:27:09] recomendación para el día a día? os
+[00:27:13] ponéis terra y lo ponéis en media.
+[00:27:17] ¿Okay? Yo solo cambiaría a alta, muy
+[00:27:20] alta o ultra ya, si os volvéis locos y
+[00:27:22] decís, "Bueno, esto tiene que ser una
+[00:27:24] tarea muy compleja y necesito que dé el
+[00:27:27] máximo rendimiento." Pero para
+[00:27:29] desarrollar de normal, Terra con media,
+[00:27:31] que os tenéis que ir a alguna tarea un
+[00:27:32] poquito más compleja, os vais a Sol con
+[00:27:34] media. Es decir, yo no andaría cambiando
+[00:27:36] mucho. De hecho, si os vais al modo
+[00:27:38] simple, veis que el modo más menos es
+[00:27:43] sol media. En cambio, si lo ponéis algo
+[00:27:46] simple, os pone sol ligero y si os vais
+[00:27:49] aquí, os va a terra ligero. Yo, como
+[00:27:52] vamos a acabar teniendo el control, lo
+[00:27:54] que yo os diría es, venga, trabajar con
+[00:27:57] terra medio para tener el modelo término
+[00:28:00] medio, pero sí con un poquito más de
+[00:28:02] esfuerzo, un poquito más inteligente.
+[00:28:04] ¿Okay? ¿Tenemos todo esto claro? Pues
+[00:28:06] venga, vamos a seguir. Vamos a empezar a
+[00:28:09] trabajar ya con cómo podemos empezar a
+[00:28:12] desarrollar, ¿okay? ¿Cómo podemos
+[00:28:14] empezar a desarrollar? Lo primero que
+[00:28:16] tenemos que tener en cuenta es que,
+[00:28:17] claro, aquí vamos a poder empezar a
+[00:28:19] prontear cualquier cosa, pero tenemos
+[00:28:22] que entender también cuál es el sistema
+[00:28:24] sobre el que está edificado el propio
+[00:28:26] Codex, que es que está pensado para que
+[00:28:28] nosotros empecemos a lanzar un montón de
+[00:28:31] agentes en paralelo, empecemos incluso a
+[00:28:33] desarrollar en diferentes aplicaciones.
+[00:28:35] Yo me puedo venir aquí a este proyecto
+[00:28:37] que es el de Mur Pro y le voy a lanzar
+[00:28:39] por aquí describe el proyecto y voy a
+[00:28:44] copiar esto porque voy a lanzar este
+[00:28:46] prompt, pero me voy a ir a otro
+[00:28:49] proyecto, a este que veis aquí al Aquí
+[00:28:51] seguimos y le voy a decir, "Ey, lanza
+[00:28:54] una nueva tarea." Que sería lo mismo que
+[00:28:55] darla aquí y seleccionar el proyecto,
+[00:28:57] que veis que lo puedo ir cambiando. Y
+[00:28:59] ahora aquí le voy a decir, "Describe el
+[00:29:00] proyecto." Y veis que en ambos casos
+[00:29:03] están en paralelo. Es decir, yo he
+[00:29:04] lanzado todo esto, se han lanzado las
+[00:29:07] dos tareas en paralelo, cada una con su
+[00:29:09] agente y básicamente después en el
+[00:29:12] momento que acaba, seleccionamos este
+[00:29:15] chat y nos dice, "Bueno, esta es la web
+[00:29:16] de Mored Pro, una plataforma de curso
+[00:29:17] online, no sé qué con lo que está creada
+[00:29:19] y me cuenta aquí, pues se resume rápido
+[00:29:22] y por aquí me dice, esta es una web
+[00:29:23] estática en español, no sé qué tal, que
+[00:29:25] documenta con humor y tal."
+[00:29:27] Básicamente esto hace referencia por un
+[00:29:30] lado,
+[00:29:31] perdón que se me fue aquí la web. Por un
+[00:29:34] lado hace referencia a la web de Muro de
+[00:29:37] Pro, a la web de la Academia,
+[00:29:39] básicamente de mis cursos y a esta web
+[00:29:42] que se llama, y aquí seguimos, que es
+[00:29:43] una web que yo he creado donde hay una
+[00:29:46] línea del tiempo con cosas que han dicho
+[00:29:49] los grandes magnates de la tecnología
+[00:29:50] sobre que la IA no se iba a quitar el
+[00:29:52] trabajo y cómo se han ido equivocando
+[00:29:53] desde hace 3 años. Pues bueno, aquí lo
+[00:29:55] tenéis. También son diferentes webs que
+[00:29:57] no es que vayamos a trabajar con estas
+[00:29:59] webs en este momento, pero para que
+[00:30:00] veáis que puedes tener los proyectos que
+[00:30:02] tú quieras aquí abiertos y que puedes
+[00:30:04] empezar a trabajar con ellos en
+[00:30:06] paralelo. También algo importante, como
+[00:30:08] en el momento que nosotros lanzamos un
+[00:30:09] chat, tenemos aquí lo que se llama el
+[00:30:11] entorno. El entorno nosotros lo podemos
+[00:30:13] modificar o podemos crear un nuevo
+[00:30:15] entorno. ¿Qué es el entorno? Como Codex
+[00:30:17] prepara los árboles de trabajo.
+[00:30:19] Básicamente ya entenderemos qué es esto
+[00:30:20] de los Word Tres, pero básicamente cómo
+[00:30:22] interactúa con el proyecto. Pues si
+[00:30:24] tienes alguna configuración, veis aquí
+[00:30:26] el script de configuración a la hora de
+[00:30:27] trabajar el script de limpieza, unas
+[00:30:29] acciones. Esto es un poquito más
+[00:30:30] avanzado, no tenéis ni por qué tocarlo
+[00:30:32] al principio, incluso la parte de
+[00:30:33] variables de entorno o lo que sea para
+[00:30:35] entender cómo funciona el entorno de
+[00:30:36] desarrollo, que lo podéis acabar
+[00:30:38] modificando para trabajar como queráis.
+[00:30:40] También tenéis esta parte que hemos
+[00:30:41] visto aquí, ¿qué es esto de local? pues
+[00:30:44] que vosotros podéis trabajar el local,
+[00:30:46] es decir, como estoy trabajando yo
+[00:30:48] ahora, pero Codex también tiene una
+[00:30:49] versión web. Esto no es tan tan
+[00:30:53] importante ahora mismo, pero realmente
+[00:30:55] si tú tienes un repositorio y esto lo
+[00:30:57] tienes metido en GitHCAB y hay una forma
+[00:31:00] de tener todo este código subido en la
+[00:31:02] web, realmente tú lo que también puedes
+[00:31:05] hacer es seguir desarrollando desde la
+[00:31:07] interfaz web, desde el lugar que tú
+[00:31:09] quieras, incluso desde la aplicación
+[00:31:11] móvil, que también hay esa hay esa
+[00:31:13] opción y esos cambios pues los vas
+[00:31:15] sincronizando con GitHub y todo se va
+[00:31:17] subiendo a la nube. ¿Okay? Incluso
+[00:31:19] también tienes la forma de seleccionar
+[00:31:21] diferentes ramas. Si tú tuvieras
+[00:31:22] diferentes ramas en giton, GitHub, por
+[00:31:24] aquí la tienes hasta las opciones de
+[00:31:26] meter el comit o el push. Es decir,
+[00:31:28] tienes esto que se llama por aquí
+[00:31:31] entorno, que realmente es esto que veis
+[00:31:34] aquí que se llama fijar, desfijar
+[00:31:35] resumen. Veis que lo quito y lo pongo.
+[00:31:38] Incluso también tenemos los cambios que
+[00:31:39] yo tengo pendientes o lo que sea. Bueno,
+[00:31:41] simplemente es un resumen para que
+[00:31:43] vayamos viendo más o menos qué es lo que
+[00:31:45] está haciendo este chat en el momento
+[00:31:48] concreto contra el proyecto que hemos
+[00:31:50] seleccionado. ¿Vale? Una vez ya tenemos
+[00:31:52] esto, vamos a pasar a otra parte también
+[00:31:55] muy importante que es la de los
+[00:31:56] complementos. Si algo creo que para mí
+[00:32:00] tiene bueno como entorno de desarrollo
+[00:32:03] Codex es que toda la parte de plugins es
+[00:32:06] superamigable. ¿Qué quiere decir? Que yo
+[00:32:08] quiero acabar interactuando con
+[00:32:10] documentos, con PDF, con hojas de
+[00:32:14] cálculo, con el propio browser, con mi
+[00:32:16] ordenador, con GitHub. es lo que
+[00:32:19] conocemos en algunos casos como MCPs. Si
+[00:32:23] yo empiezo a hablar de temas raros,
+[00:32:25] agentes, MCPs, skills, por favor, os
+[00:32:30] dejo por aquí también el curso. Os vais
+[00:32:33] a YouTube y buscáis este curso. Agentes
+[00:32:37] de IA. Es un curso de 3 horas donde yo
+[00:32:40] hago un repaso de todos los fundamentos
+[00:32:41] del desarrollo moderno con inteligencia
+[00:32:44] artificial.
+[00:32:45] Vale, aquí explico todos los conceptos
+[00:32:47] de inteligencia artificial generalistas,
+[00:32:50] ¿vale? Entonces este curso es
+[00:32:53] obligatorio para cualquier persona que
+[00:32:56] esté aprendiendo desarrollo. Habrá cosas
+[00:32:58] que igual se enteren más menos, pero
+[00:33:00] realmente aquí condenso muy bien todos
+[00:33:02] esos conceptos y por eso quiero que los
+[00:33:04] tengáis en cuenta, porque
+[00:33:06] por ejemplo toda esta parte de plugins,
+[00:33:08] algunos van a tener una referencia
+[00:33:11] bastante cercana a lo que se llama el
+[00:33:13] model protocol, a los MCPs, es decir,
+[00:33:15] una especie de protocolo para acabar
+[00:33:17] conectándonos a herramientas de
+[00:33:19] terceros. Imagínate que yo quiero
+[00:33:22] interactuar desde Codex con Chrome. Pues
+[00:33:25] aquí tengo trasla, la instalación para
+[00:33:28] Chrome con GitHub, lo que sea. Ya vemos
+[00:33:31] que tenemos aquí Notion, ClickUp, Google
+[00:33:35] Calendar, Linear, lo que sea. Por
+[00:33:37] supuesto, hay maneras mediante MCPs de
+[00:33:39] crear nuestros propios MCPs, de
+[00:33:40] conectarlo con cualquier tipo de MCPs,
+[00:33:42] pero que sepáis que
+[00:33:45] para alguien que está dando sus primeros
+[00:33:48] pasos, para alguien que está comenzando
+[00:33:49] en desarrollo software, incluso para
+[00:33:50] alguien que tenga experiencia, aquí ya
+[00:33:52] veis cuáles son las herramientas más
+[00:33:55] utilizadas que a nivel productividad
+[00:33:57] tienen 314. Puedes empezar a explorarlas
+[00:34:01] por aquí que tenemos creatividad,
+[00:34:03] developer tools, business, bueno, un
+[00:34:06] montonazo de plugins, que sería algo así
+[00:34:10] como las extensiones que tenemos para
+[00:34:12] Visual Studio Code, pero en este caso
+[00:34:14] para que nuestro codex sea capaz de
+[00:34:17] interactuar de manera muy rápida con
+[00:34:20] herramientas de terceros. ¿Qué
+[00:34:22] significa? que si yo acabo instalando
+[00:34:27] este complemento, este plugin de GitHop,
+[00:34:30] en el momento que yo lo tengo instalado
+[00:34:31] y lo tengo configurado, yo le voy a
+[00:34:33] poder preguntar a Codex por mis propios
+[00:34:36] repositorios o le voy a pedir que
+[00:34:38] interactúe con mis propios repositorios
+[00:34:39] o que lea cualquier contenido de mis
+[00:34:41] repositorios o incluso de mi usuario, de
+[00:34:43] lo que sea. Entonces, este es un poco el
+[00:34:45] cometido. Si yo, por poner el ejemplo de
+[00:34:48] Notion, de cómo funcionaría un MCP de
+[00:34:50] Notion, igual yo tengo las tareas
+[00:34:52] definidas en Notion y yo le voy a ir
+[00:34:54] diciendo, "Ey, lee la especificación de
+[00:34:56] esta tarea que yo tengo en mi Notion,
+[00:34:58] que quien no lo sepa, Notion es una
+[00:34:59] aplicación de documentación y implementa
+[00:35:02] lo que está pidiendo en esta tarea." Y
+[00:35:04] cuando la implementes, escribe en ese
+[00:35:06] documento de Notion cuál ha sido el
+[00:35:07] resultado, qué ha cambiado, lo que sea.
+[00:35:10] ¿Vale? Entonces, con estas Figma, ey,
+[00:35:14] lee este diseño y programa este diseño,
+[00:35:17] ¿ya entendéis? Bueno, pues básicamente
+[00:35:19] estos complementos son superútiles y
+[00:35:21] tenerlos muy en cuenta. No os voy a
+[00:35:23] decir, ey, instala este mejor que otro
+[00:35:25] porque realmente todo depende de cuáles
+[00:35:27] sean vuestras necesidades, pero tener en
+[00:35:30] mente que esto es muy importante para
+[00:35:32] que así el desarrollo cada vez sea más
+[00:35:34] potente, ya que podremos acceder a un
+[00:35:37] montón de herramientas de manera s s
+[00:35:39] super superfácil. Vale, vamos a ver una
+[00:35:41] cosa. ¿Y qué significa esto de que yo
+[00:35:44] pueda acceder a estos diferentes
+[00:35:46] complementos? Uno de los complementos,
+[00:35:49] ya os digo que para acceder a los
+[00:35:51] complementos lo hacemos con la igual que
+[00:35:54] este botón más. Ya veis que de los
+[00:35:56] complementos que yo ya tengo instalados,
+[00:35:57] pues los puedo seleccionar. Okay. Por
+[00:36:00] ejemplo, voy a decirle por aquí, ey, voy
+[00:36:02] a utilizar el complemento del ordenador.
+[00:36:04] ¿Qué es el complemento del ordenador?
+[00:36:05] Básicamente que yo puedo acabar
+[00:36:08] interactuando con mi ordenador. En este
+[00:36:09] caso no lo quiero hacer desde mi
+[00:36:10] proyecto. Voy a crear una nueva tarea y
+[00:36:13] le voy a decir que en realidad no quiero
+[00:36:15] trabajar en ningún proyecto porque le
+[00:36:17] voy a pedir algo tan tonto como le voy a
+[00:36:19] decir, "Ey, abre Warp." Warp es una
+[00:36:24] aplicación o es la aplicación que yo
+[00:36:27] utilizo como terminal. Esto no es lo
+[00:36:30] importante. Sin más, la tengo por aquí.
+[00:36:33] Esto es warp. es mi herramienta de
+[00:36:35] terminal, da igual, la voy a cerrar,
+[00:36:36] pero ahora le voy a decir desde aquí que
+[00:36:38] utilizando el complemento de ordenador,
+[00:36:39] que me permite interactuar con el
+[00:36:41] ordenador, yo voy a decir, "Ey, hable
+[00:36:42] warp." ¿Y qué va a hacer? Pues voy a
+[00:36:44] utilizar el control del ordenador para
+[00:36:46] abrir warp. Ya veis que en el momento
+[00:36:48] que empezamos a utilizar un montón de
+[00:36:49] complementos, podemos hacer un montón de
+[00:36:51] acciones. ¿Qué va a hacer? Pues bueno,
+[00:36:53] va a empezar a interactuar con el
+[00:36:54] ordenador. Dice, "Ostras, el control del
+[00:36:56] ordenador lo bloquea." Y yo voy a decir,
+[00:36:59] "Hostia, ¿y cómo es esto que no acaba
+[00:37:01] funcionando?"
+[00:37:02] Bueno, vamos a pillar un modelo un
+[00:37:05] poquito más potente y le voy a decir a
+[00:37:08] ver si el modelo más potente me deja
+[00:37:12] hacer algo con esto, porque acabaremos
+[00:37:14] viendo que justamente esto es lo que
+[00:37:17] estábamos diciendo antes, que una cosa
+[00:37:18] es tener los complementos,
+[00:37:21] lo vuelvo a poner por aquí y después ya
+[00:37:23] veremos si nosotros le hemos dado los
+[00:37:26] permisos. ¿Okay? Por eso una cosa es
+[00:37:29] instalar justamente los complementos.
+[00:37:31] Voy a utilizar el control leyendo las
+[00:37:34] habilidades por aquí.
+[00:37:37] Vamos a dejarle tal y vemos que ahora
+[00:37:39] nos dice, "Ey, permití esta conversación
+[00:37:41] porque yo le he dicho, sí, es que me
+[00:37:43] tienes que pedir la aprobación." Y digo,
+[00:37:45] "Venga." Y fíjate qué está haciendo. Ya
+[00:37:47] lo vemos por aquí. Me he abierto una
+[00:37:49] ventana y en esta ventana tiene el
+[00:37:52] control de el propio codex y va a
+[00:37:55] empezar a navegar y a interactuar por
+[00:37:58] esta ventana. Fíjate, yo la voy a dejar
+[00:38:00] por aquí. y me dice, "Está buscando para
+[00:38:03] intentar abrir warp, está intentando
+[00:38:05] solicitar, está buscando o está
+[00:38:07] intentando utilizar el spotlight." Ya
+[00:38:09] vemos que estas herramientas tienen
+[00:38:12] capacidad de interactuar con este
+[00:38:13] ordenador. Eso sí, tienen capacidad
+[00:38:16] siempre y cuando nosotros le demos las
+[00:38:17] aprobaciones y donde nosotros también
+[00:38:20] podamos acabar controlando qué hace y
+[00:38:23] qué no hace. vemos cómo se está
+[00:38:25] moviendo. Vemos este puntero. Este
+[00:38:26] puntero es codex. Se ha ido a
+[00:38:28] aplicaciones y ahora dentro de estas
+[00:38:31] aplicaciones pues va a buscar la
+[00:38:32] aplicación. Esto no lo estoy haciendo
+[00:38:34] yo, lo está haciendo todo Codex. ¿Vale?
+[00:38:36] Esto es un ejemplo que ya sé que es
+[00:38:38] lento, que ya lo hice a propósito,
+[00:38:40] justamente para que veáis cómo es una
+[00:38:42] interacción en este caso con la máquina.
+[00:38:45] Lo podríamos hacer de muchas otras
+[00:38:46] maneras, pero lo que permite este
+[00:38:48] complemento es navegar por nosotros, que
+[00:38:51] en algunos casos pues puede tener cierto
+[00:38:53] sentido. Aún así, las herramientas o los
+[00:38:56] complementos que yo os recomiendo son
+[00:38:58] los que de verdad pueden hacer una
+[00:38:59] interacción y una conexión muchísimo más
+[00:39:01] rápida con la máquina. Vale, ya tenemos
+[00:39:03] todo esto y ahora pues bueno, nos está
+[00:39:06] ejecutando eh WAR por aquí y nos lo
+[00:39:08] acabaría abriendo. Aquí también vemos
+[00:39:10] una previsualización de teóricamente qué
+[00:39:12] es lo que tendría que hacer en este
+[00:39:13] caso. Fíjate cómo cambian los modelos.
+[00:39:17] Le hemos puesto el modelo Terra y no ha
+[00:39:19] sido capaz de abrirlo. Entonces, en el
+[00:39:21] momento que vosotros también veáis que
+[00:39:23] hay limitaciones, tenéis que acabar
+[00:39:24] también cambiando el modelo. Digo, "U,
+[00:39:26] igual este modelo no ha sido capaz de
+[00:39:28] hacer según qué cosas." Y vemos como por
+[00:39:30] aquí está guardpo abierto. Esto ya os
+[00:39:32] digo, lo hice a propósito porque sé que
+[00:39:34] es superlento, porque lo intenta buscar
+[00:39:36] a mano y quería que me diera el tiempo
+[00:39:38] suficiente a explicarlo, pero para que
+[00:39:40] veáis que, bueno, ahora aquí acabo
+[00:39:42] abriendo warp. ¿Okay? Warp ya está
+[00:39:45] abierto. Bueno, esto no es lo que
+[00:39:46] importaba realmente. Solo quiero que
+[00:39:48] tengáis en mente qué es esto de los
+[00:39:51] plugins, de los complementos. ¿Vale?
+[00:39:54] Vamos ahora sí o sí ya empezar a
+[00:39:57] trabajar con un proyecto real. Vamos a
+[00:40:00] empezar a desarrollar un proyecto real
+[00:40:02] para ver cuál es la interacción del
+[00:40:04] propio códig. El proyecto con el que yo
+[00:40:06] quiero acabar trabajando esta carpeta
+[00:40:09] que yo creé antes por aquí que era el
+[00:40:11] study calendar. Básicamente os voy a
+[00:40:14] explicar el concepto. Lo que yo quiero
+[00:40:16] acabar creando es un proyecto que sea un
+[00:40:21] calendario que me ayude a mí a
+[00:40:23] organizarme como estudiante, donde yo
+[00:40:25] igual pueda acabar creando diferentes
+[00:40:27] tareas, que yo le ponga unas horas, que
+[00:40:30] yo le ponga un día, que las pueda
+[00:40:32] completar, es decir, una especie de
+[00:40:33] toist, pero más orientado a un
+[00:40:35] calendario, por ejemplo, por poner una
+[00:40:38] aplicación que más o menos que más o
+[00:40:40] menos se vaya a desarrollar rápido para
+[00:40:42] no cruzarnos aquí de brazos y estar
+[00:40:44] esperando a que acabe todo. todo esto.
+[00:40:46] Okay, estamos de acuerdo. Pues venga,
+[00:40:49] ¿cómo tendríamos que hacer todo esto?
+[00:40:51] Bueno, a mí lo que se me ocurre es que
+[00:40:52] si estoy creando un proyecto, lo primero
+[00:40:55] y lo vamos a hacer aquí, vamos a ponerlo
+[00:40:58] en sol, ya que como quiero ir rápido, no
+[00:41:03] voy a ir pidiendo un montón de prompts,
+[00:41:05] aunque eso todo en el curso de
+[00:41:07] desarrollo con IA que os conté antes se
+[00:41:09] explica cuál es la interacción correcta
+[00:41:11] para desarrollar proyectos. Bien, aquí
+[00:41:14] queremos ver la herramienta más que
+[00:41:16] desarrollar la aplicación perfecta, así
+[00:41:17] que lo voy a poner en sol en media para
+[00:41:20] que sea un poquito más inteligente y con
+[00:41:23] prompts malos realmente y sin mucha
+[00:41:26] especificación sea capaz de darnos más o
+[00:41:28] menos una solución que esté bastante
+[00:41:30] bien. Lo primero que le voy a pedir es
+[00:41:32] que inicialice Git para que veáis que no
+[00:41:35] solo es la parte de desarrollo, sino
+[00:41:37] también yo le puedo acabar diciendo, "Y
+[00:41:39] esto no lo hagáis en casa, le voy a dar
+[00:41:41] el acceso completo para que realmente no
+[00:41:44] me tenga que estar pidiendo permiso en
+[00:41:45] cada una de las cosas y no tener que
+[00:41:47] estar parando, ¿vale? Pero le voy a
+[00:41:49] decir que inicialice Git para que así ya
+[00:41:52] acabemos teniendo realmente, y esto lo
+[00:41:54] voy a cerrar, ya acabemos teniendo un
+[00:41:57] sistema de control de versiones. Esto es
+[00:41:59] esencial en el mundo del desarrollo y
+[00:42:01] para que veáis también qué va haciendo.
+[00:42:03] Ey, inicializa Git y ya está. Sin más ya
+[00:42:07] nos ha dicho que esto está
+[00:42:09] correctamente. Vale, vamos a meterle el
+[00:42:12] prompt con el que yo quiero desarrollar
+[00:42:15] esta aplicación que os acabo de contar.
+[00:42:17] Bueno, por leerlo muy rápido, desarrollo
+[00:42:19] una web con Reat y TypeScript que
+[00:42:20] funcione como un organizador de tareas
+[00:42:22] de estudio en un calendario. Podré crear
+[00:42:24] tareas, arrastrar al día concreto,
+[00:42:26] establecer una hora, color para la tarea
+[00:42:29] y se verán ordenadas. También tendré la
+[00:42:30] posibilidad de marcarlas como
+[00:42:32] completadas. Bueno, por favor, lo de
+[00:42:34] siempre otra vez, no se desarrolla una
+[00:42:37] aplicación así. Tendríamos que generar
+[00:42:39] cada una de las especificaciones, ir
+[00:42:41] poquito a poco dando cada uno de los
+[00:42:43] pasos, pero aquí lo que quiero es tener
+[00:42:44] una base y para poder enseñaros cómo se
+[00:42:48] pone a trabajar Codex en este caso y
+[00:42:51] cómo tenemos que interactuar con él.
+[00:42:52] ¿Vale? Le digo por aquí, lanzo el prompt
+[00:42:55] y vamos a empezar a ver qué es lo que
+[00:42:56] está haciendo. En el momento que
+[00:42:58] empiecen a aparecer cambios, los veremos
+[00:43:00] también por aquí. Aquí tendremos
+[00:43:03] rápidamente un acceso de qué se ha
+[00:43:05] modificado en el proyecto y qué nos ha
+[00:43:07] guardado un Git. También otra vez lo
+[00:43:09] mismo, el local, el main, la posibilidad
+[00:43:11] de acabar interactuando con el
+[00:43:13] repositorio, ¿vale? Y me dice aquí, voy
+[00:43:15] a construir una aplicación completa en
+[00:43:16] el repositorio. Primero revisaré el
+[00:43:18] estado del proyecto y dice, "El
+[00:43:18] repositorio está vacío." Así que
+[00:43:20] prepararé una base y nos dice que nos lo
+[00:43:22] va a hacer con Bit, con Reat y con
+[00:43:24] Typescript. Yo no le he especificado
+[00:43:26] Bite. Ya sabéis, lo que nosotros no lo
+[00:43:28] especificamos, pues se lo va a inventar.
+[00:43:31] un desarrollo bueno. No se trata de que
+[00:43:33] la IA invente cosas, solo que yo no me
+[00:43:35] quiero detener ahora en ponerle un
+[00:43:36] montón de especificaciones y echar horas
+[00:43:38] desarrollando esto, sino que simplemente
+[00:43:40] quiero que se ponga a desarrollar y con
+[00:43:42] esto nosotros ir viendo qué va haciendo.
+[00:43:45] Vale, aquí ya encontramos algo super
+[00:43:47] importante. Ya vemos que en el momento
+[00:43:49] que empiezan a cambiar archivos nos dice
+[00:43:50] que cambia y, oh, sorpresa, ya tenemos
+[00:43:54] por aquí la opción de ir revisando cosas
+[00:43:56] que no habéis visto cómo es esto. Vale,
+[00:43:58] vuelvo para atrás y vamos a ver la
+[00:44:01] opción lateral. Si nos vamos a esta
+[00:44:04] opción lateral, ahora veis que ya no
+[00:44:06] solo tenemos terminal y navegador, sino
+[00:44:10] que ahora como nuestro proyecto ya tiene
+[00:44:13] más cosas, en este caso código, nos dice
+[00:44:16] que tenemos la opción de revisar. Esto
+[00:44:19] ya es el sistema de ficheros de nuestro
+[00:44:21] proyecto, esto ya lo ha creado.
+[00:44:24] Entonces, ¿qué significa esto de
+[00:44:26] revisar? ¿Y por qué es tan importante?
+[00:44:28] Primero, porque nosotros sí o sí como
+[00:44:31] buenos desarrolladores tenemos que ver
+[00:44:34] qué cuál es el código que se ha generado
+[00:44:36] y tenemos que entender este código y
+[00:44:38] tenemos que llegado el caso decirle,
+[00:44:41] "Okay, esto está bien, esto está mal o
+[00:44:43] lo que sea." Vamos por aquí sin más a
+[00:44:46] este índex. Imagínate que yo voy leyendo
+[00:44:49] todo aquilo que se ha generado y algo no
+[00:44:52] me ha gustado por lo que sea. ¿Veis este
+[00:44:54] más? ¿Qué es este más? La posibilidad de
+[00:44:59] que yo diga, "Ey, esto está mal." Le
+[00:45:02] pongo el comentario que sea y lo añado
+[00:45:05] como comentario. ¿Qué significa o qué va
+[00:45:08] a acabar haciendo esto? iterando sobre
+[00:45:11] lo que está desarrollando.
+[00:45:13] Con lo cual no se trata de que esto vaya
+[00:45:15] en un one shot, no se trata de que
+[00:45:16] tengamos fe ciega, no se trata de
+[00:45:18] empezar a pedir la la cosas, cruzar los
+[00:45:21] dedos y ojalá el resultado sea el que yo
+[00:45:23] quiera. Primero, tenemos que definir muy
+[00:45:26] bien los prompts y las especificaciones.
+[00:45:28] Y segundo, cuando ya se empiecen a dar
+[00:45:30] los resultados, los tenemos que revisar.
+[00:45:32] Y por supuesto, si hay algo que no nos
+[00:45:35] gusta, nosotros en este caso en la vista
+[00:45:37] de revisión nos vamos por aquí y
+[00:45:39] decimos, "Ey, esto no me gusta, lo voy a
+[00:45:42] anotar." Y con todas estas anotaciones
+[00:45:45] vemos esto. La tarea vacía es violeta.
+[00:45:51] Igual yo podría pensar, "Bueno, pues no
+[00:45:52] quiero que sea violeta." Digo,
+[00:45:56] "La tarea vacía, quiero que sea roja.
+[00:46:02] Y en el momento que yo hago esto y le
+[00:46:04] doy a comentario, vemos lo que ha
+[00:46:07] pasado. Esto es un comentario. Pero si
+[00:46:10] yo ahora acabara buscando 200
+[00:46:13] comentarios,
+[00:46:15] pues metería 200 comentarios. Aquí los
+[00:46:17] tendría y en el momento que aquí lo
+[00:46:20] tenemos aún desarrollando, tener en
+[00:46:23] mente que esto aún está desarrollando,
+[00:46:25] aún está pensando, aún está diciendo que
+[00:46:27] está cambiando ficheros, yo le podría
+[00:46:29] decir, "Ey, venga, tarea, lánzate." ¿Y
+[00:46:32] qué ha hecho esta tarea? la encolado.
+[00:46:36] Realmente cuando acabe de realizar toda
+[00:46:40] la acción que nosotros le hemos lanzado
+[00:46:42] con ese primer prompt, lo que va a hacer
+[00:46:44] es decir, "Venga, ¿qué me han comentado
+[00:46:47] esto?" Pues venga, voy a iterar y voy a
+[00:46:49] modificar justo voy a corregir justo lo
+[00:46:52] que me acaban indicando por aquí. Vale,
+[00:46:54] más cosas. Cierro otra vez el revisión
+[00:46:56] este y volvemos al menú lateral. Igual
+[00:46:59] que tenemos el menú lateral para
+[00:47:01] revisar, que es justo lo nuevo que ha
+[00:47:04] cambiado en estas interacciones, que
+[00:47:05] tenemos que revisar porque nos ha
+[00:47:07] subido, porque no se ha comiteado o lo
+[00:47:09] que sea, también tenemos el sistema de
+[00:47:10] archivos. ¿Qué significa el sistema de
+[00:47:12] archivos? Una especie de editor de
+[00:47:15] código, ya os lo digo, supercutre,
+[00:47:20] sers simple.
+[00:47:22] Esto no es un editor de código como
+[00:47:25] podemos conocer Codex o como podemos
+[00:47:27] conocer Visual Studio Code o lo que sea,
+[00:47:30] pero sí que nos sirve para, bueno, ir
+[00:47:32] revisando qué es lo que tenemos. Y por
+[00:47:35] supuesto, nosotros nos podemos venir
+[00:47:37] aquí, nos podemos ir al fichero que nos
+[00:47:40] dé la gana, venimos por aquí, decimos,
+[00:47:42] "Ah, quiero editarlo." Por supuesto,
+[00:47:44] esto es un editor de código al uso. Yo
+[00:47:47] puedo venir por aquí y puedo ponerme a
+[00:47:49] escribir lo que me dé la gana, como si
+[00:47:51] fuera un editor de código. ¿Qué pasa?
+[00:47:53] Que es un editor de código muy muy
+[00:47:56] simple. es un editor de código que tiene
+[00:47:59] muy poquita potencia, que no te va a dar
+[00:48:01] un autocompletado, que no te va a dar
+[00:48:03] las ayudas que te da un editor de
+[00:48:05] código, porque Codex sobre todo se
+[00:48:06] centra en la parte de desarrollo con
+[00:48:08] guía. Por eso, para mi recomendación de
+[00:48:12] verdad, tenéis por aquí siempre un icono
+[00:48:15] que os va a decir, "Ey, lo quieres abrir
+[00:48:18] en Visual Studio Code, donde sea." Aquí
+[00:48:20] está leyendo los editores de código que
+[00:48:22] tengo yo. Imagínate que selecciono
+[00:48:23] cursos, ¿vale? ¿Qué vamos a acabar
+[00:48:26] encontrando? Pues bueno, me he abierto
+[00:48:28] este fichero en cursor para que así me
+[00:48:30] resulte un poquito más fácil. Incluso
+[00:48:33] también tenemos de esta interacción
+[00:48:34] porque aquí está abriendo solo el
+[00:48:36] fichero. Yo puedo venir por aquí y puedo
+[00:48:39] decirle, "Okay, quiero abrir pues a ver
+[00:48:42] de lo que ha tocado por aquí también en
+[00:48:43] cursor. A ver qué me acaba abriendo en
+[00:48:45] cursor. Ah, mira, ahora ya me ha abierto
+[00:48:48] realmente todo el directorio. Entonces,
+[00:48:50] yo por aquí tengo cursor y ahora aquí sí
+[00:48:53] que ya tengo un editor de código al uso.
+[00:48:57] Mi recomendación, de verdad, una cosa es
+[00:49:00] que os deis muy bien desarrollando con
+[00:49:03] Codex porque os gusta, porque el motivo
+[00:49:06] que sea, vuestra herramienta de
+[00:49:08] desarrollo es codex, pero tener abierto
+[00:49:10] siempre un editor de código porque os va
+[00:49:13] a permitir primero si tenéis que editar
+[00:49:15] cualquier cosa, lo va lo vais a hacer de
+[00:49:18] una manera mucho más eficiente porque
+[00:49:20] vais a tener un editor de código, vais a
+[00:49:21] poder revisar muchísimo mejor todo el
+[00:49:23] código que se está generando y vais a
+[00:49:25] trabajar de una manera mucho más segura,
+[00:49:28] aunque códex os de la posibilidad de ver
+[00:49:31] más o menos el sistema de ficheros o
+[00:49:33] incluso de modificarlo. Es decir, para
+[00:49:35] mí lo mejor siempre es, ey, yo estoy
+[00:49:38] trabajando en este caso con Codex y
+[00:49:42] estoy revisando por aquí todo el código
+[00:49:45] que yo tenga, aunque puedo utilizar
+[00:49:48] también codes un poquito a medias.
+[00:49:49] Fíjate lo que ha pasado por aquí, ¿vale?
+[00:49:54] se ha modificado, se ha lanzado toda la
+[00:49:56] tarea. ¿Y qué nos dice? Bueno, he creado
+[00:49:57] una web, ta ta y tiene todo esto. Pin,
+[00:50:01] pin pin. Y después lo que ha hecho a
+[00:50:05] continuación también ha sido lanzar
+[00:50:07] justo la tarea que yo le he pedido con
+[00:50:09] la anotación. Y cuando ya tiene todo,
+[00:50:12] fíjate, esto era la el editado. ¿Qué nos
+[00:50:17] ha hecho? Primera interacción, he creado
+[00:50:19] el proyecto, lo tienes que arrancar
+[00:50:21] lanzando este comando. Perfecto,
+[00:50:24] ya veremos cómo se arranca el proyecto y
+[00:50:26] lo acabaremos viendo y tal, pero en el
+[00:50:27] momento que ha finalizado
+[00:50:30] todo el primer lanzamiento, el
+[00:50:32] comentario que le dije, "La tarea vacía
+[00:50:33] quiero que sea roja, ¿qué ha hecho?"
+[00:50:35] Hecho tras. ¿Cuáles son los cambios en
+[00:50:38] este caso? Pues mira, en este caso pues
+[00:50:40] ha sido esta tontería. Simplemente ha
+[00:50:42] cambiado el violeta por el coral. Ya
+[00:50:45] veis que claro, en la primera
+[00:50:46] interacción hay un montón de ficheros,
+[00:50:48] pero en esta que era algo como muy
+[00:50:49] localizado, clarísimo. Fíjate que yo
+[00:50:54] esto lo he hecho leyendo el código. Esto
+[00:50:56] nos tenemos que mentalizar.
+[00:50:58] Hay una diferencia muy grande entre
+[00:51:00] hacer by coding y entre hacer desarrollo
+[00:51:02] de software profesional. Tú tienes que
+[00:51:04] saber leer el código porque así vas a
+[00:51:06] poder encontrar todo rápidamente y vas a
+[00:51:09] ser capaz de interactuar muchísimo más
+[00:51:11] rápido y de manera más eficiente, tratar
+[00:51:12] errores, entender si la te está dando el
+[00:51:14] resultado que tú estabas buscando,
+[00:51:16] etcétera, etcétera. ¿Okay? Vale. También
+[00:51:18] una cosa muy importante, en el momento
+[00:51:20] que vosotros hacéis la revisión para ver
+[00:51:21] si queréis hacer alguna anotación o
+[00:51:23] acabar iterando o lo que sea, también
+[00:51:25] tenéis la opción de deshacer. Si
+[00:51:28] realmente no os ha gustado nada, lo que
+[00:51:30] ha pasado, le dais a deshacer, vuelve al
+[00:51:33] estado anterior y se acabó lo que se
+[00:51:34] daba. ¿Vale? Aún así, vamos a quedarnos
+[00:51:38] con ese desarrollo inicial para ver qué
+[00:51:41] nos acabamos encontrando. Bueno, lo que
+[00:51:43] nos dice por aquí es, "Ey, para arrancar
+[00:51:46] el proyecto, aquí me ha hecho el ruild,
+[00:51:51] pero nos dice que tenemos que correr el
+[00:51:53] proyecto. ¿Qué podríamos hacer?" Pues
+[00:51:55] bueno, yo si me voy por aquí a mi
+[00:51:59] carpeta y desde la terminal lanzo esto,
+[00:52:02] por supuesto, el proyecto va a correr.
+[00:52:05] Pero estamos con un agente.
+[00:52:07] Lanza
+[00:52:09] el proyecto
+[00:52:12] a ver qué pasa, ¿no? Entonces yo cuando
+[00:52:14] le digo que lance el proyecto, aquí
+[00:52:16] dice, "Voy a iniciar el servidor de
+[00:52:17] desarrollo." ¿Qué va a hacer él por
+[00:52:18] debajo? lanzar obviamente el comando que
+[00:52:21] yo también podría acabar lanzando.
+[00:52:23] Fíjate ahora aquí algo importante. He
+[00:52:26] utilizado Sol para hacer esta tontería.
+[00:52:28] Seguramente cualquier otro modelo lo
+[00:52:30] podría acabar haciendo y también este
+[00:52:32] pequeño cambio también otro modelo lo
+[00:52:33] podía acabar haciendo. Tener siempre en
+[00:52:35] mente, ey, según lo que vais a hacer,
+[00:52:37] voy a cambiar el modelo, porque es la
+[00:52:38] forma también de ahorraros eh los planes
+[00:52:41] de pago o incluso ahorraros el plan
+[00:52:44] gratuito. Ya tengo por aquí mi proyecto.
+[00:52:46] Pues bueno, lo lanzamos. me dice, "Ey,
+[00:52:49] abrir en dónde lo puedo lanzar. Lo puedo
+[00:52:52] lanzar en uno de los exploradores que
+[00:52:54] sea o por supuesto también lo puedo
+[00:52:56] lanzar dentro de CH GPT. ¿Qué es esto?
+[00:52:59] Nos va a abrir el explorador. Aún así,
+[00:53:03] ya vemos que esto está desplegado en un
+[00:53:05] puerto local, que yo si me voy a mi
+[00:53:07] explorador, al que sea, y lo lanzo, ojo,
+[00:53:11] aquí tenemos nuestra aplicación.
+[00:53:13] Planifica, enfócate, avanza. No está
+[00:53:15] mal, ¿verdad? Tenemos aquí día 16
+[00:53:19] tras tras tras. Tenemos aquí una tarea
+[00:53:22] que ha quedado a medias. Consejo, divide
+[00:53:24] las sienes largas en bloques de ha hecho
+[00:53:26] algo bastante chulo. Vamos a ver si es
+[00:53:28] capaz de crear una nueva tarea. Vengo
+[00:53:31] por aquí. Tarea de ejemplo. Pues no lo
+[00:53:35] sé. Asignatura
+[00:53:37] matemáticas.
+[00:53:42] Vengo por aquí. ¿Cuál es el día en el
+[00:53:44] que yo quiero acabar metiendo esto? Pues
+[00:53:47] no lo sé. El día es algo cutre porque no
+[00:53:50] me lanza esto. Ahora sí, selecciono la
+[00:53:52] tarea, la fecha, la duración. Uy, vemos
+[00:53:55] aquí un error, ¿verdad?
+[00:53:58] No se ve los colores de la tarea por
+[00:54:01] aquí, ¿no? Bueno, le voy a dar a crear
+[00:54:04] tarea y vamos a ver lo que ha hecho. Lo
+[00:54:07] he dicho para
+[00:54:09] uh un pequeño error, ¿verdad? Vemos que
+[00:54:13] la tarea sí que se ve azul. Vemos que la
+[00:54:15] tarea se pueden completar.
+[00:54:18] Fíjate
+[00:54:21] que la tarea la podemos seleccionar e
+[00:54:24] incluso podemos modificar los cambios. Y
+[00:54:26] hasta me podría pasar las tareas aquí a
+[00:54:29] todas, a pendientes, a hechas, porque
+[00:54:32] estas todas aún están sin asignar. Las
+[00:54:35] pendientes son las que tengo por aquí y
+[00:54:37] las hechas pues las que acabaría
+[00:54:39] marcando. Vemos como hace aquí una
+[00:54:41] especie de filtro. Vemos que no es muy
+[00:54:43] correcto. Obviamente esto lo hemos
+[00:54:44] lanzado en un prompt y ya está. Ahora
+[00:54:46] que vemos que esto está mal, le podría
+[00:54:49] decir
+[00:54:50] por dejarle que haga algo. Okay, le voy
+[00:54:53] a decir
+[00:54:55] en la ventana de creación de tareas no
+[00:55:01] se visualizan
+[00:55:04] bien los colores para
+[00:55:10] seleccionar el tipo de tarea. Parece que
+[00:55:15] todo se ve violeta.
+[00:55:19] Lo lanzo aquí. Es decir, no importa,
+[00:55:21] pero lo que yo quiero hacer es seguir
+[00:55:23] interactuando para que veáis cómo
+[00:55:25] podemos seguir trabajando. Os decía que
+[00:55:27] ahora mismo, ahora aquí tenemos pues
+[00:55:29] todos los ficheros y que también tenemos
+[00:55:32] el explorador web. Podéis pensar que el
+[00:55:34] explorador web aquí pues no es el mejor
+[00:55:37] del mundo, porque claro, tenemos que ver
+[00:55:39] aquí de lado, igual no lo estamos viendo
+[00:55:42] como queremos porque en este caso pues
+[00:55:44] igual no es muy responsive del todo.
+[00:55:47] Bueno, nos saca por aquí, bueno, no
+[00:55:48] importa, pero no es tan importante este
+[00:55:52] explorador web para acabar
+[00:55:55] previsualizando todo, sino por la opción
+[00:55:58] que veis aquí. ¿Recordáis que nosotros
+[00:56:01] el código lo podíamos acabar anotando,
+[00:56:06] decíamos en un código concreto, ¿vale?
+[00:56:09] Pero nosotros en el momento que tenemos
+[00:56:11] el explorador, ¿vees lo que pasa? Él ha
+[00:56:14] lanzado directamente una prueba para
+[00:56:18] validarlo. Fíjate, corregido, pas, pas,
+[00:56:21] revisión, podríamos revisarlo. Vemos que
+[00:56:24] como tiene acceso al explorador, la
+[00:56:26] interacción es superrápida. Entonces
+[00:56:28] podemos también mejorar ese flujo de
+[00:56:31] desarrollo. Por eso yo os recomiendo que
+[00:56:32] si estáis desarrollando web, este
+[00:56:34] explorador está guay porque así él
+[00:56:36] también es capaz de ir lanzando tareas y
+[00:56:39] aquí sí que interactúa muy rápido.
+[00:56:41] Podríais también instalar el complemento
+[00:56:44] de Chrome, pero aún así,
+[00:56:47] aunque podría acabar interactuando, no
+[00:56:49] va realmente tan tan fino como la propia
+[00:56:52] herramienta que tiene dentro. Por eso
+[00:56:55] también han hecho algo muy importante.
+[00:56:57] La gente de Open AI tenía una aplicación
+[00:56:59] que se llamaba Atlas, que era un
+[00:57:00] explorador. Pues bueno, lo han
+[00:57:01] descontinuado y lo han metido dentro.
+[00:57:03] están intentando crear una super
+[00:57:04] apprenti.
+[00:57:07] Vale, lo que os decía antes, recordar
+[00:57:09] que en el momento que yo decía, "Bueno,
+[00:57:10] voy a revisar algo, no me gusta, ta ta,
+[00:57:13] lo puedo anotar y así después puedo
+[00:57:15] seguir iterando." Pero aquí tenemos algo
+[00:57:18] también muy guay, que es que desde el
+[00:57:19] propio explorador web tenemos esa acción
+[00:57:23] de anotar, así que le voy a dar a anotar
+[00:57:26] y vemos que en el momento que yo me
+[00:57:27] pongo a anotar puedo ir seleccionando
+[00:57:31] cada uno de los elementos. ¿Lo veis?
+[00:57:35] Imagínate que ahora aquí digo tu espacio
+[00:57:37] de estudio.
+[00:57:39] Pues voy a seleccionar esto
+[00:57:44] y le voy a decir
+[00:57:47] quiero que también salude al usuario.
+[00:57:54] Esto es super tontería. Y aquí me voy,
+[00:57:58] lo pongo en terra y ya está. Tengo
+[00:58:01] también una anotación, en este caso, una
+[00:58:03] anotación sobre la interfaz gráfica. La
+[00:58:06] voy a lanzar a ver qué pasa.
+[00:58:09] Hala, captura de pantalla, pero ya
+[00:58:13] realizada de manera nativa desde el
+[00:58:16] propio explorador web, seleccionando qué
+[00:58:18] es lo que quiere tocar.
+[00:58:20] Nosotros podríamos ir al código,
+[00:58:21] podríamos ir a buscar eso, podríamos
+[00:58:22] programar nosotros, por supuesto, pero
+[00:58:25] en este caso también buscamos la manera
+[00:58:27] de decirle, "Es que lo que yo quiero
+[00:58:28] tocar es justamente en esto, que también
+[00:58:30] es una forma de acabar interactuando y
+[00:58:32] acabar desarrollando de una manera pues
+[00:58:34] un poquito más rápida, por supuesto,
+[00:58:37] siempre teniendo en cuenta si tiene más
+[00:58:38] menos sentido para nosotros." Vemos que
+[00:58:40] ya está haciendo aquí los cambios. Vemos
+[00:58:42] que ya está poniendo aquí, "Hola, Bris,
+[00:58:44] tu espacio de estudio." Perfecto, es lo
+[00:58:45] que buscábamos, un archivo que ha
+[00:58:47] cambiado. Lo vemos por aquí que ha
+[00:58:48] añadido nada, un nuevo texto dentro del
+[00:58:51] párrafo que existía aquí. Por supuesto,
+[00:58:53] yo lo revisaría. Veo que está todo OK. Y
+[00:58:57] aquí ya lo ha recargado directamente. En
+[00:58:59] cambio, si nos vamos aquí al explorador,
+[00:59:01] vemos que también está recargado, ¿vale?
+[00:59:04] Es una forma superrápida de acabar
+[00:59:06] interactuando con todo lo que tenemos
+[00:59:08] por aquí, ¿vale?
+[00:59:10] En el momento también s super importante
+[00:59:14] que nosotros estamos trabajando con
+[00:59:15] Codex no significa que únicamente
+[00:59:19] tengamos que hacer todo con Codex porque
+[00:59:21] ya os expliqué que para mí lo ideal es
+[00:59:24] ir trabajando realmente en paralelo
+[00:59:27] también con un editor de código. Un
+[00:59:28] editor de código que fíjate que voy a
+[00:59:32] buscar una extensión
+[00:59:34] y voy a poner por aquí codex. Digo
+[00:59:37] codex. Ostras. ¿Y quién ha creado esto?
+[00:59:40] Ah, si lo ha creado Open AI.
+[00:59:43] Entonces también algo importante, voy a
+[00:59:45] instalar esto
+[00:59:48] para que veáis que dentro de los propios
+[00:59:51] editores, en caso de que os guste
+[00:59:53] también cómo funciona Codex,
+[00:59:56] podemos también interactuar con la
+[00:59:58] propia herramienta de Codex. Okay, yo ya
+[01:00:01] tengo esto y ahora en la parte del chat,
+[01:00:03] igual que tengo el agente nativo en este
+[01:00:05] caso de cursor, que es la herramienta
+[01:00:07] con la que yo estoy trabajando, también
+[01:00:09] tenemos Codex, fíjate, tal. Y nos
+[01:00:12] empieza a dar aquí, bueno, pues una
+[01:00:14] serie de informaciones, ta ta ta ta, y
+[01:00:18] el nuevo modelo. Y fíjate que aquí lo
+[01:00:21] que tenemos ya es justamente los últimos
+[01:00:24] chats con los que hemos trabajado. Vengo
+[01:00:27] por aquí. ¿Os suena?
+[01:00:30] Este es el chat de Codex, con lo cual
+[01:00:32] nosotros para según qué acciones, si
+[01:00:35] estamos familiarizados también con una
+[01:00:36] herramienta de desarrollo de código,
+[01:00:38] como puede ser en este caso que estoy
+[01:00:40] con cursor, que sepamos que en el
+[01:00:43] momento que estemos interactuando, yo
+[01:00:44] vengo por aquí y también puedo trabajar
+[01:00:46] desde la propia herramienta, desde
+[01:00:48] cursor, tirando del propio codex.
+[01:00:53] Recomendación
+[01:00:55] para ver qué está haciendo Codex para
+[01:00:57] modificar algunas cosas directamente,
+[01:01:00] teniendo un contexto que prima más el
+[01:01:03] código que la inteligencia artificial,
+[01:01:05] como en este caso esta vista de cursor,
+[01:01:07] está bien.
+[01:01:09] La mayor potencia de Codex, por
+[01:01:12] supuesto, es utilizando la propia
+[01:01:14] herramienta de Codex, pero tener este
+[01:01:16] mix para mí es una muy buena suit de
+[01:01:19] herramientas. el tener la herramienta de
+[01:01:21] codex. Desde aquí estoy desarrollando,
+[01:01:23] pero en el momento que yo me tengo que
+[01:01:24] meter un poquito más al código, lo hago
+[01:01:27] desde una herramienta de edición de
+[01:01:29] código, como puede ser Cursor, como
+[01:01:30] puede ser Visual Studio Code o lo que
+[01:01:32] sea. Y aquí también tengo Codex para ir
+[01:01:35] viendo todo lo que hizo. Ya sabéis que
+[01:01:36] desde aquí puedo empezar a acceder a
+[01:01:38] cada una de las herramientas, a cada uno
+[01:01:40] de los ficheros. Aquí también tengo el
+[01:01:42] propio contexto de los ficheros, bueno,
+[01:01:44] lo que sea. ¿Vale? Entonces tengo una,
+[01:01:48] digamos, una interacción un poquito más
+[01:01:49] cercana al propio código en caso de que
+[01:01:52] nos haga falta. Okay. Vale, dicho esto,
+[01:01:56] ¿qué más cosas podemos acabar haciendo?
+[01:01:58] Voy a cerrar esto por aquí. Voy a abrir
+[01:02:02] una nueva tarea dentro de nuestra
+[01:02:04] herramienta, que es el study calendar
+[01:02:06] este que he creado por aquí. Y vamos a
+[01:02:08] ver otra de las cosas más importantes
+[01:02:12] que tiene el propio Codex para trabajar,
+[01:02:15] que son los comandos. ¿Qué es eso de los
+[01:02:18] comandos? Igual que hemos visto antes
+[01:02:20] que teníamos toda la parte de estos
+[01:02:23] complementos para acabar interactuando,
+[01:02:26] por supuesto, es decir, aquí no tenéis
+[01:02:27] archivos, carpetas o lo que sea.
+[01:02:29] ¿Queréis una captura de pantalla? Se lo
+[01:02:31] adjuntáis desde aquí. Aparte de todos
+[01:02:33] los complementos que ya tiene instalados
+[01:02:35] y los que le podéis instalar extra, que
+[01:02:38] es lo que vimos antes por aquí. Bueno,
+[01:02:40] eh, a donde iba. Otra de las cosas
+[01:02:43] importantes que tenemos que conocer
+[01:02:45] dentro de codex son los comandos, que se
+[01:02:47] activan con la barra inclinada, los
+[01:02:49] comandos o también las skills. ¿Qué es
+[01:02:53] esto de comandos, de skills? Pues
+[01:02:55] básicamente acciones programadas rápidas
+[01:02:59] que ya están guardadas dentro de Codeix.
+[01:03:03] ¿Qué significa esto? Fíjate, estado,
+[01:03:06] iniciar, MCP, mascota. Es decir, yo
+[01:03:09] tengo un comando que digo mascota, ras,
+[01:03:12] la lanzo. Tengo un comando que es
+[01:03:15] mascota, la elimino. Vale, en el momento
+[01:03:18] que queremos empezar a interactuar de
+[01:03:20] una forma más hábil, no tener que
+[01:03:23] escribir todo, buscar todo a bases de
+[01:03:25] clics, lo que yo os recomendaría es que
+[01:03:27] empezarais a trabajar con los comandos.
+[01:03:29] ¿Okay? Vamos a ver cuáles son los
+[01:03:32] comandos más importantes. Los podríamos
+[01:03:34] repasar aquí todos, pero bueno, ya veis
+[01:03:36] que son unos cuantos. Los comandos
+[01:03:40] propios, ¿okay? Los comandos propios son
+[01:03:43] estos que veis por aquí. Después tenemos
+[01:03:47] una serie de habilidades, una serie de
+[01:03:49] skills que son todas las que veis por
+[01:03:51] aquí. por ver algo muy rápido a nivel de
+[01:03:53] skills. Fíjate, bueno, el creador de
+[01:03:56] skills, el instalador de skills, esos
+[01:03:59] son habilidades que nosotros podemos
+[01:04:01] descargar o que nosotros podemos crear
+[01:04:03] las propias. Puedo crear una habilidad
+[01:04:06] que me ayude a hacer testing. Entonces
+[01:04:08] yo digo por aquí, fíjate, crea una skill
+[01:04:13] que me ayude a hacer testing en el
+[01:04:17] proyecto. Lo lanzo y ya le digo que no
+[01:04:21] le quiero ni permisos. Venga, dice, pues
+[01:04:23] voy a usar la skill creator, que es una
+[01:04:25] habilidad que es capaz de crear
+[01:04:27] habilidades para crear esa skill
+[01:04:30] especializada. Fíjate lo que va a hacer
+[01:04:32] la skill. la voy a crear dentro de Codex
+[01:04:34] Skills. Digo yo, bueno, aquí me he
+[01:04:36] perdido un poco, pero como yo tengo todo
+[01:04:38] esto abierto, vamos a ver si me acaba
+[01:04:42] creando, claro, algo a nivel de el
+[01:04:46] proyecto o a nivel de el propio codex,
+[01:04:51] que eso es algo [carraspeo] que
+[01:04:52] deberíamos tener en cuenta y es cómo
+[01:04:53] funcionan las skills. Pero lo importante
+[01:04:56] realmente no es tanto dónde la va a
+[01:04:57] crear, aunque deberíamos crearlas en el
+[01:05:01] propio
+[01:05:03] proyecto porque así lo tenemos todo
+[01:05:05] acotado, pero aún así lo que veáis que
+[01:05:07] podemos utilizar el propio códigos para
+[01:05:08] crear nuestros propios skills. Dice,
+[01:05:10] "Bueno, he creado un proyecto que
+[01:05:12] todavía no tiene un framework de test,
+[01:05:13] no sé qué tal." Digo, "Bueno, pues no
+[01:05:15] pasa nada." Así que va a intentar
+[01:05:18] revisar a ver cómo empieza a meterle los
+[01:05:21] test porque no tiene ni esos test.
+[01:05:23] Fíjate, archivos cambiados, ras. Vengo
+[01:05:26] por aquí y ahora teóricamente pues ya
+[01:05:28] nos va a empezar a crear los test. Vengo
+[01:05:31] por aquí. Hala,
+[01:05:33] fíjate. Calendar, referencias. A ver, a
+[01:05:37] ver, a ver. Tenemos las skills dentro de
+[01:05:39] Codex. Bueno, no pasa nada. ¿Cómo le ha
+[01:05:42] llamado a esta skill? Vamos a ver lo que
+[01:05:45] tiene aquí.
+[01:05:47] tiene una skill que la ha llamado
+[01:05:50] project testing. Sin más, yo voy a dejar
+[01:05:52] que cree esta skill porque ya digo, esto
+[01:05:55] no es un curso de skills ni mucho menos.
+[01:05:57] Revisar la parte de skills que yo
+[01:05:59] explico en el curso de desarrollo con IA
+[01:06:01] o buscar más sobre las skills, pero para
+[01:06:03] que veáis que nosotros tenemos la
+[01:06:04] capacidad de crear habilidades.
+[01:06:05] Perfecto. Vamos a dejar que acabe todo
+[01:06:08] esto. Vemos que creado las skills y que
+[01:06:10] es una skill que se llama, ¿lo veis
+[01:06:11] aquí? Test study calendar. Entonces, yo
+[01:06:15] ahora vengo por aquí, test
+[01:06:19] study y que me dice aquí, uy, testing de
+[01:06:23] study calendar. Ah, okay, perfecto. Pues
+[01:06:26] mira, ya tenemos la posibilidad de
+[01:06:29] acceder a esta skill que hemos creado
+[01:06:31] nosotros, pero claro, el propio codex
+[01:06:35] tiene otras skills.
+[01:06:38] Vamos por aquí. Template creator
+[01:06:40] visualize.
+[01:06:42] Vemos por aquí, convierte ideas y datos
+[01:06:46] en visuales interactivos. Pues bueno,
+[01:06:49] para hojas de cálculo, tiene por aquí
+[01:06:52] para presentaciones, para calendario
+[01:06:54] operativo, para la documentación, hay
+[01:06:57] algunas ya creadas, pero nosotros
+[01:06:58] podemos crear las nuestras propias o por
+[01:07:00] supuesto descargar skills que ya han
+[01:07:03] están creadas por la comunidad porque en
+[01:07:05] realidad la forma de instalarlos también
+[01:07:07] es bastante estándar. Aún así, lo
+[01:07:10] importante para mí no era tanto esto,
+[01:07:13] sino la posibilidad de ver cuáles son
+[01:07:15] los comandos más utilizados que que
+[01:07:19] tenemos dentro de Codex. Vamos a hacer
+[01:07:22] un repaso muy muy rápido por cada uno de
+[01:07:24] ellos. Compactar. ¿Qué es compactar?
+[01:07:27] Es decir, escribimos este comando, si lo
+[01:07:30] tenéis en inglés, compact. Pero si lo
+[01:07:33] escribimos en inglés, compact, vemos que
+[01:07:35] también nos va a acabar encontrando en
+[01:07:37] español. Nosotros tenemos la propia
+[01:07:39] ventana de contexto de esta IA, pues
+[01:07:41] bueno, nos dice que lleva un 13%
+[01:07:43] ocupado. ¿Qué es el compactar?
+[01:07:44] Básicamente el comprimir para que la
+[01:07:46] ventana de contexto pues libere un
+[01:07:48] poquito de espacio y así no se llene y
+[01:07:49] no empiece a alucinar sin necesidad que
+[01:07:52] tengamos que abrir una ventana de
+[01:07:53] contexto nuevo. El contexto del ID,
+[01:07:55] incluir la selección actual para que el
+[01:07:57] editor de código también tenga ese
+[01:07:59] contexto. Continuar en una nueva tarea
+[01:08:01] si nosotros quisiéramos mover entre
+[01:08:02] ramas. El estado, mover el estado de la
+[01:08:04] tarea. Fíjate,
+[01:08:06] nos lanza este popup que nos dice, "Esta
+[01:08:08] es la sesión, este es el contexto, que
+[01:08:10] aún nos queda un 87% restante y que el
+[01:08:12] límite de 7 días de cuando se va a
+[01:08:14] restablecer, si yo gastara pues todo el
+[01:08:16] plan que yo tengo contratado de codex,
+[01:08:18] pues bueno, tendría que esperar que
+[01:08:19] ahora mismo pues tenemos este 91%
+[01:08:22] restante. Aún me queda un montón. Más
+[01:08:24] comandos. El iniciar lo dejo para
+[01:08:25] después, ¿vale? dice una conversación
+[01:08:27] lateral temporal, es decir, un subagente
+[01:08:29] que va a acabar lanzando los MCPs de los
+[01:08:31] que se hablaba, las mascotas, la memoria
+[01:08:33] que nosotros queremos que tenga, una
+[01:08:34] memoria más o menos persistente para que
+[01:08:37] no se olvide del contexto. Aún así,
+[01:08:38] podríamos trabajar también de otra
+[01:08:40] forma. El modelo lo puedo cambiar desde
+[01:08:42] aquí. Yo puedo venir barra modelo y
+[01:08:44] decir, "Ey, ¿cuál quieres seleccionar?"
+[01:08:45] Y vemos que se empieza a mover entre
+[01:08:47] todos los que tenemos por aquí. Vale,
+[01:08:48] más cositas. ¿Qué podemos ver? el
+[01:08:52] modelo, el modo plan, que lo dejaremos
+[01:08:53] para más adelante, el objetivo que lo
+[01:08:55] dejaremos para más adelante, enviar
+[01:08:57] comentarios, el razonamiento, el
+[01:08:59] esfuerzo que vimos antes, revisar
+[01:09:00] código, es decir, existe también la
+[01:09:02] posibilidad de con un comando revisar el
+[01:09:05] código que hemos creado, mover esta
+[01:09:07] parte de rápido que vimos antes. Okay.
+[01:09:10] Después aquí, pues bueno, una e
+[01:09:14] una revisión del prom que nosotros hemos
+[01:09:15] creado también anteriormente. ¿Vale?
+[01:09:18] Estos son los comandos más típicos.
+[01:09:21] Pero ahora vamos a ver un poquito más en
+[01:09:24] detalle cuáles son uno de los más
+[01:09:27] importantes. Por un lado, el init, que
+[01:09:30] es iniciar crear un archivo agent md con
+[01:09:33] instrucciones para code no tiene ningún
+[01:09:35] sentido desarrollar con IA si nosotros
+[01:09:36] no tenemos ficheros en Mardown, ficheros
+[01:09:38] de texto que van a reflejar cuál es la
+[01:09:42] documentación, las buenas prácticas y
+[01:09:43] todo lo que tiene que ver a nivel de
+[01:09:45] documentación con el proyecto que
+[01:09:46] nosotros estamos creando. Con lo cual,
+[01:09:48] si nosotros hacemos el barra init, lo
+[01:09:50] que va a hacer es crear en nuestro
+[01:09:52] proyecto el init, es decir, el
+[01:09:54] agents.md, que en este caso, como ya
+[01:09:57] tenemos código creado, lo va a rellenar
+[01:09:59] por nosotros. Va a crear un fichero con
+[01:10:02] la documentación básica, tecnologías,
+[01:10:05] buenas prácticas, el contexto principal
+[01:10:07] de la aplicación, que es una grandísima
+[01:10:10] práctica a la hora de trabajar con
+[01:10:11] desarrollo, ¿vale? Trabajar con
+[01:10:13] desarrollo y sobre todo con inteligencia
+[01:10:15] artificial. Fíjate que podríamos ver
+[01:10:17] cómo me ha creado el agent MD. Podríamos
+[01:10:19] revisar los cambios o verlos desde
+[01:10:21] cursor, que aquí ya tenemos el agent,
+[01:10:23] que básicamente esto es un agent muy muy
+[01:10:27] rápido. ¿Cuál es la estructura?
+[01:10:30] ¿Cuáles son los comandos principales? El
+[01:10:33] estilo del código, el naming, el
+[01:10:35] testing, cómo funciona la parte de
+[01:10:39] gitt de GitHub y ya está. Aquí podríamos
+[01:10:41] ponerle más cosas. Aún así, la buena
+[01:10:43] práctica es mejor crear un agents mucho
+[01:10:46] más condensado, mucho más pequeñito y no
+[01:10:48] uno supergre con un montón de
+[01:10:50] información, ¿vale? Así que
+[01:10:52] importantísimo AENCMD también uno de los
+[01:10:55] clásicos, una de las cosas más básicas
+[01:10:57] que tenemos que tener en cuenta a la
+[01:10:58] hora de trabajar con inteligencia
+[01:11:00] artificial en proyectos porque igual que
+[01:11:02] Legends MD podríamos tener la parte de
+[01:11:04] documentación, la parte de
+[01:11:06] especificaciones y un montón de cosas
+[01:11:08] más. ¿Vale? Otro de los comandos
+[01:11:11] principales importantísimos que tenemos
+[01:11:13] que tener en cuenta, venga, voy a crear
+[01:11:15] por aquí una nueva tarea. Y en este caso
+[01:11:18] el comando que yo voy a llamar es el
+[01:11:20] comando llamado plan. Es posible que si
+[01:11:23] ya trabajáis con eh agentes e
+[01:11:25] inteligencia artificial en otros
+[01:11:27] editores, os suene el modo plan y el
+[01:11:29] modo build. Es decir, son agentes que
+[01:11:32] trabajan de diferente forma. El modo
+[01:11:34] build, que es el lanzar la gente como lo
+[01:11:38] hemos hecho hasta el momento, lo que
+[01:11:40] hace es nada, empieza a utilizar las
+[01:11:42] herramientas del sistema basándose en el
+[01:11:44] prom y empieza a construir lo que sea.
+[01:11:47] Pero el modo plan, en realidad lo que
+[01:11:49] hacemos cuando activamos el modo plan,
+[01:11:51] que vemos que se refleja aquí, el modo
+[01:11:53] plan, lo que hace es en el momento que
+[01:11:56] nosotros le lanzamos un prompt nos va a
+[01:11:58] hacer preguntas. Vamos a hacer una cosa,
+[01:12:00] fijaos, para que entendamos aún mucho
+[01:12:02] mejor cómo funciona el modo plant. Voy a
+[01:12:07] crear un nuevo proyecto, igual que tenía
+[01:12:11] mi carpeta study calendar,
+[01:12:14] perdón, aquí, ¿dónde está? Igual que
+[01:12:17] tenía mi carpeta study calendar, voy a
+[01:12:20] crear otra que se llama study calendar
+[01:12:24] dos.
+[01:12:26] Vale, la voy a crear, la voy a abrir, es
+[01:12:28] decir, tenemos un proyecto en blanco,
+[01:12:30] pero en este caso le vamos a meter el
+[01:12:32] modo plan. Y voy a hacer más de lo
+[01:12:36] mismo. Voy ahora a lanzar el prompt con
+[01:12:40] el que creamos nuestra aplicación
+[01:12:42] inicial. Fíjate, modo plan,
+[01:12:45] en este caso vuelvo a poner medio, pero
+[01:12:50] el modo plan activo, el modo plan activo
+[01:12:53] lo que va a hacer es crear un plan, un
+[01:12:56] plan de ejecución, pero un plan de
+[01:12:57] ejecución que nosotros también tenemos
+[01:12:59] que validar, ¿no? tanto como el modo de
+[01:13:02] creación donde yo le lanzo un prompt y
+[01:13:05] con ese prompt se pone a hacer lo que
+[01:13:07] nosotros le indiquemos, pero en realidad
+[01:13:09] el modo plan, si hay preguntas
+[01:13:11] intermedias que pueda hacernos para así
+[01:13:15] refinar el prompt, lo va a hacer. Fíjate
+[01:13:18] qué vista debe ser la principal. Esto
+[01:13:20] antes no nos preguntó nada. el mes más
+[01:13:22] el detalle, la semana horaria, el mes y
+[01:13:24] la semana o indícale
+[01:13:28] a Codex en este caso, algo diferente.
+[01:13:30] Pues yo le digo que venga, esto es lo
+[01:13:33] que yo quiero que tener en cuenta.
+[01:13:35] ¿Dónde deben guardarse las tareas de
+[01:13:36] esta primera versión? En local storage,
+[01:13:39] en una sesión, meter un backend o lo que
+[01:13:41] sea. Local storage dice, además de crear
+[01:13:44] tal, ¿quieres hacer otras cosas? editar,
+[01:13:46] eliminar, solo solicitado y voy a decir,
+[01:13:50] pues sí, quiero también editar y
+[01:13:51] eliminar. Y ya con esto él va a decir,
+[01:13:54] "Okay, yo ya te he hecho unas preguntas,
+[01:13:57] ahora ya tengo mi plan un poquito más
+[01:14:00] refinado para empezar a trabajar y ya
+[01:14:02] voy a ser capaz de teóricamente realizar
+[01:14:05] mejor toda esta tarea que me has
+[01:14:07] indicado. La hora de una tarea debe ser
+[01:14:09] obligatoria, opcional o obligatoria."
+[01:14:11] Fíjate, ahora yo digo, mira, yo esto no
+[01:14:14] lo pensara, pero el modo plan va a
+[01:14:16] intentar repensar un poquito por
+[01:14:17] nosotros y digo, pues mira, quiero que
+[01:14:18] sea obligatoria. ¿Qué debe ocurrir al
+[01:14:20] arrastrar una tarea otro día? Conservar
+[01:14:22] la hora, cambiar únicamente la fecha, la
+[01:14:24] hora del resto de datos permanece, pues
+[01:14:25] le digo que conserve la hora. Dice,
+[01:14:28] "¿Qué nivel de adaptación a móvil?" Eh,
+[01:14:29] y que eso antes no lo tuvimos en cuenta.
+[01:14:31] Fíjate, ahora le digo que sí. Claro,
+[01:14:35] esta ejecución va a tardar más tiempo,
+[01:14:37] pero va a ser una ejecución más
+[01:14:39] refinada. y los modos planes. Cuando
+[01:14:41] nosotros le pedimos tareas muy grandes,
+[01:14:45] está guay ejecutarlo con él. Claro, si
+[01:14:48] de verdad somos capaces de definir una
+[01:14:50] especificación muy buena, no queremos
+[01:14:52] que la IA piense por nosotros, no
+[01:14:54] queremos que repiense por nosotros, pero
+[01:14:55] si en realidad nosotros queremos que la
+[01:14:57] IA nos eche una mano a mejorar ese prom
+[01:15:01] que inicialmente puede ser un poquito
+[01:15:03] más vago, activamos el modo plan. ¿Cómo
+[01:15:05] quieres elegir el eh color de cada
+[01:15:07] tarea? Bueno, le voy a dar aquí un
+[01:15:10] poquito para adelante. Cómo deben
+[01:15:11] mostrarse las tareas atenuadas. Ya está.
+[01:15:14] Claro, son todo cosas que en el modo
+[01:15:16] build antes el propio agente decidió por
+[01:15:18] nosotros sin darnos absolutamente opción
+[01:15:21] a nada. En cambio, en este caso nos
+[01:15:23] dice, "Vale, ¿qué tenemos aquí?" Tenemos
+[01:15:26] el plan de escritura. El plan de
+[01:15:28] escritura que vemos por aquí, todo
+[01:15:30] resumen. Y en el momento que ya tenemos
+[01:15:32] todo el resumen, se va a poner a
+[01:15:34] implementar. Tengo resumen. Déjame
+[01:15:36] revisarlo. Pa pa pa pa pa pa pa.
+[01:15:38] Esto es todo el plan. Está correcto. Lo
+[01:15:41] podemos editar. Por supuesto que lo
+[01:15:43] podemos editar y indicarle lo que a
+[01:15:46] nosotros nos dé la gana. Y digo,
+[01:15:48] indicarle qué hacer diferente, lo que
+[01:15:50] sea. Vemos que aquí tenemos el plan. Sin
+[01:15:53] más, yo me vuelvo por aquí y le digo,
+[01:15:55] "Ey, implementtalo." Y en el momento que
+[01:15:58] yo lo di a implementar, pues ya este
+[01:15:59] plan se va a poner a ejecutar, ¿vale? Es
+[01:16:03] decir, no vamos a esperar a que acabe el
+[01:16:05] plan ni nada, pero simplemente es algo
+[01:16:07] que os quería acabar indicando, por qué
+[01:16:08] el modo plan realmente es tan
+[01:16:10] importante, aunque esto, como buenos
+[01:16:13] programadores debería ser algo que
+[01:16:15] nosotros ya tendríamos que tener, cuanto
+[01:16:18] más definido, mejor, porque no se trata
+[01:16:20] tampoco de que la IA haga el plan por
+[01:16:22] nosotros, se trata de que
+[01:16:25] defina mejor algunas cosas que nosotros
+[01:16:28] nos podemos acabar saltando, pero cuanto
+[01:16:31] nosotros con antelación llevemos
+[01:16:34] pensado, mucho mejor va a ser la
+[01:16:37] actuación de la gente y mucho más va se
+[01:16:40] va a acabar eh pareciendo al resultado
+[01:16:42] que nosotros queremos acabar obteniendo.
+[01:16:44] ¿Okay? Así que sí, importante el modo
+[01:16:47] plan, pero entender que nosotros también
+[01:16:49] tenemos una labor s super importante.
+[01:16:52] Vale, vamos a ver también. Mira, esto se
+[01:16:55] va a ejecutar en paralelo. Voy a volver
+[01:16:57] al otro proyecto, al proyecto que ya
+[01:16:59] teníamos creados y voy a abrir un nuevo
+[01:17:01] chat. para así poder seguir viendo otra
+[01:17:05] de las características más importantes
+[01:17:07] que tenemos dentro de Codex. Si nosotros
+[01:17:10] ponemos barra review o barra revisar,
+[01:17:13] vemos que vamos a tener también este
+[01:17:16] comando que dice revisa cambios sin
+[01:17:18] preparar o compararos con una rama. Esto
+[01:17:20] nos va a servir para que también lance
+[01:17:22] una revisión de cambios que nosotros
+[01:17:25] tenemos pendientes, revisar comparación
+[01:17:27] con la rama base o cambios no
+[01:17:28] confirmados, es decir, que nosotros aún
+[01:17:30] no hemos subido a Git, que aún no hemos
+[01:17:31] hecho el comit, porque esto también nos
+[01:17:33] sirve para hacer una especie de
+[01:17:34] auditoría sobre el código que nosotros
+[01:17:36] no hemos acabado. Y le voy a decir,
+[01:17:38] bueno, revisa los cambios no
+[01:17:39] confirmados. Es decir, cambios
+[01:17:41] confirmados no tenemos ningunos,
+[01:17:43] básicamente porque no hemos subido nada
+[01:17:45] git tampoco es algo que tengamos que ver
+[01:17:47] en esta clase, pero por supuesto aquí
+[01:17:51] tenemos una de las habilidades más
+[01:17:53] importantes. Dice, "Todo el proyecto
+[01:17:54] aparece nuevo y seguimiento, así que no
+[01:17:56] hay un disfase." Claro, no podemos
+[01:17:58] revisar el código nuevo con respecto a
+[01:18:02] un anterior porque no hay esa regresión,
+[01:18:04] no tenemos código creado con antelación.
+[01:18:07] Si tuviéramos el anterior, lo iría
+[01:18:09] revisando frente a ese. Si no, lo que va
+[01:18:11] a hacer, pues va a hacer una revisión
+[01:18:13] del código sin más que hay. Esto es algo
+[01:18:15] también s s s s super importante. ¿Por
+[01:18:19] qué? Porque a nosotros también se nos
+[01:18:20] pueden escapar errores. Utilicemos la
+[01:18:22] inteligencia artificial para mejorar
+[01:18:24] nuestro código. Nuestro código tiene que
+[01:18:26] partir desde la propia definición. Pero
+[01:18:28] por supuesto, si nosotros podemos
+[01:18:30] empezar a hacer alguna cosa, fíjate que
+[01:18:32] la propia IA se equivoca. Nosotros le
+[01:18:34] hemos pedido a la IA que desarrolle y
+[01:18:36] fíjate que en el momento que la IA se
+[01:18:38] revisa a ella misma nos dice que ha
+[01:18:41] cometido errores.
+[01:18:43] El script del link siempre falla, los
+[01:18:45] datos de recuperación pues por aquí, el
+[01:18:47] atajo tal que no funciona. Bueno,
+[01:18:49] cositas que realmente ya ha visto que
+[01:18:52] están mal y que nosotros tenemos que
+[01:18:53] corregir y que ella, aunque es capaz de
+[01:18:56] detectarse
+[01:18:57] no lo tiene en cuenta cuando está
+[01:18:59] desarrollando. Y esto es algo
+[01:19:00] superhabitual. Por eso nosotros siempre
+[01:19:02] tenemos que ser ahí ese
+[01:19:06] human que se suele llamar, esa persona
+[01:19:09] que está en el bucle. Es decir, sí, la
+[01:19:12] IA va a escribir más código que
+[01:19:14] nosotros, pero nosotros siempre tenemos
+[01:19:16] que estar ahí en el medio orquestando y
+[01:19:18] revisando todo para que no la cague.
+[01:19:21] ¿Vale? Y muy relacionado con el loop, os
+[01:19:23] voy a hablar de otra de las tareas que
+[01:19:27] podemos lanzar desde Codex, que es
+[01:19:30] realmente superpotente. Codex tiene una
+[01:19:33] capacidad que otros agentes no lo tienen
+[01:19:36] tan desarrollado y es que es capaz de
+[01:19:40] ejecutar tareas larguísimas.
+[01:19:43] Nosotros podemos tener a Codex aquí
+[01:19:45] trabajando, sobre todo si tenemos
+[01:19:47] dinero. Podemos tener a Codex trabajando
+[01:19:50] durante 24 horas. Es que da igual. Pero,
+[01:19:53] ¿cuál es la forma en la que nosotros
+[01:19:56] podemos acabar consiguiendo que un
+[01:19:59] agente y un entorno con inteligencia
+[01:20:01] artificial
+[01:20:03] pueda trabajar durante tanto tiempo sin
+[01:20:06] detenerse? Aquí es donde entra ese
+[01:20:09] concepto que es posible que veáis
+[01:20:11] habitualmente por ahí, que es cada vez
+[01:20:13] se está poniendo más de moda, que es esa
+[01:20:15] ingeniería de loops, es decir, que
+[01:20:18] nosotros seamos capaces de darle una
+[01:20:20] especie de objetivo claro a la IA y que
+[01:20:23] la IA vaya iterando sobre sí misma.
+[01:20:27] Vale, hago esto, es lo que estaba
+[01:20:29] buscando, ¿no? Pues vuelvo y vuelvo y
+[01:20:33] vuelvo y vuelvo y agarro esta tarea y
+[01:20:36] toma, tienes estas 100 tareas a acabar
+[01:20:39] implementando una tras otra, una tras
+[01:20:41] otra y es justamente lo que quería, ¿no?
+[01:20:43] Pues vuelvo a iterar, lo vuelvo a
+[01:20:44] mejorar, lo vuelvo a cambiar así hasta
+[01:20:47] que acabe cumpliendo el objetivo. Esto
+[01:20:49] desde Codex es bastante fácil de
+[01:20:51] definir. Ya vemos que aún así, pequeño
+[01:20:55] inciso en la otra aplicación esto sigue
+[01:20:57] ejecutándose. Aquí lo veis girando
+[01:20:59] mientras nosotros estamos en otro
+[01:21:01] proyecto haciendo otra cosa. De el
+[01:21:02] concepto también de multiagentes, de
+[01:21:04] agentes en paralelo, etcétera. ¿Vale? Y
+[01:21:07] como también tenemos este comando que es
+[01:21:11] el comando de goal, establece un
+[01:21:14] objetivo para seguir avanzando con este
+[01:21:17] goal, que no lo vamos a lanzar porque
+[01:21:20] justamente está pensado para tareas más
+[01:21:21] largas. Yo aquí le puedo acabar
+[01:21:23] estableciendo, ey, el goal es que hayas
+[01:21:28] realizado
+[01:21:30] todas las tareas que están definidas en
+[01:21:33] este directorio de documentación y allí
+[01:21:35] tiene 100 tareas porque has creado un
+[01:21:38] spec Driven Development de toda la
+[01:21:41] aplicación completa. Imagínate que ese
+[01:21:43] es el caso. Pues tú le marcas como goal
+[01:21:45] eso y vas a tener a Codex hasta que se
+[01:21:48] te acabe el dinero
+[01:21:50] trabajando sobre él. Incluso cuando se
+[01:21:53] te acaba, pues le puedes decir, e
+[01:21:56] continúa donde acabaste cuando se resete
+[01:21:58] los límites o lo que sea. También para
+[01:22:00] que lo tengáis en cuenta, que este es
+[01:22:02] justamente un comando que no vamos a
+[01:22:04] probar, pero que hace referencia
+[01:22:07] a esa ingeniería de loops que de la que
+[01:22:11] tanto se está hablando, que ahora dice
+[01:22:12] la gente que pone aquí a trabajar un
+[01:22:14] agente un montón de horas. A ver,
+[01:22:17] eso está muy bien si tenemos un control
+[01:22:19] absoluto de todas las tareas que tiene
+[01:22:21] que acabar desarrollando, pero tú piensa
+[01:22:23] que cuanto más tiempo le des autonomía a
+[01:22:26] la IA, al margen de que más cara es, más
+[01:22:30] veces se puede acabar equivocando. Y no
+[01:22:32] es lo mismo arreglar el código o
+[01:22:35] redirigir a la IA de una ejecución que
+[01:22:37] le ha llevado 5 minutos o 10 minutos que
+[01:22:41] corregir a la IA después de que haya
+[01:22:44] estado trabajando ella sola 24 horas.
+[01:22:47] Entonces, tampoco os dejéis llevar tanto
+[01:22:49] por ese hype de wah, es capaz de crear
+[01:22:53] todo de manera autónoma. Em, ahí hay más
+[01:22:57] conceptos de by coding que de ingeniería
+[01:22:59] de software y realmente esto no es una
+[01:23:02] práctica habitual fuera del efecto wow
+[01:23:06] que muchas veces acabamos encontrando
+[01:23:08] por ahí. Vale, vamos a ver ya también
+[01:23:11] unos últimos nada unos últimos conceptos
+[01:23:14] para que tengáis también en mente como
+[01:23:16] puede ser la parte de los Word tre. Algo
+[01:23:20] que también podéis utilizar aquí es un
+[01:23:23] Word Tree. ¿Qué es un Word Tree? Hemos
+[01:23:25] visto que podemos utilizar agentes en
+[01:23:29] paralelo. Es decir, que yo ahora aquí
+[01:23:30] lanzo una tarea y mientras en otro
+[01:23:33] proyecto hay otro agente a su bola que
+[01:23:37] está trabajando. Pero después también
+[01:23:40] tenemos la opción de utilizar esos
+[01:23:42] multiagentes, esos subaentes dentro de
+[01:23:44] un mismo proyecto. Es decir, que podemos
+[01:23:46] lanzar varias tareas. Yo podría lanzar
+[01:23:48] varias tareas a mano. Es decir, yo vengo
+[01:23:51] por aquí y le digo, "Haz una cosa." Y me
+[01:23:54] voy a otro chat de este mismo proyecto,
+[01:23:56] haz otra cosa. Y a otro chat abro del
+[01:23:58] mismo proyecto, haz otra cosa. Pero,
+[01:24:00] ¿qué sucede en ese caso? que tenemos sí
+[01:24:03] igual tres agentes, pero que están
+[01:24:06] trabajando sobre el mismo proyecto y que
+[01:24:08] pueden entrar en conflicto. Claro, cada
+[01:24:11] gente va a estar haciendo lo que
+[01:24:13] nosotros le hemos indicado, pero
+[01:24:15] imagínate qué pasaría si dos agentes
+[01:24:18] empiezan a tocar el mismo código. Igual
+[01:24:20] yo puedo pensar, sí, es que así si lanzo
+[01:24:22] 10 agentes en paralelo voy a ir
+[01:24:24] muchísimo más rápido. Ya, bueno, pero
+[01:24:26] también se van a dar de palos esos
+[01:24:29] agentes porque van a perder el contexto
+[01:24:31] de lo que está tocando cada uno. Igual
+[01:24:33] lo que te toca un agente te lo rompe el
+[01:24:34] siguiente, ¿vale? Para eso existe este
+[01:24:36] concepto de Wes. Un WE básicamente es
+[01:24:40] mediante la capacidad que tenemos con
+[01:24:42] Git de abrir diferentes ramas. Ya digo,
+[01:24:44] esto no es tanto el cometido de esta
+[01:24:46] clase, para eso tenemos que tener muy
+[01:24:49] claro cómo funciona Git, cómo funciona
+[01:24:50] GitHub, cómo funcionan las ramas. Pero
+[01:24:52] este concepto básicamente es cuando
+[01:24:54] nosotros le indicamos crear un nuevo
+[01:24:56] Word Tree, esto que vemos aquí, tenemos
+[01:24:58] la posibilidad de seleccionar un
+[01:25:00] entorno, porque igual queremos que se
+[01:25:02] ejecute con una capacidad diferente y
+[01:25:04] seleccionar una rama. ¿Qué es eso del
+[01:25:05] Word Tree? Nosotros empezamos a lanzar
+[01:25:08] diferentes subagentes, pero que cada uno
+[01:25:11] trabaje en diferentes ramas. Claro, si
+[01:25:14] nosotros tenemos diferentes ramas
+[01:25:15] creadas aquí en este proyecto, pues solo
+[01:25:17] tenemos un main, pero podríamos acabar
+[01:25:19] creando más ramas. Así lo que hacemos es
+[01:25:22] que de manera segura cada gente sí
+[01:25:25] trabaja en el mismo proyecto, pero cada
+[01:25:28] gente lo hace en una rama distinta. Esto
+[01:25:31] es como si tuviéramos a un equipo de
+[01:25:33] desarrolladores, cada uno desde su rama,
+[01:25:35] trabajando de manera independiente y
+[01:25:38] perdiendo ese riesgo que nosotros
+[01:25:41] tendríamos si hacemos si hacemos
+[01:25:43] trabajar a todos los agentes en la misma
+[01:25:45] rama. Cada gente trabaja desde su rama.
+[01:25:47] Cada gente hace lo que tiene que hacer
+[01:25:49] en base a la tarea que nosotros le hemos
+[01:25:51] indicado y después ya empezamos a
+[01:25:54] interactuar con las propias ramas de
+[01:25:56] Git, decir, "Vale, ¿qué se ha hecho en
+[01:25:58] esta rama?" Okay, ¿qué hago? Esta rama
+[01:26:00] la mergeo con esta, la traigo al main,
+[01:26:03] lo que sea, el flujo de desarrollo con
+[01:26:05] ramas que estemos utilizando. Perfecto.
+[01:26:06] Y así nos aseguramos que hemos lanzado y
+[01:26:10] nos hemos aprovechado de lanzar muchos
+[01:26:12] agentes en paralelo, pero que realmente
+[01:26:14] todos están trabajando de forma segura.
+[01:26:16] Así que este concepto es mucho más
+[01:26:18] avanzado, no os lo recomiendo si estáis
+[01:26:20] empezando y mucho menos si no tenéis un
+[01:26:21] buen control de Git, pero que entendáis
+[01:26:24] que se puede utilizar y que Codex tiene
+[01:26:28] también ese soporte, ¿vale? Por otro
+[01:26:30] lado, también tenemos la parte de
+[01:26:31] memoria.
+[01:26:33] Vemos que esto aquí tenemos usar
+[01:26:35] memorias permite que CHG GPT incorpore
+[01:26:37] memorias existentes en el contexto de la
+[01:26:39] tarea. Generar memorias. ¿Esto para qué
+[01:26:41] sirve? Estas opciones nos ayudan a que
+[01:26:44] no pierda tan rápido el contexto porque
+[01:26:45] el contexto es finito y se acaba
+[01:26:47] llenando. Sí, estas memorias está bien
+[01:26:50] porque va a hacer que el contexto no se
+[01:26:53] pierda tan rápidamente, pero por
+[01:26:56] supuesto lo que no vamos a conseguir
+[01:26:58] nunca es que en el momento que nosotros
+[01:27:00] empezamos a abrir diferentes chats, lo
+[01:27:03] que va a hacer si nosotros no somos
+[01:27:04] capaces de establecer nuestros propios
+[01:27:07] mecanismos de memoria es que siempre va
+[01:27:08] a tener que leer todo el código. Por eso
+[01:27:11] ficheros como Legends SMD que veíamos
+[01:27:14] antes es tan importante porque ahí
+[01:27:16] tenemos justamente las cosas principales
+[01:27:18] del proyecto. Si tuviéramos
+[01:27:19] documentación hay que meterla también el
+[01:27:21] proyecto porque así acabamos generando
+[01:27:25] un sistema de conocimiento que nuestro
+[01:27:28] propio agente puede leer y que ahí sí
+[01:27:31] que está la verdad absoluta sobre lo que
+[01:27:34] pasa en el proyecto. Y no tenemos que
+[01:27:37] obligarle siempre a leer línea por línea
+[01:27:39] de todo el proyecto porque digamos que
+[01:27:42] esa memoria se acaba perdiendo. En
+[01:27:44] cambio, si nosotros la hacemos de manera
+[01:27:46] persistente, la guardamos de manera
+[01:27:48] persistente a nivel de especificaciones,
+[01:27:50] a nivel de documentación, a nivel de
+[01:27:52] Legends MD que estábamos viendo antes
+[01:27:54] ahí, junto con la propia memoria nativa
+[01:27:57] que tiene el propio Codex, vamos a hacer
+[01:28:00] que primero gastemos menos tokens, que
+[01:28:03] ahorremos tiempo, que ahorremos dinero y
+[01:28:05] que los resultados sean muchísimo
+[01:28:07] mejores porque tiene una base de
+[01:28:08] conocimientos muchísimo más acotada.
+[01:28:10] ¿Okay? Y ya por último la parte de
+[01:28:13] automatizaciones, que esto es algo que
+[01:28:15] lo teníamos aquí separado, pero que
+[01:28:17] bueno, siempre podéis acabar
+[01:28:19] complementando con el propio proyecto de
+[01:28:21] software que queréis. También le podéis
+[01:28:23] acabar pidiendo que haga tarea sobre el
+[01:28:25] proyecto, pues no lo sé, que te dé los
+[01:28:26] últimos cómics cada día, que te lea el
+[01:28:30] estado de la aplicación, en qué punto te
+[01:28:31] has quedado, lo que sea. Este tipo de
+[01:28:34] tareas también las podemos acabar
+[01:28:35] representando y reflejando un poquito
+[01:28:38] como nos dé la gana, ¿vale? Así que ya
+[01:28:41] por hacer aquí una revisión superrápida
+[01:28:45] de lo que hemos visto, por favor
+[01:28:47] diferenciar la parte del chat, la parte
+[01:28:50] del work, de la parte del codex, que
+[01:28:52] después hay gente que se acaba
+[01:28:53] confundiendo bastante con esto. Unas
+[01:28:56] pequeñas buenas prácticas, los promps
+[01:28:58] con contexto, siempre criterios de
+[01:29:00] aceptación, ese punto de control,
+[01:29:02] verificar lo que hace la gente. No nos
+[01:29:04] lancemos a lo loco, aunque yo le haya
+[01:29:06] dicho a la gente e tiramillas para
+[01:29:08] enseñaros muchísimo más rápido cómo
+[01:29:11] funciona el propio CODX. Hay que iterar
+[01:29:13] esas anotaciones. A medida que vamos
+[01:29:16] viendo el propio código, lo anotamos
+[01:29:19] tanto en el explorador como el propio
+[01:29:20] código y así entendemos que el código lo
+[01:29:23] vamos refinando nosotros mismos, ¿vale?
+[01:29:25] esas aprobaciones cuando estamos
+[01:29:27] empezando, que si el modo plan, que si
+[01:29:29] revisar todo, que si aprobar y toda la
+[01:29:31] parte de memoria con esos ritmis, con
+[01:29:33] ese test, con ese agents, por favor, s
+[01:29:36] super importante. Mi recomendación es
+[01:29:38] que ahora os lancéis a descargarlo, lo
+[01:29:41] utilicéis en el modo gratuito, lo
+[01:29:43] empecéis a probar, metáis un editor de
+[01:29:45] código en paralelo, como yo he hecho con
+[01:29:48] cursor para ir viendo el código mucho
+[01:29:50] mejor, ir viendo lo que va pasando en
+[01:29:52] vuestro proyecto y que así incluso
+[01:29:54] intentéis hacer el proyecto que yo he
+[01:29:57] creado, porque también es una forma de
+[01:29:59] seguir este curso paso a paso, sin tener
+[01:30:02] que inventaros vosotros demasiado, pero
+[01:30:04] ir viendo si sois capaces de obtener un
+[01:30:07] resultado más menos parecido a lo que yo
+[01:30:10] he hecho durante este curso. Otra vez
+[01:30:13] recordatorio s super importante, el
+[01:30:17] curso de desarrollo con IA, el curso de
+[01:30:21] agentes de IA, porque muchos conceptos
+[01:30:23] de los que yo os he hablado en este
+[01:30:25] curso, si no tenéis bien bien todos
+[01:30:28] estos fundamentos de inteligencia
+[01:30:29] artificial, os podéis perder. Este es un
+[01:30:31] curso que tenéis en YouTube. Simplemente
+[01:30:33] os vais aquí, Aprende a programar con
+[01:30:35] agentes de AA desde cero. Veis esta
+[01:30:37] miniatura, curso de 3 horas, totalmente
+[01:30:39] gratuito, también lo tenéis por aquí.
+[01:30:41] ¿Okay? Y dicho esto, pues nada, de
+[01:30:44] verdad, muchísimas gracias por quedaros
+[01:30:46] a este taller, a este curso. Espero que
+[01:30:48] os haya gustado un montón. Por favor,
+[01:30:50] dejarle un like al vídeo, dejarme un
+[01:30:52] comentario qué os ha parecido, si vais a
+[01:30:55] probar Codex, qué es lo que más os ha
+[01:30:57] gustado y nos vemos en el próximo
+[01:30:59] taller. Muchas gracias. Ciaau.

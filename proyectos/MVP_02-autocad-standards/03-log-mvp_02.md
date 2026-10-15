@@ -2,14 +2,19 @@
 tipo: log
 mvp: 02
 fecha_creacion: 2026-06-30
-ultima_actualizacion: 2026-09-27
+ultima_actualizacion: 2026-10-05
 tags: [mvp_02, log]
 ---
 
 # MVP_02 — Bitácora global
 
+Más nuevo → más arriba
+
 | Fecha | Evento |
 |-------|--------|
+| 2026-10-13 | **Kit instalable + documento único para mañana.** `SET_01-REP_completo.md` (puerta única: capas, bloques, estilos, kit, instructivo PC Emilia 15', horas). Generados `activos/.../SET_01-REP/SET_01-REP.dwt` + `SET-REP.dws` (29 capas, 8 estilos, 3 cotas, INSUNITS 6, verificado ida/vuelta ODA+ezdxf) con `scripts/genera-template-set01.py` (+notas). CTB/PC3 con instructivo (tabla ACI→mm + pasos). |
+| 2026-10-13 | **SET_01 v2.2 (nombres del archivo).** Spec adopta los 49 nombres reales de `REP-ARAOZ.dwg` (29 propias + 20 xref); Kit queda como equivalencia. §§2/3/4/6/7/9/11 actualizados, lisp §7 con 29 `mk` reales. Docs: `desglose-configuraciones.md` (87 ítems + layout, **14 h invertidas**: 10 h reloj en ~24 pomodoros + 4 h sesión; **ahorro ~12–15 h por plano**, payback en el primer plano). Medición ODA→DXF+ezdxf (LT sin COM). Detalle en `docs/REP-ARAOZ-capas-bloques.md` v0.5 + `docs/bloques-personalizados.md`. |
+| 2026-10-05 | **SET_02-GEST_DGIUR_USO creado.** spec v0.2 (753 líneas) con 25 capas y 5 prefijos por función (`A-` 15, `SUP-` 4, `SIMB-` 3, `PL-` 1, `ROT-` 2), contra 73 del modelo auditado. Base empírica: `autocad_list_layers` sobre `G:\Mi unidad\G#GESTIONES\TEMPLATES\MODELO PLANO DE USO.dwg`. **Corrección mayor a mitad de sesión**: el documento oficial de alcance resultó ser el **Anexo III de la DGHP** (`IF-2025-11263770-GCABA-DGHP`, 13/03/2025, Carla Borgognoni, 21 págs), no de la DGIUR — dos organismos, dos trámites. El nombre del SET se mantiene `SET_02-GEST_DGIUR_USO` por decisión del estudio, con la discrepancia asentada en spec §10.2. Alcance (§1) reescrito por transcripción literal de los ítems 6, 7 y 9 del Anexo. **El Anexo no fija escala ni formato** (0 coincidencias de `escala`/`1:100`/`DWF`/`DWG`/`PDF`): la 1:100 y el DWF quedan como decisión del estudio. CTB = `monochrome.ctb` (el Anexo exige "líneas de color negro con fondo blanco"). 3 rayados obligatorios (135° autorizada / 45° no solicitada / sin rayado a modificar). Un layout `USO-PTipo-A1` con un viewport inicial a CustomScale 10, hoja separada de carátula. Bloques de carátula `GCBA-CRTL-PLANO_USO` y `GCBA-CRTL-PLANO_UNICO` (el prefijo `G-` de SET_01 §10.2 queda marcado como error de nomenclatura, SET_01 para revisión aparte). 4 bloques dinámicos documentados pero **no implementados**. Pendientes: `README.md`, `02-ft-SET_02.md`, `docs/` (3), `lisp/`, entrada en `readme-mvp_02.md`. Detalle de las 73 capas **no quedó en archivo**: hay que releer `autocad_list_layers`. Sesión en `raw/sessions/2026-10-05-sesion-set02-gest-dgiur-uso.md`. |
 | 2026-06-30 | Creación del MVP. Pendiente de definir n_01-layers. |
 | 2026-09-27 | Sesión de brainstorming @brainstormy para reescribir la filosofía (`00-filo-mvp_02.md`). Divergencia con 20 ideas + wildcards, convergencia con matriz Impacto×Esfuerzo y Top 3 JTBD. Manifiesto reescrito con enfoque filosófico: "El dibujo es un documento y también un lenguaje". |
 | 2026-09-27 | Creación del SET — Plano de Replanteo Arquitectónico (`SET-replanteo-spec.md`). Catálogo de capas DR-* completo (~60 capas), standards, comandos, tips, propuesta de AutoLISP `SET-Replanteo.lsp`. Análisis vaultworm-arq del documento maestro como referencia para Arquilogia. ADR-003: SET como MVP concreto del n_01. |

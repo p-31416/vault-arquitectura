@@ -97,6 +97,7 @@ Cada proyecto interno (ej. `proyectos/MVP_01-dibujo_ia/`) puede tener su propio 
 - **Proyecto cerrado** → mover a `proyectos/archived/<año>/` y actualizar estado.
 - **Verificar enlaces**: antes de incluir un URL oficial en cualquier documento del vault, chequear que NO devuelva 404/error. Usar `webfetch` o abrir el link para confirmar. Si docs.comfy.org usa el patrón `/built-in-nodes/<PascalCase>`, no `/node-reference/<kebab-case>`.
 - **HITL obligatorio para código y cargas al vault:** ningún agente escribe `wiki/` ni ejecuta/instala código sin tu `s` explícito (`¿Avanzo? s/N`). Todo código nuevo se entrega en **archivo paralelo didáctico**: `scripts/<slug>.py` (runnable) + `scripts/<slug>_notas.md` o `scripts/<slug>_explicado.py` con `# NOTA ES:` línea a línea para que aprendas Python leyendo (`sé leerlo`). El agente propone el comando exacto `P:\Anaconda\envs\comfyenv\python.exe scripts/...` y vos lo ejecutás en terminal. Sin `s` no hay `write` ni `bash`. Ver `.opencode/agents/sherlock.md` y `wiki/glosario/interno/pbooks/pbk-sherlock.md`.
+- **Equivalencias de aprobación (2026-10-05):** `s`, `si`, `sí`, `ok`, `dale`, `avanzá`, `adelante`, `sí dale`, `go` equivalen a `s`. El agente puede ejecutar lo inmediatamente aprobado sin volver a preguntar. `n`, `no`, `esperá`, `pará`, `stop` cancelan. Aprobación vale **solo** para lo que se acaba de describir; ante ambigüedad o un alcance nuevo, se vuelve a preguntar.
 
 ## Workflows
 

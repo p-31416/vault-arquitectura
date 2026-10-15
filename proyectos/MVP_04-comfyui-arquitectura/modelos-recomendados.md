@@ -15,17 +15,19 @@ tags: [mvp_04, modelos, comfyui, hardware, arquitectura]
 
 Tarjeta AMD RX 570 con 8GB VRAM, corriendo ComfyUI vía DirectML. Modelos recomendados:
 
-| # | Modelo | Tipo | VRAM | Calidad | Velocidad | Descarga | Licencia |
-|---|--------|------|------|---------|-----------|----------|----------|
-| 1 | **ArchitectureRealmix v1.1** | Checkpoint SD1.5 | ✅ ya instalado | ⭐⭐⭐ | ⚡⚡⚡ | [CivitAI](https://civitai.com/models/84958/architecturerealmix) | OpenRAIL-M |
-| 2 | **Juggernaut XL v9** | Checkpoint SDXL | ⬇️ descargando (7.11 GB) | ⭐⭐⭐⭐⭐ | ⭐⚡⚡ | [HF: RunDiffusion/Juggernaut-XL-v9](https://huggingface.co/RunDiffusion/Juggernaut-XL-v9) | OpenRAIL++ |
-| 3 | **Z-Image Turbo GGUF Q4_K_S** | Checkpoint (DiT) | ~4GB | ⭐⭐⭐⭐ | ⚡⚡⚡⚡ | [HF: city96/Z-Image-Turbo-GGUF](https://huggingface.co/city96/Z-Image-Turbo-GGUF) | Apache 2.0 |
-| 4 | **Z-Image Base GGUF Q4_K_S** | Checkpoint (DiT) | ~6GB | ⭐⭐⭐⭐⭐ | ⚡⚡ | [HF: city96/Z-Image-Base-GGUF](https://huggingface.co/city96/Z-Image-Base-GGUF) | Apache 2.0 |
-| 5 | **Flux schnell GGUF Q4_K_S** | Checkpoint (DiT) | ~8GB | ⭐⭐⭐⭐⭐ | ⚡⚡⚡ | [HF: city96/FLUX.1-schnell-GGUF](https://huggingface.co/city96/FLUX.1-schnell-GGUF) | Apache 2.0 |
-| 6 | **ERNIE-Image Turbo GGUF** | Checkpoint (DiT) | ~4GB | ⭐⭐⭐⭐ | ⚡⚡⚡⚡ | [HF: city96/ERNIE-Image-Turbo-GGUF](https://huggingface.co/city96/ERNIE-Image-Turbo-GGUF) | Apache 2.0 |
-| 7 | **4x_foolhardy_Remacri** | Upscaler | ~100MB | ⭐⭐⭐⭐ | ⚡⚡⚡ | [HF: locon/4x_foolhardy_Remacri](https://huggingface.co/locon/4x_foolhardy_Remacri) | CC BY-NC |
-| 8 | **4x-ClearRealityV1** | Upscaler | ~100MB | ⭐⭐⭐⭐⭐ | ⚡⚡ | [HF: philz1337/4x-ClearRealityV1](https://huggingface.co/philz1337/4x-ClearRealityV1) | CC BY-NC |
-| 9 | **LoRAs de arquitectura en CivitAI** | LoRA | ~10MB | Variable | N/A | [CivitAI: architecture LoRAs](https://civitai.com/tag/architecture) | Varía |
+| #   | Modelo                               | Tipo             | VRAM                     | Calidad  | Velocidad | Descarga                                                                                  | Licencia   |
+| --- | ------------------------------------ | ---------------- | ------------------------ | -------- | --------- | ----------------------------------------------------------------------------------------- | ---------- |
+| 1   | **ArchitectureRealmix v1.1**         | Checkpoint SD1.5 | ✅ ya instalado           | ⭐⭐⭐      | ⚡⚡⚡       | [CivitAI](https://civitai.com/models/84958/architecturerealmix)                           | OpenRAIL-M |
+| 2   | **Juggernaut XL v9**                 | Checkpoint SDXL  | ⬇️ descargando (7.11 GB) | ⭐⭐⭐⭐⭐    | ⭐⚡⚡       | [HF: RunDiffusion/Juggernaut-XL-v9](https://huggingface.co/RunDiffusion/Juggernaut-XL-v9) | OpenRAIL++ |
+| 3   | **Z-Image Turbo GGUF Q4_K_S**        | Checkpoint (DiT) | ~4GB                     | ⭐⭐⭐⭐     | ⚡⚡⚡⚡      | [HF: city96/Z-Image-Turbo-GGUF](https://huggingface.co/city96/Z-Image-Turbo-GGUF)         | Apache 2.0 |
+| 4   | **Z-Image Base GGUF Q4_K_S**         | Checkpoint (DiT) | ~6GB                     | ⭐⭐⭐⭐⭐    | ⚡⚡        | [HF: city96/Z-Image-Base-GGUF](https://huggingface.co/city96/Z-Image-Base-GGUF)           | Apache 2.0 |
+| 5   | **Flux schnell GGUF Q4_K_S**         | Checkpoint (DiT) | ~8GB                     | ⭐⭐⭐⭐⭐    | ⚡⚡⚡       | [HF: city96/FLUX.1-schnell-GGUF](https://huggingface.co/city96/FLUX.1-schnell-GGUF)       | Apache 2.0 |
+| 6   | **ERNIE-Image Turbo GGUF**           | Checkpoint (DiT) | ~4GB                     | ⭐⭐⭐⭐     | ⚡⚡⚡⚡      | [HF: city96/ERNIE-Image-Turbo-GGUF](https://huggingface.co/city96/ERNIE-Image-Turbo-GGUF) | Apache 2.0 |
+| 7   | **4x_foolhardy_Remacri**             | Upscaler         | ~100MB                   | ⭐⭐⭐⭐     | ⚡⚡⚡       | [HF: locon/4x_foolhardy_Remacri](https://huggingface.co/locon/4x_foolhardy_Remacri)       | CC BY-NC   |
+| 8   | **4x-ClearRealityV1**                | Upscaler         | ~100MB                   | ⭐⭐⭐⭐⭐    | ⚡⚡        | [HF: philz1337/4x-ClearRealityV1](https://huggingface.co/philz1337/4x-ClearRealityV1)     | CC BY-NC   |
+| 9   | **LoRAs de arquitectura en CivitAI** | LoRA             | ~10MB                    | Variable | N/A       | [CivitAI: architecture LoRAs](https://civitai.com/tag/architecture)                       | Varía      |
+|     |                                      |                  |                          |          |           |                                                                                           |            |
+|     |                                      |                  |                          |          |           |                                                                                           |            |
 
 #### Modelos instalados actualmente
 
@@ -104,20 +106,20 @@ Para oficina compartida o servidor de renders — $6,800+ (ideal si 3+ personas 
 
 #### Modelos para hardware ideal
 
-| # | Modelo | Tipo | VRAM | Calidad | Velocidad | Ideal para | Descarga |
-|---|--------|------|------|---------|-----------|------------|----------|
-| 1 | **Flux.1 Dev** | Checkpoint DiT 12B | ~24GB fp16 | ⭐⭐⭐⭐⭐ | ⚡⚡ | Renders finales fotorrealistas | [HF: black-forest-labs/FLUX.1-dev](https://huggingface.co/black-forest-labs/FLUX.1-dev) |
-| 2 | **Flux.1 Schnell** | Checkpoint DiT 12B | ~24GB fp16 | ⭐⭐⭐⭐⭐ | ⚡⚡⚡ | Renders rápidos, 4 pasos | [HF: black-forest-labs/FLUX.1-schnell](https://huggingface.co/black-forest-labs/FLUX.1-schnell) |
-| 3 | **SDXL 1.0** | Checkpoint | ~12GB | ⭐⭐⭐⭐ | ⚡⚡⚡ | Render general, ecosistema enorme | [HF: stabilityai/stable-diffusion-xl-base-1.0](https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0) |
-| 4 | **SDXL LoRAs arquitectura** | LoRA | ~100MB | ⭐⭐⭐⭐ | N/A | Estilos específicos (brutalista, high-tech, etc.) | [CivitAI: SDXL architecture](https://civitai.com/models/354774/sdxl-architecture-interior-design) |
-| 5 | **Z-Image Base (fp8)** | Checkpoint DiT 6B | ~8GB | ⭐⭐⭐⭐⭐ | ⚡⚡⚡ | Ideal para iteración, gran calidad | [HF: Comfy-Org/Z-Image-Base](https://huggingface.co/Comfy-Org/Z-Image-Base) |
-| 6 | **Qwen-Image GGUF Q8_0** | Checkpoint DiT 20B | ~24GB | ⭐⭐⭐⭐⭐ | ⚡ | Combinación con WAN video | [HF: city96/Qwen-Image-GGUF](https://huggingface.co/city96/Qwen-Image-GGUF) |
-| 7 | **WAN 2.2 T2V A14B** | Video DiT | ~24GB fp8 | ⭐⭐⭐⭐ | ⚡ | Texto → video arquitectónico | [HF: Wan-AI/Wan2.2-T2V-14B](https://huggingface.co/Wan-AI/Wan2.2-T2V-14B) |
-| 8 | **WAN 2.2 I2V A14B** | Video DiT | ~24GB fp8 | ⭐⭐⭐⭐ | ⚡ | Imagen → walkthrough animado | [HF: Wan-AI/Wan2.2-I2V-14B](https://huggingface.co/Wan-AI/Wan2.2-I2V-14B) |
-| 9 | **LTX-2.3 GGUF Q8_0** | Video DiT 22B | ~24GB | ⭐⭐⭐⭐ | ⚡⚡ | Video + audio sincronizado | [HF: city96/LTX-2.3-GGUF](https://huggingface.co/city96/LTX-2.3-GGUF) |
-| 10 | **KREA 2 Turbo** | Checkpoint | ~12GB | ⭐⭐⭐⭐⭐ | ⚡⚡⚡⚡ | Turbo ultra-rápido, 8 pasos | [HF: Comfy-Org/KREA2](https://huggingface.co/Comfy-Org/KREA2) |
-| 11 | **ControlNet Union (SDXL)** | ControlNet | ~1.5GB | ⭐⭐⭐⭐⭐ | N/A | Control geométrico unificado | [HF: xinsir/controlnet-union-sdxl-1.0](https://huggingface.co/xinsir/controlnet-union-sdxl-1.0) |
-| 12 | **4x-ClearRealityV1** | Upscaler | ~100MB | ⭐⭐⭐⭐⭐ | ⚡⚡ | Upscale renders finales | [HF: philz1337/4x-ClearRealityV1](https://huggingface.co/philz1337/4x-ClearRealityV1) |
+| #   | Modelo                      | Tipo               | VRAM       | Calidad | Velocidad | Ideal para                                        | Descarga                                                                                                        |
+| --- | --------------------------- | ------------------ | ---------- | ------- | --------- | ------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| 1   | **Flux.1 Dev**              | Checkpoint DiT 12B | ~24GB fp16 | ⭐⭐⭐⭐⭐   | ⚡⚡        | Renders finales fotorrealistas                    | [HF: black-forest-labs/FLUX.1-dev](https://huggingface.co/black-forest-labs/FLUX.1-dev)                         |
+| 2   | **Flux.1 Schnell**          | Checkpoint DiT 12B | ~24GB fp16 | ⭐⭐⭐⭐⭐   | ⚡⚡⚡       | Renders rápidos, 4 pasos                          | [HF: black-forest-labs/FLUX.1-schnell](https://huggingface.co/black-forest-labs/FLUX.1-schnell)                 |
+| 3   | **SDXL 1.0**                | Checkpoint         | ~12GB      | ⭐⭐⭐⭐    | ⚡⚡⚡       | Render general, ecosistema enorme                 | [HF: stabilityai/stable-diffusion-xl-base-1.0](https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0) |
+| 4   | **SDXL LoRAs arquitectura** | LoRA               | ~100MB     | ⭐⭐⭐⭐    | N/A       | Estilos específicos (brutalista, high-tech, etc.) | [CivitAI: SDXL architecture](https://civitai.com/models/354774/sdxl-architecture-interior-design)               |
+| 5   | **Z-Image Base (fp8)**      | Checkpoint DiT 6B  | ~8GB       | ⭐⭐⭐⭐⭐   | ⚡⚡⚡       | Ideal para iteración, gran calidad                | [HF: Comfy-Org/Z-Image-Base](https://huggingface.co/Comfy-Org/Z-Image-Base)                                     |
+| 6   | **Qwen-Image GGUF Q8_0**    | Checkpoint DiT 20B | ~24GB      | ⭐⭐⭐⭐⭐   | ⚡         | Combinación con WAN video                         | [HF: city96/Qwen-Image-GGUF](https://huggingface.co/city96/Qwen-Image-GGUF)                                     |
+| 7   | **WAN 2.2 T2V A14B**        | Video DiT          | ~24GB fp8  | ⭐⭐⭐⭐    | ⚡         | Texto → video arquitectónico                      | [HF: Wan-AI/Wan2.2-T2V-14B](https://huggingface.co/Wan-AI/Wan2.2-T2V-14B)                                       |
+| 8   | **WAN 2.2 I2V A14B**        | Video DiT          | ~24GB fp8  | ⭐⭐⭐⭐    | ⚡         | Imagen → walkthrough animado                      | [HF: Wan-AI/Wan2.2-I2V-14B](https://huggingface.co/Wan-AI/Wan2.2-I2V-14B)                                       |
+| 9   | **LTX-2.3 GGUF Q8_0**       | Video DiT 22B      | ~24GB      | ⭐⭐⭐⭐    | ⚡⚡        | Video + audio sincronizado                        | [HF: city96/LTX-2.3-GGUF](https://huggingface.co/city96/LTX-2.3-GGUF)                                           |
+| 10  | **KREA 2 Turbo**            | Checkpoint         | ~12GB      | ⭐⭐⭐⭐⭐   | ⚡⚡⚡⚡      | Turbo ultra-rápido, 8 pasos                       | [HF: Comfy-Org/KREA2](https://huggingface.co/Comfy-Org/KREA2)                                                   |
+| 11  | **ControlNet Union (SDXL)** | ControlNet         | ~1.5GB     | ⭐⭐⭐⭐⭐   | N/A       | Control geométrico unificado                      | [HF: xinsir/controlnet-union-sdxl-1.0](https://huggingface.co/xinsir/controlnet-union-sdxl-1.0)                 |
+| 12  | **4x-ClearRealityV1**       | Upscaler           | ~100MB     | ⭐⭐⭐⭐⭐   | ⚡⚡        | Upscale renders finales                           | [HF: philz1337/4x-ClearRealityV1](https://huggingface.co/philz1337/4x-ClearRealityV1)                           |
 
 ---
 

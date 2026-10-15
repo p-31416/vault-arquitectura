@@ -1,0 +1,7 @@
+﻿categoria,bloque,tipo_id,ancho_m,altura_m,alfeizar,descripcion,cantidad
+puerta,PUERTA BATIENTE,P-1,0.90,2.10,-,Madera Contraplacada,5
+puerta,PUERTA BATIENTE,P-2,0.80,2.10,-,Madera Contraplacada,16
+puerta,PUERTA BATIENTE,P-3,1.00,2.10,-,Madera Contraplacada,1
+ventana,VENTANA BAJA SIMPLE,PV01,1.75,,,,4
+ventana,VENTANA BAJA SIMPLE,V01,2.30,,,,6
+ventana,VENTANA BAJA SIMPLE,V02,1.10,,,,10

@@ -9,6 +9,181 @@ tags: [log, historico]
 
 Más nuevo → más arriba
 
+## 2026-10-09 — s #2 cumplido: @contenidos fichó video 1 (formato spec v3 §13)
+
+- **Regenerado:** `raw/contenidos/2026-10-09-comfyui-for-architects-architutors.md` (177 líneas: resumen 5 bullets + ficha colegio + índice verbatim con timestamps + glosario 19 términos + gate). Estado `fichado`, nada en `wiki/`.
+- **Hallazgo:** img2img SketchUp→render con Flux1 + Flux Kontext Image Scale + KSampler + DualCLIP; 2000px; prompts scandi/industrial/tropical. Destino propuesto: `wiki/estudio/comfyui-flux-kontext-img2img` + fuente curada + glosario comfyui vía @vaultworm-arq.
+- **Pendiente:** s #3 (@vaultworm-arq conecta + galería local).
+- **AFECTA:** `raw/contenidos/2026-10-09-comfyui-for-architects-architutors.md`, `log.md`.
+
+## 2026-10-09 — Transcripts con prefijo fecha ISO (opción A, sin subcarpetas)
+
+- **Cambio:** salidas `YYYY-MM-DD_<id>.*` (orden cronológico nativo por texto) + caché tolerante con/sin prefijo. Renombrados los 4 del video 1, idempotencia verificada (re-corrida = cache hit, sin re-descarga).
+- **AFECTA:** `scripts/transcribir_youtube.py`, `scripts/transcribir_youtube_notas.md`, `scripts/00-index.md`, `raw/yt/transcripts/`, `log.md`.
+
+## 2026-10-09 — Gráfico v4: banda FUENTES + fuentes propuestas
+
+- **Agregado:** banda superior con 10 tipos (web, YT, IG, PDF texto, audio, scan, fotos obra, libros, Pinterest, ArchDaily) + nota de propuestos (newsletters, TikTok, X, catálogos fabricantes). Técnica: export escena + offset +290 + import, con un traspié (regex sin `_`, canvas restaurado del .excalidraw.md, re-aplicado 51/51 verificado en PNG).
+- **Espejos:** `.mmd` v4 + spec §3.4 (4 filas nuevas).
+- **AFECTA:** `diagramas/agentes-fuentes.*`, `specs/261009-spec-ingesta-fuentes.md`, `log.md`.
+
+## 2026-10-09 — Flujo v3 adelgazado: Sherlock slim + stub + Vaultworm semanal
+
+- **Modelo:** Sherlock SOLO exterior (transcript por fuente + stub `pendiente-formato`, o reporte links; sin wiki, no formatea) → Contenidos FORMATEA (template+desarrolla, único acceso wiki/fuentes, OK→mueve+borra) → Vaultworm 1/semana (barre fuentes, alimenta glosario/estudio) → Vistas (Obsidian+web+VR).
+- **Grabado en:** descripciones + reglas de `.opencode/agents/{sherlock,contenidos,vaultworm-arq}.md`, spec ingesta v5 §12, `diagramas/agentes-fuentes.*` v3 (verificado legible).
+- **AFECTA:** `.opencode/agents/*.md` (3), `specs/261009-spec-ingesta-fuentes.md`, `diagramas/agentes-fuentes.*`, `log.md`.
+
+## 2026-10-09 — Gráfico para Emilia: qué hace cada agente (Excalidraw)
+
+- **Archivos:** `diagramas/agentes-fuentes.excalidraw.md` (editable en Obsidian) + `diagramas/agentes-fuentes.png` (1017×1405, verificado legible) + `diagramas/agentes-fuentes.mmd` (fuente). 4 bandas (Sherlock→gates SOL→Contenidos→Vaultworm→Vistas), construido a mano por coordenadas (el conversor mermaid solapaba títulos).
+- **AFECTA:** `diagramas/agentes-fuentes.*`, `log.md`.
+
+## 2026-10-09 — Fix tag tachado: workflow:img2img → workflow-img2img
+
+- **Causa:** `:` inválido en tags Obsidian (no indexa, se ve roto). Era formato propuesto en el piloto — corregido a guion + regla de higiene grabada en spec §8.
+- **AFECTA:** `wiki/fuentes/comfyui-for_architects-architutors.md`, `specs/261009-spec-ingesta-fuentes.md`, `log.md`.
+
+## 2026-10-09 — Convención nombres wiki/fuentes + renombre (tema primero, _ intra / - inter)
+
+- **Convención:** `{tema_ppal}-{tema_secundario}-{canal}`, `_` entre palabras del segmento, `-` entre segmentos, software = tema cuando aplica, colisión → fecha al final. Grabada en spec ingesta §8 + regla @contenidos.
+- **Renombre:** `comfyui-for-architects-architutors.md` → `comfyui-for_architects-architutors.md` + index-state + hub regenerado (5 links ✅ verificados).
+- **AFECTA:** `wiki/fuentes/comfyui-for_architects-architutors.md`, `wiki/fuentes/00-index-yt.md`, `raw/yt/index-state.json`, `specs/261009-spec-ingesta-fuentes.md`, `.opencode/agents/contenidos.md`, `log.md`.
+
+## 2026-10-09 — OK video 1: ficha movida a wiki/fuentes (protocolo mover-borrar estrenado)
+
+- **Modelo fijado:** raw/contenidos = solo pendientes (se vacía al aprobar) · raw/transcripts invisible al humano · @contenidos solo escribe wiki/fuentes · hub renombrado a `wiki/fuentes/00-index-yt.md` (aparece primero) · regla grabada en `.opencode/agents/contenidos.md` + spec ingesta v4 + `yt_build_index.py` (estado apunta a ruta wiki).
+- **Movida:** `wiki/fuentes/comfyui-for-architects-architutors.md` (102 líneas, tipo fuente, estado en-wiki, ↩ crudo) · stub de raw borrado físicamente · hub regenerado (71 videos, fila 30 ✅ con link).
+- **Pendiente:** s #3 (@vaultworm-arq conecta a glosario/estudio + galería local).
+- **AFECTA:** `wiki/fuentes/comfyui-for-architects-architutors.md`, `wiki/fuentes/00-index-yt.md`, `raw/yt/index-state.json`, `.opencode/agents/contenidos.md`, `scripts/yt_build_index.py`, `specs/261009-spec-ingesta-fuentes.md`, `specs/261009-spec-vista-grafica-yt.md`, `scripts/00-index.md`, `log.md`.
+
+## 2026-10-09 — Fix visibilidad Obsidian: .md envoltorio por transcript
+
+- **Cambio:** `transcribir_youtube.py` ahora genera 4 archivos por video (`.md` visible con frontmatter + `.srt` + `.txt` + `.origen.json`). Regenerado video 1, verificado limpio en Obsidian.
+- **AFECTA:** `scripts/transcribir_youtube.py`, `scripts/transcribir_youtube_notas.md`, `scripts/00-index.md`, `raw/yt/transcripts/`, `log.md`.
+
+## 2026-10-09 — Paso 1 ejemplo completo: script + transcript video 1 (s #1 cumplido)
+
+- **Nuevos:** `scripts/transcribir_youtube.py` + `scripts/transcribir_youtube_notas.md` (subs manuales→auto primero, fallback Whisper local, limpieza NBSP/apóstrofes, `.origen.json` trazabilidad). Bugs del día: regex `0-0`, línea muerta, encoding latin-1.
+- **Transcript:** `raw/yt/transcripts/RAMs89SS6cM.en.srt+.txt` (44 líneas, manual-sub EN, limpio; testigo `voilà` intacto). Sin Whisper: la vía liviana alcanzó.
+- **Pendiente:** s #2 (@contenidos ficha formato spec v3 §13) → s #3 (@vaultworm-arq conecta + galería local).
+- **AFECTA:** `scripts/transcribir_youtube.py`, `scripts/transcribir_youtube_notas.md`, `scripts/00-index.md`, `raw/yt/transcripts/`, `log.md`.
+
+## 2026-10-09 — Spec ingesta v3: handoff con gate + ficha colegio + canvas imágenes
+
+- **Ampliado:** `specs/261009-spec-ingesta-fuentes.md` v3 — §12 protocolo Sherlock→gate SOL→Contenidos→backlog→Vaultworm por lote (mermaid), §13 ficha bibliográfica estilo colegio (autor/tipo/fecha/índice verbatim/glosario), §14 canvas de imágenes (visión app propia + paso 1 página MkDocs + arranque con ejemplo de ~5 fichas).
+- **AFECTA:** `specs/261009-spec-ingesta-fuentes.md`, `log.md`.
+
+## 2026-10-09 — Spec ingesta v2: diagrama + agentes + ficha biblioteca + image-first
+
+- **Ampliado:** `specs/261009-spec-ingesta-fuentes.md` v2 — diagrama mermaid del flujo con 3 agentes, tabla de límites @sherlock/@contenidos/@vaultworm-arq, formato único de ficha de biblioteca, principio image-first (la imagen como puerta de entrada al referente), trazabilidad wiki↩crudo obligatoria, ejemplo trabajado revista+YT+IG.
+- **AFECTA:** `specs/261009-spec-ingesta-fuentes.md`, `log.md`.
+
+## 2026-10-09 — Specs ingesta de fuentes + vista gráfica YT (2 agentes en paralelo)
+
+- **Nuevos:** `specs/261009-spec-ingesta-fuentes.md` (ecuación única: revistas PDF scan texto+imágenes por epígrafe, YT API+Takeout, IG en 3 opciones, bowls Sol/Emilia + merge compartido) y `specs/261009-spec-vista-grafica-yt.md` (notas atómicas video/tag/creador → grafo Obsidian emerge; piloto 71 comfyui; filtros 4K/creador/puentes; Fase 2 visor 2D→3D declarada).
+- **Pendiente:** `s` de Sol para disparar Agente 1 (ingesta) + Agente 2 (vista-grafo) en paralelo.
+- **AFECTA:** `specs/261009-spec-ingesta-fuentes.md`, `specs/261009-spec-vista-grafica-yt.md`, `log.md`.
+
+## 2026-10-09 — `/cancel` con botones + `/modif` con lista numerada (verificados en producción)
+
+- **`/cancel`:** sin Ref lista próximas con botón inline (`cancel:<uid>`) por reunión; el tap vuelve al Router como callback y se sintetiza `/cancel <uid>`. Directo con Ref intacto. Verificado: cancelación real dede el botón.
+- **`/modif`:** `/modif` lista numerada; `/modif N DD/MM HH:MM`; `/modif N HH:MM` (mismo día de esa reunión); `/modif Ref DD/MM HH:MM`. Pick por índice + Compute Start. Verificado: `/modif 1 15:00` movió 16:00→15:00 (nuevo Ref, anterior dado de baja por Cal.com).
+- **Lección 2:** `leftValue` sin prefijo `=` compara el texto crudo → siempre fallback. Estandarizado al patrón con `=` en los 6 Switch nuevos.
+- **Playbook Emilia** actualizado (§2b + comandos). Limpieza pendiente: cancelar la reunión de prueba movida (Ref nuevo en el mensaje de confirmación).
+- **AFECTA:** n8n Cancel `B7gGFGcD89vKfc5k` + Modif `c08s62Lo9EmAEJJf` + Router (callback), doc v1.2 (§0, fix 10–12), playbook v1.0 (§2b, §3), `log.md`.
+
+## 2026-10-08 (10) — Manual para Emilia: `playbook-os-emilia-n8n.md` v1.0
+
+- **Nuevo:** guía sin tecnicismos de los dos flujos (Reuniones automático 07:00 + `/sync`; Agenda con `/agendar` + hoja `clientes-contactos`), comandos del bot, mapa de Drive y FAQ. Lista para presentar el 09/10. Referencia técnica: `arquitectura-n8n-os-emilia.md`.
+- **AFECTA:** `proyectos/STUDIO_OS-Emilia/documentacion/playbook-os-emilia-n8n.md`, `log.md`.
+
+## 2026-10-08 (9) — Agenda Core real sin mock: reserva por Telegram verificada (exec 3525)
+
+- **Flujo:** `/agendar DD/MM HH:MM Nombre [emails]` → parseo real (año implícito, AR→UTC, validaciones) → email en mensaje o lookup en `clientes-contactos`/`clientes` (match normalizado, solo activos) → Cal.com evento 7109200 (30 min, `America/Argentina/Buenos_Aires`) → confirmación Telegram con Ref. Cal.com avisa al invitado por email solo.
+- **Hallazgo:** IFs creados por API no evalúan (rama 0 siempre, test y producción); migrados los 4 a Switch v3.4 como el Router. Canvas reordenado (fila principal + rama Sheets abajo).
+- **Verificación:** `/agendar 09/10 15:00 Sol` → hoja resolvió `proyectopi.31416@gmail.com` → reserva `gnCrXcR1j3mz8Hd9THXhyh` ("Reunión de 30 min entre Emilia Pimenta Lombardi y Sol", accepted) → confirmación Telegram. Pendiente: Sol cancela en cal.com/bookings.
+- **AFECTA:** n8n `UTkII2kd3RHDlizo` (versión `453e84ce`), Drive (hoja `clientes-contactos`), doc v1.2 (§4, fix 9), `log.md`.
+
+## 2026-10-08 (8) — Timezone workflow a `America/Argentina/Buenos_Aires`
+
+- **Causa:** el trigger 07:00 corría en hora del servidor (UTC = 04:00 AR). Funcional igual por la ventana 26h, pero no era lo pactado.
+- **Fix:** `setWorkflowSettings` con timezone AR, verificado en vivo. Estado estable: Drive con 2 clientes + 6 internas; el cron 07:00 AR trae solo lo nuevo.
+- **AFECTA:** n8n `UeDkqVZSeLnae5cF` (settings), doc v1.2 (§1), `log.md`.
+
+## 2026-10-08 (7) — Fetch solo último día: `created_after` −26h (exec 3505 success, lote vacío)
+
+- **Problema:** el Fetch traía todo el historial en cada corrida → 8 re-escrituras y copias `(1)(2)(3)` en Drive. Corrías manuales agravaban.
+- **Fix:** query param `created_after = {{ $now.minus({ hours: 26 }).toISO() }}` en `Fetch Fathom Meetings` (parámetro documentado en la API oficial). Ventana 26h cubre el cron 07:00 con 2h de solape. Verificado exec 3505: `items: []`, success sin escribir nada.
+- **Nota:** backfills (reuniones viejas no procesadas) requieren corrida manual con ventana ampliada; el cron diario ya no las toca.
+- **AFECTA:** n8n `UeDkqVZSeLnae5cF` (versión `ffd071f6`), doc v1.2 (§1, fix 8, caveat 1), `log.md`.
+
+## 2026-10-08 (6) — Filtro por lados en builder: invitados + hablantes (exec 3503 success)
+
+- **Problema:** clasificación solo por `calendar_invitees` — las 8 reuniones caían en Internas aunque la vinícola del 03/10 tenía 2 clientas hablando (Leticia 248 + Vanessa 20 segmentos). Además `calendar_invitees_domains_type` de Fathom miente (`one_or_more_external` en las 8) y `shared_with` no trae mails.
+- **Fix:** `sideOf()` mapea cada nombre/mail a emilia/proyectopi/externo sobre la unión invitados + hablantes del transcript + `recorded_by`. Externo presente → `clientes`; cero señal → internas + `[revisar]-` (cierra el quirk del spec §5). Nombre por lados + líneas de evidencia (`Invitados calendario`, `Hablantes en transcript`, `Grabado por`) en el `.md`.
+- **Verificación:** exec 3503 `success` — las 2 del 03/10 a `Reuniones-Clientes` (`2026-10-03_emilia-vanessa-ferreira-leticia-gentilini_*.md`), las 6 restantes a Internas como `emilia-proyectopi`. En el camino: fix de `invitees` duplicado + `date` TDZ (el reemplazo había abarcado las declarations).
+- **Pendiente:** limpieza de Drive (borra Sol; próxima corrida regenera 6+2 limpio) + re-import al vault de los 8 con contenido enriquecido.
+- **AFECTA:** n8n `UeDkqVZSeLnae5cF` (versión `52cc8643`), doc v1.2, `log.md`.
+
+## 2026-10-08 (5) — Canvas único n8n: Cron + Core + Docs en `UeDkqVZSeLnae5cF` (exec 3500 success)
+
+- **Merge:** el Core absorbió el trigger 07:00 y la cadena de Docs; la rama confluye en cadena compartida Save → Create → Move → Apply con pairing `$('Classify Meeting').item` en expresiones. Descartados los MergeBack (Code no resuelve pairing de forma estable: Save devuelve solo `{id}`, `$input.first/item` inconsistentes por modo). Cron (`2gUlVXu7xk1Jd12s`) y Format (`LysH41yu1s5wXkPz`) archivados. Router intacto (referencia por ID).
+- **Notas:** `setWorkflowMetadata` (rename) devuelve 500 del servidor — nombre sin cambiar, sin impacto. Lote grande de 18 ops también dio 500; por lotes chicos funciona.
+- **Doc:** `arquitectura-n8n-os-emilia.md` v1.1 con la estructura nueva.
+- **AFECTA:** n8n `UeDkqVZSeLnae5cF` (versión `28524385`), archivados Cron + Format, doc v1.1, `log.md`.
+
+## 2026-10-08 (4) — Doc técnico n8n nodo por nodo: `arquitectura-n8n-os-emilia.md`
+
+- **Nuevo:** `proyectos/STUDIO_OS-Emilia/documentacion/arquitectura-n8n-os-emilia.md` v1.0 — referencia de los 5 workflows OS-Emilia con tabla por nodo (tipo, credential, expresiones clave), lógica del builder, historial de los 5 fixes del día con versiones, caveats (dedup, `chat_id`, mock, quirk `needsReview`) y cómo probar. Verificado contra API: conexiones del Router (fallback → Send Help) incluidas.
+- **AFECTA:** `proyectos/STUDIO_OS-Emilia/documentacion/arquitectura-n8n-os-emilia.md`, `log.md`.
+
+## 2026-10-08 (3) — `.gdoc` a su carpeta: builder envía `folderId` (exec 3495 success)
+
+- **Causa:** `Build Meeting Document` no enviaba `folderId`; el sub-workflow creaba el Google Doc en la raíz de Mi unidad y el Move no tenía destino. Los 8 `.gdoc` de hoy estaban en la raíz.
+- **Fix:** el builder mapea `folder` internas/clientes a su Folder ID y lo incluye en el output; Create y Move lo consumen. Verificado: corrida 3495 `success`, `.gdoc` nuevos en `Reuniones-Internas/`. Versión Core `4babe389`.
+- **AFECTA:** n8n `UeDkqVZSeLnae5cF` (versión `4babe389`), `log.md`.
+
+## 2026-10-08 (2) — Nombres Drive opción A `fecha_participantes_recid` (exec 3492 success)
+
+- **Cambio:** `Build Meeting Document` (Fathom Core) arma `fileName` con slug de participantes (nombre o local-part del mail, máx 60) + `recording_id`, en vez de slug de título. Verificado: `2026-10-03_emilia-pimenta-lombardi_189333562.md` — sin "impromptu". Versión Core `a3a73dad`.
+- **Import inmune:** `import_drive_reuniones.py` resolvió los 8 renombrados a los mismos destinos por `call_id` (0 importados, 8 omitidos).
+- **AFECTA:** n8n `UeDkqVZSeLnae5cF` (versión `a3a73dad`), `log.md`.
+
+## 2026-10-08 — Loop Fathom→Drive→vault verificado end-to-end (exec 3489 success) + import Drive→raw/reuniones
+
+- **Publicados y activos (5/5 OS-Emilia):** Fathom Core (`UeDkqVZSeLnae5cF`), Format Google Doc (`LysH41yu1s5wXkPz`), Fathom Cron 07:00 AR (`2gUlVXu7xk1Jd12s`), Telegram Router (`YWpuV5p0vCDTbIHz`), Agenda mock (`UTkII2kd3RHDlizo`). Cal.com no se tocó (pedido explícito).
+- **Creds:** Fathom Emilia ✅ (fetch pasa), Telegram `emiliaospi_bot` ✅ cableado (sin filtro chat_id aún), Drive + Docs OAuth reconectados por Sol en n8n UI (antes: `needs to be reconnected`, exec 3473/3475 fallaban en `Save Internal Meeting`).
+- **Fix 1 — `Apply Google Docs Formatting`:** `jsonBody` interpolaba objeto → `[object Object]`; se serializa en Code node (`batchUpdateJson`) — versión `46e197f9`.
+- **Fix 2 — misma:** el cableado es `Restore → Move → Apply`, el `$json` del Apply es salida del Move (sin `batchUpdateJson`); se referencia `$('Restore Format Requests')` por nombre en `url` + `jsonBody` — versión `8ac83b6f`.
+- **Verificación:** exec 3489 `success` sin error; 8 reuniones en `G:\Mi unidad\OS-Emilia\Reuniones-Internas\` (.md + Google Doc formateado).
+- **Import vault:** nuevo `scripts/import_drive_reuniones.py` (+ `_notas.md`) — copia `.md` de Drive Stream a `raw/reuniones/YYYY-MM-DD-<call_id>.md`, idempotente con `.import-state.json`. Importados 7 nuevos (24/09 ×2, 26/09 ×3, 03/10 ×2) + 827502057 previo; 26 duplicados omitidos.
+- **Caveat dedup:** Fathom Core no tiene control por `recording_id` (Data Table `OS-Emilia — Bot State` existe pero sin conectar, spec §16.2) — cada corrida re-escribe todo y Drive acumula copias `(1)(2)(3)`. El import del vault es inmune (idempotente por `call_id`). Fix real pendiente: state check en el Core + filtro de fecha.
+- **Análisis:** `@fathom-pm` vía task no corre en este entorno (free tier); análisis del 827502057 hecho inline como propuesta (anexar sección IV al reporte del día, spec terreno-Brasil si amerita).
+- **Pendiente:** filtro `chat_id` en Router (Emilia manda `/start`, se setea y se publica); borrar copias `(1)-(4)` en Drive; reconectar Sheets real para agenda no-mock (Mes 2).
+- **AFECTA:** n8n (5 workflows publicados, 2 versiones Format), `scripts/import_drive_reuniones.py`, `scripts/import_drive_reuniones_notas.md`, `raw/reuniones/` (8 archivos), `raw/reuniones/.import-state.json`, `log.md`.
+
+## 2026-10-05 (2) — MCP `fathom-proyectopi` reparado: `env` → `environment` (+ 2 bugs silenciosos) — 7/7 MCP
+
+- **Síntoma:** `✗ fathom-proyectopi failed (MCP error -32000: Connection closed)` — mismo síntoma genérico que Leantime, causa totalmente distinta.
+- **Causa raíz:** la clave del bloque en `opencode.json` era `env` cuando la correcta es **`environment`** (confirmado en docs oficiales opencode.ai/docs/mcp-servers → opciones del MCP local). Con `env` la variable se **ignora en silencio**: el servidor muere con `FATHOM_API_KEY env var is required` (capturado al correr `npx -y @luminarylane/fathom-mcp-server` a mano y ver su stderr en JSON) y opencode solo reporta el `Connection closed` genérico.
+- **Diagnóstico:** handshake manual `initialize` + `tools/list` por stdin con la variable inyectada a mano → 4 tools (`fathom_list_meetings`, `fathom_get_summary`, `fathom_get_transcript`, `fathom_search_meetings`). `opencode mcp debug fathom-proyectopi` → "not a remote server": el subcomando `debug` solo aplica a MCP remotos/OAuth.
+- **Fix `opencode.json`:** `fathom-proyectopi` → `environment: { "FATHOM_API_KEY": "{env:FATHOM_API_KEY_PROYECTOPI}" }` + `timeout: 30000` (el default de opencode es 5000 ms y el arranque en frío de `npx` lo supera).
+- **Bugs silenciosos con la misma causa:** `comfyui` y `autocad` también usaban `env` → sus variables se ignoraban. `COMFYUI_URL` coincidía con el default (8188) y no se notaba; `ACAD_MCP_OUTPUT_ROOT` **sí** importaba: las salidas CAD se escribían fuera de `activos/caddy-salidas`. Ambos corregidos a `environment`.
+- **Verificación:** `opencode mcp list` → **7/7 ✓ connected** (antes 5/7).
+- **Wiki:** `wiki/glosario/software/opencode.md` → nueva sección [[#Trampas MCP verificadas]] (tabla de 4 trampas + método de diagnóstico en 4 pasos + advertencia del caso silencioso), fila `fathom-proyectopi` agregada a la tabla MCP, filas `comfyui`/`autocad` con `environment`, `ultima_actualizacion` 2026-10-05, y corregido heading `## Conceptos relacionados` duplicado.
+- **AFECTA:** `opencode.json`, `wiki/glosario/software/opencode.md`, `log.md`, `raw/sessions/2026-10-05-sesion-fix-mcp-leantime.md`.
+
+## 2026-10-05 — MCP Leantime reparado: `remote` + `x-api-key` sobre subdominio EasyPanel (URL canónica)
+
+- **Síntoma:** `✗ leantime failed (MCP error -32000: Connection closed)` con 6/7 MCP OK.
+- **Causa 1 — puente local inexistente:** la config llamaba `node …/node_modules/leantime-mcp/bin/leantime-mcp.js` y ese paquete ya no estaba instalado (lo arrastró una reinstalación de opencode). El paquete `leantime-mcp` está **deprecado oficialmente** (Leantime 3.10.3+ habla Streamable HTTP directo).
+- **Causa 2 — URL equivocada + certificado autofirmado:** la config apuntaba a `https://pitau.tech/mcp`, que es el **panel de EasyPanel** (cert `CN=Easypanel`, sin SAN) y no Leantime. Node: `self-signed certificate`. `n8n.pitau.tech` sí tiene Let's Encrypt y por eso ese MCP siempre anduvo.
+- **Diagnóstico:** URL real `https://pitautech-leantime.3nq4ow.easypanel.host` → `/mcp` responde 401 (existe, pide credencial); cert `*.3nq4ow.easypanel.host` issuer Let's Encrypt `YE2`; probe JSON-RPC `initialize` con `x-api-key` → **200 con respuesta MCP válida** (`Authorization: Bearer` sobre la API key `lt_…` → `Invalid API Key`).
+- **Fix `opencode.json`:** bloque `leantime` pasa de `local` (binario + `--token … --insecure`) a `type: remote` + `url` del subdominio de la app + `headers: {"x-api-key": "{env:LEANTIME_TOKEN}"}` + `timeout: 30000`. Efecto extra: el token deja de quedar impreso en `opencode mcp list` (quedó registrado en claro en la sesión del 2026-09-27).
+- **Verificación:** `opencode mcp list` → 7 servers, `✓ leantime connected`. Queda pendiente reiniciar la sesión OpenCode para que las herramientas de Leantime queden cargadas. `fathom-proyectopi` sigue en rojo (`npx @luminarylane/fathom-mcp-server`, tema aparte).
+- **Wiki:** creada `wiki/glosario/software/leantime.md` (instalación/VPS, MCP remoto, credenciales `lt_`→`x-api-key` vs PAT→Bearer, diagnóstico replicable, lección `pitau.tech` ≠ subdominio de app) + fila Leantime en `wiki/glosario/software/00-index.md` + fila MCP actualizada en `wiki/glosario/software/opencode.md`. Refs verificadas 200: docs.leantime.io (MCP), marketplace.leantime.io (plugin MCP Server), github.com/leantime/leantime-mcp, leantime.io/pricing.
+- **AFECTA:** `opencode.json`, `wiki/glosario/software/leantime.md`, `wiki/glosario/software/00-index.md`, `wiki/glosario/software/opencode.md`, `raw/sessions/2026-10-05-sesion-fix-mcp-leantime.md`, `log.md`.
+
 ## 2026-09-30 — Codex 101 Brais + pbook instalación Codex (canónico) — Codex CLI + GPT-5.6
 
 - **Video corregido:** `https://www.youtube.com/watch?v=af1KAQCD7mk` (Brais Moure — Codex + GPT-5.6) verificado 200 — corrige `irR8437xihg` previo (opencode). Guardado en `raw/contenidos/2026-09-30-codex-101-brais.md` (propuesta HITL) + deprecado `raw/contenidos/2026-09-30-opencode-101-brais-codex.md` → `descartado-corregido`.
@@ -262,3 +437,26 @@ Más nuevo → más arriba
 - **InvestigaciÃ³n IA en estudios internacionales**: Se creÃ³ `wiki/software/ia-arquitectura-estudios-internacionales.md` con investigaciÃ³n detallada sobre cÃ³mo ZHA, BIG, MVRDV, Foster + Partners, UNStudio, Gensler y otros integran IA en sus flujos. Incluye herramientas (Midjourney, Stable Diffusion, D5 Render, NVIDIA Omniverse, CarbonSpace), unidades internas de IA, proyectos destacados (Terminus AI City, IPAI Campus, CODE), fuentes citadas, thought leaders y recursos multimedia.
 - **Archivo movido**: `decision-arquitectura-trabajo-ia-privacidad.md` â†’ `wiki/estudio/decision-arquitectura-ia-privacidad.md` (estaba suelto en raÃ­z).
 - **activos/ vaciado**: Se eliminaron todos los subdirectorios de plantilla dentro de `activos/`. Cada estudio lo completa segÃºn su estructura.
+
+
+- **2026-10-08** - Pipeline de curacion YouTube+Chrome: Takeout parseado (157 canales, 709 videos, 434 marcadores) en doc unico raw/yt/videos-y-canales-guardados.md, con titulos/canal/duracion via YouTube Data API v3 (646 de 655, 14 unidades de cuota). Scripts yt_titles.py + yt_takeout_parser.py con notas didacticas. Guia de API key + metodologia + template de briefing semanal. 6 bugs resueltos: encoding con tildes del Takeout, headers de CSV, sufijos -videos, pipes que rompen tablas markdown, tags por substring, contexto de carpeta.
+
+- **2026-10-08 (cont.)** - Tags ampliados en yt_takeout_parser.py: 8 tags nuevos (3dsmax, video-ia, audio-ia, opencode, remotion, dibujo, gestion, whatsapp) + stemming de plurales + filtro de fechas + 7 categorias amplias con columna Cat y SLUG_CAT. Efecto: sin-clasificar 157->131; ia-agentes-code 196, software-arq 134, ia-imagen 124. Verificado 709/709 filas OK.
+
+- **2026-10-08 (cont.)** - Archivo de revision manual: nuevo scripts/yt_revision.py genera raw/yt/revision-manual.md (300 lineas) con SOLO lo pendiente: 131 WL sin-clasificar + 113 canales fuera, con columnas para veredicto. Dos modos: editar en Obsidian o pasar numeros en el chat.
+
+- **2026-10-08 (cont.)** - Veredictos 1-60 dictados: filosofia 13, otros 22, rescatar 21, descartar 3, proyecto 1 (+MAGNIFIC WL#135 = 61 en veredictos.json). Tags nuevos: decentraland, tecnologia, architettura, ia suelto. sin-clasificar 131->51. Filosofia/personal = listados no analizados. Backfill de veredictos en revision-manual. Sigue desde #61.
+
+- **2026-10-08 (cont.)** - Veredictos 61-131: rescatar 19, otros 46, descartar 8 (total 132 en veredictos.json). Tags: gaussian-splatting, gemma, herramienta, cerebro-digital, d5. sin-clasificar fuera del top-20. Backfill revision-manual completo 1-131. 3 conflictos para confirmar (120 TEDx, 121 arq-tech, 110 IA en buckets personal).
+
+- **2026-10-08 (cont.)** - Creadores con WL: nuevo scripts/yt_creadores.py genera raw/yt/creadores.md (151 canales distintos en WL, 101 NO suscriptos, con veredicto agregado). Verificado 151 filas OK, 0 mojibake.
+
+- **2026-10-08 (cont.)** - Veredictos Parte 2: 47 canales rescatados (arq+IA 14, software 16, IA 5, construccion 4, creadores 3, estudios 1, metaverso 4 nueva). Scope 44->91, fuera 113->66. Registro en canales-veredictos.json conciliado exacto. Backfill 47 filas. Bugs: tedeschi/ted, especialista 3d, pixeleasel.
+
+- **2026-10-08 (cont.)** - Borrado raw/yt/revision-manual.md (revision completa). Veredictos preservados: 132 videos + 47 canales en JSONs.
+
+- **2026-10-08 (cont.)** - Veredictos Parte B (15 revit, 16 comfyui, 22/29 charlas reconfirmados, 80 dibujo): los 5 ya estaban bien, se fijaron en veredictos.json (135 total). Regenerados doc + creadores.
+
+- **2026-10-09** - Indice unico wiki/fuentes/index-yt.md (3 vistas, piloto comfyui 71 videos, script yt_build_index.py, estado en index-state.json). Primer @contenidos: RAMs89SS6cM (img2img Flux Kontext, transcript parcial declarado, gate s/N pendiente). Fila marcada procesada en el indice.
+
+- **2026-10-09** - Instalado en comfyenv (con s): yt-dlp 2026.08.19 + faster-whisper 1.2.1 (mismas versiones que stack pitauOS). Invocar yt-dlp via `python -m yt_dlp` (Scripts no esta en PATH). Pendiente: scripts/transcribir_youtube.py + primera corrida (RAMs89SS6cM).

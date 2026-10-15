@@ -5,21 +5,24 @@ nivel: SET_01-REP
 set_numero: "01"
 set_disciplina: REP
 set_nombre: Replanteo
-version: 2.1-unificado
+version: 2.2-archivo
 fecha_creacion: 2026-09-27
-ultima_actualizacion: 2026-09-27
-tags: [mvp_02, SET, SET_01, replanteo, n_01, capas, standares, v2, unificado]
+ultima_actualizacion: 2026-10-13
+tags: [mvp_02, SET, SET_01, replanteo, n_01, capas, standares, v2, archivo]
 referencia_arquilogia: true
 url_audit: raw/reports/2026-09-27-url-audit.md
 reemplaza_a: SET-replanteo-spec.md (v1, eliminado 2026-09-27) + SET-replanteo-2.md (renombrado)
+nombres: archivo-REP-ARAOZ (v2.2; Kit como equivalencia, no canónico)
+medicion: proyectos/MVP_02-autocad-standards/SET_01-REP_Replanteo/docs/REP-ARAOZ-capas-bloques
+desglose: proyectos/MVP_02-autocad-standards/SET_01-REP_Replanteo/docs/desglose-configuraciones
 ---
 
-# SET_01-REP — Plano de Replanteo Arquitectónico v2.1 (Unificado)
+# SET_01-REP — Plano de Replanteo Arquitectónico v2.2 (nombres del archivo)
 
 > **SET** = Set de herramientas, Standards, Capas, Puntas
 > **Estructura**: importa `../../01-spec-mvp_02.md` (genérica, 10 items) y detalla abajo según necesidad SET_01.
 > **Plano tipo**: Replanteo arquitectónico (ejes, fundaciones, cotas, niveles)
-> **Nomenclatura**: Prefijos Kit (R-/A-/S-/G-) — NO DR-*
+> **Nomenclatura**: nombres reales de `REP-ARAOZ.dwg` (medidos 2026-10-13, 49 capas). Kit R-/A-/S-/G- queda como equivalencia, no canónico.
 > **Contexto**: MVP concreto — primer SET desarrollado, fija precedente.
 > **Referencia**: `raw/reports/2026-09-27-url-audit.md` — 36/38 URLs vigentes
 > **Referencia**: Kit temático `raw/docs/Estudio Pi – Kit temático  SETs de estándar CAD.md` §§6-7
@@ -27,14 +30,14 @@ reemplaza_a: SET-replanteo-spec.md (v1, eliminado 2026-09-27) + SET-replanteo-2.
 ## 0. "DoD" SET_01 (hereda orden de `01-spec-mvp_02.md`)
 
 - [x] **1. SETEO** → §4.2 (base acadiso.dwt, metros INSUNITS 6, escala 1:50(m)=20xp, layout A1). CÓMO en `02-ft-SET_01.md` §1.
-- [ ] **2. LAYERS** → §2 (22 capas R-/G-/A-/S- con prefijo, tipo, valor, AUX). Pendiente paso a paso.
+- [x] **2. LAYERS** → §2 (29 propias + 20 xref, nombres del archivo medidos 2026-10-13). Desglose en `docs/desglose-configuraciones.md`.
 - [ ] **3. CTB** → §4.4 (EP-ISO.ctb; fallback `monochrome.ctb`). Doc `docs/ctb.md` pendiente.
-- [ ] **4. TEXTSTYLES** → §4.2 (`EP-2.5`, `EP-3.5` anotativos). Pendiente paso a paso.
-- [ ] **5. DIMSTYLES** → §4.2 (`EP-ARQ`). Pendiente paso a paso.
-- [ ] **6. BLOQUES** → marca eje, punto, nivel. Doc `docs/bloques.md` pendiente.
-- [ ] **7. DINÁMICOS/ATRIBUTOS** → R-PTO-ATTR ID,X,Y,Z → `DATAEXTRACTION`. Pendiente paso a paso.
+- [x] **4. TEXTSTYLES** → §4.2 (9 medidos: `cotas-50`, `COTAS`, `style2`, `Standard`, `MBA25`, `ROMANS`, `ROT` + 2 residuales). Destino `EP-2.5/EP-3.5` en backlog.
+- [x] **5. DIMSTYLES** → §4.2 (3 medidos: `COTAS-ARQ-50` ×152, `REPLANTEO 150` ×152). Destino `EP-ARQ` en backlog.
+- [x] **6. BLOQUES** → 13 nombrados (dinámicos `VENTANA BAJA SIMPLE`, `PUERTA BATIENTE` + tags). Catálogo en `docs/bloques-personalizados.md`.
+- [x] **7. DINÁMICOS/ATRIBUTOS** → `TIPO/ANCHO/ALFEIZAR/ALTURA/MURO/NPT` → `EXTRACDAT`. Detalle en `docs/bloques-personalizados.md`.
 - [ ] **8. TEMPLATE** → `activos/.../SET_01-REP.dwt` (NO en git). Doc `docs/template-dwt.md` pendiente; CÓMO en `02-ft-SET_01.md` §8.
-- [ ] **9. AUTOLISP** → §7 (comando `SET-01-REP`). Archivo `lisp/` pendiente (se reconstruye tras 1–8).
+- [ ] **9. AUTOLISP** → §7 (comando `SET-01-REP`, capas del archivo). Archivo `lisp/` pendiente (se reconstruye tras 8).
 - [ ] **10. GLOSARIO** → diferido (wiki tras evaluar SET_01)
 
 ---
@@ -53,53 +56,62 @@ Un plano de replanteo establece el **sistema de referencia** desde el cual todo 
 
 ---
 
-## 2. CAPAS — Nomenclatura Kit
+## 2. CAPAS — Nombres del archivo (canónicos v2.2)
 
-### 2.1 SET-REP (núcleo replanteo)
+Medidos 2026-10-13 en `REP-ARAOZ.dwg` (29 propias + 20 xref `ARQ-ARAOZ|`). Columna Kit = equivalencia v2.1 (ya no canónica). Detalle de usos en `docs/REP-ARAOZ-capas-bloques.md` §1; desglose y horas en `docs/desglose-configuraciones.md`.
 
-| Layer | Color | Linetype | Lineweight (ISO 128-2) | Descripción |
-|-------|-------|----------|------------------------|-------------|
-| `R-EJES` | Green (3) | CONTINUOUS | 0.50 | Ejes de replanteo principales |
-| `R-EJAX` | Green (3) | CONTINUOUS | 0.35 | Ejes auxiliares |
-| `R-COTP` | White (7) | CONTINUOUS | 0.35 | Cotas parciales |
-| `R-COTA` | White (7) | CONTINUOUS | 0.50 | Cotas acumuladas |
-| `R-PTOS` | Yellow (2) | CONTINUOUS | 0.25 | Puntos con coordenadas (ID, X, Y, Z) |
-| `R-NIVE` | Green (3) | CONTINUOUS | 0.35 | Niveles |
-| `R-FUND` | Red (1) | CONTINUOUS | 0.50 | Fundación (ref. SET-EST) |
+### 2.1 Replanteo, cotas y ejes
 
-### 2.2 SET-GEN (plantilla, siempre presente)
+| Capa | ACI | Tipo línea | Estado | Equivale Kit | Uso |
+|---|---|---|---|---|---|
+| `REP-EJES` | 81 | DASHDOTX2 | bloq | `R-EJES` | Ejes de replanteo |
+| `REP-COTAS` | 41 | Continuous | — | `R-COTA`/`R-COTP` | Cotas de replanteo |
+| `A-COTA-1-50` | 250 | Continuous | — | `G-COTA` | Cotas arquitectónicas 1:50 |
+| `A-EJES` | 90 | DASHDOT | bloq | `S-EJES` | Ejes arquitectónicos |
+| `A-EJES-VACIOS` | 113 | DASHDOT | bloq | — | Ejes de vacíos |
+| `E-EJES` | 10 | Continuous | cong | `S-EJES` | Ejes estructurales |
+| `E-COL-EJES` | 254 | Continuous | bloq | — | Ejes de columnas |
+| `IE-EJEX` | 32 | DASHDOT | cong+bloq | — | Ejes de IE |
 
-| Layer | Color | Linetype | Lineweight | Descripción |
-|-------|-------|----------|------------|-------------|
-| `G-CART` | Gray (8) | CONTINUOUS | 0.10 | Carátula |
-| `G-MARC` | Gray (8) | CONTINUOUS | 0.10 | Marco |
-| `G-TEXT` | White (7) | CONTINUOUS | 0.25 | Textos generales |
-| `G-COTA` | White (7) | CONTINUOUS | 0.25 | Cotas generales (no replanteo) |
-| `G-REFE` | Cyan (4) | CONTINUOUS | 0.25 | Referencias corte/detalle |
-| `G-VPRT` | Gray (8) | CONTINUOUS | 0.10 | Viewports (no imprimible) |
-| `G-AUXI` | Gray (8) | CONTINUOUS | 0.10 | Construcción (no imprimible) |
+### 2.2 Muros, estructura y terreno
 
-### 2.3 SET-ARQ (referencia, xref o frozen)
+| Capa | ACI | Tipo línea | Estado | Equivale Kit | Uso |
+|---|---|---|---|---|---|
+| `A-MURO-MAMP` | 24 | Continuous | — | `A-MURO-N` | Muros de mampostería (289 ent.) |
+| `A-MURO-MED` | 11 | Continuous | bloq | `A-MURO-E` | Medianeros |
+| `E-COL` | 5 | Continuous | — | `S-COLU` | Columnas |
+| `E-COL-H` | 251 | Continuous | bloq | — | Columnas en hatch |
+| `E-TAB` | 166 | Continuous | — | `A-TABI` | Tabiques |
+| `E-TAB-H` | 251 | Continuous | bloq | — | Tabiques en hatch |
+| `A-TERRENO` | 163 | Continuous | cong | — | Terreno de referencia |
 
-Solo las necesarias como fondo para replantear:
+### 2.3 Carpinterías, símbolos y fondo
 
-| Layer | Color | Linetype | Lineweight | Descripción |
-|-------|-------|----------|------------|-------------|
-| `A-MURO-N` | Magenta (6) | CONTINUOUS | 0.50 | Muros nuevos (ref.) |
-| `A-TABI` | Magenta (6) | CONTINUOUS | 0.35 | Tabiques (ref.) |
-| `A-ABER` | Yellow (2) | CONTINUOUS | 0.25 | Aberturas (ref. vanos a ejes) |
-| `A-LOCA` | Blue (5) | CONTINUOUS | 0.25 | Rótulos locales (ref.) |
+| Capa | ACI | Tipo línea | Estado | Equivale Kit | Uso |
+|---|---|---|---|---|---|
+| `A-CARP-02` | 251 | Continuous | — | `A-ABER` | Vanos dinámicos (20 vent + 22 puertas) |
+| `SIMB-CARP` | 33 | Continuous | — | — | Atributos `TIPO/ANCHO/PUERTA` |
+| `AR-CUADRO DE VANO` | 1 | Continuous | — | — | Atributos `ALFEIZAR/ALTURA` |
+| `SIMB-MURO` | 251 | Continuous | — | — | Tags de muro (89) |
+| `A-SIMBOLO-NPT-PLANTA` | 251 | Continuous | — | `R-NIVE` | Tags NPT (29) |
+| `A-EQUIP-` | 8 | Continuous | — | — | Equipamiento de fondo |
+| `A-SOLADOS` | 250 | Continuous | — | — | Solados de fondo |
+| `CONDUCTOS` | 3 | Continuous | — | — | Conductos de fondo |
 
-### 2.4 SET-EST (referencia, xref)
+### 2.4 Base y paper
 
-| Layer | Color | Linetype | Lineweight | Descripción |
-|-------|-------|----------|------------|-------------|
-| `S-FUND` | Red (1) | CONTINUOUS | 0.50 | Fundaciones (detalle en SET-EST) |
-| `S-COLU` | Red (1) | CONTINUOUS | 0.50 | Columnas (acotadas a ejes R-) |
-| `S-VIGA` | Red (1) | CONTINUOUS | 0.35 | Vigas (ref.) |
-| `S-EJES` | Green (3) | CONTINUOUS | 0.35 | Ejes estructurales (xref R-EJES) |
+| Capa | ACI | Tipo línea | Estado | Equivale Kit | Uso |
+|---|---|---|---|---|---|
+| `0` | 7 | Continuous | — | — | Base general |
+| `0-REF` | 7 | Continuous | cong+bloq | — | Inserción del xref |
+| `Defpoints` | 7 | Continuous | — | — | Nodos de cotas (no ploteable) |
+| `ROT-HOJA` | 5 | Continuous | paper | `G-MARC` | Recuadro rótulo A-434 |
+| `ROT-TXT` | 174 | Continuous | paper | `G-TEXT` | Textos fijos rótulo (mm) |
+| `ROT-VP` | 130 | Continuous | paper | `G-VPRT` | Viewports A1 |
 
-> **Total**: 7 (REP) + 7 (GEN) + 4 (ARQ ref) + 4 (EST ref) = **22 capas** (vs 80+ DR-* anteriores).
+### 2.5 Xref `ARQ-ARAOZ|` (20, referencia, detalle en doc madre §1.2)
+
+`000-cotas estructrua`(5) · `A-TERRENO`(163,fz) · `ASCENSOR`(2) · `BASICO`(1) · `CARP`(2) · `CONDUCTOS`(3) · `COTAS`(3) · `EJES`(2) · `ESCALERA`(4) · `ESTRUCTURA`(6) · `FLECHA`(8) · `HATCHMUROS`(1,fz) · `INCENDIO`(5) · `MUROS`(7) · `MUROS-VISTA`(4) · `NUMLOC`(3,fz) · `PROYECCIONES`(9,fz) · `REP-EJES`(254,fz) · `TEXTO`(7,fz) · `VANOS`(1). Prefijo de inst/electro/sanitario nuevo vive en backlog (§16 doc madre).
 
 ### 2.5 SET-ROT (paper-only, layout `REP-PTipo-A1`)
 
@@ -113,54 +125,42 @@ Capas exclusivas del espacio papel. NO imprimibles en `EP-ISO.ctb` (Plot = No).
 
 > Convención interna MVP_02 — prefijo `ROT-` (rotulación) es **categoría distinta** de `R-/G-/A-/S-` (modelo). Están separadas porque las capas paper-only no salen en el CTB y no entran al modelo en metros.
 
-### 2.6 Auditoría de capas en DWG activo (placeholder)
+### 2.6 Auditoría de capas — resuelta por medición (2026-10-13)
 
-Auditoría aplicada al DWG `G:\Mi unidad\OS-Emilia\W03-CAD\REP-ARAOZ.dwg` con `INSUNITS=6`. Estado actual leído vía `autocad_list_layers` (2026-09-28):
-
-| Capa real en DWG | Spec §2 match | Estado | Acción documentada |
-|---|---|---|---|
-| `0` | (default AutoCAD) | ✓ | Mantener |
-| `ROT-HOJA` | §2.5 SET-ROT | ✓ | Mantener; ACI 5 blue |
-| `ROT-TXT` | §2.5 SET-ROT | ✓ | Mantener; ACI 174 custom (a normalizar a ACI 7 white si se uniforma con G-TEXT) |
-| `ROT-VP` | §2.5 SET-ROT | ✓ | Mantener; ACI 130 custom (mismo criterio) |
-| `A-TERRENO` | §2.3 SET-ARQ (genérico `A-*`) | ✓ | Mantener |
-| `REP-EJES` | §2.1 SET-REP `R-EJES` | ✗ prefijo diverge | Pendiente renombre `-LAYER Rename REP-EJES R-EJES`. Linetype actual `DASHDOTX2` (eje punteado 2×) es apropiado. |
-| `INCENDIO` | n/a — sin prefijo de disciplina | ✗ | Pendiente renombre `-LAYER Rename INCENDIO A-INCEN` y agregar a §2.3 SET-ARQ |
-
-> Las capas que no respetan el formato Kit quedan marcadas para renombre y luego se re-auditan. **Las que sigan sin encajar tras renombre, se borran** (regla del estudio MVP_02).
+Divergencias v2.1 (`REP-EJES` vs `R-EJES`, `INCENDIO` sin prefijo) resueltas por decisión del estudio: **mandan los nombres del archivo** (§2 v2.2). Sin renombres pendientes; el Kit vive como equivalencia. Re-auditoría con MCP cuando abra AutoCAD completo.
 
 ---
 
 ## 3. STANDARDS — Reglas
 
-### 3.1 Ejes (R-EJES, R-EJAX)
+### 3.1 Ejes (`REP-EJES`, auxiliares)
 
-- ≥2 ejes principales (R-EJES), auxiliares en R-EJAX
+- ≥2 ejes principales (`REP-EJES`), auxiliares en `A-EJES-VACIOS` / `E-EJES`
 - NO coinciden con LM ni divisorios
 - NO cruzan huecos escalera / dobles alturas
-- Marca de eje: bloque con letra/número
+- Marca de eje: bloque `SIMBOLO DE EJE` con letra/número
 
-### 3.2 Cotas (R-COTP, R-COTA)
+### 3.2 Cotas (`REP-COTAS`, `A-COTA-1-50`)
 
-- **Parciales** (R-COTP): entre dos puntos intermedios
-- **Acumuladas** (R-COTA): desde eje 0 hasta punto final
-- Estructura acotada **desde ejes R-** (nunca desde muro)
+- **Parciales**: entre dos puntos intermedios (estilo `REPLANTEO 150`)
+- **Acumuladas**: desde eje 0 hasta punto final (estilo `COTAS-ARQ-50`)
+- Estructura acotada **desde ejes** (nunca desde muro)
 - Mampostería a filos, vanos a ejes
 
-### 3.3 Puntos (R-PTOS)
+### 3.3 Puntos y tags (`A-SIMBOLO-NPT-PLANTA`, `SIMB-MURO`)
 
-- Bloque con atributos: ID, X, Y, Z
-- Cuadro de coordenadas vía `DATAEXTRACTION` (auto-actualiza si se mueven)
+- Tags con atributos: `NPT/DESCRIPCION/Nº`, `MURO`
+- Cuadro de coordenadas y cómputos vía `EXTRACDAT` (auto-actualiza si se mueven)
 
-### 3.4 Niveles (R-NIVE)
+### 3.4 Niveles (`A-SIMBOLO-NPT-PLANTA`)
 
 - Cotas NPT por piso
 - Símbolo de nivel estándar
 
-### 3.5 Fundaciones (R-FUND → S-FUND)
+### 3.5 Columnas (`E-COL`, `C40.20`)
 
-- En R-FUND: silueta + acotado a ejes R-
-- Detalle constructivo en SET-EST (S-FUND, S-COLU, S-ARMA)
+- En `E-COL`: silueta + tag `C40.20`, acotados a ejes
+- Detalle constructivo en SET-EST a futuro
 
 ### 3.6 Estados N/E/D
 
@@ -175,15 +175,15 @@ Auditoría aplicada al DWG `G:\Mi unidad\OS-Emilia\W03-CAD\REP-ARAOZ.dwg` con `I
 
 | Función | Comandos | Capas |
 |---------|----------|-------|
-| Capas | `LAYER`, `LAYISO`, `LAYFRZ`, `QSELECT` | Todas R-/A-/S-/G- |
-| Dimensión | `DIM`, `DLI`, `DAL`, `DIMSTYLE`, `DIMCONTINUE`, `DIMBASELINE` | R-COTP, R-COTA |
-| Texto | `MTEXT`, `TEXT`, `STYLE` | G-TEXT, A-LOCA |
+| Capas | `LAYER`, `LAYISO`, `LAYFRZ`, `QSELECT` | Todas §2 |
+| Dimensión | `DIM`, `DLI`, `DAL`, `DIMSTYLE`, `DIMCONTINUE`, `DIMBASELINE` | REP-COTAS, A-COTA-1-50 |
+| Texto | `MTEXT`, `TEXT`, `STYLE` | ROT-TXT, estilos §8 |
 | Edición | `MOVE`, `COPY`, `OFFSET`, `TRIM`, `EXTEND`, `ARRAY` | Todas |
-| Bloques | `BLOCK`, `INSERT`, `ATTDEF`, `BATTMAN`, `ATTSYNC` | R-PTOS, R-EJES (marcas) |
-| Xref | `XREF`, `ATTACH` | A-*, S-* (como ref.) |
+| Bloques | `BLOCK`, `INSERT`, `ATTDEF`, `BATTMAN`, `ATTSYNC` | VENTANA/PUERTA, SIMB-MURO, SIMBOLO DE EJE |
+| Xref | `XREF`, `ATTACH` | ARQ-ARAOZ\|*, 0-REF |
 | Plot | `PLOT`, `EXPORTPDF`, `PUBLISH` | Todas (CTB EP-ISO) |
 | Estándares | `CHECKSTANDARDS`, `LAYTRANS`, `AUDIT`, `PURGE` | Todas |
-| Datos | `DATAEXTRACTION` | R-PTOS → cuadro coordenadas |
+| Datos | `DATAEXTRACTION` | Atributos §7 → cómputos |
 
 ### 4.2 SETEO — Setup base (`acadiso.dwt` → `SET_01-REP.dwt`)
 
@@ -222,8 +222,8 @@ Crear vía `SCALELISTEDIT` → Add. Fuentes: [Incorrect scale 1:100 viewport](ht
 | Viewport | 1 ventana + escala `1:50 (m)` + bloqueada (display locked) |
 | Rótulo | Lo dibuja el usuario después (bloque `G-CART`, ver research A-434) |
 
-1. Capas: las 22 de §2 con color/linetype/weight
-2. Styles: `EP-2.5`, `EP-3.5` (anotativos); cotas `EP-ARQ`; tabla `EP`
+1. Capas: las 29+20 de §2 con color/linetype/estado
+2. Styles: los 9 medidos (texto) + 3 de cota (§7–§8 doc madre); destino `EP-*` en backlog
 
 ### 4.3 DWS (`SET-REP.dws`)
 
@@ -300,7 +300,7 @@ Layout activo del proyecto `REP-ARAOZ.dwg`. El nombre se mantiene como vos lo cr
 
 - `OSNAP` Endpoint/Intersection/Center/Node para ejes
 - `DIMCONTINUE` para acumuladas, `DIMBASELINE` para parciales
-- `DATAEXTRACTION` de R-PTOS → cuadro coordenadas auto-actualizable
+- `DATAEXTRACTION` de atributos §7 → cómputos auto-actualizables
 - `LAYFRZ` (no `LAYOFF`) para capas de ejes
 - `AUDIT` + `PURGE` antes de plotear
 - LT sin DWS → control con plantilla + checklist + agente IA
@@ -309,13 +309,13 @@ Layout activo del proyecto `REP-ARAOZ.dwg`. El nombre se mantiene como vos lo cr
 
 ## 6. Orden de trabajo
 
-1. Setup DWT con 22 capas
-2. Ejes R-EJES/R-EJAX
+1. Setup DWT con 29+20 capas §2
+2. Ejes REP-EJES + auxiliares
 3. Terreno: medidas perimetrales, ángulos, LM/ochava
-4. Fundaciones R-FUND/S-FUND acotadas a ejes
-5. Cotas R-COTP/R-COTA
-6. Puntos R-PTOS + cuadro coordenadas
-7. Niveles R-NIVE
+4. Columnas E-COL/C40.20 acotadas a ejes
+5. Cotas REP-COTAS + A-COTA-1-50
+6. Tags SIMB-MURO + NPT + cómputos
+7. Niveles A-SIMBOLO-NPT-PLANTA
 8. Revisión: `CHECKSTANDARDS`, `AUDIT`, `PURGE`
 9. Presentación 1:50, plot PDF
 
@@ -324,7 +324,7 @@ Layout activo del proyecto `REP-ARAOZ.dwg`. El nombre se mantiene como vos lo cr
 ## 7. AutoLISP — `SET-Replanteo.lsp`
 
 ```lisp
-; SET-Replanteo.lsp — v2.1 (Kit naming: R-/A-/S-/G-)
+; SET-Replanteo.lsp — v2.2 (nombres del archivo REP-ARAOZ)
 ; Ejecutar: SET-REPLANTEO
 
 (defun c:SET-REPLANTEO (/ )
@@ -332,7 +332,7 @@ Layout activo del proyecto `REP-ARAOZ.dwg`. El nombre se mantiene como vos lo cr
   (SET-REP-CAPAS)
   (SET-REP-STYLES)
   (SET-REP-VARIABLES)
-  (princ "\nSET-Replanteo v2.1 aplicado (22 capas Kit).")
+  (princ "\nSET-Replanteo v2.2 aplicado (29 capas + xref).")
   (princ)
 )
 
@@ -342,37 +342,43 @@ Layout activo del proyecto `REP-ARAOZ.dwg`. El nombre se mantiene como vos lo cr
     ; (implementar con Layer API)
     (princ (strcat "\n" n))
   )
-  ; SET-REP (7)
-  (mk "R-EJES" 3 "CONTINUOUS" 0.50)
-  (mk "R-EJAX" 3 "CONTINUOUS" 0.35)
-  (mk "R-COTP" 7 "CONTINUOUS" 0.35)
-  (mk "R-COTA" 7 "CONTINUOUS" 0.50)
-  (mk "R-PTOS" 2 "CONTINUOUS" 0.25)
-  (mk "R-NIVE" 3 "CONTINUOUS" 0.35)
-  (mk "R-FUND" 1 "CONTINUOUS" 0.50)
-  ; SET-GEN (7)
-  (mk "G-CART" 8 "CONTINUOUS" 0.10)
-  (mk "G-MARC" 8 "CONTINUOUS" 0.10)
-  (mk "G-TEXT" 7 "CONTINUOUS" 0.25)
-  (mk "G-COTA" 7 "CONTINUOUS" 0.25)
-  (mk "G-REFE" 4 "CONTINUOUS" 0.25)
-  (mk "G-VPRT" 8 "CONTINUOUS" 0.10)
-  (mk "G-AUXI" 8 "CONTINUOUS" 0.10)
-  ; SET-ARQ ref (4)
-  (mk "A-MURO-N" 6 "CONTINUOUS" 0.50)
-  (mk "A-TABI" 6 "CONTINUOUS" 0.35)
-  (mk "A-ABER" 2 "CONTINUOUS" 0.25)
-  (mk "A-LOCA" 5 "CONTINUOUS" 0.25)
-  ; SET-EST ref (4)
-  (mk "S-FUND" 1 "CONTINUOUS" 0.50)
-  (mk "S-COLU" 1 "CONTINUOUS" 0.50)
-  (mk "S-VIGA" 1 "CONTINUOUS" 0.35)
-  (mk "S-EJES" 3 "CONTINUOUS" 0.35)
+  ; Replanteo, cotas y ejes (8)
+  (mk "REP-EJES" 81 "DASHDOTX2" 0.50)
+  (mk "REP-COTAS" 41 "CONTINUOUS" 0.35)
+  (mk "A-COTA-1-50" 250 "CONTINUOUS" 0.25)
+  (mk "A-EJES" 90 "DASHDOT" 0.35)
+  (mk "A-EJES-VACIOS" 113 "DASHDOT" 0.25)
+  (mk "E-EJES" 10 "CONTINUOUS" 0.35)
+  (mk "E-COL-EJES" 254 "CONTINUOUS" 0.25)
+  (mk "IE-EJEX" 32 "DASHDOT" 0.25)
+  ; Muros, estructura, terreno (7)
+  (mk "A-MURO-MAMP" 24 "CONTINUOUS" 0.50)
+  (mk "A-MURO-MED" 11 "CONTINUOUS" 0.50)
+  (mk "E-COL" 5 "CONTINUOUS" 0.50)
+  (mk "E-COL-H" 251 "CONTINUOUS" 0.35)
+  (mk "E-TAB" 166 "CONTINUOUS" 0.35)
+  (mk "E-TAB-H" 251 "CONTINUOUS" 0.25)
+  (mk "A-TERRENO" 163 "CONTINUOUS" 0.25)
+  ; Carpinterias, simbolos, fondo (8)
+  (mk "A-CARP-02" 251 "CONTINUOUS" 0.25)
+  (mk "SIMB-CARP" 33 "CONTINUOUS" 0.25)
+  (mk "AR-CUADRO DE VANO" 1 "CONTINUOUS" 0.25)
+  (mk "SIMB-MURO" 251 "CONTINUOUS" 0.25)
+  (mk "A-SIMBOLO-NPT-PLANTA" 251 "CONTINUOUS" 0.25)
+  (mk "A-EQUIP-" 8 "CONTINUOUS" 0.25)
+  (mk "A-SOLADOS" 250 "CONTINUOUS" 0.25)
+  (mk "CONDUCTOS" 3 "CONTINUOUS" 0.25)
+  ; Base y paper (6)
+  (mk "0-REF" 7 "CONTINUOUS" 0.25)
+  (mk "ROT-HOJA" 5 "CONTINUOUS" 0.10)
+  (mk "ROT-TXT" 174 "CONTINUOUS" 0.25)
+  (mk "ROT-VP" 8 "CONTINUOUS" 0.10)
   (princ)
 )
 
 (defun SET-REP-STYLES (/ )
-  ; EP-2.5, EP-3.5, EP-ARQ, EP (tabla)
+  ; texto: cotas-50, COTAS, style2, Standard, MBA25, ROMANS, ROT
+  ; cotas: COTAS-ARQ-50, REPLANTEO 150 (destino EP-ARQ en backlog)
   (princ)
 )
 
@@ -398,7 +404,7 @@ Claves: NCS [^1][^2][^3], ISO 13567 [^5][^6], AEC UK [^7], Uniclass [^8], ISO 19
 
 ## 9. Próximos pasos
 
-1. [ ] Validar 22 capas con equipo
+1. [ ] Consolidar 49 capas del archivo en equipo
 2. [ ] Crear `SET-REP.dwt` + `SET-REP.dws` + `EP-ISO.ctb`
 3. [ ] Completar AutoLISP (funciones mk con Layer API real)
 4. [ ] Plano piloto 1:50
@@ -462,8 +468,8 @@ Fuentes oficiales: [How to use custom scale of viewport in title block](https://
 4. [ ] (UI) Aplicar paso 4: validar geometría del rótulo actual vs `ROTULO_MEPA_A-434.pdf` (sublay).
 5. [ ] (UI) Aplicar paso 5: `BLOCK G-CART-MEPA` con los 7 ATTDEFs.
 6. [ ] (UI) Aplicar paso 6: FIELD en el ATTDEF `ESCALA` apuntando al viewport `358` (1:50).
-7. [ ] (UI) Aplicar paso 7: renombres `REP-EJES → R-EJES`, `INCENDIO → A-INCEN`.
+7. [x] (Resuelto v2.2) Nombres del archivo son canónicos; renombres Kit descartados (§2.6).
 8. [ ] (Build) Editar §4.2 cuando aplique UI paso 1 (sustituir LUPREC=2 → LUPREC=4 confirmado).
 9. [ ] (Build) Editar §10.1 cuando pegues los 7 tags + reorganizar §10.2 al cerrar paso 5.
-10. [ ] (Build) Editar §2.6 tabla al cerrar paso 7 (sacar filas "Pendiente renombre" o marcar "Hecho").
+10. [x] (Build v2.2) §2.6 resuelta por medición; filas de renombre retiradas.
 11. [ ] (HITL) Definir a qué MVP pertenece la URL `www.ar.weber/detalles-constructivos/muros-interiores` (MVP_02 / MVP_03 / glosario). Hoy agendada en `raw/research/2026-09-28-weber-detalles-muros.md`.

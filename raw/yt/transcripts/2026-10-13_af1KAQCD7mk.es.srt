@@ -1,0 +1,9352 @@
+1
+00:00:00,520 --> 00:00:07,040
+Bueno, gente, bienvenidos al taller de
+
+2
+00:00:03,879 --> 00:00:08,920
+Codex desde cero. Codex, quien no sepa
+
+3
+00:00:07,040 --> 00:00:12,240
+la herramienta de desarrollo con
+
+4
+00:00:08,920 --> 00:00:14,400
+inteligencia artificial de Open AI. Open
+
+5
+00:00:12,240 --> 00:00:17,039
+AI, supongo que todo el mundo la tiene
+
+6
+00:00:14,400 --> 00:00:20,439
+ubicada, es la empresa detrás de Chat
+
+7
+00:00:17,039 --> 00:00:22,160
+GPT, de los modelos GPT, que justamente
+
+8
+00:00:20,439 --> 00:00:24,320
+en este curso va a dar que hablar
+
+9
+00:00:22,160 --> 00:00:26,240
+también la parte de modelos, porque ya
+
+10
+00:00:24,320 --> 00:00:27,480
+no es que estemos ante una versión de
+
+11
+00:00:26,240 --> 00:00:29,240
+esta herramienta de desarrollo con
+
+12
+00:00:27,480 --> 00:00:32,239
+inteligencia artificial que es Codex,
+
+13
+00:00:29,240 --> 00:00:34,680
+sino que también acaba de lanzar nuevos
+
+14
+00:00:32,239 --> 00:00:37,200
+modelos. Lo primero que quiero decir es
+
+15
+00:00:34,680 --> 00:00:39,640
+que, vale, han sacado nuevos modelos,
+
+16
+00:00:37,200 --> 00:00:41,280
+han cambiado alguna cosa de la
+
+17
+00:00:39,640 --> 00:00:42,920
+herramienta, dependiendo en el momento
+
+18
+00:00:41,280 --> 00:00:44,480
+que se acabe viendo esto, pues bueno, ya
+
+19
+00:00:42,920 --> 00:00:45,920
+sabéis que pueden ir apareciendo
+
+20
+00:00:44,480 --> 00:00:47,800
+diferentes modificaciones de la
+
+21
+00:00:45,920 --> 00:00:50,079
+herramienta. Bueno, así es la vida del
+
+22
+00:00:47,800 --> 00:00:53,000
+desarrollador. El modelo ahora mismo que
+
+23
+00:00:50,079 --> 00:00:56,199
+hay es el 5.6, igual mañana viene el
+
+24
+00:00:53,000 --> 00:00:57,600
+5.7, no pasa absolutamente nada. Lo lo
+
+25
+00:00:56,199 --> 00:00:59,280
+importante es acabar entendiendo
+
+26
+00:00:57,600 --> 00:01:00,960
+realmente cuáles son las bases tanto de
+
+27
+00:00:59,280 --> 00:01:01,840
+la herramienta como de los modelos y
+
+28
+00:01:00,960 --> 00:01:03,640
+después a medida que vayan
+
+29
+00:01:01,840 --> 00:01:05,960
+evolucionando, pues por supuesto lo
+
+30
+00:01:03,640 --> 00:01:09,000
+vamos a seguir acabar utilizando igual
+
+31
+00:01:05,960 --> 00:01:12,000
+de bien. ¿Vale? Vamos a entender primero
+
+32
+00:01:09,000 --> 00:01:14,680
+una cosa. Como siempre os digo, hay que
+
+33
+00:01:12,000 --> 00:01:16,799
+tener presente la web principal de la
+
+34
+00:01:14,680 --> 00:01:19,200
+herramienta. Ahora explicaré qué es esta
+
+35
+00:01:16,799 --> 00:01:20,920
+herramienta. Si tenéis dudas sobre qué
+
+36
+00:01:19,200 --> 00:01:24,240
+diferencias puede haber con otras que se
+
+37
+00:01:20,920 --> 00:01:26,280
+llaman parecido o bueno, que tienen
+
+38
+00:01:24,240 --> 00:01:28,640
+alguna semejanza aparente, aunque no la
+
+39
+00:01:26,280 --> 00:01:32,040
+tienen, ya os lo digo yo, pero bueno.
+
+40
+00:01:28,640 --> 00:01:34,439
+Web principal opengai.com/codex,
+
+41
+00:01:32,040 --> 00:01:36,759
+la tenéis también en español. Revisamos
+
+42
+00:01:34,439 --> 00:01:38,880
+muy rápido. ¿Qué es esto de codex? es la
+
+43
+00:01:36,759 --> 00:01:41,439
+herramienta de desarrollo con
+
+44
+00:01:38,880 --> 00:01:43,200
+inteligencia artificial de Open AI.
+
+45
+00:01:41,439 --> 00:01:45,079
+Tenemos un montón de funcionalidades que
+
+46
+00:01:43,200 --> 00:01:47,439
+eso es lo que vamos a ver a lo largo de
+
+47
+00:01:45,079 --> 00:01:49,360
+este curso. Vamos a ver y hacer un
+
+48
+00:01:47,439 --> 00:01:50,719
+repaso por toda la herramienta con
+
+49
+00:01:49,360 --> 00:01:53,840
+cuáles son esas funcionalidades
+
+50
+00:01:50,719 --> 00:01:55,560
+principales y vamos a desarrollar alguna
+
+51
+00:01:53,840 --> 00:01:58,360
+pequeña aplicación también para que
+
+52
+00:01:55,560 --> 00:02:00,680
+veáis cuál es el flujo, por supuesto, de
+
+53
+00:01:58,360 --> 00:02:03,079
+desarrollo y de interacción con toda la
+
+54
+00:02:00,680 --> 00:02:04,479
+herramienta. Lo primero os la podéis
+
+55
+00:02:03,079 --> 00:02:06,920
+descargar, la tenéis para todos los
+
+56
+00:02:04,479 --> 00:02:08,920
+sistemas operativos. Es una aplicación
+
+57
+00:02:06,920 --> 00:02:11,080
+gratuita. Lo siguiente que se va a
+
+58
+00:02:08,920 --> 00:02:13,480
+preguntar, Bray, si esto es de pago.
+
+59
+00:02:11,080 --> 00:02:16,840
+Bueno, calma. Lo primero también tener
+
+60
+00:02:13,480 --> 00:02:18,599
+en cuenta herramienta de codex. Es
+
+61
+00:02:16,840 --> 00:02:22,840
+posible que ahora alguien ya se
+
+62
+00:02:18,599 --> 00:02:25,400
+pregunte, Bris, pero esta es mejor que,
+
+63
+00:02:22,840 --> 00:02:28,680
+yo que sé, Cursor, que Google
+
+64
+00:02:25,400 --> 00:02:30,760
+Antigravity, que Cloud Code, pues bueno,
+
+65
+00:02:28,680 --> 00:02:32,800
+es una de las grandes herramientas. Si
+
+66
+00:02:30,760 --> 00:02:35,519
+yo hoy en día tuviera que hacer ahí una
+
+67
+00:02:32,800 --> 00:02:37,440
+especie de top no ordenado, pero sí
+
+68
+00:02:35,519 --> 00:02:39,560
+digamos las más famosas, pues por
+
+69
+00:02:37,440 --> 00:02:41,519
+supuesto tenemos a Codex, que es la
+
+70
+00:02:39,560 --> 00:02:42,840
+herramienta de codificación de Open AI,
+
+71
+00:02:41,519 --> 00:02:45,239
+tenemos a Cloud Code, que es la
+
+72
+00:02:42,840 --> 00:02:48,159
+herramienta de codificación de Antropic
+
+73
+00:02:45,239 --> 00:02:50,319
+y después ya tenemos a editores un poco
+
+74
+00:02:48,159 --> 00:02:52,400
+más al uso, aunque cada vez se están
+
+75
+00:02:50,319 --> 00:02:53,959
+volviendo más AI first, ¿no? más
+
+76
+00:02:52,400 --> 00:02:56,319
+orientados a inteligencia artificial
+
+77
+00:02:53,959 --> 00:02:58,519
+como es el todopoderoso Visual Studio
+
+78
+00:02:56,319 --> 00:03:01,440
+Code, Cursor y hasta Google que ha
+
+79
+00:02:58,519 --> 00:03:03,680
+sacado también su Google Antigravity.
+
+80
+00:03:01,440 --> 00:03:05,159
+Tenemos muchísimas más herramientas. Hoy
+
+81
+00:03:03,680 --> 00:03:07,159
+en día ya se está metiendo inteligencia
+
+82
+00:03:05,159 --> 00:03:09,440
+artificial en todas. Hay una mejor que
+
+83
+00:03:07,159 --> 00:03:12,760
+otra, ¿no? Para gustos hay colores. Yo
+
+84
+00:03:09,440 --> 00:03:14,519
+os voy a enseñar cómo funciona esta.
+
+85
+00:03:12,760 --> 00:03:16,080
+os corresponde a vosotros acabar
+
+86
+00:03:14,519 --> 00:03:17,319
+decidiendo si esta es una herramienta
+
+87
+00:03:16,080 --> 00:03:20,239
+que encaja con vuestra forma de
+
+88
+00:03:17,319 --> 00:03:22,080
+trabajar, si os gusta y adelante. La
+
+89
+00:03:20,239 --> 00:03:24,159
+única forma de acabar sacando
+
+90
+00:03:22,080 --> 00:03:25,920
+conclusiones, bueno, una es, por
+
+91
+00:03:24,159 --> 00:03:28,159
+supuesto, viendo este curso, pero la
+
+92
+00:03:25,920 --> 00:03:29,799
+mejor siempre es acabar probando. Por
+
+93
+00:03:28,159 --> 00:03:31,959
+eso yo también lo que os quiero contar
+
+94
+00:03:29,799 --> 00:03:33,920
+aquí es un poco, venga, os voy a
+
+95
+00:03:31,959 --> 00:03:35,680
+explicar cómo funciona esta herramienta,
+
+96
+00:03:33,920 --> 00:03:37,760
+pero es muy importante que vosotros
+
+97
+00:03:35,680 --> 00:03:39,920
+tengáis en cuenta que hasta que vosotros
+
+98
+00:03:37,760 --> 00:03:42,200
+pongáis a revisar cómo funciona con
+
+99
+00:03:39,920 --> 00:03:44,720
+vuestras propias manos, seguramente no
+
+100
+00:03:42,200 --> 00:03:46,319
+acabéis sacando las mejores conclusiones
+
+101
+00:03:44,720 --> 00:03:48,239
+para entender si esto es una herramienta
+
+102
+00:03:46,319 --> 00:03:50,480
+que encaja con vosotros o no. La
+
+103
+00:03:48,239 --> 00:03:52,319
+pregunta del millón, ¿brais es de pago?
+
+104
+00:03:50,480 --> 00:03:54,280
+¿Es gratuita? porque ahora la IA ya hay
+
+105
+00:03:52,319 --> 00:03:56,720
+un montón de cosas de pago. Bueno, os
+
+106
+00:03:54,280 --> 00:03:59,799
+voy a dar aquí como dos características
+
+107
+00:03:56,720 --> 00:04:01,840
+bastante importantes. Primero, lo podéis
+
+108
+00:03:59,799 --> 00:04:04,720
+utilizar con la capa gratuita de CHG
+
+109
+00:04:01,840 --> 00:04:06,360
+GPT. CH GPT es gratuito. Entonces, codex
+
+110
+00:04:04,720 --> 00:04:08,400
+también lo podéis utilizar. Lo podéis
+
+111
+00:04:06,360 --> 00:04:09,560
+utilizar de manera infinita, ¿no? Pero
+
+112
+00:04:08,400 --> 00:04:12,040
+es que no la puedes utilizar de manera
+
+113
+00:04:09,560 --> 00:04:13,720
+infinita ni incluso pagando. Hay planes
+
+114
+00:04:12,040 --> 00:04:15,239
+que ahora mismo, por lo menos cuando
+
+115
+00:04:13,720 --> 00:04:18,840
+estamos haciendo esta clase, pues
+
+116
+00:04:15,239 --> 00:04:21,040
+empiezan en $8, 100. Yo lo que utilizo
+
+117
+00:04:18,840 --> 00:04:24,080
+ahora mismo para echar GPT es este plan.
+
+118
+00:04:21,040 --> 00:04:25,520
+el de $20 al mes. He de decir, y esto sí
+
+119
+00:04:24,080 --> 00:04:27,639
+que es importante, sobre todo si lo
+
+120
+00:04:25,520 --> 00:04:30,960
+comparamos con Cloud Code, que es un
+
+121
+00:04:27,639 --> 00:04:32,520
+poco la otra gran alternativa que
+
+122
+00:04:30,960 --> 00:04:34,600
+también se está utilizando mucho porque
+
+123
+00:04:32,520 --> 00:04:38,160
+es como de la competencia Open AI, que
+
+124
+00:04:34,600 --> 00:04:42,880
+es Antropic. El plan de $20 [carraspeo]
+
+125
+00:04:38,160 --> 00:04:45,160
+de Chat GPT o de Open AI
+
+126
+00:04:42,880 --> 00:04:47,880
+para ser de 20
+
+127
+00:04:45,160 --> 00:04:50,039
+dura bastante. El plan gratuito también
+
+128
+00:04:47,880 --> 00:04:52,960
+tiene un límite considerable, incluso el
+
+129
+00:04:50,039 --> 00:04:54,800
+plan de $8. En cambio, y esto no quiere
+
+130
+00:04:52,960 --> 00:04:57,440
+decir que la herramienta que ya codex
+
+131
+00:04:54,800 --> 00:05:01,199
+sea mejor que quizás Cloud Code por el
+
+132
+00:04:57,440 --> 00:05:03,800
+precio. Lo que creo que estoy seguro de
+
+133
+00:05:01,199 --> 00:05:06,080
+afirmar es que por el mismo precio, por
+
+134
+00:05:03,800 --> 00:05:08,400
+el plan este de $, por poner ahí uno de
+
+135
+00:05:06,080 --> 00:05:10,280
+pago, ¿no?
+
+136
+00:05:08,400 --> 00:05:12,120
+Me da la sensación de que los límites
+
+137
+00:05:10,280 --> 00:05:15,120
+son más altos, es decir, que podemos
+
+138
+00:05:12,120 --> 00:05:17,120
+utilizar muchos más tokens y desarrollar
+
+139
+00:05:15,120 --> 00:05:19,120
+durante más tiempo sin sin que nos
+
+140
+00:05:17,120 --> 00:05:21,039
+acaben, digamos, cortando el grifo.
+
+141
+00:05:19,120 --> 00:05:24,639
+¿Vale? Por otro lado, está la opción
+
+142
+00:05:21,039 --> 00:05:26,680
+gratuita, así que la forma de probarlo.
+
+143
+00:05:24,639 --> 00:05:29,720
+Yo os recomiendo que aquí nadie se gaste
+
+144
+00:05:26,680 --> 00:05:31,759
+ni un duro en acabar utilizando esta
+
+145
+00:05:29,720 --> 00:05:33,840
+herramienta sin antes probarla y después
+
+146
+00:05:31,759 --> 00:05:37,039
+si la prueba y dice, "Okay, creo que me
+
+147
+00:05:33,840 --> 00:05:39,639
+compensa acabar gastando pues el plan de
+
+148
+00:05:37,039 --> 00:05:41,600
+$8 o el de 20 o el de 100, yo que sé."
+
+149
+00:05:39,639 --> 00:05:44,560
+Pues bueno, ahí ya cada uno con lo que
+
+150
+00:05:41,600 --> 00:05:46,039
+sea, ¿vale? Solo quiero que tengáis muy
+
+151
+00:05:44,560 --> 00:05:48,199
+en mente que esto lo podéis probar
+
+152
+00:05:46,039 --> 00:05:51,720
+gratuito y que, por supuesto, acabar
+
+153
+00:05:48,199 --> 00:05:54,960
+descargándola. también es gratis. Okay.
+
+154
+00:05:51,720 --> 00:05:58,440
+Por otro lado, justamente cuando estamos
+
+155
+00:05:54,960 --> 00:06:01,360
+grabando este curso acaba de suceder una
+
+156
+00:05:58,440 --> 00:06:03,440
+cosa y es que la aplicación de Codex
+
+157
+00:06:01,360 --> 00:06:05,680
+antes era una aplicación independiente,
+
+158
+00:06:03,440 --> 00:06:08,240
+es decir, tú te descargabas Codex y lo
+
+159
+00:06:05,680 --> 00:06:10,199
+instalabas. ¿Qué acaban de hacer hace
+
+160
+00:06:08,240 --> 00:06:12,039
+nada? Cuando estábamos grabando esto
+
+161
+00:06:10,199 --> 00:06:16,000
+acaban de unificar la aplicación de
+
+162
+00:06:12,039 --> 00:06:18,759
+escritorio de Chat GPT y la de Codex.
+
+163
+00:06:16,000 --> 00:06:20,800
+Esa es la grandísima diferencia. Tampoco
+
+164
+00:06:18,759 --> 00:06:22,759
+que nadie se líe o que alguien pienses
+
+165
+00:06:20,800 --> 00:06:24,800
+que antes se iba por separado y era
+
+166
+00:06:22,759 --> 00:06:27,120
+diferente, ¿no? Tranquilos. Por
+
+167
+00:06:24,800 --> 00:06:30,039
+supuesto, también existe la opción de
+
+168
+00:06:27,120 --> 00:06:33,400
+acabar e instalando la herramienta del
+
+169
+00:06:30,039 --> 00:06:35,360
+Codex, el Cli, el cliente, el Cili,
+
+170
+00:06:33,400 --> 00:06:37,360
+básicamente para trabajar con Codex
+
+171
+00:06:35,360 --> 00:06:39,360
+desde la terminal. Aquí lo que vamos a
+
+172
+00:06:37,360 --> 00:06:41,199
+hacer es utilizar la herramienta que
+
+173
+00:06:39,360 --> 00:06:43,400
+tiene interfaz gráfica, ¿vale?
+
+174
+00:06:41,199 --> 00:06:45,800
+Básicamente una herramienta que una vez
+
+175
+00:06:43,400 --> 00:06:48,639
+la instalas es esto, ¿okay? es una
+
+176
+00:06:45,800 --> 00:06:50,880
+herramienta orientada a desarrollo de
+
+177
+00:06:48,639 --> 00:06:52,919
+software, pero primando la parte de la
+
+178
+00:06:50,880 --> 00:06:55,039
+inteligencia artificial. Es decir, que
+
+179
+00:06:52,919 --> 00:06:57,280
+si queremos ver el código, lo tendremos
+
+180
+00:06:55,039 --> 00:06:59,520
+que ver revisando ahí los ficheros,
+
+181
+00:06:57,280 --> 00:07:01,960
+abriendo otro editor, todo eso os
+
+182
+00:06:59,520 --> 00:07:04,520
+explicaré cómo hacerlo, pero está más
+
+183
+00:07:01,960 --> 00:07:06,080
+orientado a sobre todo prontear e ir
+
+184
+00:07:04,520 --> 00:07:07,800
+viendo las diferencias y los ficheros
+
+185
+00:07:06,080 --> 00:07:09,520
+que cambien, es decir, ese desarrollo
+
+186
+00:07:07,800 --> 00:07:12,560
+más orientado a IA que más orientado a
+
+187
+00:07:09,520 --> 00:07:14,400
+código. Aún así, por favor, somos
+
+188
+00:07:12,560 --> 00:07:16,440
+desarrolladores, somos ingenieros de
+
+189
+00:07:14,400 --> 00:07:18,919
+software, tenemos que tener control
+
+190
+00:07:16,440 --> 00:07:21,919
+sobre lo que hacemos. Si pedimos cos a
+
+191
+00:07:18,919 --> 00:07:23,639
+la IA y aceptamos cambios sin revisar,
+
+192
+00:07:21,919 --> 00:07:26,000
+nadie nos va a acabar pagando un sueldo
+
+193
+00:07:23,639 --> 00:07:27,919
+por eso. Si no, estamos seguros de que
+
+194
+00:07:26,000 --> 00:07:29,840
+el código que está produciendo la IA es
+
+195
+00:07:27,919 --> 00:07:32,039
+justo lo que nosotros queríamos, ¿vale?
+
+196
+00:07:29,840 --> 00:07:33,520
+Así que muy importante la revisión, muy
+
+197
+00:07:32,039 --> 00:07:35,599
+importante utilizar la IA y estas
+
+198
+00:07:33,520 --> 00:07:37,160
+herramientas como copilotos. La IA no
+
+199
+00:07:35,599 --> 00:07:39,160
+nos tiene que manejar, no nos tiene que
+
+200
+00:07:37,160 --> 00:07:40,440
+dominar, nosotros tenemos que dominarlo.
+
+201
+00:07:39,160 --> 00:07:42,120
+¿Vale?
+
+202
+00:07:40,440 --> 00:07:44,199
+La principal diferencia en el momento
+
+203
+00:07:42,120 --> 00:07:49,080
+que se ha incluido codex dentro de
+
+204
+00:07:44,199 --> 00:07:52,560
+CHGPT, básicamente esto. Tienes CH GPT,
+
+205
+00:07:49,080 --> 00:07:56,520
+lo abres y aquí tienes codex y si tú
+
+206
+00:07:52,560 --> 00:07:58,199
+pulsas en GPT trabajo, GPTW, nos lleva a
+
+207
+00:07:56,520 --> 00:08:00,919
+otra interfaz que cambia ligeramente,
+
+208
+00:07:58,199 --> 00:08:03,520
+que básicamente es chat GPT en su
+
+209
+00:08:00,919 --> 00:08:05,400
+versión Work, ¿vale? no es la versión de
+
+210
+00:08:03,520 --> 00:08:07,400
+código, sino sino la herramienta para
+
+211
+00:08:05,400 --> 00:08:08,919
+acabar interactuando con nuestra máquina
+
+212
+00:08:07,400 --> 00:08:10,560
+y trabajando con nuestro sistema de
+
+213
+00:08:08,919 --> 00:08:13,520
+ficheros, pero no tanto orientado a
+
+214
+00:08:10,560 --> 00:08:15,360
+código. ¿Vale? Tema del chat también
+
+215
+00:08:13,520 --> 00:08:17,400
+está aquí. Veis que en todos tienen una
+
+216
+00:08:15,360 --> 00:08:19,280
+opción chat. Este es el chat GPT de toda
+
+217
+00:08:17,400 --> 00:08:21,440
+la vida. Vais por ahí, se os abre una
+
+218
+00:08:19,280 --> 00:08:23,199
+ventana emergente y ahí tenéis el chat
+
+219
+00:08:21,440 --> 00:08:25,400
+de siempre, el chat GPT de siempre.
+
+220
+00:08:23,199 --> 00:08:27,039
+Nosotros vamos a aprender a trabajar con
+
+221
+00:08:25,400 --> 00:08:29,120
+Codics, como estáis viendo por aquí, que
+
+222
+00:08:27,039 --> 00:08:32,719
+es justamente la herramienta de
+
+223
+00:08:29,120 --> 00:08:35,399
+codificación. Okay, ya os digo que temas
+
+224
+00:08:32,719 --> 00:08:37,479
+importantes, codex no es que haya
+
+225
+00:08:35,399 --> 00:08:40,839
+cambiado, simplemente se ha unificado la
+
+226
+00:08:37,479 --> 00:08:42,399
+misma herramienta CH GPT, todo por aquí.
+
+227
+00:08:40,839 --> 00:08:45,320
+Ya está. Si tú tienes la herramienta de
+
+228
+00:08:42,399 --> 00:08:47,680
+chat GPT y instalas la última versión,
+
+229
+00:08:45,320 --> 00:08:50,040
+pues ya vas a tener esto por aquí. Fin
+
+230
+00:08:47,680 --> 00:08:52,880
+de la historia. Vale, no hay mucho más
+
+231
+00:08:50,040 --> 00:08:54,800
+misterio porque sé que en su momento
+
+232
+00:08:52,880 --> 00:08:57,120
+hubo bastante revuelo con esto de que
+
+233
+00:08:54,800 --> 00:08:58,920
+cambió la herramienta como si se fuera a
+
+234
+00:08:57,120 --> 00:09:00,399
+modificar completamente y no,
+
+235
+00:08:58,920 --> 00:09:02,519
+simplemente lo están unificando para
+
+236
+00:09:00,399 --> 00:09:04,760
+crear una especie de entorno con
+
+237
+00:09:02,519 --> 00:09:08,279
+inteligencia artificial de esta compañía
+
+238
+00:09:04,760 --> 00:09:10,560
+que es Open AI, ni más ni menos. Okay.
+
+239
+00:09:08,279 --> 00:09:13,720
+Vale. Temas importantes también, por
+
+240
+00:09:10,560 --> 00:09:16,519
+supuesto, el tema de la documentación.
+
+241
+00:09:13,720 --> 00:09:19,200
+Si todos queremos aprender a trabajar
+
+242
+00:09:16,519 --> 00:09:21,120
+con una herramienta bien,
+
+243
+00:09:19,200 --> 00:09:22,519
+una cosa es hacer este curso para dar
+
+244
+00:09:21,120 --> 00:09:24,880
+los primeros pasos, para que yo te
+
+245
+00:09:22,519 --> 00:09:29,079
+enseñe cómo funciona, para no tener que
+
+246
+00:09:24,880 --> 00:09:31,560
+enfrentarte a ese folio en blanco. Pero
+
+247
+00:09:29,079 --> 00:09:33,480
+por supuesto es imposible hacer en un
+
+248
+00:09:31,560 --> 00:09:36,720
+curso ni de una hora, ni de dos, ni de
+
+249
+00:09:33,480 --> 00:09:38,959
+10, ni de 100 absolutamente todo lo que
+
+250
+00:09:36,720 --> 00:09:40,720
+va a acabar pasando con el
+
+251
+00:09:38,959 --> 00:09:43,360
+funcionamiento interno de la aplicación.
+
+252
+00:09:40,720 --> 00:09:45,360
+Y por supuesto, todo lo que quizás
+
+253
+00:09:43,360 --> 00:09:48,200
+mañana, pasado, dentro de un mes, se
+
+254
+00:09:45,360 --> 00:09:50,519
+acaba añadiendo. Lo mejor siempre os
+
+255
+00:09:48,200 --> 00:09:53,680
+vais por aquí, tenéis dentro de
+
+256
+00:09:50,519 --> 00:09:55,600
+desarrolladores tenéis el Chainlock, que
+
+257
+00:09:53,680 --> 00:09:57,079
+esto es para saber qué es lo que está
+
+258
+00:09:55,600 --> 00:09:59,079
+cambiando, qué es lo que está
+
+259
+00:09:57,079 --> 00:10:01,040
+modificando en la aplicación. En este
+
+260
+00:09:59,079 --> 00:10:03,440
+caso, en Codex tenéis la propia
+
+261
+00:10:01,040 --> 00:10:05,320
+documentación, documentación de la API,
+
+262
+00:10:03,440 --> 00:10:08,959
+pero aquí la que nos importa es la
+
+263
+00:10:05,320 --> 00:10:10,880
+documentación de codex developers.com.
+
+264
+00:10:08,959 --> 00:10:12,200
+Nos vamos a codex y aquí tenemos la
+
+265
+00:10:10,880 --> 00:10:14,000
+documentación. dentro de la
+
+266
+00:10:12,200 --> 00:10:18,079
+documentación hasta tenéis un primeros
+
+267
+00:10:14,000 --> 00:10:20,640
+pasos, tenéis toda la parte de hm
+
+268
+00:10:18,079 --> 00:10:23,079
+conceptos fundamentales, básicamente de
+
+269
+00:10:20,640 --> 00:10:25,480
+fundamentos y un montón de cosas que
+
+270
+00:10:23,079 --> 00:10:28,160
+vamos a ver hoy por aquí, skills,
+
+271
+00:10:25,480 --> 00:10:29,320
+permisos, personalización, bueno, un
+
+272
+00:10:28,160 --> 00:10:31,440
+montón de temas que yo os voy a
+
+273
+00:10:29,320 --> 00:10:34,079
+explicar, pero que por supuesto si
+
+274
+00:10:31,440 --> 00:10:35,920
+queréis entrar en profundidad,
+
+275
+00:10:34,079 --> 00:10:38,160
+la forma siempre es a través de la
+
+276
+00:10:35,920 --> 00:10:40,680
+documentación porque aquí es donde vais
+
+277
+00:10:38,160 --> 00:10:41,360
+a encontrar reflejado absolutamente
+
+278
+00:10:40,680 --> 00:10:43,959
+todo.
+
+279
+00:10:41,360 --> 00:10:46,399
+Okay. Vale, dicho esto, yo creo que lo
+
+280
+00:10:43,959 --> 00:10:48,240
+mejor es ir comenzando e ir viendo un
+
+281
+00:10:46,399 --> 00:10:50,480
+poquito que nos vamos a acabar
+
+282
+00:10:48,240 --> 00:10:52,560
+encontrando antes de meternos ya con el
+
+283
+00:10:50,480 --> 00:10:54,560
+tema de los modelos. ¿Vale? Hemos visto
+
+284
+00:10:52,560 --> 00:10:56,440
+que es codex, hemos visto la parte de
+
+285
+00:10:54,560 --> 00:10:59,000
+documentación, lo importante que es,
+
+286
+00:10:56,440 --> 00:11:00,639
+hemos visto descarga e instalación, que
+
+287
+00:10:59,000 --> 00:11:01,839
+básicamente es venirnos por aquí,
+
+288
+00:11:00,639 --> 00:11:04,519
+descargarlo para vuestro sistema
+
+289
+00:11:01,839 --> 00:11:06,839
+operativo, instalar y fin de la
+
+290
+00:11:04,519 --> 00:11:08,800
+historia. Y por supuesto, ya hemos visto
+
+291
+00:11:06,839 --> 00:11:10,279
+también cuál es la principal diferencia
+
+292
+00:11:08,800 --> 00:11:11,519
+a la hora de tenerlo todo integrado en
+
+293
+00:11:10,279 --> 00:11:12,880
+la misma aplicación, que simplemente
+
+294
+00:11:11,519 --> 00:11:15,639
+nosotros tenemos que seleccionar por
+
+295
+00:11:12,880 --> 00:11:18,160
+aquí codex y ya está. Vamos a ver una
+
+296
+00:11:15,639 --> 00:11:20,360
+vista muy muy rápida por la parte de la
+
+297
+00:11:18,160 --> 00:11:22,120
+interfaz, ¿vale? Si nosotros tuviéramos
+
+298
+00:11:20,360 --> 00:11:25,040
+algún proyecto abierto, lo veríamos
+
+299
+00:11:22,120 --> 00:11:26,079
+aquí. Esto ya os indicaré lo que es.
+
+300
+00:11:25,040 --> 00:11:27,839
+Estos son dos proyectos que yo he
+
+301
+00:11:26,079 --> 00:11:29,959
+abierto como ejemplo para después
+
+302
+00:11:27,839 --> 00:11:31,760
+haceros también alguna demostración,
+
+303
+00:11:29,959 --> 00:11:34,040
+pero nosotros vamos a trabajar también
+
+304
+00:11:31,760 --> 00:11:35,560
+con un proyecto desde cero. Tenemos la
+
+305
+00:11:34,040 --> 00:11:37,519
+opción de crear una nueva tarea, es
+
+306
+00:11:35,560 --> 00:11:39,600
+decir, levantar una nueva ventana de
+
+307
+00:11:37,519 --> 00:11:41,760
+contexto para empezar a prontear, a
+
+308
+00:11:39,600 --> 00:11:45,480
+escribirle por aquí pues lo que haga
+
+309
+00:11:41,760 --> 00:11:47,320
+falta, ¿okay? Es decir, nada que supongo
+
+310
+00:11:45,480 --> 00:11:49,720
+que no hayáis visto en cualquier
+
+311
+00:11:47,320 --> 00:11:52,399
+herramienta con inteligencia artificial.
+
+312
+00:11:49,720 --> 00:11:54,440
+Y creo que a medida que vamos avanzando
+
+313
+00:11:52,399 --> 00:11:56,680
+y que van apareciendo más herramientas o
+
+314
+00:11:54,440 --> 00:11:59,040
+que más eh se van actualizando, vemos
+
+315
+00:11:56,680 --> 00:12:01,160
+que prácticamente todas son iguales,
+
+316
+00:11:59,040 --> 00:12:03,160
+aunque cambien pequeñas cositas. ¿Vale?
+
+317
+00:12:01,160 --> 00:12:05,079
+¿Qué más cositas tenemos? El tema de las
+
+318
+00:12:03,160 --> 00:12:07,120
+tareas programadas, ¿vale? Podemos
+
+319
+00:12:05,079 --> 00:12:10,120
+utilizar codex, igual que podemos
+
+320
+00:12:07,120 --> 00:12:11,839
+utilizar también la parte del Work para
+
+321
+00:12:10,120 --> 00:12:13,839
+crear tareas programadas, es decir,
+
+322
+00:12:11,839 --> 00:12:15,639
+tareas que se repiten en un cierto
+
+323
+00:12:13,839 --> 00:12:17,839
+momento y que nosotros le podemos pedir,
+
+324
+00:12:15,639 --> 00:12:19,440
+pues como veis aquí un resumen diario,
+
+325
+00:12:17,839 --> 00:12:21,160
+una revisión semanal, un monitor de
+
+326
+00:12:19,440 --> 00:12:23,600
+seguimiento, lo que nos ocurra para que
+
+327
+00:12:21,160 --> 00:12:25,279
+se ejecute, pues bueno, de manera
+
+328
+00:12:23,600 --> 00:12:27,000
+continuada en el momento que nosotros le
+
+329
+00:12:25,279 --> 00:12:28,519
+indiquemos. También tenemos la parte de
+
+330
+00:12:27,000 --> 00:12:30,240
+complementos, que esto lo veremos más en
+
+331
+00:12:28,519 --> 00:12:32,519
+profundidad después. Si tuviéramos
+
+332
+00:12:30,240 --> 00:12:35,639
+conectado, que para esto os hace falta
+
+333
+00:12:32,519 --> 00:12:38,160
+el cliente de GitHub, pues aquí también
+
+334
+00:12:35,639 --> 00:12:40,600
+tenéis como una visión muy rápida de las
+
+335
+00:12:38,160 --> 00:12:43,199
+P request en GitHub. La parte del chat
+
+336
+00:12:40,600 --> 00:12:45,320
+que hemos dicho y fin por esta parte la
+
+337
+00:12:43,199 --> 00:12:47,320
+podemos ocultar, la podemos acabar
+
+338
+00:12:45,320 --> 00:12:51,079
+mostrando. Vuelvo aquí a la nueva tarea.
+
+339
+00:12:47,320 --> 00:12:52,560
+¿Qué cosas tenemos al otro lado? Tenemos
+
+340
+00:12:51,079 --> 00:12:53,959
+una parte inferior que esto es para
+
+341
+00:12:52,560 --> 00:12:56,240
+acceder a la terminal. Es decir,
+
+342
+00:12:53,959 --> 00:12:57,680
+nosotros como cualquier editor de código
+
+343
+00:12:56,240 --> 00:12:59,079
+prácticamente podemos utilizar la
+
+344
+00:12:57,680 --> 00:13:00,800
+terminal desde aquí. Así que si
+
+345
+00:12:59,079 --> 00:13:03,680
+necesitáramos la terminal para algo,
+
+346
+00:13:00,800 --> 00:13:06,560
+tenemos este acceso. También en la barra
+
+347
+00:13:03,680 --> 00:13:08,560
+derecha tendremos el acceso. Aquí
+
+348
+00:13:06,560 --> 00:13:11,440
+acabarán apareciendo más opciones, pero
+
+349
+00:13:08,560 --> 00:13:15,000
+para que veáis que integrado el propio
+
+350
+00:13:11,440 --> 00:13:17,600
+Codex tiene un navegador por aquí. ¿Por
+
+351
+00:13:15,000 --> 00:13:19,040
+qué? Porque Codex, una de las cosas que
+
+352
+00:13:17,600 --> 00:13:21,079
+puede acabar desarrollando, por
+
+353
+00:13:19,040 --> 00:13:24,079
+supuesto, son páginas web. Y si tenemos
+
+354
+00:13:21,079 --> 00:13:26,079
+la página web dentro realmente del
+
+355
+00:13:24,079 --> 00:13:27,959
+propio editor, pues podrá interactuar de
+
+356
+00:13:26,079 --> 00:13:29,880
+una forma también muy potente que os
+
+357
+00:13:27,959 --> 00:13:31,320
+acabaré enseñando. ¿Vale? Dentro de
+
+358
+00:13:29,880 --> 00:13:32,880
+estas pestañas, pues también podemos
+
+359
+00:13:31,320 --> 00:13:35,120
+acabar abriendo una terminal y, por
+
+360
+00:13:32,880 --> 00:13:38,120
+supuesto, podemos acabar cerrando todo
+
+361
+00:13:35,120 --> 00:13:40,839
+esto. Después, con respecto al propio
+
+362
+00:13:38,120 --> 00:13:43,360
+chat, ¿qué vamos a tener? la opción de
+
+363
+00:13:40,839 --> 00:13:44,920
+elegir un proyecto. En su día, pues yo
+
+364
+00:13:43,360 --> 00:13:47,000
+elegí estos dos proyectos que tengo aquí
+
+365
+00:13:44,920 --> 00:13:48,279
+abierto, que es la landing de Mour Pro y
+
+366
+00:13:47,000 --> 00:13:50,320
+un proyecto que se llama, y aquí
+
+367
+00:13:48,279 --> 00:13:51,959
+seguimos. Os lo enseñaré básicamente
+
+368
+00:13:50,320 --> 00:13:54,720
+para que después veáis un poquito cómo
+
+369
+00:13:51,959 --> 00:13:57,199
+podemos empezar a trabajar. O sin más,
+
+370
+00:13:54,720 --> 00:13:58,600
+yo voy a hacer esto. Voy aquí a darle a
+
+371
+00:13:57,199 --> 00:14:00,040
+nuevo proyecto. Podría empezar un
+
+372
+00:13:58,600 --> 00:14:01,959
+proyecto desde cero o utilizar una
+
+373
+00:14:00,040 --> 00:14:03,680
+carpeta existente. Yo os recomiendo que
+
+374
+00:14:01,959 --> 00:14:06,959
+utilicéis una carpeta asistente
+
+375
+00:14:03,680 --> 00:14:08,880
+básicamente para que seáis capaces de
+
+376
+00:14:06,959 --> 00:14:11,120
+decidir pues en qué lugar de vuestra
+
+377
+00:14:08,880 --> 00:14:13,600
+máquina queréis acabar trabajando o lo
+
+378
+00:14:11,120 --> 00:14:17,959
+que sea. Vale, yo sin más voy a ir por
+
+379
+00:14:13,600 --> 00:14:21,279
+aquí, voy a seleccionar, creo que tenía
+
+380
+00:14:17,959 --> 00:14:21,279
+una carpeta.
+
+381
+00:14:21,600 --> 00:14:26,160
+quería acabar entrando aquí en una
+
+382
+00:14:23,279 --> 00:14:28,680
+carpeta, no sé si en YouTube
+
+383
+00:14:26,160 --> 00:14:31,240
+o no sé si
+
+384
+00:14:28,680 --> 00:14:33,800
+que no sé dónde la acabé metiendo. Vale,
+
+385
+00:14:31,240 --> 00:14:36,000
+creo que la tengo por aquí en web. Vale,
+
+386
+00:14:33,800 --> 00:14:38,199
+perfecto. Yo creé aquí una carpeta que
+
+387
+00:14:36,000 --> 00:14:40,959
+se llama study calendar. ¿Por qué?
+
+388
+00:14:38,199 --> 00:14:43,600
+Porque bueno, a lo largo de este taller
+
+389
+00:14:40,959 --> 00:14:45,880
+vamos a acabar creando un calendario de
+
+390
+00:14:43,600 --> 00:14:47,440
+estudio. Va a ser la aplicación demo que
+
+391
+00:14:45,880 --> 00:14:49,240
+vamos a acabar haciendo de momento, que
+
+392
+00:14:47,440 --> 00:14:51,639
+no os preocupa absolutamente nada, pero
+
+393
+00:14:49,240 --> 00:14:52,959
+sin más ya ves lo que pasa cuando yo
+
+394
+00:14:51,639 --> 00:14:54,759
+abro un proyecto, que esto es una
+
+395
+00:14:52,959 --> 00:14:57,000
+carpeta que yo tengo en mi sistema
+
+396
+00:14:54,759 --> 00:14:58,600
+operativo y ya está. Vale, este nuestro
+
+397
+00:14:57,000 --> 00:15:00,759
+proyecto que absolutamente no tiene
+
+398
+00:14:58,600 --> 00:15:02,199
+nada, pero que en el momento que tú
+
+399
+00:15:00,759 --> 00:15:04,639
+acabas seleccionando uno de los
+
+400
+00:15:02,199 --> 00:15:06,360
+proyectos desde el chat, vas a ver con
+
+401
+00:15:04,639 --> 00:15:08,600
+cuál estás interactuando, que esto
+
+402
+00:15:06,360 --> 00:15:11,040
+realmente es bastante importante. ¿Qué
+
+403
+00:15:08,600 --> 00:15:14,480
+más cosas tenemos? Bueno, el tipo de
+
+404
+00:15:11,040 --> 00:15:17,240
+permisos que le vamos a dar a la gente,
+
+405
+00:15:14,480 --> 00:15:19,240
+porque por supuesto todo esto lo que va
+
+406
+00:15:17,240 --> 00:15:20,839
+a hacer es acabar interactuando con un
+
+407
+00:15:19,240 --> 00:15:22,639
+agente, con un modelo de inteligencia
+
+408
+00:15:20,839 --> 00:15:25,240
+artificial que va a ser capaz de lanzar
+
+409
+00:15:22,639 --> 00:15:27,600
+tareas por nosotros. ¿Vale? pues tenemos
+
+410
+00:15:25,240 --> 00:15:29,959
+desde el permiso más restrictivo que es
+
+411
+00:15:27,600 --> 00:15:31,800
+solicitar aprobación, es decir, que cada
+
+412
+00:15:29,959 --> 00:15:34,680
+cosa que vaya a hacer la inteligencia
+
+413
+00:15:31,800 --> 00:15:37,199
+artificial mediante el agente tengamos
+
+414
+00:15:34,680 --> 00:15:39,079
+nosotros que confirmarla para que no nos
+
+415
+00:15:37,199 --> 00:15:40,680
+la líe. Ey, voy a crear un fichero e voy
+
+416
+00:15:39,079 --> 00:15:42,680
+a ejecutar este comando, ey, voy a
+
+417
+00:15:40,680 --> 00:15:44,440
+escribir este código. Pues bueno, nos
+
+418
+00:15:42,680 --> 00:15:46,480
+tiene que ir preguntando y nosotros
+
+419
+00:15:44,440 --> 00:15:47,920
+tenemos que ir aprobándolo. Después
+
+420
+00:15:46,480 --> 00:15:49,319
+también tenemos estas aprobaciones.
+
+421
+00:15:47,920 --> 00:15:50,839
+Aprobación por mí, solicita aprobación
+
+422
+00:15:49,319 --> 00:15:53,240
+solo las acciones detectadas como
+
+423
+00:15:50,839 --> 00:15:55,279
+potencialmente inseguras. tenemos un
+
+424
+00:15:53,240 --> 00:15:56,759
+nivel un poquito menos restrictivo, que
+
+425
+00:15:55,279 --> 00:15:58,240
+es, bueno, pregúntame las cosas que de
+
+426
+00:15:56,759 --> 00:16:00,199
+verdad tú consideres que sí que pueden
+
+427
+00:15:58,240 --> 00:16:01,920
+ser un poquito graves. O sin más el
+
+428
+00:16:00,199 --> 00:16:04,040
+acceso completo. Es decir, nosotros
+
+429
+00:16:01,920 --> 00:16:07,519
+tiramos el prompt, le mandamos aquí las
+
+430
+00:16:04,040 --> 00:16:09,880
+movidas y se pone a trabajar en la gente
+
+431
+00:16:07,519 --> 00:16:12,440
+a lo loco, sin más, sin pedirnos
+
+432
+00:16:09,880 --> 00:16:13,759
+absolutamente ningún permiso para nadie.
+
+433
+00:16:12,440 --> 00:16:15,639
+Nosotros después sí que ya podemos
+
+434
+00:16:13,759 --> 00:16:18,519
+revisar al final, pero sin ese control
+
+435
+00:16:15,639 --> 00:16:20,839
+intermedio. Bueno, esto yo no os lo
+
+436
+00:16:18,519 --> 00:16:22,440
+recomiendo habitualmente. ¿Por qué?
+
+437
+00:16:20,839 --> 00:16:23,839
+Porque es lo que dice aquí, ey, que yo
+
+438
+00:16:22,440 --> 00:16:25,600
+puedo empezar a hacer cualquier cosa con
+
+439
+00:16:23,839 --> 00:16:27,240
+el sistema de ficheros, que yo puedo
+
+440
+00:16:25,600 --> 00:16:29,160
+acabar lanzando los comandos que me dé
+
+441
+00:16:27,240 --> 00:16:30,639
+la gana y yo puedo acabar interactuando
+
+442
+00:16:29,160 --> 00:16:32,360
+con internet y con las aplicaciones que
+
+443
+00:16:30,639 --> 00:16:33,720
+tengas como a mí me dé la gana. ¿Vale?
+
+444
+00:16:32,360 --> 00:16:35,240
+Si nosotros consideramos que, bueno, que
+
+445
+00:16:33,720 --> 00:16:37,279
+está okay, pues le decimos que le dé
+
+446
+00:16:35,240 --> 00:16:39,880
+acceso completo. Bueno, iremos viendo
+
+447
+00:16:37,279 --> 00:16:41,720
+cada uno de los tipos también para ir
+
+448
+00:16:39,880 --> 00:16:43,720
+entendiéndolo, ¿vale? ¿Qué más cosas
+
+449
+00:16:41,720 --> 00:16:46,240
+tenemos aquí? Este símbolo más. Bueno,
+
+450
+00:16:43,720 --> 00:16:48,519
+en este símbolo más es como el acceso
+
+451
+00:16:46,240 --> 00:16:51,480
+directo para añadir cosas. Nos dice
+
+452
+00:16:48,519 --> 00:16:53,759
+añadir carpetas. adjuntar Obsidian, que
+
+453
+00:16:51,480 --> 00:16:55,759
+es una herramienta que tengo yo de
+
+454
+00:16:53,759 --> 00:16:57,279
+gestión de documentación, diferentes
+
+455
+00:16:55,759 --> 00:16:59,279
+objetivos, esto lo veremos, el modo
+
+456
+00:16:57,279 --> 00:17:01,360
+plan, documentos, PDFs, bueno, vemos
+
+457
+00:16:59,279 --> 00:17:03,560
+aquí que tiene infinitas cosas que
+
+458
+00:17:01,360 --> 00:17:05,720
+nosotros le podemos acabar adjuntando
+
+459
+00:17:03,560 --> 00:17:07,120
+para darle contexto para así empezar a
+
+460
+00:17:05,720 --> 00:17:08,280
+trabajar, porque no se trata solo de
+
+461
+00:17:07,120 --> 00:17:10,640
+prontear, sino que nosotros, por
+
+462
+00:17:08,280 --> 00:17:12,640
+supuesto, podemos ir modificando esas
+
+463
+00:17:10,640 --> 00:17:14,400
+interacciones. Por otro lado, cosas que
+
+464
+00:17:12,640 --> 00:17:15,559
+podemos utilizar la ara, la veis por
+
+465
+00:17:14,400 --> 00:17:17,480
+aquí. En el momento que yo pongo la
+
+466
+00:17:15,559 --> 00:17:18,959
+ropa, es lo mismo que darle al botoncito
+
+467
+00:17:17,480 --> 00:17:20,720
+más. Y en el momento que yo pongo la
+
+468
+00:17:18,959 --> 00:17:22,559
+barra inclinada, pues aquí tenemos lo
+
+469
+00:17:20,720 --> 00:17:24,839
+que se llaman los comandos y las skills,
+
+470
+00:17:22,559 --> 00:17:26,280
+que ya veremos las principales luego y
+
+471
+00:17:24,839 --> 00:17:28,000
+entenderemos cómo funcionan las más
+
+472
+00:17:26,280 --> 00:17:30,520
+utilizadas, pero bueno, de momento que
+
+473
+00:17:28,000 --> 00:17:32,559
+veáis que hay ahí como esas dos
+
+474
+00:17:30,520 --> 00:17:34,280
+shortcuts que podemos acabar utilizando
+
+475
+00:17:32,559 --> 00:17:36,679
+muy rápidamente para interactuar con el
+
+476
+00:17:34,280 --> 00:17:38,600
+sistema de codic y después ya aquí al
+
+477
+00:17:36,679 --> 00:17:40,400
+lado derecho tenemos la selección de
+
+478
+00:17:38,600 --> 00:17:41,720
+modelos que vemos aquí. Bueno, ¿y cuáles
+
+479
+00:17:40,400 --> 00:17:43,400
+son los modelos? los modelos que podemos
+
+480
+00:17:41,720 --> 00:17:45,919
+utilizar, dado que esto es una
+
+481
+00:17:43,400 --> 00:17:47,280
+herramienta de Open AI, pues bueno, los
+
+482
+00:17:45,919 --> 00:17:49,000
+modelos que nosotros podemos acabar
+
+483
+00:17:47,280 --> 00:17:51,679
+utilizando, pues por supuesto son los de
+
+484
+00:17:49,000 --> 00:17:53,440
+Open AI. ¿Qué tenemos por aquí? Pues en
+
+485
+00:17:51,679 --> 00:17:57,559
+el momento que estamos haciendo este
+
+486
+00:17:53,440 --> 00:17:59,720
+curso, tenemos 5.4 mini, 5.4 que son
+
+487
+00:17:57,559 --> 00:18:02,080
+modelos antiguos que podemos utilizar,
+
+488
+00:17:59,720 --> 00:18:03,799
+que sí que van a utilizar menos
+
+489
+00:18:02,080 --> 00:18:05,320
+capacidad de cómputo que nos van a salir
+
+490
+00:18:03,799 --> 00:18:08,240
+con más baratos, pero son modelos más
+
+491
+00:18:05,320 --> 00:18:10,919
+inteligentes. 5.5, que hasta hace nada
+
+492
+00:18:08,240 --> 00:18:13,520
+era el estándar. Y ahora tenemos el
+
+493
+00:18:10,919 --> 00:18:14,559
+último modelo que ha salido, que es 5.6,
+
+494
+00:18:13,520 --> 00:18:18,720
+que vemos que aquí tenemos tres
+
+495
+00:18:14,559 --> 00:18:21,720
+divisiones. 5.6, sol, Terra y Luna. Por
+
+496
+00:18:18,720 --> 00:18:23,799
+favor, que cuando veis esto está el 5.7
+
+497
+00:18:21,720 --> 00:18:27,000
+o yo que sé cuál está, bueno, no pasa
+
+498
+00:18:23,799 --> 00:18:28,880
+nada. Se busca cómo han mejorado estos
+
+499
+00:18:27,000 --> 00:18:31,280
+modelos y ya está. Los modelos no dejan
+
+500
+00:18:28,880 --> 00:18:33,320
+de cambiar mes tras mes, así que que no
+
+501
+00:18:31,280 --> 00:18:35,520
+os preocupe. Lo que tenemos que entender
+
+502
+00:18:33,320 --> 00:18:38,520
+y es justo a donde vamos a pasar ahora
+
+503
+00:18:35,520 --> 00:18:41,640
+es que sí yo tengo que ver qué modelo
+
+504
+00:18:38,520 --> 00:18:43,360
+soporta, pero tengo que entender para
+
+505
+00:18:41,640 --> 00:18:45,600
+qué debo utilizar cada uno de los
+
+506
+00:18:43,360 --> 00:18:47,760
+modelos. Si no, esto no tendría ningún
+
+507
+00:18:45,600 --> 00:18:49,919
+sentido. Así que también es muy
+
+508
+00:18:47,760 --> 00:18:53,039
+importante y por eso le voy a dedicar
+
+509
+00:18:49,919 --> 00:18:55,240
+ahora unos minutos a explicar justamente
+
+510
+00:18:53,039 --> 00:18:56,840
+cuál es el estado del arte de estos
+
+511
+00:18:55,240 --> 00:18:58,520
+modelos. También en el momento que
+
+512
+00:18:56,840 --> 00:19:01,200
+nosotros seleccionamos el modelo, pues
+
+513
+00:18:58,520 --> 00:19:04,880
+tenemos como esa inteligencia, digamos,
+
+514
+00:19:01,200 --> 00:19:08,799
+ese esfuerzo desde ligero a ultra. ¿Qué
+
+515
+00:19:04,880 --> 00:19:11,039
+significa? Bueno, ligero va a consumir
+
+516
+00:19:08,799 --> 00:19:13,200
+menos de nuestro plan. Ultra va a
+
+517
+00:19:11,039 --> 00:19:16,240
+consumir más. Ligero va a responder
+
+518
+00:19:13,200 --> 00:19:18,760
+antes, ultra va a responder utilizando
+
+519
+00:19:16,240 --> 00:19:21,240
+más capacidad de cómputo, pero ligero es
+
+520
+00:19:18,760 --> 00:19:23,200
+menos inteligente que ultra. Entonces
+
+521
+00:19:21,240 --> 00:19:25,919
+aquí, pues bueno, tendremos que ir
+
+522
+00:19:23,200 --> 00:19:28,880
+haciendo nuestras pruebas para ver cuál
+
+523
+00:19:25,919 --> 00:19:31,520
+utilizar en cada momento. Aún así, yo os
+
+524
+00:19:28,880 --> 00:19:35,000
+voy a dar a lo largo del taller una
+
+525
+00:19:31,520 --> 00:19:38,280
+serie de tips de más o menos qué modelo
+
+526
+00:19:35,000 --> 00:19:40,240
+utilizar, con qué esfuerzo en cada caso
+
+527
+00:19:38,280 --> 00:19:42,559
+para según qué tipo de tareas. Esto es
+
+528
+00:19:40,240 --> 00:19:44,720
+algo, por supuesto, muy amplio, pero por
+
+529
+00:19:42,559 --> 00:19:46,520
+daros alguna pauta y que no tengáis que
+
+530
+00:19:44,720 --> 00:19:47,679
+decir, "Bueno, ¿qué tengo que utilizar?
+
+531
+00:19:46,520 --> 00:19:49,640
+Porque no sé ni lo que le tengo que
+
+532
+00:19:47,679 --> 00:19:51,520
+pedir, ¿vale?" Y después por otro lado
+
+533
+00:19:49,640 --> 00:19:53,799
+también tenéis esto, la velocidad, que
+
+534
+00:19:51,520 --> 00:19:55,400
+es decir, si sois ricos y decís, "Buena,
+
+535
+00:19:53,799 --> 00:19:57,159
+yo necesito que vaya muy rápido porque
+
+536
+00:19:55,400 --> 00:19:59,559
+yo que sé, este proyecto es muy
+
+537
+00:19:57,159 --> 00:20:02,480
+importante, aunque vaya a quemar aquí
+
+538
+00:19:59,559 --> 00:20:04,840
+más pasta del plan que tengo contratado,
+
+539
+00:20:02,480 --> 00:20:06,720
+aunque recuerdo, hay una capa gratuita,
+
+540
+00:20:04,840 --> 00:20:09,159
+¿vale? pues le dais aquí a rápido y para
+
+541
+00:20:06,720 --> 00:20:11,640
+adelante. Esto es el modelo de
+
+542
+00:20:09,159 --> 00:20:14,840
+visualización avanzado. Incluso yo creo
+
+543
+00:20:11,640 --> 00:20:17,320
+que esto más orientado a by coding,
+
+544
+00:20:14,840 --> 00:20:20,520
+vamos a llamarlo así, han creado este
+
+545
+00:20:17,320 --> 00:20:22,559
+modelo simple donde yo voy por aquí y le
+
+546
+00:20:20,520 --> 00:20:25,080
+voy diciendo, "Bueno, pues empiezo aquí
+
+547
+00:20:22,559 --> 00:20:27,039
+y digo, vale, empiezo desde nada, no
+
+548
+00:20:25,080 --> 00:20:29,600
+necesito que sea muy listo hasta
+
+549
+00:20:27,039 --> 00:20:31,480
+necesito que sea inteligente a saco." Y
+
+550
+00:20:29,600 --> 00:20:33,840
+vemos cómo va cambiando por aquí el
+
+551
+00:20:31,480 --> 00:20:36,000
+modelo que tiene debajo y el propio
+
+552
+00:20:33,840 --> 00:20:38,360
+esfuerzo. Incluso aquí el rayito para
+
+553
+00:20:36,000 --> 00:20:41,000
+decir, "Bu, si esto lo necesito
+
+554
+00:20:38,360 --> 00:20:43,480
+desarrollar a fuego y como si fuera
+
+555
+00:20:41,000 --> 00:20:47,480
+rico, pues venga, le meto al rayito y ya
+
+556
+00:20:43,480 --> 00:20:49,760
+está." Bueno, em yo realmente lo voy a
+
+557
+00:20:47,480 --> 00:20:51,440
+dejar en el modo estándar porque yo sí
+
+558
+00:20:49,760 --> 00:20:53,600
+que quiero tener control de lo que voy
+
+559
+00:20:51,440 --> 00:20:55,520
+seleccionando en cada caso y justamente
+
+560
+00:20:53,600 --> 00:20:57,720
+esto está pensado para desarrolladores y
+
+561
+00:20:55,520 --> 00:20:59,240
+la parte esa con la interfaz más simple,
+
+562
+00:20:57,720 --> 00:21:00,280
+un poco para by coding, si no te estás
+
+563
+00:20:59,240 --> 00:21:03,440
+enterando muy bien de lo que estás
+
+564
+00:21:00,280 --> 00:21:05,240
+haciendo. Y por supuesto, pues mira, si
+
+565
+00:21:03,440 --> 00:21:08,039
+yo pulso por aquí, pues también le puedo
+
+566
+00:21:05,240 --> 00:21:10,760
+dar diferentes acciones en modo audio o
+
+567
+00:21:08,039 --> 00:21:13,039
+lo que sea. ¿Vale?
+
+568
+00:21:10,760 --> 00:21:14,880
+Este micrófono tiene un shortcut, ¿lo
+
+569
+00:21:13,039 --> 00:21:16,400
+veis? Si yo puso por aquí, pues también
+
+570
+00:21:14,880 --> 00:21:19,440
+le puedo dar diferentes acciones en modo
+
+571
+00:21:16,400 --> 00:21:21,480
+audio. Bueno, e está guay si queréis
+
+572
+00:21:19,440 --> 00:21:24,760
+acabar programando así, pues de una
+
+573
+00:21:21,480 --> 00:21:27,240
+manera más interactiva, más minority
+
+574
+00:21:24,760 --> 00:21:29,120
+report. Yo realmente no es que lo suelo
+
+575
+00:21:27,240 --> 00:21:31,919
+utilizar muchísimo, suelo escribir,
+
+576
+00:21:29,120 --> 00:21:34,520
+aunque entiendo que para según qué casos
+
+577
+00:21:31,919 --> 00:21:36,320
+también puede ser superútil. Más temas
+
+578
+00:21:34,520 --> 00:21:38,320
+de configuración para que entendamos muy
+
+579
+00:21:36,320 --> 00:21:40,039
+rápido la interfaz. Si nos vamos
+
+580
+00:21:38,320 --> 00:21:42,039
+simplemente a los settings, a las
+
+581
+00:21:40,039 --> 00:21:43,679
+preferencias, aquí os recomiendo que lo
+
+582
+00:21:42,039 --> 00:21:45,000
+veáis todo con calma. Por supuesto,
+
+583
+00:21:43,679 --> 00:21:47,440
+tenéis un montón de preferencias
+
+584
+00:21:45,000 --> 00:21:51,360
+generales. Entre ellas vais a encontrar
+
+585
+00:21:47,440 --> 00:21:53,480
+acabar eh añadiendo un comando si
+
+586
+00:21:51,360 --> 00:21:55,240
+queréis activar el micrófono para no
+
+587
+00:21:53,480 --> 00:21:57,080
+tener que dar al botoncito que sea una
+
+588
+00:21:55,240 --> 00:21:58,559
+combinación de teclas en vuestro teclado
+
+589
+00:21:57,080 --> 00:22:01,400
+o lo que sea. Tenéis la parte de
+
+590
+00:21:58,559 --> 00:22:03,279
+aparencia, apariencia, perdón. Incluso
+
+591
+00:22:01,400 --> 00:22:05,240
+hasta para la gente que esto lo utilice
+
+592
+00:22:03,279 --> 00:22:06,640
+pues más como codex que como CH GPT. Ya
+
+593
+00:22:05,240 --> 00:22:08,279
+os dije que antes eran dos aplicaciones
+
+594
+00:22:06,640 --> 00:22:09,919
+por separado. Pues bueno, tenemos aquí
+
+595
+00:22:08,279 --> 00:22:12,240
+un botoncito que lo que nos hace es
+
+596
+00:22:09,919 --> 00:22:13,919
+cambiar el icono y nos dice por aquí que
+
+597
+00:22:12,240 --> 00:22:16,360
+es el icono de codes.
+
+598
+00:22:13,919 --> 00:22:18,039
+El tamaño de las fuentes, el tema de la
+
+599
+00:22:16,360 --> 00:22:20,320
+voz, aquí lo tenéis para que sea el
+
+600
+00:22:18,039 --> 00:22:23,200
+shortcut, temas de configuración,
+
+601
+00:22:20,320 --> 00:22:24,919
+personalización, hasta tema de mascotas,
+
+602
+00:22:23,200 --> 00:22:27,559
+podéis lanzar vuestra mascota, que es
+
+603
+00:22:24,919 --> 00:22:30,480
+como una especie de asistente, eh,
+
+604
+00:22:27,559 --> 00:22:32,679
+bueno, en infinidad de cosas, ya lo veis
+
+605
+00:22:30,480 --> 00:22:34,880
+aquí, atajos de teclado, la propia
+
+606
+00:22:32,679 --> 00:22:36,440
+facturación, tema de la cuenta, los
+
+607
+00:22:34,880 --> 00:22:38,520
+complementos, los permisos que le dais
+
+608
+00:22:36,440 --> 00:22:40,679
+al navegador, el uso del ordenador, los
+
+609
+00:22:38,520 --> 00:22:42,679
+hooks, las conexiones, git, entornos,
+
+610
+00:22:40,679 --> 00:22:44,279
+Wordtrax, después alguna de estas
+
+611
+00:22:42,679 --> 00:22:46,120
+opciones es que son más avanzadas, os
+
+612
+00:22:44,279 --> 00:22:47,279
+las contaré por encima, pero bueno, que
+
+613
+00:22:46,120 --> 00:22:49,640
+veáis que aquí en la parte de
+
+614
+00:22:47,279 --> 00:22:51,240
+personalización darle una vuelta porque
+
+615
+00:22:49,640 --> 00:22:53,919
+está bastante guay. Si queréis mostrar
+
+616
+00:22:51,240 --> 00:22:55,919
+la mascota, aquí en la parte inferior,
+
+617
+00:22:53,919 --> 00:22:58,600
+ey, mostrar mascota. Y si le damos a
+
+618
+00:22:55,919 --> 00:23:00,520
+mostrar mascota, teóricamente debería
+
+619
+00:22:58,600 --> 00:23:02,400
+aparecer por aquí. Ra, ra ra. Tenemos la
+
+620
+00:23:00,520 --> 00:23:06,120
+mascota. Hola, soy Codex, no sé qué,
+
+621
+00:23:02,400 --> 00:23:08,240
+estoy a tu disposición. Bueno, e
+
+622
+00:23:06,120 --> 00:23:10,320
+queda para otro momento la mascota, si
+
+623
+00:23:08,240 --> 00:23:11,760
+queréis revisar vosotros cómo funciona
+
+624
+00:23:10,320 --> 00:23:13,720
+vuestra mascota, pero básicamente es
+
+625
+00:23:11,760 --> 00:23:16,360
+como una especie ahí de clipy, una
+
+626
+00:23:13,720 --> 00:23:18,400
+especie de asistente donde de verdad me
+
+627
+00:23:16,360 --> 00:23:21,120
+quiero parar es en la parte de modelos,
+
+628
+00:23:18,400 --> 00:23:23,840
+¿vale? Os dije que si algo ha cambiado
+
+629
+00:23:21,120 --> 00:23:26,679
+hace poquito es justamente el tema de
+
+630
+00:23:23,840 --> 00:23:28,400
+los modelos.
+
+631
+00:23:26,679 --> 00:23:30,640
+puede seguir evolucionando y va a seguir
+
+632
+00:23:28,400 --> 00:23:32,600
+evolucionando, pero quiero explicar muy
+
+633
+00:23:30,640 --> 00:23:34,039
+rápido qué es esto y cuál es esta
+
+634
+00:23:32,600 --> 00:23:36,640
+división que ha salido ahora mismo, que
+
+635
+00:23:34,039 --> 00:23:38,799
+es GPT 5.6. Esto, si os vais a la web
+
+636
+00:23:36,640 --> 00:23:41,440
+principal de Open EI, pues en el blog
+
+637
+00:23:38,799 --> 00:23:44,080
+tienen como con cualquier lanzamiento
+
+638
+00:23:41,440 --> 00:23:45,480
+que hacen una explicación muy muy básica
+
+639
+00:23:44,080 --> 00:23:47,640
+y muy muy rápida, más o menos para que
+
+640
+00:23:45,480 --> 00:23:50,520
+entendamos cómo funciona cada uno de
+
+641
+00:23:47,640 --> 00:23:54,360
+estos modelos. Os dije que han sacado en
+
+642
+00:23:50,520 --> 00:23:57,960
+dentro de esta versión 5.6 sol, Terra y
+
+643
+00:23:54,360 --> 00:24:00,760
+Luna, ¿vale? Sol, el más potente, Terra,
+
+644
+00:23:57,960 --> 00:24:02,080
+potencia media, Luna, el menos potente.
+
+645
+00:24:00,760 --> 00:24:04,279
+Quiere decir que yo siempre tengo que
+
+646
+00:24:02,080 --> 00:24:06,600
+utilizar Sol, ¿no? Por lo mismo que
+
+647
+00:24:04,279 --> 00:24:08,679
+dijimos antes, cuanto más inteligente,
+
+648
+00:24:06,600 --> 00:24:12,240
+vamos a llamarlo así, un modelo, pues
+
+649
+00:24:08,679 --> 00:24:14,520
+más tiempo tarda en responder y más
+
+650
+00:24:12,240 --> 00:24:15,799
+consume de nuestro plan. Necesitamos el
+
+651
+00:24:14,520 --> 00:24:18,520
+modelo más inteligente para
+
+652
+00:24:15,799 --> 00:24:20,000
+absolutamente todas las tareas, ¿no?
+
+653
+00:24:18,520 --> 00:24:22,000
+Igual tú estás haciendo un pequeño
+
+654
+00:24:20,000 --> 00:24:23,720
+refactor, estás renombrando unas
+
+655
+00:24:22,000 --> 00:24:25,159
+variables, necesitas el modelo más
+
+656
+00:24:23,720 --> 00:24:27,520
+potente, ¿no? Igual puedes utilizar
+
+657
+00:24:25,159 --> 00:24:29,279
+Luna, que es un modelo ser simple. Eso
+
+658
+00:24:27,520 --> 00:24:31,120
+es algo que, por supuesto, la
+
+659
+00:24:29,279 --> 00:24:32,520
+experiencia os va a ir dando este
+
+660
+00:24:31,120 --> 00:24:33,880
+conocimiento, pero que más o menos
+
+661
+00:24:32,520 --> 00:24:36,200
+tenéis que entender lo siguiente. Aquí
+
+662
+00:24:33,880 --> 00:24:38,120
+podríamos leer, pero simplemente para
+
+663
+00:24:36,200 --> 00:24:40,320
+que hagamos una revisión super rápido.
+
+664
+00:24:38,120 --> 00:24:42,559
+¿Veis que por aquí tenemos sol? que
+
+665
+00:24:40,320 --> 00:24:44,559
+vemos que sí, claro, a nivel de costes,
+
+666
+00:24:42,559 --> 00:24:46,480
+a nivel de puntuación, de inteligencia,
+
+667
+00:24:44,559 --> 00:24:48,840
+pues es el mejor. Después tenemos Luna,
+
+668
+00:24:46,480 --> 00:24:51,320
+después tenemos Terra. A medida que
+
+669
+00:24:48,840 --> 00:24:52,919
+vamos avanzando vais a ver otras
+
+670
+00:24:51,320 --> 00:24:54,880
+referencias. ¿Por qué? Porque se le va
+
+671
+00:24:52,919 --> 00:24:56,880
+teniendo en cuenta diferentes
+
+672
+00:24:54,880 --> 00:24:59,880
+parámetros. Pero también para que lo
+
+673
+00:24:56,880 --> 00:25:03,279
+tengáis en cuenta, bueno, igual conocéis
+
+674
+00:24:59,880 --> 00:25:05,440
+el modelo anterior GPT 5.5, pues ya veis
+
+675
+00:25:03,279 --> 00:25:08,720
+que más o menos dice que claro,
+
+676
+00:25:05,440 --> 00:25:11,000
+teóricamente pues este 5.6 deberían ser
+
+677
+00:25:08,720 --> 00:25:14,320
+mejor en todo. Bueno, dependiendo en qué
+
+678
+00:25:11,000 --> 00:25:19,919
+tener en cuenta que algo así como que
+
+679
+00:25:14,320 --> 00:25:22,440
+Luna es más menos que más digamos GPT
+
+680
+00:25:19,919 --> 00:25:24,080
+5.5 5 y después tenéis a Terra, que es
+
+681
+00:25:22,440 --> 00:25:28,760
+más o menos como si fuera la
+
+682
+00:25:24,080 --> 00:25:31,600
+actualización de GPT 5.5, en cambio GPT
+
+683
+00:25:28,760 --> 00:25:33,880
+5.6 y después tenemos Sol, que es el más
+
+684
+00:25:31,600 --> 00:25:36,120
+avanzado, que ya sería como la siguiente
+
+685
+00:25:33,880 --> 00:25:38,440
+generación, ¿vale? Aquí nos lo compara
+
+686
+00:25:36,120 --> 00:25:41,679
+con la competencia, con Opus, incluso
+
+687
+00:25:38,440 --> 00:25:44,960
+con Fable que vemos por aquí. Bueno, eh
+
+688
+00:25:41,679 --> 00:25:46,120
+aquí ya sabéis que dependiendo de cuál
+
+689
+00:25:44,960 --> 00:25:48,080
+sea la empresa que hace las
+
+690
+00:25:46,120 --> 00:25:51,480
+comparaciones, siempre va a acabar
+
+691
+00:25:48,080 --> 00:25:53,480
+ganando más menos el que sea de su
+
+692
+00:25:51,480 --> 00:25:56,039
+propiedad. Bueno, simplemente podéis
+
+693
+00:25:53,480 --> 00:25:59,559
+revisar esto un poquito por encima, pero
+
+694
+00:25:56,039 --> 00:26:02,520
+entender muy muy rápido que la forma de
+
+695
+00:25:59,559 --> 00:26:05,120
+acabar trabajando con esta herramienta a
+
+696
+00:26:02,520 --> 00:26:08,159
+nivel de modelos, por lo menos a nivel
+
+697
+00:26:05,120 --> 00:26:11,320
+de 5.6, es que vosotros tenéis el modelo
+
+698
+00:26:08,159 --> 00:26:13,559
+Sol, que es el más potente ahora mismo,
+
+699
+00:26:11,320 --> 00:26:16,200
+el Terra, que sería como el equivalente
+
+700
+00:26:13,559 --> 00:26:18,120
+al 5.5, pero un poquito mejorado, y el
+
+701
+00:26:16,200 --> 00:26:20,240
+Luna, que sería algo así como el mini
+
+702
+00:26:18,120 --> 00:26:22,520
+que teníamos antes para tareas pues más
+
+703
+00:26:20,240 --> 00:26:24,880
+simples. ¿Qué es lo ideal? Que vosotros
+
+704
+00:26:22,520 --> 00:26:27,039
+vayáis modificando el modelo dependiendo
+
+705
+00:26:24,880 --> 00:26:30,720
+de la tarea que tengáis que realizar. El
+
+706
+00:26:27,039 --> 00:26:32,640
+modelo para la gran mayoría de tareas es
+
+707
+00:26:30,720 --> 00:26:34,679
+terra, es decir, para estar programando
+
+708
+00:26:32,640 --> 00:26:36,679
+ahí pequeñas funcionalidades pin e ir
+
+709
+00:26:34,679 --> 00:26:38,520
+evolucionando vuestro software es cerra.
+
+710
+00:26:36,679 --> 00:26:40,919
+Para hacer temas de planificaciones,
+
+711
+00:26:38,520 --> 00:26:42,720
+para hacer tareas que se van a estirar
+
+712
+00:26:40,919 --> 00:26:45,240
+muchísimo más en el tiempo, pues por
+
+713
+00:26:42,720 --> 00:26:47,399
+supuesto aquí está Sol. Y para hacer
+
+714
+00:26:45,240 --> 00:26:50,000
+pequeñas cositas, utilizar Luna. Y así
+
+715
+00:26:47,399 --> 00:26:52,039
+veréis cómo en el momento que utilicéis
+
+716
+00:26:50,000 --> 00:26:54,279
+tanto planes gratuitos como planes de
+
+717
+00:26:52,039 --> 00:26:56,960
+pago, os van a durar muchísimo más.
+
+718
+00:26:54,279 --> 00:26:59,480
+Claro, ahora también es cierto que según
+
+719
+00:26:56,960 --> 00:27:01,200
+el plan que sea de pago o gratuito,
+
+720
+00:26:59,480 --> 00:27:02,840
+alguno de estos modelos puede que no
+
+721
+00:27:01,200 --> 00:27:05,159
+tengáis acceso, sobre todo los
+
+722
+00:27:02,840 --> 00:27:07,279
+gratuitos. ¿Por qué? Porque, bueno, nos
+
+723
+00:27:05,159 --> 00:27:09,760
+regalan las cosas, pero según hasta qué
+
+724
+00:27:07,279 --> 00:27:13,440
+punto. Y después también, ¿cuál sería mi
+
+725
+00:27:09,760 --> 00:27:17,080
+recomendación para el día a día? os
+
+726
+00:27:13,440 --> 00:27:20,039
+ponéis terra y lo ponéis en media.
+
+727
+00:27:17,080 --> 00:27:22,279
+¿Okay? Yo solo cambiaría a alta, muy
+
+728
+00:27:20,039 --> 00:27:24,720
+alta o ultra ya, si os volvéis locos y
+
+729
+00:27:22,279 --> 00:27:27,399
+decís, "Bueno, esto tiene que ser una
+
+730
+00:27:24,720 --> 00:27:29,000
+tarea muy compleja y necesito que dé el
+
+731
+00:27:27,399 --> 00:27:31,279
+máximo rendimiento." Pero para
+
+732
+00:27:29,000 --> 00:27:32,640
+desarrollar de normal, Terra con media,
+
+733
+00:27:31,279 --> 00:27:34,520
+que os tenéis que ir a alguna tarea un
+
+734
+00:27:32,640 --> 00:27:36,559
+poquito más compleja, os vais a Sol con
+
+735
+00:27:34,520 --> 00:27:38,760
+media. Es decir, yo no andaría cambiando
+
+736
+00:27:36,559 --> 00:27:43,840
+mucho. De hecho, si os vais al modo
+
+737
+00:27:38,760 --> 00:27:46,279
+simple, veis que el modo más menos es
+
+738
+00:27:43,840 --> 00:27:49,200
+sol media. En cambio, si lo ponéis algo
+
+739
+00:27:46,279 --> 00:27:52,679
+simple, os pone sol ligero y si os vais
+
+740
+00:27:49,200 --> 00:27:54,679
+aquí, os va a terra ligero. Yo, como
+
+741
+00:27:52,679 --> 00:27:57,039
+vamos a acabar teniendo el control, lo
+
+742
+00:27:54,679 --> 00:28:00,240
+que yo os diría es, venga, trabajar con
+
+743
+00:27:57,039 --> 00:28:02,240
+terra medio para tener el modelo término
+
+744
+00:28:00,240 --> 00:28:04,480
+medio, pero sí con un poquito más de
+
+745
+00:28:02,240 --> 00:28:06,760
+esfuerzo, un poquito más inteligente.
+
+746
+00:28:04,480 --> 00:28:09,360
+¿Okay? ¿Tenemos todo esto claro? Pues
+
+747
+00:28:06,760 --> 00:28:12,279
+venga, vamos a seguir. Vamos a empezar a
+
+748
+00:28:09,360 --> 00:28:14,240
+trabajar ya con cómo podemos empezar a
+
+749
+00:28:12,279 --> 00:28:16,039
+desarrollar, ¿okay? ¿Cómo podemos
+
+750
+00:28:14,240 --> 00:28:17,159
+empezar a desarrollar? Lo primero que
+
+751
+00:28:16,039 --> 00:28:19,360
+tenemos que tener en cuenta es que,
+
+752
+00:28:17,159 --> 00:28:22,159
+claro, aquí vamos a poder empezar a
+
+753
+00:28:19,360 --> 00:28:24,279
+prontear cualquier cosa, pero tenemos
+
+754
+00:28:22,159 --> 00:28:26,640
+que entender también cuál es el sistema
+
+755
+00:28:24,279 --> 00:28:28,720
+sobre el que está edificado el propio
+
+756
+00:28:26,640 --> 00:28:31,200
+Codex, que es que está pensado para que
+
+757
+00:28:28,720 --> 00:28:33,320
+nosotros empecemos a lanzar un montón de
+
+758
+00:28:31,200 --> 00:28:35,240
+agentes en paralelo, empecemos incluso a
+
+759
+00:28:33,320 --> 00:28:37,399
+desarrollar en diferentes aplicaciones.
+
+760
+00:28:35,240 --> 00:28:39,559
+Yo me puedo venir aquí a este proyecto
+
+761
+00:28:37,399 --> 00:28:44,039
+que es el de Mur Pro y le voy a lanzar
+
+762
+00:28:39,559 --> 00:28:46,399
+por aquí describe el proyecto y voy a
+
+763
+00:28:44,039 --> 00:28:49,000
+copiar esto porque voy a lanzar este
+
+764
+00:28:46,399 --> 00:28:51,360
+prompt, pero me voy a ir a otro
+
+765
+00:28:49,000 --> 00:28:54,120
+proyecto, a este que veis aquí al Aquí
+
+766
+00:28:51,360 --> 00:28:55,679
+seguimos y le voy a decir, "Ey, lanza
+
+767
+00:28:54,120 --> 00:28:57,600
+una nueva tarea." Que sería lo mismo que
+
+768
+00:28:55,679 --> 00:28:59,080
+darla aquí y seleccionar el proyecto,
+
+769
+00:28:57,600 --> 00:29:00,279
+que veis que lo puedo ir cambiando. Y
+
+770
+00:28:59,080 --> 00:29:03,120
+ahora aquí le voy a decir, "Describe el
+
+771
+00:29:00,279 --> 00:29:04,960
+proyecto." Y veis que en ambos casos
+
+772
+00:29:03,120 --> 00:29:07,679
+están en paralelo. Es decir, yo he
+
+773
+00:29:04,960 --> 00:29:09,960
+lanzado todo esto, se han lanzado las
+
+774
+00:29:07,679 --> 00:29:12,880
+dos tareas en paralelo, cada una con su
+
+775
+00:29:09,960 --> 00:29:15,000
+agente y básicamente después en el
+
+776
+00:29:12,880 --> 00:29:16,279
+momento que acaba, seleccionamos este
+
+777
+00:29:15,000 --> 00:29:17,919
+chat y nos dice, "Bueno, esta es la web
+
+778
+00:29:16,279 --> 00:29:19,919
+de Mored Pro, una plataforma de curso
+
+779
+00:29:17,919 --> 00:29:22,159
+online, no sé qué con lo que está creada
+
+780
+00:29:19,919 --> 00:29:23,679
+y me cuenta aquí, pues se resume rápido
+
+781
+00:29:22,159 --> 00:29:25,320
+y por aquí me dice, esta es una web
+
+782
+00:29:23,679 --> 00:29:27,039
+estática en español, no sé qué tal, que
+
+783
+00:29:25,320 --> 00:29:30,080
+documenta con humor y tal."
+
+784
+00:29:27,039 --> 00:29:31,960
+Básicamente esto hace referencia por un
+
+785
+00:29:30,080 --> 00:29:34,000
+lado,
+
+786
+00:29:31,960 --> 00:29:37,039
+perdón que se me fue aquí la web. Por un
+
+787
+00:29:34,000 --> 00:29:39,519
+lado hace referencia a la web de Muro de
+
+788
+00:29:37,039 --> 00:29:42,200
+Pro, a la web de la Academia,
+
+789
+00:29:39,519 --> 00:29:43,880
+básicamente de mis cursos y a esta web
+
+790
+00:29:42,200 --> 00:29:46,679
+que se llama, y aquí seguimos, que es
+
+791
+00:29:43,880 --> 00:29:49,120
+una web que yo he creado donde hay una
+
+792
+00:29:46,679 --> 00:29:50,840
+línea del tiempo con cosas que han dicho
+
+793
+00:29:49,120 --> 00:29:52,039
+los grandes magnates de la tecnología
+
+794
+00:29:50,840 --> 00:29:53,919
+sobre que la IA no se iba a quitar el
+
+795
+00:29:52,039 --> 00:29:55,880
+trabajo y cómo se han ido equivocando
+
+796
+00:29:53,919 --> 00:29:57,880
+desde hace 3 años. Pues bueno, aquí lo
+
+797
+00:29:55,880 --> 00:29:59,279
+tenéis. También son diferentes webs que
+
+798
+00:29:57,880 --> 00:30:00,880
+no es que vayamos a trabajar con estas
+
+799
+00:29:59,279 --> 00:30:02,480
+webs en este momento, pero para que
+
+800
+00:30:00,880 --> 00:30:04,399
+veáis que puedes tener los proyectos que
+
+801
+00:30:02,480 --> 00:30:06,000
+tú quieras aquí abiertos y que puedes
+
+802
+00:30:04,399 --> 00:30:08,000
+empezar a trabajar con ellos en
+
+803
+00:30:06,000 --> 00:30:09,640
+paralelo. También algo importante, como
+
+804
+00:30:08,000 --> 00:30:11,480
+en el momento que nosotros lanzamos un
+
+805
+00:30:09,640 --> 00:30:13,720
+chat, tenemos aquí lo que se llama el
+
+806
+00:30:11,480 --> 00:30:15,120
+entorno. El entorno nosotros lo podemos
+
+807
+00:30:13,720 --> 00:30:17,880
+modificar o podemos crear un nuevo
+
+808
+00:30:15,120 --> 00:30:19,279
+entorno. ¿Qué es el entorno? Como Codex
+
+809
+00:30:17,880 --> 00:30:20,919
+prepara los árboles de trabajo.
+
+810
+00:30:19,279 --> 00:30:22,799
+Básicamente ya entenderemos qué es esto
+
+811
+00:30:20,919 --> 00:30:24,039
+de los Word Tres, pero básicamente cómo
+
+812
+00:30:22,799 --> 00:30:26,039
+interactúa con el proyecto. Pues si
+
+813
+00:30:24,039 --> 00:30:27,559
+tienes alguna configuración, veis aquí
+
+814
+00:30:26,039 --> 00:30:29,440
+el script de configuración a la hora de
+
+815
+00:30:27,559 --> 00:30:30,440
+trabajar el script de limpieza, unas
+
+816
+00:30:29,440 --> 00:30:32,279
+acciones. Esto es un poquito más
+
+817
+00:30:30,440 --> 00:30:33,600
+avanzado, no tenéis ni por qué tocarlo
+
+818
+00:30:32,279 --> 00:30:35,440
+al principio, incluso la parte de
+
+819
+00:30:33,600 --> 00:30:36,799
+variables de entorno o lo que sea para
+
+820
+00:30:35,440 --> 00:30:38,519
+entender cómo funciona el entorno de
+
+821
+00:30:36,799 --> 00:30:40,440
+desarrollo, que lo podéis acabar
+
+822
+00:30:38,519 --> 00:30:41,880
+modificando para trabajar como queráis.
+
+823
+00:30:40,440 --> 00:30:44,159
+También tenéis esta parte que hemos
+
+824
+00:30:41,880 --> 00:30:46,919
+visto aquí, ¿qué es esto de local? pues
+
+825
+00:30:44,159 --> 00:30:48,120
+que vosotros podéis trabajar el local,
+
+826
+00:30:46,919 --> 00:30:49,760
+es decir, como estoy trabajando yo
+
+827
+00:30:48,120 --> 00:30:53,279
+ahora, pero Codex también tiene una
+
+828
+00:30:49,760 --> 00:30:55,720
+versión web. Esto no es tan tan
+
+829
+00:30:53,279 --> 00:30:57,480
+importante ahora mismo, pero realmente
+
+830
+00:30:55,720 --> 00:31:00,480
+si tú tienes un repositorio y esto lo
+
+831
+00:30:57,480 --> 00:31:02,600
+tienes metido en GitHCAB y hay una forma
+
+832
+00:31:00,480 --> 00:31:05,480
+de tener todo este código subido en la
+
+833
+00:31:02,600 --> 00:31:07,559
+web, realmente tú lo que también puedes
+
+834
+00:31:05,480 --> 00:31:09,720
+hacer es seguir desarrollando desde la
+
+835
+00:31:07,559 --> 00:31:11,919
+interfaz web, desde el lugar que tú
+
+836
+00:31:09,720 --> 00:31:13,799
+quieras, incluso desde la aplicación
+
+837
+00:31:11,919 --> 00:31:15,440
+móvil, que también hay esa hay esa
+
+838
+00:31:13,799 --> 00:31:17,399
+opción y esos cambios pues los vas
+
+839
+00:31:15,440 --> 00:31:19,679
+sincronizando con GitHub y todo se va
+
+840
+00:31:17,399 --> 00:31:21,519
+subiendo a la nube. ¿Okay? Incluso
+
+841
+00:31:19,679 --> 00:31:22,679
+también tienes la forma de seleccionar
+
+842
+00:31:21,519 --> 00:31:24,880
+diferentes ramas. Si tú tuvieras
+
+843
+00:31:22,679 --> 00:31:26,960
+diferentes ramas en giton, GitHub, por
+
+844
+00:31:24,880 --> 00:31:28,760
+aquí la tienes hasta las opciones de
+
+845
+00:31:26,960 --> 00:31:31,720
+meter el comit o el push. Es decir,
+
+846
+00:31:28,760 --> 00:31:34,039
+tienes esto que se llama por aquí
+
+847
+00:31:31,720 --> 00:31:35,519
+entorno, que realmente es esto que veis
+
+848
+00:31:34,039 --> 00:31:38,080
+aquí que se llama fijar, desfijar
+
+849
+00:31:35,519 --> 00:31:39,480
+resumen. Veis que lo quito y lo pongo.
+
+850
+00:31:38,080 --> 00:31:41,320
+Incluso también tenemos los cambios que
+
+851
+00:31:39,480 --> 00:31:43,039
+yo tengo pendientes o lo que sea. Bueno,
+
+852
+00:31:41,320 --> 00:31:45,480
+simplemente es un resumen para que
+
+853
+00:31:43,039 --> 00:31:48,159
+vayamos viendo más o menos qué es lo que
+
+854
+00:31:45,480 --> 00:31:50,000
+está haciendo este chat en el momento
+
+855
+00:31:48,159 --> 00:31:52,880
+concreto contra el proyecto que hemos
+
+856
+00:31:50,000 --> 00:31:55,279
+seleccionado. ¿Vale? Una vez ya tenemos
+
+857
+00:31:52,880 --> 00:31:56,919
+esto, vamos a pasar a otra parte también
+
+858
+00:31:55,279 --> 00:32:00,200
+muy importante que es la de los
+
+859
+00:31:56,919 --> 00:32:03,159
+complementos. Si algo creo que para mí
+
+860
+00:32:00,200 --> 00:32:06,799
+tiene bueno como entorno de desarrollo
+
+861
+00:32:03,159 --> 00:32:08,960
+Codex es que toda la parte de plugins es
+
+862
+00:32:06,799 --> 00:32:10,880
+superamigable. ¿Qué quiere decir? Que yo
+
+863
+00:32:08,960 --> 00:32:14,120
+quiero acabar interactuando con
+
+864
+00:32:10,880 --> 00:32:16,960
+documentos, con PDF, con hojas de
+
+865
+00:32:14,120 --> 00:32:19,240
+cálculo, con el propio browser, con mi
+
+866
+00:32:16,960 --> 00:32:23,360
+ordenador, con GitHub. es lo que
+
+867
+00:32:19,240 --> 00:32:25,559
+conocemos en algunos casos como MCPs. Si
+
+868
+00:32:23,360 --> 00:32:30,039
+yo empiezo a hablar de temas raros,
+
+869
+00:32:25,559 --> 00:32:33,080
+agentes, MCPs, skills, por favor, os
+
+870
+00:32:30,039 --> 00:32:37,000
+dejo por aquí también el curso. Os vais
+
+871
+00:32:33,080 --> 00:32:40,080
+a YouTube y buscáis este curso. Agentes
+
+872
+00:32:37,000 --> 00:32:41,919
+de IA. Es un curso de 3 horas donde yo
+
+873
+00:32:40,080 --> 00:32:44,200
+hago un repaso de todos los fundamentos
+
+874
+00:32:41,919 --> 00:32:45,799
+del desarrollo moderno con inteligencia
+
+875
+00:32:44,200 --> 00:32:47,919
+artificial.
+
+876
+00:32:45,799 --> 00:32:50,720
+Vale, aquí explico todos los conceptos
+
+877
+00:32:47,919 --> 00:32:53,919
+de inteligencia artificial generalistas,
+
+878
+00:32:50,720 --> 00:32:56,600
+¿vale? Entonces este curso es
+
+879
+00:32:53,919 --> 00:32:58,240
+obligatorio para cualquier persona que
+
+880
+00:32:56,600 --> 00:33:00,360
+esté aprendiendo desarrollo. Habrá cosas
+
+881
+00:32:58,240 --> 00:33:02,360
+que igual se enteren más menos, pero
+
+882
+00:33:00,360 --> 00:33:04,000
+realmente aquí condenso muy bien todos
+
+883
+00:33:02,360 --> 00:33:06,679
+esos conceptos y por eso quiero que los
+
+884
+00:33:04,000 --> 00:33:08,679
+tengáis en cuenta, porque
+
+885
+00:33:06,679 --> 00:33:11,240
+por ejemplo toda esta parte de plugins,
+
+886
+00:33:08,679 --> 00:33:13,200
+algunos van a tener una referencia
+
+887
+00:33:11,240 --> 00:33:15,919
+bastante cercana a lo que se llama el
+
+888
+00:33:13,200 --> 00:33:17,919
+model protocol, a los MCPs, es decir,
+
+889
+00:33:15,919 --> 00:33:19,679
+una especie de protocolo para acabar
+
+890
+00:33:17,919 --> 00:33:22,000
+conectándonos a herramientas de
+
+891
+00:33:19,679 --> 00:33:25,799
+terceros. Imagínate que yo quiero
+
+892
+00:33:22,000 --> 00:33:28,919
+interactuar desde Codex con Chrome. Pues
+
+893
+00:33:25,799 --> 00:33:31,760
+aquí tengo trasla, la instalación para
+
+894
+00:33:28,919 --> 00:33:35,120
+Chrome con GitHub, lo que sea. Ya vemos
+
+895
+00:33:31,760 --> 00:33:37,559
+que tenemos aquí Notion, ClickUp, Google
+
+896
+00:33:35,120 --> 00:33:39,399
+Calendar, Linear, lo que sea. Por
+
+897
+00:33:37,559 --> 00:33:40,799
+supuesto, hay maneras mediante MCPs de
+
+898
+00:33:39,399 --> 00:33:42,960
+crear nuestros propios MCPs, de
+
+899
+00:33:40,799 --> 00:33:45,840
+conectarlo con cualquier tipo de MCPs,
+
+900
+00:33:42,960 --> 00:33:48,080
+pero que sepáis que
+
+901
+00:33:45,840 --> 00:33:49,720
+para alguien que está dando sus primeros
+
+902
+00:33:48,080 --> 00:33:50,960
+pasos, para alguien que está comenzando
+
+903
+00:33:49,720 --> 00:33:52,760
+en desarrollo software, incluso para
+
+904
+00:33:50,960 --> 00:33:55,799
+alguien que tenga experiencia, aquí ya
+
+905
+00:33:52,760 --> 00:33:57,960
+veis cuáles son las herramientas más
+
+906
+00:33:55,799 --> 00:34:01,279
+utilizadas que a nivel productividad
+
+907
+00:33:57,960 --> 00:34:03,639
+tienen 314. Puedes empezar a explorarlas
+
+908
+00:34:01,279 --> 00:34:06,799
+por aquí que tenemos creatividad,
+
+909
+00:34:03,639 --> 00:34:10,079
+developer tools, business, bueno, un
+
+910
+00:34:06,799 --> 00:34:12,200
+montonazo de plugins, que sería algo así
+
+911
+00:34:10,079 --> 00:34:14,159
+como las extensiones que tenemos para
+
+912
+00:34:12,200 --> 00:34:17,320
+Visual Studio Code, pero en este caso
+
+913
+00:34:14,159 --> 00:34:20,919
+para que nuestro codex sea capaz de
+
+914
+00:34:17,320 --> 00:34:22,919
+interactuar de manera muy rápida con
+
+915
+00:34:20,919 --> 00:34:27,000
+herramientas de terceros. ¿Qué
+
+916
+00:34:22,919 --> 00:34:30,679
+significa? que si yo acabo instalando
+
+917
+00:34:27,000 --> 00:34:31,960
+este complemento, este plugin de GitHop,
+
+918
+00:34:30,679 --> 00:34:33,839
+en el momento que yo lo tengo instalado
+
+919
+00:34:31,960 --> 00:34:36,040
+y lo tengo configurado, yo le voy a
+
+920
+00:34:33,839 --> 00:34:38,079
+poder preguntar a Codex por mis propios
+
+921
+00:34:36,040 --> 00:34:39,919
+repositorios o le voy a pedir que
+
+922
+00:34:38,079 --> 00:34:41,520
+interactúe con mis propios repositorios
+
+923
+00:34:39,919 --> 00:34:43,639
+o que lea cualquier contenido de mis
+
+924
+00:34:41,520 --> 00:34:45,960
+repositorios o incluso de mi usuario, de
+
+925
+00:34:43,639 --> 00:34:48,760
+lo que sea. Entonces, este es un poco el
+
+926
+00:34:45,960 --> 00:34:50,639
+cometido. Si yo, por poner el ejemplo de
+
+927
+00:34:48,760 --> 00:34:52,320
+Notion, de cómo funcionaría un MCP de
+
+928
+00:34:50,639 --> 00:34:54,200
+Notion, igual yo tengo las tareas
+
+929
+00:34:52,320 --> 00:34:56,720
+definidas en Notion y yo le voy a ir
+
+930
+00:34:54,200 --> 00:34:58,119
+diciendo, "Ey, lee la especificación de
+
+931
+00:34:56,720 --> 00:34:59,440
+esta tarea que yo tengo en mi Notion,
+
+932
+00:34:58,119 --> 00:35:02,920
+que quien no lo sepa, Notion es una
+
+933
+00:34:59,440 --> 00:35:04,240
+aplicación de documentación y implementa
+
+934
+00:35:02,920 --> 00:35:06,119
+lo que está pidiendo en esta tarea." Y
+
+935
+00:35:04,240 --> 00:35:07,480
+cuando la implementes, escribe en ese
+
+936
+00:35:06,119 --> 00:35:10,480
+documento de Notion cuál ha sido el
+
+937
+00:35:07,480 --> 00:35:14,040
+resultado, qué ha cambiado, lo que sea.
+
+938
+00:35:10,480 --> 00:35:17,320
+¿Vale? Entonces, con estas Figma, ey,
+
+939
+00:35:14,040 --> 00:35:19,599
+lee este diseño y programa este diseño,
+
+940
+00:35:17,320 --> 00:35:21,760
+¿ya entendéis? Bueno, pues básicamente
+
+941
+00:35:19,599 --> 00:35:23,640
+estos complementos son superútiles y
+
+942
+00:35:21,760 --> 00:35:25,599
+tenerlos muy en cuenta. No os voy a
+
+943
+00:35:23,640 --> 00:35:27,839
+decir, ey, instala este mejor que otro
+
+944
+00:35:25,599 --> 00:35:30,160
+porque realmente todo depende de cuáles
+
+945
+00:35:27,839 --> 00:35:32,760
+sean vuestras necesidades, pero tener en
+
+946
+00:35:30,160 --> 00:35:34,960
+mente que esto es muy importante para
+
+947
+00:35:32,760 --> 00:35:37,200
+que así el desarrollo cada vez sea más
+
+948
+00:35:34,960 --> 00:35:39,800
+potente, ya que podremos acceder a un
+
+949
+00:35:37,200 --> 00:35:41,599
+montón de herramientas de manera s s
+
+950
+00:35:39,800 --> 00:35:44,160
+super superfácil. Vale, vamos a ver una
+
+951
+00:35:41,599 --> 00:35:46,320
+cosa. ¿Y qué significa esto de que yo
+
+952
+00:35:44,160 --> 00:35:49,119
+pueda acceder a estos diferentes
+
+953
+00:35:46,320 --> 00:35:51,040
+complementos? Uno de los complementos,
+
+954
+00:35:49,119 --> 00:35:54,640
+ya os digo que para acceder a los
+
+955
+00:35:51,040 --> 00:35:56,040
+complementos lo hacemos con la igual que
+
+956
+00:35:54,640 --> 00:35:57,720
+este botón más. Ya veis que de los
+
+957
+00:35:56,040 --> 00:36:00,160
+complementos que yo ya tengo instalados,
+
+958
+00:35:57,720 --> 00:36:02,800
+pues los puedo seleccionar. Okay. Por
+
+959
+00:36:00,160 --> 00:36:04,240
+ejemplo, voy a decirle por aquí, ey, voy
+
+960
+00:36:02,800 --> 00:36:05,839
+a utilizar el complemento del ordenador.
+
+961
+00:36:04,240 --> 00:36:08,119
+¿Qué es el complemento del ordenador?
+
+962
+00:36:05,839 --> 00:36:09,640
+Básicamente que yo puedo acabar
+
+963
+00:36:08,119 --> 00:36:10,760
+interactuando con mi ordenador. En este
+
+964
+00:36:09,640 --> 00:36:13,720
+caso no lo quiero hacer desde mi
+
+965
+00:36:10,760 --> 00:36:15,720
+proyecto. Voy a crear una nueva tarea y
+
+966
+00:36:13,720 --> 00:36:17,079
+le voy a decir que en realidad no quiero
+
+967
+00:36:15,720 --> 00:36:19,160
+trabajar en ningún proyecto porque le
+
+968
+00:36:17,079 --> 00:36:24,599
+voy a pedir algo tan tonto como le voy a
+
+969
+00:36:19,160 --> 00:36:27,240
+decir, "Ey, abre Warp." Warp es una
+
+970
+00:36:24,599 --> 00:36:30,319
+aplicación o es la aplicación que yo
+
+971
+00:36:27,240 --> 00:36:33,680
+utilizo como terminal. Esto no es lo
+
+972
+00:36:30,319 --> 00:36:35,079
+importante. Sin más, la tengo por aquí.
+
+973
+00:36:33,680 --> 00:36:36,720
+Esto es warp. es mi herramienta de
+
+974
+00:36:35,079 --> 00:36:38,480
+terminal, da igual, la voy a cerrar,
+
+975
+00:36:36,720 --> 00:36:39,880
+pero ahora le voy a decir desde aquí que
+
+976
+00:36:38,480 --> 00:36:41,160
+utilizando el complemento de ordenador,
+
+977
+00:36:39,880 --> 00:36:42,839
+que me permite interactuar con el
+
+978
+00:36:41,160 --> 00:36:44,640
+ordenador, yo voy a decir, "Ey, hable
+
+979
+00:36:42,839 --> 00:36:46,119
+warp." ¿Y qué va a hacer? Pues voy a
+
+980
+00:36:44,640 --> 00:36:48,560
+utilizar el control del ordenador para
+
+981
+00:36:46,119 --> 00:36:49,920
+abrir warp. Ya veis que en el momento
+
+982
+00:36:48,560 --> 00:36:51,599
+que empezamos a utilizar un montón de
+
+983
+00:36:49,920 --> 00:36:53,760
+complementos, podemos hacer un montón de
+
+984
+00:36:51,599 --> 00:36:54,839
+acciones. ¿Qué va a hacer? Pues bueno,
+
+985
+00:36:53,760 --> 00:36:56,599
+va a empezar a interactuar con el
+
+986
+00:36:54,839 --> 00:36:59,079
+ordenador. Dice, "Ostras, el control del
+
+987
+00:36:56,599 --> 00:37:01,520
+ordenador lo bloquea." Y yo voy a decir,
+
+988
+00:36:59,079 --> 00:37:02,599
+"Hostia, ¿y cómo es esto que no acaba
+
+989
+00:37:01,520 --> 00:37:05,000
+funcionando?"
+
+990
+00:37:02,599 --> 00:37:08,800
+Bueno, vamos a pillar un modelo un
+
+991
+00:37:05,000 --> 00:37:12,480
+poquito más potente y le voy a decir a
+
+992
+00:37:08,800 --> 00:37:14,640
+ver si el modelo más potente me deja
+
+993
+00:37:12,480 --> 00:37:17,160
+hacer algo con esto, porque acabaremos
+
+994
+00:37:14,640 --> 00:37:18,920
+viendo que justamente esto es lo que
+
+995
+00:37:17,160 --> 00:37:21,400
+estábamos diciendo antes, que una cosa
+
+996
+00:37:18,920 --> 00:37:23,640
+es tener los complementos,
+
+997
+00:37:21,400 --> 00:37:26,160
+lo vuelvo a poner por aquí y después ya
+
+998
+00:37:23,640 --> 00:37:29,359
+veremos si nosotros le hemos dado los
+
+999
+00:37:26,160 --> 00:37:31,480
+permisos. ¿Okay? Por eso una cosa es
+
+1000
+00:37:29,359 --> 00:37:34,079
+instalar justamente los complementos.
+
+1001
+00:37:31,480 --> 00:37:37,319
+Voy a utilizar el control leyendo las
+
+1002
+00:37:34,079 --> 00:37:39,040
+habilidades por aquí.
+
+1003
+00:37:37,319 --> 00:37:41,800
+Vamos a dejarle tal y vemos que ahora
+
+1004
+00:37:39,040 --> 00:37:43,560
+nos dice, "Ey, permití esta conversación
+
+1005
+00:37:41,800 --> 00:37:45,280
+porque yo le he dicho, sí, es que me
+
+1006
+00:37:43,560 --> 00:37:47,839
+tienes que pedir la aprobación." Y digo,
+
+1007
+00:37:45,280 --> 00:37:49,599
+"Venga." Y fíjate qué está haciendo. Ya
+
+1008
+00:37:47,839 --> 00:37:52,160
+lo vemos por aquí. Me he abierto una
+
+1009
+00:37:49,599 --> 00:37:55,880
+ventana y en esta ventana tiene el
+
+1010
+00:37:52,160 --> 00:37:58,040
+control de el propio codex y va a
+
+1011
+00:37:55,880 --> 00:38:00,160
+empezar a navegar y a interactuar por
+
+1012
+00:37:58,040 --> 00:38:03,440
+esta ventana. Fíjate, yo la voy a dejar
+
+1013
+00:38:00,160 --> 00:38:05,839
+por aquí. y me dice, "Está buscando para
+
+1014
+00:38:03,440 --> 00:38:07,880
+intentar abrir warp, está intentando
+
+1015
+00:38:05,839 --> 00:38:09,720
+solicitar, está buscando o está
+
+1016
+00:38:07,880 --> 00:38:12,240
+intentando utilizar el spotlight." Ya
+
+1017
+00:38:09,720 --> 00:38:13,720
+vemos que estas herramientas tienen
+
+1018
+00:38:12,240 --> 00:38:16,119
+capacidad de interactuar con este
+
+1019
+00:38:13,720 --> 00:38:17,520
+ordenador. Eso sí, tienen capacidad
+
+1020
+00:38:16,119 --> 00:38:20,640
+siempre y cuando nosotros le demos las
+
+1021
+00:38:17,520 --> 00:38:23,000
+aprobaciones y donde nosotros también
+
+1022
+00:38:20,640 --> 00:38:25,000
+podamos acabar controlando qué hace y
+
+1023
+00:38:23,000 --> 00:38:26,839
+qué no hace. vemos cómo se está
+
+1024
+00:38:25,000 --> 00:38:28,520
+moviendo. Vemos este puntero. Este
+
+1025
+00:38:26,839 --> 00:38:31,119
+puntero es codex. Se ha ido a
+
+1026
+00:38:28,520 --> 00:38:32,720
+aplicaciones y ahora dentro de estas
+
+1027
+00:38:31,119 --> 00:38:34,079
+aplicaciones pues va a buscar la
+
+1028
+00:38:32,720 --> 00:38:36,359
+aplicación. Esto no lo estoy haciendo
+
+1029
+00:38:34,079 --> 00:38:38,160
+yo, lo está haciendo todo Codex. ¿Vale?
+
+1030
+00:38:36,359 --> 00:38:40,400
+Esto es un ejemplo que ya sé que es
+
+1031
+00:38:38,160 --> 00:38:42,920
+lento, que ya lo hice a propósito,
+
+1032
+00:38:40,400 --> 00:38:45,480
+justamente para que veáis cómo es una
+
+1033
+00:38:42,920 --> 00:38:46,920
+interacción en este caso con la máquina.
+
+1034
+00:38:45,480 --> 00:38:48,880
+Lo podríamos hacer de muchas otras
+
+1035
+00:38:46,920 --> 00:38:51,000
+maneras, pero lo que permite este
+
+1036
+00:38:48,880 --> 00:38:53,160
+complemento es navegar por nosotros, que
+
+1037
+00:38:51,000 --> 00:38:56,200
+en algunos casos pues puede tener cierto
+
+1038
+00:38:53,160 --> 00:38:58,040
+sentido. Aún así, las herramientas o los
+
+1039
+00:38:56,200 --> 00:38:59,319
+complementos que yo os recomiendo son
+
+1040
+00:38:58,040 --> 00:39:01,480
+los que de verdad pueden hacer una
+
+1041
+00:38:59,319 --> 00:39:03,800
+interacción y una conexión muchísimo más
+
+1042
+00:39:01,480 --> 00:39:06,040
+rápida con la máquina. Vale, ya tenemos
+
+1043
+00:39:03,800 --> 00:39:08,480
+todo esto y ahora pues bueno, nos está
+
+1044
+00:39:06,040 --> 00:39:10,359
+ejecutando eh WAR por aquí y nos lo
+
+1045
+00:39:08,480 --> 00:39:12,760
+acabaría abriendo. Aquí también vemos
+
+1046
+00:39:10,359 --> 00:39:13,960
+una previsualización de teóricamente qué
+
+1047
+00:39:12,760 --> 00:39:17,480
+es lo que tendría que hacer en este
+
+1048
+00:39:13,960 --> 00:39:19,760
+caso. Fíjate cómo cambian los modelos.
+
+1049
+00:39:17,480 --> 00:39:21,640
+Le hemos puesto el modelo Terra y no ha
+
+1050
+00:39:19,760 --> 00:39:23,040
+sido capaz de abrirlo. Entonces, en el
+
+1051
+00:39:21,640 --> 00:39:24,880
+momento que vosotros también veáis que
+
+1052
+00:39:23,040 --> 00:39:26,400
+hay limitaciones, tenéis que acabar
+
+1053
+00:39:24,880 --> 00:39:28,480
+también cambiando el modelo. Digo, "U,
+
+1054
+00:39:26,400 --> 00:39:30,160
+igual este modelo no ha sido capaz de
+
+1055
+00:39:28,480 --> 00:39:32,440
+hacer según qué cosas." Y vemos como por
+
+1056
+00:39:30,160 --> 00:39:34,480
+aquí está guardpo abierto. Esto ya os
+
+1057
+00:39:32,440 --> 00:39:36,520
+digo, lo hice a propósito porque sé que
+
+1058
+00:39:34,480 --> 00:39:38,960
+es superlento, porque lo intenta buscar
+
+1059
+00:39:36,520 --> 00:39:40,960
+a mano y quería que me diera el tiempo
+
+1060
+00:39:38,960 --> 00:39:42,960
+suficiente a explicarlo, pero para que
+
+1061
+00:39:40,960 --> 00:39:45,079
+veáis que, bueno, ahora aquí acabo
+
+1062
+00:39:42,960 --> 00:39:46,599
+abriendo warp. ¿Okay? Warp ya está
+
+1063
+00:39:45,079 --> 00:39:48,880
+abierto. Bueno, esto no es lo que
+
+1064
+00:39:46,599 --> 00:39:51,440
+importaba realmente. Solo quiero que
+
+1065
+00:39:48,880 --> 00:39:54,000
+tengáis en mente qué es esto de los
+
+1066
+00:39:51,440 --> 00:39:57,800
+plugins, de los complementos. ¿Vale?
+
+1067
+00:39:54,000 --> 00:40:00,640
+Vamos ahora sí o sí ya empezar a
+
+1068
+00:39:57,800 --> 00:40:02,119
+trabajar con un proyecto real. Vamos a
+
+1069
+00:40:00,640 --> 00:40:04,400
+empezar a desarrollar un proyecto real
+
+1070
+00:40:02,119 --> 00:40:06,960
+para ver cuál es la interacción del
+
+1071
+00:40:04,400 --> 00:40:09,760
+propio códig. El proyecto con el que yo
+
+1072
+00:40:06,960 --> 00:40:11,920
+quiero acabar trabajando esta carpeta
+
+1073
+00:40:09,760 --> 00:40:14,640
+que yo creé antes por aquí que era el
+
+1074
+00:40:11,920 --> 00:40:16,760
+study calendar. Básicamente os voy a
+
+1075
+00:40:14,640 --> 00:40:21,319
+explicar el concepto. Lo que yo quiero
+
+1076
+00:40:16,760 --> 00:40:23,040
+acabar creando es un proyecto que sea un
+
+1077
+00:40:21,319 --> 00:40:25,440
+calendario que me ayude a mí a
+
+1078
+00:40:23,040 --> 00:40:27,640
+organizarme como estudiante, donde yo
+
+1079
+00:40:25,440 --> 00:40:30,760
+igual pueda acabar creando diferentes
+
+1080
+00:40:27,640 --> 00:40:32,359
+tareas, que yo le ponga unas horas, que
+
+1081
+00:40:30,760 --> 00:40:33,560
+yo le ponga un día, que las pueda
+
+1082
+00:40:32,359 --> 00:40:35,880
+completar, es decir, una especie de
+
+1083
+00:40:33,560 --> 00:40:38,079
+toist, pero más orientado a un
+
+1084
+00:40:35,880 --> 00:40:40,800
+calendario, por ejemplo, por poner una
+
+1085
+00:40:38,079 --> 00:40:42,920
+aplicación que más o menos que más o
+
+1086
+00:40:40,800 --> 00:40:44,560
+menos se vaya a desarrollar rápido para
+
+1087
+00:40:42,920 --> 00:40:46,760
+no cruzarnos aquí de brazos y estar
+
+1088
+00:40:44,560 --> 00:40:49,400
+esperando a que acabe todo. todo esto.
+
+1089
+00:40:46,760 --> 00:40:51,160
+Okay, estamos de acuerdo. Pues venga,
+
+1090
+00:40:49,400 --> 00:40:52,599
+¿cómo tendríamos que hacer todo esto?
+
+1091
+00:40:51,160 --> 00:40:55,200
+Bueno, a mí lo que se me ocurre es que
+
+1092
+00:40:52,599 --> 00:40:58,079
+si estoy creando un proyecto, lo primero
+
+1093
+00:40:55,200 --> 00:41:03,800
+y lo vamos a hacer aquí, vamos a ponerlo
+
+1094
+00:40:58,079 --> 00:41:05,760
+en sol, ya que como quiero ir rápido, no
+
+1095
+00:41:03,800 --> 00:41:07,599
+voy a ir pidiendo un montón de prompts,
+
+1096
+00:41:05,760 --> 00:41:09,599
+aunque eso todo en el curso de
+
+1097
+00:41:07,599 --> 00:41:11,839
+desarrollo con IA que os conté antes se
+
+1098
+00:41:09,599 --> 00:41:14,440
+explica cuál es la interacción correcta
+
+1099
+00:41:11,839 --> 00:41:16,000
+para desarrollar proyectos. Bien, aquí
+
+1100
+00:41:14,440 --> 00:41:17,920
+queremos ver la herramienta más que
+
+1101
+00:41:16,000 --> 00:41:20,079
+desarrollar la aplicación perfecta, así
+
+1102
+00:41:17,920 --> 00:41:23,040
+que lo voy a poner en sol en media para
+
+1103
+00:41:20,079 --> 00:41:26,040
+que sea un poquito más inteligente y con
+
+1104
+00:41:23,040 --> 00:41:28,680
+prompts malos realmente y sin mucha
+
+1105
+00:41:26,040 --> 00:41:30,560
+especificación sea capaz de darnos más o
+
+1106
+00:41:28,680 --> 00:41:32,040
+menos una solución que esté bastante
+
+1107
+00:41:30,560 --> 00:41:35,079
+bien. Lo primero que le voy a pedir es
+
+1108
+00:41:32,040 --> 00:41:37,560
+que inicialice Git para que veáis que no
+
+1109
+00:41:35,079 --> 00:41:39,680
+solo es la parte de desarrollo, sino
+
+1110
+00:41:37,560 --> 00:41:41,520
+también yo le puedo acabar diciendo, "Y
+
+1111
+00:41:39,680 --> 00:41:44,119
+esto no lo hagáis en casa, le voy a dar
+
+1112
+00:41:41,520 --> 00:41:45,640
+el acceso completo para que realmente no
+
+1113
+00:41:44,119 --> 00:41:47,440
+me tenga que estar pidiendo permiso en
+
+1114
+00:41:45,640 --> 00:41:49,520
+cada una de las cosas y no tener que
+
+1115
+00:41:47,440 --> 00:41:52,319
+estar parando, ¿vale? Pero le voy a
+
+1116
+00:41:49,520 --> 00:41:54,880
+decir que inicialice Git para que así ya
+
+1117
+00:41:52,319 --> 00:41:57,280
+acabemos teniendo realmente, y esto lo
+
+1118
+00:41:54,880 --> 00:41:59,359
+voy a cerrar, ya acabemos teniendo un
+
+1119
+00:41:57,280 --> 00:42:01,319
+sistema de control de versiones. Esto es
+
+1120
+00:41:59,359 --> 00:42:03,079
+esencial en el mundo del desarrollo y
+
+1121
+00:42:01,319 --> 00:42:07,119
+para que veáis también qué va haciendo.
+
+1122
+00:42:03,079 --> 00:42:09,240
+Ey, inicializa Git y ya está. Sin más ya
+
+1123
+00:42:07,119 --> 00:42:12,400
+nos ha dicho que esto está
+
+1124
+00:42:09,240 --> 00:42:15,079
+correctamente. Vale, vamos a meterle el
+
+1125
+00:42:12,400 --> 00:42:17,359
+prompt con el que yo quiero desarrollar
+
+1126
+00:42:15,079 --> 00:42:19,200
+esta aplicación que os acabo de contar.
+
+1127
+00:42:17,359 --> 00:42:20,880
+Bueno, por leerlo muy rápido, desarrollo
+
+1128
+00:42:19,200 --> 00:42:22,440
+una web con Reat y TypeScript que
+
+1129
+00:42:20,880 --> 00:42:24,800
+funcione como un organizador de tareas
+
+1130
+00:42:22,440 --> 00:42:26,800
+de estudio en un calendario. Podré crear
+
+1131
+00:42:24,800 --> 00:42:29,079
+tareas, arrastrar al día concreto,
+
+1132
+00:42:26,800 --> 00:42:30,800
+establecer una hora, color para la tarea
+
+1133
+00:42:29,079 --> 00:42:32,240
+y se verán ordenadas. También tendré la
+
+1134
+00:42:30,800 --> 00:42:34,839
+posibilidad de marcarlas como
+
+1135
+00:42:32,240 --> 00:42:37,480
+completadas. Bueno, por favor, lo de
+
+1136
+00:42:34,839 --> 00:42:39,839
+siempre otra vez, no se desarrolla una
+
+1137
+00:42:37,480 --> 00:42:41,800
+aplicación así. Tendríamos que generar
+
+1138
+00:42:39,839 --> 00:42:43,359
+cada una de las especificaciones, ir
+
+1139
+00:42:41,800 --> 00:42:44,680
+poquito a poco dando cada uno de los
+
+1140
+00:42:43,359 --> 00:42:48,400
+pasos, pero aquí lo que quiero es tener
+
+1141
+00:42:44,680 --> 00:42:51,040
+una base y para poder enseñaros cómo se
+
+1142
+00:42:48,400 --> 00:42:52,640
+pone a trabajar Codex en este caso y
+
+1143
+00:42:51,040 --> 00:42:55,040
+cómo tenemos que interactuar con él.
+
+1144
+00:42:52,640 --> 00:42:56,440
+¿Vale? Le digo por aquí, lanzo el prompt
+
+1145
+00:42:55,040 --> 00:42:58,319
+y vamos a empezar a ver qué es lo que
+
+1146
+00:42:56,440 --> 00:43:00,599
+está haciendo. En el momento que
+
+1147
+00:42:58,319 --> 00:43:03,280
+empiecen a aparecer cambios, los veremos
+
+1148
+00:43:00,599 --> 00:43:05,480
+también por aquí. Aquí tendremos
+
+1149
+00:43:03,280 --> 00:43:07,319
+rápidamente un acceso de qué se ha
+
+1150
+00:43:05,480 --> 00:43:09,319
+modificado en el proyecto y qué nos ha
+
+1151
+00:43:07,319 --> 00:43:11,359
+guardado un Git. También otra vez lo
+
+1152
+00:43:09,319 --> 00:43:13,440
+mismo, el local, el main, la posibilidad
+
+1153
+00:43:11,359 --> 00:43:15,359
+de acabar interactuando con el
+
+1154
+00:43:13,440 --> 00:43:16,599
+repositorio, ¿vale? Y me dice aquí, voy
+
+1155
+00:43:15,359 --> 00:43:18,000
+a construir una aplicación completa en
+
+1156
+00:43:16,599 --> 00:43:18,880
+el repositorio. Primero revisaré el
+
+1157
+00:43:18,000 --> 00:43:20,319
+estado del proyecto y dice, "El
+
+1158
+00:43:18,880 --> 00:43:22,040
+repositorio está vacío." Así que
+
+1159
+00:43:20,319 --> 00:43:24,599
+prepararé una base y nos dice que nos lo
+
+1160
+00:43:22,040 --> 00:43:26,920
+va a hacer con Bit, con Reat y con
+
+1161
+00:43:24,599 --> 00:43:28,920
+Typescript. Yo no le he especificado
+
+1162
+00:43:26,920 --> 00:43:31,079
+Bite. Ya sabéis, lo que nosotros no lo
+
+1163
+00:43:28,920 --> 00:43:33,440
+especificamos, pues se lo va a inventar.
+
+1164
+00:43:31,079 --> 00:43:35,160
+un desarrollo bueno. No se trata de que
+
+1165
+00:43:33,440 --> 00:43:36,680
+la IA invente cosas, solo que yo no me
+
+1166
+00:43:35,160 --> 00:43:38,440
+quiero detener ahora en ponerle un
+
+1167
+00:43:36,680 --> 00:43:40,400
+montón de especificaciones y echar horas
+
+1168
+00:43:38,440 --> 00:43:42,480
+desarrollando esto, sino que simplemente
+
+1169
+00:43:40,400 --> 00:43:45,000
+quiero que se ponga a desarrollar y con
+
+1170
+00:43:42,480 --> 00:43:47,440
+esto nosotros ir viendo qué va haciendo.
+
+1171
+00:43:45,000 --> 00:43:49,000
+Vale, aquí ya encontramos algo super
+
+1172
+00:43:47,440 --> 00:43:50,599
+importante. Ya vemos que en el momento
+
+1173
+00:43:49,000 --> 00:43:54,280
+que empiezan a cambiar archivos nos dice
+
+1174
+00:43:50,599 --> 00:43:56,559
+que cambia y, oh, sorpresa, ya tenemos
+
+1175
+00:43:54,280 --> 00:43:58,680
+por aquí la opción de ir revisando cosas
+
+1176
+00:43:56,559 --> 00:44:01,400
+que no habéis visto cómo es esto. Vale,
+
+1177
+00:43:58,680 --> 00:44:04,040
+vuelvo para atrás y vamos a ver la
+
+1178
+00:44:01,400 --> 00:44:06,680
+opción lateral. Si nos vamos a esta
+
+1179
+00:44:04,040 --> 00:44:10,000
+opción lateral, ahora veis que ya no
+
+1180
+00:44:06,680 --> 00:44:13,559
+solo tenemos terminal y navegador, sino
+
+1181
+00:44:10,000 --> 00:44:16,480
+que ahora como nuestro proyecto ya tiene
+
+1182
+00:44:13,559 --> 00:44:19,839
+más cosas, en este caso código, nos dice
+
+1183
+00:44:16,480 --> 00:44:21,880
+que tenemos la opción de revisar. Esto
+
+1184
+00:44:19,839 --> 00:44:24,599
+ya es el sistema de ficheros de nuestro
+
+1185
+00:44:21,880 --> 00:44:26,319
+proyecto, esto ya lo ha creado.
+
+1186
+00:44:24,599 --> 00:44:28,640
+Entonces, ¿qué significa esto de
+
+1187
+00:44:26,319 --> 00:44:31,200
+revisar? ¿Y por qué es tan importante?
+
+1188
+00:44:28,640 --> 00:44:34,119
+Primero, porque nosotros sí o sí como
+
+1189
+00:44:31,200 --> 00:44:36,599
+buenos desarrolladores tenemos que ver
+
+1190
+00:44:34,119 --> 00:44:38,680
+qué cuál es el código que se ha generado
+
+1191
+00:44:36,599 --> 00:44:41,000
+y tenemos que entender este código y
+
+1192
+00:44:38,680 --> 00:44:43,280
+tenemos que llegado el caso decirle,
+
+1193
+00:44:41,000 --> 00:44:46,079
+"Okay, esto está bien, esto está mal o
+
+1194
+00:44:43,280 --> 00:44:49,599
+lo que sea." Vamos por aquí sin más a
+
+1195
+00:44:46,079 --> 00:44:52,359
+este índex. Imagínate que yo voy leyendo
+
+1196
+00:44:49,599 --> 00:44:54,800
+todo aquilo que se ha generado y algo no
+
+1197
+00:44:52,359 --> 00:44:59,720
+me ha gustado por lo que sea. ¿Veis este
+
+1198
+00:44:54,800 --> 00:45:02,559
+más? ¿Qué es este más? La posibilidad de
+
+1199
+00:44:59,720 --> 00:45:05,400
+que yo diga, "Ey, esto está mal." Le
+
+1200
+00:45:02,559 --> 00:45:08,520
+pongo el comentario que sea y lo añado
+
+1201
+00:45:05,400 --> 00:45:11,280
+como comentario. ¿Qué significa o qué va
+
+1202
+00:45:08,520 --> 00:45:13,359
+a acabar haciendo esto? iterando sobre
+
+1203
+00:45:11,280 --> 00:45:15,000
+lo que está desarrollando.
+
+1204
+00:45:13,359 --> 00:45:16,960
+Con lo cual no se trata de que esto vaya
+
+1205
+00:45:15,000 --> 00:45:18,800
+en un one shot, no se trata de que
+
+1206
+00:45:16,960 --> 00:45:21,000
+tengamos fe ciega, no se trata de
+
+1207
+00:45:18,800 --> 00:45:23,760
+empezar a pedir la la cosas, cruzar los
+
+1208
+00:45:21,000 --> 00:45:26,520
+dedos y ojalá el resultado sea el que yo
+
+1209
+00:45:23,760 --> 00:45:28,520
+quiera. Primero, tenemos que definir muy
+
+1210
+00:45:26,520 --> 00:45:30,640
+bien los prompts y las especificaciones.
+
+1211
+00:45:28,520 --> 00:45:32,559
+Y segundo, cuando ya se empiecen a dar
+
+1212
+00:45:30,640 --> 00:45:35,000
+los resultados, los tenemos que revisar.
+
+1213
+00:45:32,559 --> 00:45:37,640
+Y por supuesto, si hay algo que no nos
+
+1214
+00:45:35,000 --> 00:45:39,640
+gusta, nosotros en este caso en la vista
+
+1215
+00:45:37,640 --> 00:45:42,480
+de revisión nos vamos por aquí y
+
+1216
+00:45:39,640 --> 00:45:45,359
+decimos, "Ey, esto no me gusta, lo voy a
+
+1217
+00:45:42,480 --> 00:45:51,200
+anotar." Y con todas estas anotaciones
+
+1218
+00:45:45,359 --> 00:45:52,920
+vemos esto. La tarea vacía es violeta.
+
+1219
+00:45:51,200 --> 00:45:56,920
+Igual yo podría pensar, "Bueno, pues no
+
+1220
+00:45:52,920 --> 00:46:02,640
+quiero que sea violeta." Digo,
+
+1221
+00:45:56,920 --> 00:46:04,400
+"La tarea vacía, quiero que sea roja.
+
+1222
+00:46:02,640 --> 00:46:07,079
+Y en el momento que yo hago esto y le
+
+1223
+00:46:04,400 --> 00:46:10,079
+doy a comentario, vemos lo que ha
+
+1224
+00:46:07,079 --> 00:46:13,240
+pasado. Esto es un comentario. Pero si
+
+1225
+00:46:10,079 --> 00:46:15,079
+yo ahora acabara buscando 200
+
+1226
+00:46:13,240 --> 00:46:17,839
+comentarios,
+
+1227
+00:46:15,079 --> 00:46:20,880
+pues metería 200 comentarios. Aquí los
+
+1228
+00:46:17,839 --> 00:46:23,400
+tendría y en el momento que aquí lo
+
+1229
+00:46:20,880 --> 00:46:25,520
+tenemos aún desarrollando, tener en
+
+1230
+00:46:23,400 --> 00:46:27,599
+mente que esto aún está desarrollando,
+
+1231
+00:46:25,520 --> 00:46:29,400
+aún está pensando, aún está diciendo que
+
+1232
+00:46:27,599 --> 00:46:32,880
+está cambiando ficheros, yo le podría
+
+1233
+00:46:29,400 --> 00:46:36,480
+decir, "Ey, venga, tarea, lánzate." ¿Y
+
+1234
+00:46:32,880 --> 00:46:40,079
+qué ha hecho esta tarea? la encolado.
+
+1235
+00:46:36,480 --> 00:46:42,319
+Realmente cuando acabe de realizar toda
+
+1236
+00:46:40,079 --> 00:46:44,359
+la acción que nosotros le hemos lanzado
+
+1237
+00:46:42,319 --> 00:46:47,319
+con ese primer prompt, lo que va a hacer
+
+1238
+00:46:44,359 --> 00:46:49,839
+es decir, "Venga, ¿qué me han comentado
+
+1239
+00:46:47,319 --> 00:46:52,079
+esto?" Pues venga, voy a iterar y voy a
+
+1240
+00:46:49,839 --> 00:46:54,440
+modificar justo voy a corregir justo lo
+
+1241
+00:46:52,079 --> 00:46:56,200
+que me acaban indicando por aquí. Vale,
+
+1242
+00:46:54,440 --> 00:46:59,079
+más cosas. Cierro otra vez el revisión
+
+1243
+00:46:56,200 --> 00:47:01,559
+este y volvemos al menú lateral. Igual
+
+1244
+00:46:59,079 --> 00:47:04,079
+que tenemos el menú lateral para
+
+1245
+00:47:01,559 --> 00:47:05,960
+revisar, que es justo lo nuevo que ha
+
+1246
+00:47:04,079 --> 00:47:07,240
+cambiado en estas interacciones, que
+
+1247
+00:47:05,960 --> 00:47:09,079
+tenemos que revisar porque nos ha
+
+1248
+00:47:07,240 --> 00:47:10,880
+subido, porque no se ha comiteado o lo
+
+1249
+00:47:09,079 --> 00:47:12,480
+que sea, también tenemos el sistema de
+
+1250
+00:47:10,880 --> 00:47:15,960
+archivos. ¿Qué significa el sistema de
+
+1251
+00:47:12,480 --> 00:47:20,640
+archivos? Una especie de editor de
+
+1252
+00:47:15,960 --> 00:47:22,720
+código, ya os lo digo, supercutre,
+
+1253
+00:47:20,640 --> 00:47:25,119
+sers simple.
+
+1254
+00:47:22,720 --> 00:47:27,599
+Esto no es un editor de código como
+
+1255
+00:47:25,119 --> 00:47:30,040
+podemos conocer Codex o como podemos
+
+1256
+00:47:27,599 --> 00:47:32,800
+conocer Visual Studio Code o lo que sea,
+
+1257
+00:47:30,040 --> 00:47:35,119
+pero sí que nos sirve para, bueno, ir
+
+1258
+00:47:32,800 --> 00:47:37,119
+revisando qué es lo que tenemos. Y por
+
+1259
+00:47:35,119 --> 00:47:40,000
+supuesto, nosotros nos podemos venir
+
+1260
+00:47:37,119 --> 00:47:42,119
+aquí, nos podemos ir al fichero que nos
+
+1261
+00:47:40,000 --> 00:47:44,559
+dé la gana, venimos por aquí, decimos,
+
+1262
+00:47:42,119 --> 00:47:47,480
+"Ah, quiero editarlo." Por supuesto,
+
+1263
+00:47:44,559 --> 00:47:49,920
+esto es un editor de código al uso. Yo
+
+1264
+00:47:47,480 --> 00:47:51,559
+puedo venir por aquí y puedo ponerme a
+
+1265
+00:47:49,920 --> 00:47:53,319
+escribir lo que me dé la gana, como si
+
+1266
+00:47:51,559 --> 00:47:56,079
+fuera un editor de código. ¿Qué pasa?
+
+1267
+00:47:53,319 --> 00:47:59,480
+Que es un editor de código muy muy
+
+1268
+00:47:56,079 --> 00:48:01,839
+simple. es un editor de código que tiene
+
+1269
+00:47:59,480 --> 00:48:03,760
+muy poquita potencia, que no te va a dar
+
+1270
+00:48:01,839 --> 00:48:05,000
+un autocompletado, que no te va a dar
+
+1271
+00:48:03,760 --> 00:48:06,880
+las ayudas que te da un editor de
+
+1272
+00:48:05,000 --> 00:48:08,960
+código, porque Codex sobre todo se
+
+1273
+00:48:06,880 --> 00:48:12,480
+centra en la parte de desarrollo con
+
+1274
+00:48:08,960 --> 00:48:15,800
+guía. Por eso, para mi recomendación de
+
+1275
+00:48:12,480 --> 00:48:18,280
+verdad, tenéis por aquí siempre un icono
+
+1276
+00:48:15,800 --> 00:48:20,440
+que os va a decir, "Ey, lo quieres abrir
+
+1277
+00:48:18,280 --> 00:48:22,079
+en Visual Studio Code, donde sea." Aquí
+
+1278
+00:48:20,440 --> 00:48:23,880
+está leyendo los editores de código que
+
+1279
+00:48:22,079 --> 00:48:26,720
+tengo yo. Imagínate que selecciono
+
+1280
+00:48:23,880 --> 00:48:28,559
+cursos, ¿vale? ¿Qué vamos a acabar
+
+1281
+00:48:26,720 --> 00:48:30,480
+encontrando? Pues bueno, me he abierto
+
+1282
+00:48:28,559 --> 00:48:33,119
+este fichero en cursor para que así me
+
+1283
+00:48:30,480 --> 00:48:34,800
+resulte un poquito más fácil. Incluso
+
+1284
+00:48:33,119 --> 00:48:36,119
+también tenemos de esta interacción
+
+1285
+00:48:34,800 --> 00:48:39,119
+porque aquí está abriendo solo el
+
+1286
+00:48:36,119 --> 00:48:42,040
+fichero. Yo puedo venir por aquí y puedo
+
+1287
+00:48:39,119 --> 00:48:43,920
+decirle, "Okay, quiero abrir pues a ver
+
+1288
+00:48:42,040 --> 00:48:45,920
+de lo que ha tocado por aquí también en
+
+1289
+00:48:43,920 --> 00:48:48,160
+cursor. A ver qué me acaba abriendo en
+
+1290
+00:48:45,920 --> 00:48:50,280
+cursor. Ah, mira, ahora ya me ha abierto
+
+1291
+00:48:48,160 --> 00:48:53,520
+realmente todo el directorio. Entonces,
+
+1292
+00:48:50,280 --> 00:48:57,480
+yo por aquí tengo cursor y ahora aquí sí
+
+1293
+00:48:53,520 --> 00:49:00,839
+que ya tengo un editor de código al uso.
+
+1294
+00:48:57,480 --> 00:49:03,559
+Mi recomendación, de verdad, una cosa es
+
+1295
+00:49:00,839 --> 00:49:06,559
+que os deis muy bien desarrollando con
+
+1296
+00:49:03,559 --> 00:49:08,200
+Codex porque os gusta, porque el motivo
+
+1297
+00:49:06,559 --> 00:49:10,920
+que sea, vuestra herramienta de
+
+1298
+00:49:08,200 --> 00:49:13,119
+desarrollo es codex, pero tener abierto
+
+1299
+00:49:10,920 --> 00:49:15,240
+siempre un editor de código porque os va
+
+1300
+00:49:13,119 --> 00:49:18,200
+a permitir primero si tenéis que editar
+
+1301
+00:49:15,240 --> 00:49:20,000
+cualquier cosa, lo va lo vais a hacer de
+
+1302
+00:49:18,200 --> 00:49:21,960
+una manera mucho más eficiente porque
+
+1303
+00:49:20,000 --> 00:49:23,880
+vais a tener un editor de código, vais a
+
+1304
+00:49:21,960 --> 00:49:25,720
+poder revisar muchísimo mejor todo el
+
+1305
+00:49:23,880 --> 00:49:28,040
+código que se está generando y vais a
+
+1306
+00:49:25,720 --> 00:49:31,319
+trabajar de una manera mucho más segura,
+
+1307
+00:49:28,040 --> 00:49:33,400
+aunque códex os de la posibilidad de ver
+
+1308
+00:49:31,319 --> 00:49:35,200
+más o menos el sistema de ficheros o
+
+1309
+00:49:33,400 --> 00:49:38,040
+incluso de modificarlo. Es decir, para
+
+1310
+00:49:35,200 --> 00:49:42,119
+mí lo mejor siempre es, ey, yo estoy
+
+1311
+00:49:38,040 --> 00:49:45,680
+trabajando en este caso con Codex y
+
+1312
+00:49:42,119 --> 00:49:48,119
+estoy revisando por aquí todo el código
+
+1313
+00:49:45,680 --> 00:49:49,920
+que yo tenga, aunque puedo utilizar
+
+1314
+00:49:48,119 --> 00:49:54,040
+también codes un poquito a medias.
+
+1315
+00:49:49,920 --> 00:49:56,200
+Fíjate lo que ha pasado por aquí, ¿vale?
+
+1316
+00:49:54,040 --> 00:49:57,839
+se ha modificado, se ha lanzado toda la
+
+1317
+00:49:56,200 --> 00:50:01,480
+tarea. ¿Y qué nos dice? Bueno, he creado
+
+1318
+00:49:57,839 --> 00:50:05,359
+una web, ta ta y tiene todo esto. Pin,
+
+1319
+00:50:01,480 --> 00:50:07,839
+pin pin. Y después lo que ha hecho a
+
+1320
+00:50:05,359 --> 00:50:09,960
+continuación también ha sido lanzar
+
+1321
+00:50:07,839 --> 00:50:12,480
+justo la tarea que yo le he pedido con
+
+1322
+00:50:09,960 --> 00:50:17,000
+la anotación. Y cuando ya tiene todo,
+
+1323
+00:50:12,480 --> 00:50:19,599
+fíjate, esto era la el editado. ¿Qué nos
+
+1324
+00:50:17,000 --> 00:50:21,599
+ha hecho? Primera interacción, he creado
+
+1325
+00:50:19,599 --> 00:50:24,520
+el proyecto, lo tienes que arrancar
+
+1326
+00:50:21,599 --> 00:50:26,359
+lanzando este comando. Perfecto,
+
+1327
+00:50:24,520 --> 00:50:27,920
+ya veremos cómo se arranca el proyecto y
+
+1328
+00:50:26,359 --> 00:50:30,040
+lo acabaremos viendo y tal, pero en el
+
+1329
+00:50:27,920 --> 00:50:32,160
+momento que ha finalizado
+
+1330
+00:50:30,040 --> 00:50:33,799
+todo el primer lanzamiento, el
+
+1331
+00:50:32,160 --> 00:50:35,599
+comentario que le dije, "La tarea vacía
+
+1332
+00:50:33,799 --> 00:50:38,119
+quiero que sea roja, ¿qué ha hecho?"
+
+1333
+00:50:35,599 --> 00:50:40,240
+Hecho tras. ¿Cuáles son los cambios en
+
+1334
+00:50:38,119 --> 00:50:42,040
+este caso? Pues mira, en este caso pues
+
+1335
+00:50:40,240 --> 00:50:45,640
+ha sido esta tontería. Simplemente ha
+
+1336
+00:50:42,040 --> 00:50:46,680
+cambiado el violeta por el coral. Ya
+
+1337
+00:50:45,640 --> 00:50:48,000
+veis que claro, en la primera
+
+1338
+00:50:46,680 --> 00:50:49,400
+interacción hay un montón de ficheros,
+
+1339
+00:50:48,000 --> 00:50:54,119
+pero en esta que era algo como muy
+
+1340
+00:50:49,400 --> 00:50:56,400
+localizado, clarísimo. Fíjate que yo
+
+1341
+00:50:54,119 --> 00:50:58,839
+esto lo he hecho leyendo el código. Esto
+
+1342
+00:50:56,400 --> 00:51:00,359
+nos tenemos que mentalizar.
+
+1343
+00:50:58,839 --> 00:51:02,359
+Hay una diferencia muy grande entre
+
+1344
+00:51:00,359 --> 00:51:04,160
+hacer by coding y entre hacer desarrollo
+
+1345
+00:51:02,359 --> 00:51:06,559
+de software profesional. Tú tienes que
+
+1346
+00:51:04,160 --> 00:51:09,200
+saber leer el código porque así vas a
+
+1347
+00:51:06,559 --> 00:51:11,000
+poder encontrar todo rápidamente y vas a
+
+1348
+00:51:09,200 --> 00:51:12,680
+ser capaz de interactuar muchísimo más
+
+1349
+00:51:11,000 --> 00:51:14,720
+rápido y de manera más eficiente, tratar
+
+1350
+00:51:12,680 --> 00:51:16,200
+errores, entender si la te está dando el
+
+1351
+00:51:14,720 --> 00:51:18,839
+resultado que tú estabas buscando,
+
+1352
+00:51:16,200 --> 00:51:20,200
+etcétera, etcétera. ¿Okay? Vale. También
+
+1353
+00:51:18,839 --> 00:51:21,680
+una cosa muy importante, en el momento
+
+1354
+00:51:20,200 --> 00:51:23,400
+que vosotros hacéis la revisión para ver
+
+1355
+00:51:21,680 --> 00:51:25,480
+si queréis hacer alguna anotación o
+
+1356
+00:51:23,400 --> 00:51:28,880
+acabar iterando o lo que sea, también
+
+1357
+00:51:25,480 --> 00:51:30,920
+tenéis la opción de deshacer. Si
+
+1358
+00:51:28,880 --> 00:51:33,200
+realmente no os ha gustado nada, lo que
+
+1359
+00:51:30,920 --> 00:51:34,920
+ha pasado, le dais a deshacer, vuelve al
+
+1360
+00:51:33,200 --> 00:51:38,160
+estado anterior y se acabó lo que se
+
+1361
+00:51:34,920 --> 00:51:41,319
+daba. ¿Vale? Aún así, vamos a quedarnos
+
+1362
+00:51:38,160 --> 00:51:43,480
+con ese desarrollo inicial para ver qué
+
+1363
+00:51:41,319 --> 00:51:46,960
+nos acabamos encontrando. Bueno, lo que
+
+1364
+00:51:43,480 --> 00:51:51,400
+nos dice por aquí es, "Ey, para arrancar
+
+1365
+00:51:46,960 --> 00:51:53,359
+el proyecto, aquí me ha hecho el ruild,
+
+1366
+00:51:51,400 --> 00:51:55,640
+pero nos dice que tenemos que correr el
+
+1367
+00:51:53,359 --> 00:51:59,000
+proyecto. ¿Qué podríamos hacer?" Pues
+
+1368
+00:51:55,640 --> 00:52:02,760
+bueno, yo si me voy por aquí a mi
+
+1369
+00:51:59,000 --> 00:52:05,160
+carpeta y desde la terminal lanzo esto,
+
+1370
+00:52:02,760 --> 00:52:07,839
+por supuesto, el proyecto va a correr.
+
+1371
+00:52:05,160 --> 00:52:09,720
+Pero estamos con un agente.
+
+1372
+00:52:07,839 --> 00:52:12,000
+Lanza
+
+1373
+00:52:09,720 --> 00:52:14,079
+el proyecto
+
+1374
+00:52:12,000 --> 00:52:16,000
+a ver qué pasa, ¿no? Entonces yo cuando
+
+1375
+00:52:14,079 --> 00:52:17,079
+le digo que lance el proyecto, aquí
+
+1376
+00:52:16,000 --> 00:52:18,760
+dice, "Voy a iniciar el servidor de
+
+1377
+00:52:17,079 --> 00:52:21,280
+desarrollo." ¿Qué va a hacer él por
+
+1378
+00:52:18,760 --> 00:52:23,520
+debajo? lanzar obviamente el comando que
+
+1379
+00:52:21,280 --> 00:52:26,480
+yo también podría acabar lanzando.
+
+1380
+00:52:23,520 --> 00:52:28,839
+Fíjate ahora aquí algo importante. He
+
+1381
+00:52:26,480 --> 00:52:30,200
+utilizado Sol para hacer esta tontería.
+
+1382
+00:52:28,839 --> 00:52:32,040
+Seguramente cualquier otro modelo lo
+
+1383
+00:52:30,200 --> 00:52:33,400
+podría acabar haciendo y también este
+
+1384
+00:52:32,040 --> 00:52:35,599
+pequeño cambio también otro modelo lo
+
+1385
+00:52:33,400 --> 00:52:37,119
+podía acabar haciendo. Tener siempre en
+
+1386
+00:52:35,599 --> 00:52:38,319
+mente, ey, según lo que vais a hacer,
+
+1387
+00:52:37,119 --> 00:52:41,960
+voy a cambiar el modelo, porque es la
+
+1388
+00:52:38,319 --> 00:52:44,119
+forma también de ahorraros eh los planes
+
+1389
+00:52:41,960 --> 00:52:46,880
+de pago o incluso ahorraros el plan
+
+1390
+00:52:44,119 --> 00:52:49,520
+gratuito. Ya tengo por aquí mi proyecto.
+
+1391
+00:52:46,880 --> 00:52:52,559
+Pues bueno, lo lanzamos. me dice, "Ey,
+
+1392
+00:52:49,520 --> 00:52:54,160
+abrir en dónde lo puedo lanzar. Lo puedo
+
+1393
+00:52:52,559 --> 00:52:56,480
+lanzar en uno de los exploradores que
+
+1394
+00:52:54,160 --> 00:52:59,640
+sea o por supuesto también lo puedo
+
+1395
+00:52:56,480 --> 00:53:03,040
+lanzar dentro de CH GPT. ¿Qué es esto?
+
+1396
+00:52:59,640 --> 00:53:05,319
+Nos va a abrir el explorador. Aún así,
+
+1397
+00:53:03,040 --> 00:53:07,960
+ya vemos que esto está desplegado en un
+
+1398
+00:53:05,319 --> 00:53:11,559
+puerto local, que yo si me voy a mi
+
+1399
+00:53:07,960 --> 00:53:13,160
+explorador, al que sea, y lo lanzo, ojo,
+
+1400
+00:53:11,559 --> 00:53:15,760
+aquí tenemos nuestra aplicación.
+
+1401
+00:53:13,160 --> 00:53:19,440
+Planifica, enfócate, avanza. No está
+
+1402
+00:53:15,760 --> 00:53:22,760
+mal, ¿verdad? Tenemos aquí día 16
+
+1403
+00:53:19,440 --> 00:53:24,680
+tras tras tras. Tenemos aquí una tarea
+
+1404
+00:53:22,760 --> 00:53:26,799
+que ha quedado a medias. Consejo, divide
+
+1405
+00:53:24,680 --> 00:53:28,839
+las sienes largas en bloques de ha hecho
+
+1406
+00:53:26,799 --> 00:53:31,480
+algo bastante chulo. Vamos a ver si es
+
+1407
+00:53:28,839 --> 00:53:35,839
+capaz de crear una nueva tarea. Vengo
+
+1408
+00:53:31,480 --> 00:53:37,920
+por aquí. Tarea de ejemplo. Pues no lo
+
+1409
+00:53:35,839 --> 00:53:40,920
+sé. Asignatura
+
+1410
+00:53:37,920 --> 00:53:40,920
+matemáticas.
+
+1411
+00:53:42,319 --> 00:53:47,240
+Vengo por aquí. ¿Cuál es el día en el
+
+1412
+00:53:44,960 --> 00:53:50,040
+que yo quiero acabar metiendo esto? Pues
+
+1413
+00:53:47,240 --> 00:53:52,760
+no lo sé. El día es algo cutre porque no
+
+1414
+00:53:50,040 --> 00:53:55,760
+me lanza esto. Ahora sí, selecciono la
+
+1415
+00:53:52,760 --> 00:53:58,160
+tarea, la fecha, la duración. Uy, vemos
+
+1416
+00:53:55,760 --> 00:54:01,880
+aquí un error, ¿verdad?
+
+1417
+00:53:58,160 --> 00:54:04,520
+No se ve los colores de la tarea por
+
+1418
+00:54:01,880 --> 00:54:07,200
+aquí, ¿no? Bueno, le voy a dar a crear
+
+1419
+00:54:04,520 --> 00:54:09,799
+tarea y vamos a ver lo que ha hecho. Lo
+
+1420
+00:54:07,200 --> 00:54:13,000
+he dicho para
+
+1421
+00:54:09,799 --> 00:54:15,640
+uh un pequeño error, ¿verdad? Vemos que
+
+1422
+00:54:13,000 --> 00:54:18,760
+la tarea sí que se ve azul. Vemos que la
+
+1423
+00:54:15,640 --> 00:54:21,119
+tarea se pueden completar.
+
+1424
+00:54:18,760 --> 00:54:24,000
+Fíjate
+
+1425
+00:54:21,119 --> 00:54:26,960
+que la tarea la podemos seleccionar e
+
+1426
+00:54:24,000 --> 00:54:29,799
+incluso podemos modificar los cambios. Y
+
+1427
+00:54:26,960 --> 00:54:32,520
+hasta me podría pasar las tareas aquí a
+
+1428
+00:54:29,799 --> 00:54:35,000
+todas, a pendientes, a hechas, porque
+
+1429
+00:54:32,520 --> 00:54:37,440
+estas todas aún están sin asignar. Las
+
+1430
+00:54:35,000 --> 00:54:39,160
+pendientes son las que tengo por aquí y
+
+1431
+00:54:37,440 --> 00:54:41,319
+las hechas pues las que acabaría
+
+1432
+00:54:39,160 --> 00:54:43,040
+marcando. Vemos como hace aquí una
+
+1433
+00:54:41,319 --> 00:54:44,599
+especie de filtro. Vemos que no es muy
+
+1434
+00:54:43,040 --> 00:54:46,640
+correcto. Obviamente esto lo hemos
+
+1435
+00:54:44,599 --> 00:54:49,200
+lanzado en un prompt y ya está. Ahora
+
+1436
+00:54:46,640 --> 00:54:50,799
+que vemos que esto está mal, le podría
+
+1437
+00:54:49,200 --> 00:54:53,680
+decir
+
+1438
+00:54:50,799 --> 00:54:55,839
+por dejarle que haga algo. Okay, le voy
+
+1439
+00:54:53,680 --> 00:55:01,200
+a decir
+
+1440
+00:54:55,839 --> 00:55:04,040
+en la ventana de creación de tareas no
+
+1441
+00:55:01,200 --> 00:55:10,359
+se visualizan
+
+1442
+00:55:04,040 --> 00:55:15,400
+bien los colores para
+
+1443
+00:55:10,359 --> 00:55:19,680
+seleccionar el tipo de tarea. Parece que
+
+1444
+00:55:15,400 --> 00:55:21,440
+todo se ve violeta.
+
+1445
+00:55:19,680 --> 00:55:23,200
+Lo lanzo aquí. Es decir, no importa,
+
+1446
+00:55:21,440 --> 00:55:25,280
+pero lo que yo quiero hacer es seguir
+
+1447
+00:55:23,200 --> 00:55:27,760
+interactuando para que veáis cómo
+
+1448
+00:55:25,280 --> 00:55:29,480
+podemos seguir trabajando. Os decía que
+
+1449
+00:55:27,760 --> 00:55:32,240
+ahora mismo, ahora aquí tenemos pues
+
+1450
+00:55:29,480 --> 00:55:34,799
+todos los ficheros y que también tenemos
+
+1451
+00:55:32,240 --> 00:55:37,160
+el explorador web. Podéis pensar que el
+
+1452
+00:55:34,799 --> 00:55:39,039
+explorador web aquí pues no es el mejor
+
+1453
+00:55:37,160 --> 00:55:42,119
+del mundo, porque claro, tenemos que ver
+
+1454
+00:55:39,039 --> 00:55:44,039
+aquí de lado, igual no lo estamos viendo
+
+1455
+00:55:42,119 --> 00:55:47,000
+como queremos porque en este caso pues
+
+1456
+00:55:44,039 --> 00:55:48,799
+igual no es muy responsive del todo.
+
+1457
+00:55:47,000 --> 00:55:52,240
+Bueno, nos saca por aquí, bueno, no
+
+1458
+00:55:48,799 --> 00:55:55,119
+importa, pero no es tan importante este
+
+1459
+00:55:52,240 --> 00:55:58,880
+explorador web para acabar
+
+1460
+00:55:55,119 --> 00:56:01,680
+previsualizando todo, sino por la opción
+
+1461
+00:55:58,880 --> 00:56:06,280
+que veis aquí. ¿Recordáis que nosotros
+
+1462
+00:56:01,680 --> 00:56:09,280
+el código lo podíamos acabar anotando,
+
+1463
+00:56:06,280 --> 00:56:11,839
+decíamos en un código concreto, ¿vale?
+
+1464
+00:56:09,280 --> 00:56:14,760
+Pero nosotros en el momento que tenemos
+
+1465
+00:56:11,839 --> 00:56:18,240
+el explorador, ¿vees lo que pasa? Él ha
+
+1466
+00:56:14,760 --> 00:56:21,319
+lanzado directamente una prueba para
+
+1467
+00:56:18,240 --> 00:56:24,039
+validarlo. Fíjate, corregido, pas, pas,
+
+1468
+00:56:21,319 --> 00:56:26,039
+revisión, podríamos revisarlo. Vemos que
+
+1469
+00:56:24,039 --> 00:56:28,319
+como tiene acceso al explorador, la
+
+1470
+00:56:26,039 --> 00:56:31,000
+interacción es superrápida. Entonces
+
+1471
+00:56:28,319 --> 00:56:32,640
+podemos también mejorar ese flujo de
+
+1472
+00:56:31,000 --> 00:56:34,599
+desarrollo. Por eso yo os recomiendo que
+
+1473
+00:56:32,640 --> 00:56:36,799
+si estáis desarrollando web, este
+
+1474
+00:56:34,599 --> 00:56:39,119
+explorador está guay porque así él
+
+1475
+00:56:36,799 --> 00:56:41,000
+también es capaz de ir lanzando tareas y
+
+1476
+00:56:39,119 --> 00:56:44,039
+aquí sí que interactúa muy rápido.
+
+1477
+00:56:41,000 --> 00:56:47,200
+Podríais también instalar el complemento
+
+1478
+00:56:44,039 --> 00:56:49,319
+de Chrome, pero aún así,
+
+1479
+00:56:47,200 --> 00:56:52,960
+aunque podría acabar interactuando, no
+
+1480
+00:56:49,319 --> 00:56:55,000
+va realmente tan tan fino como la propia
+
+1481
+00:56:52,960 --> 00:56:57,319
+herramienta que tiene dentro. Por eso
+
+1482
+00:56:55,000 --> 00:56:59,079
+también han hecho algo muy importante.
+
+1483
+00:56:57,319 --> 00:57:00,200
+La gente de Open AI tenía una aplicación
+
+1484
+00:56:59,079 --> 00:57:01,520
+que se llamaba Atlas, que era un
+
+1485
+00:57:00,200 --> 00:57:03,520
+explorador. Pues bueno, lo han
+
+1486
+00:57:01,520 --> 00:57:04,920
+descontinuado y lo han metido dentro.
+
+1487
+00:57:03,520 --> 00:57:07,319
+están intentando crear una super
+
+1488
+00:57:04,920 --> 00:57:09,520
+apprenti.
+
+1489
+00:57:07,319 --> 00:57:10,839
+Vale, lo que os decía antes, recordar
+
+1490
+00:57:09,520 --> 00:57:13,760
+que en el momento que yo decía, "Bueno,
+
+1491
+00:57:10,839 --> 00:57:15,640
+voy a revisar algo, no me gusta, ta ta,
+
+1492
+00:57:13,760 --> 00:57:18,039
+lo puedo anotar y así después puedo
+
+1493
+00:57:15,640 --> 00:57:19,960
+seguir iterando." Pero aquí tenemos algo
+
+1494
+00:57:18,039 --> 00:57:23,359
+también muy guay, que es que desde el
+
+1495
+00:57:19,960 --> 00:57:26,200
+propio explorador web tenemos esa acción
+
+1496
+00:57:23,359 --> 00:57:27,839
+de anotar, así que le voy a dar a anotar
+
+1497
+00:57:26,200 --> 00:57:31,400
+y vemos que en el momento que yo me
+
+1498
+00:57:27,839 --> 00:57:35,319
+pongo a anotar puedo ir seleccionando
+
+1499
+00:57:31,400 --> 00:57:37,880
+cada uno de los elementos. ¿Lo veis?
+
+1500
+00:57:35,319 --> 00:57:39,599
+Imagínate que ahora aquí digo tu espacio
+
+1501
+00:57:37,880 --> 00:57:44,440
+de estudio.
+
+1502
+00:57:39,599 --> 00:57:47,240
+Pues voy a seleccionar esto
+
+1503
+00:57:44,440 --> 00:57:54,599
+y le voy a decir
+
+1504
+00:57:47,240 --> 00:57:58,480
+quiero que también salude al usuario.
+
+1505
+00:57:54,599 --> 00:58:01,400
+Esto es super tontería. Y aquí me voy,
+
+1506
+00:57:58,480 --> 00:58:03,680
+lo pongo en terra y ya está. Tengo
+
+1507
+00:58:01,400 --> 00:58:06,400
+también una anotación, en este caso, una
+
+1508
+00:58:03,680 --> 00:58:09,680
+anotación sobre la interfaz gráfica. La
+
+1509
+00:58:06,400 --> 00:58:13,680
+voy a lanzar a ver qué pasa.
+
+1510
+00:58:09,680 --> 00:58:16,039
+Hala, captura de pantalla, pero ya
+
+1511
+00:58:13,680 --> 00:58:18,280
+realizada de manera nativa desde el
+
+1512
+00:58:16,039 --> 00:58:20,200
+propio explorador web, seleccionando qué
+
+1513
+00:58:18,280 --> 00:58:21,520
+es lo que quiere tocar.
+
+1514
+00:58:20,200 --> 00:58:22,960
+Nosotros podríamos ir al código,
+
+1515
+00:58:21,520 --> 00:58:25,319
+podríamos ir a buscar eso, podríamos
+
+1516
+00:58:22,960 --> 00:58:27,119
+programar nosotros, por supuesto, pero
+
+1517
+00:58:25,319 --> 00:58:28,559
+en este caso también buscamos la manera
+
+1518
+00:58:27,119 --> 00:58:30,400
+de decirle, "Es que lo que yo quiero
+
+1519
+00:58:28,559 --> 00:58:32,880
+tocar es justamente en esto, que también
+
+1520
+00:58:30,400 --> 00:58:34,760
+es una forma de acabar interactuando y
+
+1521
+00:58:32,880 --> 00:58:37,000
+acabar desarrollando de una manera pues
+
+1522
+00:58:34,760 --> 00:58:38,839
+un poquito más rápida, por supuesto,
+
+1523
+00:58:37,000 --> 00:58:40,400
+siempre teniendo en cuenta si tiene más
+
+1524
+00:58:38,839 --> 00:58:42,319
+menos sentido para nosotros." Vemos que
+
+1525
+00:58:40,400 --> 00:58:44,280
+ya está haciendo aquí los cambios. Vemos
+
+1526
+00:58:42,319 --> 00:58:45,920
+que ya está poniendo aquí, "Hola, Bris,
+
+1527
+00:58:44,280 --> 00:58:47,200
+tu espacio de estudio." Perfecto, es lo
+
+1528
+00:58:45,920 --> 00:58:48,960
+que buscábamos, un archivo que ha
+
+1529
+00:58:47,200 --> 00:58:51,920
+cambiado. Lo vemos por aquí que ha
+
+1530
+00:58:48,960 --> 00:58:53,880
+añadido nada, un nuevo texto dentro del
+
+1531
+00:58:51,920 --> 00:58:57,119
+párrafo que existía aquí. Por supuesto,
+
+1532
+00:58:53,880 --> 00:58:59,440
+yo lo revisaría. Veo que está todo OK. Y
+
+1533
+00:58:57,119 --> 00:59:01,280
+aquí ya lo ha recargado directamente. En
+
+1534
+00:58:59,440 --> 00:59:04,039
+cambio, si nos vamos aquí al explorador,
+
+1535
+00:59:01,280 --> 00:59:06,359
+vemos que también está recargado, ¿vale?
+
+1536
+00:59:04,039 --> 00:59:08,440
+Es una forma superrápida de acabar
+
+1537
+00:59:06,359 --> 00:59:10,039
+interactuando con todo lo que tenemos
+
+1538
+00:59:08,440 --> 00:59:14,200
+por aquí, ¿vale?
+
+1539
+00:59:10,039 --> 00:59:15,920
+En el momento también s super importante
+
+1540
+00:59:14,200 --> 00:59:19,280
+que nosotros estamos trabajando con
+
+1541
+00:59:15,920 --> 00:59:21,280
+Codex no significa que únicamente
+
+1542
+00:59:19,280 --> 00:59:24,839
+tengamos que hacer todo con Codex porque
+
+1543
+00:59:21,280 --> 00:59:27,000
+ya os expliqué que para mí lo ideal es
+
+1544
+00:59:24,839 --> 00:59:28,799
+ir trabajando realmente en paralelo
+
+1545
+00:59:27,000 --> 00:59:32,000
+también con un editor de código. Un
+
+1546
+00:59:28,799 --> 00:59:34,359
+editor de código que fíjate que voy a
+
+1547
+00:59:32,000 --> 00:59:37,400
+buscar una extensión
+
+1548
+00:59:34,359 --> 00:59:40,559
+y voy a poner por aquí codex. Digo
+
+1549
+00:59:37,400 --> 00:59:43,400
+codex. Ostras. ¿Y quién ha creado esto?
+
+1550
+00:59:40,559 --> 00:59:45,799
+Ah, si lo ha creado Open AI.
+
+1551
+00:59:43,400 --> 00:59:48,440
+Entonces también algo importante, voy a
+
+1552
+00:59:45,799 --> 00:59:51,319
+instalar esto
+
+1553
+00:59:48,440 --> 00:59:53,880
+para que veáis que dentro de los propios
+
+1554
+00:59:51,319 --> 00:59:56,559
+editores, en caso de que os guste
+
+1555
+00:59:53,880 --> 00:59:58,559
+también cómo funciona Codex,
+
+1556
+00:59:56,559 --> 01:00:01,200
+podemos también interactuar con la
+
+1557
+00:59:58,559 --> 01:00:03,799
+propia herramienta de Codex. Okay, yo ya
+
+1558
+01:00:01,200 --> 01:00:05,680
+tengo esto y ahora en la parte del chat,
+
+1559
+01:00:03,799 --> 01:00:07,720
+igual que tengo el agente nativo en este
+
+1560
+01:00:05,680 --> 01:00:09,400
+caso de cursor, que es la herramienta
+
+1561
+01:00:07,720 --> 01:00:12,799
+con la que yo estoy trabajando, también
+
+1562
+01:00:09,400 --> 01:00:14,280
+tenemos Codex, fíjate, tal. Y nos
+
+1563
+01:00:12,799 --> 01:00:18,160
+empieza a dar aquí, bueno, pues una
+
+1564
+01:00:14,280 --> 01:00:21,160
+serie de informaciones, ta ta ta ta, y
+
+1565
+01:00:18,160 --> 01:00:24,760
+el nuevo modelo. Y fíjate que aquí lo
+
+1566
+01:00:21,160 --> 01:00:27,400
+que tenemos ya es justamente los últimos
+
+1567
+01:00:24,760 --> 01:00:30,280
+chats con los que hemos trabajado. Vengo
+
+1568
+01:00:27,400 --> 01:00:32,960
+por aquí. ¿Os suena?
+
+1569
+01:00:30,280 --> 01:00:35,000
+Este es el chat de Codex, con lo cual
+
+1570
+01:00:32,960 --> 01:00:36,599
+nosotros para según qué acciones, si
+
+1571
+01:00:35,000 --> 01:00:38,200
+estamos familiarizados también con una
+
+1572
+01:00:36,599 --> 01:00:40,160
+herramienta de desarrollo de código,
+
+1573
+01:00:38,200 --> 01:00:43,000
+como puede ser en este caso que estoy
+
+1574
+01:00:40,160 --> 01:00:44,720
+con cursor, que sepamos que en el
+
+1575
+01:00:43,000 --> 01:00:46,960
+momento que estemos interactuando, yo
+
+1576
+01:00:44,720 --> 01:00:48,960
+vengo por aquí y también puedo trabajar
+
+1577
+01:00:46,960 --> 01:00:53,119
+desde la propia herramienta, desde
+
+1578
+01:00:48,960 --> 01:00:55,039
+cursor, tirando del propio codex.
+
+1579
+01:00:53,119 --> 01:00:57,920
+Recomendación
+
+1580
+01:00:55,039 --> 01:01:00,280
+para ver qué está haciendo Codex para
+
+1581
+01:00:57,920 --> 01:01:03,160
+modificar algunas cosas directamente,
+
+1582
+01:01:00,280 --> 01:01:05,319
+teniendo un contexto que prima más el
+
+1583
+01:01:03,160 --> 01:01:07,880
+código que la inteligencia artificial,
+
+1584
+01:01:05,319 --> 01:01:09,720
+como en este caso esta vista de cursor,
+
+1585
+01:01:07,880 --> 01:01:12,240
+está bien.
+
+1586
+01:01:09,720 --> 01:01:14,359
+La mayor potencia de Codex, por
+
+1587
+01:01:12,240 --> 01:01:16,640
+supuesto, es utilizando la propia
+
+1588
+01:01:14,359 --> 01:01:19,920
+herramienta de Codex, pero tener este
+
+1589
+01:01:16,640 --> 01:01:21,760
+mix para mí es una muy buena suit de
+
+1590
+01:01:19,920 --> 01:01:23,599
+herramientas. el tener la herramienta de
+
+1591
+01:01:21,760 --> 01:01:24,760
+codex. Desde aquí estoy desarrollando,
+
+1592
+01:01:23,599 --> 01:01:27,160
+pero en el momento que yo me tengo que
+
+1593
+01:01:24,760 --> 01:01:29,079
+meter un poquito más al código, lo hago
+
+1594
+01:01:27,160 --> 01:01:30,520
+desde una herramienta de edición de
+
+1595
+01:01:29,079 --> 01:01:32,640
+código, como puede ser Cursor, como
+
+1596
+01:01:30,520 --> 01:01:35,119
+puede ser Visual Studio Code o lo que
+
+1597
+01:01:32,640 --> 01:01:36,599
+sea. Y aquí también tengo Codex para ir
+
+1598
+01:01:35,119 --> 01:01:38,760
+viendo todo lo que hizo. Ya sabéis que
+
+1599
+01:01:36,599 --> 01:01:40,280
+desde aquí puedo empezar a acceder a
+
+1600
+01:01:38,760 --> 01:01:42,680
+cada una de las herramientas, a cada uno
+
+1601
+01:01:40,280 --> 01:01:44,680
+de los ficheros. Aquí también tengo el
+
+1602
+01:01:42,680 --> 01:01:48,000
+propio contexto de los ficheros, bueno,
+
+1603
+01:01:44,680 --> 01:01:49,559
+lo que sea. ¿Vale? Entonces tengo una,
+
+1604
+01:01:48,000 --> 01:01:52,359
+digamos, una interacción un poquito más
+
+1605
+01:01:49,559 --> 01:01:56,200
+cercana al propio código en caso de que
+
+1606
+01:01:52,359 --> 01:01:58,400
+nos haga falta. Okay. Vale, dicho esto,
+
+1607
+01:01:56,200 --> 01:02:02,240
+¿qué más cosas podemos acabar haciendo?
+
+1608
+01:01:58,400 --> 01:02:04,760
+Voy a cerrar esto por aquí. Voy a abrir
+
+1609
+01:02:02,240 --> 01:02:06,440
+una nueva tarea dentro de nuestra
+
+1610
+01:02:04,760 --> 01:02:08,880
+herramienta, que es el study calendar
+
+1611
+01:02:06,440 --> 01:02:12,480
+este que he creado por aquí. Y vamos a
+
+1612
+01:02:08,880 --> 01:02:15,640
+ver otra de las cosas más importantes
+
+1613
+01:02:12,480 --> 01:02:18,640
+que tiene el propio Codex para trabajar,
+
+1614
+01:02:15,640 --> 01:02:20,839
+que son los comandos. ¿Qué es eso de los
+
+1615
+01:02:18,640 --> 01:02:23,400
+comandos? Igual que hemos visto antes
+
+1616
+01:02:20,839 --> 01:02:26,079
+que teníamos toda la parte de estos
+
+1617
+01:02:23,400 --> 01:02:27,559
+complementos para acabar interactuando,
+
+1618
+01:02:26,079 --> 01:02:29,559
+por supuesto, es decir, aquí no tenéis
+
+1619
+01:02:27,559 --> 01:02:31,480
+archivos, carpetas o lo que sea.
+
+1620
+01:02:29,559 --> 01:02:33,400
+¿Queréis una captura de pantalla? Se lo
+
+1621
+01:02:31,480 --> 01:02:35,960
+adjuntáis desde aquí. Aparte de todos
+
+1622
+01:02:33,400 --> 01:02:38,000
+los complementos que ya tiene instalados
+
+1623
+01:02:35,960 --> 01:02:40,400
+y los que le podéis instalar extra, que
+
+1624
+01:02:38,000 --> 01:02:43,079
+es lo que vimos antes por aquí. Bueno,
+
+1625
+01:02:40,400 --> 01:02:45,160
+eh, a donde iba. Otra de las cosas
+
+1626
+01:02:43,079 --> 01:02:47,319
+importantes que tenemos que conocer
+
+1627
+01:02:45,160 --> 01:02:49,640
+dentro de codex son los comandos, que se
+
+1628
+01:02:47,319 --> 01:02:53,200
+activan con la barra inclinada, los
+
+1629
+01:02:49,640 --> 01:02:55,400
+comandos o también las skills. ¿Qué es
+
+1630
+01:02:53,200 --> 01:02:59,920
+esto de comandos, de skills? Pues
+
+1631
+01:02:55,400 --> 01:03:03,160
+básicamente acciones programadas rápidas
+
+1632
+01:02:59,920 --> 01:03:06,480
+que ya están guardadas dentro de Codeix.
+
+1633
+01:03:03,160 --> 01:03:09,559
+¿Qué significa esto? Fíjate, estado,
+
+1634
+01:03:06,480 --> 01:03:12,680
+iniciar, MCP, mascota. Es decir, yo
+
+1635
+01:03:09,559 --> 01:03:15,240
+tengo un comando que digo mascota, ras,
+
+1636
+01:03:12,680 --> 01:03:18,799
+la lanzo. Tengo un comando que es
+
+1637
+01:03:15,240 --> 01:03:20,319
+mascota, la elimino. Vale, en el momento
+
+1638
+01:03:18,799 --> 01:03:23,240
+que queremos empezar a interactuar de
+
+1639
+01:03:20,319 --> 01:03:25,520
+una forma más hábil, no tener que
+
+1640
+01:03:23,240 --> 01:03:27,680
+escribir todo, buscar todo a bases de
+
+1641
+01:03:25,520 --> 01:03:29,839
+clics, lo que yo os recomendaría es que
+
+1642
+01:03:27,680 --> 01:03:32,359
+empezarais a trabajar con los comandos.
+
+1643
+01:03:29,839 --> 01:03:34,799
+¿Okay? Vamos a ver cuáles son los
+
+1644
+01:03:32,359 --> 01:03:36,760
+comandos más importantes. Los podríamos
+
+1645
+01:03:34,799 --> 01:03:40,039
+repasar aquí todos, pero bueno, ya veis
+
+1646
+01:03:36,760 --> 01:03:43,680
+que son unos cuantos. Los comandos
+
+1647
+01:03:40,039 --> 01:03:47,119
+propios, ¿okay? Los comandos propios son
+
+1648
+01:03:43,680 --> 01:03:49,000
+estos que veis por aquí. Después tenemos
+
+1649
+01:03:47,119 --> 01:03:51,359
+una serie de habilidades, una serie de
+
+1650
+01:03:49,000 --> 01:03:53,680
+skills que son todas las que veis por
+
+1651
+01:03:51,359 --> 01:03:56,880
+aquí. por ver algo muy rápido a nivel de
+
+1652
+01:03:53,680 --> 01:03:59,160
+skills. Fíjate, bueno, el creador de
+
+1653
+01:03:56,880 --> 01:04:01,640
+skills, el instalador de skills, esos
+
+1654
+01:03:59,160 --> 01:04:03,880
+son habilidades que nosotros podemos
+
+1655
+01:04:01,640 --> 01:04:06,279
+descargar o que nosotros podemos crear
+
+1656
+01:04:03,880 --> 01:04:08,480
+las propias. Puedo crear una habilidad
+
+1657
+01:04:06,279 --> 01:04:13,279
+que me ayude a hacer testing. Entonces
+
+1658
+01:04:08,480 --> 01:04:17,799
+yo digo por aquí, fíjate, crea una skill
+
+1659
+01:04:13,279 --> 01:04:21,200
+que me ayude a hacer testing en el
+
+1660
+01:04:17,799 --> 01:04:23,160
+proyecto. Lo lanzo y ya le digo que no
+
+1661
+01:04:21,200 --> 01:04:25,520
+le quiero ni permisos. Venga, dice, pues
+
+1662
+01:04:23,160 --> 01:04:27,880
+voy a usar la skill creator, que es una
+
+1663
+01:04:25,520 --> 01:04:30,160
+habilidad que es capaz de crear
+
+1664
+01:04:27,880 --> 01:04:32,400
+habilidades para crear esa skill
+
+1665
+01:04:30,160 --> 01:04:34,760
+especializada. Fíjate lo que va a hacer
+
+1666
+01:04:32,400 --> 01:04:36,400
+la skill. la voy a crear dentro de Codex
+
+1667
+01:04:34,760 --> 01:04:38,440
+Skills. Digo yo, bueno, aquí me he
+
+1668
+01:04:36,400 --> 01:04:42,720
+perdido un poco, pero como yo tengo todo
+
+1669
+01:04:38,440 --> 01:04:46,880
+esto abierto, vamos a ver si me acaba
+
+1670
+01:04:42,720 --> 01:04:51,520
+creando, claro, algo a nivel de el
+
+1671
+01:04:46,880 --> 01:04:52,200
+proyecto o a nivel de el propio codex,
+
+1672
+01:04:51,520 --> 01:04:53,680
+que eso es algo [carraspeo] que
+
+1673
+01:04:52,200 --> 01:04:56,240
+deberíamos tener en cuenta y es cómo
+
+1674
+01:04:53,680 --> 01:04:57,720
+funcionan las skills. Pero lo importante
+
+1675
+01:04:56,240 --> 01:05:01,559
+realmente no es tanto dónde la va a
+
+1676
+01:04:57,720 --> 01:05:03,279
+crear, aunque deberíamos crearlas en el
+
+1677
+01:05:01,559 --> 01:05:05,039
+propio
+
+1678
+01:05:03,279 --> 01:05:07,200
+proyecto porque así lo tenemos todo
+
+1679
+01:05:05,039 --> 01:05:08,839
+acotado, pero aún así lo que veáis que
+
+1680
+01:05:07,200 --> 01:05:10,640
+podemos utilizar el propio códigos para
+
+1681
+01:05:08,839 --> 01:05:12,279
+crear nuestros propios skills. Dice,
+
+1682
+01:05:10,640 --> 01:05:13,799
+"Bueno, he creado un proyecto que
+
+1683
+01:05:12,279 --> 01:05:15,839
+todavía no tiene un framework de test,
+
+1684
+01:05:13,799 --> 01:05:18,559
+no sé qué tal." Digo, "Bueno, pues no
+
+1685
+01:05:15,839 --> 01:05:21,359
+pasa nada." Así que va a intentar
+
+1686
+01:05:18,559 --> 01:05:23,680
+revisar a ver cómo empieza a meterle los
+
+1687
+01:05:21,359 --> 01:05:26,680
+test porque no tiene ni esos test.
+
+1688
+01:05:23,680 --> 01:05:28,920
+Fíjate, archivos cambiados, ras. Vengo
+
+1689
+01:05:26,680 --> 01:05:31,279
+por aquí y ahora teóricamente pues ya
+
+1690
+01:05:28,920 --> 01:05:33,760
+nos va a empezar a crear los test. Vengo
+
+1691
+01:05:31,279 --> 01:05:37,079
+por aquí. Hala,
+
+1692
+01:05:33,760 --> 01:05:39,720
+fíjate. Calendar, referencias. A ver, a
+
+1693
+01:05:37,079 --> 01:05:42,279
+ver, a ver. Tenemos las skills dentro de
+
+1694
+01:05:39,720 --> 01:05:45,119
+Codex. Bueno, no pasa nada. ¿Cómo le ha
+
+1695
+01:05:42,279 --> 01:05:47,520
+llamado a esta skill? Vamos a ver lo que
+
+1696
+01:05:45,119 --> 01:05:50,079
+tiene aquí.
+
+1697
+01:05:47,520 --> 01:05:52,640
+tiene una skill que la ha llamado
+
+1698
+01:05:50,079 --> 01:05:55,240
+project testing. Sin más, yo voy a dejar
+
+1699
+01:05:52,640 --> 01:05:57,640
+que cree esta skill porque ya digo, esto
+
+1700
+01:05:55,240 --> 01:05:59,640
+no es un curso de skills ni mucho menos.
+
+1701
+01:05:57,640 --> 01:06:01,720
+Revisar la parte de skills que yo
+
+1702
+01:05:59,640 --> 01:06:03,119
+explico en el curso de desarrollo con IA
+
+1703
+01:06:01,720 --> 01:06:04,160
+o buscar más sobre las skills, pero para
+
+1704
+01:06:03,119 --> 01:06:05,920
+que veáis que nosotros tenemos la
+
+1705
+01:06:04,160 --> 01:06:08,279
+capacidad de crear habilidades.
+
+1706
+01:06:05,920 --> 01:06:10,119
+Perfecto. Vamos a dejar que acabe todo
+
+1707
+01:06:08,279 --> 01:06:11,760
+esto. Vemos que creado las skills y que
+
+1708
+01:06:10,119 --> 01:06:15,799
+es una skill que se llama, ¿lo veis
+
+1709
+01:06:11,760 --> 01:06:19,319
+aquí? Test study calendar. Entonces, yo
+
+1710
+01:06:15,799 --> 01:06:23,640
+ahora vengo por aquí, test
+
+1711
+01:06:19,319 --> 01:06:26,720
+study y que me dice aquí, uy, testing de
+
+1712
+01:06:23,640 --> 01:06:29,880
+study calendar. Ah, okay, perfecto. Pues
+
+1713
+01:06:26,720 --> 01:06:31,960
+mira, ya tenemos la posibilidad de
+
+1714
+01:06:29,880 --> 01:06:35,039
+acceder a esta skill que hemos creado
+
+1715
+01:06:31,960 --> 01:06:38,400
+nosotros, pero claro, el propio codex
+
+1716
+01:06:35,039 --> 01:06:40,720
+tiene otras skills.
+
+1717
+01:06:38,400 --> 01:06:42,520
+Vamos por aquí. Template creator
+
+1718
+01:06:40,720 --> 01:06:46,000
+visualize.
+
+1719
+01:06:42,520 --> 01:06:49,960
+Vemos por aquí, convierte ideas y datos
+
+1720
+01:06:46,000 --> 01:06:52,520
+en visuales interactivos. Pues bueno,
+
+1721
+01:06:49,960 --> 01:06:54,760
+para hojas de cálculo, tiene por aquí
+
+1722
+01:06:52,520 --> 01:06:57,039
+para presentaciones, para calendario
+
+1723
+01:06:54,760 --> 01:06:58,599
+operativo, para la documentación, hay
+
+1724
+01:06:57,039 --> 01:07:00,559
+algunas ya creadas, pero nosotros
+
+1725
+01:06:58,599 --> 01:07:03,279
+podemos crear las nuestras propias o por
+
+1726
+01:07:00,559 --> 01:07:05,119
+supuesto descargar skills que ya han
+
+1727
+01:07:03,279 --> 01:07:07,079
+están creadas por la comunidad porque en
+
+1728
+01:07:05,119 --> 01:07:10,039
+realidad la forma de instalarlos también
+
+1729
+01:07:07,079 --> 01:07:13,279
+es bastante estándar. Aún así, lo
+
+1730
+01:07:10,039 --> 01:07:15,880
+importante para mí no era tanto esto,
+
+1731
+01:07:13,279 --> 01:07:19,480
+sino la posibilidad de ver cuáles son
+
+1732
+01:07:15,880 --> 01:07:22,000
+los comandos más utilizados que que
+
+1733
+01:07:19,480 --> 01:07:24,160
+tenemos dentro de Codex. Vamos a hacer
+
+1734
+01:07:22,000 --> 01:07:27,599
+un repaso muy muy rápido por cada uno de
+
+1735
+01:07:24,160 --> 01:07:30,359
+ellos. Compactar. ¿Qué es compactar?
+
+1736
+01:07:27,599 --> 01:07:33,520
+Es decir, escribimos este comando, si lo
+
+1737
+01:07:30,359 --> 01:07:35,640
+tenéis en inglés, compact. Pero si lo
+
+1738
+01:07:33,520 --> 01:07:37,520
+escribimos en inglés, compact, vemos que
+
+1739
+01:07:35,640 --> 01:07:39,000
+también nos va a acabar encontrando en
+
+1740
+01:07:37,520 --> 01:07:41,079
+español. Nosotros tenemos la propia
+
+1741
+01:07:39,000 --> 01:07:43,079
+ventana de contexto de esta IA, pues
+
+1742
+01:07:41,079 --> 01:07:44,640
+bueno, nos dice que lleva un 13%
+
+1743
+01:07:43,079 --> 01:07:46,720
+ocupado. ¿Qué es el compactar?
+
+1744
+01:07:44,640 --> 01:07:48,079
+Básicamente el comprimir para que la
+
+1745
+01:07:46,720 --> 01:07:49,920
+ventana de contexto pues libere un
+
+1746
+01:07:48,079 --> 01:07:52,440
+poquito de espacio y así no se llene y
+
+1747
+01:07:49,920 --> 01:07:53,839
+no empiece a alucinar sin necesidad que
+
+1748
+01:07:52,440 --> 01:07:55,799
+tengamos que abrir una ventana de
+
+1749
+01:07:53,839 --> 01:07:57,680
+contexto nuevo. El contexto del ID,
+
+1750
+01:07:55,799 --> 01:07:59,119
+incluir la selección actual para que el
+
+1751
+01:07:57,680 --> 01:08:01,119
+editor de código también tenga ese
+
+1752
+01:07:59,119 --> 01:08:02,799
+contexto. Continuar en una nueva tarea
+
+1753
+01:08:01,119 --> 01:08:04,720
+si nosotros quisiéramos mover entre
+
+1754
+01:08:02,799 --> 01:08:06,680
+ramas. El estado, mover el estado de la
+
+1755
+01:08:04,720 --> 01:08:08,599
+tarea. Fíjate,
+
+1756
+01:08:06,680 --> 01:08:10,240
+nos lanza este popup que nos dice, "Esta
+
+1757
+01:08:08,599 --> 01:08:12,799
+es la sesión, este es el contexto, que
+
+1758
+01:08:10,240 --> 01:08:14,400
+aún nos queda un 87% restante y que el
+
+1759
+01:08:12,799 --> 01:08:16,600
+límite de 7 días de cuando se va a
+
+1760
+01:08:14,400 --> 01:08:18,319
+restablecer, si yo gastara pues todo el
+
+1761
+01:08:16,600 --> 01:08:19,880
+plan que yo tengo contratado de codex,
+
+1762
+01:08:18,319 --> 01:08:22,199
+pues bueno, tendría que esperar que
+
+1763
+01:08:19,880 --> 01:08:24,480
+ahora mismo pues tenemos este 91%
+
+1764
+01:08:22,199 --> 01:08:25,880
+restante. Aún me queda un montón. Más
+
+1765
+01:08:24,480 --> 01:08:27,480
+comandos. El iniciar lo dejo para
+
+1766
+01:08:25,880 --> 01:08:29,400
+después, ¿vale? dice una conversación
+
+1767
+01:08:27,480 --> 01:08:31,000
+lateral temporal, es decir, un subagente
+
+1768
+01:08:29,400 --> 01:08:33,600
+que va a acabar lanzando los MCPs de los
+
+1769
+01:08:31,000 --> 01:08:34,960
+que se hablaba, las mascotas, la memoria
+
+1770
+01:08:33,600 --> 01:08:37,440
+que nosotros queremos que tenga, una
+
+1771
+01:08:34,960 --> 01:08:38,920
+memoria más o menos persistente para que
+
+1772
+01:08:37,440 --> 01:08:40,560
+no se olvide del contexto. Aún así,
+
+1773
+01:08:38,920 --> 01:08:42,279
+podríamos trabajar también de otra
+
+1774
+01:08:40,560 --> 01:08:44,199
+forma. El modelo lo puedo cambiar desde
+
+1775
+01:08:42,279 --> 01:08:45,440
+aquí. Yo puedo venir barra modelo y
+
+1776
+01:08:44,199 --> 01:08:47,000
+decir, "Ey, ¿cuál quieres seleccionar?"
+
+1777
+01:08:45,440 --> 01:08:48,960
+Y vemos que se empieza a mover entre
+
+1778
+01:08:47,000 --> 01:08:52,199
+todos los que tenemos por aquí. Vale,
+
+1779
+01:08:48,960 --> 01:08:53,960
+más cositas. ¿Qué podemos ver? el
+
+1780
+01:08:52,199 --> 01:08:55,279
+modelo, el modo plan, que lo dejaremos
+
+1781
+01:08:53,960 --> 01:08:57,120
+para más adelante, el objetivo que lo
+
+1782
+01:08:55,279 --> 01:08:59,000
+dejaremos para más adelante, enviar
+
+1783
+01:08:57,120 --> 01:09:00,440
+comentarios, el razonamiento, el
+
+1784
+01:08:59,000 --> 01:09:02,719
+esfuerzo que vimos antes, revisar
+
+1785
+01:09:00,440 --> 01:09:05,359
+código, es decir, existe también la
+
+1786
+01:09:02,719 --> 01:09:07,560
+posibilidad de con un comando revisar el
+
+1787
+01:09:05,359 --> 01:09:10,120
+código que hemos creado, mover esta
+
+1788
+01:09:07,560 --> 01:09:14,040
+parte de rápido que vimos antes. Okay.
+
+1789
+01:09:10,120 --> 01:09:15,719
+Después aquí, pues bueno, una e
+
+1790
+01:09:14,040 --> 01:09:18,120
+una revisión del prom que nosotros hemos
+
+1791
+01:09:15,719 --> 01:09:21,679
+creado también anteriormente. ¿Vale?
+
+1792
+01:09:18,120 --> 01:09:24,679
+Estos son los comandos más típicos.
+
+1793
+01:09:21,679 --> 01:09:27,920
+Pero ahora vamos a ver un poquito más en
+
+1794
+01:09:24,679 --> 01:09:30,640
+detalle cuáles son uno de los más
+
+1795
+01:09:27,920 --> 01:09:33,120
+importantes. Por un lado, el init, que
+
+1796
+01:09:30,640 --> 01:09:35,040
+es iniciar crear un archivo agent md con
+
+1797
+01:09:33,120 --> 01:09:36,880
+instrucciones para code no tiene ningún
+
+1798
+01:09:35,040 --> 01:09:38,920
+sentido desarrollar con IA si nosotros
+
+1799
+01:09:36,880 --> 01:09:42,040
+no tenemos ficheros en Mardown, ficheros
+
+1800
+01:09:38,920 --> 01:09:43,920
+de texto que van a reflejar cuál es la
+
+1801
+01:09:42,040 --> 01:09:45,560
+documentación, las buenas prácticas y
+
+1802
+01:09:43,920 --> 01:09:46,759
+todo lo que tiene que ver a nivel de
+
+1803
+01:09:45,560 --> 01:09:48,520
+documentación con el proyecto que
+
+1804
+01:09:46,759 --> 01:09:50,400
+nosotros estamos creando. Con lo cual,
+
+1805
+01:09:48,520 --> 01:09:52,239
+si nosotros hacemos el barra init, lo
+
+1806
+01:09:50,400 --> 01:09:54,920
+que va a hacer es crear en nuestro
+
+1807
+01:09:52,239 --> 01:09:57,239
+proyecto el init, es decir, el
+
+1808
+01:09:54,920 --> 01:09:59,960
+agents.md, que en este caso, como ya
+
+1809
+01:09:57,239 --> 01:10:02,640
+tenemos código creado, lo va a rellenar
+
+1810
+01:09:59,960 --> 01:10:05,679
+por nosotros. Va a crear un fichero con
+
+1811
+01:10:02,640 --> 01:10:07,840
+la documentación básica, tecnologías,
+
+1812
+01:10:05,679 --> 01:10:10,199
+buenas prácticas, el contexto principal
+
+1813
+01:10:07,840 --> 01:10:11,480
+de la aplicación, que es una grandísima
+
+1814
+01:10:10,199 --> 01:10:13,159
+práctica a la hora de trabajar con
+
+1815
+01:10:11,480 --> 01:10:15,040
+desarrollo, ¿vale? Trabajar con
+
+1816
+01:10:13,159 --> 01:10:17,560
+desarrollo y sobre todo con inteligencia
+
+1817
+01:10:15,040 --> 01:10:19,640
+artificial. Fíjate que podríamos ver
+
+1818
+01:10:17,560 --> 01:10:21,400
+cómo me ha creado el agent MD. Podríamos
+
+1819
+01:10:19,640 --> 01:10:23,920
+revisar los cambios o verlos desde
+
+1820
+01:10:21,400 --> 01:10:27,960
+cursor, que aquí ya tenemos el agent,
+
+1821
+01:10:23,920 --> 01:10:30,679
+que básicamente esto es un agent muy muy
+
+1822
+01:10:27,960 --> 01:10:33,440
+rápido. ¿Cuál es la estructura?
+
+1823
+01:10:30,679 --> 01:10:35,280
+¿Cuáles son los comandos principales? El
+
+1824
+01:10:33,440 --> 01:10:39,480
+estilo del código, el naming, el
+
+1825
+01:10:35,280 --> 01:10:41,840
+testing, cómo funciona la parte de
+
+1826
+01:10:39,480 --> 01:10:43,440
+gitt de GitHub y ya está. Aquí podríamos
+
+1827
+01:10:41,840 --> 01:10:46,000
+ponerle más cosas. Aún así, la buena
+
+1828
+01:10:43,440 --> 01:10:48,800
+práctica es mejor crear un agents mucho
+
+1829
+01:10:46,000 --> 01:10:50,400
+más condensado, mucho más pequeñito y no
+
+1830
+01:10:48,800 --> 01:10:52,360
+uno supergre con un montón de
+
+1831
+01:10:50,400 --> 01:10:55,400
+información, ¿vale? Así que
+
+1832
+01:10:52,360 --> 01:10:57,320
+importantísimo AENCMD también uno de los
+
+1833
+01:10:55,400 --> 01:10:58,840
+clásicos, una de las cosas más básicas
+
+1834
+01:10:57,320 --> 01:11:00,640
+que tenemos que tener en cuenta a la
+
+1835
+01:10:58,840 --> 01:11:02,159
+hora de trabajar con inteligencia
+
+1836
+01:11:00,640 --> 01:11:04,360
+artificial en proyectos porque igual que
+
+1837
+01:11:02,159 --> 01:11:06,199
+Legends MD podríamos tener la parte de
+
+1838
+01:11:04,360 --> 01:11:08,360
+documentación, la parte de
+
+1839
+01:11:06,199 --> 01:11:11,159
+especificaciones y un montón de cosas
+
+1840
+01:11:08,360 --> 01:11:13,400
+más. ¿Vale? Otro de los comandos
+
+1841
+01:11:11,159 --> 01:11:15,560
+principales importantísimos que tenemos
+
+1842
+01:11:13,400 --> 01:11:18,199
+que tener en cuenta, venga, voy a crear
+
+1843
+01:11:15,560 --> 01:11:20,800
+por aquí una nueva tarea. Y en este caso
+
+1844
+01:11:18,199 --> 01:11:23,600
+el comando que yo voy a llamar es el
+
+1845
+01:11:20,800 --> 01:11:25,719
+comando llamado plan. Es posible que si
+
+1846
+01:11:23,600 --> 01:11:27,280
+ya trabajáis con eh agentes e
+
+1847
+01:11:25,719 --> 01:11:29,280
+inteligencia artificial en otros
+
+1848
+01:11:27,280 --> 01:11:32,320
+editores, os suene el modo plan y el
+
+1849
+01:11:29,280 --> 01:11:34,360
+modo build. Es decir, son agentes que
+
+1850
+01:11:32,320 --> 01:11:38,080
+trabajan de diferente forma. El modo
+
+1851
+01:11:34,360 --> 01:11:40,800
+build, que es el lanzar la gente como lo
+
+1852
+01:11:38,080 --> 01:11:42,639
+hemos hecho hasta el momento, lo que
+
+1853
+01:11:40,800 --> 01:11:44,679
+hace es nada, empieza a utilizar las
+
+1854
+01:11:42,639 --> 01:11:47,159
+herramientas del sistema basándose en el
+
+1855
+01:11:44,679 --> 01:11:49,760
+prom y empieza a construir lo que sea.
+
+1856
+01:11:47,159 --> 01:11:51,679
+Pero el modo plan, en realidad lo que
+
+1857
+01:11:49,760 --> 01:11:53,840
+hacemos cuando activamos el modo plan,
+
+1858
+01:11:51,679 --> 01:11:56,199
+que vemos que se refleja aquí, el modo
+
+1859
+01:11:53,840 --> 01:11:58,480
+plan, lo que hace es en el momento que
+
+1860
+01:11:56,199 --> 01:12:00,520
+nosotros le lanzamos un prompt nos va a
+
+1861
+01:11:58,480 --> 01:12:02,639
+hacer preguntas. Vamos a hacer una cosa,
+
+1862
+01:12:00,520 --> 01:12:07,840
+fijaos, para que entendamos aún mucho
+
+1863
+01:12:02,639 --> 01:12:11,639
+mejor cómo funciona el modo plant. Voy a
+
+1864
+01:12:07,840 --> 01:12:14,760
+crear un nuevo proyecto, igual que tenía
+
+1865
+01:12:11,639 --> 01:12:17,159
+mi carpeta study calendar,
+
+1866
+01:12:14,760 --> 01:12:20,040
+perdón, aquí, ¿dónde está? Igual que
+
+1867
+01:12:17,159 --> 01:12:24,760
+tenía mi carpeta study calendar, voy a
+
+1868
+01:12:20,040 --> 01:12:26,000
+crear otra que se llama study calendar
+
+1869
+01:12:24,760 --> 01:12:28,280
+dos.
+
+1870
+01:12:26,000 --> 01:12:30,199
+Vale, la voy a crear, la voy a abrir, es
+
+1871
+01:12:28,280 --> 01:12:32,199
+decir, tenemos un proyecto en blanco,
+
+1872
+01:12:30,199 --> 01:12:36,560
+pero en este caso le vamos a meter el
+
+1873
+01:12:32,199 --> 01:12:40,440
+modo plan. Y voy a hacer más de lo
+
+1874
+01:12:36,560 --> 01:12:42,080
+mismo. Voy ahora a lanzar el prompt con
+
+1875
+01:12:40,440 --> 01:12:45,920
+el que creamos nuestra aplicación
+
+1876
+01:12:42,080 --> 01:12:50,159
+inicial. Fíjate, modo plan,
+
+1877
+01:12:45,920 --> 01:12:53,199
+en este caso vuelvo a poner medio, pero
+
+1878
+01:12:50,159 --> 01:12:56,159
+el modo plan activo, el modo plan activo
+
+1879
+01:12:53,199 --> 01:12:57,639
+lo que va a hacer es crear un plan, un
+
+1880
+01:12:56,159 --> 01:12:59,880
+plan de ejecución, pero un plan de
+
+1881
+01:12:57,639 --> 01:13:02,320
+ejecución que nosotros también tenemos
+
+1882
+01:12:59,880 --> 01:13:05,320
+que validar, ¿no? tanto como el modo de
+
+1883
+01:13:02,320 --> 01:13:07,280
+creación donde yo le lanzo un prompt y
+
+1884
+01:13:05,320 --> 01:13:09,440
+con ese prompt se pone a hacer lo que
+
+1885
+01:13:07,280 --> 01:13:11,639
+nosotros le indiquemos, pero en realidad
+
+1886
+01:13:09,440 --> 01:13:15,280
+el modo plan, si hay preguntas
+
+1887
+01:13:11,639 --> 01:13:18,040
+intermedias que pueda hacernos para así
+
+1888
+01:13:15,280 --> 01:13:20,120
+refinar el prompt, lo va a hacer. Fíjate
+
+1889
+01:13:18,040 --> 01:13:22,280
+qué vista debe ser la principal. Esto
+
+1890
+01:13:20,120 --> 01:13:24,960
+antes no nos preguntó nada. el mes más
+
+1891
+01:13:22,280 --> 01:13:28,000
+el detalle, la semana horaria, el mes y
+
+1892
+01:13:24,960 --> 01:13:30,679
+la semana o indícale
+
+1893
+01:13:28,000 --> 01:13:33,840
+a Codex en este caso, algo diferente.
+
+1894
+01:13:30,679 --> 01:13:35,320
+Pues yo le digo que venga, esto es lo
+
+1895
+01:13:33,840 --> 01:13:36,880
+que yo quiero que tener en cuenta.
+
+1896
+01:13:35,320 --> 01:13:39,120
+¿Dónde deben guardarse las tareas de
+
+1897
+01:13:36,880 --> 01:13:41,560
+esta primera versión? En local storage,
+
+1898
+01:13:39,120 --> 01:13:44,480
+en una sesión, meter un backend o lo que
+
+1899
+01:13:41,560 --> 01:13:46,719
+sea. Local storage dice, además de crear
+
+1900
+01:13:44,480 --> 01:13:50,080
+tal, ¿quieres hacer otras cosas? editar,
+
+1901
+01:13:46,719 --> 01:13:51,960
+eliminar, solo solicitado y voy a decir,
+
+1902
+01:13:50,080 --> 01:13:54,920
+pues sí, quiero también editar y
+
+1903
+01:13:51,960 --> 01:13:57,480
+eliminar. Y ya con esto él va a decir,
+
+1904
+01:13:54,920 --> 01:14:00,080
+"Okay, yo ya te he hecho unas preguntas,
+
+1905
+01:13:57,480 --> 01:14:02,280
+ahora ya tengo mi plan un poquito más
+
+1906
+01:14:00,080 --> 01:14:05,360
+refinado para empezar a trabajar y ya
+
+1907
+01:14:02,280 --> 01:14:07,239
+voy a ser capaz de teóricamente realizar
+
+1908
+01:14:05,360 --> 01:14:09,440
+mejor toda esta tarea que me has
+
+1909
+01:14:07,239 --> 01:14:11,880
+indicado. La hora de una tarea debe ser
+
+1910
+01:14:09,440 --> 01:14:14,120
+obligatoria, opcional o obligatoria."
+
+1911
+01:14:11,880 --> 01:14:16,080
+Fíjate, ahora yo digo, mira, yo esto no
+
+1912
+01:14:14,120 --> 01:14:17,440
+lo pensara, pero el modo plan va a
+
+1913
+01:14:16,080 --> 01:14:18,480
+intentar repensar un poquito por
+
+1914
+01:14:17,440 --> 01:14:20,239
+nosotros y digo, pues mira, quiero que
+
+1915
+01:14:18,480 --> 01:14:22,560
+sea obligatoria. ¿Qué debe ocurrir al
+
+1916
+01:14:20,239 --> 01:14:24,440
+arrastrar una tarea otro día? Conservar
+
+1917
+01:14:22,560 --> 01:14:25,880
+la hora, cambiar únicamente la fecha, la
+
+1918
+01:14:24,440 --> 01:14:28,360
+hora del resto de datos permanece, pues
+
+1919
+01:14:25,880 --> 01:14:29,760
+le digo que conserve la hora. Dice,
+
+1920
+01:14:28,360 --> 01:14:31,639
+"¿Qué nivel de adaptación a móvil?" Eh,
+
+1921
+01:14:29,760 --> 01:14:35,440
+y que eso antes no lo tuvimos en cuenta.
+
+1922
+01:14:31,639 --> 01:14:37,920
+Fíjate, ahora le digo que sí. Claro,
+
+1923
+01:14:35,440 --> 01:14:39,159
+esta ejecución va a tardar más tiempo,
+
+1924
+01:14:37,920 --> 01:14:41,920
+pero va a ser una ejecución más
+
+1925
+01:14:39,159 --> 01:14:45,000
+refinada. y los modos planes. Cuando
+
+1926
+01:14:41,920 --> 01:14:48,239
+nosotros le pedimos tareas muy grandes,
+
+1927
+01:14:45,000 --> 01:14:50,480
+está guay ejecutarlo con él. Claro, si
+
+1928
+01:14:48,239 --> 01:14:52,679
+de verdad somos capaces de definir una
+
+1929
+01:14:50,480 --> 01:14:54,400
+especificación muy buena, no queremos
+
+1930
+01:14:52,679 --> 01:14:55,800
+que la IA piense por nosotros, no
+
+1931
+01:14:54,400 --> 01:14:57,719
+queremos que repiense por nosotros, pero
+
+1932
+01:14:55,800 --> 01:15:01,880
+si en realidad nosotros queremos que la
+
+1933
+01:14:57,719 --> 01:15:03,360
+IA nos eche una mano a mejorar ese prom
+
+1934
+01:15:01,880 --> 01:15:05,440
+que inicialmente puede ser un poquito
+
+1935
+01:15:03,360 --> 01:15:07,920
+más vago, activamos el modo plan. ¿Cómo
+
+1936
+01:15:05,440 --> 01:15:10,000
+quieres elegir el eh color de cada
+
+1937
+01:15:07,920 --> 01:15:11,440
+tarea? Bueno, le voy a dar aquí un
+
+1938
+01:15:10,000 --> 01:15:14,320
+poquito para adelante. Cómo deben
+
+1939
+01:15:11,440 --> 01:15:16,400
+mostrarse las tareas atenuadas. Ya está.
+
+1940
+01:15:14,320 --> 01:15:18,960
+Claro, son todo cosas que en el modo
+
+1941
+01:15:16,400 --> 01:15:21,639
+build antes el propio agente decidió por
+
+1942
+01:15:18,960 --> 01:15:23,320
+nosotros sin darnos absolutamente opción
+
+1943
+01:15:21,639 --> 01:15:26,239
+a nada. En cambio, en este caso nos
+
+1944
+01:15:23,320 --> 01:15:28,320
+dice, "Vale, ¿qué tenemos aquí?" Tenemos
+
+1945
+01:15:26,239 --> 01:15:30,199
+el plan de escritura. El plan de
+
+1946
+01:15:28,320 --> 01:15:32,159
+escritura que vemos por aquí, todo
+
+1947
+01:15:30,199 --> 01:15:34,360
+resumen. Y en el momento que ya tenemos
+
+1948
+01:15:32,159 --> 01:15:36,520
+todo el resumen, se va a poner a
+
+1949
+01:15:34,360 --> 01:15:38,679
+implementar. Tengo resumen. Déjame
+
+1950
+01:15:36,520 --> 01:15:41,440
+revisarlo. Pa pa pa pa pa pa pa.
+
+1951
+01:15:38,679 --> 01:15:43,159
+Esto es todo el plan. Está correcto. Lo
+
+1952
+01:15:41,440 --> 01:15:46,679
+podemos editar. Por supuesto que lo
+
+1953
+01:15:43,159 --> 01:15:48,239
+podemos editar y indicarle lo que a
+
+1954
+01:15:46,679 --> 01:15:50,360
+nosotros nos dé la gana. Y digo,
+
+1955
+01:15:48,239 --> 01:15:53,040
+indicarle qué hacer diferente, lo que
+
+1956
+01:15:50,360 --> 01:15:55,560
+sea. Vemos que aquí tenemos el plan. Sin
+
+1957
+01:15:53,040 --> 01:15:58,000
+más, yo me vuelvo por aquí y le digo,
+
+1958
+01:15:55,560 --> 01:15:59,800
+"Ey, implementtalo." Y en el momento que
+
+1959
+01:15:58,000 --> 01:16:03,239
+yo lo di a implementar, pues ya este
+
+1960
+01:15:59,800 --> 01:16:05,080
+plan se va a poner a ejecutar, ¿vale? Es
+
+1961
+01:16:03,239 --> 01:16:07,199
+decir, no vamos a esperar a que acabe el
+
+1962
+01:16:05,080 --> 01:16:08,840
+plan ni nada, pero simplemente es algo
+
+1963
+01:16:07,199 --> 01:16:10,719
+que os quería acabar indicando, por qué
+
+1964
+01:16:08,840 --> 01:16:13,960
+el modo plan realmente es tan
+
+1965
+01:16:10,719 --> 01:16:15,920
+importante, aunque esto, como buenos
+
+1966
+01:16:13,960 --> 01:16:18,040
+programadores debería ser algo que
+
+1967
+01:16:15,920 --> 01:16:20,159
+nosotros ya tendríamos que tener, cuanto
+
+1968
+01:16:18,040 --> 01:16:22,400
+más definido, mejor, porque no se trata
+
+1969
+01:16:20,159 --> 01:16:25,960
+tampoco de que la IA haga el plan por
+
+1970
+01:16:22,400 --> 01:16:28,760
+nosotros, se trata de que
+
+1971
+01:16:25,960 --> 01:16:31,719
+defina mejor algunas cosas que nosotros
+
+1972
+01:16:28,760 --> 01:16:34,280
+nos podemos acabar saltando, pero cuanto
+
+1973
+01:16:31,719 --> 01:16:37,719
+nosotros con antelación llevemos
+
+1974
+01:16:34,280 --> 01:16:40,120
+pensado, mucho mejor va a ser la
+
+1975
+01:16:37,719 --> 01:16:42,760
+actuación de la gente y mucho más va se
+
+1976
+01:16:40,120 --> 01:16:44,840
+va a acabar eh pareciendo al resultado
+
+1977
+01:16:42,760 --> 01:16:47,360
+que nosotros queremos acabar obteniendo.
+
+1978
+01:16:44,840 --> 01:16:49,560
+¿Okay? Así que sí, importante el modo
+
+1979
+01:16:47,360 --> 01:16:52,960
+plan, pero entender que nosotros también
+
+1980
+01:16:49,560 --> 01:16:55,159
+tenemos una labor s super importante.
+
+1981
+01:16:52,960 --> 01:16:57,679
+Vale, vamos a ver también. Mira, esto se
+
+1982
+01:16:55,159 --> 01:16:59,719
+va a ejecutar en paralelo. Voy a volver
+
+1983
+01:16:57,679 --> 01:17:01,679
+al otro proyecto, al proyecto que ya
+
+1984
+01:16:59,719 --> 01:17:05,040
+teníamos creados y voy a abrir un nuevo
+
+1985
+01:17:01,679 --> 01:17:07,520
+chat. para así poder seguir viendo otra
+
+1986
+01:17:05,040 --> 01:17:10,560
+de las características más importantes
+
+1987
+01:17:07,520 --> 01:17:13,840
+que tenemos dentro de Codex. Si nosotros
+
+1988
+01:17:10,560 --> 01:17:16,440
+ponemos barra review o barra revisar,
+
+1989
+01:17:13,840 --> 01:17:18,080
+vemos que vamos a tener también este
+
+1990
+01:17:16,440 --> 01:17:20,239
+comando que dice revisa cambios sin
+
+1991
+01:17:18,080 --> 01:17:22,920
+preparar o compararos con una rama. Esto
+
+1992
+01:17:20,239 --> 01:17:25,480
+nos va a servir para que también lance
+
+1993
+01:17:22,920 --> 01:17:27,080
+una revisión de cambios que nosotros
+
+1994
+01:17:25,480 --> 01:17:28,719
+tenemos pendientes, revisar comparación
+
+1995
+01:17:27,080 --> 01:17:30,040
+con la rama base o cambios no
+
+1996
+01:17:28,719 --> 01:17:31,600
+confirmados, es decir, que nosotros aún
+
+1997
+01:17:30,040 --> 01:17:33,400
+no hemos subido a Git, que aún no hemos
+
+1998
+01:17:31,600 --> 01:17:34,560
+hecho el comit, porque esto también nos
+
+1999
+01:17:33,400 --> 01:17:36,520
+sirve para hacer una especie de
+
+2000
+01:17:34,560 --> 01:17:38,080
+auditoría sobre el código que nosotros
+
+2001
+01:17:36,520 --> 01:17:39,520
+no hemos acabado. Y le voy a decir,
+
+2002
+01:17:38,080 --> 01:17:41,560
+bueno, revisa los cambios no
+
+2003
+01:17:39,520 --> 01:17:43,639
+confirmados. Es decir, cambios
+
+2004
+01:17:41,560 --> 01:17:45,280
+confirmados no tenemos ningunos,
+
+2005
+01:17:43,639 --> 01:17:47,840
+básicamente porque no hemos subido nada
+
+2006
+01:17:45,280 --> 01:17:51,280
+git tampoco es algo que tengamos que ver
+
+2007
+01:17:47,840 --> 01:17:53,239
+en esta clase, pero por supuesto aquí
+
+2008
+01:17:51,280 --> 01:17:54,960
+tenemos una de las habilidades más
+
+2009
+01:17:53,239 --> 01:17:56,159
+importantes. Dice, "Todo el proyecto
+
+2010
+01:17:54,960 --> 01:17:58,040
+aparece nuevo y seguimiento, así que no
+
+2011
+01:17:56,159 --> 01:18:02,040
+hay un disfase." Claro, no podemos
+
+2012
+01:17:58,040 --> 01:18:04,800
+revisar el código nuevo con respecto a
+
+2013
+01:18:02,040 --> 01:18:07,440
+un anterior porque no hay esa regresión,
+
+2014
+01:18:04,800 --> 01:18:09,719
+no tenemos código creado con antelación.
+
+2015
+01:18:07,440 --> 01:18:11,920
+Si tuviéramos el anterior, lo iría
+
+2016
+01:18:09,719 --> 01:18:13,639
+revisando frente a ese. Si no, lo que va
+
+2017
+01:18:11,920 --> 01:18:15,960
+a hacer, pues va a hacer una revisión
+
+2018
+01:18:13,639 --> 01:18:19,120
+del código sin más que hay. Esto es algo
+
+2019
+01:18:15,960 --> 01:18:20,560
+también s s s s super importante. ¿Por
+
+2020
+01:18:19,120 --> 01:18:22,600
+qué? Porque a nosotros también se nos
+
+2021
+01:18:20,560 --> 01:18:24,320
+pueden escapar errores. Utilicemos la
+
+2022
+01:18:22,600 --> 01:18:26,520
+inteligencia artificial para mejorar
+
+2023
+01:18:24,320 --> 01:18:28,480
+nuestro código. Nuestro código tiene que
+
+2024
+01:18:26,520 --> 01:18:30,440
+partir desde la propia definición. Pero
+
+2025
+01:18:28,480 --> 01:18:32,800
+por supuesto, si nosotros podemos
+
+2026
+01:18:30,440 --> 01:18:34,400
+empezar a hacer alguna cosa, fíjate que
+
+2027
+01:18:32,800 --> 01:18:36,440
+la propia IA se equivoca. Nosotros le
+
+2028
+01:18:34,400 --> 01:18:38,760
+hemos pedido a la IA que desarrolle y
+
+2029
+01:18:36,440 --> 01:18:41,239
+fíjate que en el momento que la IA se
+
+2030
+01:18:38,760 --> 01:18:43,120
+revisa a ella misma nos dice que ha
+
+2031
+01:18:41,239 --> 01:18:45,239
+cometido errores.
+
+2032
+01:18:43,120 --> 01:18:47,480
+El script del link siempre falla, los
+
+2033
+01:18:45,239 --> 01:18:49,440
+datos de recuperación pues por aquí, el
+
+2034
+01:18:47,480 --> 01:18:52,480
+atajo tal que no funciona. Bueno,
+
+2035
+01:18:49,440 --> 01:18:53,800
+cositas que realmente ya ha visto que
+
+2036
+01:18:52,480 --> 01:18:56,199
+están mal y que nosotros tenemos que
+
+2037
+01:18:53,800 --> 01:18:57,800
+corregir y que ella, aunque es capaz de
+
+2038
+01:18:56,199 --> 01:18:59,080
+detectarse
+
+2039
+01:18:57,800 --> 01:19:00,560
+no lo tiene en cuenta cuando está
+
+2040
+01:18:59,080 --> 01:19:02,320
+desarrollando. Y esto es algo
+
+2041
+01:19:00,560 --> 01:19:06,600
+superhabitual. Por eso nosotros siempre
+
+2042
+01:19:02,320 --> 01:19:09,800
+tenemos que ser ahí ese
+
+2043
+01:19:06,600 --> 01:19:12,600
+human que se suele llamar, esa persona
+
+2044
+01:19:09,800 --> 01:19:14,840
+que está en el bucle. Es decir, sí, la
+
+2045
+01:19:12,600 --> 01:19:16,800
+IA va a escribir más código que
+
+2046
+01:19:14,840 --> 01:19:18,960
+nosotros, pero nosotros siempre tenemos
+
+2047
+01:19:16,800 --> 01:19:21,080
+que estar ahí en el medio orquestando y
+
+2048
+01:19:18,960 --> 01:19:23,480
+revisando todo para que no la cague.
+
+2049
+01:19:21,080 --> 01:19:27,440
+¿Vale? Y muy relacionado con el loop, os
+
+2050
+01:19:23,480 --> 01:19:30,280
+voy a hablar de otra de las tareas que
+
+2051
+01:19:27,440 --> 01:19:33,320
+podemos lanzar desde Codex, que es
+
+2052
+01:19:30,280 --> 01:19:36,639
+realmente superpotente. Codex tiene una
+
+2053
+01:19:33,320 --> 01:19:40,800
+capacidad que otros agentes no lo tienen
+
+2054
+01:19:36,639 --> 01:19:43,960
+tan desarrollado y es que es capaz de
+
+2055
+01:19:40,800 --> 01:19:45,760
+ejecutar tareas larguísimas.
+
+2056
+01:19:43,960 --> 01:19:47,280
+Nosotros podemos tener a Codex aquí
+
+2057
+01:19:45,760 --> 01:19:50,239
+trabajando, sobre todo si tenemos
+
+2058
+01:19:47,280 --> 01:19:53,880
+dinero. Podemos tener a Codex trabajando
+
+2059
+01:19:50,239 --> 01:19:56,159
+durante 24 horas. Es que da igual. Pero,
+
+2060
+01:19:53,880 --> 01:19:59,120
+¿cuál es la forma en la que nosotros
+
+2061
+01:19:56,159 --> 01:20:01,679
+podemos acabar consiguiendo que un
+
+2062
+01:19:59,120 --> 01:20:03,600
+agente y un entorno con inteligencia
+
+2063
+01:20:01,679 --> 01:20:06,480
+artificial
+
+2064
+01:20:03,600 --> 01:20:09,560
+pueda trabajar durante tanto tiempo sin
+
+2065
+01:20:06,480 --> 01:20:11,679
+detenerse? Aquí es donde entra ese
+
+2066
+01:20:09,560 --> 01:20:13,440
+concepto que es posible que veáis
+
+2067
+01:20:11,679 --> 01:20:15,239
+habitualmente por ahí, que es cada vez
+
+2068
+01:20:13,440 --> 01:20:18,000
+se está poniendo más de moda, que es esa
+
+2069
+01:20:15,239 --> 01:20:20,639
+ingeniería de loops, es decir, que
+
+2070
+01:20:18,000 --> 01:20:23,800
+nosotros seamos capaces de darle una
+
+2071
+01:20:20,639 --> 01:20:27,199
+especie de objetivo claro a la IA y que
+
+2072
+01:20:23,800 --> 01:20:29,440
+la IA vaya iterando sobre sí misma.
+
+2073
+01:20:27,199 --> 01:20:33,440
+Vale, hago esto, es lo que estaba
+
+2074
+01:20:29,440 --> 01:20:36,280
+buscando, ¿no? Pues vuelvo y vuelvo y
+
+2075
+01:20:33,440 --> 01:20:39,159
+vuelvo y vuelvo y agarro esta tarea y
+
+2076
+01:20:36,280 --> 01:20:41,000
+toma, tienes estas 100 tareas a acabar
+
+2077
+01:20:39,159 --> 01:20:43,159
+implementando una tras otra, una tras
+
+2078
+01:20:41,000 --> 01:20:44,360
+otra y es justamente lo que quería, ¿no?
+
+2079
+01:20:43,159 --> 01:20:47,040
+Pues vuelvo a iterar, lo vuelvo a
+
+2080
+01:20:44,360 --> 01:20:49,520
+mejorar, lo vuelvo a cambiar así hasta
+
+2081
+01:20:47,040 --> 01:20:51,719
+que acabe cumpliendo el objetivo. Esto
+
+2082
+01:20:49,520 --> 01:20:55,120
+desde Codex es bastante fácil de
+
+2083
+01:20:51,719 --> 01:20:57,679
+definir. Ya vemos que aún así, pequeño
+
+2084
+01:20:55,120 --> 01:20:59,880
+inciso en la otra aplicación esto sigue
+
+2085
+01:20:57,679 --> 01:21:01,480
+ejecutándose. Aquí lo veis girando
+
+2086
+01:20:59,880 --> 01:21:02,760
+mientras nosotros estamos en otro
+
+2087
+01:21:01,480 --> 01:21:04,960
+proyecto haciendo otra cosa. De el
+
+2088
+01:21:02,760 --> 01:21:07,960
+concepto también de multiagentes, de
+
+2089
+01:21:04,960 --> 01:21:11,719
+agentes en paralelo, etcétera. ¿Vale? Y
+
+2090
+01:21:07,960 --> 01:21:14,880
+como también tenemos este comando que es
+
+2091
+01:21:11,719 --> 01:21:17,560
+el comando de goal, establece un
+
+2092
+01:21:14,880 --> 01:21:20,199
+objetivo para seguir avanzando con este
+
+2093
+01:21:17,560 --> 01:21:21,960
+goal, que no lo vamos a lanzar porque
+
+2094
+01:21:20,199 --> 01:21:23,679
+justamente está pensado para tareas más
+
+2095
+01:21:21,960 --> 01:21:28,320
+largas. Yo aquí le puedo acabar
+
+2096
+01:21:23,679 --> 01:21:30,280
+estableciendo, ey, el goal es que hayas
+
+2097
+01:21:28,320 --> 01:21:33,360
+realizado
+
+2098
+01:21:30,280 --> 01:21:35,560
+todas las tareas que están definidas en
+
+2099
+01:21:33,360 --> 01:21:38,600
+este directorio de documentación y allí
+
+2100
+01:21:35,560 --> 01:21:41,120
+tiene 100 tareas porque has creado un
+
+2101
+01:21:38,600 --> 01:21:43,440
+spec Driven Development de toda la
+
+2102
+01:21:41,120 --> 01:21:45,880
+aplicación completa. Imagínate que ese
+
+2103
+01:21:43,440 --> 01:21:48,600
+es el caso. Pues tú le marcas como goal
+
+2104
+01:21:45,880 --> 01:21:50,760
+eso y vas a tener a Codex hasta que se
+
+2105
+01:21:48,600 --> 01:21:53,560
+te acabe el dinero
+
+2106
+01:21:50,760 --> 01:21:56,080
+trabajando sobre él. Incluso cuando se
+
+2107
+01:21:53,560 --> 01:21:58,080
+te acaba, pues le puedes decir, e
+
+2108
+01:21:56,080 --> 01:22:00,840
+continúa donde acabaste cuando se resete
+
+2109
+01:21:58,080 --> 01:22:02,840
+los límites o lo que sea. También para
+
+2110
+01:22:00,840 --> 01:22:04,719
+que lo tengáis en cuenta, que este es
+
+2111
+01:22:02,840 --> 01:22:07,840
+justamente un comando que no vamos a
+
+2112
+01:22:04,719 --> 01:22:11,199
+probar, pero que hace referencia
+
+2113
+01:22:07,840 --> 01:22:12,679
+a esa ingeniería de loops que de la que
+
+2114
+01:22:11,199 --> 01:22:14,639
+tanto se está hablando, que ahora dice
+
+2115
+01:22:12,679 --> 01:22:17,719
+la gente que pone aquí a trabajar un
+
+2116
+01:22:14,639 --> 01:22:19,760
+agente un montón de horas. A ver,
+
+2117
+01:22:17,719 --> 01:22:21,199
+eso está muy bien si tenemos un control
+
+2118
+01:22:19,760 --> 01:22:23,360
+absoluto de todas las tareas que tiene
+
+2119
+01:22:21,199 --> 01:22:26,080
+que acabar desarrollando, pero tú piensa
+
+2120
+01:22:23,360 --> 01:22:30,199
+que cuanto más tiempo le des autonomía a
+
+2121
+01:22:26,080 --> 01:22:32,480
+la IA, al margen de que más cara es, más
+
+2122
+01:22:30,199 --> 01:22:35,120
+veces se puede acabar equivocando. Y no
+
+2123
+01:22:32,480 --> 01:22:37,560
+es lo mismo arreglar el código o
+
+2124
+01:22:35,120 --> 01:22:41,520
+redirigir a la IA de una ejecución que
+
+2125
+01:22:37,560 --> 01:22:44,400
+le ha llevado 5 minutos o 10 minutos que
+
+2126
+01:22:41,520 --> 01:22:47,400
+corregir a la IA después de que haya
+
+2127
+01:22:44,400 --> 01:22:49,760
+estado trabajando ella sola 24 horas.
+
+2128
+01:22:47,400 --> 01:22:53,480
+Entonces, tampoco os dejéis llevar tanto
+
+2129
+01:22:49,760 --> 01:22:57,000
+por ese hype de wah, es capaz de crear
+
+2130
+01:22:53,480 --> 01:22:59,480
+todo de manera autónoma. Em, ahí hay más
+
+2131
+01:22:57,000 --> 01:23:02,360
+conceptos de by coding que de ingeniería
+
+2132
+01:22:59,480 --> 01:23:06,360
+de software y realmente esto no es una
+
+2133
+01:23:02,360 --> 01:23:08,320
+práctica habitual fuera del efecto wow
+
+2134
+01:23:06,360 --> 01:23:11,120
+que muchas veces acabamos encontrando
+
+2135
+01:23:08,320 --> 01:23:14,760
+por ahí. Vale, vamos a ver ya también
+
+2136
+01:23:11,120 --> 01:23:16,719
+unos últimos nada unos últimos conceptos
+
+2137
+01:23:14,760 --> 01:23:20,600
+para que tengáis también en mente como
+
+2138
+01:23:16,719 --> 01:23:23,280
+puede ser la parte de los Word tre. Algo
+
+2139
+01:23:20,600 --> 01:23:25,639
+que también podéis utilizar aquí es un
+
+2140
+01:23:23,280 --> 01:23:29,040
+Word Tree. ¿Qué es un Word Tree? Hemos
+
+2141
+01:23:25,639 --> 01:23:30,880
+visto que podemos utilizar agentes en
+
+2142
+01:23:29,040 --> 01:23:33,320
+paralelo. Es decir, que yo ahora aquí
+
+2143
+01:23:30,880 --> 01:23:37,199
+lanzo una tarea y mientras en otro
+
+2144
+01:23:33,320 --> 01:23:40,159
+proyecto hay otro agente a su bola que
+
+2145
+01:23:37,199 --> 01:23:42,040
+está trabajando. Pero después también
+
+2146
+01:23:40,159 --> 01:23:44,880
+tenemos la opción de utilizar esos
+
+2147
+01:23:42,040 --> 01:23:46,440
+multiagentes, esos subaentes dentro de
+
+2148
+01:23:44,880 --> 01:23:48,440
+un mismo proyecto. Es decir, que podemos
+
+2149
+01:23:46,440 --> 01:23:51,719
+lanzar varias tareas. Yo podría lanzar
+
+2150
+01:23:48,440 --> 01:23:54,080
+varias tareas a mano. Es decir, yo vengo
+
+2151
+01:23:51,719 --> 01:23:56,560
+por aquí y le digo, "Haz una cosa." Y me
+
+2152
+01:23:54,080 --> 01:23:58,600
+voy a otro chat de este mismo proyecto,
+
+2153
+01:23:56,560 --> 01:24:00,600
+haz otra cosa. Y a otro chat abro del
+
+2154
+01:23:58,600 --> 01:24:03,760
+mismo proyecto, haz otra cosa. Pero,
+
+2155
+01:24:00,600 --> 01:24:06,040
+¿qué sucede en ese caso? que tenemos sí
+
+2156
+01:24:03,760 --> 01:24:08,880
+igual tres agentes, pero que están
+
+2157
+01:24:06,040 --> 01:24:11,120
+trabajando sobre el mismo proyecto y que
+
+2158
+01:24:08,880 --> 01:24:13,320
+pueden entrar en conflicto. Claro, cada
+
+2159
+01:24:11,120 --> 01:24:15,239
+gente va a estar haciendo lo que
+
+2160
+01:24:13,320 --> 01:24:18,040
+nosotros le hemos indicado, pero
+
+2161
+01:24:15,239 --> 01:24:20,080
+imagínate qué pasaría si dos agentes
+
+2162
+01:24:18,040 --> 01:24:22,600
+empiezan a tocar el mismo código. Igual
+
+2163
+01:24:20,080 --> 01:24:24,440
+yo puedo pensar, sí, es que así si lanzo
+
+2164
+01:24:22,600 --> 01:24:26,679
+10 agentes en paralelo voy a ir
+
+2165
+01:24:24,440 --> 01:24:29,600
+muchísimo más rápido. Ya, bueno, pero
+
+2166
+01:24:26,679 --> 01:24:31,639
+también se van a dar de palos esos
+
+2167
+01:24:29,600 --> 01:24:33,040
+agentes porque van a perder el contexto
+
+2168
+01:24:31,639 --> 01:24:34,520
+de lo que está tocando cada uno. Igual
+
+2169
+01:24:33,040 --> 01:24:36,920
+lo que te toca un agente te lo rompe el
+
+2170
+01:24:34,520 --> 01:24:40,400
+siguiente, ¿vale? Para eso existe este
+
+2171
+01:24:36,920 --> 01:24:42,400
+concepto de Wes. Un WE básicamente es
+
+2172
+01:24:40,400 --> 01:24:44,400
+mediante la capacidad que tenemos con
+
+2173
+01:24:42,400 --> 01:24:46,400
+Git de abrir diferentes ramas. Ya digo,
+
+2174
+01:24:44,400 --> 01:24:49,119
+esto no es tanto el cometido de esta
+
+2175
+01:24:46,400 --> 01:24:50,719
+clase, para eso tenemos que tener muy
+
+2176
+01:24:49,119 --> 01:24:52,679
+claro cómo funciona Git, cómo funciona
+
+2177
+01:24:50,719 --> 01:24:54,520
+GitHub, cómo funcionan las ramas. Pero
+
+2178
+01:24:52,679 --> 01:24:56,119
+este concepto básicamente es cuando
+
+2179
+01:24:54,520 --> 01:24:58,719
+nosotros le indicamos crear un nuevo
+
+2180
+01:24:56,119 --> 01:25:00,880
+Word Tree, esto que vemos aquí, tenemos
+
+2181
+01:24:58,719 --> 01:25:02,280
+la posibilidad de seleccionar un
+
+2182
+01:25:00,880 --> 01:25:04,199
+entorno, porque igual queremos que se
+
+2183
+01:25:02,280 --> 01:25:05,960
+ejecute con una capacidad diferente y
+
+2184
+01:25:04,199 --> 01:25:08,480
+seleccionar una rama. ¿Qué es eso del
+
+2185
+01:25:05,960 --> 01:25:11,639
+Word Tree? Nosotros empezamos a lanzar
+
+2186
+01:25:08,480 --> 01:25:14,280
+diferentes subagentes, pero que cada uno
+
+2187
+01:25:11,639 --> 01:25:15,719
+trabaje en diferentes ramas. Claro, si
+
+2188
+01:25:14,280 --> 01:25:17,880
+nosotros tenemos diferentes ramas
+
+2189
+01:25:15,719 --> 01:25:19,800
+creadas aquí en este proyecto, pues solo
+
+2190
+01:25:17,880 --> 01:25:22,280
+tenemos un main, pero podríamos acabar
+
+2191
+01:25:19,800 --> 01:25:25,480
+creando más ramas. Así lo que hacemos es
+
+2192
+01:25:22,280 --> 01:25:28,560
+que de manera segura cada gente sí
+
+2193
+01:25:25,480 --> 01:25:31,679
+trabaja en el mismo proyecto, pero cada
+
+2194
+01:25:28,560 --> 01:25:33,199
+gente lo hace en una rama distinta. Esto
+
+2195
+01:25:31,679 --> 01:25:35,840
+es como si tuviéramos a un equipo de
+
+2196
+01:25:33,199 --> 01:25:38,600
+desarrolladores, cada uno desde su rama,
+
+2197
+01:25:35,840 --> 01:25:41,000
+trabajando de manera independiente y
+
+2198
+01:25:38,600 --> 01:25:43,080
+perdiendo ese riesgo que nosotros
+
+2199
+01:25:41,000 --> 01:25:45,199
+tendríamos si hacemos si hacemos
+
+2200
+01:25:43,080 --> 01:25:47,800
+trabajar a todos los agentes en la misma
+
+2201
+01:25:45,199 --> 01:25:49,960
+rama. Cada gente trabaja desde su rama.
+
+2202
+01:25:47,800 --> 01:25:51,960
+Cada gente hace lo que tiene que hacer
+
+2203
+01:25:49,960 --> 01:25:54,600
+en base a la tarea que nosotros le hemos
+
+2204
+01:25:51,960 --> 01:25:56,400
+indicado y después ya empezamos a
+
+2205
+01:25:54,600 --> 01:25:58,040
+interactuar con las propias ramas de
+
+2206
+01:25:56,400 --> 01:26:00,719
+Git, decir, "Vale, ¿qué se ha hecho en
+
+2207
+01:25:58,040 --> 01:26:03,119
+esta rama?" Okay, ¿qué hago? Esta rama
+
+2208
+01:26:00,719 --> 01:26:05,000
+la mergeo con esta, la traigo al main,
+
+2209
+01:26:03,119 --> 01:26:06,960
+lo que sea, el flujo de desarrollo con
+
+2210
+01:26:05,000 --> 01:26:10,000
+ramas que estemos utilizando. Perfecto.
+
+2211
+01:26:06,960 --> 01:26:12,119
+Y así nos aseguramos que hemos lanzado y
+
+2212
+01:26:10,000 --> 01:26:14,239
+nos hemos aprovechado de lanzar muchos
+
+2213
+01:26:12,119 --> 01:26:16,159
+agentes en paralelo, pero que realmente
+
+2214
+01:26:14,239 --> 01:26:18,040
+todos están trabajando de forma segura.
+
+2215
+01:26:16,159 --> 01:26:20,119
+Así que este concepto es mucho más
+
+2216
+01:26:18,040 --> 01:26:21,960
+avanzado, no os lo recomiendo si estáis
+
+2217
+01:26:20,119 --> 01:26:24,760
+empezando y mucho menos si no tenéis un
+
+2218
+01:26:21,960 --> 01:26:28,239
+buen control de Git, pero que entendáis
+
+2219
+01:26:24,760 --> 01:26:30,600
+que se puede utilizar y que Codex tiene
+
+2220
+01:26:28,239 --> 01:26:31,880
+también ese soporte, ¿vale? Por otro
+
+2221
+01:26:30,600 --> 01:26:33,639
+lado, también tenemos la parte de
+
+2222
+01:26:31,880 --> 01:26:35,520
+memoria.
+
+2223
+01:26:33,639 --> 01:26:37,480
+Vemos que esto aquí tenemos usar
+
+2224
+01:26:35,520 --> 01:26:39,280
+memorias permite que CHG GPT incorpore
+
+2225
+01:26:37,480 --> 01:26:41,239
+memorias existentes en el contexto de la
+
+2226
+01:26:39,280 --> 01:26:44,199
+tarea. Generar memorias. ¿Esto para qué
+
+2227
+01:26:41,239 --> 01:26:45,880
+sirve? Estas opciones nos ayudan a que
+
+2228
+01:26:44,199 --> 01:26:47,080
+no pierda tan rápido el contexto porque
+
+2229
+01:26:45,880 --> 01:26:50,639
+el contexto es finito y se acaba
+
+2230
+01:26:47,080 --> 01:26:53,400
+llenando. Sí, estas memorias está bien
+
+2231
+01:26:50,639 --> 01:26:56,280
+porque va a hacer que el contexto no se
+
+2232
+01:26:53,400 --> 01:26:58,320
+pierda tan rápidamente, pero por
+
+2233
+01:26:56,280 --> 01:27:00,480
+supuesto lo que no vamos a conseguir
+
+2234
+01:26:58,320 --> 01:27:03,199
+nunca es que en el momento que nosotros
+
+2235
+01:27:00,480 --> 01:27:04,840
+empezamos a abrir diferentes chats, lo
+
+2236
+01:27:03,199 --> 01:27:07,199
+que va a hacer si nosotros no somos
+
+2237
+01:27:04,840 --> 01:27:08,960
+capaces de establecer nuestros propios
+
+2238
+01:27:07,199 --> 01:27:11,360
+mecanismos de memoria es que siempre va
+
+2239
+01:27:08,960 --> 01:27:14,159
+a tener que leer todo el código. Por eso
+
+2240
+01:27:11,360 --> 01:27:16,119
+ficheros como Legends SMD que veíamos
+
+2241
+01:27:14,159 --> 01:27:18,199
+antes es tan importante porque ahí
+
+2242
+01:27:16,119 --> 01:27:19,679
+tenemos justamente las cosas principales
+
+2243
+01:27:18,199 --> 01:27:21,800
+del proyecto. Si tuviéramos
+
+2244
+01:27:19,679 --> 01:27:25,040
+documentación hay que meterla también el
+
+2245
+01:27:21,800 --> 01:27:28,159
+proyecto porque así acabamos generando
+
+2246
+01:27:25,040 --> 01:27:31,280
+un sistema de conocimiento que nuestro
+
+2247
+01:27:28,159 --> 01:27:34,880
+propio agente puede leer y que ahí sí
+
+2248
+01:27:31,280 --> 01:27:37,119
+que está la verdad absoluta sobre lo que
+
+2249
+01:27:34,880 --> 01:27:39,480
+pasa en el proyecto. Y no tenemos que
+
+2250
+01:27:37,119 --> 01:27:42,239
+obligarle siempre a leer línea por línea
+
+2251
+01:27:39,480 --> 01:27:44,159
+de todo el proyecto porque digamos que
+
+2252
+01:27:42,239 --> 01:27:46,560
+esa memoria se acaba perdiendo. En
+
+2253
+01:27:44,159 --> 01:27:48,600
+cambio, si nosotros la hacemos de manera
+
+2254
+01:27:46,560 --> 01:27:50,639
+persistente, la guardamos de manera
+
+2255
+01:27:48,600 --> 01:27:52,639
+persistente a nivel de especificaciones,
+
+2256
+01:27:50,639 --> 01:27:54,840
+a nivel de documentación, a nivel de
+
+2257
+01:27:52,639 --> 01:27:57,960
+Legends MD que estábamos viendo antes
+
+2258
+01:27:54,840 --> 01:28:00,679
+ahí, junto con la propia memoria nativa
+
+2259
+01:27:57,960 --> 01:28:03,119
+que tiene el propio Codex, vamos a hacer
+
+2260
+01:28:00,679 --> 01:28:05,600
+que primero gastemos menos tokens, que
+
+2261
+01:28:03,119 --> 01:28:07,040
+ahorremos tiempo, que ahorremos dinero y
+
+2262
+01:28:05,600 --> 01:28:08,480
+que los resultados sean muchísimo
+
+2263
+01:28:07,040 --> 01:28:10,639
+mejores porque tiene una base de
+
+2264
+01:28:08,480 --> 01:28:13,719
+conocimientos muchísimo más acotada.
+
+2265
+01:28:10,639 --> 01:28:15,960
+¿Okay? Y ya por último la parte de
+
+2266
+01:28:13,719 --> 01:28:17,600
+automatizaciones, que esto es algo que
+
+2267
+01:28:15,960 --> 01:28:19,760
+lo teníamos aquí separado, pero que
+
+2268
+01:28:17,600 --> 01:28:21,440
+bueno, siempre podéis acabar
+
+2269
+01:28:19,760 --> 01:28:23,480
+complementando con el propio proyecto de
+
+2270
+01:28:21,440 --> 01:28:25,040
+software que queréis. También le podéis
+
+2271
+01:28:23,480 --> 01:28:26,880
+acabar pidiendo que haga tarea sobre el
+
+2272
+01:28:25,040 --> 01:28:30,000
+proyecto, pues no lo sé, que te dé los
+
+2273
+01:28:26,880 --> 01:28:31,880
+últimos cómics cada día, que te lea el
+
+2274
+01:28:30,000 --> 01:28:34,000
+estado de la aplicación, en qué punto te
+
+2275
+01:28:31,880 --> 01:28:35,800
+has quedado, lo que sea. Este tipo de
+
+2276
+01:28:34,000 --> 01:28:38,920
+tareas también las podemos acabar
+
+2277
+01:28:35,800 --> 01:28:41,679
+representando y reflejando un poquito
+
+2278
+01:28:38,920 --> 01:28:45,679
+como nos dé la gana, ¿vale? Así que ya
+
+2279
+01:28:41,679 --> 01:28:47,920
+por hacer aquí una revisión superrápida
+
+2280
+01:28:45,679 --> 01:28:50,000
+de lo que hemos visto, por favor
+
+2281
+01:28:47,920 --> 01:28:52,000
+diferenciar la parte del chat, la parte
+
+2282
+01:28:50,000 --> 01:28:53,880
+del work, de la parte del codex, que
+
+2283
+01:28:52,000 --> 01:28:56,159
+después hay gente que se acaba
+
+2284
+01:28:53,880 --> 01:28:58,600
+confundiendo bastante con esto. Unas
+
+2285
+01:28:56,159 --> 01:29:00,320
+pequeñas buenas prácticas, los promps
+
+2286
+01:28:58,600 --> 01:29:02,440
+con contexto, siempre criterios de
+
+2287
+01:29:00,320 --> 01:29:04,960
+aceptación, ese punto de control,
+
+2288
+01:29:02,440 --> 01:29:06,760
+verificar lo que hace la gente. No nos
+
+2289
+01:29:04,960 --> 01:29:08,719
+lancemos a lo loco, aunque yo le haya
+
+2290
+01:29:06,760 --> 01:29:11,080
+dicho a la gente e tiramillas para
+
+2291
+01:29:08,719 --> 01:29:13,960
+enseñaros muchísimo más rápido cómo
+
+2292
+01:29:11,080 --> 01:29:16,360
+funciona el propio CODX. Hay que iterar
+
+2293
+01:29:13,960 --> 01:29:19,159
+esas anotaciones. A medida que vamos
+
+2294
+01:29:16,360 --> 01:29:20,719
+viendo el propio código, lo anotamos
+
+2295
+01:29:19,159 --> 01:29:23,440
+tanto en el explorador como el propio
+
+2296
+01:29:20,719 --> 01:29:25,840
+código y así entendemos que el código lo
+
+2297
+01:29:23,440 --> 01:29:27,320
+vamos refinando nosotros mismos, ¿vale?
+
+2298
+01:29:25,840 --> 01:29:29,320
+esas aprobaciones cuando estamos
+
+2299
+01:29:27,320 --> 01:29:31,600
+empezando, que si el modo plan, que si
+
+2300
+01:29:29,320 --> 01:29:33,560
+revisar todo, que si aprobar y toda la
+
+2301
+01:29:31,600 --> 01:29:36,360
+parte de memoria con esos ritmis, con
+
+2302
+01:29:33,560 --> 01:29:38,840
+ese test, con ese agents, por favor, s
+
+2303
+01:29:36,360 --> 01:29:41,159
+super importante. Mi recomendación es
+
+2304
+01:29:38,840 --> 01:29:43,159
+que ahora os lancéis a descargarlo, lo
+
+2305
+01:29:41,159 --> 01:29:45,960
+utilicéis en el modo gratuito, lo
+
+2306
+01:29:43,159 --> 01:29:48,320
+empecéis a probar, metáis un editor de
+
+2307
+01:29:45,960 --> 01:29:50,800
+código en paralelo, como yo he hecho con
+
+2308
+01:29:48,320 --> 01:29:52,560
+cursor para ir viendo el código mucho
+
+2309
+01:29:50,800 --> 01:29:54,960
+mejor, ir viendo lo que va pasando en
+
+2310
+01:29:52,560 --> 01:29:57,320
+vuestro proyecto y que así incluso
+
+2311
+01:29:54,960 --> 01:29:59,280
+intentéis hacer el proyecto que yo he
+
+2312
+01:29:57,320 --> 01:30:02,679
+creado, porque también es una forma de
+
+2313
+01:29:59,280 --> 01:30:04,840
+seguir este curso paso a paso, sin tener
+
+2314
+01:30:02,679 --> 01:30:07,360
+que inventaros vosotros demasiado, pero
+
+2315
+01:30:04,840 --> 01:30:10,760
+ir viendo si sois capaces de obtener un
+
+2316
+01:30:07,360 --> 01:30:13,480
+resultado más menos parecido a lo que yo
+
+2317
+01:30:10,760 --> 01:30:17,440
+he hecho durante este curso. Otra vez
+
+2318
+01:30:13,480 --> 01:30:21,080
+recordatorio s super importante, el
+
+2319
+01:30:17,440 --> 01:30:23,480
+curso de desarrollo con IA, el curso de
+
+2320
+01:30:21,080 --> 01:30:25,600
+agentes de IA, porque muchos conceptos
+
+2321
+01:30:23,480 --> 01:30:28,520
+de los que yo os he hablado en este
+
+2322
+01:30:25,600 --> 01:30:29,600
+curso, si no tenéis bien bien todos
+
+2323
+01:30:28,520 --> 01:30:31,080
+estos fundamentos de inteligencia
+
+2324
+01:30:29,600 --> 01:30:33,840
+artificial, os podéis perder. Este es un
+
+2325
+01:30:31,080 --> 01:30:35,480
+curso que tenéis en YouTube. Simplemente
+
+2326
+01:30:33,840 --> 01:30:37,480
+os vais aquí, Aprende a programar con
+
+2327
+01:30:35,480 --> 01:30:39,840
+agentes de AA desde cero. Veis esta
+
+2328
+01:30:37,480 --> 01:30:41,600
+miniatura, curso de 3 horas, totalmente
+
+2329
+01:30:39,840 --> 01:30:44,080
+gratuito, también lo tenéis por aquí.
+
+2330
+01:30:41,600 --> 01:30:46,639
+¿Okay? Y dicho esto, pues nada, de
+
+2331
+01:30:44,080 --> 01:30:48,400
+verdad, muchísimas gracias por quedaros
+
+2332
+01:30:46,639 --> 01:30:50,560
+a este taller, a este curso. Espero que
+
+2333
+01:30:48,400 --> 01:30:52,840
+os haya gustado un montón. Por favor,
+
+2334
+01:30:50,560 --> 01:30:55,239
+dejarle un like al vídeo, dejarme un
+
+2335
+01:30:52,840 --> 01:30:57,159
+comentario qué os ha parecido, si vais a
+
+2336
+01:30:55,239 --> 01:30:59,480
+probar Codex, qué es lo que más os ha
+
+2337
+01:30:57,159 --> 01:31:03,960
+gustado y nos vemos en el próximo
+
+2338
+01:30:59,480 --> 01:31:03,960
+taller. Muchas gracias. Ciaau.
+

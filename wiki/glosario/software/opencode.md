@@ -2,7 +2,7 @@
 tipo: software
 software: opencode
 fecha_creacion: 2026-09-07
-ultima_actualizacion: 2026-09-27
+ultima_actualizacion: 2026-10-05
 tags: [glosario, software, opencode, zen, mcp]
 ---
 
@@ -16,6 +16,7 @@ tags: [glosario, software, opencode, zen, mcp]
 - [[#Subagents]]
 - [[#Permissions y modo]]
 - [[#Servidores MCP del vault]]
+- [[#Trampas MCP verificadas]]
 - [[#Conceptos relacionados]]
 - [[#Referencias]]
 
@@ -62,16 +63,37 @@ Inventario canónico de servidores MCP declarados en `opencode.json` raíz. Esta
 
 | Servidor | Tipo | URL / comando | Uso | Estado |
 |---|---|---|---|---|
-| `comfyui` | local | `npx -y comfyui-mcp` + `COMFYUI_URL: http://127.0.0.1:8188` | Generación de imágenes con ComfyUI local | ✅ |
+| `comfyui` | local | `npx -y comfyui-mcp` + `environment: COMFYUI_URL=http://127.0.0.1:8188` | Generación de imágenes con ComfyUI local | ✅ |
 | `n8n-mcp` | remote | `https://n8n.pitau.tech/mcp-server/http` + Bearer `{env:N8N_MCP_TOKEN}` | Automatización n8n | ✅ |
 | `fathom` | remote | `https://api.fathom.ai/mcp` + oauth | Reuniones Fathom → specs → Leantime | ✅ |
-| `leantime` | local | `node …/npm-global/node_modules/leantime-mcp/bin/leantime-mcp.js` + `--token {env:LEANTIME_TOKEN} --insecure` | PM Lean + Agile en el vault | ✅ |
+| `fathom-proyectopi` | local | `npx -y @luminarylane/fathom-mcp-server` + `environment: FATHOM_API_KEY={env:FATHOM_API_KEY_PROYECTOPI}` | Meetings de la otra cuenta de Fathom (proyecto-pi), 4 tools | ✅ (fix 2026-10-05) |
+| `leantime` | remote | `https://pitautech-leantime.3nq4ow.easypanel.host/mcp` + `x-api-key: {env:LEANTIME_TOKEN}` | PM Lean + Agile en el vault — ver [[wiki/glosario/software/leantime]] | ✅ (fix 2026-10-05) |
 | `autodesk-help` | remote | `https://developer.api.autodesk.com/knowledge/public/v1/mcp` | Ayuda oficial Autodesk (solo lectura) — ver [[wiki/glosario/software/mcp-autodesk-help]] | ✅ |
-| `autocad` | local | `…/tools/autocad-mcp/.venv/Scripts/autocad-mcp.exe` + `ACAD_MCP_OUTPUT_ROOT` | Control AutoCAD 2027 vía COM — ver [[wiki/glosario/software/mcp-autocad]] | ✅ / ⚠️ pendiente prueba 2027 |
+| `autocad` | local | `…/tools/autocad-mcp/.venv/Scripts/autocad-mcp.exe` + `environment: ACAD_MCP_OUTPUT_ROOT` | Control AutoCAD 2027 vía COM — ver [[wiki/glosario/software/mcp-autocad]] | ✅ / ⚠️ pendiente prueba 2027 |
+
+Estado global verificado 2026-10-05: **7/7 MCP conectados** (`opencode mcp list`).
 
 Para agregar/quitar servidores: editar `opencode.json`, reiniciar la sesión OpenCode, verificar con `opencode mcp list`.
 
-## Conceptos relacionados
+## Trampas MCP verificadas
+
+Diagnóstico del vault: cuatro fallas distintas con el mismo síntoma (`✗ … failed`), y una de ellas silenciosa.
+
+| Trampa | Síntoma | Causa | Fix |
+|---|---|---|---|
+| **`env` en vez de `environment`** | `MCP error -32000: Connection closed` | La clave correcta es `environment`; con `env` la variable se **ignora en silencio** y el servidor local muere al no encontrarla (Fathom: `FATHOM_API_KEY env var is required`) | `environment: { "FATHOM_API_KEY": "{env:FATHOM_API_KEY_PROYECTOPI}" }` |
+| **Timeout default 5000 ms** | failed en MCP con `npx` (arranque en frío) | `npx -y` descarga/resuelve antes de responder | `timeout: 30000` |
+| **URL del panel en vez de la app** | `self-signed certificate` / 404 | EasyPanel sirve cada app en su subdominio, no en el dominio raíz | apuntar al subdominio de la app (ver [[wiki/glosario/software/leantime]]) |
+| **Token en la línea de comando** | secreto en `opencode mcp list` y en la lista de procesos | el puente local usaba `--token` | MCP `remote` + `headers` → el valor queda en `{env:}` |
+
+Método de diagnóstico que funciona (el error de opencode es genérico y no dice la causa real):
+
+1. `opencode mcp list` → ver el comando exacto que opencode intenta correr.
+2. Correr ese comando a mano en PowerShell capturando stdout y stderr — ahí aparece el mensaje real (`FATHOM_API_KEY env var is required`).
+3. Probar el handshake a mano: `initialize` + `tools/list` por stdin.
+4. `opencode mcp debug <servidor>` solo sirve para MCP **remotos** (OAuth); para locales responde "not a remote server".
+
+Ojo con el caso silencioso: cuando el valor de la variable coincide con el default del servidor, el MCP conecta igual y el error queda escondido hasta que el default no alcanza (pasó con `COMFYUI_URL` = 8188, y con `ACAD_MCP_OUTPUT_ROOT`, que por default escribía fuera de `activos/caddy-salidas`).
 
 ## Conceptos relacionados
 

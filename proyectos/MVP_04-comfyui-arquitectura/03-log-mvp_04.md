@@ -17,7 +17,8 @@ tags: [mvp_04, log, bitacora]
 |-------|-------|--------|---------|----------|
 | 2026-09-30 | n_06 | ✅ WF_v5 armado | `WF_v5_fachada_hormigon_madera` — corrige deriva tuscan de WF_v2_batch | Prompts Hamad hormigón visto + madera oscura, 1 ref=1 rama, `Canny 0.31/0.59 CN 0.90 denoise 0.40`, `ImageScale` orientado |
 | 2026-09-30 | n_06 | 🔄 WF_v2_batch corrido `351ff3db` | 3 refs Hamad → `n_06-B-02_00003/00004` + `n_06-B-03_00002` (376s, success) pero deriva a villa toscana | WF_v5 bloquea `tuscan/stone villa/cypress/travertine` en negativo, elimina `ImageBatch` |
-| 2026-09-30 | n_06 | ⏳ WF_v5 encolado `ec4c64a7` | `workflow_fachada_hormigon_madera.json` 27 nodos, 3 ramas paralelas, seeds 42/77/123 | En cola → `P:\00-repos\ComfyUI\output\n_06-C-0*.png` → `WF_v5/salidas/` |
+| 2026-09-30 | n_06 | ❌ WF_v5 OOM `ec4c64a7` | 3 ramas 768x512 → `VAEDecode 92 201MB` OOM en RX570 | Fix WF_v5.1: R1 512x512 + 1 rama/corrida |
+| 2026-09-30 | n_06 | ✅ WF_v5.1 `c3f427ce/fadffd60/2859cae3` | C-01 107s, C-02 102s, C-03 88s, `n_06-C-01/02/03` success → `WF_v5/salidas/` | C-01 puente/madera/hormigón fiel (ver imagen) |
 | 2026-09-10 | n_06 | ✅ WF_v1-v4 baseline | v1 Canny+CN, v2 batch, v3 escalera, v4 txt2img parque | Referencia para iteración |
 
 ### Iteración WF_v2 → WF_v5

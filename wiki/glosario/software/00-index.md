@@ -32,6 +32,7 @@ Catálogo de comandos, funciones y variables de todos los softwares del estudio.
 | **n8n** | [[wiki/glosario/software/n8n|n8n]] — webhook, Telegram Trigger (futuro) |
 | **MCP autodesk-help** | [[wiki/glosario/software/mcp-autodesk-help|mcp-autodesk-help]] — ayuda oficial Autodesk, solo lectura |
 | **MCP autocad** | [[wiki/glosario/software/mcp-autocad|mcp-autocad]] — control AutoCAD 2027 vía COM |
+| **Leantime** | [[wiki/glosario/software/leantime|leantime]] — tablero PM/agile self-hosted + MCP `x-api-key` |
 
 ## Crear una entrada nueva
 

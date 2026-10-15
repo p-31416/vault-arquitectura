@@ -12,8 +12,8 @@ tags: [mvp_04, n_06, log, fachada, hamad]
 
 - **Fallo:** `ec4c64a7-066e-4264-8b54-d09779457d6d` (27 nodos, 3 ramas paralelas `768x512/512x768`) → `VAEDecode 92 — RuntimeError: Could not allocate tensor 201MB` (507s, `privateuseone` RX570 8GB). 3× `768x512` + 3 `VAEDecode` simultáneos saturan VRAM (--directml 0 sin --lowvram).
 - **Fix WF_v5.1:** vuelve a `R1 512x512 lanczos center` (seguro 8GB) y 1 rama por corrida: 3 workflows separados `workflow_fachada_hormigon_madera_C0{1,2,3}.json` con mismos prompts Hamad (`exposed concrete + dark oiled wood slats` / `cantilevered wood volume` / `brutalist concrete prism`), `Canny 0.31/0.59 CN 0.90 denoise 0.40` seeds 42/77/123 → `n_06-C-01/02/03` secuenciales. Alternativa `768x512` queda para `--lowvram` futuro.
-- **Encolados:** `ed6c2b8a` (C-01), `a3f7d9c1` (C-02), `b81e4f2a` (C-03) — actualizados abajo al terminar.
-- **Estado:** re-encolado secuencial 01:05, monitoreo queue.
+- **Encolados:** `c3f427ce` C-01 (01hamad, 107.6s, `n_06-C-01_00002_.png`), `fadffd60` C-02 (02hamad, 102.6s, `n_06-C-02_00002_.png`), `2859cae3` C-03 (03hamad, 88.6s, `n_06-C-03_00001_.png`) — los 3 success.
+- **Estado:** WF_v5.1 completo 01:20. `salidas/n_06-C-0{1,2,3}.png` copiados (349KB/421KB/486KB). C-01 retiene puente/madera/hormigón (superior a villa tuscan WF_v2); C-02/C-03 pendientes de análisis visual detallado próximo turno.
 
 ## 2026-09-30 — WF_v5 armado (corrección post WF_v2_batch 351ff3db)
 

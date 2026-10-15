@@ -2,8 +2,8 @@
 tipo: software
 software: comfyui
 fecha_creacion: 2026-09-07
-ultima_actualizacion: 2026-09-07
-tags: [glosario, software, comfyui]
+ultima_actualizacion: 2026-10-09
+tags: [glosario, software, comfyui, ic-light, relighting]
 ---
 
 # ComfyUI
@@ -26,6 +26,8 @@ tags: [glosario, software, comfyui]
 - [[Nodo — Canny]])
 - [[Nodo — ControlNetLoader]])
 - [[Nodo — ControlNetApplyAdvanced]])
+- [[Modelo — IC-Light SD15 FC (relighting)]])
+- [[Nodo — IC-Light (relighting direccional)]])
 - [[Nodos nativos pendientes]])
 - [[Flujos y playbooks]])
 - [[Convención de nombrado y frontmatter]])
@@ -70,6 +72,12 @@ AMD RX 570 8GB VRAM (DirectML), SD 1.5 principalmente. 2 ControlNets a la vez co
 | Modelo | Tipo | Base | Tamaño | Estado | Uso |
 |--------|------|------|--------|--------|-----|
 | ControlNet Union SDXL | ControlNet | SDXL | ~1.5 GB | ⬜ Pendiente | Control unificado (canny+depth+openpose+etc) |
+
+### Relighting instalado (IC-Light)
+
+| Modelo | Tipo | Base | Tamaño | Estado | Uso |
+|--------|------|------|--------|--------|-----|
+| IC-Light SD15 FC (`iclight_sd15_fc.safetensors`) | UNet patch (relighting) | SD 1.5 | 1.7 GB | ✅ Instalado en `models/unet/IC-Light/` | Re-iluminar foto existente con dirección de luz elegible (izq/der/arriba/abajo) |
 
 ### Upscalers
 
@@ -413,6 +421,9 @@ Comparativa: Arquitectura pura Remacri ★★★★★ vs ClearReality ★★★
 | Canny (Detect Edges) | image/filters | n_03-controlnet (canny, dual) |
 | ControlNetLoader | model/loaders | n_03-controlnet (canny, scribble, dual) |
 | ControlNetApplyAdvanced | model/conditioning/controlnet | n_03-controlnet (canny, scribble, dual) |
+| LoadAndApplyICLightUnet | model/loaders (IC-Light) | WF-03 serie controles (relighting, en armado) |
+| ICLightConditioning | model/conditioning (IC-Light) | WF-03 serie controles (relighting, en armado) |
+| LightSource | image/lighting (IC-Light) | WF-03 serie controles (gradiente derecha) |
 
 ---
 
@@ -535,6 +546,58 @@ Pipeline: `CLIPTextEncode → ControlNetApplyAdvanced → KSampler` (ControlNetL
 
 ---
 
+## Modelo — IC-Light SD15 FC (relighting)
+
+> Instalado 2026-10-09 para [[proyectos/MVP_04.02-comfyui-arquitectura/WF-03-serie-controles/WF-03-serie-controles|WF-03 serie controles]]: el img2img con prompt+denoise no mueve el sol (luz anclada a la base), IC-Light re-ilumina la foto con dirección elegible.
+
+"Imposing Consistent Light" (lllyasviel): UNet SD 1.5 reentrenado que impone una iluminación consistente a una foto existente — cambia la luz, conserva geometría y detalles.
+
+### Ficha técnica
+
+| Campo | Valor |
+|-------|-------|
+| **Archivo** | `iclight_sd15_fc.safetensors` |
+| **Tipo** | UNet patch SD 1.5 (text + foreground conditioned) |
+| **Tamaño** | 1.7 GB |
+| **Ruta** | `models/unet/IC-Light/` |
+| **Licencia** | Ver repo original (lllyasviel/IC-Light) |
+| **Fuente** | [Hugging Face: lllyasviel/ic-light](https://huggingface.co/lllyasviel/ic-light/tree/main) |
+| **Estado** | ✅ Instalado 2026-10-09 |
+| **Pack** | [kijai/ComfyUI-IC-Light](https://github.com/kijai/ComfyUI-IC-Light) (clonado en `custom_nodes/`, v1.0.5+) |
+
+Solo compatible con SD 1.5 (no SDXL): combina con `architecturerealmix_v11.safetensors`.
+
+---
+
+## Nodo — IC-Light (relighting direccional)
+
+Tres nodos del pack `ComfyUI-IC-Light` que trabajan juntos:
+
+```
+CheckpointLoaderSimple (SD1.5) → LoadAndApplyICLightUnet → MODEL parcheado → KSampler
+LoadImage (foto) → VAEEncode ─→ ICLightConditioning.foreground
+LightSource (light_position=right) → VAEEncode ─→ KSampler.latent_image
+CLIPTextEncode (+/−) → ICLightConditioning → KSampler
+KSampler → VAEDecode → SaveImage
+```
+
+### Nodos y opciones
+
+| Nodo | Input clave | Opciones | Uso estudio |
+|------|-------------|----------|-------------|
+| `LoadAndApplyICLightUnet` | `model`, `model_path` | `IC-Light/iclight_sd15_fc.safetensors` | Parchea el SD 1.5 una vez |
+| `LightSource` | `light_position`, `multiplier`, colores, tamaño | `top`, `bottom`, `left`, `right`, `top_left`, `top_right`, `bottom_left`, `bottom_right`, `center` | `right` = sol desde la derecha |
+| `ICLightConditioning` | `positive`, `negative`, `vae`, `foreground` (foto), `multiplier` (def 0.18215) | `opt_background` solo variante FBC | Prompt de iluminación ("sunset, warm sunlight"), no de instrucción |
+
+Estilo de prompt IC-Light: frase de luz ("golden hour, soft warm light"), no orden ("relight from the right" no funciona — la dirección la da `LightSource`).
+
+### Cuándo usarlo en el estudio
+
+- Re-iluminar un render/foto manteniendo la casa: atardecer a la derecha, nocturno con interiores cálidos.
+- Límite conocido: funciona sobre la foto dada; si la base es diurna dura, el resultado es re-iluminación, no re-generación.
+
+---
+
 ## Nodos nativos pendientes
 
 Nodos built-in con ficha completa pendiente — se documentan paso a paso. Referencia general: https://docs.comfy.org. Migrado de stubs `comfyui/*.md`.
@@ -586,6 +649,8 @@ ultima_actualizacion: YYYY-MM-DD
 
 - [[wiki/glosario/conceptos/bim-metodologia]]
 - [[wiki/glosario/conceptos/cerebro-digital-karpathy]]
+- [[proyectos/MVP_04.02-comfyui-arquitectura/WF-03-serie-controles/WF-03-serie-controles|WF-03 serie controles]] — primera aplicación de IC-Light en el estudio (sol a la derecha)
+- [[wiki/glosario/interno/pbooks/pbk-comfyui]]
 
 ## Referencias
 
@@ -607,4 +672,9 @@ ultima_actualizacion: YYYY-MM-DD
 - [Hugging Face: locon/4x_foolhardy_Remacri](https://huggingface.co/locon/4x_foolhardy_Remacri) / [philz1337/4x-ClearRealityV1](https://huggingface.co/philz1337/4x-ClearRealityV1)
 - [ESRGAN Paper](https://arxiv.org/abs/1809.00219)
 - [city96 ComfyUI-GGUF](https://github.com/city96/ComfyUI-GGUF)
+- [lllyasviel/IC-Light (repo original + paper)](https://github.com/lllyasviel/IC-Light/blob/main/README.md) (verificado 2026-10-09)
+- [kijai/ComfyUI-IC-Light (pack + example workflows)](https://github.com/kijai/ComfyUI-IC-Light) (verificado 2026-10-09)
+- [Hugging Face: lllyasviel/ic-light (modelos)](https://huggingface.co/lllyasviel/ic-light/tree/main) (verificado 2026-10-09)
+- [ComfyUI Docs — KSampler](https://docs.comfy.org/built-in-nodes/sampling/ksampler) (verificado 2026-10-09: samplers + schedulers)
+- [ComfyUI Wiki — icLightApply (Easy-Use)](https://comfyui-wiki.com/en/custom-nodes/ComfyUI-Easy-Use/nodes/ic-light-apply) (verificado 2026-10-09: opciones lighting Left/Right/Top/Bottom)
 - Verificar con webfetch antes de publicar — patrón docs.comfy.org es `/built-in-nodes/<PascalCase>` (no `/node-reference/<kebab-case>`).

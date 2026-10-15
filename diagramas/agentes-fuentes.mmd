@@ -1,0 +1,42 @@
+flowchart TB
+    subgraph F ["FUENTES — exterior (¿qué puede entrar?)"]
+        direction TB
+        F1["Web y blogs · YouTube · Instagram · PDF texto · Audio"]
+        F2["PDF escaneado · Fotos de obra · Libros físicos · Pinterest · ArchDaily"]
+        F3["+ newsletters · TikTok · X · catálogos de fabricantes (a proponer)"]
+        F1 --- F2 --- F3
+    end
+    subgraph SH ["@sherlock: SOLO exterior (buscar + transcript)"]
+        direction TB
+        S1["Busca exterior (web, redes, APIs)"]
+        D1{"¿Transcript?"}
+        R1["Reporte links a raw/research/"]
+        T1["Transcript a <fuente>/transcripts/"]
+        P1["Stub pendiente a raw/contenidos/"]
+        S1 --> D1
+        D1 -->|no| R1
+        D1 -->|sí, API| T1 --> P1
+    end
+    subgraph CO ["@contenidos: FORMATEA (único acceso wiki: wiki/fuentes)"]
+        direction TB
+        C1["Toma pendiente + template + desarrolla"]
+        D2{"¿OK? (SOL)"}
+        C2["MUEVE a wiki/fuentes (tema) + borra raw"]
+        C1 --> D2 -->|sí| C2
+    end
+    subgraph VW ["@vaultworm-arq: CONECTA (1 vez/semana)"]
+        direction TB
+        V1["Barre wiki/fuentes"]
+        V2["Temas + conexiones"]
+        V3["Con s: glosario / estudio"]
+        V1 --> V2 --> V3
+    end
+    subgraph VS ["Vistas"]
+        direction TB
+        W1["Obsidian (índice + grafo) + web + VR"]
+    end
+    F ==> SH
+    P1 --> C1
+    C2 --> V1
+    C2 --> W1
+    V3 --> W1

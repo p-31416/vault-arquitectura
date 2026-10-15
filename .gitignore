@@ -38,6 +38,13 @@ Sin*.canvas
 proyectos/MVP_04-comfyui-arquitectura/**/salidas/
 proyectos/MVP_04-comfyui-arquitectura/**/outputs-salidas/
 proyectos/MVP_04-comfyui-arquitectura/**/inputs-croquis/
+proyectos/MVP_04.02-comfyui-arquitectura/**/salidas/
+proyectos/MVP_04.02-comfyui-arquitectura/**/inputs/
+proyectos/MVP_04.02-comfyui-arquitectura/**/ref/
+
+# Diagramas exportados + presupuestos PDF — binarios fuera de git
+diagramas/*.png
+proyectos/MVP_03b-calhon-pdo/presupuestos/*.pdf
 
 # Cache y builds
 raw/research-cache/

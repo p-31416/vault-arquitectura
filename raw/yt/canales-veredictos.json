@@ -1,0 +1,287 @@
+{
+ "_nota": "Veredictos manuales del estudio sobre CANALES (Parte 2 revision-manual). v: rescatar|descartar|pendiente. rescatar + categoria = entra al scope (el parser lo aplica via keywords en CATS). Fuente de verdad para regeneraciones.",
+ "canales": {
+  "UC0iLnh8th0V4C63450szkDw": {
+   "categoria": "arq+IA",
+   "nota": "#1 Paul Hansen: creador contenido comfyUI",
+   "nombre": "Paul Hansen",
+   "v": "rescatar"
+  },
+  "UC1kHcWiYGmqTlZmppBdqsYQ": {
+   "categoria": "metaverso",
+   "nota": "#4 Spatial: espacio en el metaverso, vr",
+   "nombre": "Spatial",
+   "v": "rescatar"
+  },
+  "UC57_JQ-D-7RFUtrsxchkT4w": {
+   "categoria": "IA general",
+   "nota": "#10 PixelEasel: creador IA imagenes (comfy + otros)",
+   "nombre": "PixelEasel",
+   "v": "rescatar"
+  },
+  "UC6QNjBn6KMq5-pe3OE11zZg": {
+   "categoria": "construccion",
+   "nota": "#11 Slant 3D: impresion 3d",
+   "nombre": "Slant 3D",
+   "v": "rescatar"
+  },
+  "UCAuUUnT6oDeKwE6v1NGQxug": {
+   "categoria": "creadores",
+   "nota": "#17 TED: charlas (todas las TED van en charlas)",
+   "nombre": "TED",
+   "v": "rescatar"
+  },
+  "UCBLonJoVxgwZi8oRc6VRf7A": {
+   "categoria": "software arq",
+   "nota": "#19 IFC Addict: IFC (BIM)",
+   "nombre": "IFC Addict",
+   "v": "rescatar"
+  },
+  "UCBma_LcjGyD6EEZFoV9ZnsQ": {
+   "categoria": "arq+IA",
+   "nota": "#21 Adan Martin: creador contenido arq+IA",
+   "nombre": "Adán Martín",
+   "v": "rescatar"
+  },
+  "UCCHSBH06vmwImCjalKW05BQ": {
+   "categoria": "IA general",
+   "nota": "#22 Nicolas Dubois: n8n y vibecoding (profesor IA del estudio)",
+   "nombre": "Nicolas Dubois",
+   "v": "rescatar"
+  },
+  "UCCMzZrlh_2k-4r4OcNDfwkQ": {
+   "categoria": "creadores",
+   "nota": "#23 Lecture replay Archizoom: charlas arquitectura",
+   "nombre": "Lecture replay - Archizoom @EPFL Architecture",
+   "v": "rescatar"
+  },
+  "UCCV8IMXXyCjBj-KW7ScvxdA": {
+   "categoria": "construccion",
+   "nota": "#24 Formlabs: impresion 3d",
+   "nombre": "Formlabs",
+   "v": "rescatar"
+  },
+  "UCCgvF3AIqy8DonE5Figh1hA": {
+   "categoria": "software arq",
+   "nota": "#26 Algorithmix Design: rhinoceros",
+   "nombre": "Algorithmix Design",
+   "v": "rescatar"
+  },
+  "UCHN43U7Xe0oKfPUDkJrojAg": {
+   "categoria": "creadores",
+   "nota": "#33 DigitalFUTURES: charlas de interes para arq",
+   "nombre": "DigitalFUTURES",
+   "v": "rescatar"
+  },
+  "UCHtOMWLu66c72a0dR-yCUCw": {
+   "categoria": "estudios intl.",
+   "nota": "#35 Patrik Schumacher: arquitecto (ZHA)",
+   "nombre": "Patrik Schumacher",
+   "v": "rescatar"
+  },
+  "UCHyyEwc2uO1JH2d9skjcVSg": {
+   "categoria": "construccion",
+   "nota": "#36 Anycubic: impresion 3d",
+   "nombre": "Anycubic Support",
+   "v": "rescatar"
+  },
+  "UCHzQe6ktJ6_Pn_h9noDloWw": {
+   "categoria": "software arq",
+   "nota": "#37 Architecture Vanguard: revit (BIM)",
+   "nombre": "Architecture Vanguard",
+   "v": "rescatar"
+  },
+  "UCIL42u3DOPcB7bBunsqMc9Q": {
+   "categoria": "arq+IA",
+   "nota": "#39 Salmaan Mohamed: creador contenido ia+arq",
+   "nombre": "Salmaan Mohamed",
+   "v": "rescatar"
+  },
+  "UCIgnGlGkVRhd4qNFcEwLL4A": {
+   "categoria": "IA general",
+   "nota": "#40 AI Search: comfy y modelos ia e imagenes",
+   "nombre": "AI Search",
+   "v": "rescatar"
+  },
+  "UCJh-IQlKuQBgE8JgpcN7xnA": {
+   "categoria": "arq+IA",
+   "nota": "#41 Alphonso Peluso: comfy, arquitectura, revit y otros soft",
+   "nombre": "Alphonso Peluso",
+   "v": "rescatar"
+  },
+  "UCLXcTgzr05cFZaN972nuEXw": {
+   "categoria": "metaverso",
+   "nota": "#46 Decentraland: metaverso",
+   "nombre": "Decentraland",
+   "v": "rescatar"
+  },
+  "UCMJDKbneghphOrZhnEadqQg": {
+   "categoria": "arq+IA",
+   "nota": "#47 za_Lab: comfyui",
+   "nombre": "za_Lab",
+   "v": "rescatar"
+  },
+  "UCN10Yokhe1Z2oabvzPeAdxg": {
+   "categoria": "software arq",
+   "nota": "#48 ARCHITEChTURES: software de arq",
+   "nombre": "ARCHITEChTURES - English",
+   "v": "rescatar"
+  },
+  "UCQfosl6Dauut1il890G4tKA": {
+   "categoria": "IA general",
+   "nota": "#53 Monzon Media: comfy",
+   "nombre": "Monzon Media",
+   "v": "rescatar"
+  },
+  "UCRodsxmiscKvJ7TlNx2yqyQ": {
+   "categoria": "software arq",
+   "nota": "#54 Marco Virtual MX: blender, comfy",
+   "nombre": "Marco Virtual MX",
+   "v": "rescatar"
+  },
+  "UCSawkor2vuD5RM61G9QdpLg": {
+   "categoria": "arq+IA",
+   "nota": "#55 Arturo Tedeschi: rhino, grasshopper y comfyui",
+   "nombre": "Arturo Tedeschi",
+   "v": "rescatar"
+  },
+  "UCTI8Tdja8vo3NzLxI8LOWnA": {
+   "categoria": "software arq",
+   "nota": "#56 Martin Cipoletta: autocad",
+   "nombre": "Martín Cipoletta",
+   "v": "rescatar"
+  },
+  "UCTTzyHNtMscBQIZphdu66Dg": {
+   "categoria": "construccion",
+   "nota": "#59 Bugeo 3d: impresion 3d",
+   "nombre": "Bugeo 3d",
+   "v": "rescatar"
+  },
+  "UCTjcoh157n3hxKCxpEvfqeQ": {
+   "categoria": "arq+IA",
+   "nota": "#60 Future Architecture: ia+arq, bim",
+   "nombre": "Future Architecture",
+   "v": "rescatar"
+  },
+  "UCUq1n6LeboXvqpv_XL73I6g": {
+   "categoria": "software arq",
+   "nota": "#61 Render Reboot: twinmotion ia+arq",
+   "nombre": "Render Reboot",
+   "v": "rescatar"
+  },
+  "UCWe3vd_2EKkkWqvN7yMevsg": {
+   "categoria": "software arq",
+   "nota": "#63 Tokar Architecture: grasshopper, rhino, revit",
+   "nombre": "Tokar Architecture",
+   "v": "rescatar"
+  },
+  "UCXoBeU28xWGGDQXevIHe5Hg": {
+   "categoria": "software arq",
+   "nota": "#64 Alex Luna: autocad",
+   "nombre": "Alex Luna",
+   "v": "rescatar"
+  },
+  "UCYvc1PUeF2L_PvQSPLzQdWQ": {
+   "categoria": "metaverso",
+   "nota": "#67 VrPatch: vr",
+   "nombre": "VrPatch",
+   "v": "rescatar"
+  },
+  "UC_eRv_Rzr671BaKFtpYSi4A": {
+   "categoria": "software arq",
+   "nota": "#68 Show It Better: visualizacion arquitectonica D5 render",
+   "nombre": "Show It Better",
+   "v": "rescatar"
+  },
+  "UCd6VzRjfyvHD87Fl9BvbGpg": {
+   "categoria": "software arq",
+   "nota": "#74 PlanFinder: plan finder (grasshopper)",
+   "nombre": "PlanFinder",
+   "v": "rescatar"
+  },
+  "UCd8RP9YeMDw0Tb-w3gr6qtg": {
+   "categoria": "metaverso",
+   "nota": "#75 Robson Jacobsen: vr + IA",
+   "nombre": "Robson Jacobsen | Jacobsen3D",
+   "v": "rescatar"
+  },
+  "UCfmtI3LzlS23cy76ZnuWZ3A": {
+   "categoria": "arq+IA",
+   "nota": "#79 Design Input: stable diffusion ia+arq",
+   "nombre": "Design Input",
+   "v": "rescatar"
+  },
+  "UCiRsHYsIuWwU78i9RE3nlMg": {
+   "categoria": "software arq",
+   "nota": "#81 Gediminas Kirdeikis: unreal engine",
+   "nombre": "Gediminas Kirdeikis",
+   "v": "rescatar"
+  },
+  "UCiflAFh2USUg0Kblo5RHADQ": {
+   "categoria": "IA general",
+   "nota": "#82 XR AI Spotlight: gaussian splatting",
+   "nombre": "XR AI Spotlight",
+   "v": "rescatar"
+  },
+  "UCizIVWICNILz4Ys8zFna-Rw": {
+   "categoria": "arq+IA",
+   "nota": "#83 MYN3D: IA + arq",
+   "nombre": "MYN3D",
+   "v": "rescatar"
+  },
+  "UClVA88cdEfbcVFAXwMe-4BA": {
+   "categoria": "arq+IA",
+   "nota": "#85 Archi Lab: IA+arq",
+   "nombre": "Archi Lab",
+   "v": "rescatar"
+  },
+  "UCl_lp_1V_EBwRIiJN_shW2g": {
+   "categoria": "arq+IA",
+   "nota": "#86 bydavidparra: ia + arq",
+   "nombre": "bydavidparra",
+   "v": "rescatar"
+  },
+  "UCnO6YjOE3-CIm0x5Z2easzw": {
+   "categoria": "arq+IA",
+   "nota": "#90 Urban Decoders: ia + arq, comfy",
+   "nombre": "Urban Decoders",
+   "v": "rescatar"
+  },
+  "UCnl3Zvy78lNfGIYLBxAu5-g": {
+   "v": "rescatar",
+   "categoria": "software arq",
+   "nombre": "Ifc Architect",
+   "nota": "#93 Ifc Architect: ifc, bim (entraba igual por keyword 'ifc', se registra)"
+  },
+  "UCoHNO3-ZFfc1Z6feiZ-_Zew": {
+   "categoria": "arq+IA",
+   "nota": "#94 ATELIER DESIGNA: ia + arq",
+   "nombre": "ATELIER DESIGNA",
+   "v": "rescatar"
+  },
+  "UCqOanbB9evU0GD76eCr1Pdw": {
+   "categoria": "arq+IA",
+   "nota": "#96 LandSpace Architecture: ia+arq",
+   "nombre": "LandSpace Architecture",
+   "v": "rescatar"
+  },
+  "UCrACMh5Qkqejb2JiXNKrvLA": {
+   "categoria": "software arq",
+   "nota": "#98 McNeel Europe: rhino official",
+   "nombre": "McNeel Europe",
+   "v": "rescatar"
+  },
+  "UCrLHBCOz211YirQRg2QVJvA": {
+   "categoria": "software arq",
+   "nota": "#99 ArchiTech Network: rhino",
+   "nombre": "ArchiTech Network",
+   "v": "rescatar"
+  },
+  "UCriBdZRo6uhSwPHVbz2jrig": {
+   "categoria": "software arq",
+   "nota": "#100 Especialista 3d: BIM",
+   "nombre": "Especialista 3d",
+   "v": "rescatar"
+  }
+ }
+}

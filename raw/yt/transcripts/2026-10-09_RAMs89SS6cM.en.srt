@@ -1,0 +1,217 @@
+1
+00:00:00,960 --> 00:00:06,480
+“Welcome back to Architutors! Today we’re 
+diving into another ComfyUI architecture 
+
+2
+00:00:06,480 --> 00:00:11,760
+tutorial — this time using the free ComfyUI 
+cloud version to create realistic renders 
+
+3
+00:00:11,760 --> 00:00:17,040
+of your projects. In our last tutorial, we 
+worked with the Qwen model and assets. But hey, 
+
+4
+00:00:17,040 --> 00:00:21,440
+architects don’t live on one model alone 
+— so today we’ll switch gears and try a 
+
+5
+00:00:21,440 --> 00:00:27,440
+different workflow. Buckle up, because 
+this canvas is about to get comfy!”
+
+6
+00:00:27,440 --> 00:00:33,280
+“Here’s the ComfyUI canvas — our digital 
+drafting board. First step: insert the Load Image 
+
+7
+00:00:33,280 --> 00:00:38,640
+component. Just double-click, type ‘Load Image,’ 
+and drag it onto the canvas. Easy as dragging 
+
+8
+00:00:38,640 --> 00:00:47,440
+furniture in SketchUp. Now, let’s upload a file — 
+I’m using a 3D model image exported from SketchUp. 
+
+9
+00:00:47,440 --> 00:00:56,160
+Select, import, and voilà — our base is ready. 
+Think of this as laying the foundation stone.”
+
+10
+00:00:56,160 --> 00:01:06,640
+“Next, we add Image Resize by Longer Side. 
+This is like resizing your blueprint — we’re 
+
+11
+00:01:06,640 --> 00:01:16,160
+defining the pixel dimensions. Let’s set it 
+to 2000 pixels and press OK. Then comes Flux 
+
+12
+00:01:16,160 --> 00:01:20,720
+Kontext Image Scale. This little guy decides 
+how much respect the generation gives to your 
+
+13
+00:01:20,720 --> 00:01:25,920
+reference image. Higher values = strict 
+architect, lower values = wild artist. 
+
+14
+00:01:25,920 --> 00:01:32,080
+It’s basically the difference between a 
+disciplined engineer and a free-spirited painter.”
+
+15
+00:01:32,080 --> 00:01:37,680
+“Now, insert VAE Encode. This compresses our 
+image into latent space — imagine rolling up 
+
+16
+00:01:37,680 --> 00:01:50,640
+your drawing into a neat scroll so 
+AI can read it. Then add Load VAE, 
+
+17
+00:01:50,640 --> 00:01:54,240
+which is the translator between 
+pixels and latent space. 
+
+18
+00:02:21,680 --> 00:02:23,840
+Click ‘Use’ to load it, and connect the output 
+
+19
+00:02:23,840 --> 00:02:28,800
+to VAE Encode. Boom — our image is 
+now speaking AI’s secret language.”
+
+20
+00:02:28,800 --> 00:02:33,440
+“Next, we need the brains of the operation: Load 
+Diffusion Model. This provides the weights for 
+
+21
+00:02:33,440 --> 00:02:42,560
+image generation. Add Load LoRa too — think of it 
+as extra seasoning that tweaks the model’s flavor. 
+
+22
+00:02:42,560 --> 00:03:14,240
+For this workflow, we’re going with the Flux1 
+model. Search, import, and connect. Same for LoRa. 
+
+23
+00:03:22,160 --> 00:03:27,520
+Now our canvas is starting to look like 
+a recipe card for architectural magic.”
+
+24
+00:03:27,520 --> 00:03:31,840
+“Insert KSampler. This is the chef 
+— it takes random latent noise and 
+
+25
+00:03:31,840 --> 00:03:47,360
+cooks it into a refined image. Connect 
+the model inputs and latent. Then add 
+
+26
+00:03:47,360 --> 00:04:02,880
+DualClipLoader to load paired CLIP models 
+for richer conditioning. Select the CLIP. 
+
+27
+00:04:03,840 --> 00:04:11,680
+Next, insert CLIP Text Encode — this 
+is where we’ll feed our prompt later. 
+
+28
+00:04:15,600 --> 00:04:20,080
+Add Reference Latent to guide generation, 
+and Conditioning Zero Out to nullify prompt 
+
+29
+00:04:20,080 --> 00:04:35,280
+conditioning. Finally, sprinkle in 
+Flux Guidance and connect outputs 
+
+30
+00:04:35,280 --> 00:04:40,400
+with KSampler. It’s like adding a GPS to 
+your design — keeps the workflow on track.”
+
+31
+00:05:22,080 --> 00:05:25,120
+“We’re almost at the finish line. Add VAE Decode 
+
+32
+00:05:25,120 --> 00:05:32,240
+and connect it with the output 
+from KSampler and the VAE model. 
+
+33
+00:05:45,920 --> 00:05:49,600
+Then insert Save Image — the treasure 
+chest where our final render will appear.”
+
+34
+00:06:15,120 --> 00:06:34,960
+“Of course, no render without a prompt. Change 
+the CLIP defined earlier, and provide your text 
+
+35
+00:06:34,960 --> 00:06:56,960
+prompt. Here’s where you can go wild: specify 
+textures, materials, lighting, or even the vibe 
+
+36
+00:06:56,960 --> 00:07:06,240
+of the environment. Want Scandinavian minimalism? 
+Industrial chic? Tropical resort? Just type it in. 
+
+37
+00:07:25,360 --> 00:07:32,040
+Hit Run — 
+
+38
+00:07:43,280 --> 00:08:00,000
+wait a few seconds — and boom, your render 
+is ready. And trust me, it looks amazing.”
+
+39
+00:08:25,200 --> 00:08:34,080
+“Play around with different prompts, 
+tweak values, and explore variations. 
+
+40
+00:09:16,240 --> 00:09:20,720
+Each workflow can give you breathtaking 
+results in unique styles. That’s the beauty 
+
+41
+00:09:20,720 --> 00:09:27,440
+of ComfyUI — it’s like Lego for architects, 
+but with pixels. Build, break, remix, repeat.”
+
+42
+00:09:28,160 --> 00:09:33,120
+“So that’s one type of workflow you can build 
+in ComfyUI for AI Architecture and AI Interior 
+
+43
+00:09:33,120 --> 00:09:37,520
+Design renders. If you enjoyed this, make sure 
+to subscribe and hit the bell icon — because 
+
+44
+00:09:37,520 --> 00:09:55,440
+you don’t want to miss the next comfy ride. 
+Thanks for watching, and see you next time!”
+

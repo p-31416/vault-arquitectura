@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Grafo YT VR editable — path: wiki/fuentes</title>
+<script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+<script src="https://unpkg.com/3d-force-graph-vr@1.73.0/dist/3d-force-graph-vr.min.js"></script>
+<style>
+body { margin: 0; font-family: sans-serif; }
+#overlay { position: absolute; top: 10px; left: 10px; z-index: 10; background: rgba(0,0,0,.8); color: #fff; padding: 10px 12px; border-radius: 8px; font-size: 14px; max-width: 340px; }
+#overlay code { color: #f1c40f; }
+#overlay button { margin: 3px 2px; padding: 8px 10px; border-radius: 6px; border: 2px solid #555; background: #222; color: #fff; font-size: 14px; cursor: pointer; }
+#overlay button.activo { border-color: #f1c40f; background: #3a3000; }
+#overlay input { width: 90%; padding: 6px; margin-top: 6px; border-radius: 6px; border: 1px solid #555; }
+#salida { width: 95%; height: 70px; margin-top: 6px; font-size: 11px; }
+</style>
+</head>
+<body>
+<div id="overlay">
+<b>Grafo YT editable en Quest</b> — filtro <code>path: wiki/fuentes</code><br>
+Modo:
+<button id="m-nav" class="activo">◎ navegar</button>
+<button id="m-add">＋ agregar tema</button>
+<button id="m-link">⛓ linkear</button><br>
+<small>
+Navegar: gatillo arrastra · grip+ mover rota · joystick vuela.<br>
+Agregar: apuntá al vacío y gatillo → crea nodo <b>investigar-N</b>.<br>
+Linkear: gatillo en nodo A, luego en nodo B → crea link.<br>
+Renombrar: escribí abajo <code>id | nuevo nombre</code>.<br>
+Todo se guarda solo en este browser.</small><br>
+<input id="rename" placeholder="ej: investigar-1 | entrega 4K fachada">
+<button id="btn-rename">renombrar</button>
+<button id="btn-export">ver JSON</button>
+<textarea id="salida" placeholder="acá aparece el JSON para copiar al vault"></textarea>
+<div><small>Servidor PC: <code>python -m http.server 8000 --directory scripts</code><br>
+Quest: <code>http://TU-IP-PC:8000/grafo-yt-vr.html</code> → Enter VR</small></div>
+</div>
+<div id="3d-graph"></div>
+<script>
+// NOTA ES: edición 100% en Quest. Gatillo = click. Modos: navegar / agregar / linkear.
+// Sin prompt() (no existe en VR): nombres por defecto + renombre en panel. Persiste en localStorage.
+const KEY = 'grafo-yt-vr-1';
+const base = {
+  nodes: [
+    {id: 'index', name: 'index-yt · 71', group: 'hub', val: 2},
+    {id: 'tag-comfyui', name: '#comfyui', group: 'comfyui', val: 30},
+    {id: 'tag-arq', name: '#arq', group: 'arq', val: 8},
+    {id: 'tag-viz', name: '#viz', group: 'arq', val: 6},
+    {id: 'tag-blender', name: '#blender', group: 'blender', val: 10},
+    {id: 'tag-nanobanana', name: '#nanobanana', group: 'nano', val: 7},
+    {id: 'tag-llm', name: '#llm', group: 'nano', val: 7},
+    {id: 'creador-comfyui', name: 'canal: ComfyUI', group: 'creador', val: 12},
+    {id: 'creador-architutors', name: 'canal: architutors', group: 'creador', val: 5},
+    {id: 'JWln_5jm4Ic', name: 'Nano Banana 4K ⏳', group: 'comfyui', val: 9},
+    {id: 'WFHlgwl6jno', name: 'Blender→cámara ⏳ PUENTE', group: 'blender', val: 12},
+    {id: 'cXXNUR_wu60', name: 'Comfy→Blender ⏳', group: 'blender', val: 8},
+    {id: 'RAMs89SS6cM', name: 'ComfyUI for Architects ✅', group: 'curada', val: 14},
+    {id: 'QfvwVfKtpQ4', name: 'Comfy Agent ⏳', group: 'comfyui', val: 4},
+    {id: 'IQep_c2R19M', name: 'MCP local ⏳', group: 'comfyui', val: 6},
+    {id: 'EuAe-4nXFSk', name: 'Hunyuan 3D ⏳', group: 'blender', val: 4},
+    {id: 'KRldrZ1yzCA', name: 'Game Changer arq ⏳', group: 'arq', val: 5},
+  ],
+  links: [
+    {source: 'index', target: 'tag-comfyui'}, {source: 'index', target: 'creador-comfyui'},
+    {source: 'JWln_5jm4Ic', target: 'tag-comfyui'}, {source: 'JWln_5jm4Ic', target: 'tag-nanobanana'},
+    {source: 'JWln_5jm4Ic', target: 'tag-llm'}, {source: 'JWln_5jm4Ic', target: 'creador-comfyui'},
+    {source: 'WFHlgwl6jno', target: 'tag-comfyui'}, {source: 'WFHlgwl6jno', target: 'tag-blender'},
+    {source: 'WFHlgwl6jno', target: 'creador-comfyui'},
+    {source: 'cXXNUR_wu60', target: 'tag-comfyui'}, {source: 'cXXNUR_wu60', target: 'tag-blender'},
+    {source: 'RAMs89SS6cM', target: 'tag-comfyui'}, {source: 'RAMs89SS6cM', target: 'tag-arq'},
+    {source: 'RAMs89SS6cM', target: 'tag-viz'}, {source: 'RAMs89SS6cM', target: 'creador-architutors'},
+    {source: 'QfvwVfKtpQ4', target: 'tag-comfyui'}, {source: 'IQep_c2R19M', target: 'tag-comfyui'},
+    {source: 'IQep_c2R19M', target: 'tag-llm'}, {source: 'EuAe-4nXFSk', target: 'tag-comfyui'},
+    {source: 'KRldrZ1yzCA', target: 'tag-comfyui'}, {source: 'KRldrZ1yzCA', target: 'tag-arq'},
+  ]
+};
+let gData;
+try { gData = JSON.parse(localStorage.getItem(KEY)) || structuredClone(base); }
+catch (e) { gData = structuredClone(base); }
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(gData)); } catch (e) {} };
+const colors = {hub: '#ffffff', comfyui: '#e67e22', arq: '#2ecc71', blender: '#3498db', nano: '#9b59b6', creador: '#95a5a6', curada: '#f1c40f', investigar: '#ff2e88'};
+let modo = 'nav', pendienteLink = null, contador = gData.nodes.filter(n => n.group === 'investigar').length;
+const Graph = ForceGraphVR()(document.getElementById('3d-graph'))
+  .graphData(gData)
+  .nodeVal('val')
+  .nodeColor(n => n.id === pendienteLink ? '#00e5ff' : (colors[n.group] || '#fff'))
+  .nodeLabel('name')
+  .linkColor(() => 'rgba(255,255,255,0.85)')
+  .linkWidth(1.8)
+  .linkDirectionalParticles(3)
+  .backgroundColor('rgba(0,0,0,1)')
+  .onNodeClick(n => {
+    const nid = typeof n === 'object' ? n.id : n;
+    if (modo === 'link') {
+      if (!pendienteLink) { pendienteLink = nid; Graph.refresh(); }
+      else if (pendienteLink !== nid) {
+        gData.links.push({source: pendienteLink, target: nid});
+        pendienteLink = null; save(); Graph.graphData(gData);
+      }
+      return;
+    }
+    if (modo === 'nav' && nid === 'RAMs89SS6cM') alert('wiki/fuentes/comfyui-for-architects-architutors.md');
+  })
+  .onBackgroundClick(() => {
+    if (modo !== 'add') return;
+    contador += 1;
+    const nid = 'investigar-' + contador;
+    gData.nodes.push({id: nid, name: nid + ' ⏳ (renombrame)', group: 'investigar', val: 7,
+      x: (Math.random() - 0.5) * 30, y: (Math.random() - 0.5) * 30, z: (Math.random() - 0.5) * 30});
+    gData.links.push({source: nid, target: 'tag-comfyui'});
+    save(); Graph.graphData(gData);
+  });
+const setModo = m => {
+  modo = m; pendienteLink = null;
+  document.querySelectorAll('#overlay button[id^="m-"]').forEach(b => b.classList.remove('activo'));
+  document.getElementById(m === 'nav' ? 'm-nav' : m === 'add' ? 'm-add' : 'm-link').classList.add('activo');
+  Graph.refresh();
+};
+document.getElementById('m-nav').onclick = () => setModo('nav');
+document.getElementById('m-add').onclick = () => setModo('add');
+document.getElementById('m-link').onclick = () => setModo('link');
+document.getElementById('btn-rename').onclick = () => {
+  const v = document.getElementById('rename').value.split('|');
+  if (v.length < 2) return;
+  const n = gData.nodes.find(x => x.id === v[0].trim());
+  if (n) { n.name = v[1].trim(); save(); Graph.graphData(gData); }
+};
+document.getElementById('btn-export').onclick = () => {
+  document.getElementById('salida').value = JSON.stringify({nodes: gData.nodes, links: gData.links.map(l => ({
+    source: typeof l.source === 'object' ? l.source.id : l.source,
+    target: typeof l.target === 'object' ? l.target.id : l.target}))}, null, 1);
+};
+</script>
+</body>
+</html>

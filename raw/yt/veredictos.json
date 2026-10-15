@@ -1,0 +1,711 @@
+{
+ "_nota": "Veredictos manuales del estudio sobre videos WL. v: filosofia|personal|otros|descartar|rescatar|proyecto. filosofia/personal/otros/proyecto = listados, NO analizados en el vault. descartar = archivado (sigue en Takeout). rescatar + tema = entra al scope con ese tag forzado. Fuente de verdad para regeneraciones: el parser lee este archivo y aplica.",
+ "videos": {
+  "-gPFxMHWV8w": {
+   "nota": "ciencia divulgacion, interesante pero fuera de vault",
+   "v": "otros"
+  },
+  "-kqHfYc0UTA": {
+   "nota": "filosofia manana budista",
+   "v": "filosofia"
+  },
+  "1iitERYvi80": {
+   "nota": "Xavier Mitjana Antigravity: descartado por el estudio",
+   "v": "descartar"
+  },
+  "2nooU_KfIns": {
+   "nota": "personal (Maldacena espacio-tiempo)",
+   "v": "otros"
+  },
+  "3j7oSqCuTHs": {
+   "v": "otros",
+   "nota": "personal (flexibilidad matthewismith)"
+  },
+  "4Br45kOed_s": {
+   "nota": "tao",
+   "v": "filosofia"
+  },
+  "4fWR8x2BtP0": {
+   "nota": "charla tipo TED de arquitectura",
+   "tema": [
+    "charlas",
+    "arq"
+   ],
+   "v": "rescatar"
+  },
+  "5dZkZ08x8GA": {
+   "nota": "personal",
+   "v": "otros"
+  },
+  "7hsvA4-zWAI": {
+   "nota": "entretenimiento",
+   "v": "otros"
+  },
+  "8n-zZj2CSG4": {
+   "nota": "personal",
+   "v": "otros"
+  },
+  "A2S-lzsb3gw": {
+   "nota": "IDEA DE PROYECTO: notebook digital tipo davinci notebook con todo",
+   "v": "proyecto"
+  },
+  "EMA608v7cmk": {
+   "nota": "buda",
+   "v": "filosofia"
+  },
+  "F-1INVnrtvI": {
+   "nota": "jung",
+   "v": "filosofia"
+  },
+  "Ga4H_e6TAlM": {
+   "nota": "inferido: charla IA+Arq (no numerado, misma naturaleza que #35)",
+   "tema": [
+    "charlas",
+    "arq"
+   ],
+   "v": "rescatar"
+  },
+  "JH0W_Wzlmi4": {
+   "nota": "otros",
+   "v": "otros"
+  },
+  "JnzMXLeI1AI": {
+   "nota": "tecnologia: router viejo DIY",
+   "tema": [
+    "hardware"
+   ],
+   "v": "rescatar"
+  },
+  "KjLMbYY0jEQ": {
+   "nota": "jung",
+   "v": "filosofia"
+  },
+  "Ldwd1APMw5A": {
+   "nota": "3D AI generator TripoSplat",
+   "tema": [
+    "ai-3d"
+   ],
+   "v": "rescatar"
+  },
+  "NqBFBnhUQcI": {
+   "nota": "personal",
+   "v": "otros"
+  },
+  "PyVGu_-Px5I": {
+   "nota": "filosofia (divergente/arborrescente)",
+   "v": "filosofia"
+  },
+  "RBkQD_URQ-M": {
+   "nota": "inferido: TEDx => charlas (todas las TED van en charlas)",
+   "tema": [
+    "charlas"
+   ],
+   "v": "rescatar"
+  },
+  "RerjlwXElFs": {
+   "nota": "personal",
+   "v": "otros"
+  },
+  "S9_SpqIIKa0": {
+   "nota": "entretenimiento sprite+carbon",
+   "v": "descartar"
+  },
+  "Te9yJ1Kthb8": {
+   "nota": "charla IA+Arq Keir Regan-Alexander",
+   "tema": [
+    "charlas",
+    "arq"
+   ],
+   "v": "rescatar"
+  },
+  "Tys9_WVEoVQ": {
+   "nota": "masterclass IA audiovisual = charla",
+   "tema": [
+    "charlas"
+   ],
+   "v": "rescatar"
+  },
+  "XcZI-E302Bg": {
+   "nota": "filosofia observador",
+   "v": "filosofia"
+  },
+  "XnhFX45GM8s": {
+   "nota": "personal",
+   "v": "otros"
+  },
+  "Y-oqz-cTAbU": {
+   "nota": "diagramas de arquitectura, se queda",
+   "tema": [
+    "diagramas",
+    "arq"
+   ],
+   "v": "rescatar"
+  },
+  "YKUEPQmoeBM": {
+   "nota": "personal -> otros",
+   "v": "otros"
+  },
+  "ZaC7mtoxNR0": {
+   "nota": "filosofia huxley -> otros",
+   "v": "otros"
+  },
+  "ZzIPb_zDgXo": {
+   "nota": "inferido: psicologia -> otros",
+   "v": "otros"
+  },
+  "b4byMoRGSk4": {
+   "nota": "lao tzu",
+   "v": "filosofia"
+  },
+  "cwF8JK92pdw": {
+   "nota": "IA general (segundo cerebro)",
+   "tema": [
+    "llm",
+    "notebook"
+   ],
+   "v": "rescatar"
+  },
+  "exIPbkZlDA0": {
+   "nota": "personal",
+   "v": "otros"
+  },
+  "ezbD51v4i0A": {
+   "nota": "charla Tim Fu ex-ZHA | #P-B22 reconfirmado: charla arq Tim Fu",
+   "tema": [
+    "charlas",
+    "arq"
+   ],
+   "v": "rescatar"
+  },
+  "f7aiFYdm9-c": {
+   "nota": "filosofia poder mental",
+   "v": "filosofia"
+  },
+  "fal18RJOLQY": {
+   "nota": "jung 40",
+   "v": "filosofia"
+  },
+  "gKpzLYW-nik": {
+   "nota": "schopenhauer",
+   "v": "filosofia"
+  },
+  "gnGR0oVspcs": {
+   "nota": "google gemini IA general",
+   "tema": [
+    "llm"
+   ],
+   "v": "rescatar"
+  },
+  "iHv0DTBoMy0": {
+   "nota": "Josema: herramientas IA, vibecoding",
+   "tema": [
+    "vibe-coding"
+   ],
+   "v": "rescatar"
+  },
+  "j7FyV1ksjlc": {
+   "nota": "personal",
+   "v": "otros"
+  },
+  "jPwwZVAB1ZA": {
+   "nota": "filosofia (INFJ+IA)",
+   "v": "filosofia"
+  },
+  "lEfSoR5JCaQ": {
+   "nota": "MAGNIFIC es otro video (buscar); este es workflows arq+IA, se queda",
+   "tema": [
+    "arq",
+    "agents"
+   ],
+   "v": "rescatar"
+  },
+  "m9BI_ezPtA0": {
+   "nota": "personal",
+   "v": "otros"
+  },
+  "nuzi3k4oX9A": {
+   "nota": "Nicolas Dubois = profesor IA del estudio, IA general",
+   "tema": [
+    "llm",
+    "agents"
+   ],
+   "v": "rescatar"
+  },
+  "nqQ9G3V_zzo": {
+   "nota": "nota sobre IA (futuro trabajo)",
+   "tema": [
+    "llm"
+   ],
+   "v": "rescatar"
+  },
+  "oGwblZdlD5k": {
+   "nota": "IA aplicada NO arquitectura (ARCA SaaS)",
+   "tema": [
+    "n8n"
+   ],
+   "v": "rescatar"
+  },
+  "ocnm-ncPlMA": {
+   "nota": "personal",
+   "v": "otros"
+  },
+  "oyqIEbOQEcA": {
+   "nota": "metaverso/RV decentraland",
+   "tema": [
+    "decentraland",
+    "nft",
+    "metaverso"
+   ],
+   "v": "rescatar"
+  },
+  "pvUlZJY0DT0": {
+   "nota": "personal-charla",
+   "v": "otros"
+  },
+  "qZrRKXclf9k": {
+   "nota": "inferido: psicologia INFJ -> otros",
+   "v": "otros"
+  },
+  "qqwhjSzFJqY": {
+   "nota": "personal (full movie)",
+   "v": "otros"
+  },
+  "rPw4E5WTEGE": {
+   "nota": "personal",
+   "v": "otros"
+  },
+  "t7CUw_OOKbY": {
+   "nota": "github: listar repos interesantes",
+   "tema": [
+    "repos",
+    "vibe-coding"
+   ],
+   "v": "rescatar"
+  },
+  "uYffGLGOfzw": {
+   "nota": "charla Tim Fu IA+Arq",
+   "tema": [
+    "charlas",
+    "arq"
+   ],
+   "v": "rescatar"
+  },
+  "w5c4kRucRr0": {
+   "nota": "lama",
+   "v": "filosofia"
+  },
+  "wKDaP1qzhdQ": {
+   "nota": "personal",
+   "v": "otros"
+  },
+  "wwYZQjgUljA": {
+   "nota": "documental Bauhaus BBC",
+   "tema": [
+    "charlas",
+    "arq"
+   ],
+   "v": "rescatar"
+  },
+  "xb18odKRs3s": {
+   "nota": "charla MVRDV State of AI | #P-B29 reconfirmado: charla MVRDV estudio int",
+   "tema": [
+    "charlas",
+    "arq"
+   ],
+   "v": "rescatar"
+  },
+  "9kU6FT7ldZs": {
+   "v": "descartar",
+   "nota": "Salmaan AI CAD Tool: descartado por el estudio (video puntual, el canal sigue)"
+  },
+  "qWB7p_n-jDA": {
+   "v": "rescatar",
+   "tema": [
+    "magnific",
+    "ia-imagen"
+   ],
+   "nota": "MAGNIFIC Spaces Nodo Designer (soft generacion imagen), Escuela Interiorismo"
+  },
+  "X8yRlA7jqEQ": {
+   "v": "rescatar",
+   "nota": "Corridor Crew: biggest since CGI (splatting)",
+   "tema": [
+    "gaussian-splatting",
+    "repos"
+   ]
+  },
+  "Xn4h0vJ-wYQ": {
+   "v": "rescatar",
+   "nota": "Gaussian Splatting tutorial Postshot",
+   "tema": [
+    "gaussian-splatting",
+    "repos"
+   ]
+  },
+  "9YyPNiFHwpg": {
+   "v": "rescatar",
+   "nota": "3DGS clean/export/share",
+   "tema": [
+    "gaussian-splatting",
+    "repos"
+   ]
+  },
+  "sOw-Dff5qVQ": {
+   "v": "rescatar",
+   "nota": "videos largos gratis",
+   "tema": [
+    "video-ia"
+   ]
+  },
+  "WHrec4Q0seY": {
+   "v": "rescatar",
+   "nota": "videos largos 4K",
+   "tema": [
+    "video-ia"
+   ]
+  },
+  "mm4W5Y-TNH0": {
+   "v": "rescatar",
+   "nota": "charla Latorre IA sin miedo",
+   "tema": [
+    "charlas",
+    "llm"
+   ]
+  },
+  "MDa13zptsro": {
+   "v": "rescatar",
+   "nota": "Xavier: cerebro digital con documentos",
+   "tema": [
+    "llm",
+    "notebook"
+   ]
+  },
+  "GthseaWsjDg": {
+   "v": "descartar",
+   "nota": "webs antigravity"
+  },
+  "sQGAlPMhoA0": {
+   "v": "descartar",
+   "nota": "google maps leads"
+  },
+  "JTh79ZUnobM": {
+   "v": "rescatar",
+   "nota": "GEMMA 4 gratis en PC",
+   "tema": [
+    "llm"
+   ]
+  },
+  "NC9B_NqvQrg": {
+   "v": "rescatar",
+   "nota": "Agustin Medina academia IA",
+   "tema": [
+    "llm"
+   ]
+  },
+  "wiD6AtPOxpQ": {
+   "v": "rescatar",
+   "nota": "8 herramientas IA",
+   "tema": [
+    "llm"
+   ]
+  },
+  "fZ7ZeH65PFA": {
+   "v": "rescatar",
+   "nota": "creador IA general Entrala",
+   "tema": [
+    "llm"
+   ]
+  },
+  "O8FYsuizzfA": {
+   "v": "rescatar",
+   "nota": "inferido: AI Studio apps full stack (no dictado)",
+   "tema": [
+    "vibe-coding",
+    "llm"
+   ]
+  },
+  "OefqBTBREgY": {
+   "v": "rescatar",
+   "nota": "NotebookLM MIT",
+   "tema": [
+    "llm",
+    "notebook"
+   ]
+  },
+  "MNwEY87C_ik": {
+   "v": "descartar",
+   "nota": "capcut pro"
+  },
+  "eqIB91o8nxw": {
+   "v": "descartar",
+   "nota": "novedades viejas gemini"
+  },
+  "4-_k6UdMUUU": {
+   "v": "rescatar",
+   "nota": "10 AI tools architects",
+   "tema": [
+    "arq",
+    "llm"
+   ]
+  },
+  "HsQHwZFto2M": {
+   "v": "descartar",
+   "nota": "Alejavi clickbait (canal sigue)"
+  },
+  "qHwIiwjrT1I": {
+   "v": "otros",
+   "nota": "cursos gratis personal no-arq"
+  },
+  "H6wJNiNloWk": {
+   "v": "otros",
+   "nota": "personal INFJ"
+  },
+  "6aRcdaDyLCk": {
+   "v": "otros",
+   "nota": "personal altas inteligente"
+  },
+  "dU3EFQiUS9A": {
+   "v": "rescatar",
+   "nota": "ArchiTech Talk BIG+D5",
+   "tema": [
+    "charlas",
+    "arq"
+   ]
+  },
+  "deateY1ZJU0": {
+   "v": "otros",
+   "nota": "personal neurodivergente"
+  },
+  "TgbiccIYhwk": {
+   "v": "otros",
+   "nota": "personal INFJ"
+  },
+  "rHF4iMsH3_I": {
+   "v": "descartar",
+   "nota": "Xavier herramienta (canal sigue)"
+  },
+  "hUnNum9p0ME": {
+   "v": "descartar",
+   "nota": "video puntual, keep creator Migue Baena"
+  },
+  "VUOCXqwZmLE": {
+   "v": "descartar",
+   "nota": "video puntual, keep creator Xavier"
+  },
+  "UEhvDDM5LKA": {
+   "v": "otros",
+   "nota": "personal INFJ sigma"
+  },
+  "cPoUnoM-Kt4": {
+   "v": "rescatar",
+   "nota": "Bloomberg IA general",
+   "tema": [
+    "llm"
+   ]
+  },
+  "qR9FLvlQwfA": {
+   "v": "rescatar",
+   "nota": "Filo News Rieznik IA",
+   "tema": [
+    "llm"
+   ]
+  },
+  "6pO6Mm2qJaE": {
+   "v": "otros",
+   "nota": "personal matematica"
+  },
+  "rKr5p_3hQoM": {
+   "v": "otros",
+   "nota": "personal INFJ"
+  },
+  "3KsR03Ir6xM": {
+   "v": "otros",
+   "nota": "personal Veritasium arena"
+  },
+  "4yrG1MIFJKQ": {
+   "v": "otros",
+   "nota": "personal empaths"
+  },
+  "iJi5a2c32n4": {
+   "v": "otros",
+   "nota": "personal reggae dub"
+  },
+  "6HP4SidWzIY": {
+   "v": "otros",
+   "nota": "personal fibonacci"
+  },
+  "VtLAkt44jKQ": {
+   "v": "otros",
+   "nota": "personal ocean"
+  },
+  "l0E2nLLwXUM": {
+   "v": "otros",
+   "nota": "personal acrylic painting"
+  },
+  "3OEvDvoFGMQ": {
+   "v": "otros",
+   "nota": "personal ocean"
+  },
+  "IA2pr0kHzd0": {
+   "v": "otros",
+   "nota": "cursos gratis personal no-arq"
+  },
+  "gerFtROg-ow": {
+   "v": "otros",
+   "nota": "personal INFJ"
+  },
+  "ETIY2k5jiM0": {
+   "v": "otros",
+   "nota": "personal INFJ trauma"
+  },
+  "uXDiwHgy3Fo": {
+   "v": "otros",
+   "nota": "personal ciencia"
+  },
+  "opX0sbuLG7Q": {
+   "v": "otros",
+   "nota": "personal empath"
+  },
+  "Eq8JgI3HmjI": {
+   "v": "otros",
+   "nota": "personal (bucket 106-111)"
+  },
+  "r9gRk-Px7l4": {
+   "v": "otros",
+   "nota": "personal (bucket 106-111)"
+  },
+  "65sda565l9Y": {
+   "v": "otros",
+   "nota": "personal (bucket 106-111)"
+  },
+  "S5KUpTgoSco": {
+   "v": "otros",
+   "nota": "cursos personal (bucket 106-111)"
+  },
+  "fH8Bu3RpaL8": {
+   "v": "rescatar",
+   "tema": [
+    "llm"
+   ],
+   "nota": "Filo News IA/cuantica (confirmado)"
+  },
+  "yxxxFsXNTZ0": {
+   "v": "otros",
+   "nota": "personal (bucket 106-111)"
+  },
+  "ZeESXFWoyxU": {
+   "v": "otros",
+   "nota": "inferido: tutorial Illustrator (no dictado, confirmar)"
+  },
+  "GknLS0PUPAE": {
+   "v": "otros",
+   "nota": "personal (bucket 113-120)"
+  },
+  "IoZhkm-GJDU": {
+   "v": "otros",
+   "nota": "personal (bucket 113-120)"
+  },
+  "Un9SHPVAAbE": {
+   "v": "otros",
+   "nota": "sin titulo (bucket 113-120)"
+  },
+  "zw46L4pDFWo": {
+   "v": "otros",
+   "nota": "personal (bucket 113-120)"
+  },
+  "t5Z-Q1bg1tU": {
+   "v": "otros",
+   "nota": "personal (bucket 113-120)"
+  },
+  "PdXz1HNKz9A": {
+   "v": "otros",
+   "nota": "personal (bucket 113-120)"
+  },
+  "8pj8_zjelDo": {
+   "v": "otros",
+   "nota": "personal (bucket 113-120)"
+  },
+  "rPh3c8Sa37M": {
+   "v": "rescatar",
+   "tema": [
+    "charlas"
+   ],
+   "nota": "TEDx Tom Chi (confirmado: regla TED->charlas)"
+  },
+  "8TBoQdE91CE": {
+   "v": "rescatar",
+   "tema": [
+    "arq",
+    "hardware"
+   ],
+   "nota": "UH Studio 3D mouse arq-tech (confirmado)"
+  },
+  "mrKiH4J0_5U": {
+   "v": "otros",
+   "nota": "personal (bucket 121-130)"
+  },
+  "YheeL8KSdvw": {
+   "v": "otros",
+   "nota": "personal (bucket 121-130)"
+  },
+  "8qks_-n02T8": {
+   "v": "otros",
+   "nota": "personal (bucket 121-130)"
+  },
+  "6LA-N6vFoJs": {
+   "v": "otros",
+   "nota": "personal (bucket 121-130)"
+  },
+  "pEo6eN9ZVnM": {
+   "v": "otros",
+   "nota": "personal (bucket 121-130)"
+  },
+  "9kpYz2zfLgs": {
+   "v": "otros",
+   "nota": "personal (bucket 121-130)"
+  },
+  "Gv6UzG3KxyQ": {
+   "v": "otros",
+   "nota": "personal (bucket 121-130)"
+  },
+  "a7LJPgAO3Ok": {
+   "v": "otros",
+   "nota": "personal (bucket 121-130)"
+  },
+  "1KM7IQ8jglg": {
+   "v": "otros",
+   "nota": "personal (bucket 121-130)"
+  },
+  "uyqujcyRZ90": {
+   "v": "rescatar",
+   "nota": "Tom Bilyeu AI reset charla",
+   "tema": [
+    "charlas",
+    "llm"
+   ]
+  },
+  "vmVvpKSSxWE": {
+   "v": "rescatar",
+   "tema": [
+    "revit",
+    "llm"
+   ],
+   "nota": "#P-B15 Archi Vlogs: revit bim (confirmado, ya inferia revit+llm)"
+  },
+  "RAMs89SS6cM": {
+   "v": "rescatar",
+   "tema": [
+    "comfyui"
+   ],
+   "nota": "#P-B16 architutors: comfyui (confirmado, ya inferia comfyui+arq+viz)"
+  },
+  "qXDu__GaL7s": {
+   "v": "rescatar",
+   "tema": [
+    "dibujo",
+    "arq"
+   ],
+   "nota": "#P-B80 Rayon Academy: software dibujo (Rayon, planos)"
+  }
+ }
+}

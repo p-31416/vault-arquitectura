@@ -2,8 +2,8 @@
 tipo: software
 software: autocad
 fecha_creacion: 2026-09-07
-ultima_actualizacion: 2026-09-27
-tags: [glosario, software, autocad, mcp]
+ultima_actualizacion: 2026-10-21
+tags: [glosario, software, autocad, mcp, autocad-lt]
 ---
 
 # AutoCAD
@@ -11,6 +11,7 @@ tags: [glosario, software, autocad, mcp]
 > Glosario AutoCAD — comandos, funciones AutoLISP y variables del sistema. Migrado de `autocad/` (legacy) a archivo único.
 
 - [[#Convenciones]]
+- [[#AutoCAD LT 2027 — qué cambia]]
 - [[#PLINE — Polilínea]]
 - [[#entmake — Crear entidades desde AutoLISP]]
 - [[#Comandos pendientes]]
@@ -27,6 +28,27 @@ tags: [glosario, software, autocad, mcp]
 - **Variables del sistema**: con prefijo (`CLAYER`, `CELTYPE`)
 
 > Fuente original: `wiki/glosario/software/autocad/00-index.md` — frontmatter `tipo: indice, tags: [glosario, autocad, wiki, indice]` (2026-06-30).
+
+---
+
+## AutoCAD LT 2027 — qué cambia
+
+> Estado real del estudio (21/10/2026): la instalación viva es **AutoCAD LT 2027** (`C:\Program Files\Autodesk\AutoCAD LT 2027`). El Full 2027 ya no está instalado (instalador en `P:\autocad\AutoCAD.2027_English_64bit`). La tabla decide el método de automatización.
+
+| Capacidad | Full 2027 | LT 2027 | Consecuencia en el estudio |
+|---|---|---|---|
+| COM / ActiveX externo | sí | **no** | *"AutoCAD LT can internally utilize the AutoCAD ActiveX type library with AutoLISP, but itself cannot be accessed or manipulated by external applications"*. El MCP [[wiki/glosario/software/mcp-autocad|mcp-autocad]] queda en pausa y la automatización del CAD va por **AutoLISP**. |
+| `DATAEXTRACTION` / `ATTIN` / `ATTOUT` | sí | **no** (*Unknown command*) | *"AutoCAD LT doesn't support data extraction commands"*. Vía oficial en LT: `ATTEXT` + `LIST`. En el estudio: LSP que dibuja la tabla dentro del DWG (`SET-01-CUADRO-NIVELES`). |
+| `TABLA` con vínculo de datos | sí | sí | ⚠ exige **Excel instalado** (*"Microsoft Excel must be installed to use Microsoft Excel data links"*). Sin Excel ni proveedor ACE/OLE DB, `DATALINK` acepta el CSV pero el preview queda vacío → el LSP lee el CSV. |
+| `APPLOAD` (AutoLISP) | sí | sí (desde LT 2024, Windows) | Los LSP del SET_01 se cargan. En LT 2023- o LT Mac: *Unknown Command* → el DWT ya trae el setup hecho. Con `SECURELOAD = 1` y `TRUSTEDPATHS` vacío hay que confirmar la ruta de búsqueda. |
+| `STANDARDS` / `CHECKSTANDARDS` | sí | sí | La prueba DWS se puede hacer en LT (en el UI de Standards). |
+| MCP oficial de Autodesk | sí | sí | Bundle `AutoCAD-MCP-Server-2027.bundle` (soporta `ACADLT`): `NETLOAD acmcp.dll` + `MCPCONFIG` + `MCPHTTPSTART` → `http://localhost:5001/mcp`. Pendiente de probar. |
+| Palettes / DesignCenter / Blocks palette | sí | sí | El `.xtp` del SET_01 y el DesignCenter son viables en LT. |
+| Luces / cámaras / materiales | sí | no | Fuera del alcance del estudio. |
+
+**Referencia oficial:** [LISP en AutoCAD LT](https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/Unable-to-load-lisp-in-AutoCAD-LT.html) · [Tool Palettes LT 2027](https://help.autodesk.com/view/ACDLT/2027/ENU/?guid=GUID-6668905A-3FAD-4EED-82A2-5D6177AD4280) · [DesignCenter en LT](https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/How-to-insert-blocks-using-DesignCenter-for-AutoCAD-LT.html) · [BOM en AutoCAD y LT](https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/Creating-a-Bill-of-Materials-BOM-in-AutoCAD-and-AutoCAD-LT.html).
+
+**Cómo se mide un DWG sin abrir el CAD:** ODA File Converter → DXF → `ezdxf` (Python 3.12 del sistema). El DWG queda intacto. Herramientas del estudio: `scripts/extrae-atributos-dwg.py`, `scripts/ordena-locales.py`, `scripts/analiza-rotacion-textos.py`.
 
 ---
 
@@ -181,7 +203,7 @@ Cada sublista es un **código DXF**:
 Consulta directa a la ayuda oficial Autodesk desde OpenCode, con fuente primaria en inglés y español.
 
 - **Ayuda oficial:** [[wiki/glosario/software/mcp-autodesk-help|mcp-autodesk-help]] — servidor `autodesk-help`, remoto, solo lectura.
-- **Dibujo activo:** [[wiki/glosario/software/mcp-autocad|mcp-autocad]] — servidor `autocad`, local, lee y edita el dibujo abierto vía COM.
+- **Dibujo activo:** [[wiki/glosario/software/mcp-autocad|mcp-autocad]] — servidor `autocad`, local, lee y edita el dibujo abierto vía COM. **⚠ En pausa desde el 21/10/2026**: requiere AutoCAD **full** y la máquina del estudio tiene **LT 2027** (sin COM externo). Alternativa en curso: el **MCP oficial de Autodesk 2027** (`MCPHTTPSTART` → `localhost:5001/mcp`), que sí soporta `ACADLT`.
 - **Uso sugerido:** resolver dudas de comandos, bloques dinámicos, DWS y flujos C2/C3 con citas oficiales.
 - **Ejemplo:** `Buscá en la ayuda de AutoCAD 2027, en es_ES, cómo crear un bloque dinámico con estados de visibilidad. use autodesk-help`
 - **Fuente raw:** documento maestro AutoCAD §10–11 (panorama MCP + configuración por cliente).

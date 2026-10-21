@@ -74,12 +74,20 @@ _(Pendiente — se definen con la primera imagen: ej. positivo `modern floor-to-
 
 | Fecha | Seed | Cambio | Archivo | Tiempo | Calidad | Nota |
 |---|---|---|---|---|---|---|
+| 2026-10-15 | 42 (fixed) | prompt corregido a MURO (concrete parapet, niega glass/railing), misma máscara+seed | `salidas/n_02-F-03.png` (origen `WF02-inpaint-muro_00001_.png`, prompt_id `fded66a8`) | 132 s | ❓ a vista de miniatura casi idéntica a F-02: verificar a pleno si el paño es muro | Misma seed → fuera de máscara idéntico; comparar F-02 vs F-03 píxel a píxel en la zona del trazo |
+| 2026-10-15 | 42 (fixed) | SOL en canvas: MaskEditor sobre clipspace + MaskToImage verificador, prompt ventanas noche, denoise 1.0, grow 5 | `salidas/n_02-F-02.png` (origen `WF02-inpaint_00002_.png`, prompt_id `68a56475`) | 214 s | ⚠️ sale render completo nuevo en vez de edición local → máscara blanca demasiado grande: con denoise 1.0 todo lo blanco se repinta entero | Cableado verificado OK en metadata (mask→VAEEncodeForInpaint + MaskToImage). Regla: máscara chica y precisa; verificar preview de MaskToImage antes de Queue |
 | 2026-10-08 | 42 | baseline: máscara programática en muro hormigón + prompt ventanas vidrio/marcos negros, denoise 1.0 | `salidas/n_02-F-01.png` | 141 s | _pendiente evaluación SOL_ | prompt_id `342b01b8` — ventanas dibujadas OK, resto intacto. Input: `fachada-01.png` (generada con `workflow_fachada_txt2img_v1.json`, seed 42) |
 | _(pendiente)_ | | | | | | ~~Esperando modelo inpainting + `inputs/fachada-01.png`~~ ← modelo listo, fachada generada |
 
 ## 6. Evaluación
 
-_(Pendiente.)_
+Diagnóstico 2026-10-15 (F-02 vs F-03 casi idénticas, prompts opuestos) — ranking @sherlock:
+1. **Máscara efectiva vacía** (más probable): en el MaskEditor nuevo es fácil pintar en capa `Paint Pen (RGB)` en vez de `Mask Pen`, o salir sin `Save` → mask sale negro y el sampler conserva todo. Verificar con `MaskToImage` antes de Queue.
+2. **Polaridad**: blanco = repintar en todo ComfyUI; si el preview muestra lo contrario, probar `InvertMask` (una de las dos muerde).
+3. **Grow chico**: para un paño de muro usar 16-32 + feather, no 5-6.
+4. **Vía alternativa**: `InpaintModelConditioning` (noise_mask true) en vez de `VAEEncodeForInpaint`; o checkpoint normal + `SetLatentNoiseMask` + denoise 0.6-0.8 como contraste.
+5. Denoise 1.0 es correcto con modelo inpainting; DirectML sin reportes de fallo silencioso.
+Refs: https://docs.comfy.org/tutorials/basic/inpaint · https://comfyui.nomadoor.net/en/basic-workflows/sd15-inpainting · https://github.com/Comfy-Org/ComfyUI/issues/1186 · https://docs.comfy.org/built-in-nodes/InpaintModelConditioning
 
 ## 7. Backlog del WF
 

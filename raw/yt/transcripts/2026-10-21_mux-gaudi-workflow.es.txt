@@ -1,0 +1,454 @@
+[00:00:00] Hola y bienvenidos todos al módulo siete.
+[00:00:03] Este es el módulo final del curso y va a tratar sobre Gaudí.
+[00:00:09] Como viste en el módulo anterior,
+[00:00:11] la mesa redonda, ya hicimos una contextualización sobre Gaudí,
+[00:00:17] pero este va a ser más a fondo.
+[00:00:20] Hemos desarrollado un workflow al que llamamos el workflow Gaudí.
+[00:00:25] Antes de meternos en los temas de este curso,
+[00:00:29] o mejor dicho, de este módulo,
+[00:00:32] le voy a dar la palabra a Cas.
+[00:00:36] Cas Esbach es un arquitecto de los Países Bajos.
+[00:00:42] No dejes de seguirlo, porque es muy,
+[00:00:45] muy talentoso. A mí me inspira en muchos sentidos.
+[00:00:51] Creo que...
+[00:00:53] Sin duda, vale la pena conocerlo.
+[00:00:56] Cas es actualmente profesor en SCAD; antes
+[00:01:02] fue arquitecto en BIG y MVRDV.
+[00:01:05] Así que tiene una base real de experiencia arquitectónica,
+[00:01:09] digamos a la manera tradicional,
+[00:01:11] pero en la última etapa de su tiempo en MVRDV
+[00:01:15] se metió de lleno en la IA generativa y dio muchos cursos él mismo.
+[00:01:23] Y me asocié con él para crear este curso para vosotros.
+[00:01:28] Así que ahora le doy la palabra a Cas.
+[00:01:35] Sí, gracias, Thomas, por la presentación.
+[00:01:38] Soy Cas Esbach. También soy miembro del jurado de este concurso.
+[00:01:43] Pensé que estaría bien que, antes
+[00:01:49] de entrar en el workflow,
+[00:01:51] diéramos un paso atrás y habláramos de Gaudí en sí,
+[00:01:55] ¿no? La razón por la que estamos todos aquí.
+[00:01:57] Antoni Gaudí fue un arquitecto catalán que trabajó en Barcelona en torno
+[00:02:00] al cambio del siglo XX, desde la década de 1880 hasta su muerte,
+[00:02:05] en 1926. Seguramente conoces su obra:
+[00:02:08] edificios como la Sagrada Família,
+[00:02:10] la Casa Batlló, la Casa Milà y el Park Güell son algunas de
+[00:02:14] las piezas arquitectónicas más reconocibles del mundo.
+[00:02:17] Aquí, la Sagrada Família; aquí, la Batlló,
+[00:02:20] la Milà y el Güell.
+[00:02:23] Se hizo cargo de la Sagrada Família en 1883 y acabó dedicándole el resto
+[00:02:28] de su vida, trabajando en ella hasta el día de su muerte.
+[00:02:34] Creo que sus edificios son conocidos por sus formas orgánicas,
+[00:02:38] lo fluido, las formas, esas cosas que a los arquitectos no nos resultan fáciles
+[00:02:44] de dibujar y que, además, son dificilísimas de construir.
+[00:02:47] Pero creo que está bien que, cuando hablamos de Gaudí,
+[00:02:50] no hablemos tanto de cómo se ven sus edificios,
+[00:02:52] sino que nos centremos en cómo funcionan y, en concreto, en
+[00:02:58] cómo integró herramientas en su proceso de diseño para construirlos.
+[00:03:04] Para la iglesia de la Colònia Güell, Gaudí construyó una maqueta de cadenas colgantes y pasó
+[00:03:09] casi una década refinándola. Lo importante es entender que
+[00:03:14] no es un boceto ni un dibujo:
+[00:03:18] es una calculadora física que le ayudó a construir el edificio.
+[00:03:22] Porque cuando cuelgas una cadena,
+[00:03:24] imagínate con varios pesos en determinados puntos,
+[00:03:27] creas una forma capaz de sostener
+[00:03:31] su propio peso.
+[00:03:33] Está construida en tracción pura, de modo que, cuando la inviertes,
+[00:03:36] cuando le das la vuelta, obtienes una forma que se sostiene en compresión pura,
+[00:03:41] que es exactamente para lo que la mampostería y la piedra
+[00:03:46] son muy buenas: trabajar a compresión. Así que, en cierto sentido,
+[00:03:51] Gaudí usaba la gravedad para resolver un problema estructural,
+[00:03:55] un problema estructural que probablemente no podía resolver
+[00:04:00] ni calcular, pero que sí podía,
+[00:04:02] digamos, simplificar, traducir de forma abstracta a través,
+[00:04:08] digamos, de una maqueta. Y así es como deberíamos pensar en Gaudí.
+[00:04:14] No era alguien que confiara en los dibujos ni en la abstracción;
+[00:04:19] prefería trabajar con maquetas físicas, porque
+[00:04:22] le permitían entender el espacio directamente, en lugar de
+[00:04:27] crear una representación abstracta,
+[00:04:29] un dibujo, que luego te obliga a interpretar el espacio a través de él,
+[00:04:33] un render, ¿no? Todo su proceso de diseño pasaba por las herramientas que usaba,
+[00:04:38] no por los dibujos del resultado final.
+[00:04:40] Dicho de otro modo, Gaudí no estaba solo produciendo un edificio,
+[00:04:47] estaba produciendo una herramienta que le ayudaría a darle forma.
+[00:04:51] Y creo que esa es la parte que de verdad importa para lo que hacemos nosotros.
+[00:04:57] Esas curvas no son una decisión estilística.
+[00:04:59] Bueno, sí lo son, pero son el resultado de un proceso de diseño donde
+[00:05:06] la salida directa de un sistema estructural deriva de su eficiencia;
+[00:05:11] la eficiencia da como resultado la forma, y esa forma es
+[00:05:17] una respuesta a un problema físico.
+[00:05:19] Así que, cuando Thomas os explique el workflow Gaudí,
+[00:05:24] cuando estéis mirando...
+[00:05:28] Al entrenar un modelo de IA, digamos de forma más tradicional con imágenes,
+[00:05:33] obtendrás cosas como curvas, superficies onduladas y textura de material.
+[00:05:38] Pero lo que no obtendrás es la transferencia conceptual.
+[00:05:41] Obtendrás una transferencia estilística.
+[00:05:43] No obtendrás una transferencia conceptual,
+[00:05:46] ¿verdad? Y entre copiar la apariencia y entender
+[00:05:51] la lógica subyacente va a haber una brecha.
+[00:05:54] Y esa es la que tenemos que cerrar.
+[00:05:57] Y ese es el objetivo de este módulo.
+[00:05:59] Así que nada de lo que hagáis debería tratarse de copiar la estética
+[00:06:04] de Gaudí, ni de hacer algo que simplemente parezca Gaudí. No debería ser eso.
+[00:06:08] Se trata de usar la IA como herramienta para entender la lógica estructural
+[00:06:15] y la forma, en vez de dibujar una forma y esperar que aguante el paso del tiempo.
+[00:06:19] Y por eso le devuelvo la palabra
+[00:06:25] a Thomas ahora mismo. Gracias.
+[00:06:30] Gracias, Cas, por esta introducción tan interesante sobre Gaudí.
+[00:06:35] Ahora vamos a continuar con la demostración.
+[00:06:39] Pero primero te voy a dar mi visión de lo que vamos a hacer.
+[00:06:43] Mi visión es la siguiente.
+[00:06:47] El papel del arquitecto está pasando de la producción al criterio.
+[00:06:52] Los arquitectos de producción se convertirán en arquitectos de criterio.
+[00:06:57] Y lo que quiero decir con arquitectos de producción son arquitectos que
+[00:06:59] están produciendo cosas constantemente.
+[00:07:01] Creo que la parte de producción estará cada vez más asistida
+[00:07:07] por la IA y, por tanto, el verdadero trabajo del arquitecto será juzgar,
+[00:07:12] juzgar el resultado del contenido generado por IA.
+[00:07:17] Puedes ver la IA de hoy como la maqueta colgante de Gaudí:
+[00:07:22] un sistema más capaz que nosotros de generar posibilidades.
+[00:07:27] Gaudí conservó el criterio humano mientras dejaba que un sistema mayor calculara.
+[00:07:33] Y sé que esto es una opinión polémica y que muchos no estaréis del todo de acuerdo
+[00:07:39] conmigo, pero es mi visión.
+[00:07:44] Y es la introducción al workflow que viene ahora.
+[00:07:47] A menudo se reduce la obra de Gaudí a la estética.
+[00:07:52] Por ejemplo, sus mosaicos y sus colores vivos.
+[00:07:55] Pero eso no es lo esencial. Su obra real tenía más que ver con el pensamiento
+[00:08:01] espacial y las relaciones arquitectónicas, la biomímesis de la que hablábamos.
+[00:08:05] La fuerza del enfoque de Gaudí estaba en su biomímesis, más que en
+[00:08:11] su estética reconocible. A estas alturas quizá estés pensando:
+[00:08:16] vale, ¿y qué vamos a hacer entonces?
+[00:08:19] No vamos a
+[00:08:21] intentar reducir la esencia de Gaudí a, por ejemplo, un LoRA.
+[00:08:27] Vamos a intentar encontrar la esencia de Gaudí en el siguiente workflow.
+[00:08:32] Lo llamo el workflow Rhino to Gaudí.
+[00:08:35] Y la forma en que vamos a experimentar con esto
+[00:08:40] siempre va a partir de un modelo 3D.
+[00:08:43] Tomamos una captura de un modelo 3D.
+[00:08:45] Eso significa que, cuando hagas el concurso,
+[00:08:48] la fase inicial y la ideación inicial tienen que ser tuyas.
+[00:08:54] Así que tienes que construir un modelo 3D,
+[00:08:57] que puede ser muy...
+[00:09:01] muy vago o muy abstracto, como este de aquí.
+[00:09:05] Pero lo necesitamos como punto de partida.
+[00:09:08] Como vimos antes con el LoRA personalizado que hice,
+[00:09:12] podemos tomar un material y aplicarlo sobre esta geometría.
+[00:09:17] Claro que también tenemos que dar un prompt donde decimos, en este caso,
+[00:09:21] por ejemplo: esto es un museo del clima al aire libre, de varias plantas,
+[00:09:28] y la estructura está hecha de esta piedra natural.
+[00:09:31] ¿Y cómo lo vamos a hacer?
+[00:09:34] Esto está en Miro, así que ahí encontrarás todo lo que necesitas.
+[00:09:39] El primer paso será configurar un asistente Gaudí.
+[00:09:42] Después tenemos algunos ejemplos del workflow.
+[00:09:46] Y aquí vamos a poner todos los resultados
+[00:09:54] de la demo en directo.
+[00:09:58] Lo primero que tenemos que hacer es ir al asistente Gaudí.
+[00:10:02] Este asistente es, en esencia, un conjunto de instrucciones de proyecto que entiende bien
+[00:10:09] cómo transformar nuestro modelo en un modelo 3D más gaudiniano.
+[00:10:15] Así que seleccionamos todo esto.
+[00:10:18] Lo copiamos. Vamos a nuestro LLM favorito y creamos un proyecto nuevo llamado Rhino
+[00:10:24] to Image Gaudí.
+[00:10:26] Después vamos a instrucciones. Hacemos clic aquí y pegamos toda la instrucción.
+[00:10:33] Creo que no seleccionó el JSON en sí.
+[00:10:43] Una forma mejor de hacerlo es hacer clic aquí
+[00:10:49] y hacer clic en "export as markdown".
+[00:10:53] Entonces lo descargamos.
+[00:10:58] Estará en tu carpeta de descargas.
+[00:11:07] Como ves aquí, haces clic derecho,
+[00:11:10] abrir con el Bloc de notas.
+[00:11:17] Bien, se abre así. Lo hago una vez más.
+[00:11:22] Clic derecho, abrir con el Bloc de notas.
+[00:11:26] Y seleccionas todo el texto
+[00:11:33] y lo pegas
+[00:11:37] aquí. Verás que mantiene mejor la estructura.
+[00:11:42] Hacemos clic en "save instructions".
+[00:11:44] Después necesitamos una captura de nuestro modelo 3D.
+[00:11:52] En mi caso voy a usar esta,
+[00:11:55] un modelo 3D muy básico de una volumetría.
+[00:12:04] Voy a escribir "start"
+[00:12:09] y vemos qué pasa.
+[00:12:19] El modelo me preguntó qué programa ocupa el interior que se revela.
+[00:12:24] O sea, preguntó cuál es el uso.
+[00:12:27] Y aquí simplemente tienes que responder las preguntas.
+[00:12:30] En tu caso puede ser una exposición o un museo.
+[00:12:34] En el mío, es un edificio residencial
+[00:12:42] y de uso mixto.
+[00:12:47] ¿Cuánto queremos que se parezca a Gaudí?
+[00:12:50] Moderado, Gaudí estructural completo,
+[00:12:52] casi máximo o sin límites.
+[00:12:55] Voy a poner siete por ahora, para mostrarlo
+[00:13:01] sin pasarme. Pero puedes experimentar con esto.
+[00:13:04] Movimientos principales: me quedo con mis tres propuestas.
+[00:13:07] Así que...
+[00:13:11] Cada vano se convierte en un vacío parabólico alto enmarcado por
+[00:13:16] nervios catenarios que siguen... Sí,
+[00:13:20] vaya, esto es muy específico. Pongamos las tres.
+[00:13:28] O sea, dale mucha información sobre cuál es tu visión
+[00:13:32] para hacer esto más gaudiniano. Te recomiendo mucho que seas
+[00:13:38] lo más específico posible. Añade mucha información aquí.
+[00:13:41] Por ejemplo: los muros quedan así,
+[00:13:46] o le das otra imagen de referencia y le das muchísima información.
+[00:13:51] Al contrario que yo,
+[00:13:56] que solo
+[00:13:57] elegí sí o no y no le di mucha información.
+[00:14:04] Copias esto y ahora vamos a Comfy y creamos rápidamente un workflow nuevo.
+[00:14:10] Lo hacemos con doble clic
+[00:14:12] y haciendo clic en "load image".
+[00:14:15] Aquí, claro, cargamos la misma imagen que antes.
+[00:14:19] Hacemos zoom. Después, doble clic otra vez.
+[00:14:24] Escribimos Nano Banana 2, porque es el modelo que vamos a usar en este paso.
+[00:14:30] Conectamos la imagen así.
+[00:14:37] Tomamos este nodo y lo soltamos.
+[00:14:40] Aquí hacemos clic en "Save Image", o lo escribes arriba
+[00:14:44] y se conecta automáticamente.
+[00:14:48] Doble clic y escribimos "compare images".
+[00:14:54] Este, el de Comfy.
+[00:14:58] "Image A" la conectamos aquí, "image B" aquí, y ya está.
+[00:15:05] Bien. Si esto ha ido demasiado rápido,
+[00:15:09] no te preocupes, porque las imágenes,
+[00:15:12] esta, esta otra y esta,
+[00:15:16] llevan el workflow incrustado.
+[00:15:19] Así que las descargas, las arrastras a Comfy y tendrás
+[00:15:23] el mismo workflow. No tienes que construirlo tú.
+[00:15:27] En los ajustes, la resolución la ponemos en 2K.
+[00:15:30] El nivel de razonamiento, en alto, y el resto lo dejamos igual.
+[00:15:36] Puedes poner una proporción, pero no hace falta.
+[00:15:40] Y aquí ponemos el prompt que nos dio el agente.
+[00:15:49] Hacemos clic en "run".
+[00:15:54] Y este es el resultado. Si hacemos zoom aquí,
+[00:15:57] pasamos el cursor por encima de la imagen.
+[00:16:01] Vemos que nuestro modelo 3D se transforma en algo que
+[00:16:08] Nano Banana considera más gaudiniano, según nuestro agente.
+[00:16:13] Si hacemos zoom, es interesante que la geometría principal se sigue casi
+[00:16:19] exactamente. Y todo el relleno de los planos...
+[00:16:24] Ahí es donde se pone interesante.
+[00:16:27] Claro que, si vuelves aquí y miras bien el prompt
+[00:16:32] y lo personalizas a tu gusto,
+[00:16:35] o aquí le das mucha más información,
+[00:16:39] irá quedando cada vez mejor.
+[00:16:41] Yo solo estoy enseñando el workflow, porque sé al 100 % que funciona.
+[00:16:46] Es el mismo workflow que usé aquí
+[00:16:52] para esta imagen. Respondí algunas preguntas sobre lo que me parecía
+[00:16:58] interesante para conseguir estos troncos de árbol en las columnas.
+[00:17:04] Y después, en el siguiente paso, la convertimos en una imagen realista.
+[00:17:09] Pero, como ves, en cuanto a la geometría,
+[00:17:11] es importantísimo que la fijemos aquí.
+[00:17:14] Lo que estamos haciendo es dar dos pasos.
+[00:17:20] En el primero, de aquí a aquí,
+[00:17:23] fijamos la geometría, y de aquí a aquí
+[00:17:27] aplicamos la estética. Tomamos
+[00:17:34] el hecho de generar una imagen y lo partimos en geometría y estética.
+[00:17:39] Y la geometría se basa entonces en Gaudí, y la estética se basa
+[00:17:44] en la referencia que le demos.
+[00:17:50] Aquí vemos si nos gusta o no.
+[00:17:53] Yo siempre recomiendo ejecutarlo otra vez para ver la diferencia.
+[00:17:59] La verdad, esta me gusta mucho, porque me gustan las formas de la fachada así.
+[00:18:05] Así que la descargaría ya.
+[00:18:09] Y mientras esta se genera,
+[00:18:12] la voy a dejar aquí, en Miro.
+[00:18:26] Y veamos cuándo está lista esta otra.
+[00:18:29] Ya está lista.
+[00:18:32] Es un poco locura. Como ves,
+[00:18:37] siguió la geometría, pero añadió algo distinto:
+[00:18:40] como una planta extra a nivel de suelo.
+[00:18:42] Así que me voy a quedar con la primera versión,
+[00:18:46] esta.
+[00:18:49] Recuerda que en las instrucciones del proyecto
+[00:18:52] puse siete, así que podría haber puesto más o menos,
+[00:18:56] o podrías cambiar las instrucciones para hacerlo más gaudiniano, o aplicar tu idea
+[00:19:02] de lo que es Gaudí. Esto es solo un ejemplo.
+[00:19:05] Bien, el siguiente paso, para hacerlo realista,
+[00:19:08] es básicamente el workflow Rhino to Image.
+[00:19:11] Vamos al proyecto Rhino to Image que hicimos antes.
+[00:19:18] Le damos
+[00:19:22] la volumetría que acabamos de generar,
+[00:19:26] después le damos un material; en mi caso voy a elegir
+[00:19:38] este mármol rojo, ya que lo usamos también en el ejemplo anterior.
+[00:19:43] Voy a dar un poco de contexto diciendo: edificio residencial
+[00:19:50] en Barcelona.
+[00:19:57] Y a ver qué pasa.
+[00:20:01] Mientras esta se genera,
+[00:20:05] podemos volver a Comfy. Y recuerda que, cuando
+[00:20:11] descargas esta, tendrás otro workflow de Rhino to Image.
+[00:20:16] Así que descargamos esta.
+[00:20:21] La arrastramos y la soltamos aquí,
+[00:20:27] lo que abre el
+[00:20:30] workflow que usé para generar esta, como ves.
+[00:20:33] Este es el prompt de materialidad.
+[00:20:37] Claro que lo vamos a cambiar usando esta
+[00:20:44] y esta. Como esas dos fueron también la entrada del agente,
+[00:20:50] el prompt ya está listo. Lo copiamos.
+[00:20:54] Lo reemplazamos aquí.
+[00:20:57] Nos aseguramos de que todo está en su sitio.
+[00:21:01] De nuevo, aquí eliges qué LoRA usas,
+[00:21:06] el premium o el básico.
+[00:21:08] Yo, claro, lo voy a hacer con el premium para ver cuál es el resultado.
+[00:21:16] Y esto es lo que hizo el workflow.
+[00:21:19] Aplicó el material exactamente sobre la geometría.
+[00:21:23] Otra vez, en este paso la geometría no cambia,
+[00:21:27] solo se aplica el material.
+[00:21:29] Ahora bien, esta es una vista
+[00:21:34] más bien desde lejos.
+[00:21:37] A mí me parece que el LoRA y el workflow funcionan mejor cuando haces un zoom
+[00:21:42] o un primer plano de un detalle de fachada.
+[00:21:45] Así que voy a rehacer todo el workflow para enseñarte otra vez cómo funciona.
+[00:21:49] Y te recomiendo mucho que pienses qué significa Gaudí para ti,
+[00:21:55] cómo podrías interpretar su enfoque biomimético
+[00:22:02] y aplicarlo de verdad a tu proyecto.
+[00:22:05] Probablemente una vista como esta.
+[00:22:08] Quiero decir: desde lejos, mostrando todo el edificio, no es el mejor enfoque.
+[00:22:14] Me parece que un detalle de fachada como este, o un primer
+[00:22:20] plano, funciona mejor, porque ves que
+[00:22:24] se centra mejor en los detalles pequeños.
+[00:22:32] Voy a dejar esta imagen aquí y después
+[00:22:37] haré otro ejemplo.
+[00:22:56] Para el segundo ejemplo vamos a usar...
+[00:23:07] lo siguiente.
+[00:23:11] Esta volumetría, que es una que ya hemos visto antes.
+[00:23:18] Y otro ejemplo era esta estructura de fachada ondulada.
+[00:23:24] Los mismos pasos:
+[00:23:27] vamos a Comfy, volvemos a
+[00:23:30] nuestro workflow anterior y la metemos aquí.
+[00:23:36] Necesitamos el prompt, así que vamos a nuestro
+[00:23:41] workflow Gaudí, o agente Gaudí, que
+[00:23:46] es este, y se la damos aquí.
+[00:24:00] Con esta voy a dar un poco más de información.
+[00:24:03] Voy a decir que el gris es la estructura principal.
+[00:24:09] Fachada
+[00:24:12] de un
+[00:24:14] edificio residencial
+[00:24:20] en Barcelona.
+[00:24:30] ...
+[00:24:38] son las barandillas
+[00:24:43] de los balcones.
+[00:24:48] No solo eso.
+[00:25:01] La parte cian... Sin querer hice clic en regenerar,
+[00:25:05] pero no es problema, porque va a hacer exactamente lo mismo.
+[00:25:08] Voy a decir que la parte cian son ventanas.
+[00:25:14] Cuando regenere,
+[00:25:18] me preguntará lo mismo. Así que no importa que haya hecho clic donde no era.
+[00:25:25] Después también diría:
+[00:25:27] el programa es un edificio residencial, eso ya lo dije. Elementos sagrados:
+[00:25:32] el ritmo de la fachada
+[00:25:37] y las dimensiones son sagrados.
+[00:25:43] Lo que también ayuda aquí es dar las dimensiones. Por ejemplo, aquí
+[00:25:49] sé que lo modelé con una distancia entre el suelo y
+[00:25:54] el techo de tres metros, así que:
+[00:25:58] la altura libre es de tres metros.
+[00:26:01] Esto ayuda al modelo a entender la escala, porque,
+[00:26:08] si decimos que son seis metros, la escala es completamente distinta, claro.
+[00:26:16] Escala Gaudí. Pongámosla en ocho por ahora.
+[00:26:24] Simplemente sigue las preguntas. Hará tantas preguntas como
+[00:26:28] necesite para entender tu objetivo.
+[00:26:41] Está generando otro prompt.
+[00:26:43] Para este tutorial no estoy leyendo el prompt,
+[00:26:47] pero te recomiendo mucho hacerlo, porque a veces el LLM alucina
+[00:26:53] y escribe cosas rarísimas.
+[00:26:54] Y entonces te pones a buscar el fallo cuando es solo el prompt.
+[00:26:58] Mantenemos los mismos ajustes.
+[00:27:01] Hacemos clic en "run".
+[00:27:07] Mientras esto se ejecuta, porque siempre tarda unos 30 segundos, podemos
+[00:27:11] volver a este workflow y actualizar nuestra imagen.
+[00:27:19] Y podemos elegir una referencia nueva.
+[00:27:23] Digamos que tienes...
+[00:27:29] en vez de un material, más bien una fachada que te gustaría
+[00:27:33] probar, de otro arquitecto,
+[00:27:36] por ejemplo.
+[00:27:40] Probemos esta. Es
+[00:27:43] una fachada muy expresionista y además, quizá, el azul
+[00:27:48] y el color conecten un poco más con Gaudí.
+[00:27:59] Bien, podemos volver a...
+[00:28:08] Esta no se generó... o sí se generó.
+[00:28:14] Por algún motivo este nodo no se activó, pero por eso tenemos este nodo
+[00:28:19] Save Image: porque aún podemos ver que hizo un trabajo muy interesante,
+[00:28:23] la verdad. Lo dejó muy biomórfico.
+[00:28:28] Vamos a descargarlo.
+[00:28:33] Y volvemos al workflow Rhino to Image.
+[00:28:39] Le damos esta imagen.
+[00:28:43] Con esta referencia, decimos otra vez:
+[00:28:46] residencial, el lateral.
+[00:28:54] Y lo que quieras decir.
+[00:29:02] Loggias, no sé, lo que quieras poner en el prompt.
+[00:29:06] Cuanta más información des,
+[00:29:08] mejor. Yo lo voy a dejar así,
+[00:29:10] que probablemente no sea suficiente, pero va a funcionar igual,
+[00:29:15] creo.
+[00:29:20] Volvemos a nuestro workflow Rhino to Image y aquí ves que estamos yendo
+[00:29:25] mucho de un lado a otro. Así que hay que ser muy organizado.
+[00:29:28] Si no, se te va de las manos. Porque tenemos dos workflows en Comfy y
+[00:29:33] también dos proyectos en Claude o en tu LLM.
+[00:29:37] Ten tu propio sistema para organizarlo todo.
+[00:29:41] ¿Dónde está ubicado el edificio?
+[00:29:43] Pongamos Barcelona.
+[00:29:47] Escala del proyecto residencial.
+[00:29:49] Cada planta son tres metros.
+[00:29:57] Ya sé que no es exactamente la misma pregunta,
+[00:29:59] pero se entiende la idea.
+[00:30:01] Cuanto mejor sea tu entrada, cuanta más información,
+[00:30:05] mejor será el resultado.
+[00:30:12] Antes de poder generar una imagen,
+[00:30:15] también tenemos que darle la imagen de entrada correcta,
+[00:30:18] claro.
+[00:30:24] Después
+[00:30:29] hacemos clic en "run"
+[00:30:36] y vemos qué pasa. Aquí podemos ver lo que se está generando.
+[00:30:44] Siempre está bien ver esta pequeña vista previa.
+[00:31:01] Y aquí ves que lo tradujo perfectamente,
+[00:31:06] diría yo, porque entendió que esto,
+[00:31:08] por ejemplo, es una silla, y esto es un...
+[00:31:11] Sí, esto está bien. Yo estaría contento con este resultado.
+[00:31:15] Sí.
+[00:31:21] Da mucha satisfacción ver el antes y el después, porque el LoRA
+[00:31:25] está tan bien entrenado que sigue la geometría exactamente.
+[00:31:31] Bien, esta la voy a dejar aquí,
+[00:31:41] junto con la imagen de referencia,
+[00:31:45] que era esta.
+[00:31:54] Y, para cuando estés viendo esto,
+[00:31:55] habrá más ejemplos, porque estos son solo unos pocos.
+[00:32:01] ...
+[00:32:04] Y después podrás probarlos.
+[00:32:06] Siempre los puedes descargar así.
+[00:32:09] Y en este workflow, lo de Gaudí está sobre todo en este primer paso.
+[00:32:16] Así que asegúrate de leer
+[00:32:21] estas instrucciones y de hacer tu propia versión, porque esto es lo que
+[00:32:26] a mí me parece bien y lo que yo creo que es la lógica constructiva de Gaudí, y esto
+[00:32:31] es tu punto de partida. Pero no te limites a copiarlo y usarlo: cámbialo
+[00:32:38] si, por ejemplo, dices: no, para mí Gaudí es más bien esto. Entonces ponlo
+[00:32:43] en esta instrucción, porque así el resultado será más personal
+[00:32:47] para ti. Así que cuanto
+[00:32:51] más personalices este prompt,
+[00:32:56] mejor será. Y mejor reflejará
+[00:33:02] lo que tú entiendes por Gaudí.
+[00:33:08] A estas alturas espero que el workflow esté más o menos claro y que puedas
+[00:33:13] empezar a experimentar. Para que quede un poco más claro,
+[00:33:17] cambié el tablero de Miro y añadí algunas anotaciones para aclarar mi objetivo.
+[00:33:23] Como vimos antes,
+[00:33:26] son dos pasos de image to image.
+[00:33:29] El primer paso es fijar la geometría e imponer algunas cualidades
+[00:33:36] espaciales extra
+[00:33:37] relacionadas con Gaudí. Y después, en el segundo paso,
+[00:33:41] añadimos textura, estética y realismo.
+[00:33:45] Digámoslo así. Cuando ponemos esta referencia de piedra arriba,
+[00:33:50] ves que se aplica bien; y si tomamos la misma geometría que aquí arriba
+[00:33:55] pero aplicamos otra distinta, claro,
+[00:33:59] esto se convierte en un espacio distinto siguiendo exactamente la misma geometría.
+[00:34:06] Aquí hay otro ejemplo. Y, por supuesto,
+[00:34:09] estos son los que acabamos de hacer.
+[00:34:12] Ahora quiero repetir esto para el segundo paso.
+[00:34:17] Para hacerlo más realista necesitas el LoRA. Incluido en el curso
+[00:34:23] está el básico, que encontrarás en la carpeta, y el premium,
+[00:34:27] que es el que he estado usando yo.
+[00:34:29] Sí, este, el de abajo, está disponible en mi web.
+[00:34:36] Así que échale un vistazo.
+[00:34:38] Hay muchas pruebas distintas que pueden ser interesantes,
+[00:34:45] pero lo que creo que funciona mejor es esta versión más
+[00:34:51] cercana, sobre una fachada, un detalle o, digamos, una entrada
+[00:34:56] al edificio, o algo así.
+[00:35:00] Intenta hacerlo siempre a la altura de los ojos, porque el LoRA está
+[00:35:04] entrenado prácticamente con imágenes
+[00:35:07] y fotografías que
+[00:35:13] están tomadas a la altura de los ojos. Así que no intentes hacer un plano de dron,
+[00:35:17] por ejemplo, con esto, porque probablemente no va a funcionar.
+[00:35:19] Intenta mantenerlo así.
+[00:35:28] Dicho esto, cerramos aquí el módulo siete sobre Gaudí.
+[00:35:32] Y, como este es el último módulo,
+[00:35:34] también cerramos aquí el curso.
+[00:35:37] Gracias por verlo y mucha suerte con el concurso.

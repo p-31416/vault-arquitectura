@@ -1,0 +1,1790 @@
+{
+  "fuente": "G:\\Mi unidad\\OS-Emilia\\W03-CAD\\REP-ARAOZ.dwg",
+  "fecha": "2026-10-20T01:43:43",
+  "capas": {
+    "A-CARP-02": [
+      {
+        "capa": "A-CARP-02",
+        "bloque": "*U33",
+        "rot_grados": 270.0,
+        "x": 19.78,
+        "y": -3.715,
+        "handle": "2410",
+        "ANCHO": "0.80",
+        "PUERTA": "P-2",
+        "ALFEIZAR": "-",
+        "ALTURA": "2.10",
+        "DESCRIPCION": "Madera Contraplacada"
+      },
+      {
+        "capa": "A-CARP-02",
+        "bloque": "*U127",
+        "rot_grados": 0.0,
+        "x": 19.58,
+        "y": -2.77,
+        "handle": "46DA",
+        "ANCHO": "0.80",
+        "PUERTA": "P-2",
+        "ALFEIZAR": "-",
+        "ALTURA": "2.10",
+        "DESCRIPCION": "Madera Contraplacada"
+      },
+      {
+        "capa": "A-CARP-02",
+        "bloque": "*U472",
+        "rot_grados": 90.0,
+        "x": 18.08,
+        "y": -3.715,
+        "handle": "5D26",
+        "ANCHO": "0.80",
+        "PUERTA": "P-2",
+        "ALFEIZAR": "-",
+        "ALTURA": "2.10",
+        "DESCRIPCION": "Madera Contraplacada"
+      },
+      {
+        "capa": "A-CARP-02",
+        "bloque": "*U499",
+        "rot_grados": 270.0,
+        "x": 16.56,
+        "y": -7.261,
+        "handle": "635C",
+        "ANCHO": "0.80",
+        "PUERTA": "P-2",
+        "ALFEIZAR": "-",
+        "ALTURA": "2.10",
+        "DESCRIPCION": "Madera Contraplacada"
+      },
+      {
+        "capa": "A-CARP-02",
+        "bloque": "*U222",
+        "rot_grados": 0.0,
+        "x": 14.22,
+        "y": -9.399,
+        "handle": "7274",
+        "ANCHO": "0.90",
+        "PUERTA": "P-1",
+        "ALFEIZAR": "-",
+        "ALTURA": "2.10",
+        "DESCRIPCION": "Madera Contraplacada"
+      },
+      {
+        "capa": "A-CARP-02",
+        "bloque": "*U474",
+        "rot_grados": 270.0,
+        "x": 14.874,
+        "y": -2.04,
+        "handle": "7466",
+        "TIPO": "V01",
+        "ANCHO": "2.30"
+      },
+      {
+        "capa": "A-CARP-02",
+        "bloque": "*U335",
+        "rot_grados": 270.0,
+        "x": 14.885,
+        "y": -5.661,
+        "handle": "748A",
+        "TIPO": "V02",
+        "ANCHO": "1.10"
+      },
+      {
+        "capa": "A-CARP-02",
+        "bloque": "*U60",
+        "rot_grados": 180.0,
+        "x": 12.28,
+        "y": -12.099,
+        "handle": "74C2",
+        "ANCHO": "1.00",
+        "PUERTA": "P-3",
+        "ALFEIZAR": "-",
+        "ALTURA": "2.10",
+        "DESCRIPCION": "Madera Contraplacada"
+      },
+      {
+        "capa": "A-CARP-02",
+        "bloque": "*U257",
+        "rot_grados": 90.0,
+        "x": 3.72,
+        "y": -3.715,
+        "handle": "77DA",
+        "ANCHO": "0.80",
+        "PUERTA": "P-2",
+        "ALFEIZAR": "-",
+        "ALTURA": "2.10",
+        "DESCRIPCION": "Madera Contraplacada"
+      },
+      {
+        "capa": "A-CARP-02",
+        "bloque": "*U112",
+        "rot_grados": 0.0,
+        "x": 17.88,
+        "y": -9.02,
+        "handle": "89E1",
+        "ANCHO": "0.80",
+        "PUERTA": "P-2",
+        "ALFEIZAR": "-",
+        "ALTURA": "2.10",
+        "DESCRIPCION": "Madera Contraplacada"
+      },
+      {
+        "capa": "A-CARP-02",
+        "bloque": "*U163",
+        "rot_grados": 180.0,
+        "x": 17.88,
+        "y": -13.249,
+        "handle": "94F2",
+        "ANCHO": "0.80",
+        "PUERTA": "P-2",
+        "ALFEIZAR": "-",
+        "ALTURA": "2.10",
+        "DESCRIPCION": "Madera Contraplacada"
+      },
+      {
+        "capa": "A-CARP-02",
+        "bloque": "*U495",
+        "rot_grados": 90.0,
+        "x": 14.16,
+        "y": -7.32,
+        "handle": "9620",
+        "ANCHO": "0.80",
+        "PUERTA": "P-2",
+        "ALFEIZAR": "-",
+        "ALTURA": "2.10",
+        "DESCRIPCION": "Madera Contraplacada"
+      },
+      {
+        "capa": "A-CARP-02",
+        "bloque": "*U337",
+        "rot_grados": 0.0,
+        "x": 12.273,
+        "y": -7.494,
+        "handle": "97BD",
+        "TIPO": "V02",
+        "ANCHO": "1.10"
+      },
+      {
+        "capa": "A-CARP-02",
+        "bloque": "*U150",
+        "rot_grados": 270.0,
+        "x": 9.35,
+        "y": -7.32,
+        "handle": "9973",
+        "ANCHO": "0.80",
+        "PUERTA": "P-2",
+        "ALFEIZAR": "-",
+        "ALTURA": "2.10",
+        "DESCRIPCION": "Madera Contraplacada"
+      },
+      {
+        "capa": "A-CARP-02",
+        "bloque": "*U106",
+        "rot_grados": 270.0,
+        "x": 19.18,
+        "y": -12.31,
+        "handle": "9AB7",
+        "ANCHO": "0.80",
+        "PUERTA": "P-2",
+        "ALFEIZAR": "-",
+        "ALTURA": "2.10",
+        "DESCRIPCION": "Madera Contraplacada"
+      },
+      {
+        "capa": "A-CARP-02",
+        "bloque": "*U497",
+        "rot_grados": 0.0,
+        "x": 9.29,
+        "y": -9.399,
+        "handle": "13324",
+        "ANCHO": "0.90",
+        "PUERTA": "P-1",
+        "ALFEIZAR": "-",
+        "ALTURA": "2.10",
+        "DESCRIPCION": "Madera Contraplacada"
+      },
+      {
+        "capa": "A-CARP-02",
+        "bloque": "*U490",
+        "rot_grados": 90.0,
+        "x": 8.1,
+        "y": -11.849,
+        "handle": "1344C",
+        "ANCHO": "0.90",
+        "PUERTA": "P-1",
+        "ALFEIZAR": "-",
+        "ALTURA": "2.10",
+        "DESCRIPCION": "Madera Contraplacada"
+      },
+      {
+        "capa": "A-CARP-02",
+        "bloque": "*U493",
+        "rot_grados": 90.0,
+        "x": 6.95,
+        "y": -7.261,
+        "handle": "13502",
+        "ANCHO": "0.80",
+        "PUERTA": "P-2",
+        "ALFEIZAR": "-",
+        "ALTURA": "2.10",
+        "DESCRIPCION": "Madera Contraplacada"
+      },
+      {
+        "capa": "A-CARP-02",
+        "bloque": "*U487",
+        "rot_grados": 0.0,
+        "x": 5.63,
+        "y": -9.02,
+        "handle": "1354D",
+        "ANCHO": "0.80",
+        "PUERTA": "P-2",
+        "ALFEIZAR": "-",
+        "ALTURA": "2.10",
+        "DESCRIPCION": "Madera Contraplacada"
+      },
+      {
+        "capa": "A-CARP-02",
+        "bloque": "*U127",
+        "rot_grados": 0.0,
+        "x": 3.909,
+        "y": -2.77,
+        "handle": "139B9",
+        "ANCHO": "0.80",
+        "PUERTA": "P-2",
+        "ALFEIZAR": "-",
+        "ALTURA": "2.10",
+        "DESCRIPCION": "Madera Contraplacada"
+      },
+      {
+        "capa": "A-CARP-02",
+        "bloque": "*U477",
+        "rot_grados": 90.0,
+        "x": -0.504,
+        "y": -2.213,
+        "handle": "13BB3",
+        "TIPO": "V01",
+        "ANCHO": "2.30"
+      },
+      {
+        "capa": "A-CARP-02",
+        "bloque": "*U506",
+        "rot_grados": 90.0,
+        "x": 1.425,
+        "y": -4.804,
+        "handle": "13DEB",
+        "TIPO": "PV01",
+        "ANCHO": "1.75"
+      },
+      {
+        "capa": "A-CARP-02",
+        "bloque": "*U342",
+        "rot_grados": 90.0,
+        "x": 1.51,
+        "y": -6.205,
+        "handle": "13E10",
+        "TIPO": "V02",
+        "ANCHO": "1.10"
+      },
+      {
+        "capa": "A-CARP-02",
+        "bloque": "*U480",
+        "rot_grados": 90.0,
+        "x": 1.498,
+        "y": -8.08,
+        "handle": "13E34",
+        "TIPO": "V02",
+        "ANCHO": "1.10"
+      },
+      {
+        "capa": "A-CARP-02",
+        "bloque": "*U344",
+        "rot_grados": 90.0,
+        "x": 1.55,
+        "y": -10.719,
+        "handle": "13E7C",
+        "TIPO": "PV01",
+        "ANCHO": "1.75"
+      },
+      {
+        "capa": "A-CARP-02",
+        "bloque": "*U475",
+        "rot_grados": 90.0,
+        "x": -0.497,
+        "y": -13.78,
+        "handle": "141DF",
+        "TIPO": "V01",
+        "ANCHO": "2.30"
+      },
+      {
+        "capa": "A-CARP-02",
+        "bloque": "*U163",
+        "rot_grados": 180.0,
+        "x": 5.609,
+        "y": -13.249,
+        "handle": "1421B",
+        "ANCHO": "0.80",
+        "PUERTA": "P-2",
+        "ALFEIZAR": "-",
+        "ALTURA": "2.10",
+        "DESCRIPCION": "Madera Contraplacada"
+      },
+      {
+        "capa": "A-CARP-02",
+        "bloque": "*U485",
+        "rot_grados": 90.0,
+        "x": 4.309,
+        "y": -12.31,
+        "handle": "14252",
+        "ANCHO": "0.80",
+        "PUERTA": "P-2",
+        "ALFEIZAR": "-",
+        "ALTURA": "2.10",
+        "DESCRIPCION": "Madera Contraplacada"
+      },
+      {
+        "capa": "A-CARP-02",
+        "bloque": "*U476",
+        "rot_grados": 90.0,
+        "x": 1.509,
+        "y": -9.246,
+        "handle": "21D7F",
+        "TIPO": "V02",
+        "ANCHO": "1.10"
+      },
+      {
+        "capa": "A-CARP-02",
+        "bloque": "*U257",
+        "rot_grados": 270.0,
+        "x": 5.42,
+        "y": -3.715,
+        "handle": "231D1",
+        "ANCHO": "0.80",
+        "PUERTA": "P-2",
+        "ALFEIZAR": "-",
+        "ALTURA": "2.10",
+        "DESCRIPCION": "Madera Contraplacada"
+      },
+      {
+        "capa": "A-CARP-02",
+        "bloque": "*U477",
+        "rot_grados": 270.0,
+        "x": 8.644,
+        "y": -2.213,
+        "handle": "23AC4",
+        "TIPO": "V01",
+        "ANCHO": "2.30"
+      },
+      {
+        "capa": "A-CARP-02",
+        "bloque": "*U477",
+        "rot_grados": 270.0,
+        "x": 24.004,
+        "y": -2.213,
+        "handle": "23B28",
+        "TIPO": "V01",
+        "ANCHO": "2.30"
+      },
+      {
+        "capa": "A-CARP-02",
+        "bloque": "*U343",
+        "rot_grados": 270.0,
+        "x": 22.075,
+        "y": -4.854,
+        "handle": "23B4A",
+        "TIPO": "PV01",
+        "ANCHO": "1.75"
+      },
+      {
+        "capa": "A-CARP-02",
+        "bloque": "*U342",
+        "rot_grados": 270.0,
+        "x": 21.99,
+        "y": -6.205,
+        "handle": "23B6C",
+        "TIPO": "V02",
+        "ANCHO": "1.10"
+      },
+      {
+        "capa": "A-CARP-02",
+        "bloque": "*U480",
+        "rot_grados": 270.0,
+        "x": 22.002,
+        "y": -8.08,
+        "handle": "23B8E",
+        "TIPO": "V02",
+        "ANCHO": "1.10"
+      },
+      {
+        "capa": "A-CARP-02",
+        "bloque": "*U344",
+        "rot_grados": 270.0,
+        "x": 21.95,
+        "y": -10.719,
+        "handle": "23BB0",
+        "TIPO": "PV01",
+        "ANCHO": "1.75"
+      },
+      {
+        "capa": "A-CARP-02",
+        "bloque": "*U475",
+        "rot_grados": 270.0,
+        "x": 23.997,
+        "y": -13.78,
+        "handle": "23BD2",
+        "TIPO": "V01",
+        "ANCHO": "2.30"
+      },
+      {
+        "capa": "A-CARP-02",
+        "bloque": "*U476",
+        "rot_grados": 270.0,
+        "x": 21.991,
+        "y": -9.246,
+        "handle": "23BF4",
+        "TIPO": "V02",
+        "ANCHO": "1.10"
+      },
+      {
+        "capa": "A-CARP-02",
+        "bloque": "*U337",
+        "rot_grados": 0.0,
+        "x": 11.227,
+        "y": -7.494,
+        "handle": "23FB6",
+        "TIPO": "V02",
+        "ANCHO": "1.10"
+      },
+      {
+        "capa": "A-CARP-02",
+        "bloque": "*U490",
+        "rot_grados": 270.0,
+        "x": 15.394,
+        "y": -11.849,
+        "handle": "246ED",
+        "ANCHO": "0.90",
+        "PUERTA": "P-1",
+        "ALFEIZAR": "-",
+        "ALTURA": "2.10",
+        "DESCRIPCION": "Madera Contraplacada"
+      },
+      {
+        "capa": "A-CARP-02",
+        "bloque": "*U335",
+        "rot_grados": 90.0,
+        "x": 8.609,
+        "y": -5.661,
+        "handle": "24ABC",
+        "TIPO": "V02",
+        "ANCHO": "1.10"
+      }
+    ],
+    "SIMB-MURO": [
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 0.0,
+        "x": 20.2,
+        "y": -1.555,
+        "handle": "12F3D",
+        "MURO": "M1"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 180.0,
+        "x": 23.0,
+        "y": -0.775,
+        "handle": "12F40",
+        "MURO": "M4"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 180.0,
+        "x": 22.989,
+        "y": -14.838,
+        "handle": "12F43",
+        "MURO": "M4"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 270.0,
+        "x": 16.82,
+        "y": -0.45,
+        "handle": "12F49",
+        "MURO": "M3"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 270.0,
+        "x": 1.599,
+        "y": -0.45,
+        "handle": "12F52",
+        "MURO": "M3"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 180.0,
+        "x": 15.86,
+        "y": -4.748,
+        "handle": "12F83",
+        "MURO": "M4"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 180.0,
+        "x": 15.86,
+        "y": -9.461,
+        "handle": "12F86",
+        "MURO": "M2"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 270.0,
+        "x": 15.311,
+        "y": -9.707,
+        "handle": "12F97",
+        "MURO": "M2"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 90.0,
+        "x": 15.985,
+        "y": -8.561,
+        "handle": "12FA0",
+        "MURO": "M2"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 270.0,
+        "x": 22.509,
+        "y": -3.48,
+        "handle": "12FA7",
+        "MURO": "M5"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 90.0,
+        "x": 16.245,
+        "y": -9.351,
+        "handle": "12FC5",
+        "MURO": "M1"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 0.0,
+        "x": 17.431,
+        "y": -0.605,
+        "handle": "12FCB",
+        "MURO": "M6"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 0.0,
+        "x": 20.193,
+        "y": -0.255,
+        "handle": "12FCE",
+        "MURO": "M6"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 270.0,
+        "x": 17.304,
+        "y": -12.716,
+        "handle": "12FD1",
+        "MURO": "M6"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 270.0,
+        "x": 7.577,
+        "y": -13.145,
+        "handle": "12FD4",
+        "MURO": "M6"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 0.0,
+        "x": 18.38,
+        "y": -0.409,
+        "handle": "12FD7",
+        "MURO": "M1"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 270.0,
+        "x": 16.636,
+        "y": -3.54,
+        "handle": "12FE1",
+        "MURO": "M1"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 0.0,
+        "x": 16.24,
+        "y": -8.677,
+        "handle": "12FE4",
+        "MURO": "M1"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 270.0,
+        "x": 18.224,
+        "y": -2.35,
+        "handle": "12FEA",
+        "MURO": "M1"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 180.0,
+        "x": 20.976,
+        "y": -7.358,
+        "handle": "12FED",
+        "MURO": "M2"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 0.0,
+        "x": 19.6,
+        "y": -14.004,
+        "handle": "13011",
+        "MURO": "M1"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 0.0,
+        "x": 17.75,
+        "y": -14.738,
+        "handle": "13014",
+        "MURO": "M6"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 270.0,
+        "x": 17.304,
+        "y": -12.516,
+        "handle": "13017",
+        "MURO": "M6"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 270.0,
+        "x": 18.919,
+        "y": -13.669,
+        "handle": "1301F",
+        "MURO": "M1"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 270.0,
+        "x": 16.571,
+        "y": -12.516,
+        "handle": "13022",
+        "MURO": "T1"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 180.0,
+        "x": 16.636,
+        "y": -13.69,
+        "handle": "13025",
+        "MURO": "T2"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 180.0,
+        "x": 12.91,
+        "y": -14.455,
+        "handle": "13028",
+        "MURO": "T3"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 270.0,
+        "x": 11.544,
+        "y": -13.934,
+        "handle": "1302B",
+        "MURO": "T4"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 180.0,
+        "x": 11.81,
+        "y": -13.177,
+        "handle": "1302F",
+        "MURO": "T5"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 180.0,
+        "x": 9.477,
+        "y": -14.146,
+        "handle": "1304A",
+        "MURO": "T6"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 270.0,
+        "x": 7.08,
+        "y": -13.858,
+        "handle": "1304D",
+        "MURO": "T7"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 0.0,
+        "x": 6.818,
+        "y": -13.866,
+        "handle": "13050",
+        "MURO": "T8"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 270.0,
+        "x": 6.858,
+        "y": -11.958,
+        "handle": "13053",
+        "MURO": "M2"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 180.0,
+        "x": 11.403,
+        "y": -12.21,
+        "handle": "13056",
+        "MURO": "M4"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 0.0,
+        "x": 12.525,
+        "y": -10.299,
+        "handle": "13059",
+        "MURO": "M6"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 270.0,
+        "x": 14.607,
+        "y": -6.709,
+        "handle": "1305E",
+        "MURO": "M4"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 180.0,
+        "x": 23.081,
+        "y": -4.587,
+        "handle": "130E0",
+        "MURO": "H1"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 270.0,
+        "x": 22.657,
+        "y": -5.509,
+        "handle": "130E6",
+        "MURO": "H2"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 90.0,
+        "x": 8.249,
+        "y": -9.707,
+        "handle": "13369",
+        "MURO": "M2"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 180.0,
+        "x": 7.65,
+        "y": -9.461,
+        "handle": "1348B",
+        "MURO": "M2"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 90.0,
+        "x": 11.168,
+        "y": -10.149,
+        "handle": "134C0",
+        "MURO": "M2"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 270.0,
+        "x": 4.505,
+        "y": -6.72,
+        "handle": "13586",
+        "MURO": "M2"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 270.0,
+        "x": 4.505,
+        "y": -9.351,
+        "handle": "13589",
+        "MURO": "M1"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 0.0,
+        "x": 7.27,
+        "y": -8.677,
+        "handle": "1358C",
+        "MURO": "M1"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 180.0,
+        "x": 8.44,
+        "y": -4.748,
+        "handle": "13817",
+        "MURO": "M4"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 90.0,
+        "x": 7.048,
+        "y": -3.525,
+        "handle": "1398E",
+        "MURO": "M1"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 0.0,
+        "x": 5.84,
+        "y": -1.751,
+        "handle": "13991",
+        "MURO": "M1"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 270.0,
+        "x": 7.515,
+        "y": -8.561,
+        "handle": "13996",
+        "MURO": "M2"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 0.0,
+        "x": 7.26,
+        "y": -8.677,
+        "handle": "13999",
+        "MURO": "M1"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 180.0,
+        "x": 0.489,
+        "y": -1.225,
+        "handle": "13BDD",
+        "MURO": "M4"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 90.0,
+        "x": 0.909,
+        "y": -4.32,
+        "handle": "13BE0",
+        "MURO": "M5"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 180.0,
+        "x": 0.408,
+        "y": -5.092,
+        "handle": "13BE3",
+        "MURO": "H1"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 90.0,
+        "x": 0.48,
+        "y": -5.509,
+        "handle": "13BE6",
+        "MURO": "H2"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 0.0,
+        "x": 0.408,
+        "y": -10.776,
+        "handle": "13C22",
+        "MURO": "H1"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 90.0,
+        "x": 0.408,
+        "y": -10.531,
+        "handle": "13C25",
+        "MURO": "H2"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 180.0,
+        "x": 2.513,
+        "y": -7.601,
+        "handle": "13EB1",
+        "MURO": "M2"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 180.0,
+        "x": 0.489,
+        "y": -15.103,
+        "handle": "1429D",
+        "MURO": "M4"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 0.0,
+        "x": 3.889,
+        "y": -15.09,
+        "handle": "142A6",
+        "MURO": "M1"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 0.0,
+        "x": 5.739,
+        "y": -14.782,
+        "handle": "142A9",
+        "MURO": "M6"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 90.0,
+        "x": 4.57,
+        "y": -13.669,
+        "handle": "142AC",
+        "MURO": "M1"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 90.0,
+        "x": 0.989,
+        "y": -11.72,
+        "handle": "1441D",
+        "MURO": "M5"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 270.0,
+        "x": 3.889,
+        "y": -13.669,
+        "handle": "14420",
+        "MURO": "M6"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 270.0,
+        "x": 6.227,
+        "y": -12.732,
+        "handle": "14424",
+        "MURO": "M6"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 180.0,
+        "x": 15.86,
+        "y": -1.235,
+        "handle": "22D84",
+        "MURO": "M4"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 270.0,
+        "x": 19.284,
+        "y": -0.45,
+        "handle": "22D95",
+        "MURO": "M3"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 270.0,
+        "x": 21.857,
+        "y": -0.45,
+        "handle": "22D98",
+        "MURO": "M3"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 180.0,
+        "x": 7.651,
+        "y": -1.225,
+        "handle": "2309E",
+        "MURO": "M4"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 90.0,
+        "x": 2.711,
+        "y": -4.32,
+        "handle": "23270",
+        "MURO": "M5"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 90.0,
+        "x": 3.686,
+        "y": -11.72,
+        "handle": "2338E",
+        "MURO": "M5"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 270.0,
+        "x": 0.947,
+        "y": -14.986,
+        "handle": "23394",
+        "MURO": "M3"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 270.0,
+        "x": 4.043,
+        "y": -0.45,
+        "handle": "233A9",
+        "MURO": "M3"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 270.0,
+        "x": 6.731,
+        "y": -0.45,
+        "handle": "233AC",
+        "MURO": "M3"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 90.0,
+        "x": 5.099,
+        "y": -2.35,
+        "handle": "23AAB",
+        "MURO": "M1"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 270.0,
+        "x": 5.025,
+        "y": -14.986,
+        "handle": "23B05",
+        "MURO": "M3"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 270.0,
+        "x": 7.062,
+        "y": -14.986,
+        "handle": "23B08",
+        "MURO": "M3"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 270.0,
+        "x": 10.373,
+        "y": -14.986,
+        "handle": "23B0B",
+        "MURO": "M3"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 270.0,
+        "x": 13.589,
+        "y": -14.986,
+        "handle": "23B0E",
+        "MURO": "M3"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 270.0,
+        "x": 15.997,
+        "y": -14.986,
+        "handle": "23B11",
+        "MURO": "M3"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 270.0,
+        "x": 17.788,
+        "y": -14.986,
+        "handle": "23B14",
+        "MURO": "M3"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 270.0,
+        "x": 21.107,
+        "y": -14.986,
+        "handle": "23B17",
+        "MURO": "M3"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 90.0,
+        "x": 12.88,
+        "y": -10.149,
+        "handle": "23CAB",
+        "MURO": "M2"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 90.0,
+        "x": 18.028,
+        "y": -6.72,
+        "handle": "24742",
+        "MURO": "M2"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 180.0,
+        "x": 20.976,
+        "y": -9.236,
+        "handle": "248ED",
+        "MURO": "M2"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 0.0,
+        "x": 23.087,
+        "y": -10.776,
+        "handle": "248F0",
+        "MURO": "H1"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 270.0,
+        "x": 23.087,
+        "y": -10.531,
+        "handle": "248F3",
+        "MURO": "H2"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 270.0,
+        "x": 22.506,
+        "y": -11.72,
+        "handle": "248F6",
+        "MURO": "M5"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 270.0,
+        "x": 12.158,
+        "y": -6.709,
+        "handle": "24AAF",
+        "MURO": "M4"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 270.0,
+        "x": 9.767,
+        "y": -6.709,
+        "handle": "24AB2",
+        "MURO": "M4"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 270.0,
+        "x": 17.304,
+        "y": -11.803,
+        "handle": "24ADE",
+        "MURO": "M6"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 270.0,
+        "x": 19.417,
+        "y": -11.72,
+        "handle": "24AE1",
+        "MURO": "M5"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 270.0,
+        "x": 3.3,
+        "y": -0.76,
+        "handle": "24BB6",
+        "MURO": "M6"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 90.0,
+        "x": 3.3,
+        "y": -2.35,
+        "handle": "24BB9",
+        "MURO": "M1"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 180.0,
+        "x": 11.375,
+        "y": -7.84,
+        "handle": "24C51",
+        "MURO": "M2"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 180.0,
+        "x": 13.71,
+        "y": -10.149,
+        "handle": "24C58",
+        "MURO": "M2"
+      },
+      {
+        "capa": "SIMB-MURO",
+        "bloque": "SIMB-MURO",
+        "rot_grados": 270.0,
+        "x": 19.449,
+        "y": -13.669,
+        "handle": "24C75",
+        "MURO": "M1"
+      }
+    ],
+    "A-SIMBOLO-NPT-PLANTA": [
+      {
+        "capa": "A-SIMBOLO-NPT-PLANTA",
+        "bloque": "*U323",
+        "rot_grados": 270.0,
+        "x": 18.584,
+        "y": -0.929,
+        "handle": "A41C",
+        "DESCRIPCION": "AMBIENTE",
+        "N": "00"
+      },
+      {
+        "capa": "A-SIMBOLO-NPT-PLANTA",
+        "bloque": "*U324",
+        "rot_grados": 0.0,
+        "x": 24.473,
+        "y": -5.142,
+        "handle": "A9C7",
+        "DESCRIPCION": "BALCON",
+        "N": "04"
+      },
+      {
+        "capa": "A-SIMBOLO-NPT-PLANTA",
+        "bloque": "*U324",
+        "rot_grados": 0.0,
+        "x": 20.994,
+        "y": -3.063,
+        "handle": "AF40",
+        "DESCRIPCION": "DORMITORIO",
+        "N": "01"
+      },
+      {
+        "capa": "A-SIMBOLO-NPT-PLANTA",
+        "bloque": "*U324",
+        "rot_grados": 0.0,
+        "x": 18.467,
+        "y": -1.881,
+        "handle": "AF77",
+        "DESCRIPCION": "BAÑO",
+        "N": "02"
+      },
+      {
+        "capa": "A-SIMBOLO-NPT-PLANTA",
+        "bloque": "*U324",
+        "rot_grados": 0.0,
+        "x": 16.402,
+        "y": -2.671,
+        "handle": "AF7C",
+        "DESCRIPCION": "DORMITORIO",
+        "N": "03"
+      },
+      {
+        "capa": "A-SIMBOLO-NPT-PLANTA",
+        "bloque": "*U324",
+        "rot_grados": 0.0,
+        "x": 18.101,
+        "y": -5.732,
+        "handle": "AF81",
+        "DESCRIPCION": "ESTAR-COM.",
+        "N": "05"
+      },
+      {
+        "capa": "A-SIMBOLO-NPT-PLANTA",
+        "bloque": "*U324",
+        "rot_grados": 0.0,
+        "x": 19.007,
+        "y": -8.531,
+        "handle": "AF8C",
+        "DESCRIPCION": "COC. - LAV.",
+        "N": "06"
+      },
+      {
+        "capa": "A-SIMBOLO-NPT-PLANTA",
+        "bloque": "*U324",
+        "rot_grados": 0.0,
+        "x": 24.779,
+        "y": -11.176,
+        "handle": "AFB5",
+        "DESCRIPCION": "BALCON",
+        "N": "08"
+      },
+      {
+        "capa": "A-SIMBOLO-NPT-PLANTA",
+        "bloque": "*U324",
+        "rot_grados": 0.0,
+        "x": 18.16,
+        "y": -10.843,
+        "handle": "AFBC",
+        "DESCRIPCION": "ESTAR-COM.",
+        "N": "09"
+      },
+      {
+        "capa": "A-SIMBOLO-NPT-PLANTA",
+        "bloque": "*U324",
+        "rot_grados": 0.0,
+        "x": 20.513,
+        "y": -14.06,
+        "handle": "B03D",
+        "DESCRIPCION": "DORMITORIO",
+        "N": "10"
+      },
+      {
+        "capa": "A-SIMBOLO-NPT-PLANTA",
+        "bloque": "*U324",
+        "rot_grados": 0.0,
+        "x": 18.192,
+        "y": -14.97,
+        "handle": "B043",
+        "DESCRIPCION": "BAÑO",
+        "N": "11"
+      },
+      {
+        "capa": "A-SIMBOLO-NPT-PLANTA",
+        "bloque": "*U324",
+        "rot_grados": 0.0,
+        "x": 12.478,
+        "y": -9.703,
+        "handle": "B5D3",
+        "DESCRIPCION": "COC. - LAV.",
+        "N": "12"
+      },
+      {
+        "capa": "A-SIMBOLO-NPT-PLANTA",
+        "bloque": "*U324",
+        "rot_grados": 0.0,
+        "x": 9.609,
+        "y": -12.341,
+        "handle": "B633",
+        "DESCRIPCION": "PALIER",
+        "N": "25"
+      },
+      {
+        "capa": "A-SIMBOLO-NPT-PLANTA",
+        "bloque": "*U324",
+        "rot_grados": 0.0,
+        "x": 14.922,
+        "y": -14.08,
+        "handle": "B638",
+        "DESCRIPCION": "ESCALERA",
+        "N": "26"
+      },
+      {
+        "capa": "A-SIMBOLO-NPT-PLANTA",
+        "bloque": "*U324",
+        "rot_grados": 0.0,
+        "x": 8.18,
+        "y": -14.75,
+        "handle": "B63D",
+        "DESCRIPCION": "ASCENSOR II",
+        "N": "28"
+      },
+      {
+        "capa": "A-SIMBOLO-NPT-PLANTA",
+        "bloque": "*U324",
+        "rot_grados": 180.0,
+        "x": 10.559,
+        "y": -14.186,
+        "handle": "B642",
+        "DESCRIPCION": "ASCENSOR I",
+        "N": "27"
+      },
+      {
+        "capa": "A-SIMBOLO-NPT-PLANTA",
+        "bloque": "*U324",
+        "rot_grados": 0.0,
+        "x": 3.282,
+        "y": -8.862,
+        "handle": "135E9",
+        "DESCRIPCION": "COC. - LAV.",
+        "N": "20"
+      },
+      {
+        "capa": "A-SIMBOLO-NPT-PLANTA",
+        "bloque": "*U324",
+        "rot_grados": 0.0,
+        "x": 5.733,
+        "y": -6.932,
+        "handle": "135EE",
+        "DESCRIPCION": "TOILETTE",
+        "N": "19"
+      },
+      {
+        "capa": "A-SIMBOLO-NPT-PLANTA",
+        "bloque": "*U324",
+        "rot_grados": 0.0,
+        "x": 1.746,
+        "y": -2.708,
+        "handle": "13601",
+        "DESCRIPCION": "DORMITORIO",
+        "N": "16"
+      },
+      {
+        "capa": "A-SIMBOLO-NPT-PLANTA",
+        "bloque": "*U324",
+        "rot_grados": 0.0,
+        "x": 4.459,
+        "y": -1.654,
+        "handle": "13606",
+        "DESCRIPCION": "BAÑO",
+        "N": "15"
+      },
+      {
+        "capa": "A-SIMBOLO-NPT-PLANTA",
+        "bloque": "*U324",
+        "rot_grados": 0.0,
+        "x": 6.151,
+        "y": -2.689,
+        "handle": "1360B",
+        "DESCRIPCION": "DORMITORIO",
+        "N": "14"
+      },
+      {
+        "capa": "A-SIMBOLO-NPT-PLANTA",
+        "bloque": "*U324",
+        "rot_grados": 0.0,
+        "x": -1.32,
+        "y": -5.261,
+        "handle": "1362B",
+        "DESCRIPCION": "BALCON",
+        "N": "18"
+      },
+      {
+        "capa": "A-SIMBOLO-NPT-PLANTA",
+        "bloque": "*U324",
+        "rot_grados": 0.0,
+        "x": 3.52,
+        "y": -6.541,
+        "handle": "13630",
+        "DESCRIPCION": "ESTAR-COM.",
+        "N": "17"
+      },
+      {
+        "capa": "A-SIMBOLO-NPT-PLANTA",
+        "bloque": "*U324",
+        "rot_grados": 0.0,
+        "x": 5.581,
+        "y": -10.786,
+        "handle": "13637",
+        "DESCRIPCION": "ESTAR-COM.",
+        "N": "21"
+      },
+      {
+        "capa": "A-SIMBOLO-NPT-PLANTA",
+        "bloque": "*U324",
+        "rot_grados": 0.0,
+        "x": 2.151,
+        "y": -14.131,
+        "handle": "1363C",
+        "DESCRIPCION": "DORMITORIO",
+        "N": "24"
+      },
+      {
+        "capa": "A-SIMBOLO-NPT-PLANTA",
+        "bloque": "*U324",
+        "rot_grados": 0.0,
+        "x": -0.516,
+        "y": -11.203,
+        "handle": "13642",
+        "DESCRIPCION": "BALCON",
+        "N": "22"
+      },
+      {
+        "capa": "A-SIMBOLO-NPT-PLANTA",
+        "bloque": "*U324",
+        "rot_grados": 0.0,
+        "x": 5.03,
+        "y": -14.675,
+        "handle": "13663",
+        "DESCRIPCION": "BAÑO",
+        "N": "23"
+      },
+      {
+        "capa": "A-SIMBOLO-NPT-PLANTA",
+        "bloque": "*U324",
+        "rot_grados": 0.0,
+        "x": 10.22,
+        "y": -9.703,
+        "handle": "24B49",
+        "DESCRIPCION": "COC. - LAV.",
+        "N": "12"
+      }
+    ],
+    "E-COL": [
+      {
+        "capa": "E-COL",
+        "bloque": "C40.20",
+        "rot_grados": 90.0,
+        "x": 15.36,
+        "y": -0.2,
+        "handle": "1E3C"
+      },
+      {
+        "capa": "E-COL",
+        "bloque": "C40.20",
+        "rot_grados": 90.0,
+        "x": 23.3,
+        "y": -3.9,
+        "handle": "1E51"
+      },
+      {
+        "capa": "E-COL",
+        "bloque": "C40.20",
+        "rot_grados": 0.0,
+        "x": 20.6,
+        "y": -3.8,
+        "handle": "5B56"
+      },
+      {
+        "capa": "E-COL",
+        "bloque": "C40.20",
+        "rot_grados": 90.0,
+        "x": 23.3,
+        "y": -0.2,
+        "handle": "5B6F"
+      },
+      {
+        "capa": "E-COL",
+        "bloque": "C40.20",
+        "rot_grados": 90.0,
+        "x": 23.3,
+        "y": -12.14,
+        "handle": "5BC8"
+      },
+      {
+        "capa": "E-COL",
+        "bloque": "C40.20",
+        "rot_grados": 90.0,
+        "x": 23.3,
+        "y": -15.24,
+        "handle": "5BC9"
+      },
+      {
+        "capa": "E-COL",
+        "bloque": "C40.20",
+        "rot_grados": 0.0,
+        "x": 20.6,
+        "y": -0.0,
+        "handle": "5DB9"
+      },
+      {
+        "capa": "E-COL",
+        "bloque": "C40.20",
+        "rot_grados": 90.0,
+        "x": 15.36,
+        "y": -3.9,
+        "handle": "5DDC"
+      },
+      {
+        "capa": "E-COL",
+        "bloque": "C40.20",
+        "rot_grados": 180.0,
+        "x": 20.6,
+        "y": -12.24,
+        "handle": "6868"
+      },
+      {
+        "capa": "E-COL",
+        "bloque": "C40.20",
+        "rot_grados": 180.0,
+        "x": 20.6,
+        "y": -15.44,
+        "handle": "7F9F"
+      },
+      {
+        "capa": "E-COL",
+        "bloque": "C40.20",
+        "rot_grados": 270.0,
+        "x": 8.14,
+        "y": -0.2,
+        "handle": "E38F"
+      },
+      {
+        "capa": "E-COL",
+        "bloque": "C40.20",
+        "rot_grados": 270.0,
+        "x": 0.2,
+        "y": -3.9,
+        "handle": "E390"
+      },
+      {
+        "capa": "E-COL",
+        "bloque": "C40.20",
+        "rot_grados": 0.0,
+        "x": 2.9,
+        "y": -3.8,
+        "handle": "E391"
+      },
+      {
+        "capa": "E-COL",
+        "bloque": "C40.20",
+        "rot_grados": 270.0,
+        "x": 0.2,
+        "y": -0.2,
+        "handle": "E392"
+      },
+      {
+        "capa": "E-COL",
+        "bloque": "C40.20",
+        "rot_grados": 270.0,
+        "x": 0.2,
+        "y": -15.24,
+        "handle": "E393"
+      },
+      {
+        "capa": "E-COL",
+        "bloque": "C40.20",
+        "rot_grados": 270.0,
+        "x": 0.2,
+        "y": -12.14,
+        "handle": "E394"
+      },
+      {
+        "capa": "E-COL",
+        "bloque": "C40.20",
+        "rot_grados": 0.0,
+        "x": 2.9,
+        "y": -0.0,
+        "handle": "E395"
+      },
+      {
+        "capa": "E-COL",
+        "bloque": "C40.20",
+        "rot_grados": 90.0,
+        "x": 7.94,
+        "y": -3.9,
+        "handle": "E396"
+      },
+      {
+        "capa": "E-COL",
+        "bloque": "C40.20",
+        "rot_grados": 180.0,
+        "x": 2.9,
+        "y": -12.24,
+        "handle": "E397"
+      },
+      {
+        "capa": "E-COL",
+        "bloque": "C40.20",
+        "rot_grados": 180.0,
+        "x": 2.9,
+        "y": -15.44,
+        "handle": "E398"
+      },
+      {
+        "capa": "E-COL",
+        "bloque": "C40.20",
+        "rot_grados": 270.0,
+        "x": 8.14,
+        "y": -12.14,
+        "handle": "1249E"
+      }
+    ]
+  }
+}

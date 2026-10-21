@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ComfyUI en el estudio — 52 renders locales + motor del concurso</title>
+<style>:root{--ink:#f2efe9;--muted:#a8a49a;--line:#33302a;--sand:#141311;--card:#1e1c18;--clay:#c9a98a;--sage:#9ab0a2;--green:#7fd08a}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--sand);color:var(--ink);line-height:1.5}.wrap{max-width:1100px;margin:0 auto;padding:0 24px}header.top{position:sticky;top:0;z-index:20;background:#0f0e0c;border-bottom:3px solid var(--clay)}a{color:#8ab8ff}.bar{display:flex;justify-content:space-between;align-items:center;padding:12px 0;gap:12px;flex-wrap:wrap}.brand{font-weight:800;font-size:22px;letter-spacing:.02em}.brand i{font-weight:600;font-size:14px;color:var(--muted)}nav.tabs{display:flex;gap:8px;flex-wrap:wrap;padding:12px 0 16px}nav.tabs button{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:10px 16px;font-weight:600;font-size:13px;cursor:pointer}nav.tabs button.active{background:var(--clay);color:#141311;border-color:var(--clay)}.tab{display:none}.tab.active{display:block;animation:fade .35s ease}@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}.hero{padding:28px 0 8px}.eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}h1{font-size:38px;line-height:1.05;margin:8px 0;font-weight:700;letter-spacing:-.02em}h1 em{color:var(--clay);font-style:normal}h2{font-size:17px;color:var(--clay);margin:26px 0 10px}.lead{color:var(--muted);font-size:15px;max-width:800px}.grid{display:grid;gap:14px}.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}.card h3{margin:4px 0 6px;font-size:15px}.card p{margin:0;font-size:13px;color:var(--muted)}.k{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--clay);font-weight:700}.bignum{font-size:44px;font-weight:800;letter-spacing:-.02em;color:var(--ink)}.bignum.green{color:var(--green)}.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:10px}.shot{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px;font-size:12px}.shot img{width:100%;border-radius:8px;display:block}.shot b{color:var(--green)}.small{font-size:12px;color:var(--muted)}code{background:#2a2723;padding:1px 5px;border-radius:4px;font-size:12px}details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:8px 0;font-size:13px}summary{cursor:pointer;font-weight:700}table{border-collapse:collapse;width:100%;font-size:13px}th,td{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}th{background:#26231f}.pill{border-radius:12px;padding:12px 16px;background:var(--card);border:1px solid var(--line);margin:8px 0;font-size:13px}.pill p{margin:0;color:var(--muted)}@media(max-width:860px){.g2,.g3,.g4{grid-template-columns:1fr}h1{font-size:28px}}</style>
+</head>
+<body>
+<header class="top"><div class="wrap"><div class="bar"><div class="brand">ComfyUI <i>× estudio · RX 570 local</i></div><div><a href="dashboard-mes1-emilia.html" style="font-size:13px">← Dashboard Mes 1</a></div></div>
+<nav class="tabs" role="tablist">
+<button class="active" data-t="gal">1 · Galería</button>
+<button data-t="flu">2 · Flujos</button>
+<button data-t="mod">3 · Modelos y proceso</button>
+<button data-t="con">4 · Concurso</button>
+<button data-t="mes">5 · Mes 2</button>
+<button data-t="met">6 · Método</button>
+</nav></div></header>
+<main class="wrap">
+
+<!-- TAB 1 GALERIA -->
+<section class="tab active" id="gal">
+<div class="hero">
+<div class="eyebrow">52 renders · agente vía MCP en paralelo · 0 USD nube</div>
+<h1>La galería <em>manda.</em></h1>
+<p class="lead">~2.7 min por imagen medidos (≈2 hs de máquina dentro de 16 hs de trabajo, humano libre). Cada imagen remite a su flujo, cada flujo a sus corridas. La nube paga se evalúa el próximo mes, sin compromiso.</p>
+</div>
+<div class="grid g4">
+<div class="card"><div class="k">Imágenes</div><div class="bignum green">52</div><p>archivadas con su flujo</p></div>
+<div class="card"><div class="k">Promedio</div><div class="bignum green">~2.7'</div><p>por imagen, medido</p></div>
+<div class="card"><div class="k">Máquina</div><div class="bignum green">~2 hs</div><p>en paralelo, humano libre</p></div>
+<div class="card"><div class="k">Trazabilidad</div><div class="bignum green">100%</div><p>imagen → flujo → corrida</p></div>
+</div>
+<h2>Misma casa, 3 estilos (seed 42)</h2>
+<div class="gal">
+<div class="shot"><img src="../../MVP_04.02-comfyui-arquitectura/WF-04-serie-txt2img/salidas/n_04-1.0.0.png"><b>1.0.0 foto</b><br><span class="small">Realmix · 173s</span></div>
+<div class="shot"><img src="../../MVP_04.02-comfyui-arquitectura/WF-04-serie-txt2img/salidas/n_04-1.0.1a.png"><b>1.0.1a seed libre</b><br><span class="small">Realmix · 198s</span></div>
+<div class="shot"><img src="../../MVP_04.02-comfyui-arquitectura/WF-04-serie-txt2img/salidas/n_04-1.0.1b.png"><b>1.0.1b seed libre</b><br><span class="small">Realmix · 136s</span></div>
+<div class="shot"><img src="../../MVP_04.02-comfyui-arquitectura/WF-04-serie-txt2img/salidas/n_04-1.0.1c.png"><b>1.0.1c seed libre</b><br><span class="small">Realmix · 135s</span></div>
+<div class="shot"><img src="../../MVP_04.02-comfyui-arquitectura/WF-04-serie-txt2img/salidas/n_04-1.1.0.png"><b>1.1.0 markers 0.6</b><br><span class="small">Realmix+markers · 151s, no movió estilo</span></div>
+<div class="shot"><img src="../../MVP_04.02-comfyui-arquitectura/WF-04-serie-txt2img/salidas/n_04-1.1.0b.png"><b>1.1.0b markers 0.8</b><br><span class="small">Realmix+markers · 150s, híbrido</span></div>
+<div class="shot"><img src="../../MVP_04.02-comfyui-arquitectura/WF-04-serie-txt2img/salidas/n_04-1.1.0c.png"><b>1.1.0c marker 1.0</b><br><span class="small">Realmix+markers · 149s</span></div>
+<div class="shot"><img src="../../MVP_04.02-comfyui-arquitectura/WF-04-serie-txt2img/salidas/n_04-1.1.1.png"><b>1.1.1 sketch 0.5</b><br><span class="small">Realmix+sketch · 151s, solo lava</span></div>
+<div class="shot"><img src="../../MVP_04.02-comfyui-arquitectura/WF-04-serie-txt2img/salidas/n_04-1.1.1b.png"><b>1.1.1b sketch 0.8</b><br><span class="small">Realmix+sketch · 148s</span></div>
+<div class="shot"><img src="../../MVP_04.02-comfyui-arquitectura/WF-04-serie-txt2img/salidas/n_04-1.1.1c.png"><b>1.1.1c línea 1.0</b><br><span class="small">Realmix+sketch · 164s</span></div>
+<div class="shot"><img src="../../MVP_04.02-comfyui-arquitectura/WF-04-serie-txt2img/salidas/n_04-1.1.2.png"><b>1.1.2 stack</b><br><span class="small">Realmix+2 LoRAs · 196s</span></div>
+<div class="shot"><img src="../../MVP_04.02-comfyui-arquitectura/WF-04-serie-txt2img/salidas/n_04-2.0.0.png"><b>2.0.0 SDXL entrega</b><br><span class="small">Juggernaut · 651s</span></div>
+</div>
+<h2>img2img · inpaint/outpaint · controles</h2>
+<div class="gal">
+<div class="shot"><img src="../../MVP_04.02-comfyui-arquitectura/WF-05-img2img-croquis/salidas/n_05-2.0.1.png"><b>2.0.1 denoise 0.4</b><br><span class="small">120s</span></div>
+<div class="shot"><img src="../../MVP_04.02-comfyui-arquitectura/WF-05-img2img-croquis/salidas/n_05-2.0.0.png"><b>2.0.0 denoise 0.6</b><br><span class="small">143s</span></div>
+<div class="shot"><img src="../../MVP_04.02-comfyui-arquitectura/WF-05-img2img-croquis/salidas/n_05-2.0.2.png"><b>2.0.2 denoise 0.8</b><br><span class="small">143s</span></div>
+<div class="shot"><img src="../../MVP_04.02-comfyui-arquitectura/WF-05-img2img-croquis/salidas/n_05-2.1.0.png"><b>2.1.0 +LoRA 0.65</b><br><span class="small">138s</span></div>
+<div class="shot"><img src="../../MVP_04.02-comfyui-arquitectura/WF-05-img2img-croquis/salidas/n_05-2.1.1.png"><b>2.1.1 +LoRA 0.8</b><br><span class="small">126s</span></div>
+<div class="shot"><img src="../../MVP_04.02-comfyui-arquitectura/WF-06-inpaint-outpaint/salidas/n_06-4.0.0.png"><b>4.0.0 outpaint</b><br><span class="small">273s</span></div>
+<div class="shot"><img src="../../MVP_04.02-comfyui-arquitectura/WF-02-inpainting-ventanas/salidas/n_02-F-01.png"><b>WF-02 F-01 ventanas</b><br><span class="small">141s</span></div>
+<div class="shot"><img src="../../MVP_04.02-comfyui-arquitectura/WF-02-inpainting-ventanas/salidas/n_02-F-02.png"><b>WF-02 F-02</b><br><span class="small">214s</span></div>
+<div class="shot"><img src="../../MVP_04.02-comfyui-arquitectura/WF-02-inpainting-ventanas/salidas/n_02-F-03.png"><b>WF-02 F-03 muro</b><br><span class="small">132s</span></div>
+<div class="shot"><img src="../../MVP_04.02-comfyui-arquitectura/WF-03-serie-controles/salidas/n_03-F-A-v3.0.0.0.png"><b>WF-03 F-A</b><br><span class="small">208s</span></div>
+<div class="shot"><img src="../../MVP_04.02-comfyui-arquitectura/WF-03-serie-controles/salidas/n_03-F-A-v3.0.0.1.png"><b>WF-03 T-prompt</b><br><span class="small">190s</span></div>
+<div class="shot"><img src="../../MVP_04.02-comfyui-arquitectura/WF-03-serie-controles/salidas/n_03-F-A-v3.0.0.3.png"><b>WF-03 T3</b><br><span class="small">145s</span></div>
+<div class="shot"><img src="../../MVP_04.02-comfyui-arquitectura/WF-03-serie-controles/salidas/n_03-F8-01.png"><b>WF-03 F8 Canny+LoRA</b><br><span class="small">210s</span></div>
+<div class="shot"><img src="../../MVP_04.02-comfyui-arquitectura/WF-01-planta-ilustrada/salidas/n_01-F-01.png"><b>WF-01 F-01</b></div>
+<div class="shot"><img src="../../MVP_04.02-comfyui-arquitectura/WF-01-planta-ilustrada/salidas/n_01-F-02.png"><b>WF-01 F-02</b></div>
+<div class="shot"><img src="../../MVP_04.02-comfyui-arquitectura/WF-01-planta-ilustrada/salidas/n_01-F-03.png"><b>WF-01 F-03</b></div>
+<div class="shot"><img src="../../MVP_04.02-comfyui-arquitectura/WF-01-planta-ilustrada/salidas/n_01-F-04.png"><b>WF-01 F-04</b></div>
+<div class="shot"><img src="../../MVP_04.02-comfyui-arquitectura/WF-01-planta-ilustrada/salidas/n_01-F-05.png"><b>WF-01 F-05</b></div>
+</div>
+<h2>MVP_04 · lecciones</h2>
+<div class="gal">
+<div class="shot"><img src="../../MVP_04-comfyui-arquitectura/A-txt2img/A-WF-estadio/salidas/n_01-A-01.png"><b>Estadio baseline 21/35</b></div>
+<div class="shot"><img src="../../MVP_04-comfyui-arquitectura/A-txt2img/A-WF-estadio/salidas/n_01-D-01.png"><b>Estadio SDXL 562s</b></div>
+<div class="shot"><img src="../../MVP_04-comfyui-arquitectura/n_02-img2img/log-WF-croquis/salidas/n_02-A-01.png"><b>Croquis→render (nace R1)</b></div>
+<div class="shot"><img src="../../MVP_04-comfyui-arquitectura/n_03-controlnet/n_03-WF01-croquis-estadio/outputs-salidas/n_03-v1.0.0_01.png"><b>Canny estadio</b></div>
+<div class="shot"><img src="../../MVP_04-comfyui-arquitectura/n_06-moodboard/WF/WF_v5_fachada_hormigon_madera/salidas/n_06-C-01.png"><b>Fachada C-01 (108s)</b></div>
+<div class="shot"><img src="../../MVP_04-comfyui-arquitectura/n_06-moodboard/WF/WF_v2_moodboard_batch/salidas/n_06-B-02a.png"><b>Moodboard B-02a</b></div>
+</div>
+<div class="card" style="margin-top:14px"><div class="k">Tesis MOOC</div><h3>Iterar en imágenes, modelar al final</h3><p>Decenas de vueltas de estilo, luz y material a ~3 min cada una; el 3D se modela cuando la imagen ya decidió el partido. La imagen final arrastra todos sus cambios sin remodelar nada.</p></div>
+<div class="card" style="margin-top:14px;background:#181510;border-color:var(--clay)"><div class="k">Lo que sigue</div><h3>El mes 2 son 5 pruebas</h3><p>Dónde corremos el GPU (local + pod vs Comfy Cloud), la matriz de aporte del LoRA, el LoRA propio sobre material del estudio, el complemento 3D y la lámina A1 del 16/12. Con el porqué de fondo: <b>qué muestra un proyecto hoy que antes no se podía mostrar</b>. <button class="active" style="margin-top:10px;border:1px solid var(--clay);background:transparent;color:var(--clay);border-radius:999px;padding:8px 14px;font-weight:600;cursor:pointer" onclick="sw('mes')">Ir al tab 5 · Mes 2</button></p></div>
+</section>
+
+<!-- TAB 2 FLUJOS -->
+<section class="tab" id="flu">
+<div class="hero"><div class="eyebrow">Técnica</div><h1>Cada flujo, <em>auditable.</em></h1><p class="lead">Referencia, cadena de nodos, JSON arrastrable y carpeta de salidas por WF.</p></div>
+<details open><summary><b>WF-04 txt2img + LoRA</b> · <a href="../../MVP_04.02-comfyui-arquitectura/WF-04-serie-txt2img/workflow_1.1.2_lora_stack.json">JSON stack</a> · <a href="file:///P:/00-repos/proyecto-pi/vault-arquitectura/proyectos/MVP_04.02-comfyui-arquitectura/WF-04-serie-txt2img/salidas">abrir salidas (12)</a> · <a href="../../MVP_04.02-comfyui-arquitectura/WF-04-serie-txt2img/WF-04-serie-txt2img.md">doc del flujo</a></summary>
+<p><b>Qué es:</b> generar una imagen desde cero a partir de texto. El prompt describe la casa; el modelo la inventa. El LoRA se suma encima para teñirla de estilo (marker, línea) sin cambiar el flujo.</p>
+<p><code>CheckpointLoader → CLIP± → EmptyLatent 768×512 → [LoraLoader ×N] → KSampler(euler 30, cfg 7, seed 42) → VAEDecode</code></p></details>
+<details><summary><b>WF-05 img2img</b> · ref <a href="../../MVP_04.02-comfyui-arquitectura/WF-04-serie-txt2img/salidas/n_04-1.0.0.png">n_04-1.0.0</a> · <a href="../../MVP_04.02-comfyui-arquitectura/WF-05-img2img-croquis/workflow_2.1.0_img2img_lora.json">JSON 2.1.0</a> · <a href="file:///P:/00-repos/proyecto-pi/vault-arquitectura/proyectos/MVP_04.02-comfyui-arquitectura/WF-05-img2img-croquis/salidas">abrir salidas (5)</a> · <a href="../../MVP_04.02-comfyui-arquitectura/WF-05-img2img-croquis/WF-05-img2img-croquis.md">doc del flujo</a></summary>
+<p><b>Qué es:</b> partir de una imagen existente (croquis o render) y reinterpretarla. El mando es el denoise: 0.4 calco, 0.6 re-estilo, 0.8 reinvención.</p>
+<p><code>LoadImage → ImageScale 512 → VAEEncode → [+LoraLoader] → KSampler(denoise 0.4/0.6/0.8)</code></p></details>
+<details><summary><b>WF-06 inpaint/outpaint</b> · <a href="../../MVP_04.02-comfyui-arquitectura/WF-06-inpaint-outpaint/workflow_4.0.0_outpaint.json">JSON outpaint</a> · <a href="file:///P:/00-repos/proyecto-pi/vault-arquitectura/proyectos/MVP_04.02-comfyui-arquitectura/WF-06-inpaint-outpaint/salidas">abrir salidas</a> · <a href="../../MVP_04.02-comfyui-arquitectura/WF-06-inpaint-outpaint/WF-06-inpaint-outpaint.md">doc del flujo</a></summary>
+<p><b>Qué es:</b> inpaint cambia solo una zona pintada (ventanas, muro, cielo); outpaint agranda el encuadre generando lo que falta (casa vecina, más cielo).</p>
+<p><code>LoadImage + MaskEditor → VAEEncodeForInpaint(grow 6) → KSampler(1.0) · outpaint: +ImagePadForOutpaint(der 256, feather 32)</code></p></details>
+<details><summary><b>WF-03 controles</b> · ref <a href="../../MVP_04.02-comfyui-arquitectura/WF-03-serie-controles/inputs/base-01.png">base-01.png</a> · <a href="../../MVP_04.02-comfyui-arquitectura/WF-03-serie-controles/workflow_F8_canny_lora.json">JSON F8</a> · <a href="file:///P:/00-repos/proyecto-pi/vault-arquitectura/proyectos/MVP_04.02-comfyui-arquitectura/WF-03-serie-controles/salidas">abrir salidas</a> · <a href="../../MVP_04.02-comfyui-arquitectura/WF-03-serie-controles/WF-03-serie-controles.md">doc del flujo</a></summary>
+<p><b>Qué es:</b> serie que compara cuánto control ejerce cada técnica sobre la misma imagen: libre (img2img) → scribble → canny → depth → LoRA. Sirve para decidir qué usar en cada caso del estudio.</p>
+<p><code>Canny/Depth/Scribble → ControlNetApply + KSampler · F8 suma LoRA markers</code></p></details>
+<details><summary><b>WF-02 inpaint</b> · <a href="../../MVP_04.02-comfyui-arquitectura/WF-02-inpainting-ventanas/workflow_inpaint_v1_ui.json">JSON UI</a> · <a href="file:///P:/00-repos/proyecto-pi/vault-arquitectura/proyectos/MVP_04.02-comfyui-arquitectura/WF-02-inpainting-ventanas/salidas">abrir salidas</a> · <a href="../../MVP_04.02-comfyui-arquitectura/WF-02-inpainting-ventanas/WF-02-inpainting-ventanas.md">doc del flujo</a></summary>
+<p><b>Qué es:</b> dibujar elementos nuevos sobre foto o render (ventanas, muro): se pinta la zona y el modelo la construye. Lección: el prompt manda, la máscara delimita.</p>
+<p><code>MaskEditor (blanco=reemplaza) → VAEEncodeForInpaint → denoise 1.0 · el prompt nombra el material nuevo</code></p></details>
+<details><summary><b>WF-01 planta</b> · ref <a href="../../MVP_04.02-comfyui-arquitectura/WF-01-planta-ilustrada/inputs/P01-AIZPURUA.JPG">P01-AIZPURUA.JPG</a> · <a href="file:///P:/00-repos/proyecto-pi/vault-arquitectura/proyectos/MVP_04.02-comfyui-arquitectura/WF-01-planta-ilustrada/salidas">abrir salidas</a> · <a href="../../MVP_04.02-comfyui-arquitectura/WF-01-planta-ilustrada/WF-01-planta-ilustrada.md">doc del flujo</a></summary>
+<p><b>Qué es:</b> de planta técnica a planta ilustrada estilo inmobiliaria. Punto de partida: sin modelo de plantas, el control es Canny + criterio del arquitecto.</p>
+<p><code>Planta → Canny → CN → Realmix · punto de partida, mano humana valida (sin modelo de plantas: el control es Canny + criterio)</code></p></details>
+<div class="card" style="margin-top:14px"><div class="k">Ingeniería inversa</div><h3>Cualquier PNG vuelve al canvas</h3><p>Arrastrar la imagen a ComfyUI recupera nodos, prompts, seed y modelo. Esa trazabilidad es la base del LoRA propio (20-60 imágenes + trigger + RunPod ~$1-2) aplicado a volumetría 3D. <b>Actualización 20/10:</b> el LoRA del curso AI×Gaudí ya llegó y está analizado (rank 16 sobre FLUX.2 klein 9B) → el flujo «Rhino-to-Image» está montado y validado. Ver <a href="obsidian://open?vault=vault-arquitectura&file=proyectos/MVP_04-comfyui-arquitectura/n_05-rhino-mcp/WF-rhino-to-image/00-README.md">WF-rhino-to-image</a>.</p></div>
+<div class="grid g2" style="margin-top:14px">
+<div class="card"><div class="k">SD1.5 Realmix</div><h3>173s · iteración</h3><p>euler 30, cfg 7, 768×512.</p></div>
+<div class="card"><div class="k">SDXL Juggernaut</div><h3>651s · entrega</h3><p>dpmpp_2m/karras 35, cfg 4, 1216×832. Comparativa formal por resultado con rúbrica.</p></div>
+</div>
+</section>
+
+<!-- TAB 3 MODELOS -->
+<section class="tab" id="mod">
+<div class="hero"><div class="eyebrow">9 modelos en P:\00-repos\ComfyUI\models</div><h1>Modelos <em>y proceso.</em></h1></div>
+<table><tr><th>Archivo</th><th>Tipo</th><th>Tamaño</th><th>Licencia</th><th>Link</th></tr>
+<tr><td>architecturerealmix_v11</td><td>Checkpoint SD1.5</td><td>1.99 GB</td><td>OpenRAIL-M</td><td><a href="https://civitai.com/models/84958/architecturerealmix">Civitai 84958</a></td></tr>
+<tr><td>Juggernaut-XL v9</td><td>Checkpoint SDXL</td><td>6.62 GB</td><td>OpenRAIL++</td><td><a href="https://huggingface.co/RunDiffusion/Juggernaut-XL-v9">HuggingFace</a></td></tr>
+<tr><td>sd-v1-5-inpainting-fp16</td><td>Inpainting SD1.5</td><td>1.99 GB</td><td>CreativeML</td><td><a href="https://huggingface.co/runwayml/stable-diffusion-inpainting">runwayml</a></td></tr>
+<tr><td>markerhandsketch-V1</td><td>LoRA</td><td>9 MB</td><td>OpenRAIL-M</td><td><a href="https://civitai.com/models/34384/architectural-design-sketches-with-markers">Civitai 34384</a></td></tr>
+<tr><td>archisketch-v1</td><td>LoRA</td><td>18 MB</td><td>OpenRAIL-M</td><td><a href="https://civitai.com/models/32757/architecture-sketch-style">Civitai 32757</a></td></tr>
+<tr><td>canny / depth-fp16 / scribble</td><td>ControlNet SD1.5</td><td>689 MB c/u</td><td>OpenRAIL-M</td><td><a href="https://huggingface.co/lllyasviel/ControlNet-v1-1">lllyasviel</a></td></tr>
+<tr><td>RealESRGAN_x4plus</td><td>Upscaler</td><td>64 MB</td><td>BSD</td><td><a href="https://github.com/xinntao/Real-ESRGAN">Real-ESRGAN</a></td></tr>
+<tr><td>rhino-to-image-lora.basic</td><td>LoRA · FLUX.2 klein 9B</td><td>120,8 MB</td><td>FLUX Non-Commercial</td><td><a href="obsidian://open?vault=vault-arquitectura&file=wiki/glosario/software/lora-rhino-to-image-gaudi.md">ficha del LoRA</a></td></tr>
+<tr><td>FLUX.2 klein 9B + TE Qwen3-8B + VAE</td><td>Stack DiT</td><td>18,3 GB</td><td>Non-Commercial / Apache (VAE)</td><td>⬜ pendiente (RunPod 24 GB)</td></tr>
+</table>
+<h2>Proceso por técnica</h2>
+<div class="grid g2">
+<div class="card"><div class="k">txt2img</div><p>Seed fija = misma imagen (ciencia); randomize = variedad.</p></div>
+<div class="card"><div class="k">LoRA</div><p>Ladder medido: markers 1.0, sketch 0.8, stack 0.8+0.8.</p></div>
+<div class="card"><div class="k">img2img</div><p>0.4 calco → 0.6 dorado → 0.8 nuevo. Con LoRA: tradeoff identidad/estilo.</p></div>
+<div class="card"><div class="k">inpaint/outpaint</div><p>Máscara blanca chica + grow 6-24; el prompt nombra el material nuevo.</p></div>
+</div>
+<h2>Research</h2>
+<div class="card"><div class="k">Investigación visual</div><p>Research ComfyUI arquitectura (949 líneas, 38 URLs): <a href="file:///P:/00-repos/proyecto-pi/vault-arquitectura/raw/research">abrir carpeta research</a> · <a href="obsidian://open?vault=vault-arquitectura&file=raw/research/2026-10-08-comfyui-workflows-arq.md">abrir en Obsidian</a>. Más curaduría YouTube. Réplica de modelos y referentes con objetivo: estilo propio.</p></div>
+<h2>Wiki y docs</h2>
+<p class="small">Abrir en Obsidian (vault <code>vault-arquitectura</code>): <a href="obsidian://open?vault=vault-arquitectura&file=wiki/glosario/interno/pbooks/pbk-comfyui.md">pbk-comfyui</a> · <a href="obsidian://open?vault=vault-arquitectura&file=wiki/glosario/software/comfyui.md">comfyui.md</a> · <a href="obsidian://open?vault=vault-arquitectura&file=proyectos/MVP_04.02-comfyui-arquitectura/00-index.md">00-index 04.02</a> · <a href="obsidian://open?vault=vault-arquitectura&file=proyectos/MVP_04-comfyui-arquitectura/RESUMEN-flujos-probados.md">RESUMEN MVP_04</a> · <a href="obsidian://open?vault=vault-arquitectura&file=proyectos/MVP_04.02-comfyui-arquitectura/PLANS/PLAN-F1-F8-lora-inpaint-outpaint.md">PLAN F1-F8</a> · carpetas: <a href="file:///P:/00-repos/proyecto-pi/vault-arquitectura/wiki/glosario/interno/pbooks">pbooks</a> · <a href="file:///P:/00-repos/proyecto-pi/vault-arquitectura/proyectos/MVP_04.02-comfyui-arquitectura">04.02</a></p> · <a href="https://docs.comfy.org/tutorials/basic/text-to-image">txt2img</a> · <a href="https://docs.comfy.org/tutorials/basic/image-to-image">img2img</a> · <a href="https://docs.comfy.org/tutorials/basic/inpaint">inpaint</a> · <a href="https://docs.comfy.org/tutorials/basic/outpaint">outpaint</a> · <a href="https://docs.comfy.org/tutorials/basic/lora">LoRA</a> · <a href="https://docs.comfy.org/tutorials/controlnet/controlnet">ControlNet</a></p>
+</section>
+
+<!-- TAB 4 CONCURSO -->
+<section class="tab" id="con">
+<div class="hero">
+<div class="eyebrow">AI×Gaudí · The Gaudí Nexus · entrega 16/12/2026</div>
+<h1>El concurso <em>cambia el motor.</em></h1>
+<p class="lead">Llega el LoRA oficial del curso (<code>rhino-to-image</code>) y con él el salto de motor: FLUX.2 [klein] 9B con edición multi-referencia. La volumetría de Rhino entra como <i>latent de referencia</i> y sale como render fotorrealista con la geometría en su sitio. El flujo nuevo vive en la nube: 8 GB no alcanzan.</p>
+</div>
+<div class="grid g4">
+<div class="card"><div class="k">Modelo base</div><div class="bignum green">9B</div><p>FLUX.2 [klein] 9B · 4 pasos · edit multi-ref</p></div>
+<div class="card"><div class="k">LoRA del curso</div><div class="bignum green">rank 16</div><p>176 tensores · 31,66 M params · F32</p></div>
+<div class="card"><div class="k">Nube</div><div class="bignum green">$0,22/h</div><p>RunPod 3090 24 GB · $2-5 el concurso entero</p></div>
+<div class="card"><div class="k">Entrega</div><div class="bignum green">16/12</div><p>lámina A1 ≤ 15 MB ·JPEG</p></div>
+</div>
+
+<h2>Stack que hay que bajar</h2>
+<table><tr><th>Archivo</th><th>Tipo</th><th>Tamaño</th><th>Licencia</th><th>Estado</th></tr>
+<tr><td>flux-2-klein-9b-fp8</td><td>Diffusion model (DiT)</td><td>9,4 GB</td><td>FLUX Non-Commercial</td><td>⬜ pendiente (RunPod)</td></tr>
+<tr><td>qwen_3_8b_fp8mixed</td><td>Text encoder (Qwen3-8B)</td><td>8,7 GB</td><td>FLUX Non-Commercial</td><td>⬜ pendiente (RunPod)</td></tr>
+<tr><td>full_encoder_small_decoder</td><td>VAE Flux2</td><td>238 MB</td><td>Apache 2.0</td><td>⬜ pendiente (RunPod)</td></tr>
+<tr><td>rhino-to-image-lora.basic</td><td>LoRA del curso AI×Gaudí</td><td>120,8 MB</td><td>hereda la del base</td><td>✅ instalado (SHA-256 verificado)</td></tr>
+<tr><td>FLUX.2 [klein] 4B</td><td>Diffusion model</td><td>~5 GB</td><td><b>Apache 2.0</b></td><td>⬜ ruta comercial (LoRA reentrenado)</td></tr>
+</table>
+
+<h2>Flujo nuevo · WF-rhino-to-image</h2>
+<details open><summary><b>Volumetría Rhino → render fotorrealista</b> · <a href="obsidian://open?vault=vault-arquitectura&file=proyectos/MVP_04-comfyui-arquitectura/n_05-rhino-mcp/WF-rhino-to-image/00-README.md">doc del flujo</a> · <a href="obsidian://open?vault=vault-arquitectura&file=proyectos/MVP_04-comfyui-arquitectura/n_05-rhino-mcp/WF-rhino-to-image/03-nodos-WFrhino_to_image.md">nodos</a> · <a href="obsidian://open?vault=vault-arquitectura&file=proyectos/MVP_04-comfyui-arquitectura/n_05-rhino-mcp/WF-rhino-to-image/workflow_rhino_to_image.json">JSON</a></summary>
+<p><b>Qué es:</b> el módulo 3 del curso. Se exportan 3 capturas de Rhino desde la <b>misma cámara</b> (volumetría sombreada, líneas) más una foto de material real, y el modelo compone el render final conservando la geometría.</p>
+<p><code>UNETLoader → LoraLoaderModelOnly(0.8) → CFGGuider · CLIPLoader(flux2) → CLIPTextEncode → ReferenceLatent(geo) → ReferenceLatent(material) · VAEEncode ×2 → EmptyFlux2LatentImage + Flux2Scheduler(4) + KSamplerSelect(euler) + RandomNoise → SamplerCustomAdvanced → VAEDecode</code></p>
+<p class="small">El bloqueo de la geometría es <b>nativo</b> de FLUX.2 (<code>ReferenceLatent</code> con método <code>index</code>): para klein no hay ControlNet oficial de BFL.</p>
+</details>
+
+<h2>Lo que aporta el LoRA (y cómo se entrenó)</h2>
+<div class="grid g2">
+<div class="card"><div class="k">Entrenamiento</div><h3>Reference-LoRA sobre klein 9B</h3><p>Rank 16, F32. Afinó <b>solo atención</b> en los 8 bloques duales + <code>linear1/linear2</code> completos en los 24 simples + embeddings y modulaciones. Dataset: pares volumetría → foto con caption JSON (el material viene del material real de la Fundació).</p></div>
+<div class="card"><div class="k">Para qué sirve</div><h3>Materialidad, no geometría</h3><p>El LoRA aporta acabado de material, luz y grano fotográfico. La geometría la guarantee el modelo base vía la referencia. Se calibra con 4 corridas de mismo seed: 0,0 / 0,6 / 0,8 / 1,0.</p></div>
+</div>
+<div class="card" style="margin-top:14px;background:#181510;border-color:var(--clay)"><div class="k">Salud de los pesos</div><h3>Entrenado y sano</h3><p>Matrices B distintas de cero (σ ≈ 1,3e-3, 0 % de ceros) sobre A con init Kaiming (σ ≈ 2e-2): delta real y de baja amplitud → strength de trabajo <b>0,6 a 1,0</b>. Sin metadata embebida: el trigger word hay que pedirlo al instructor.</p></div>
+
+<h2>Riesgo de licencia (decisión abierta)</h2>
+<div class="card"><div class="k">Non-Commercial vs Apache 2.0</div><h3>El LoRA deriva de klein 9B (Non-Commercial)</h3><p>Para el <b>concurso</b>: admisible (entrega académica con premio). Para <b>cliente pagador</b>: el LoRA no sirve tal cual y el portado a klein 4B es imposible por arquitectura (4096 vs 3072 de hidden, 8+24 vs 5+20 bloques, 12288 vs 7680 de embedding) → la vía es <b>reentrenar en 4B</b> (Apache 2.0), ~$0,50 de GPU en RunPod.</p></div>
+
+<h2>Plan en 3 etapas</h2>
+<div class="grid g3">
+<div class="card"><div class="k">Etapa 0 · $0</div><h3>Preparar</h3><p>LoRA copiado y verificado · exportar las 3 capturas de Rhino + foto de material · calibrar el concepto en local con SDXL.</p></div>
+<div class="card"><div class="k">Etapa 1 · ~$1</div><h3>Prueba real</h3><p>Pod 3090, stack FLUX.2 descargado, grafo montado, corrida comparativa con/sin LoRA y destilado vs base.</p></div>
+<div class="card"><div class="k">Etapa 2 · $2-5</div><h3>Producción</h3><p>20-40 imágenes finales, upscale a A1, lámina con el antes/después del workflow (demuestra el método ante el jurado).</p></div>
+</div>
+<div class="card" style="margin-top:14px"><div class="k">Lo que falta</div><h3>Pedido al instructor del curso</h3><p>Trigger word · modelo base exacto (Base o Destilado) · variante <code>.advanced</code> · dataset y licencia del material de la Fundació · el workflow JSON del módulo 3.</p></div>
+<p class="small">Fichas: <a href="obsidian://open?vault=vault-arquitectura&file=wiki/glosario/software/lora-rhino-to-image-gaudi.md">lora-rhino-to-image-gaudi</a> · <a href="obsidian://open?vault=vault-arquitectura&file=wiki/glosario/software/flux2-klein-9b.md">flux2-klein-9b</a> · <a href="obsidian://open?vault=vault-arquitectura&file=raw/research/2026-10-20-flux2-klein-lora-rhino-to-image.md">research 54 fuentes</a></p>
+</section>
+
+<!-- TAB 5 MES 2 -->
+<section class="tab" id="mes">
+<div class="hero">
+<div class="eyebrow">Mes 2 · 27/10 → 16/12 · el mes se define con pruebas</div>
+<h1>El mes que viene, <em>con pruebas.</em></h1>
+<p class="lead">El mes 2 no es una lista de intentions: es una batería de pruebas con criterio de cierre, una decisión de infraestructura (dónde corremos el GPU y qué datos salen de la máquina) y una pregunta de fondo sobre qué muestra un proyecto hoy que la IA no lo havia hecho posible.</p>
+</div>
+
+<h2>Dónde corremos · el cuadro</h2>
+<table>
+<tr><th></th><th>Local + RunPod <span class="small">(escritorio)</span></th><th>Comfy Cloud $20 <span class="small">(Standard)</span></th><th>Comfy Cloud gratis <span class="small">(Free tier)</span></th></tr>
+<tr><td><b>GPU</b></td><td>Tu ComfyUI en la PC; 24 GB en un pod (3090 $0,22/h · 4090 $0,34/h)</td><td>RTX 6000 Pro de Comfy, 96 GB</td><td>las mismas GPUs</td></tr>
+<tr><td><b>Tu LoRA</b></td><td>✅ el del curso y el propio, sin límites</td><td>❌ importar modelos propios es solo Creator+ ($35); el upload directo de archivos grandes no existe todavía</td><td>❌ igual</td></tr>
+<tr><td><b>Entrenar un LoRA</b></td><td>✅ en el pod (klein 4B pide 12 GB)</td><td>❌ Comfy Cloud no entrena (no deja instalar nodos)</td><td>❌</td></tr>
+<tr><td><b>Privacidad</b></td><td>El grafo queda en tu disco; al pod van solo el workflow y las imágenes de trabajo; disco cifrado y <b>al terminar el pod no queda rastro</b></td><td>Prompts, workflows e imágenes quedan en la cuenta de Comfy (retención: "el tiempo necesario para operar, analizar y mejorar el servicio"); con Partner Nodes además van al proveedor</td><td>ídem</td></tr>
+<tr><td><b>El Agent</b></td><td>El chat vive en tu máquina, pero el mensaje + el workflow van al servicio online de Comfy</td><td>ídem + el chat se guarda en la nube</td><td>ídem</td></tr>
+<tr><td><b>Límite duro</b></td><td>El que pongas (tú controlás)</td><td>30 min por trabajo · 1 concurrente · solo nodos aprobados</td><td>400 créditos/mes ≈ 25 min de GPU</td></tr>
+<tr><td><b>Costo</b></td><td><b>$1-2 por mes</b> (pago por uso)</td><td>$20/mes (50.400 cr/año)</td><td>$0</td></tr>
+</table>
+<div class="card" style="margin-top:14px"><div class="k">Reglas de privacidad (costo cero)</div><h3>Tres=no al material del concurso</h3><p>1) <b>No usar el Comfy Agent</b> con material del concurso: mandar el grafo a un chat online es mandar el método afuera. 2) En el pod, usar el <b>disco del contenedor</b> (no Network Volume) y <b>terminar el pod</b> al terminar: no queda rastro ni costo de storage. 3) En los prompts, no escribir datos de cliente: el prompt viaja a los dos lados.</p></div>
+
+<h2>Qué sirve para el concurso</h2>
+<table>
+<tr><th>Requisito del concurso</th><th>Local + pod</th><th>Comfy Cloud $20</th></tr>
+<tr><td>Texto → imagen</td><td>✅</td><td>✅</td></tr>
+<tr><td>Edición de imágenes con IA</td><td>✅</td><td>✅</td></tr>
+<tr><td>Video de IA para presentar</td><td>✅ LTX / Kling / Seedance en el pod</td><td>✅ más simple (Nano Banana, Seedance ya están)</td></tr>
+<tr><td>Reconstrucción 3D desde imágenes IA</td><td>✅</td><td>⚠️ si el nodo está en la lista aprobada</td></tr>
+<tr><td><b>Modelo IA entrenado con material de la Fundació</b></td><td>✅ <b>el LoRA del curso</b> (ya lo tenemos) o el propio (se entrena en el pod)</td><td>❌ <b>no se puede importar</b> el LoRA del curso (no está en CivitAI/HF) ni el propio sin publicarlo en HF</td></tr>
+<tr><td>Entrega protegida (JPG/PNG resolución limitada, nunca PDF con cotas)</td><td>✅</td><td>✅</td></tr>
+</table>
+<div class="card" style="margin-top:14px"><div class="k">Después del concurso</div><h3>El LoRA propio es también la vía legal</h3><p>El LoRA del curso es <b>FLUX Non-Commercial</b> (klein 9B): sirve para el concurso, <b>no para un cliente</b>. Un LoRA propio entrenado sobre <b>klein 4B (Apache 2.0)</b> con fotos y croquis del estudio sí habilita trabajo de cliente — y ese entrenamiento <b>exige un pod</b> (o una máquina de 12 GB+): en Comfy Cloud no se entrena, en ningún plan.</p></div>
+
+<h2>Las 5 pruebas del mes</h2>
+<table>
+<tr><th>#</th><th>Prueba</th><th>Cierre</th><th>Cuándo</th></tr>
+<tr><td>P1</td><td>Reconstruir el workflow oficial del curso (RHINO-TO-IMAGE) y diffearlo contra el nuestro</td><td>mismo output con los mismos parámetros</td><td>27-28/10</td></tr>
+<tr><td>P2</td><td><b>Matriz de aporte del LoRA</b>: mismo seed, sin LoRA / 0,5 / 0,8 / 1,0</td><td>4 imágenes + veredicto en el log del WF</td><td>29-30/10</td></tr>
+<tr><td>P3</td><td><b>LoRA propio v0</b>: dataset propio (fotos con 35/50/85 mm + croquis) → 60-100 pares → entrenar en klein 4B en un pod 4090</td><td>20 renders con estilo propio reconocible + seed reproducible</td><td>3-7/11</td></tr>
+<tr><td>P4</td><td><b>El complemento 3D</b>: render propio → volumetría (módulo 5) y <b>imagen satelital → volumetría de contexto</b></td><td>1 .obj limpio + 1 volumetría urbana</td><td>10-14/11</td></tr>
+<tr><td>P5</td><td><b>El entregable</b>: lámina A1 ≤15 MB + el antes/después del workflow (el método como argumento)</td><td>A1 entregable con el método documentado</td><td>24/11-11/12</td></tr>
+</table>
+
+<h2>La pregunta de fondo</h2>
+<div class="card" style="background:#181510;border-color:var(--clay)">
+<div class="k">¿Qué cambia de verdad cuando mostrás un proyecto hoy?</div>
+<h3>La imagen barata cambió la escasez: ahora lo escaso es el material propio y el criterio</h3>
+<p>Antes un proyecto se mostraba con un render: una imagen. La diferencia la marcaba el software y el pulso manual. Hoy la imagen es casi gratis, y <b>lo que no se compra es el material propio y el criterio</b>.</p>
+<p>El caso del curso lo dice mejor que cualquier discurso: <b>Thomas entrenó un LoRA con sus propias fotografías, con su focal, su grano y su encuadre</b>. Lo que salió no es "un filtro de estilo": es <b>la gramática fotográfica de un estudio convertida en un artefacto entrenado</b> — versionable, con licencia y con historia. Lo que el curso te da no es una plantilla: es la idea de que el material propio es el activo.</p>
+<p>Tres diferencias sustantivas que un cliente no puede comprar:</p>
+<p><b>1 · Material propio.</b> Un LoRA entrenado con las fotos y los croquis de la casa no se compra: <b>se entrena</b>. Y como la base sería klein 4B (Apache 2.0), ese estilo es comercializable — a diferencia del LoRA del curso (Non-Commercial).</p>
+<p><b>2 · Criterio auditable.</b> Un render lindo no prueba nada; una cadena reproducible —imagen → workflow → seed → dataset— prueba decisiones. Eso ya se está haciendo: 52 renders con su flujo y su log. La IA no le saca trazabilidad al proyecto: <b>se la exige</b>.</p>
+<p><b>3 · El 3D deja de ser cuello de botella.</b> Con imagen→3D y el paso de arcilla se testea más geometría antes de decidir. Y al revés: partir de la <b>realidad medida</b> (una imagen satelital → volumetría → proyecto) en vez de la página en blanco.</p>
+<p>Y el límite honesto: si el entregable es "IA que se ve IA", la diferencia es de precio, no de oficio. <b>La diferencia aparece cuando la IA está detrás de una decisión propia, escrita y defendible.</b> Por eso el concurso pide justamente un modelo entrenado con material de la Fundació: no premia el render, <b>premia el método</b>.</p>
+</div>
+
+<h2>Decisiones y presupuesto</h2>
+<div class="grid g3">
+<div class="card"><div class="k">Decisión 1</div><h3>Dónde producir</h3><p>RunPod puntual <b>($1-2)</b> · Comfy Cloud $20 (fijo) · local 4B ($0). Mi lectura: <b>pago por uso, no suscripción</b>, porque la línea cierra el 16/12.</p></div>
+<div class="card"><div class="k">Decisión 2</div><h3>Qué LoRA para el concurso</h3><p>El del curso (9B, ya lo tenemos, cumple el requisito del modelo entrenado con material de la Fundació) y en paralelo el propio para clientes.</p></div>
+<div class="card"><div class="k">Decisión 3</div><h3>Qué dataset propio</h3><p>Fotos del estudio con focal conocido (35/50/85 mm) + croquis → 60-100 pares. Con licencia propia: eso es lo que habilita el trabajo de cliente.</p></div>
+</div>
+<div class="card" style="margin-top:14px"><div class="k">Lo que hay que decidir en la próxima charla</div><h3>4 preguntas, 1 presupuesto</h3><p>1) ¿Comfy Cloud se contrata por mes o pagamos por uso en RunPod? · 2) ¿la "computadora con Linux" sirve para algo (el VPS no tiene GPU: sirve para orquestar el pod, no para renderizar)? · 3) ¿presupuesto del mes: $0 / $1-2 / $20 / $35? · 4) ¿el LoRA propio arranca antes o después de la lámina?</p></div>
+
+<div class="card" style="margin-top:14px;background:#181510;border-color:var(--clay)"><div class="k">Logros</div><h3>MVP_04 + 04.02 + motor del concurso</h3><p>22 renders, R1, dual ControlNet, primera SDXL en AMD · 30 renders, ladders con sweet spots, matriz denoise, outpaint sin corte, inpaint diagnosticado, RealESRGAN local · <b>20-21/10:</b> LoRA del curso analizado (FLUX.2 klein 9B, rank 16, 176 tensores), stack documentado, WF-rhino-to-image montado y validado, <b>7 módulos del curso transcritos</b> y los 3 prompts oficiales extraídos. Todo auditable.</p></div>
+<p class="small">Generado 16/10 para cierre Mes 1 · actualizado 20-21/10 con el motor del concurso y el plan de pruebas del mes 2.</p>
+</section>
+
+<!-- TAB 6 METODO -->
+<section class="tab" id="met">
+<div class="hero">
+<div class="eyebrow">El método · por qué el curso no es el techo</div>
+<h1>De "copiar y pegar" a <em>que se ejecute solo.</em></h1>
+<p class="lead">El curso propone un coach de prompting: uno redacta el JSON y lo pega en el canvas. La diferencia no está en el prompt: está en <b>quién ejecuta</b>. Si el JSON es un contrato y un agente lo ejecuta contra nuestro ComfyUI local, cada render cae <b>con su metadata</b> en un índice vivo — y todo eso lleva nuestra impronta, como un LoRA.</p>
+</div>
+<h2>Nuestra impronta: tres artefactos, como un LoRA</h2>
+<div class="grid g3">
+<div class="card"><div class="k">1 · El contrato</div><h3>Schema JSON de prompts</h3><p>El del curso (scene, subjects, style, palette, lighting, mood, background, composition, camera) <b>adaptado con lo nuestro</b>: material, tipología, ubicación, lente, criterio de entrega. Es lo que se pide por chat y lo que viaja al render.</p></div>
+<div class="card"><div class="k">2 · El LoRA propio</div><h3>Estilo entrenado del estudio</h3><p>Entrenado con <b>fotos y croquis propios</b> sobre klein 4B (Apache 2.0) → estilo propio y <b>comercializable</b>, a diferencia del LoRA del curso (klein 9B, Non-Commercial).</p></div>
+<div class="card"><div class="k">3 · El índice</div><h3>Trazabilidad que se regenera sola</h3><p>Cada PNG lleva dentro su prompt y su workflow. Un script los lee y arma el índice: <b>modelo, LoRA y fuerza, seed, sampler, steps, cfg, resolución y prompt</b>. <b>80 renders, 100% con metadata</b> (ya funcionando).</p></div>
+</div>
+<h2>Las 5 capas</h2>
+<table>
+<tr><th>Capa</th><th>Qué es</th><th>Estado</th></tr>
+<tr><td><b>0 · Ejecución</b></td><td>ComfyUI local + MCP: encolar, ver la cola, leer el output, extraer la metadata de una imagen</td><td>✅ funcionando (es lo que maneja este agente)</td></tr>
+<tr><td><b>1 · Contrato</b></td><td>El prompt como JSON con schema propio y validado</td><td>🟡 schema del curso extraído, falta adaptarlo</td></tr>
+<tr><td><b>2 · Índice</b></td><td>El recolector lee los PNG y regenera índice + dashboard</td><td>✅ script hecho (80 renders indexados)</td></tr>
+<tr><td><b>3 · Interfaz</b></td><td>Gradio local: campos simples + botón renderizar + historial con metadata, sin copy-paste</td><td>⬜</td></tr>
+<tr><td><b>4 · Agente</b></td><td>Hermes u OpenClaw con MCP de ComfyUI local + skills propias + memoria + cron</td><td>⬜ (después del 16/12)</td></tr>
+</table>
+<div class="card" style="margin-top:14px"><div class="k">Por qué el agente tiene que ser local</div><h3>El Agente de Comfy Cloud no alcanza</h3><p>Comfy documenta dos conexiones MCP: <b>Cloud</b> (pide suscripción activa, corre en sus GPUs, guarda la conversación en la nube, no toca tus archivos) y <b>Local</b> (conduce tu ComfyUI, ve tus modelos y LoRAs, corre en tu GPU). Un asistente del estudio que no puede tocar el disco del estudio no es un asistente: es un chat. Y el material del concurso no pasa por un servicio externo.</p></div>
+<div class="grid g2" style="margin-top:14px">
+<div class="card"><div class="k">Hermes</div><h3>Cliente MCP nativo + memoria</h3><p>Nous Research (MIT). Gateway multi-plataforma (Telegram, WhatsApp, Signal, Email), <b>skills que se auto-crean y se auto-mejoran</b>, memoria persistente, cron y 7 backends de aislamiento. Es el que más se parece a lo que ya somos (n8n + Telegram + vault + agentes).</p></div>
+<div class="card"><div class="k">OpenClaw</div><h3>29 canales, gateway simple</h3><p>Fundación (MIT). Gateway local con <code>mcp.servers</code> (stdio/HTTP/SSE) + filtros por tool + <code>openclaw mcp serve</code> (expone el asistente a otros clientes MCP) y un Skill Workshop. Más simple, más canales, Node.</p></div>
+</div>
+<div class="card" style="margin-top:14px;background:#181510;border-color:var(--clay)"><div class="k">El argumento, sin adornos</div><h3>Si el entregable es "IA que se ve IA", la diferencia es de precio, no de oficio</h3><p>La diferencia aparece cuando la IA está detrás de <b>una decisión propia, escrita y defendible</b>. Por eso el esquema de prompts, el LoRA propio y el índice <b>son la entrega tanto como la lámina</b>: son el método del estudio hecho artefacto, versionado y con licencia. Por eso el concurso pide un modelo entrenado con material de la Fundació: <b>no premia el render, premia el método</b>.</p></div>
+<p class="small">Diseño completo: <a href="obsidian://open?vault=vault-arquitectura&file=proyectos/MVP_04-comfyui-arquitectura/evolucion-asistente-estudio.md">evolucion-asistente-estudio.md</a> · Índice vivo: <a href="obsidian://open?vault=vault-arquitectura&file=proyectos/MVP_04-comfyui-arquitectura/INDICE-RENDERS.md">INDICE-RENDERS.md</a> · Schema del curso: <a href="obsidian://open?vault=vault-arquitectura&file=proyectos/MVP_04-comfyui-arquitectura/n_05-rhino-mcp/WF-rhino-to-image/prompt-rhino-to-image-esqueleto-json.md">esqueleto JSON</a></p>
+</section>
+
+</main>
+<script>function sw(t){var d=document.querySelectorAll('.tab');var b=document.querySelectorAll('nav.tabs button');for(var k=0;k<d.length;k++){d[k].className=(d[k].id===t?'tab active':'tab');b[k].className=(b[k].dataset.t===t?'active':'');}}var bb=document.querySelectorAll('nav.tabs button');for(var k=0;k<bb.length;k++){bb[k].onclick=(function(b){return function(){sw(b.dataset.t);};})(bb[k]);}</script>
+</body>
+</html>

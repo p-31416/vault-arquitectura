@@ -37,3 +37,11 @@ Más nuevo → más arriba
 **Topics:** cierre-mes1, pomodoros-leantime, costo-replica, humano-vs-maquina, dashboard-presentacion.
 **Entidades:** Emilia Pimenta, O.S_ARQ-Emi id 4, M1-M4 443-446, tasks 447-457, Cal.com 7109200, Fathom Core.
 **Hechos:** 30 sesiones + 11 transcripts medidos; M4 corrupto a task y restaurado; calculadora verificada con comfyenv; presentación 14/10 guionada.
+
+## Cierre 14-15/10 (dashboard final)
+
+- Dashboard HTML unico en presentacion: 7 solapas MVP (n8n 11.4%, vault 20%, 01/02/04/04.02/06), semanas S0-S4 (10.5/20/12/22), despliegue IA, reuniones por dia con rowspan, secciones colapsables, sin cobro.
+- Totales: 66.5h ventana (O2 65) + 19.5h reuniones medidas + presenciales 16 y 30/09.
+- Leantime: M1-M4 + tasks 443-457 + G1 8/8, G2 65/60 (M4 restaurado a milestone).
+- Manana: presentacion 3hs a Emilia + GOAL 3 + carga 65hs + Mes 2.
+

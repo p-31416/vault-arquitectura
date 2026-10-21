@@ -69,7 +69,7 @@ Leyenda: `3.x` edita una zona (máscara a mano) · `4.x` agranda el encuadre (m�
 |---|---|---|---|---|---|---|---|
 | _(pendiente)_ | 3.0.0 | ventanas | `salidas/n_06-3.0.0.png` | — | ~140s est. | | Réplica de WF-02 F-01 sobre base propia |
 | _(pendiente)_ | 3.0.1 | cielo→atardecer | `salidas/n_06-3.0.1.png` | — | | | Si borde visible → grow 12 |
-| _(pendiente)_ | 4.0.0 | extender derecha | `salidas/n_06-4.0.0.png` | — | | | Si deriva → denoise 0.8 en pad |
+| 2026-10-15 | 4.0.0 | extender derecha 256px, feathering 32 | `salidas/n_06-4.0.0.png` (origen `WF06-4.0.0_00001_.png`, prompt_id `b62dffe4`) | ![4.0.0](salidas/n_06-4.0.0.png) | 273s | ✅ casa vecina coherente a la derecha, sin corte visible, misma luz | Primer outpaint OK; probar arriba (4.0.1) |
 
 ## 6. Evaluación
 

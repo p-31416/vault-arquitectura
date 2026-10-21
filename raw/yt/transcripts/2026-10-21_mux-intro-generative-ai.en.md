@@ -1,0 +1,1284 @@
+---
+tipo: transcript
+fuente: archademy.ai (curso AI x Gaudi, area de participantes)
+modulo: intro-generative-ai
+titulo: Introduction to Generative AI
+idioma: en
+fecha_creacion: 2026-10-21
+tags: [yt, transcript, curso-ai-gaudi, mux, intro-generative-ai]
+---
+
+# Introduction to Generative AI — en
+
+> Transcripcion automatica de los subtitulos del modulo del curso (Mux).
+> Origen: https://vz-4ced3a48-15e.b-cdn.net/35e568e8-6e1d-4fa6-9f27-17ab889df703/captions/en.vtt
+> Duracion de la pista de subtitulos: 01:30:46,679 --> 01:30:49,341
+
+[00:00:01] Hello everybody and welcome to this course on generative AI within architecture.
+[00:00:07] My name is Thomas Nelissen and I will be the instructor
+[00:00:12] for this course. And this first video you're watching,
+[00:00:17] this first module is a general introduction.
+[00:00:21] It's going to talk about which programs we're gonna use,
+[00:00:25] a bit of history, a bit of theory,
+[00:00:27] and this is really an important foundation.
+[00:00:30] To understand the next modules.
+[00:00:33] So what is AI? And the next ones we're going to see text to image,
+[00:00:38] image to video, image to image,
+[00:00:40] image to 3D, and a lot of different stuff.
+[00:00:45] But the first one, this one, is important to be able
+[00:00:50] to understand all the things we do later.
+[00:00:54] So let's get into it.
+[00:00:59] Before I introduce myself, I want to mention the main program that we will be using,
+[00:01:04] which is Comfy. ComfyUI.
+[00:01:08] it's a scale-up right now.
+[00:01:12] I think they started in 2020 or 2021,
+[00:01:18] and it's amazing what they have built.
+[00:01:21] It's the biggest open source platform for generative AI.
+[00:01:25] It's actually free to run. I will explain.
+[00:01:28] Everything in depth, how it works,
+[00:01:30] why we use it, the difference between the first free version and the ones that
+[00:01:35] we will be using, so the paid subscription,
+[00:01:38] etc. So remember, the main software we'll we'll be using is Comfy.
+[00:01:44] Now, just to give you a heads up,
+[00:01:48] this is how a workflow in ComfyUI looks.
+[00:01:53] This is a more like a beginner one.
+[00:01:55] We will
+[00:01:56] Go very deep into this one. We will study this one very closely.
+[00:02:01] But we will end with workflows that look like this.
+[00:02:05] So you can see it's already more complicated or more chaos,
+[00:02:10] and there's way more things happening.
+[00:02:11] But I will take you step by step through the whole process to understand what
+[00:02:15] you have to do. And I have made a complete Miro board.
+[00:02:19] I will show you. So this is the complete Miro board.
+[00:02:26] On which you have all the resources to actually use all the workflows that
+[00:02:31] I provide to you free. And as I said in the first module in
+[00:02:37] the in this introduction, we will actually see a lot of theory,
+[00:02:40] but you don't really need the theory.
+[00:02:44] So you can also use it without the theory,
+[00:02:47] but it helps to understand better what is happening.
+[00:02:52] A bit about this Miro board.
+[00:02:55] The idea is that we start at the top with the resources.
+[00:02:59] So every time I refer to something,
+[00:03:02] a link or anything, you will find it here under resources.
+[00:03:06] Then this is organized by module.
+[00:03:09] So now we're at module one, introduction.
+[00:03:12] This is everything that we'll be seeing that you will need in terms
+[00:03:16] of link or resources or anything like that.
+[00:03:20] Then in the next module, text to image,
+[00:03:23] we will see this one.
+[00:03:25] Or like these images, module 3,
+[00:03:28] image to image, you see that is the one that is going to take the longest.
+[00:03:34] Image to video and image to 3D.
+[00:03:37] So everything you need is on here.
+[00:03:40] You will have access to this Miro board,
+[00:03:42] so you will be able to access everything.
+[00:03:45] what is also important is that I have provided a lot of extra stuff.
+[00:03:51] So the things here on the right side.
+[00:03:55] They are not necessarily included in the lecture,
+[00:03:58] but I know that at least half of everybody who's watching this
+[00:04:04] is actually interested in exploring and testing a lot with it.
+[00:04:09] So I provided a lot of material that you can have a look at.
+[00:04:15] For example, these images where I was testing one
+[00:04:22] of my AI models where we
+[00:04:25] Where I went from this massing to a hyper-realistic image.
+[00:04:30] So everything is on here. Check it out if you
+[00:04:34] are interested in that.
+[00:04:37] Let's get back to the presentation.
+[00:04:45] So all images that you saw were created using ComfyUI.
+[00:04:51] Now who am I? Probably you have never heard about me.
+[00:04:54] My name is Thomas Nelissen. I'm an architect.
+[00:04:58] I would describe myself as a generative AI specialist and also a junior architect.
+[00:05:04] I studied and graduated at the University of Antwerp in Belgium,
+[00:05:10] because I am from Belgium.
+[00:05:15] How I got into contact with AI was actually during my thesis,
+[00:05:20] so I didn't know anything about AI.
+[00:05:23] I didn't have a technical background,
+[00:05:25] I had an architectural background,
+[00:05:26] but I had the opportunity to do my thesis about generative AI,
+[00:05:32] and I quickly decided to just try it out.
+[00:05:38] This was the final result, the cover of our thesis.
+[00:05:42] I did it together with Sebastian van Dri.
+[00:05:45] And this is what kinda kickstarted me in the field
+[00:05:51] of generative AI. If you're interested in contacting me,
+[00:05:54] here are my credentials. My Instagram and my website
+[00:05:58] are just called thomasnelissen.ai and my email is info at thomasnelissen.ai.
+[00:06:08] So this is the URL. What I do professionally full time is I'm
+[00:06:14] a junior architect at Davis. Davis is one of,
+[00:06:17] if not most interesting, AI native startups in Europe.
+[00:06:24] We're based in Paris currently.
+[00:06:28] What you see here is a founding team.
+[00:06:29] I joined Davis a bit later. and what Davis does is we're setting a new time.
+[00:06:36] standard for real estate development and architecture.
+[00:06:39] So whereas most offices,
+[00:06:42] architectural offices, start from the old paradigm,
+[00:06:46] Davis starts from AI and within the paradigm of AI,
+[00:06:52] we apply it to the built environment and by that we are able
+[00:06:58] to achieve a next level time standard that really is unmatched.
+[00:07:06] So we're also while doing projects,
+[00:07:10] we're also developing our own model.
+[00:07:12] It's called Gaudi One, a state-of-the- art discrete diffusion model.
+[00:07:17] It's super interesting to be a part of this amazing team.
+[00:07:21] so that is a bit my background.
+[00:07:25] If you're interested, go to the website,
+[00:07:31] it's just called Meet Davis.
+[00:07:34] And you can have a look at what we do,
+[00:07:36] how it works, the technology.
+[00:07:40] So Gaudi One, a bit of the team,
+[00:07:45] etc. It's honestly an honor to be part of the of this team,
+[00:07:49] and I'm very happy about that.
+[00:07:54] So, about this course, why this course is important.
+[00:07:58] The next part might sound a bit cheesy.
+[00:08:02] But it's really how I think about it.
+[00:08:03] AI is going to change all industries.
+[00:08:07] It's actually already changing it and has already changed it a lot.
+[00:08:11] So people who dismiss it will become dinosaurs.
+[00:08:16] This means we have to adapt or die.
+[00:08:19] I really believe in choosing a specialization,
+[00:08:24] a niche, something that you will become very good at.
+[00:08:27] For me, choosing my
+[00:08:29] Thesis topic as generative AI within architecture was a first step.
+[00:08:33] Joining Davis was the next step,
+[00:08:36] and I really believe that everybody should do it and become AI native by nature.
+[00:08:43] So AI is transforming architecture,
+[00:08:46] and open source is a driver behind AI development.
+[00:08:51] What is open source? For anybody who doesn't understand,
+[00:08:55] open source is the fact that people are building things.
+[00:08:59] and providing it to the community so I essentially letting people use it for free.
+[00:09:08] I'm going to explain it better along the way.
+[00:09:11] But since open source is a driver behind AI development,
+[00:09:15] I believe that ComfyUI is here to stay.
+[00:09:18] So ComfyUI is the program we'll be using.
+[00:09:21] It's the biggest open source platform.
+[00:09:23] What they do is they you they take all models that other companies
+[00:09:28] or other people are developing and they bring it in one platform for you to use.
+[00:09:37] Before we actually jump in and go into to generating
+[00:09:42] images and stuff, I already showed you the Miro board,
+[00:09:47] but we're gonna have a look at some definitions.
+[00:09:50] Since this is going to be a bit more theoretical,
+[00:09:53] this first module, we need some definitions to make the communication good.
+[00:09:58] Otherwise, I will talk a lot about things that you don't understand
+[00:10:02] and then we get nowhere. These are some things that we will be
+[00:10:07] Quickly discussing. I'm going to go pretty slow.
+[00:10:11] I'm going to speed up after a while.
+[00:10:14] But don't be afraid if you don't understand anything or if not everything is clear.
+[00:10:20] Because I will repeat this over every module,
+[00:10:23] and after a while everything becomes clear.
+[00:10:26] So tokens. how do tokens work?
+[00:10:31] Models, AI models, just to make make sure.
+[00:10:36] we're on the right track. AI models don't read text,
+[00:10:39] they read numbers. A tokenizer is a translator that converts your prompt
+[00:10:46] into a sequence of numbers the model actually can process.
+[00:10:51] So models read numbers. Rule of thumb:
+[00:10:56] you don't have to remember this one,
+[00:10:57] but it's interesting. One token equals 0.75.
+[00:11:04] English words or about four characters.
+[00:11:06] An example of that is let's say you have the prompt a brutalist concrete pavilion
+[00:11:12] at sunset. That is what we as humans prompt,
+[00:11:15] but that's not what the model actually reads.
+[00:11:18] The model would read something like this:
+[00:11:20] clip, it's just the name of a tokenizer,
+[00:11:24] translates this sentence.
+[00:11:29] into "a", "brutal"... sorry, "a", "brutal",
+[00:11:34] ist concrete pavilion at sunset
+[00:11:38] and for every token so brutal is
+[00:11:43] a token ist is a token it gives
+[00:11:48] one number right so this sequence of numbers is just
+[00:11:54] how the computer reads this
+[00:11:59] This sentence. Just something to think about whenever you see tokens.
+[00:12:04] Tokens is a translation from words to later numbers.
+[00:12:10] Now, next definition: noise.
+[00:12:14] Noise is an extremely important one because we will talk a lot about noise.
+[00:12:19] Noise is a bunch of randomly distributed pixels within a frame,
+[00:12:25] as you can actually see on this image.
+[00:12:28] So this is an example of noise.
+[00:12:30] The seed of the noise is the exact configuration
+[00:12:36] of the noise, always a number.
+[00:12:40] So an example of this is this.
+[00:12:43] So we saw that what you see in the background is the noise.
+[00:12:48] This is the seed of the noise.
+[00:12:51] It's just 14 numbers. They look random,
+[00:12:55] but they're not random.
+[00:12:57] You can look at it as if it's like in a national ID.
+[00:13:02] So I made this fictional character just for the sake of this course,
+[00:13:07] it's not a real person. The seed of the noise is like the national ID.
+[00:13:14] So you look at this number, and if you just look at the number,
+[00:13:17] you would say it's a random number.
+[00:13:19] But it's not random because if this person would go to the police or it would
+[00:13:24] go to any other
+[00:13:27] it would it would go to the bank for example.
+[00:13:29] Both know this person by his national ID.
+[00:13:34] So it's not random because if you change one number,
+[00:13:39] it's not the right person anymore.
+[00:13:41] So it's the let's say it's the ID of the noise.
+[00:13:47] That means that if me or anybody,
+[00:13:50] any other human looks at these two images,
+[00:13:53] you cannot see the difference,
+[00:13:55] right? but they are completely different.
+[00:13:58] The structure is completely different.
+[00:14:01] This noise has the seed of this number.
+[00:14:07] So this number is the seed of this noise.
+[00:14:10] I hope that's clear. And even though you cannot see any difference between these
+[00:14:15] two, this one.
+[00:14:17] has a completely different seed.
+[00:14:20] So this one is tied exactly to this one and this one is tied exactly to that one.
+[00:14:27] Remember that one. I'm going to repeat it afterwards.
+[00:14:31] The next one dataset. A dataset in this context is simply
+[00:14:37] a giant folder of images, each one paired with a text caption describing what's
+[00:14:43] in it. It's a set of data.
+[00:14:47] This is just a visual representation of what it is.
+[00:14:50] If we zoom into one, we see that we always have two components.
+[00:14:56] We have an image, it's the most important one,
+[00:14:59] and we have the caption. So it's just
+[00:15:04] a text file that has a text
+[00:15:08] in it that describes the content of the image.
+[00:15:14] So you can see a brutalist building.
+[00:15:17] Perched on the edge of an eroded landscape.
+[00:15:19] That's what you see here. Normally it looks like this like this length.
+[00:15:26] Sometimes it's longer, sometimes it's shorter.
+[00:15:29] But in general, the caption is looking like this.
+[00:15:33] Now, why do I show you this?
+[00:15:36] Because actually, you don't need to know this to go to the next phase.
+[00:15:41] But it's important to understand.
+[00:15:45] That whoever curates the data set decides what the model can imagine.
+[00:15:50] So biases, gaps, aesthetics,
+[00:15:53] everything is baked in before you ever type a prompt.
+[00:15:57] So nothing, no media, no medium is neutral.
+[00:16:04] It always has a direction, and in this case it's the company or the people
+[00:16:09] who have made the dataset.
+[00:16:14] it might sound negative but it's not.
+[00:16:17] I will explain later. Why I really emphasize this is the table
+[00:16:23] we see here is an evolution. So we see that this is a model name.
+[00:16:28] These are all models, AI diffusion models that came out.
+[00:16:33] This one came out in 2022, 23,
+[00:16:37] 24, 25. So roughly every year
+[00:16:42] a new very big open source diffusion model comes out.
+[00:16:47] Actually, now we're in 2026, it's actually going faster,
+[00:16:52] so now it's every two every month or every few weeks.
+[00:16:56] What I want to show you is this.
+[00:16:59] In 2022, the first really relevant model came out.
+[00:17:04] It was Stable Diffusion 1.5. This model was trained
+[00:17:10] As we saw before, on datasets,
+[00:17:13] images plus captions, and it was trained
+[00:17:17] on 860 million of them. Now that so might sound a lot,
+[00:17:23] but today flux2 is like the benchmark model,
+[00:17:27] it's the best one, is trained on 32 billion.
+[00:17:30] So in three years we went from 860 million to 32 billion,
+[00:17:36] which means this model, FLUX.
+[00:17:41] FLUX.2, it's has been trained
+[00:17:45] on 32 billion images.
+[00:17:49] That's how you can imagine it.
+[00:17:51] So that means that it saw way more things compared to Stable Diffusion 1.5.
+[00:17:57] So it's I would say it's smarter.
+[00:18:01] If you teach a child only 8 things,
+[00:18:04] of course another child who has been taught 32 things is smarter because
+[00:18:10] it has seen
+[00:18:11] Way more stuff. Now,
+[00:18:14] this is a very simple representation,
+[00:18:16] it's a bit more complex, but this is what I want you to remember from this slide.
+[00:18:21] The next definition:
+[00:18:25] training of the diffusion model.
+[00:18:28] The training of the diffusion model is the process during which
+[00:18:34] the AI model is exposed to a large data set.
+[00:18:38] Remember, images plus captions.
+[00:18:41] And thus it learns the correlation between words and pixels.
+[00:18:45] So just to make sure, we're not going to train a diffusion model.
+[00:18:50] This is something that happens like I said once a year or every few months.
+[00:18:55] This is not something that we can do ourselves.
+[00:18:58] This is it takes an a large amount of computing,
+[00:19:02] a large amount of time, a lot of resources,
+[00:19:06] a lot of money.
+[00:19:08] But this is how companies like Stability AI or even Google
+[00:19:13] and ChatGPT are training their models.
+[00:19:16] So this has nothing to do with the things we will be doing,
+[00:19:20] but it has to do with the models that we will be using.
+[00:19:24] Just remember that. So this we saw before,
+[00:19:29] this is a data set or like one image plus caption.
+[00:19:33] And I'm going to give you a very
+[00:19:37] detailed explanation using one of the images I created.
+[00:19:40] So let's say I would like to make an own diffusion model.
+[00:19:44] It's not going to happen, but let's say we would
+[00:19:50] How would the process go to include this image in the training
+[00:19:56] of a diffusion model? We would be adding noise as the main step.
+[00:20:00] Now, what does that mean? Let's say we take this image and we take a caption,
+[00:20:05] right? So the two essential elements.
+[00:20:08] We say it's a sculptural apartment building,
+[00:20:11] glossy deep blue tiles, Spanish village during the summer.
+[00:20:20] How is the model being trained?
+[00:20:22] It takes this image and it adds noise.
+[00:20:27] Remember, noise was randomly distributed pixels,
+[00:20:30] but it does it in X amount of steps.
+[00:20:34] So first it adds a little bit of noise.
+[00:20:36] You can still see it's kinda the same image.
+[00:20:38] Then it adds more noise, more,
+[00:20:41] more until we have no structure left.
+[00:20:45] So you see.
+[00:20:47] In one, two, three, four, five,
+[00:20:50] six, seven, eight, nine steps,
+[00:20:53] we go from an image that contains our building
+[00:20:59] to something that is completely random.
+[00:21:01] Here in the last step, you can still see a bit of the of the structure lines,
+[00:21:08] but here everything's gone. So it breaks down
+[00:21:12] our image into complete chaos.
+[00:21:17] So let's call this part complete order,
+[00:21:21] and this is complete chaos. This is what we call
+[00:21:25] the forward diffusion process.
+[00:21:28] Again, you don't have to remember this,
+[00:21:30] but if you're interested, that's how we call it.
+[00:21:33] So, a recap. During the training of the AI model,
+[00:21:38] not something that we will do.
+[00:21:40] We go from an image, actually,
+[00:21:44] billions of images.
+[00:21:47] to noise. So every image gets reduced
+[00:21:52] to pure noise in X amount of steps as we see here until
+[00:21:59] we have complete pure noise. So this is pure noise.
+[00:22:07] Now we did it with one image, it will happen with billions of images.
+[00:22:12] So this image of a block of red marble will have the same process.
+[00:22:18] Every time a little bit more noise will be added until nothing is left.
+[00:22:23] Now that's during the training.
+[00:22:26] What we will actually care about,
+[00:22:29] what we will do is during generation,
+[00:22:32] when we generate an image.
+[00:22:34] So during the generation part,
+[00:22:36] this is actually what we will be what we will be doing.
+[00:22:40] We actually flip the process around.
+[00:22:44] So during the training, we go from image to pure noise.
+[00:22:47] During generation, so what we actually prompt and what we generate,
+[00:22:53] it's the other way around. So we start from pure noise and we go to a final image.
+[00:22:59] So we don't have a caption anymore.
+[00:23:02] We don't
+[00:23:03] speak about captions but we talk about prompts.
+[00:23:06] So let's say we prompt facade structure of red marble with the visible white veins.
+[00:23:13] Black window mullions reflection in glass.
+[00:23:16] The model will start from pure noise.
+[00:23:20] It's just an image with like filled with color pixels,
+[00:23:25] like a real image, but no structure.
+[00:23:29] It's just randomly distributed pixels.
+[00:23:31] And then
+[00:23:33] in X amount of steps it will go and make a very detailed image.
+[00:23:38] So it will first do one step,
+[00:23:42] two steps
+[00:23:45] So one, two, three, four,
+[00:23:48] five, six, seven, eight, nine.
+[00:23:50] And in the last step, it the output is a is a detailed image.
+[00:23:56] I hope you can see it here behind my head.
+[00:24:02] Steps. What are steps? Steps is just the amount of times
+[00:24:08] it corrects itself until we have a final image.
+[00:24:11] That is the only thing. So the amount of iterations the model takes to
+[00:24:16] go from pure noise to the final image.
+[00:24:18] To give you an idea, this is just a different workflow, with different weights.
+[00:24:23] So this is also noise. First step,
+[00:24:27] second, third, etc. So
+[00:24:31] Every time it finds a bit more structure in the chaos until we have an image.
+[00:24:40] And while generating, so with while taking these steps,
+[00:24:45] it remembers everything it saw during training.
+[00:24:48] So let's say you prompt here I don't know a castle on a hill with some
+[00:24:55] vegetation and blue sky. All these words get translated into tokens,
+[00:25:01] as we saw before. These tokens are numbers,
+[00:25:05] and these numbers are linked to images.
+[00:25:09] The model saw during the training.
+[00:25:11] So, in this generation process here,
+[00:25:16] while generating, the model thinks,
+[00:25:19] okay, what did I see during my training that reminds me of a castle?
+[00:25:24] What does it mean when something is on a hill?
+[00:25:27] What does green vegetation mean?
+[00:25:30] So, the more it sees during the training,
+[00:25:33] the better or the more references it has when generating something.
+[00:25:43] So, what you see here is just another representation of
+[00:25:48] the forward diffusion process or forward noising process.
+[00:25:52] Remember, this is during training.
+[00:25:55] So, this is not when we are actually generating something.
+[00:25:59] So, you can see we start from an image of a smiling dog.
+[00:26:03] and every time it adds a little bit more noise until
+[00:26:09] we have pure noise.
+[00:26:12] By the end here, the model knows okay,
+[00:26:16] these this structure of pixels,
+[00:26:20] this is what a dog that is smiling means.
+[00:26:23] So it's just learning the relationship between how pixels
+[00:26:29] are structured and a word.
+[00:26:34] So a model that is trained on millions of cat images,
+[00:26:38] labelled cat, learns the visual concept concept of cat,
+[00:26:43] but it will never learn what a Zaha Hadid building is unless that label
+[00:26:49] was in the dataset, so unless it was captioned.
+[00:26:55] Course, this is not rocket science,
+[00:26:56] it's as if you're teaching a child something.
+[00:26:59] If you teach a child only Chinese and then you
+[00:27:04] ask that child a question in French,
+[00:27:08] of course it will not know what you mean because you didn't teach the child French.
+[00:27:13] So training the model is like learning a language.
+[00:27:21] A diffusion model generates images from pure noise.
+[00:27:25] This is just a recap. It finds structure in chaos and it finds patterns in chaos.
+[00:27:31] It can do this because it has spent months looking at billions of images paired with
+[00:27:38] text descriptions, learning what words tend to look like.
+[00:27:42] Then we go to the next definition,
+[00:27:46] which is latent space. This one is a bit more technical.
+[00:27:50] If it's not completely clear, don't worry.
+[00:27:53] we will revise this a lot of times.
+[00:27:57] So latent space is a compressed summary world where the AI does
+[00:28:02] all its thinking and eventually it gets translated back into real pixels
+[00:28:08] at the very last step. Probably this is not clear,
+[00:28:12] but don't worry. Remember that was latent space.
+[00:28:16] Now Empty Latent Image.
+[00:28:21] What Empty Latent Image is pretty self-explanatory,
+[00:28:24] it's a blank canvas. It's a blank canvas in
+[00:28:29] the latent space and it has the size of an image but no content yet.
+[00:28:36] Believe me, this one will become a bit more clear.
+[00:28:40] Why does it do it?
+[00:28:43] It does it because adding noise to a million pixels,
+[00:28:47] for example.
+[00:28:48] And denoising them step by step would take forever and it would
+[00:28:52] be super demanding on your PC.
+[00:28:55] So instead it compresses it down.
+[00:29:00] So let's say you take an image,
+[00:29:02] instead of regenerating that image,
+[00:29:05] that would take way too long because it would have to recalculate every pixel.
+[00:29:11] First, it compresses it down to a way smaller file.
+[00:29:15] Then that file gets
+[00:29:19] changed and in the last step that small file becomes big again.
+[00:29:28] A metaphor that I always use to explain this is to compare it with a zip file.
+[00:29:33] Now just to make sure that there's no confusion,
+[00:29:37] it doesn't work with actually like a zip file,
+[00:29:39] but it's a metaphor. So let's say you have this image and
+[00:29:45] you want to do something with it.
+[00:29:48] So you upload it to an AI bot,
+[00:29:52] for example. This is a heavy image,
+[00:29:55] it has one million pixels.
+[00:29:58] If we generate this one completely again,
+[00:30:01] it will be too hard on the soft on the hardware and it will take 10 minutes.
+[00:30:06] So, what do we do? We make it into a small file.
+[00:30:12] Right? So, a small file you cannot actually look at it anymore because it's
+[00:30:17] too small. And we do this using a VAE Encode.
+[00:30:22] So just remember this name for later because it will come back.
+[00:30:25] A VAE Encode.
+[00:30:28] stands for variational autoencoder.
+[00:30:31] So it auto-encodes this image into
+[00:30:36] a very small file. So it goes from one million pixels
+[00:30:42] to sixteen thousand numbers. So not any more pixels,
+[00:30:47] it becomes numbers. Now everything here in this middle part.
+[00:30:55] We don't see this, it's behind the scenes,
+[00:30:57] behind the scenes of the AI model.
+[00:31:00] So we never see this. But this is happening when you click on generate.
+[00:31:05] Okay. Then in the next step,
+[00:31:09] when the AI has changed this compressed file,
+[00:31:15] it will decode it again. So it will do the opposite of encoding again with a VAE,
+[00:31:21] variational autoencoder.
+[00:31:24] Then it will decode it. What does it mean?
+[00:31:27] It's like unzipping the image.
+[00:31:28] So it makes an image from 16,000 numbers
+[00:31:34] go back to 1 million pixels,
+[00:31:38] and then we can see it again. So this you can see as the first one.
+[00:31:44] This is a human world. It gets translated into AI world,
+[00:31:50] and then it gets
+[00:31:54] Decoded again into human visibility pixels.
+[00:31:58] You don't have to explain or like understand it too too deep,
+[00:32:03] but this is how the thinking must go.
+[00:32:06] Now, what we see here is a screenshot of a very basic,
+[00:32:11] most standard workflow of ComfyUI We're going
+[00:32:17] to go very deep into this before actually opening up Comfy ourselves.
+[00:32:25] How it works, if you've ever used Grasshopper or if you know what Grasshopper is,
+[00:32:30] Grasshopper and Comfy
+[00:32:33] are both visual programming platforms.
+[00:32:38] So it works with nodes. Everything you see here,
+[00:32:42] these things, they're all nodes,
+[00:32:46] blocks, and you connect them with strings to each other.
+[00:32:50] So you connect them with these lines and then
+[00:32:54] The data from this one gets passed on to the next one and you have like a chain.
+[00:33:00] Now what is always consistent is that it goes from left to right.
+[00:33:05] I hope this makes it clear that this is a this is an arrow.
+[00:33:10] so the left part is the input part.
+[00:33:15] Here you input the model, the prompt,
+[00:33:18] the ratio. Then the second part is always generation,
+[00:33:24] and the third part is always output.
+[00:33:28] It may look different, but in general,
+[00:33:29] this is always part of any workflow.
+[00:33:32] Input, generation, output. If we zoom into one node,
+[00:33:39] we see that on the left side we have the input.
+[00:33:45] So again, it goes from left to right.
+[00:33:47] so the node receives input on the left side and
+[00:33:52] it provides output on the right side,
+[00:33:55] just like Grasshopper.
+[00:34:01] Now, node by node, what do these nodes actually mean?
+[00:34:05] The first one is Load Checkpoint.
+[00:34:08] This loads the diffusion model,
+[00:34:11] which is trained on the dataset.
+[00:34:13] So this is for example Stable Diffusion 1.5 or FLUX
+[00:34:18] two or FLUX.1 or any model that is open source.
+[00:34:24] You can see here a hint that this is Stable Diffusion 1.5,
+[00:34:28] but there's
+[00:34:30] A lot of models and we will be seeing a lot as well.
+[00:34:37] This one going to skip for now.
+[00:34:39] The next part is the positive prompt.
+[00:34:42] Now, what does this do? Here you type your prompt,
+[00:34:46] very easy. The next one is the negative prompt,
+[00:34:51] so it's the opposite. Whatever you put in here,
+[00:34:54] the model will avoid. What does this make positive and negative?
+[00:35:00] You might ask, because the node is called just "prompt" in both cases.
+[00:35:04] It's because the output
+[00:35:06] of this one is connected to negative.
+[00:35:11] It's not super clear, but you can see that this string
+[00:35:16] is attached to negative. The output of this container of this node
+[00:35:23] is connected to positive. So that means that this will be received
+[00:35:28] as a positive prompt and this is a negative.
+[00:35:33] This node, Empty Latent Image,
+[00:35:35] this is what we talked about before.
+[00:35:37] This is a before we generate something,
+[00:35:41] we set the ratio of the image.
+[00:35:44] So let's say we have the settings here,
+[00:35:47] 512 by 512. It's just an empty container which
+[00:35:53] is made of 512 pixels by 512 pixels.
+[00:35:57] If we change this setting here to
+[00:36:03] width and height like this, then you see that it becomes a rectangle.
+[00:36:07] So this is just how your output image will be will be made.
+[00:36:13] The KSampler, this is where actually the image gets generated.
+[00:36:19] You can see it as like the engine of the car.
+[00:36:22] All the inputs get input here on the left side.
+[00:36:27] The image has a lot of settings here at the bottom.
+[00:36:33] And the output is the image.
+[00:36:39] So we have the KSampler and the output of this node is the ratio.
+[00:36:45] So that is this one. That's what we just saw.
+[00:36:51] The KSampler will add noise to it.
+[00:36:55] You will see seed here, and we just saw the definition of seed,
+[00:36:59] it's the national ID of a noise.
+[00:37:03] So in the first step, it will add noise in this empty image.
+[00:37:09] So it's not empty anymore. And from that noise,
+[00:37:12] it will take x amount of steps.
+[00:37:16] Remember, steps is
+[00:37:18] How many iterations it takes to go from noise to an image.
+[00:37:22] Here it's speed up in one go,
+[00:37:26] but normally it's like a lot of small steps until you have a realistic image.
+[00:37:33] So the amount of iterations to make an image.
+[00:37:36] CFG is a specific one.
+[00:37:39] It's how much it follows your prompt versus how much
+[00:37:45] it does a creative thing, but don't worry about it in this stage.
+[00:37:49] We're gonna skip that one as well.
+[00:37:51] And then save image, it just makes sure that your image gets saved
+[00:37:57] on the software.
+[00:38:01] Now we're going to redo this whole scheme but in a metaphor.
+[00:38:06] And the mut the metaphor is that one of a kitchen.
+[00:38:10] So you have to look at ComfyUI as a restaurant or kitchen.
+[00:38:15] Doesn't really matter. If ComfyUI is a restaurant,
+[00:38:21] then the Load Checkpoint is the chef.
+[00:38:24] So it will
+[00:38:28] What you upload here is the chef.
+[00:38:30] This is the model, the diffusion model,
+[00:38:33] like Stable Diffusion 1.5 or flux 2.
+[00:38:36] And it has seen a lot of images.
+[00:38:40] The chef has seen a lot of dishes.
+[00:38:42] It has been cooking for 20 years,
+[00:38:44] so it knows almost every dish in the whole world.
+[00:38:48] Then the positive prompt is like the order of the client.
+[00:38:55] So the customer comes to the restaurant.
+[00:38:57] And it says okay, I want chicken with potatoes.
+[00:38:59] Very simple. The negative prompt you can look at as the allergy of the client.
+[00:39:06] It's like saying, Okay, I'm the client,
+[00:39:09] I want potatoes, chicken with potatoes,
+[00:39:12] but I'm allergic to garlic or something like that.
+[00:39:16] So I would type in negative prompt garlic.
+[00:39:18] So the chef, the diffusion model,
+[00:39:22] knows that it has to avoid garlic.
+[00:39:29] Empty Latent Image, which is a super confusing thing to understand,
+[00:39:34] it's just the plate. So you can look at it as if it's the empty plate that
+[00:39:40] the chef will make the dish on in the end.
+[00:39:43] So if the plate is very big,
+[00:39:48] like this, then the chef knows:
+[00:39:50] I have to make a lot of food.
+[00:39:53] So I might I might need to make a whole chicken instead of
+[00:39:58] When the plate is super small,
+[00:40:00] it knows half of half of a chicken will be enough.
+[00:40:04] So here you can change the size of the plate that the chef will be cooking on later.
+[00:40:08] The KSampler in this metaphor is the stove.
+[00:40:14] So here the chef comes, it knows the order of the client,
+[00:40:19] it knows the allergy of the client,
+[00:40:21] it knows how big the dish or like the plate.
+[00:40:27] On which the dish must come is.
+[00:40:29] It also knows the steps.
+[00:40:32] How many steps do I have to take to make this dish?
+[00:40:37] So I have to cut the chicken, add seasoning and stuff.
+[00:40:40] So that is the steps. How many steps do I take?
+[00:40:42] The creativity factor here, CFG,
+[00:40:47] is how much does the chef follow the recipe versus how much does
+[00:40:53] he freestyles a bit? So if you put it at 10.
+[00:40:57] The chef really follows the recipe.
+[00:40:59] If you put CFG here to one,
+[00:41:03] it's like saying to the chef, you can do whatever you want.
+[00:41:07] It's like carte blanche, you can do whatever you want.
+[00:41:09] So it's a bit ridiculous,
+[00:41:12] but I noticed that this really helps people to
+[00:41:18] see all the nodes as a function.
+[00:41:21] Then the last node.
+[00:41:25] Save Image becomes the food,
+[00:41:27] so it's the plate where the chicken and the potatoes are on without the garlic.
+[00:41:33] Now I skipped two very important ones deliberately,
+[00:41:37] which is the VAE. The VAE is more like the waiter.
+[00:41:42] So in the beginning, the VAE Encode
+[00:41:47] is the person who goes to the client,
+[00:41:50] to the customer, and he asks, okay,
+[00:41:53] what do you want to eat? Because
+[00:41:55] The customer is never talking directly to the chef.
+[00:41:57] The customer talks to the waiter,
+[00:42:01] and the waiter makes a ticket out of it,
+[00:42:04] and that ticket goes to the chef.
+[00:42:06] So there is no contact between the client or customer and the chef.
+[00:42:11] There's always something in between.
+[00:42:15] And in this case, the way that it transforms into language
+[00:42:20] of the customer to this ticket.
+[00:42:23] So the written description of what the client orders that is the VAE.
+[00:42:29] So you can look at it as the waiter.
+[00:42:31] Now, here in the VAE Decode,
+[00:42:35] it's also a waiter, but it's a different waiter that when the dish is ready,
+[00:42:40] it takes it out of the kitchen and it brings it to the
+[00:42:45] to the to the customer and it takes off this
+[00:42:52] This cap, I don't know how you how you call it,
+[00:42:55] but this very cliche thing of serving something,
+[00:42:58] and this cap take is being taken off at the table so the customer
+[00:43:03] can actually eat the food. So that's why it's a bit harder
+[00:43:08] to explain the VAE, but it's just the way that information gets
+[00:43:15] passed around between the client as prompting and the chef,
+[00:43:21] which is the diffusion model.
+[00:43:25] Okay, now so why are open source models actually interesting?
+[00:43:31] Probably you think, yeah, okay,
+[00:43:33] but why do I need this in very complicated stuff?
+[00:43:37] I can just use ChatGPT or Google Nano Banana.
+[00:43:42] What will this actually be more useful for?
+[00:43:46] Tools like Midjourney, Nano Banana,
+[00:43:50] ChatGPT are black boxes. You type a prompt,
+[00:43:53] an image appears.
+[00:43:55] And you have almost no control over what happens in between.
+[00:43:59] It's like buying a car of which you can't open the hood and change the engine.
+[00:44:05] With open source or open weights,
+[00:44:09] it's just a different name. Models like FLUX,
+[00:44:12] you can open the hood and adjust the engine,
+[00:44:16] or the transmission, or the exhaust,
+[00:44:18] or you can paint the car, you can do whatever you want because you have full control
+[00:44:23] over it.
+[00:44:25] But I'm going maybe a bit too quick,
+[00:44:28] so if it's still not completely clear,
+[00:44:31] no worries. We're going to set up two agents
+[00:44:37] or two experts that will help you when you're actually working
+[00:44:44] with this and when something breaks or when something is not completely clear.
+[00:44:51] So let's go to Miro.
+[00:44:58] Okay, it's glitched a bit. So when you go to module one to introduction,
+[00:45:03] you'll see the first thing we're gonna do is set up a Comfy expert.
+[00:45:08] So it's nothing more than just creating a custom project.
+[00:45:12] So you go to your LLM of choice,
+[00:45:16] mine is Claude.
+[00:45:19] Let's go to resources. I actually want to show you something really quickly.
+[00:45:26] Under models overview you have a link here and it's a website called Arena
+[00:45:32] and what Arena does is it just ranks
+[00:45:40] Overview here. It ranks all models.
+[00:45:44] So you can go to for example chat and you say text.
+[00:45:53] this is a leaderboard of which models are actually best at generating text.
+[00:46:02] So you see at number one it's Claude,
+[00:46:05] Fable 5, then you have Opus.
+[00:46:07] So the first five spots are actually all Anthropic,
+[00:46:13] so it's Claude, and that's why I also use it.
+[00:46:15] I use Claude because it's simply the best right now.
+[00:46:18] You can look at image editing.
+[00:46:20] There it's ChatGPT that is in first place.
+[00:46:25] You also have nano banana. Somewhere here,
+[00:46:28] you also have
+[00:46:31] Click on open source, you can see that FLUX is also up there amongst the best ones.
+[00:46:36] So this website, check it out because it changes every day and they keep
+[00:46:40] it up to date which models are actually good.
+[00:46:43] So that is the reason why
+[00:46:46] I chose Claude to be my LLM.
+[00:46:52] Okay, what we're going to do, just follow my steps,
+[00:46:55] copy this simple prompt,
+[00:46:58] go into
+[00:47:00] your LLM, click on new project,
+[00:47:03] it's here. Then you see this tab,
+[00:47:08] you just name it something, you call it
+[00:47:14] Comfy expert?
+[00:47:19] You can go to instructions. It might look a bit different for you,
+[00:47:24] or if you use ChatGPT, you can also use it,
+[00:47:27] or Gemini, it doesn't really matter.
+[00:47:28] Just ask how can I make a custom project in Gemini and it will give
+[00:47:33] you all the steps. If you're using Claude,
+[00:47:35] this is what you have to do.
+[00:47:37] Paste it here, save instructions.
+[00:47:42] So now all chats that I have within this project will have this as context.
+[00:47:48] And what it is, it's just super simple.
+[00:47:50] It's a URL to the documentation of Comfy Cloud.
+[00:47:55] So if I go on the internet and I type in Comfy Cloud.
+[00:48:10] Yeah, okay, it's launching directly.
+[00:48:11] ...
+[00:48:17] Documentation, here it is. On this website,
+[00:48:21] you will find all information that you will ever need if you have questions.
+[00:48:26] So before actually asking questions to me,
+[00:48:30] which you can look at this website.
+[00:48:34] This link is also,
+[00:48:38] of course, under resources, so relevant websites.
+[00:48:42] Here you can see ComfyUI official documentation.
+[00:48:46] If you click here, it brings you to the same page.
+[00:48:50] So here you can say, okay,
+[00:48:53] I want Comfy cloud or I want to install it locally,
+[00:48:57] which I will explain later.
+[00:49:00] Or nodes,
+[00:49:04] like every question you have, tutorials,
+[00:49:08] text-to-image tutorials, it will guide you through all the things you need to know.
+[00:49:17] So if we go back into the instructions,
+[00:49:19] it's just a link to that page and another website called ComfyWiki
+[00:49:27] which has a lot of documentations as well.
+[00:49:30] So if you ask a question, why
+[00:49:33] isn't my ComfyUI working?
+[00:49:40] then it will probably say something like okay can you upload a screenshot
+[00:49:44] and if you provide a screenshot it will actually tell you can try this
+[00:49:49] and that so I'm not going to run this one but
+[00:49:53] you can imagine you can imagine why this
+[00:49:58] is super helpful.
+[00:50:03] So it's just a very easy quick fix.
+[00:50:06] I use it myself all the time because even if this is my full time job,
+[00:50:12] sometimes something happened that I don't fully understand and I always
+[00:50:16] go to my comfy expert before asking anybody a question.
+[00:50:21] And ninety nine percent of the time it will actually help me solve the issue.
+[00:50:29] So what is Comfy? What you see here is two different versions.
+[00:50:36] On the left side, we have ComfyUI running locally,
+[00:50:41] which means that when you generate an image,
+[00:50:44] it will actually use your own PC to generate it.
+[00:50:48] So it means that you will like it will need your
+[00:50:55] own GPU, so your
+[00:50:57] graph graphical processing unit of your PC to make an image.
+[00:51:02] That means it's also free. So you can just go to Comfy,
+[00:51:07] click on download, and it's completely free to run.
+[00:51:11] However, why we're not gonna use this and we're gonna use Comfy Cloud.
+[00:51:17] So here the right part
+[00:51:23] is because
+[00:51:25] These newer models that we will cover in that later on,
+[00:51:28] they have become so big that when you want to run them locally,
+[00:51:33] you need a supercomputer. You need like a very expensive computer.
+[00:51:37] While in the past you could run it locally,
+[00:51:40] right now you need a very,
+[00:51:43] very, very, very good one to run it.
+[00:51:47] So if you're watching this and you're a render artist or you have a super good PC.
+[00:51:54] Probably if you have a su super good one,
+[00:51:56] you will be able to find out how to download everything by the website.
+[00:52:03] It's a bit more technical, but you can install from GitHub and stuff as well.
+[00:52:09] Now I assume that if you don't have a supercomputer,
+[00:52:13] it will be more interesting to do Comfy Cloud.
+[00:52:16] Instead of running locally on your own PC,
+[00:52:21] it just
+[00:52:22] you buy a subscription and you use their the cloud and
+[00:52:28] you use their GPUs. To give you an idea why this is necessary,
+[00:52:33] if you want to run FLUX.2,
+[00:52:36] which is the main model that we will be using,
+[00:52:39] you would need around 32 gigabytes of VRAM,
+[00:52:45] which is a lot. I have a very good PC,
+[00:52:48] I have 12 gigabytes of VRAM, so it's not enough.
+[00:52:52] With Comfy Cloud, you pay a monthly subscription,
+[00:52:56] but you get access to 96 GB of VRAM.
+[00:53:01] So it's absolutely insane. Which means it's also super quick.
+[00:53:05] If you run it locally, it takes two minutes maybe to make
+[00:53:11] an image on Comfy Cloud with this GPU,
+[00:53:14] it takes like five seconds. and I will also show you how to set up
+[00:53:21] an account so no worries about that.
+[00:53:24] So go to the website if you have any questions,
+[00:53:29] take the URL, paste it in your LLM and then you have a virtual assistant that
+[00:53:35] knows way more about it than anybody.
+[00:53:38] Let's set up a Comfy Cloud account.
+[00:53:47] So go to the website of Comfy using Miro,
+[00:53:52] just the same one, all of these lead to the same website.
+[00:53:57] This one is a bit different, but just go to Comfy Cloud,
+[00:54:01] click on the source URL. Again,
+[00:54:06] if you want to do it locally, click here.
+[00:54:08] I'm not going to cover that, but we are going to do launch cloud.
+[00:54:12] Now, if you see this with a new account,
+[00:54:15] it will just
+[00:54:16] Ask you to do to make an account.
+[00:54:19] Now if you do it, just log in with Google like I did,
+[00:54:23] and then you will see this interface.
+[00:54:27] you will see plans and pricing.
+[00:54:34] So you can see that the standard one is $20 a month,
+[00:54:38] so like 16 euros or something.
+[00:54:40] Then you have more credits if you go to Creator,
+[00:54:44] and then Pro is 100. So how it works is you get every month like
+[00:54:50] X amount of credits that you can use.
+[00:54:53] But for things I'm showing,
+[00:54:57] you would need the creator plan.
+[00:55:00] So if you're doing for
+[00:55:02] This for a competition or just for yourself,
+[00:55:04] you can just buy it for one month,
+[00:55:06] it's like twenty eight Euros.
+[00:55:09] Or you run it locally, but then you need a good PC.
+[00:55:14] So then you have 7400 tokens.
+[00:55:19] Normally it's plenty for testing out every month.
+[00:55:27] When you open up the workflow,
+[00:55:30] this is how it looks. So here on the left side you have your task bar.
+[00:55:36] I also really recommend to doing this parallel to me and
+[00:55:42] and seeing directly what everything does.
+[00:55:44] So you can have a new file, you can import export something,
+[00:55:49] you can edit, can do anything.
+[00:55:54] Make a light theme or dark,
+[00:55:58] doesn't really matter.
+[00:56:04] All the same. This one, nodes 2.0 beta version,
+[00:56:08] put it on. It just it shows the visuals a bit different.
+[00:56:13] You can go browse templates, settings,
+[00:56:15] etc. Here on assets, it will be empty for you,
+[00:56:20] but this is some of the past images I generated.
+[00:56:24] You can also see how long it took to generate.
+[00:56:26] So this one you will see later on in this tutorial that we will generate this one.
+[00:56:32] This took fifty seconds because it's quite a big image.
+[00:56:40] then here node library. This is going to be you're not going to use this
+[00:56:46] one a lot. Model library we will use in the next module
+[00:56:52] in the text-to-image one. Workflows,
+[00:56:55] you can save all your workflows here.
+[00:56:58] How do you do it? Let's say you have a workflow and you click on save as,
+[00:57:03] you give it a name, and you will find it on the workflows.
+[00:57:08] Apps you will not use in this workflow in this course.
+[00:57:12] Templates is super super super important.
+[00:57:16] This is probably the most important thing that I will tell you today.
+[00:57:20] Everything that I will show you are my templates,
+[00:57:23] but comfy cloud provides a lot of ready- made templates that you can just use.
+[00:57:30] Everything here, if you click on it,
+[00:57:33] for example, I'm going to
+[00:57:38] Get one that is a bit accessible.
+[00:57:40] Let's say we want a image
+[00:57:46] Edit model for example
+[00:57:58] Doesn't really matter which one but I'm go I'm searching one
+[00:58:09] Here this one. This was like this is one of the most basic ones.
+[00:58:14] I see it's glitching now, so let me refresh it.
+[00:58:18] Sometimes that happens.
+[00:58:27] So now it's there. You can close this one.
+[00:58:30] This is only for local users. So if you're running this locally,
+[00:58:34] here it tells you which model.
+[00:58:37] So you can click on it and it downloads this VAE.
+[00:58:43] I don't need it, but you can download it directly here.
+[00:58:46] And then
+[00:58:49] it will tell you in which folder you have to put all the models and stuff.
+[00:58:54] But for this tutorial it's irrelevant,
+[00:58:56] so I'm going to delete it. So this is how a workflow looks.
+[00:59:01] You can take all the nodes we saw before,
+[00:59:04] you can drag and drop, you can make them smaller or bigger.
+[00:59:07] If you click on it here on the on top.
+[00:59:12] You can give it a color if you want.
+[00:59:14] It's just a preference. make it bigger,
+[00:59:20] can do anything you like. I like to structure them like this.
+[00:59:26] and then when you click on run,
+[00:59:30] let's see what happens. So the input is an image of a woman.
+[00:59:34] This is just a the template. It will say the prompt.
+[00:59:41] To add a beanie on her head and it will do it.
+[00:59:45] So this is a the first example of the most famous
+[00:59:50] workflow currently. And then here you can click on download if
+[00:59:57] you want to download the image.
+[00:59:58] Here we have some settings that we're not going to cover now.
+[01:00:02] I could save this workflow as save as,
+[01:00:05] I could export it, I could delete it if you if we want.
+[01:00:11] Do everything. Now, because I have a lot of workflows open,
+[01:00:15] and I this is just an example,
+[01:00:16] I will close anyway before deleting it,
+[01:00:21] and then it's empty again. This is just a quick overview.
+[01:00:26] If you need something, your account is up here.
+[01:00:29] You can see how many credits you have,
+[01:00:31] you can change your plan, you can log out,
+[01:00:33] account settings. Here, this is an important one,
+[01:00:38] it's running the workflow. So
+[01:00:41] Here batch count, the number right before the running.
+[01:00:49] this is how many times it will run.
+[01:00:51] So if you put fifteen here, which I don't recommend,
+[01:00:55] is when you click run once, it will loop 15 times.
+[01:00:59] So it will generate an image, another one,
+[01:01:02] another one, and it will keep going for 15 times.
+[01:01:05] So just keep it at one. Here you can see which images
+[01:01:10] are in the queue. So let's say you generate five images,
+[01:01:14] then every time the
+[01:01:16] it gets added to the waiting list.
+[01:01:19] That is a brief introduction. We will be using this a lot,
+[01:01:23] so don't worry if it's not all clear.
+[01:01:28] Setting up Comfy Cloud we did. Some practical things.
+[01:01:32] Why do we use Comfy? We kinda explain it.
+[01:01:36] But why do I use Miro to share documents or images?
+[01:01:42] It is because if you go to Miro
+[01:01:49] And you go to an image, all images here work that way,
+[01:01:52] that's why I only provide those images.
+[01:01:55] Let's say you're here. Here it also says importable in Comfy.
+[01:02:01] So when you click on this, you can download it.
+[01:02:05] Let's say we download this one.
+[01:02:13] Downloaded it for me it's already there so
+[01:02:21] We take this image, we drag and drop it in our workflow.
+[01:02:31] And then we see the whole the whole workflow.
+[01:02:35] So this is exactly the exact workflow,
+[01:02:40] exact prompt settings that I used to generate this image.
+[01:02:46] Which means if we click on run now,
+[01:02:49] these nodes will get activated.
+[01:02:52] You will see a blue border around it.
+[01:02:55] And here in the end, you will see exactly the same image appear as here.
+[01:03:02] So let's see what happens.
+[01:03:06] You see how fast it gets generated?
+[01:03:08] This is exactly the same image as here.
+[01:03:11] Why is that? It's because the seed was exactly
+[01:03:16] the same as I used. And here we see all the nodes that
+[01:03:22] I explained very much in depth before,
+[01:03:25] so you can just roll around, you can make it smaller or bigger.
+[01:03:31] You see this.
+[01:03:34] Noodle is connected to that one.
+[01:03:37] It's not really clear because it's behind it.
+[01:03:41] Take it apart and see which one are connected.
+[01:03:44] So the model here is connected to that model.
+[01:03:47] Let's say you break it.
+[01:03:52] You cannot do very like a lot of things wrong because if you drag this
+[01:03:57] one and you want to connect it here,
+[01:03:59] it's not possible. You see it becomes transparent.
+[01:04:02] Because this is a different type of information.
+[01:04:05] So if you go around here, it will snap,
+[01:04:10] it will automatically go there because it's made to do that.
+[01:04:14] And then when you leave it gets connected.
+[01:04:20] Add node in between. You can add anything.
+[01:04:24] It's a bit advanced, but this is the general idea.
+[01:04:30] So this is the most basic basic workflow.
+[01:04:32] which is important is the seed.
+[01:04:37] Remember that it's like the national ID of the image,
+[01:04:40] which
+[01:04:44] If you click here, you can fix it on this value.
+[01:04:49] If you randomize it, then every time it just it's a different seed.
+[01:04:54] So it will always do it will always follow the prompt,
+[01:04:57] which is beautiful scenery nature glass bottle landscape,
+[01:05:02] purple galaxy bottle. It's a super weird prompt,
+[01:05:06] but you see that it did that.
+[01:05:12] If we rerun, now it has a different seed because last time when we run it,
+[01:05:19] it said randomize value,
+[01:05:24] it shuffles the value randomly after each generation.
+[01:05:27] So we click on run and it will still be beautiful scenery,
+[01:05:33] nature glass, bottle landscape,
+[01:05:35] but it will be a different image than this one.
+[01:05:40] See, so if I do it again, it will always be a different one.
+[01:05:51] Now you see it's active so it's generating.
+[01:05:54] Sometimes it's super fast, sometimes it takes some time.
+[01:06:01] So it's always this one.
+[01:06:05] Now why do I show this? It's because when you click here and you click
+[01:06:09] on fixed value, we run it again.
+[01:06:13] Now one time it's still going to be a different image.
+[01:06:16] From now of on,
+[01:06:19] if we click on run, it will be exactly the same image every time.
+[01:06:26] You see it didn't change it. Job completed and it's still the same image because
+[01:06:30] we locked the seed. So it's not making a new seed anymore.
+[01:06:35] It's taking exactly the same. So we can click here a thousand times
+[01:06:39] and it will always be this image as the output image.
+[01:06:43] Every time. If I download
+[01:06:49] You see job complete, it's the same image.
+[01:06:51] If I download this one and I take it
+[01:06:57] And I input it here.
+[01:07:01] You can download this one and try it,
+[01:07:03] and it will be exactly the same.
+[01:07:05] Same for here. Look at the seed,
+[01:07:09] and you will see a different seed number.
+[01:07:11] Okay. Let's say we keep the seed locked or fixed.
+[01:07:18] And we change the steps to four steps.
+[01:07:23] So now the model only has four steps to generate the image,
+[01:07:28] which results in
+[01:07:30] a broken image because it didn't have enough steps to generate the image.
+[01:07:37] I will quickly go back in the slides.
+[01:07:42] To show you
+[01:07:47] Here. So it's like saying instead of having these na ten steps,
+[01:07:53] you have to stop here.
+[01:07:58] Of course the image is not going to be good because it was still generating,
+[01:08:02] so we cut it actually short. So that's what I just did.
+[01:08:08] Right for now how do you know how much steps to put in?
+[01:08:14] The rule of thumb is the templates I will provide or the templates that
+[01:08:20] are for of Comfy, they have the best settings,
+[01:08:26] so don't change that. It's more like an advanced things to
+[01:08:30] to actually change it rather than something that you as a beginner have
+[01:08:36] to do. So don't change it.
+[01:08:39] unless you're just playing around with it.
+[01:08:40] So if you put it back at twenty and you generate again,
+[01:08:45] you will see it's exactly the same image as before.
+[01:08:48] A CFG, remember this is how much the model gets like
+[01:08:55] follows the prompt versus how much creativity it can do.
+[01:08:59] So if we put it at twenty, so very high,
+[01:09:04] it'll try to follow the prompt extremely closely.
+[01:09:09] Extremely closely.
+[01:09:18] Generating
+[01:09:29] Which means like it's breaking the image because it's trying
+[01:09:32] to follow it so exactly that it's too much.
+[01:09:35] Again, if we put it back at eight and we run,
+[01:09:40] it's again the same image. Now let's say we put it at one.
+[01:09:45] So one means that there is it can do whatever it wants.
+[01:09:51] It doesn't really have to follow the prompt,
+[01:09:53] it doesn't have to make a glass bott bottle,
+[01:09:56] it has a lot of freedom.
+[01:09:58] So you can see it doesn't follow it correctly,
+[01:10:00] it's just doing something. So it's important to keep the CFG around 8.
+[01:10:06] For this model, for Stable Diffusion 1.5.
+[01:10:11] For newer model, it's different settings,
+[01:10:13] but don't worry about that. Last thing what we're going to see is
+[01:10:18] Empty Latent Image. So let's say we put it at 1024,
+[01:10:22] the width.
+[01:10:26] Then you will see the output image becomes a rectangle.
+[01:10:32] So just play around with it, what happens batch size,
+[01:10:36] let's say we put it at three, it's actually the same as if you put it at here.
+[01:10:44] So now it will generate three images.
+[01:10:46] So one
+[01:10:50] to entry.
+[01:10:56] Okay, I hope that is a bit clear.
+[01:11:04] Let us advance a bit more.
+[01:11:08] So what happened in the workflow?
+[01:11:09] We had a look at that. Now the next thing,
+[01:11:12] ways of prompting. There's three main ways of prompting.
+[01:11:16] So the first one is keyword prompting,
+[01:11:18] keyword prompting,
+[01:11:23] sorry, it's just putting words.
+[01:11:25] This is not how we do it anymore.
+[01:11:27] This is more how it was back in the days.
+[01:11:30] This is also something you just saw.
+[01:11:35] Here it's just the words beautiful scenery,
+[01:11:37] nature, glass. This is how old workflows like this
+[01:11:43] one used to used to be prompted.
+[01:11:48] Then natural language, this is how we do it now.
+[01:11:50] It's just sentences, a wide angle shot of a minimalistic brutalist concrete,
+[01:11:56] etc. The general rule is the earlier you put something in the prompt,
+[01:12:02] the more serious it has it will be taken.
+[01:12:06] So if it's something super important,
+[01:12:08] let's say it has super important that is Barcelona,
+[01:12:11] put it early in a prompt because the further it is to the back,
+[01:12:16] the less
+[01:12:17] serious it will be taken. But that's just a rule of thumb.
+[01:12:20] The third way of prompting is called JSON prompting and we will
+[01:12:26] use it like we won't do it ourselves but we will use an AI assistant
+[01:12:32] to prompt for us in this way. Now these three ways of prompting this they
+[01:12:37] say the same thing. They say something about Barcelona,
+[01:12:40] brutalist, concrete and stuff,
+[01:12:41] but just a different way of
+[01:12:45] Structuring the information so the model understands it better.
+[01:12:49] So we will mostly be using these two here.
+[01:12:57] So these two.
+[01:13:01] Why do I show all of them? It's because this is these are older models,
+[01:13:06] and when we talk a bit about history,
+[01:13:08] they are going to be part, you will see these names pop up.
+[01:13:13] Natural language is more the newer models,
+[01:13:17] and AI Assistant is only only FLUX.2,
+[01:13:19] which is the newest one. JSON prompting,
+[01:13:23] it's just a structure. As if you say create a list of five startup ideas related
+[01:13:30] to sustainability.
+[01:13:31] You can also say generate ideas,
+[01:13:34] domain sustainability, type startup,
+[01:13:37] count five. It's the same information but in a different structure.
+[01:13:45] Prompt coach setup. So if we go to Miro.
+[01:13:53] We will see the next thing here.
+[01:13:57] So you can actually skip this,
+[01:13:59] it's just for information. Prompt coach setup.
+[01:14:02] There's two ways of doing this.
+[01:14:05] So we will be using quite some models and I made this prompt.
+[01:14:16] So as you can see here, I have two variants of the prompt coach setup.
+[01:14:21] This is just an easy one. It's actually the best one.
+[01:14:23] This is the one I'll also be using.
+[01:14:26] And then you have this ultra detailed one,
+[01:14:29] which is way too long. But it gives you like an idea of like you can read
+[01:14:35] it and go through it. So what we will be doing,
+[01:14:41] copy and paste,
+[01:14:44] make a new project.
+[01:14:48] In your favorite LLM, doesn't matter which one.
+[01:14:54] You copy and paste it in here,
+[01:14:55] save instructions, and then you can just say start.
+[01:14:59] And it will if you have a prompt,
+[01:15:03] or you just have to have an idea,
+[01:15:05] like I don't know, rocky mountain building or something,
+[01:15:09] or pavilion in Barcelona, put your prompt here,
+[01:15:12] it will ask for which model, and then it will ask,
+[01:15:17] do you want a long or a short prompt?
+[01:15:19] And then it will based on your model that you
+[01:15:24] said it will automatically make the prompt good for that model.
+[01:15:29] So you don't have to prompt anything yourself and use it like that.
+[01:15:33] We will be using this later on.
+[01:15:38] So that being said, the prompt coach setup is done.
+[01:15:46] So now we're going to head in a quick history overview of the diffusion models.
+[01:15:51] In the kitchen or restaurant metaphor,
+[01:15:55] these are the chefs, right? So what you see here are
+[01:16:00] the models that were released.
+[01:16:03] So it all started with Stable Diffusion 1,
+[01:16:05] Stable Diffusion 2, SDXL, Cascade,
+[01:16:10] and then eventually FLUX.1 came,
+[01:16:13] FLUX Kontext, FLUX.2.
+[01:16:16] So these are all just models that were released.
+[01:16:24] between twenty twenty two and twenty twenty four.
+[01:16:27] so these are just example images.
+[01:16:33] The main thing yet you have to remember here is that there were two very important
+[01:16:37] companies. The first one is not really relevant anymore.
+[01:16:42] It's stability AI. This is the company behind all the
+[01:16:51] like all these models,
+[01:16:54] so the first five very famous ones and then the other
+[01:17:00] the last four or like last three in this image were all made
+[01:17:06] by black forest labs. So the idea is that the people from stability
+[01:17:12] ai they some of them went and founded black forest labs.
+[01:17:19] Now this probably doesn't mean a lot to you,
+[01:17:22] but what you see here is that FLUX.1,
+[01:17:25] when it came out in 2024,
+[01:17:29] they released a lot of models that each has a specific function.
+[01:17:34] Now in 2025, beginning 2026,
+[01:17:38] they launched FLUX.2,
+[01:17:41] and you have a lot of different models,
+[01:17:45] and we're not going to go deep into that.
+[01:17:48] We will be using FLUX SDXL, that's the workflow we already used.
+[01:17:53] We use SDXL here, sorry,
+[01:17:56] Stable Diffusion 1 and Stable Diffusion XL.
+[01:18:00] Of Black Forest Labs we will be using FLUX.1
+[01:18:05] and FLUX.2 klein 9B. Very specific.
+[01:18:12] Where you actually find these models,
+[01:18:14] when you use Comfy Cloud, you don't need to download anything.
+[01:18:17] Everything is already on Comfy Cloud.
+[01:18:20] But if you're interested in this,
+[01:18:22] you can go to this link.
+[01:18:31] Go to Hugging Face and you type in let's start
+[01:18:35] by SD one point five
+[01:18:45] Let's say stability.
+[01:18:51] Yeah, so this is the company stability AI.
+[01:18:54] Here you see their repository Stable Diffusion XL for example.
+[01:19:00] This was one of the older models.
+[01:19:04] If you download it here, it's six, almost seven, gigabytes,
+[01:19:09] okay?
+[01:19:12] So that is this one,
+[01:19:16] the old models. If we go to FLUX.2 klein 9B.
+[01:19:23] We just search it on Hugging Face.
+[01:19:28] So by Black Forest Labs, FLUX.2 klein 9B,
+[01:19:31] if you go to site files and versions,
+[01:19:33] you can download it from here.
+[01:19:38] This one is eighteen gigabytes,
+[01:19:42] which is not that big because it's just nine billion parameters.
+[01:19:46] But if you go to the developer one,
+[01:19:49] so this one, this is the full on big,
+[01:19:52] big, big model they released.
+[01:19:57] You can see it is 64 gigabytes.
+[01:20:00] It's gigantic. It's trained on 32 billion images.
+[01:20:05] It's so big and it's also pretty slow to run.
+[01:20:09] If I run it with this laptop it will probably explode.
+[01:20:13] So it's just to prove that these models became very very big.
+[01:20:20] all these things you don't have to understand.
+[01:20:24] It's more that when these new models came out,
+[01:20:28] the difference is that the in the beginning it was you had text models
+[01:20:34] and you had image models and now they're more and more combined.
+[01:20:38] So they also understand text super well,
+[01:20:40] they understand image also very,
+[01:20:43] very good. FLUX.2 under understands hex codes.
+[01:20:48] So if you have a specific color that you want,
+[01:20:50] you can find the hex code and it will understand exactly that color.
+[01:20:55] It understands JSON prompting,
+[01:20:57] as we saw before.
+[01:21:01] it has a great contextual understanding,
+[01:21:04] which means it knows a lot,
+[01:21:08] a lot, and output quality is super good,
+[01:21:10] you can go up to 4k. All these things I'm going to skip because it's
+[01:21:16] a bit too theoretical, but you can have a look at it if you're interested.
+[01:21:20] This table we already saw,
+[01:21:23] it's a bit of an overview. We went from 860 million parameters in 2022.
+[01:21:30] to thirty two billion parameters in twenty twenty five.
+[01:21:37] these are just some stats and some differences between the models.
+[01:21:46] So if you're interested check it out.
+[01:21:48] You don't need to know all this to actually use it and use the templates.
+[01:21:54] This PDF, by the way, is also you will find
+[01:22:00] it under models overview, just an overview I made.
+[01:22:04] You can toggle here to understand some
+[01:22:11] Things better.
+[01:22:15] Now now we understand why open source can be interesting,
+[01:22:18] but how could I utilize this myself?
+[01:22:22] A very important one is LoRAs.
+[01:22:25] LoRAs are low-rank adaptations,
+[01:22:28] it's just the meaning of the word.
+[01:22:30] What it is, is when we're talking about AI models,
+[01:22:35] diffusion models, it's trained on billions of images,
+[01:22:38] that's not something what that we are doing as as users.
+[01:22:44] because we don't have the resources to do that and it's just too too big to do.
+[01:22:48] A LoRA anybody can make because a LoRA is trained on 20 to 30 images.
+[01:22:55] That's why it's called a low-rank adaptation.
+[01:22:58] So it's a very small file, it's just 100 megabytes.
+[01:23:02] And this file only knows one thing,
+[01:23:06] and it is a style. So let's say we have this prompt,
+[01:23:11] just
+[01:23:12] A long prompt like a to make an image as if it
+[01:23:17] was designed by Calatrava or anything like that.
+[01:23:20] It's just for proving a point.
+[01:23:24] Without a LoRA it looks like this.
+[01:23:29] It's not really Calatrava-like,
+[01:23:31] but it's more blob architecture.
+[01:23:33] But you can see that the aesthetics are quite plasticky,
+[01:23:37] it's quite AI generated. Now I made a LoRA that
+[01:23:42] is trained specific on specifically on real images photographed
+[01:23:48] by analog photography. So it won't be as AI generated.
+[01:23:53] So if we take the same prompt but we use mylora
+[01:24:00] And this model is trained on just these these twenty to thirty images made
+[01:24:06] by a specific camera that I really like.
+[01:24:12] So then this is the output, which again it's a bit it looks the same,
+[01:24:17] it's still blob, it still has a road in front,
+[01:24:21] it still has some trees or like some vegetation,
+[01:24:24] but you can see that this already looks way more realistic,
+[01:24:27] and this is just how I like it.
+[01:24:28] It's not better or worse, it's just an example to steer the output image
+[01:24:35] in a style that you prefer. And then we have Nano Banana Pro to compare a bit,
+[01:24:40] the same prompt.
+[01:24:42] you have less less control, I would say.
+[01:24:47] And this is just another example of an image with a with the same prompt without
+[01:24:53] and with my custom LoRA. Now,
+[01:24:56] just to explain it a bit better,
+[01:24:58] training a LoRA not super difficult.
+[01:25:01] I think I've already trained about 20 of them.
+[01:25:04] You just need to know how to do it.
+[01:25:06] we're not going to cover how to actually train a LoRA because that's
+[01:25:11] a course in itself. but in the
+[01:25:16] file and the folder you will receive from this lecture.
+[01:25:19] There will be a folder of LoRA and in the next module,
+[01:25:24] so in text to image, I will actually show you how you import them,
+[01:25:28] how you use them, how you can tweak them,
+[01:25:31] etc.
+[01:25:34] So for example, if we take this massing from
+[01:25:39] the third module, which is image to image,
+[01:25:43] and we have this reference style image,
+[01:25:47] and we want to apply it on the on the geometry.
+[01:25:51] Without the LoRA it looks like this on FLUX.2.
+[01:25:54] It's just it's pretty plasticky.
+[01:25:56] Graphically it's not super good.
+[01:25:58] With my LoRA, it can look like this.
+[01:26:01] I wouldn't say it's perfect, but it
+[01:26:04] It's way more realistic, it has these soft soft shadows and
+[01:26:11] not this like plastic aesthetic.
+[01:26:13] very important is that LoRAs are model specific.
+[01:26:18] So LoRA trained on Stable Diffusion one point five,
+[01:26:22] the older model, it won't work on FLUX.2 and vice versa.
+[01:26:28] It's like speaking Dutch to a French guy.
+[01:26:31] It
+[01:26:32] doesn't know what you're talking about and it won't work.
+[01:26:35] So always check for which model the LoRA was created.
+[01:26:39] Now in general if you find a workflow and if you download it will be
+[01:26:45] it will be clear which which LoRA and which model.
+[01:26:51] So don't worry about it but just know that you cannot just take a LoRA that
+[01:26:56] was trained on SD 1.5 and apply it to FLUX.2.
+[01:27:01] how to find interesting LoRAs at these websites Hugging Face and Civitai which
+[01:27:08] are also on the on the Miro board if you go up LoRA links you
+[01:27:14] can find on Hugging Face on Civitai and GitHub or just on the internet.
+[01:27:20] Yeah that being said you can check it out.
+[01:27:29] Or ask of course your LLM to provide some URLs.
+[01:27:33] This denoising scheme is a bit confusing,
+[01:27:38] so I'm going to skip that one and going to jump straight into this one.
+[01:27:43] What we see here is exactly the same as we saw before.
+[01:27:48] You have an input, let's say text or image,
+[01:27:52] and then in X amount of steps you go to an output.
+[01:27:56] This is just the diffusion process.
+[01:28:00] What a LoRA does is it jumps in between the steps.
+[01:28:06] So let's say we say we have a text prompt saying
+[01:28:14] cat. Very very simple. We say cat.
+[01:28:17] without a LoRA it will just take steps and it will do anything like cat,
+[01:28:24] but we don't have control because it can be a photo of a cat,
+[01:28:27] it can be
+[01:28:29] A sketch of a cat, it can be a cat that is running or laying down or jumping,
+[01:28:35] it can be anything we don't know.
+[01:28:37] If we train a LoRA specifically on cats,
+[01:28:42] black cats, which are lying on their back,
+[01:28:47] then the LoRA will tell in between every step,
+[01:28:51] okay, you're still making an image of a cat,
+[01:28:54] but
+[01:28:55] Remember to make it a black cat and it must be laying on its back,
+[01:29:00] or I don't know, a LoRA trained on sketches of cats will make only that.
+[01:29:05] So you see the LoRA only knows one thing.
+[01:29:08] It knows an aesthetic or a visual character or an architect for example,
+[01:29:14] and it can only do that. So it b it steers the big unit,
+[01:29:20] so the big diffusion model, which is let's say sixty four.
+[01:29:25] Gigabytes while the LoRA is only one hundred megabytes and it steers
+[01:29:31] it in a aesthetic direction.
+[01:29:33] And then you can see the "without" and the "with" just because I trained
+[01:29:39] it on thirty five millimeter analog photography.
+[01:29:46] Just some examples.
+[01:29:50] If you're interested in it, be sure to follow it because I've re received
+[01:29:56] a lot of requests on a course on LoRA training,
+[01:29:59] so we might actually set this up in detail to teach you how to how
+[01:30:05] to do this in the future. But follow the platform,
+[01:30:09] follow me personally, and you will be notified when we are doing so.
+[01:30:17] This is just a quick heads up on how I do it and how I automate a lot
+[01:30:21] of the boring the boring stuff that comes with LoRA training.
+[01:30:32] Okay, that being said, we have covered everything for module one,
+[01:30:37] which is the introduction. So I'm going to end this module,
+[01:30:42] and the next one we will continue with is Module 2,
+[01:30:46] Text to Image. Thank you.

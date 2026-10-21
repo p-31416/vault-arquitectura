@@ -2,7 +2,7 @@
 tipo: playbook
 codigo: pbk-agentes-vaultarq
 fecha_creacion: 2026-09-09
-ultima_actualizacion: 2026-09-09
+ultima_actualizacion: 2026-10-20
 tags: [pbook, agentes, opencode, vaultworm-arq, brainstormy, subagent]
 ---
 
@@ -28,7 +28,7 @@ tags: [pbook, agentes, opencode, vaultworm-arq, brainstormy, subagent]
 | `@vaultworm-arq` | subagent | 0.3 | Digest `raw/sessions/` → propone qué va a `wiki/` | Digest UNICO/día 23:00 AR + on-demand | `.opencode/agents/vaultworm-arq.md` |
 | `@brainstormy` | subagent | 0.85 | Sesiones divergentes/convergentes → Top 3 + wildcards | On-demand (`brainstorm`, `idear`, `concurso`…) | `.opencode/agents/brainstormy.md` |
 | `@fathom-pm` | subagent | 0.3 | Reuniones Fathom → `specs/` (SPEC/PLAN/TASKS/OKRs) → Leantime, regla pomodoro | Tras cada reunión + on-demand | `.opencode/agents/fathom-pm.md` |
-| `@contenidos` | subagent | 0.3 | Videos OBS + PDF/video manual → reporte `raw/contenidos/` legible HITL → `wiki/estudio/` directo + glosario vía `@vaultworm-arq` (F1 = OBS + manual con invocación) | Tras grabar/transcribir o entrega manual + on-demand | `.opencode/agents/contenidos.md` |
+| `@contenidos` | subagent | 0.3 | Extiende la ficha de @sherlock (videos OBS + PDF/video manual) → reporte `raw/contenidos/` legible HITL → `wiki/fuentes/` con `s` (glosario vía `@vaultworm-arq`) | Tras ficha aprobada + on-demand | `.opencode/agents/contenidos.md` |
 | `@sherlock` | subagent | 0.2 | Investigador GENERAL tema libre (humano/redes/legado/papers/software manual-primero) bilingüe ES/EN+IT → `raw/research/` → `¿Avanzo?` → `@vaultworm-arq` + código paralelo anotado | On-demand (`@sherlock investiga <tema>`) | `.opencode/agents/sherlock.md` |
 
 ## vaultworm-arq — bibliotecario
@@ -51,17 +51,19 @@ tags: [pbook, agentes, opencode, vaultworm-arq, brainstormy, subagent]
 
 ## contenidos — curador academia
 
-**Cómo está conformado (código):** frontmatter igual esquema + `temperature: 0.3` + skill espejo `contenidos` (trigger `@contenidos`). Cuerpo: Misión (6 pasos: intake OBS + manual → analiza → propone → reporte `raw/contenidos/` legible HITL → gate `¿Avanzo?` → escribe `wiki/estudio` / deriva glosario), FASE 1 = OBS + material manual con invocación explícita (`@contenidos procesa <path>`).
+**Cómo está conformado (código):** frontmatter igual esquema + `temperature: 0.3` + skill espejo `contenidos` (trigger `@contenidos`). Cuerpo: Misión (6 pasos: intake OBS + manual → analiza → propone → reporte `raw/contenidos/` legible HITL → gate `¿Avanzo?` → escribe `wiki/fuentes/` / deriva glosario), FASE 1 = OBS + material manual con invocación explícita (`@contenidos procesa <path>`).
 
-**Qué hace:** videos OBS **o PDF/video manual entregado por SOL** → reporte `raw/contenidos/YYYY-MM-DD-<slug>.md` (Resumen + Destino wiki + Contenidos extraídos + Ruta+frontmatter + Tags + Referencias 200) → con `s` escribe `wiki/estudio/**` y `pbooks/pbk-*` directo, glosario vía `@vaultworm-arq`. `@sherlock` solo BUSCA (web/redes/YouTube/PDFs); `@contenidos` es quien PROCESA. **Cuándo:** tras grabar/transcribir o entrega manual + on-demand. Piloto: "entrega del servicio de IA". Skills downstream: `article-writing`+`brand-voice`, `deep-research`.
+**Qué hace:** videos OBS **o PDF/video manual entregado por SOL** → reporte `raw/contenidos/YYYY-MM-DD-<slug>.md` (Resumen + Destino wiki + Contenidos extraídos + Ruta+frontmatter + Tags + Referencias 200) → con `s` escribe `wiki/fuentes/**`, glosario vía `@vaultworm-arq`. **Cuándo:** tras grabar/transcribir o entrega manual + on-demand. Piloto: "entrega del servicio de IA". Skills downstream: `article-writing`+`brand-voice`, `deep-research`.
+
+**Frontera con @sherlock (2026-10-20):** la división es **la ficha de extracción aprobada por SOL**. `@sherlock` busca, descarga y extrae (transcripción + ficha en `raw/pdf/`) y entrega un stub en `raw/contenidos/`; `@contenidos` **extiende** esa ficha (template, resumen, destinos, tags) y con `s` la pasa a `wiki/fuentes/`. Las citas de una ficha se tratan como **candidatos**: se verifican (nivel 1), se listan y esperan `s` por fuente (nivel 2); nunca se encadenan solas (nivel 3). Un contenedor (special issue, repositorio) es *hub*, no fuente.
 
 ## Comparativa
 
 | | vaultworm-arq | brainstormy | fathom-pm | contenidos | sherlock |
 |---|---|---|---|---|---|
 | Temp | 0.3 (criterio) | 0.85 (cantidad) | 0.3 (criterio) | 0.3 (criterio) | 0.2 (criterio) |
-| Output | digest + propuestas wiki | ideas + Top 3 + JTBD | specs/ + plan pomodoro | reporte `raw/contenidos/` + `wiki/estudio/` | informe `raw/research/` + `00-index` |
-| Escribe wiki | solo `glosario/**` con `avanza` | solo si hay teoría nueva | `specs/` con `¿Avanzo?` | `wiki/estudio/**` directo + glosario vía vaultworm | nunca — propone, delega a vaultworm |
+| Output | digest + propuestas wiki | ideas + Top 3 + JTBD | specs/ + plan pomodoro | reporte `raw/contenidos/` + `wiki/fuentes/` | informe `raw/research/` + ficha `raw/pdf/` |
+| Escribe wiki | solo `glosario/**` con `avanza` | solo si hay teoría nueva | `specs/` con `¿Avanzo?` | `wiki/fuentes/**` con `s` | nunca — entrega ficha y stub |
 | Trigger auto | sí (schedule diario) | no (mención) | no (tras reunión) | no (tras grabar/manual) | no (`@sherlock investiga <tema>`) |
 | Intake | `raw/sessions/` | prompt | `raw/reuniones/` | `activos/videos/` + manual SOL | web (`websearch/webfetch`) |
 

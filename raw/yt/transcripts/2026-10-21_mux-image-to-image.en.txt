@@ -1,0 +1,1047 @@
+[00:00:01] Hello everybody and welcome to module 3.
+[00:00:03] Now we're going to head into image to image.
+[00:00:08] As we saw before with text to image,
+[00:00:11] we have the creative process, the phases of the creative process.
+[00:00:18] And while text to image was more applicable in the ideation phase
+[00:00:23] and early design phases where you just want to explore very quickly.
+[00:00:29] Image to image becomes more interesting in the bit later in the process.
+[00:00:34] So when we talk about fabrication,
+[00:00:36] we talk about iterative design tasks and actually the phase of the design where
+[00:00:41] you want to keep control while also experiment with new ideas.
+[00:00:47] Image to image can also be interesting in the visualization.
+[00:00:52] So in the last parts of the creative process.
+[00:00:58] And then we're talking about upscaling and having final renders.
+[00:01:04] A little bit of context. So text to image.
+[00:01:06] The idea is that you start from pure noise as we saw before.
+[00:01:10] We go from nothing to something.
+[00:01:12] We create something new out of text.
+[00:01:16] Image to image on the other hand,
+[00:01:18] starts from something and goes to something else.
+[00:01:22] So that is the idea behind it.
+[00:01:28] We're going to start with the easiest use case before actually going into
+[00:01:35] design. Upscaling. So what upscaling actually is,
+[00:01:40] is just creating the same input image but with a higher resolution.
+[00:01:46] And this scheme illustrates it quite well.
+[00:01:49] I'm going to annotate it so you can see.
+[00:01:52] Let's say you have an image.
+[00:01:56] In this case a video, but it doesn't matter.
+[00:01:58] It's the same room and it is 1280
+[00:02:03] by 720 pixels. So that is the dimension
+[00:02:07] of this image.
+[00:02:10] If you split it up into pixels,
+[00:02:14] you will see that it has X amount of pixels.
+[00:02:17] So if this is one pixel, what upscaling does
+[00:02:23] is for every
+[00:02:25] pixel,
+[00:02:25] We chop it into pieces. So in this case in nine pieces,
+[00:02:30] because we have three by three,
+[00:02:34] which means that the resolution will be three times higher.
+[00:02:40] Why does this happen? It's because it makes for every image,
+[00:02:44] it makes nine new images, which creates way more detail.
+[00:02:50] So it does this by chopping it up in pieces as we saw here.
+[00:02:55] 3 by 3 which makes 9 pixels and every pixel gets bigger.
+[00:03:01] So that's why in the output image
+[00:03:07] we have 3840. So we go from here to here it's times
+[00:03:13] 3 because every pixel becomes 3 pixels.
+[00:03:16] So let's say it's just blue then this becomes 9 different shades of blue.
+[00:03:24] For the height it's the same so it's just times 3.
+[00:03:28] Now why is this relevant? How does it work?
+[00:03:31] I'm going to show you using
+[00:03:38] the Miro board where I put some upscaling workflows.
+[00:03:42] So how I did it is this is the final workflow image
+[00:03:48] so you can download this one and at the bottom I always put the
+[00:03:53] process images. let's say a while ago I was looking
+[00:03:58] for a texture of this terrazzo style tile
+[00:04:05] and I found this image. Now if you zoom in you can see it's super super blurry.
+[00:04:11] The details are not very good even though it kind of portrays the idea
+[00:04:16] I want higher resolution. With this upscaling method
+[00:04:22] we can go to this quality. I hope you can all see how sharp this becomes,
+[00:04:26] especially when we put it together.
+[00:04:29] You can see that it goes from this resolution to this one.
+[00:04:33] And that is due to the upscaling workflow.
+[00:04:38] So what do we do? Like we did before,
+[00:04:41] we click on download.
+[00:04:46] For me, I have to download it again,
+[00:04:49] but for you it will automatically download.
+[00:04:53] We go to the Downloads folder,
+[00:04:55] we drag and drop it into...
+[00:04:59] Okay,
+[00:05:02] there was a mistake there. Let me try again.
+[00:05:07] We drag and drop it into Comfy.
+[00:05:09] And you can see it automatically gave us the workflow.
+[00:05:13] Now, since ComfyUI doesn't always remember
+[00:05:19] the uploaded image, I will just go here,
+[00:05:24] download the low resolution image as well.
+[00:05:37] this one then I will just drag and drop it in here
+[00:05:44] What I also could have done is click here and then select it.
+[00:05:48] That's the same. It doesn't really matter.
+[00:05:51] And how the workflow works is super simple.
+[00:05:57] So you could enter the subgraph and look at all these complicated nodes,
+[00:06:02] but we don't want to do that because that's not the focus of this tutorial.
+[00:06:07] We want to show you how you can actually use this and this super,
+[00:06:12] super technical background.
+[00:06:14] is for anyone who is interested but for now we're just going to keep it like this.
+[00:06:18] The only parameter that is super relevant is the upscale by.
+[00:06:22] So in the example we just saw here,
+[00:06:27] here we did an upscaling by 3.
+[00:06:31] How do we know? Because we went from this to this and that
+[00:06:37] is times 3. So every pixel went times 3 which makes it
+[00:06:44] nine pixels remember so that is
+[00:06:51] this factor. Let's say we want to upscale by 4,
+[00:06:54] which means every pixel becomes 16 pixels.
+[00:06:58] We can also work with a seed. For now,
+[00:07:02] it is put on randomize because just for the sake of explaining it,
+[00:07:08] if we click on run, it will take this image
+[00:07:12] and workflow will create extra pixels.
+[00:07:17] So you can see right now the resolution is
+[00:07:21] 1K by 1K oh that was a glitch
+[00:07:32] Now whenever it becomes blue we know that this node now is working.
+[00:07:37] When you go in you can see that this one specifically.
+[00:07:41] So the upscaler itself is working.
+[00:07:43] The other nodes have passed. You can see it's loading here.
+[00:07:53] Okay so when we zoom in now we see that it went from 1k
+[00:07:57] to almost 4k and you can see that the resolution is way way higher.
+[00:08:07] So from low to high resolution,
+[00:08:10] this is super simple. So that is the first workflow here.
+[00:08:14] The second one, we're not going to use a tile or a pattern.
+[00:08:20] You can also do the same for images.
+[00:08:22] It's essentially the same workflow.
+[00:08:24] So we took this one we generated earlier.
+[00:08:27] As you can see, when you zoom in,
+[00:08:30] the resolution is super low. And with this
+[00:08:34] workflow,
+[00:08:34] It creates a lot of extra details.
+[00:08:37] All the rocks and all the details now are super fine.
+[00:08:41] So you will see when you download them.
+[00:08:43] So for example, the upscaled one,
+[00:08:49] so the raw image, it's 1.8 megabytes.
+[00:08:52] This one is almost 25 megabytes.
+[00:08:55] So you have to be careful or be thoughtful about this,
+[00:08:58] that it will increase the file size so much.
+[00:09:03] that sometimes it becomes way,
+[00:09:05] way too big to actually handle.
+[00:09:07] So this is just another example of the same workflow.
+[00:09:14] Now, the thing is, as we saw before,
+[00:09:18] you can also use the templates of Comfy.
+[00:09:21] So you can go into templates and go to
+[00:09:26] use cases and scroll here.
+[00:09:31] until you find something that you like,
+[00:09:33] maybe in an upscaling workflow.
+[00:09:35] If we go back to all templates and we type in upscale.
+[00:09:44] Everything you see here are upscaling workflows.
+[00:09:47] So the one we just used was this one.
+[00:09:50] It's just a template. So you can see,
+[00:09:53] you recognize the, this one.
+[00:09:57] It's essentially just this one,
+[00:10:00] but with some minor changes, not noticeable.
+[00:10:03] So I didn't invent this workflow.
+[00:10:07] I just took it and tweaked it until I liked it.
+[00:10:13] What you can also do is go to all templates and click on tasks.
+[00:10:19] If you go to tasks, you can type in upscale.
+[00:10:29] image upscale and then it will filter automatically all the workflows that
+[00:10:35] do the same. So if for your image this one doesn't work or it doesn't really work
+[00:10:42] well just try another one.
+[00:10:46] The difference here and this is an important one is that if you just look
+[00:10:50] at it like this one without a symbol like this it means that
+[00:10:57] it runs
+[00:10:58] locally. So it runs on Comfy Cloud.
+[00:11:02] If you see Grok
+[00:11:06] or Magnific or Google,
+[00:11:10] it runs on an API. So it means that it's actually not Comfy Cloud
+[00:11:16] who is upscaling the image, but it gets sent to Google.
+[00:11:19] Google does its thing with the image and sends it back and you receive it.
+[00:11:24] Now since we are using Comfy Cloud,
+[00:11:27] You won't feel the difference.
+[00:11:28] Why? Because if you generate something and you click on run,
+[00:11:33] of course you're using credits,
+[00:11:36] right? So the more you generate,
+[00:11:39] the more credits you use. That is a subscription model.
+[00:11:43] You get 7,000 credits a month with the normal plan.
+[00:11:48] If you generate something, it goes down in credits.
+[00:11:52] The same goes for API.
+[00:11:56] ...
+[00:11:56] So let's say you use Google. Here it will say how many credits it will take.
+[00:12:02] So if you have 7,000 and one image takes 50,
+[00:12:07] you can calculate a bit how many images you can use.
+[00:12:11] Now be mindful, if you put it at 2K,
+[00:12:15] it drops significantly. So 4K costs 50,
+[00:12:20] 2K costs 28, and 1K is the same.
+[00:12:25] nobody uses that so 2K is the minimum that you will actually use.
+[00:12:30] So we're going to close this one.
+[00:12:37] Now we will just use this workflow here.
+[00:12:43] Download it.
+[00:12:53] drag and drop.
+[00:12:56] error because the input image is not working or it's not there.
+[00:13:02] So you can see this is a different workflow.
+[00:13:04] This works with a company it's called Topaz and they have a very good engine.
+[00:13:10] So you might wonder what the actual difference is between all these ones.
+[00:13:15] And it's just that their model works in a different way.
+[00:13:18] So some people like WaveSpeed a lot.
+[00:13:21] Some people like Topaz or Google.
+[00:13:24] Essentially they all work the same,
+[00:13:26] but some are better for photos,
+[00:13:31] some are better for architectural renders.
+[00:13:34] You have to just play around a bit,
+[00:13:36] whatever you like. I like this one.
+[00:13:39] It's a pretty simple one. I know Google works as well,
+[00:13:42] but all of them do the same essentially.
+[00:13:45] Now this from Topaz we're going to do together.
+[00:13:49] So I click here.
+[00:13:55] and let's take
+[00:14:00] Let's take this one, we did before.
+[00:14:06] So we can see that the image we just uploaded is 1024 by 1024.
+[00:14:11] Here we can input the exact measurements that
+[00:14:16] we wanted to receive.
+[00:14:19] Now this is different than the other workflow.
+[00:14:21] If we go back here, we say I want it by times four,
+[00:14:26] which means that it will automatically calculate how much the pixels will be.
+[00:14:32] In this one, I just have to output,
+[00:14:34] put the output
+[00:14:36] pixels. So if I want to do it times 2,
+[00:14:39] I put 2048 by 2048.
+[00:14:42] So I think you get the idea. Here it's manual.
+[00:14:45] Every time you just see a workflow,
+[00:14:48] try to understand how that workflow works.
+[00:14:50] In general, it's not rocket science.
+[00:14:52] So this one comes with a prompt.
+[00:14:56] So we can say enhance this photograph of a concrete house in a desert with rocky
+[00:15:00] landscape. The whole image is,
+[00:15:02] this is not applicable now. So we remove that.
+[00:15:06] Make all details hyper realistic.
+[00:15:08] Okay, so let's try.
+[00:15:13] Before doing it, we can see that there is a parameter called creativity
+[00:15:17] and this creativity scale, we'll put it at one.
+[00:15:20] It's a way of instructing the model how to think.
+[00:15:26] So when we zoom into the image,
+[00:15:28] we can see that the resolution is quite low.
+[00:15:33] Now in the upscaling process, the model will have
+[00:15:37] to think about the pixels that
+[00:15:42] it is
+[00:15:42] adding and in this generation in this adding pixels
+[00:15:47] you can say if if you want it to be very creative or not so
+[00:15:53] i put it at one
+[00:15:57] here, creativity scale at one.
+[00:15:59] So it will just do it very boringly what it is.
+[00:16:02] So it will do it literally. In the next generation,
+[00:16:07] this one is done, I will put it at nine and you will see the difference.
+[00:16:13] You will see that it's interpreting much more.
+[00:16:16] It's adding some details that there were not really in this image,
+[00:16:20] but it is suggesting way, way more.
+[00:16:24] So
+[00:16:26] This one gets generated and you can see that the details on this rock
+[00:16:31] for example everything is already way way better than the input image.
+[00:16:37] Now I'm going to show you something that is super satisfying and that
+[00:16:43] I really recommend you to use.
+[00:16:48] If you double click and you add a node,
+[00:16:50] the node is called compare images.
+[00:16:54] It's this one compare images,
+[00:16:58] the one by Comfy. So you can see here who created it: ComfyUI tools.
+[00:17:04] It's just somebody who made their own nodes,
+[00:17:07] but I recommend sticking to the one from Comfy.
+[00:17:11] So you click on compare images.
+[00:17:13] Then you.
+[00:17:17] put it behind the last one and now this becomes interesting.
+[00:17:21] So what we do is we take the output image of our enhancer,
+[00:17:27] we do it here, we link it to image A.
+[00:17:36] Then we take the original image and we link it to image B.
+[00:17:41] Right? So just do exactly like I am doing.
+[00:17:46] Now, that being said,
+[00:17:50] we're going to change now the creativity to nine.
+[00:17:55] Remember, this is the output when we put creativity at one.
+[00:18:00] It's just literally doing what the input image shows.
+[00:18:06] When we click on run, it will upscale in a different way.
+[00:18:11] So upscaling is not always the same.
+[00:18:13] You can like steer it a bit into more creativity or less creativity.
+[00:18:20] What this node will do is it will compare both images in
+[00:18:25] a very comprehensive way. So you can see the difference between before and after.
+[00:18:35] Okay, fast forward to when the image gets generated,
+[00:18:39] when we look at it, you see, now it added a lot of extra rocks
+[00:18:45] and the image has a lot more like details that were actually
+[00:18:52] not in the original image, you see.
+[00:18:55] So that is due to the creativity factor.
+[00:18:58] So we bumped it up, which means that the model
+[00:19:03] gets more freedom in inventing the new pixels.
+[00:19:08] Now the compare images node,
+[00:19:13] we can enlarge it to see the difference.
+[00:19:14] This is where it becomes interesting because we can just hover over it
+[00:19:19] and we can see the difference between before and after.
+[00:19:22] And it's much easier to do it like this compared to looking here because
+[00:19:29] then it looks identical to me or like almost.
+[00:19:33] Here you can really see the difference.
+[00:19:36] So you can now see clearly that this is before and this is after.
+[00:19:40] And then you can also see exactly what the model added.
+[00:19:45] So this really gives you control,
+[00:19:47] like mental control over before and after.
+[00:19:50] So you can start to understand,
+[00:19:51] okay, this is what the model changed from the input to the output image.
+[00:19:57] And I'm a big fan of this node called compare images.
+[00:20:04] The sequence here, you can also change them.
+[00:20:07] So you can link image A to the input image and image
+[00:20:13] B to the output image. It will just change which one gets shown first.
+[00:20:20] That's irrelevant for now. So this
+[00:20:25] one I will add here because
+[00:20:30] is outdated.
+[00:20:38] You can see this is a big image.
+[00:20:40] I have to scale it down a bit just to fit on the Miro board.
+[00:20:48] one as well or update it.
+[00:20:51] So how do I go to the previous image I generated?
+[00:20:55] It's just here. Then I can click on it.
+[00:21:04] Save image as. What we can also do here is
+[00:21:08] go to open as workflow in new tab.
+[00:21:13] If I click on this, it will do as we said,
+[00:21:18] it will import it again as we did before.
+[00:21:22] Okay. Now I want to save it as an image.
+[00:21:25] So I save it as an image.
+[00:21:32] Then I go to my folder.
+[00:21:36] it's this one. And I will put it on the Miro for you to download it.
+[00:21:42] So you have the exact workflow here so you don't have to make your own workflows.
+[00:21:48] But as I said, most of the my workflows are based on
+[00:21:53] the templates that Comfy provides.
+[00:21:56] These two are, I would say,
+[00:22:00] the most accessible ones. Before we go into the next part,
+[00:22:06] Make sure to check out the archive in the back of
+[00:22:11] the Miro board because here is another workflow that I used
+[00:22:15] to transform
+[00:22:17] this image which as
+[00:22:23] you can see is very
+[00:22:25] low quality into this.
+[00:22:30] So super super detailed. It's just a different workflow.
+[00:22:34] It uses FLUX.1.
+[00:22:36] I'm not going to go too deep into it,
+[00:22:37] but there's a thousand ways of upscaling.
+[00:22:41] So just download this one if you want to try it out yourself.
+[00:22:49] Okay, then we go back to...
+[00:22:54] presentation.
+[00:23:02] This is the one we saw, we did a live demo.
+[00:23:06] This is the Topaz website.
+[00:23:09] You can also just go to their website and try it out there.
+[00:23:13] Krea is a different one. There's almost unlimited ways of doing it.
+[00:23:20] This one we don't see because it's just one of the other ones.
+[00:23:28] Before we go into image edit.
+[00:23:33] we're actually going to go to Rhino to image.
+[00:23:38] This is the main workflow of this course and how it works is the following.
+[00:23:44] So it is trained to transform 3D models into hyper
+[00:23:51] realistic images. So this one is a generic 3D model
+[00:23:56] of a building I made for testing.
+[00:24:00] I added some trees, some figures,
+[00:24:03] etc. And then I provided a reference image.
+[00:24:07] This is a detail photo of a facade made by David Chipperfield,
+[00:24:14] architect. And then it applied that architecture onto the image.
+[00:24:18] Now, actually, what you see here is not a good example.
+[00:24:22] This is during testing. So I have a whole evolution
+[00:24:28] of
+[00:24:30] of renders every time it's a different reference image of course
+[00:24:36] and we're going to see some good examples.
+[00:24:41] So under module 3,
+[00:24:45] image to image. This is the part of Rhino to image.
+[00:24:51] Just a name I invented. And this is a good example.
+[00:24:56] So we go from this facade up close image.
+[00:25:01] We provide a reference image. And then we create this
+[00:25:06] one where it actually like it followed the geometry exactly.
+[00:25:11] So this is a good example. This is when my model was more optimized.
+[00:25:15] Let's get into it.
+[00:25:19] So the first thing we'll have to do
+[00:25:21] is set up an agent that will prompt for us.
+[00:25:31] As we have seen before in the previous modules,
+[00:25:35] we can create in our favorite LLM a project.
+[00:25:41] This one we're going to call Rhino to image.
+[00:25:44] We're going to go into instructions and here you will just have to paste this entire
+[00:25:51] document. So you can go in there,
+[00:25:53] you can go on focus mode. If you press Ctrl+A,
+[00:25:58] it will select all the
+[00:26:01] Text in here.
+[00:26:04] You copy it, you go here and you paste it in here.
+[00:26:12] I think it didn't copy the...
+[00:26:20] part. Okay I'll try to fix this real quick.
+[00:26:26] Okay I've fixed it really quickly because of
+[00:26:32] the format it didn't copy it. So now it's just text here.
+[00:26:35] So we select everything,
+[00:26:40] we go to the project instructions and we click on paste.
+[00:26:47] It will do it like this.
+[00:26:49] The structure is a bit gone but it's not a problem.
+[00:26:52] Okay, so what we're going to do now is let's take this example.
+[00:26:58] As just an example, I will download this.
+[00:27:06] screenshot of a Rhino file and then you would need a reference image.
+[00:27:11] Just an image that shows a material
+[00:27:16] or an atmosphere or something that you want to take as a reference
+[00:27:22] to apply on this facade. So how do we go from this
+[00:27:28] and this to here? First our preparation.
+[00:27:33] So we download them too. We go
+[00:27:35] in the workflow.
+[00:27:41] So I just typed start, that's the only thing I did within this project.
+[00:27:51] It will think about, it will read the project instructions.
+[00:27:57] Fast forward to the answer. It tells
+[00:28:01] me upload two things.
+[00:28:05] The first one is the Rhino or 3D viewport capture.
+[00:28:09] So we will do that. And the second one is an aesthetic reference photograph.
+[00:28:15] So I will just go in here.
+[00:28:18] First I have to upload image one,
+[00:28:22] 3D screenshots.
+[00:28:25] Then I upload my reference image.
+[00:28:34] And then to save round trips you can answer the two context questions if you like.
+[00:28:39] So what kind of building is it?
+[00:28:41] So I would say residential building.
+[00:28:49] It doesn't really matter what you say here but the more context
+[00:28:55] you give the better. So if you have a specific idea about this
+[00:28:59] for example it's loggias, anything like that.
+[00:29:04] And then where is it located I would
+[00:29:08] say like southern Europe.
+[00:29:13] warm climates neutral lighting something like
+[00:29:20] that doesn't really matter if you then send it will analyze
+[00:29:27] the images
+[00:29:30] While in the meantime when it's loading we can go back
+[00:29:33] to the PowerPoint and look at what the result will be.
+[00:29:39] So we go from this, we add the reference image and it will make it like
+[00:29:45] it will apply it on the geometry and it will lock the geometry exactly in place.
+[00:29:50] It is trained to do it exactly.
+[00:29:52] Here is another example.
+[00:29:57] So I will toggle between so you can see the two.
+[00:30:04] So you see this geometry and then just apply a reference image which
+[00:30:10] has this soft brick or this blue glossy brick.
+[00:30:15] in the prompt I changed. So here it
+[00:30:19] was Mediterranean contemporary biophilic architecture.
+[00:30:23] Here everything was the same, only the prompt was changed to Tokyo.
+[00:30:28] Here I said tropical Kinshasa snowing architecture.
+[00:30:33] So you see the geometry gets kept almost perfectly,
+[00:30:38] but the context and the details change.
+[00:30:43] So you can see that the tiles change,
+[00:30:45] for example, but normally like everything gets
+[00:30:52] kept.
+[00:30:57] So let's see, it's a bit slow today so I will come back when everything
+[00:31:01] is generated.
+[00:31:06] Okay, so it asked me one more question.
+[00:31:10] Which part of southern Europe should I anchor the light and context to?
+[00:31:13] This is very specific. Maybe it won't do the same for you,
+[00:31:16] but it doesn't really matter that much.
+[00:31:18] And then the output is a JSON prompt.
+[00:31:21] As we saw in the introduction,
+[00:31:22] FLUX.2 understands this JSON prompt.
+[00:31:25] So what it does is it includes all the information
+[00:31:30] of this geometry.
+[00:31:34] and all the details of this aesthetic reference and it combines
+[00:31:40] it into one prompt like that so you just have to copy this prompt
+[00:31:49] Go into Miro, you can download this workflow from here as we did many times before.
+[00:31:55] And then when you go to Comfy,
+[00:31:57] it will look like this. Again,
+[00:31:59] you will see an error,
+[00:32:04] which is not really a problem.
+[00:32:05] Now, the LoRA name,
+[00:32:09] again, this is, as we saw before,
+[00:32:13] a problem because the LoRA is not correct.
+[00:32:16] So we click on here.
+[00:32:18] Since we have installed LoRA ourselves,
+[00:32:21] just select the one that you would like to use.
+[00:32:27] In this case, for me it's called like this,
+[00:32:30] for you it will be called a bit different.
+[00:32:33] Select it here so you can see that error is resolved.
+[00:32:39] Now the UNET name is also wrong.
+[00:32:42] This is just because the Comfy sometimes changes the name of FLUX.
+[00:32:47] So it's not a problem. Just click on it,
+[00:32:50] type FLUX.2 and then just look
+[00:32:55] for FLUX.2 klein, 9 billion parameters,
+[00:32:59] so 9B. That's it. There's also base 9B FP8,
+[00:33:05] but just pick this one. If it's not exactly like this,
+[00:33:09] when you look at it, just find the one that looks the most like FLUX.2 klein 9B.
+[00:33:16] You click on it and now everything is done.
+[00:33:19] Make sure that the first image,
+[00:33:22] so the one that is connected to image,
+[00:33:25] is your geometry. The same geometry that we provided
+[00:33:31] to the agent, right? So this one,
+[00:33:34] exactly this image.
+[00:33:38] and the second image must also be the exact same one.
+[00:33:42] Then in the settings, in the text,
+[00:33:46] just paste the prompt you have received from
+[00:33:52] the agent. Okay, so just copy paste.
+[00:33:58] And then we should look at the settings.
+[00:34:00] So UNET, this is all okay now.
+[00:34:04] Strength of the model. So if we
+[00:34:10] go into the subgraph, you will see something weird.
+[00:34:15] Okay. So you will see that we have a load LoRA model,
+[00:34:21] but that we also have another one.
+[00:34:23] So I want to show you that you can link multiple LoRA's.
+[00:34:28] behind each other and combine them.
+[00:34:30] Now, as you can see here, this one is purple and transparent,
+[00:34:36] which means it's bypassed. So it's deactivated.
+[00:34:39] So it's not working. And for now,
+[00:34:41] to keep it a bit more simple, I'm actually going to delete this one.
+[00:34:45] You can see that the workflow adjusts itself automatically.
+[00:34:52] And everything works.
+[00:34:56] Here I cannot click on it.
+[00:34:59] Don't worry if it's the same for you.
+[00:35:01] The reason is because it's already in here.
+[00:35:05] So you have to click on here if you want to change the LoRA.
+[00:35:08] Now strength model as we saw if we put it in one
+[00:35:13] it will be 100%. Megapixels this is the output image quality.
+[00:35:19] For now let's keep it at
+[00:35:21] so don't change anything for the beginning.
+[00:35:24] Before we click on run we will add
+[00:35:28] the compare images node.
+[00:35:31] as we did before nothing new we double click
+[00:35:37] We type in compare images.
+[00:35:41] We put it behind the workflow.
+[00:35:43] Image A is the first one we will see.
+[00:35:47] Let's put it at the output. We want to see what we generate first.
+[00:35:51] And then we want to compare image B to the original massing.
+[00:35:56] So we can see how well it followed the geometry.
+[00:35:59] So let's click on run and let's see what happens.
+[00:36:11] Fast forward to the result. you will notice yourself,
+[00:36:15] this workflow takes a bit longer.
+[00:36:19] Why it is, is because we are using FLUX.2.
+[00:36:24] It's a very big model. So as you can see here,
+[00:36:27] it took geometry and applied the material exactly on it with pretty high
+[00:36:34] quality. Of course, if we bump up the megapixels to...
+[00:36:39] I don't know, 16 or something,
+[00:36:41] then the resolution will be even better.
+[00:36:43] But in general, it's not required and it will take so much time and
+[00:36:49] so much credits as well. So be mindful.
+[00:36:52] The higher resolution, the more demand you put on the model,
+[00:36:58] the more credits it will take.
+[00:37:01] So for now, you can see that it worked.
+[00:37:05] We're going to.
+[00:37:07] go here and here if we just hover over it you can see that it
+[00:37:11] is following the geometry exactly and this of course is where
+[00:37:15] it becomes super interesting for us architects because we maintain control
+[00:37:19] we just need to make a very basic massing model that
+[00:37:26] has like the architectural expression with the correct dimensions we just explain
+[00:37:32] to the agent very briefly what we would like
+[00:37:37] We provide a reference image and this is the result.
+[00:37:42] And if we zoom in, you can really see that it follows everything.
+[00:37:47] Even the Rhino lines that are like these ones,
+[00:37:53] which gets translated in the image as well.
+[00:37:58] So be mindful of your input because the model is so good at following
+[00:38:04] the exact geometry that it will also
+[00:38:07] make these lines here.
+[00:38:11] It's actually interesting because maybe that's how it would be built with some
+[00:38:14] paneling instead of one surface.
+[00:38:17] It gets divided into four surfaces.
+[00:38:19] So you see that's where it can become interesting.
+[00:38:24] But think about whatever the input is because if your input is not good
+[00:38:28] the output will also be not good.
+[00:38:30] So I will download this one.
+[00:38:41] it here.
+[00:38:50] and you will have access to this exact workflow.
+[00:38:52] As a tip,
+[00:38:56] try to do exactly the thing I did and try
+[00:39:01] to remake it yourself and that's the best way to actually learn it.
+[00:39:05] Okay, I've made a cut to the next part.
+[00:39:11] So we just saw how we made this one.
+[00:39:13] And the next part is going to be interesting.
+[00:39:17] I'll be using...
+[00:39:20] this image.
+[00:39:29] In the PowerPoint I showed you how we can take this massing
+[00:39:34] and provide a reference image and it follows exactly
+[00:39:38] the geometry while applying
+[00:39:42] the materiality.
+[00:39:45] Now as you can see here all these planes,
+[00:39:48] all these surfaces have the same finishing but some become windows,
+[00:39:53] some become the...
+[00:39:56] facading, the glossy brick.
+[00:40:00] And while this is very quick to just say something,
+[00:40:03] to prove a point that it could work on this building,
+[00:40:08] for example, you might need a little bit more control.
+[00:40:11] So I've just prepared a live example where I went into Photoshop
+[00:40:18] and I just selected a few planes that I want to make into
+[00:40:25] windows or loggias. So I choose the ones that will become a plane.
+[00:40:32] So here it's following more a grid,
+[00:40:34] here it's more like random. I painted black.
+[00:40:38] You have to test a bit the colors.
+[00:40:41] Some work better than others, but generally black works well.
+[00:40:48] Then I provided it in the workflow with the same reference image.
+[00:40:56] I did the same workflow as before.
+[00:40:59] I just typed start,
+[00:41:02] provided this one together with the other one.
+[00:41:06] And then I said the geometry from Rhino,
+[00:41:08] the black surfaces are windows or loggias and the lights,
+[00:41:13] gray planes are closed panels.
+[00:41:15] In this case, the blue bricks from the reference image.
+[00:41:18] And then I said residential tower in Spain,
+[00:41:21] sunny daylight. So I just told my agent.
+[00:41:25] very quickly what this black means.
+[00:41:28] It asks where in Spain,
+[00:41:32] it doesn't really matter, it just said Madrid.
+[00:41:35] And then I took the JSON prompt,
+[00:41:40] I pasted it in here and this is the result.
+[00:41:45] Now you can save, I don't really like the aesthetics of this brick compared
+[00:41:50] to the other one, but then just re-roll it.
+[00:41:53] What I want to
+[00:41:55] proof here is that it actually followed it so it made the black part here
+[00:42:02] loggias or windows and the other parts became
+[00:42:09] closed facades so this way you have control because you can say this plane
+[00:42:14] I want to be this plane I want to be that and make it very very specific
+[00:42:21] As you can see here for example,
+[00:42:23] this plane I didn't put black and it became a window.
+[00:42:26] So either you can try to redo it or try different color.
+[00:42:32] But in general, it follows the instructions super,
+[00:42:37] super well.
+[00:42:40] Now we can rerun it and see with
+[00:42:45] the different seed how it behaves.
+[00:42:51] Now you might be asking, I don't see here what the seed is.
+[00:42:57] I don't know where I have the control over the seed.
+[00:43:01] And that brings us to the next one while this one is generating.
+[00:43:08] Subgraph has an advanced function that actually a lot of people don't know,
+[00:43:12] also experienced people. If you right click
+[00:43:18] on somewhere on here, you can click on edit subgraph widgets.
+[00:43:24] If you click there, you have this panel on the right side.
+[00:43:29] And what it actually is, is it shows you the shown on node.
+[00:43:36] parameters, so all the things here.
+[00:43:38] So UNET name is here, clip name,
+[00:43:41] VAE name, LoRA name, et cetera.
+[00:43:44] Now there's also a bunch that are hidden in the subgraph that you cannot
+[00:43:50] see from here.
+[00:43:52] For example, noise seed.
+[00:43:58] You can see it's, it's, it's hidden.
+[00:44:02] If we click here, it will pop up.
+[00:44:06] Now, we can also change the...
+[00:44:11] location so now it is there and if we look at it and we close this window suddenly
+[00:44:17] we have an extra parameter so now we see that if we click here that every time
+[00:44:23] a new seed gets generated we can also put it at fixed value like we like
+[00:44:30] we saw before let's keep it at randomize so this way if you right click
+[00:44:36] on here and you go to edit subgraph widgets you can
+[00:44:40] control what you see within the dashboard.
+[00:44:46] Now you can always just go into sub,
+[00:44:48] enter subgraph and for the noise let me search I don't know where
+[00:44:55] it is actually.
+[00:45:04] bit messy but somewhere here is going to be
+[00:45:17] Ah, here it is. You see, so this is not very easy to have an overview.
+[00:45:22] It's pretty chaotic. So I even had to search for it.
+[00:45:26] But random noise here, you can change it here.
+[00:45:31] You can type in any number you want.
+[00:45:33] Or now we enable it to also look at it from here.
+[00:45:41] So as you saw before, we regenerated it and
+[00:45:45] now the aesthetics between these two.
+[00:45:50] So this was the first iteration we did.
+[00:45:56] And this is the second. You see that it's a different interpretation
+[00:45:59] of the same image. And this also has to do with the seed.
+[00:46:04] So if we, for example, if we would lock the seed,
+[00:46:10] if we fix it, then again, we generate in exactly the same image.
+[00:46:15] So that being said, I think,
+[00:46:17] or I hope this is a bit clear now.
+[00:46:20] Play around with it. I will place.
+[00:46:26] this exact image here so you can play around with
+[00:46:32] it and try it yourself.
+[00:46:47] Something like this. You will see that if you download this one it will look
+[00:46:54] a bit different but I hope you get the point.
+[00:46:58] Also here, take this screenshot,
+[00:47:01] find the material that you like,
+[00:47:04] put it in the agent and just play around with it.
+[00:47:08] It's the best way to actually learn this.
+[00:47:12] what is the next thing?
+[00:47:16] we skipped the image edit.
+[00:47:21] So we go back to...
+[00:47:28] back to Miro. Let's say we have this image.
+[00:47:31] This is going to be our starting image.
+[00:47:33] We download it.
+[00:47:36] It's always the same routine. And I'm switching between a lot of tabs,
+[00:47:41] but that is a bit the reality when working with Comfy.
+[00:47:45] So we take the image we just downloaded,
+[00:47:48] we drag and drop, we see the whole workflow that
+[00:47:53] was created or that we will use now.
+[00:47:56] So let's say we have generated an image and it's this one.
+[00:48:04] Now I want to change some specific things here while keeping the overall image under
+[00:48:10] control. As you can see this person here,
+[00:48:13] it's not correct. He has lost a big part of his legs.
+[00:48:20] I want to edit him out. I could go to Photoshop
+[00:48:24] and do like generative fill with it,
+[00:48:28] that would work for this, but for other.
+[00:48:31] edits it is not going to be good. So I'm going to show you what to do now.
+[00:48:41] In this workflow that you will download by downloading the image it's very simple.
+[00:48:48] When you just have one starting image,
+[00:48:51] so as we have now, you just upload it up here.
+[00:48:56] Image edit using FLUX.2 klein and we say remove the man from the image.
+[00:49:03] This part is pink and you can see it's bypassed.
+[00:49:06] So don't worry, it's not going to be activated when you click on run.
+[00:49:10] If we click on run.
+[00:49:15] It will activate.
+[00:49:20] Okay and here we can see that so we started from this guy and now he's gone.
+[00:49:27] So you can see that this part was changed because it recognized the fact that this
+[00:49:34] is the man from the image right.
+[00:49:37] So it's telling this remove the man.
+[00:49:43] So it works for when something is very explicitly wrong.
+[00:49:48] Let me put it like this.
+[00:49:50] Now, where does it become interesting?
+[00:49:52] Let me drag and drop or like drag and compare.
+[00:49:56] So the model is so smart that it saw this person,
+[00:50:01] but it also saw the reflection.
+[00:50:05] So it's also removed the reflection.
+[00:50:08] Now, as you can see, you can see it a bit because it inpainted it.
+[00:50:13] So it's not done perfectly, but in general,
+[00:50:17] it's done quite, quite well, I would say.
+[00:50:20] You can also do the following.
+[00:50:25] So let's say we want two or more reference images.
+[00:50:31] Then this workflow is not going to work.
+[00:50:34] So what we do is we click here and we click on Bypass.
+[00:50:41] Here the same, right click, Bypass.
+[00:50:47] Or you can just select the nodes and press Ctrl+B as well.
+[00:50:52] This one we will need as well.
+[00:50:54] So now we change the workflow from this one to this one.
+[00:50:59] I will set it up and come back later.
+[00:51:05] Okay, fast forward. What I did is I just...
+[00:51:12] activated this image again. Now we still see that this is bypassed,
+[00:51:17] so these two are bypassed. I uploaded on the second image
+[00:51:22] the reference style blue tile image
+[00:51:28] of before. And then here I just made
+[00:51:33] a very simple prompting. Apply the facade material of reference image to
+[00:51:40] Why do I put it like this? It's because you can see that this image
+[00:51:43] is linked to here. This becomes reference image
+[00:51:49] 2 and this one is linked to reference image 1.
+[00:51:55] So if I want to talk about this image I have to use this name.
+[00:52:00] So apply the facade material of reference image 2,
+[00:52:04] so this one, on the geometry of reference image
+[00:52:10] one. Very simple. The prompt is not even that good and you can see it
+[00:52:14] did it very well I would say.
+[00:52:17] The tiles are a bit different so they are more matte here compared
+[00:52:23] to here it's more glossy but we could resolve that by changing the prompt.
+[00:52:29] So you can say make sure that the tiles
+[00:52:34] are still glossy and you can also say the tiles are
+[00:52:41] Super small, I will actually try it here.
+[00:52:43] I will fast forward so we don't lose too much time.
+[00:52:48] So I just added this part. The blue tiles are glossy
+[00:52:52] and they are 3 by 12 centimeters.
+[00:52:57] So make it match the scale.
+[00:53:00] Now before generating, because I haven't done it,
+[00:53:03] let's have a look at the previous one where this is the input image and then
+[00:53:07] you can see it applied the material very good.
+[00:53:10] There is a shift a bit here on top.
+[00:53:14] You can see in the pixels.
+[00:53:17] But that's just how it is sometimes.
+[00:53:22] Sometimes it's a bit, this one is a bit hard.
+[00:53:25] But let's try by adding follow
+[00:53:31] the geometry.
+[00:53:35] Exactly. And maybe even something like this.
+[00:53:39] Maybe that will help. Now what I again want to do is right click here
+[00:53:46] and say edit subgraph widgets.
+[00:53:52] and I want to...
+[00:53:58] I want to be able to have control over the megapixels.
+[00:54:02] I don't see it anywhere here but I know that in the subgraph there
+[00:54:07] is a node that tells me what the megapixels are.
+[00:54:11] So I make it visible. I move them a bit.
+[00:54:16] So you can see now it's only one megapixel and that also explains
+[00:54:23] why if you zoom in here the quality is not good.
+[00:54:26] It's because the setting was too low.
+[00:54:29] So let's put it at 2, which is not perfect as well.
+[00:54:34] But let's see if it will do better when
+[00:54:39] we increase the megapixel and write a better prompt.
+[00:54:44] So here we can see it being generated.
+[00:54:51] Now take into regard that my input image still contains this man.
+[00:54:57] If you want the man out of the image,
+[00:55:00] then download this one and input it again.
+[00:55:04] Right? So that I hope that makes sense.
+[00:55:10] Okay so it generated as you can see the tiles
+[00:55:16] now are more glossy so that's already better I would say.
+[00:55:23] The size I think is also quite good it seems like it's around 3x12
+[00:55:29] actually that's that's surprisingly well and it followed the geometry well
+[00:55:35] but there is a shift. Now if that is bothering you
+[00:55:38] You can also import it into Photoshop or something and move it a few pixels down.
+[00:55:44] It's not the perfect way of doing it,
+[00:55:46] but since it's everywhere, like shifted a bit upwards,
+[00:55:50] you can just lower the image and make it work.
+[00:55:59] Now, where does this become interesting again or even more interesting?
+[00:56:05] And this also is a good argument on why we should use open source models because
+[00:56:11] you could ask, can I not do this with ChatGPT?
+[00:56:15] And of course you can. But what we're going to do now is something very interesting.
+[00:56:21] So we go into the subgraph and you see it's quite an extensive workflow.
+[00:56:28] We're just going to do the same as we did before.
+[00:56:32] We're going to do a LoRA add-in.
+[00:56:35] We double click, we type in LoRA.
+[00:56:41] this one, the one by Comfy. Click here.
+[00:56:45] And now I'm going to do a bit quicker because we did it before pretty slow.
+[00:56:51] We connect it to the CFG Guider.
+[00:56:55] That's by the way, the only thing that you can connect it to.
+[00:57:00] So you cannot make a mistake. There is no other node that you
+[00:57:05] can connect this one to. So you cannot make a mistake.
+[00:57:11] Here we click on My Models.
+[00:57:16] image edit.
+[00:57:21] And what it's going to do now is it's adding the LoRA again,
+[00:57:26] because as you can see here, it's pretty saturated.
+[00:57:29] Like the colors, maybe it's just me,
+[00:57:32] but I don't like these colors.
+[00:57:33] It's too saturated, too plasticky.
+[00:57:37] It feels super fake. So if we just generate this again,
+[00:57:42] let's see if there is going to be
+[00:57:46] a difference between the current one and the new one.
+[00:57:51] So before LoRA and after LoRA.
+[00:57:57] Okay so if we look at it I think this is already better.
+[00:58:00] It feels more natural. It's less harsh.
+[00:58:06] I wouldn't say it's perfect yet but it also probably
+[00:58:12] has to do with the fact if we go in here that the strength is on 1 you can
+[00:58:18] put it at 1.5. Let's click on run.
+[00:58:22] You can put it at 0.5
+[00:58:25] and run again, so it's just in the queue.
+[00:58:28] So you can launch a lot of images and it's going to be queued.
+[00:58:34] What you can also do is increase the batch count.
+[00:58:38] So when you click on run, it will run two times.
+[00:58:41] You can put it at 20 if you want and it will generate 20 images,
+[00:58:47] but just to make sure keep it at one.
+[00:58:54] So this is the result when we put the LoRA at 1.5.
+[00:58:59] You can see it totally breaks the image.
+[00:59:01] It becomes super crunchy and super too much.
+[00:59:07] So that is also showing you that the impact of the LoRA is pretty big.
+[00:59:14] If you put it too high, it will be over-editing and it will kind
+[00:59:20] of break the pixels in pieces.
+[00:59:25] So the one that is in the pipeline now is the one we just did with lower strength
+[00:59:30] 0.5. Let's see if that is any better.
+[00:59:34] And this is also what I want to show you that it's part of the process
+[00:59:40] to just test a lot and to see whatever works and what doesn't work.
+[00:59:46] Increasing the megapixels would also have a big impact here.
+[00:59:52] So this is better, it's a bit saturated but yeah I would say this
+[00:59:58] is a good edit to do. Okay,
+[01:00:02] very nice. I will take this image
+[01:00:07] and the previous one as well.
+[01:00:13] think it was.
+[01:00:30] and I will upload them for you.
+[01:00:46] I'll put them here so you can find them.
+[01:00:56] lot of images but
+[01:01:01] play around. This was image editing using FLUX.2 klein 9B.
+[01:01:06] Here are some other examples. So what I did before was
+[01:01:12] I took the image and I just said like add a lot of elderly people
+[01:01:16] on their balconies and some are doing their laundry or something.
+[01:01:21] And what you can do, I will quickly show it to you like this.
+[01:01:28] So if you take the base image,
+[01:01:30] that you want to edit.
+[01:01:36] You take this one and let's say you edit it and this is the output.
+[01:01:47] What I would do is the following
+[01:01:52] I would go into Photoshop
+[01:01:54] and take
+[01:02:00] the background layer so the base image is the starting image.
+[01:02:05] Then I would put this one on top and since
+[01:02:10] the overlap of the geometry is almost exactly,
+[01:02:15] you could create a mask and just
+[01:02:22] remove the ones you don't like.
+[01:02:24] So you see since the back layer it's almost perfect there's
+[01:02:31] a little shift here but you can fix that if you want.
+[01:02:35] You say don't want this one up you just remove it and this
+[01:02:42] way you have a lot of control over the exact things that you're showing.
+[01:02:47] So if you say I don't like this one just remove it.
+[01:02:52] and you don't even see that it is not completely lined up.
+[01:02:56] It's not the best way to have control,
+[01:03:02] but it's a thing that in reality I actually use a lot.
+[01:03:06] So taking the base image, adding the...
+[01:03:14] edited images on top and then collaging my way through it.
+[01:03:20] By the way, if you don't have access to Photoshop,
+[01:03:23] I have provided
+[01:03:28] under resources, Photopea.
+[01:03:32] I don't know if you know Photopea but it's essentially
+[01:03:39] an online photo editor. It's completely free and it works the same way as
+[01:03:51] as Photoshop. So it's actually a free Photoshop.
+[01:03:55] if you don't want to pay for Photoshop it works exactly the same.
+[01:04:00] It's a bit harder to use but in general it's the same.
+[01:04:04] So Photopea I will provide the link here.
+[01:04:11] sure it's the same height.
+[01:04:15] So check it out so you don't have an excuse if you don't have Photoshop.
+[01:04:22] and then the last thing
+[01:04:29] The last workflow we will be looking at is this one.
+[01:04:34] So what it is, is inpainting very precisely.
+[01:04:39] I'll actually run it. So we will have an example in a minute.
+[01:04:44] If we're talking about open source models like FLUX,
+[01:04:50] it's quite obvious why Comfy Cloud in this case.
+[01:04:56] is an ideal platform because otherwise how would you run it?
+[01:05:00] Now if we're talking about Nano Banana for example,
+[01:05:03] a lot of people would say why don't you just
+[01:05:09] use Nano Banana for this? And I would say use it.
+[01:05:13] Like I also use it a lot but I use it inside of ComfyUI and that's
+[01:05:17] why I really believe that ComfyUI is here to stay.
+[01:05:20] So what do they do? They integrate
+[01:05:23] all models into their platform.
+[01:05:26] So you could also double click here and type in Nano Banana.
+[01:05:34] For example Nano Banana 2. then you can use Nano Banana inside of Comfy.
+[01:05:38] If you want to use ChatGPT.
+[01:05:45] This one maybe, ChatGPT, and let's see.
+[01:05:55] So you can just use it or you go to templates,
+[01:05:58] you remove that one and you say ChatGPT.
+[01:06:07] Yeah, not like that apparently.
+[01:06:13] Yeah, you have to do it precisely,
+[01:06:17] I think.
+[01:06:22] think it's called Image 2.
+[01:06:32] here, GPT Image, that's the name exactly.
+[01:06:36] Yeah, so you see it's here,
+[01:06:40] you just have to type GPT instead of ChatGPT.
+[01:06:43] And then you can use their workflow.
+[01:06:46] So you click on it, and you just can use their
+[01:06:52] use ChatGPT using API. So
+[01:06:57] a bit weird now but often like this for example if
+[01:07:03] you just refresh it will work better so you can use ChatGPT now
+[01:07:11] Let's see how we can use Nano Banana to actually do something interesting.
+[01:07:16] So what I did here is I just took the same image as before.
+[01:07:20] I right clicked on it.
+[01:07:25] Okay, I have to refresh, but let me show you just how I did it.
+[01:07:29] So I inpainted this part. I'm going to show you in a minute how I did it.
+[01:07:33] I provided a prompt and then it edited that image
+[01:07:39] or like that part specifically.
+[01:07:41] Now you can see it also added a railing here and a railing here.
+[01:07:45] So that is not really what I wanted,
+[01:07:47] but in general,
+[01:07:49] you can have way more control.
+[01:07:51] So you just have to rerun and then you may have a better iteration.
+[01:07:56] So let me reload.
+[01:08:03] It doesn't always work perfectly.
+[01:08:13] Okay, so now it works again.
+[01:08:20] This prompt is a long one. I made it using the prompt coach.
+[01:08:33] and how I inpainted this part only.
+[01:08:38] is the following. So you go to the load image part.
+[01:08:43] You can do this with any workflow but specifically this one I would
+[01:08:46] use for Nano Banana because Nano Banana is super super good at it.
+[01:08:49] If you right click on it you can click on open
+[01:08:54] in mask editor and then this window pops up and what it does is it gives
+[01:09:00] you the opportunity to inpaint an area and only that area will be changed.
+[01:09:06] So for now I'll
+[01:09:08] click on clear and just keep the basic settings.
+[01:09:12] You can play around a bit with it here.
+[01:09:15] So just inpaint the area roughly that you want to use.
+[01:09:22] Always make it a bit bigger like that.
+[01:09:25] You can do the opacity. You can put it 100%.
+[01:09:30] I wouldn't do that. So go back to keep it at like 75%.
+[01:09:37] Saving. It will take a while to save.
+[01:09:47] Then once it's saved you can see that this area updates.
+[01:09:52] Then the prompt would be something like this.
+[01:09:56] So for example add a loggia in this part,
+[01:09:59] in this part only. Add a fine vertical metal railing.
+[01:10:05] The prompt coach it asked me which model.
+[01:10:10] So I would say Nano Banana 2.
+[01:10:18] And then two separate masks,
+[01:10:23] a loggia.
+[01:10:28] No, it's just one.
+[01:10:32] mask so it asked me if I had two masks but that's just one
+[01:10:43] So then it spits out a prompt that describes
+[01:10:49] your inpainting.
+[01:10:55] So just copy and paste it in here.
+[01:11:01] Okay, so if you do that, this was a result I got last time from the first go.
+[01:11:07] So you can see it did perfectly what I asked.
+[01:11:09] It made a loggia and a vertical railing here.
+[01:11:13] Let's say you have an output that is not perfect.
+[01:11:17] Let's say you have
+[01:11:27] Or it did exactly what you wanted but you don't like the fact that it
+[01:11:31] is having a railing here as well or this part.
+[01:11:34] I would just download it. Again go into Photoshop.
+[01:11:41] So I would open the base image.
+[01:11:44] Let me download it first.
+[01:11:56] Let's take this one.
+[01:12:01] you
+[01:12:04] Yes, okay good. So open with Photoshop.
+[01:12:09] Then I would apply
+[01:12:14] the one which has a good part of it.
+[01:12:19] But I don't want that part.
+[01:12:22] So again I just make a mask and I remove that part.
+[01:12:30] See, and then here you can see it doesn't line up,
+[01:12:33] this is not, again, this is not the perfect way of doing it.
+[01:12:37] I don't want to teach you the wrong way of doing it,
+[01:12:40] but in reality, this is actually how you use this as a tool that actually works.
+[01:12:46] And you could say, for example,
+[01:12:49] if you compare the base image,
+[01:12:51] this one, and then the newly generated one.
+[01:12:56] could say the quality is better or worse but you can also remove this part
+[01:13:01] or remove that part. You just add things to the mask and I think it's clear now.
+[01:13:08] So you have control over what you keep of the base image and the things that
+[01:13:13] you don't want to keep.
+[01:13:17] Okay.
+[01:13:20] Now we're going to try something else.
+[01:13:22] Inpainting was one thing, so we did that by opening Mask Editor or
+[01:13:26] if you scroll down, open Mask Editor / Image Canvas.
+[01:13:31] What you can also do is in the base image,
+[01:13:35] just draw a contrasting color
+[01:13:39] and then take this prompt,
+[01:13:43] go into
+[01:13:49] this one here and say for example instead
+[01:13:53] of inpainting
+[01:13:57] I provided this input image
+[01:14:04] so you
+[01:14:12] but I can just download it from here again.
+[01:14:20] So I provide it to my agent and I say I provided this input image.
+[01:14:24] The red circle is just an indication,
+[01:14:31] So remove it from the output image.
+[01:14:39] It's...
+[01:14:42] used to signal the area I want changed.
+[01:14:55] So I just provided this. The agent now is running a complete prompt.
+[01:15:02] ...
+[01:15:06] paste it in here. Now keep in mind that the resolution it will
+[01:15:11] be okay but if you really want a high resolution one put it at 4K
+[01:15:17] but take in consideration that it will take more credits.
+[01:15:20] So often I'll just do 2K and when it's a final image
+[01:15:26] I will do 4K. So I would click on run
+[01:15:35] depends.
+[01:15:38] So now we're back and now you can see how well this works.
+[01:15:42] it's absolutely crazy. The inpainting part,
+[01:15:46] so the previous one, normally it works as well,
+[01:15:49] but just by drawing on the input image,
+[01:15:52] you really like say, okay, this part only I want
+[01:15:57] you to edit and it also removes the red one.
+[01:16:01] And you see here, there's not really a discrepancy in terms of the height.
+[01:16:06] So it kind of depends. Normally it works super well with the previous examples.
+[01:16:10] That was a bit of a shift, but I think if that is the level of control
+[01:16:15] we can have today, it's amazing,
+[01:16:19] I would say. So yeah, I mean,
+[01:16:22] I can play around with this for a very long time.
+[01:16:24] One small detail to tell you here,
+[01:16:29] I don't know if you will be able to notice it through my screen,
+[01:16:33] but this is the before and this is the after.
+[01:16:36] there is a very slight change in temperature.
+[01:16:40] The after, the image that gets generated
+[01:16:44] by Nano Banana has this very light pink filter over it.
+[01:16:51] Be aware that if you like this output image because it did exactly what we wanted.
+[01:16:58] It added a loggia with the railing.
+[01:17:01] If you download this one
+[01:17:04] and then you input it again here and you keep iterating.
+[01:17:08] So then you add a person or you change the facade material.
+[01:17:11] Every time it will add a little bit of pink.
+[01:17:17] So after a while you will really see that.
+[01:17:20] So make sure that when it's only this part that you want to keep,
+[01:17:25] put it into Photoshop, delete the rest.
+[01:17:28] So keep the rest of the original base image.
+[01:17:31] Otherwise you keep stacking the
+[01:17:34] the generated over generated image and every time the pixels gets
+[01:17:39] a bit more washed up. But that's just the detail.
+[01:17:43] So
+[01:17:56] And it's also fun because even this Nano Banana workflow,
+[01:17:59] if you download it, you will be able to see exactly my prompt,
+[01:18:05] et cetera. And that is a big difference between if
+[01:18:09] you use ComfyUI or Google AI Studio,
+[01:18:15] because if you just download it,
+[01:18:17] you will never know what prompt you used.
+[01:18:19] So this embeds the prompt into the metadata of the image.
+[01:18:29] So this way you have a lot of control over anything.
+[01:18:34] What you can also try to do, just a suggestion,
+[01:18:38] if you don't want to add the facade,
+[01:18:40] but you could make like an X or draw a circle and
+[01:18:45] say this blue circle add a person in the red rectangle annotation,
+[01:18:51] add a tree. So you can do it like very surgical in that way.
+[01:18:59] I also added some material references
+[01:19:05] for the LoRA. So if you're interested in this one,
+[01:19:09] just download it and look at the prompt.
+[01:19:11] It was done with this marble block.
+[01:19:14] You can also use granite. You can do anything you would like.
+[01:19:22] So let's finish up. There is one more thing I would like to show you.
+[01:19:28] It's called a Spectrum, my Spectrum app.
+[01:19:31] It's an app I made that transforms
+[01:19:38] one image into a whole spectrum of images.
+[01:19:43] So this is a small side project I did together with another AI expert called
+[01:19:49] Cas Esberg. Big shout out to Cas.
+[01:19:53] So he just sent me this image of an empty building somewhere in suburban area.
+[01:20:00] We made some sketches to it and a very simple prompt.
+[01:20:04] We were able to generate this image using Nano Banana inside of Comfy.
+[01:20:13] And using Spectrum, we made all these images.
+[01:20:16] So a night shot, a close-up of the facade,
+[01:20:20] floor plan, but the floor plan is not super good,
+[01:20:23] but it's still a good attempt.
+[01:20:25] An interior shot of the coffee bar area with the glass blocks.
+[01:20:33] And we can go ahead as if we made a wooden model out of it,
+[01:20:38] frontal elevation sketch,
+[01:20:41] watercolor sketch. Go ahead,
+[01:20:44] normal map, anything like that.
+[01:20:46] There was also an article published on Archinect about the thing we made.
+[01:20:52] So if you're interested in the Spectrum app,
+[01:20:57] I actually provided on my website as well.
+[01:21:02] you can just download it. It's super interesting to see that quite
+[01:21:08] a lot of these image styles.
+[01:21:12] So for example,
+[01:21:16] this one or this one.
+[01:21:20] I actually work together with some firms in Germany which are actually using this
+[01:21:26] specific style to showcase their designs to clients.
+[01:21:31] And before I was providing it as a service,
+[01:21:34] now I have changed it so you can actually just buy it once and then have
+[01:21:38] all the prompts and the app. So if you're interested in that,
+[01:21:43] it's completely free to...
+[01:21:46] check out. I sell it at
+[01:21:50] my website thomasnelissen.ai but also I have
+[01:21:55] a very big discount right now.
+[01:21:59] So check it out if you're interested in that.
+[01:22:07] And that being said, will end this module right now and we will go to image
+[01:22:13] to video in the next one.

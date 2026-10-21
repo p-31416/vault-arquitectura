@@ -2,8 +2,8 @@
 tipo: software
 software: comfyui
 fecha_creacion: 2026-09-07
-ultima_actualizacion: 2026-10-09
-tags: [glosario, software, comfyui, ic-light, relighting]
+ultima_actualizacion: 2026-10-20
+tags: [glosario, software, comfyui, ic-light, relighting, flux2, klein, lora]
 ---
 
 # ComfyUI
@@ -16,6 +16,8 @@ tags: [glosario, software, comfyui, ic-light, relighting]
 - [[Checkpoint — Juggernaut XL v9]])
 - [[Checkpoint — Z-Image Turbo GGUF Q4]])
 - [[Checkpoint — Flux Schnell GGUF Q4]])
+- [[FLUX.2 [klein] 9B — stack de instalación y grafo]])
+- [[LoRA — rhino-to-image (curso AI×Gaudí)]])
 - [[ControlNet — Canny SD15]])
 - [[ControlNet — Depth SD15 FP16]])
 - [[ControlNet — Union SDXL]])
@@ -59,6 +61,9 @@ AMD RX 570 8GB VRAM (DirectML), SD 1.5 principalmente. 2 ControlNets a la vez co
 |--------|------|------|--------|--------|---------------|
 | Z-Image Turbo GGUF Q4_K_S | Checkpoint (DiT) | Z-Image | ~4 GB | ⬜ Pendiente | Iteración ultra-rápida (8 pasos) |
 | Flux Schnell GGUF Q4_K_S | Checkpoint (DiT) | Flux | ~8 GB | ⬜ Pendiente | Máxima velocidad (4 pasos) |
+| **FLUX.2 [klein] 9B (fp8)** | Diffusion model (DiT) | FLUX.2 | 9,4 GB + TE 8,7 GB + VAE 238 MB | ⬜ Pendiente (RunPod 24 GB) | Render fotorrealista + edición multi-referencia; base del LoRA «Rhino-to-Image» |
+
+Ficha completa: [[wiki/glosario/software/flux2-klein-9b|flux2-klein-9b]].
 
 ### ControlNet instalados
 
@@ -93,6 +98,9 @@ AMD RX 570 8GB VRAM (DirectML), SD 1.5 principalmente. 2 ControlNets a la vez co
 | Architecture Interior SDXL | SDXL | ~100 MB | ⬜ Pendiente | Estilos interiores, muebles, materiales | CivitAI |
 | Architectural Visualization | SD 1.5 | ~100 MB | ⬜ Pendiente | Renders visualización arquitectónica | CivitAI |
 | Modern Architecture | SDXL | ~100 MB | ⬜ Pendiente | Arquitectura moderna minimalista | CivitAI |
+| **rhino-to-image (curso AI×Gaudí)** | **FLUX.2 klein 9B** | **120,8 MB** | **⬜ En Drive de Emilia** | Volumetría Rhino → render fotorrealista con material de referencia; rank 16, F32, sin metadata | Curso AI×Gaudí (Archademy) |
+
+Ficha completa: [[wiki/glosario/software/lora-rhino-to-image-gaudi|lora-rhino-to-image-gaudi]].
 
 ---
 
@@ -306,6 +314,63 @@ Modelo más rápido de Flux (Black Forest Labs), cuantizado GGUF Q4_K_S, 4 pasos
 | **Estado** | ⬜ Pendiente |
 
 Requisitos: `ComfyUI-GGUF` + `ComfyUI-Flux`, auxiliares `t5xxl_fp16.safetensors` (~9 GB), `clip_l.safetensors` (~230 MB), `ae.safetensors` (~300 MB). VRAM 8GB = límite absoluto, necesita `--lowvram --cpu-vae`, offload T5 a CPU. Config: `UnetLoaderGGUF` + `DualCLIPLoader` + `VAELoader`, `sampler: euler, scheduler: simple, steps: 4, cfg: 1.0, guidance: 3.5`. Uso: iteración máxima velocidad 4 pasos ~8-12s/imagen, concepto volumétrico, prompt adherence superior. No usar para entregas finales ni ControlNet. Comparativa: 4 steps ~10s vs Z-Image 8 steps ~18s.
+
+---
+
+## FLUX.2 [klein] 9B — stack de instalación y grafo
+
+> Actualización 2026-10-20. ComfyUI local en `b08e6cf3` ya soporta FLUX.2 de forma nativa (`image_model: "flux2"` en `comfy/model_detection.py:238`). Ficha completa: [[wiki/glosario/software/flux2-klein-9b|flux2-klein-9b]].
+
+Modelo DiT de 9B params de Black Forest Labs: generación y edición multi-referencia en una sola arquitectura, destilado a 4 pasos. Es la base del LoRA «Rhino-to-Image» del curso AI×Gaudí.
+
+| Componente | Archivo | Carpeta | Tamaño |
+|------------|---------|---------|--------|
+| Transformer | `flux-2-klein-9b-fp8.safetensors` | `models/diffusion_models/` | 9,4 GB |
+| Text encoder (Qwen3-8B) | `qwen_3_8b_fp8mixed.safetensors` | `models/text_encoders/` | 8,66 GB |
+| VAE | `full_encoder_small_decoder.safetensors` | `models/vae/` | 238 MB |
+
+| Parámetro | klein 9B (destilado) | klein base 9B |
+|-----------|----------------------|---------------|
+| steps (`Flux2Scheduler`) | 4 | 20 |
+| cfg (`CFGGuider`) | 1,0 | 5,0 |
+| sampler (`KSamplerSelect`) | euler | euler |
+| LoRA strength | 0,6-1,0 | 0,6-1,0 |
+
+Grafo mínimo:
+
+```
+UNETLoader ─► LoraLoaderModelOnly ─► CFGGuider ─► SamplerCustomAdvanced ─► VAEDecode ─► SaveImage
+CLIPLoader(type=flux2) ─► CLIPTextEncode ─► ReferenceLatent ─► CFGGuider
+VAELoader ─► VAEEncode (referencias) ─► ReferenceLatent
+EmptyFlux2LatentImage + Flux2Scheduler + KSamplerSelect(euler) ─► SamplerCustomAdvanced
+```
+
+Claves del grafo: `CLIPLoader` con `type: "flux2"` (selecciona Qwen3 y la clave `qwen3_8b`) · el sampler es `SamplerCustomAdvanced` (no `KSampler`) porque las sigmas las calcula `Flux2Scheduler` a partir del `width`/`height` final · `Flux2Scheduler` y `EmptyFlux2LatentImage` comparten resolución.
+
+El bloqueo de la geometría es nativo: `ReferenceLatent` + `FluxKontextMultiReferenceLatentMethod` con método `index` (`ref_index_scale = 10.0`). Para klein no hay ControlNet oficial de BFL; el único paquete serio (`alibaba-pai/FLUX.2-dev-Fun-Controlnet-Union`) es para `FLUX.2 [dev]` 32B.
+
+En la PC local (RX 570 8 GB, DirectML) el text encoder de 8,7 GB va a RAM con offload: viable en calidad, lento en tiempo. La ruta de producción es RunPod 24 GB ($0,22/h). Arranque local: `main.py --directml --disable-dynamic-vram --reserve-vram 1.0` (con DirectML, `--lowvram` queda sin efecto porque `model_management.py:121` fuerza `lowvram_available = False`).
+
+---
+
+## LoRA — rhino-to-image (curso AI×Gaudí)
+
+> Actualización 2026-10-20. Analizado byte a byte. Ficha completa: [[wiki/glosario/software/lora-rhino-to-image-gaudi|lora-rhino-to-image-gaudi]].
+
+| Campo | Valor |
+|-------|-------|
+| Archivo | `rhino-to-image-lora.basic.safetensors` (Drive de Emilia) |
+| Base | FLUX.2 [klein] 9B |
+| Rank / dtype / tensores | 16 / F32 / 176 |
+| Parámetros | 31,66 M (120,8 MB) |
+| Metadata | sin `__metadata__`; trigger word a confirmar con el instructor |
+| Licencia | derivada de FLUX Non-Commercial (9B) |
+
+Módulos afinados: en los bloques duales solo atención (`img_attn.qkv`, `img_attn.proj`, `txt_attn.qkv`, `txt_attn.proj`); en los simples `linear1` + `linear2` completos; más `img_in`, `txt_in`, `time_in`, las tres modulaciones y `final_layer.linear`. Los MLP duales quedan fuera del ajuste.
+
+Salud de los pesos: matrices B distintas de cero (σ ≈ 8e-4 a 1,6e-3, max ≈ 9e-3) sobre A con init Kaiming (σ ≈ 2e-2) → delta entrenado, sano y de baja amplitud: strength operativo **0,6 a 1,0**.
+
+Uso: se inserta con `LoraLoaderModelOnly` entre `UNETLoader` y `CFGGuider`, en el grafo «Rhino-to-Image» de [[proyectos/MVP_04-comfyui-arquitectura/n_05-rhino-mcp/WF-rhino-to-image/00-README|WF-rhino-to-image]]. Se calibra con 3 corridas de mismo seed (sin LoRA / 0,6 / 1,0) para separar el aporte del LoRA del aporte de la referencia.
 
 ---
 
@@ -615,6 +680,8 @@ Nodos built-in con ficha completa pendiente — se documentan paso a paso. Refer
 
 ## Flujos y playbooks
 
+- [[proyectos/MVP_04-comfyui-arquitectura/n_05-rhino-mcp/WF-rhino-to-image/00-README|WF-rhino-to-image]]
+- [[wiki/glosario/software/comfy-cloud-vs-runpod|comfy-cloud-vs-runpod]] — **dónde renderizar**: local + RunPod vs Comfy Cloud (límites reales, privacidad, costos y qué sirve para el concurso) — «Rhino-to-Image» con FLUX.2 klein 9B + LoRA del curso AI×Gaudí
 - [[wiki/glosario/interno/pbooks/pbk-comfyui]] — Control Geométrico (bordes, profundidad, líneas)
 - [[wiki/glosario/interno/pbooks/00-index|pbooks/]] — `pbk-comfyui`, `pbk-troubleshooting-reconexion`
 - Proyecto vinculado: [[proyectos/MVP_04-comfyui-arquitectura/readme-mvp_04|MVP 04 — ComfyUI Arquitectura]]
@@ -649,6 +716,8 @@ ultima_actualizacion: YYYY-MM-DD
 
 - [[wiki/glosario/conceptos/bim-metodologia]]
 - [[wiki/glosario/conceptos/cerebro-digital-karpathy]]
+- [[wiki/glosario/software/flux2-klein-9b|flux2-klein-9b]] — base FLUX.2 del motor de render
+- [[wiki/glosario/software/lora-rhino-to-image-gaudi|lora-rhino-to-image-gaudi]] — LoRA del curso AI×Gaudí
 - [[proyectos/MVP_04.02-comfyui-arquitectura/WF-03-serie-controles/WF-03-serie-controles|WF-03 serie controles]] — primera aplicación de IC-Light en el estudio (sol a la derecha)
 - [[wiki/glosario/interno/pbooks/pbk-comfyui]]
 
@@ -677,4 +746,10 @@ ultima_actualizacion: YYYY-MM-DD
 - [Hugging Face: lllyasviel/ic-light (modelos)](https://huggingface.co/lllyasviel/ic-light/tree/main) (verificado 2026-10-09)
 - [ComfyUI Docs — KSampler](https://docs.comfy.org/built-in-nodes/sampling/ksampler) (verificado 2026-10-09: samplers + schedulers)
 - [ComfyUI Wiki — icLightApply (Easy-Use)](https://comfyui-wiki.com/en/custom-nodes/ComfyUI-Easy-Use/nodes/ic-light-apply) (verificado 2026-10-09: opciones lighting Left/Right/Top/Bottom)
-- Verificar con webfetch antes de publicar — patrón docs.comfy.org es `/built-in-nodes/<PascalCase>` (no `/node-reference/<kebab-case>`).
+- [ComfyUI Docs — FLUX.2 Klein](https://docs.comfy.org/tutorials/flux/flux-2-klein) (verificado 2026-10-20)
+- [ComfyUI Blog — FLUX.2 Day-0 Support](https://blog.comfy.org/p/flux2-state-of-the-art-visual-intelligence) (verificado 2026-10-20)
+- [black-forest-labs/FLUX.2-klein-9B (HF)](https://huggingface.co/black-forest-labs/FLUX.2-klein-9B) (verificado 2026-10-20)
+- [black-forest-labs/flux2 (GitHub — implementación de referencia)](https://github.com/black-forest-labs/flux2) (verificado 2026-10-20)
+- [Comfy-Org/vae-text-encorder-for-flux-klein-9B (HF)](https://huggingface.co/Comfy-Org/vae-text-encorder-for-flux-klein-9B) (verificado 2026-10-20)
+- [black-forest-labs/FLUX.2-small-decoder (HF)](https://huggingface.co/black-forest-labs/FLUX.2-small-decoder) (verificado 2026-10-20)
+- [Verificar con webfetch antes de publicar — patrón docs.comfy.org es `/built-in-nodes/<PascalCase>` (no `/node-reference/<kebab-case>`).

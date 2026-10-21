@@ -1,7 +1,7 @@
 ---
 tipo: indice
 fecha_creacion: 2026-06-30
-ultima_actualizacion: 2026-09-07
+ultima_actualizacion: 2026-10-20
 tags: [glosario, software, wiki, indice]
 ---
 
@@ -17,6 +17,9 @@ Catálogo de comandos, funciones y variables de todos los softwares del estudio.
 | Grasshopper | [[wiki/glosario/software/grasshopper|grasshopper]] |
 | Twinmotion | [[wiki/glosario/software/twinmotion|twinmotion]] |
 | ComfyUI | [[wiki/glosario/software/comfyui|comfyui]] |
+| Comfy Cloud vs RunPod | [[wiki/glosario/software/comfy-cloud-vs-runpod|comfy-cloud-vs-runpod]] — dónde renderizar: límites, privacidad, costos y qué sirve para el concurso |
+| FLUX.2 [klein] 9B | [[wiki/glosario/software/flux2-klein-9b|flux2-klein-9b]] — DiT 9B, edición multi-referencia, stack de instalación y grafo |
+| LoRA rhino-to-image | [[wiki/glosario/software/lora-rhino-to-image-gaudi|lora-rhino-to-image-gaudi]] — LoRA rank 16 sobre FLUX.2 klein 9B (curso AI×Gaudí) |
 | Unreal Engine | [[wiki/glosario/software/unreal-engine|unreal-engine]] |
 | Impresión 3D | [[wiki/glosario/software/impresion-3d|impresion-3d]] |
 | FFmpeg | [[wiki/glosario/software/ffmpeg|ffmpeg]] |

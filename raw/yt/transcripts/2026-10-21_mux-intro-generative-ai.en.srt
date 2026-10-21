@@ -1,0 +1,5071 @@
+1
+00:00:01,838 --> 00:00:07,463
+Hello everybody and welcome to this course on generative AI within architecture.
+
+2
+00:00:07,463 --> 00:00:12,066
+My name is Thomas Nelissen and I will be the instructor
+
+3
+00:00:12,066 --> 00:00:17,821
+for this course. And this first video you're watching,
+
+4
+00:00:17,821 --> 00:00:21,154
+this first module is a general introduction.
+
+5
+00:00:21,154 --> 00:00:25,417
+It's going to talk about which programs we're gonna use,
+
+6
+00:00:25,417 --> 00:00:27,719
+a bit of history, a bit of theory,
+
+7
+00:00:27,719 --> 00:00:30,662
+and this is really an important foundation.
+
+8
+00:00:30,978 --> 00:00:33,179
+To understand the next modules.
+
+9
+00:00:33,179 --> 00:00:38,362
+So what is AI? And the next ones we're going to see text to image,
+
+10
+00:00:38,362 --> 00:00:40,564
+image to video, image to image,
+
+11
+00:00:40,564 --> 00:00:45,066
+image to 3D, and a lot of different stuff.
+
+12
+00:00:45,066 --> 00:00:50,610
+But the first one, this one, is important to be able
+
+13
+00:00:50,610 --> 00:00:54,232
+to understand all the things we do later.
+
+14
+00:00:54,232 --> 00:00:57,504
+So let's get into it.
+
+15
+00:00:59,106 --> 00:01:04,988
+Before I introduce myself, I want to mention the main program that we will be using,
+
+16
+00:01:04,988 --> 00:01:08,690
+which is Comfy. ComfyUI.
+
+17
+00:01:08,690 --> 00:01:12,331
+it's a scale-up right now.
+
+18
+00:01:12,331 --> 00:01:18,914
+I think they started in 2020 or 2021,
+
+19
+00:01:18,914 --> 00:01:21,535
+and it's amazing what they have built.
+
+20
+00:01:21,535 --> 00:01:25,517
+It's the biggest open source platform for generative AI.
+
+21
+00:01:25,517 --> 00:01:28,398
+It's actually free to run. I will explain.
+
+22
+00:01:28,992 --> 00:01:30,983
+Everything in depth, how it works,
+
+23
+00:01:30,983 --> 00:01:35,755
+why we use it, the difference between the first free version and the ones that
+
+24
+00:01:35,755 --> 00:01:38,426
+we will be using, so the paid subscription,
+
+25
+00:01:38,426 --> 00:01:44,969
+etc. So remember, the main software we'll we'll be using is Comfy.
+
+26
+00:01:44,969 --> 00:01:48,990
+Now, just to give you a heads up,
+
+27
+00:01:48,990 --> 00:01:53,252
+this is how a workflow in ComfyUI looks.
+
+28
+00:01:53,252 --> 00:01:55,253
+This is a more like a beginner one.
+
+29
+00:01:55,253 --> 00:01:56,253
+We will
+
+30
+00:01:56,407 --> 00:02:01,940
+Go very deep into this one. We will study this one very closely.
+
+31
+00:02:01,940 --> 00:02:05,742
+But we will end with workflows that look like this.
+
+32
+00:02:05,742 --> 00:02:10,033
+So you can see it's already more complicated or more chaos,
+
+33
+00:02:10,033 --> 00:02:11,665
+and there's way more things happening.
+
+34
+00:02:11,665 --> 00:02:15,637
+But I will take you step by step through the whole process to understand what
+
+35
+00:02:15,637 --> 00:02:19,349
+you have to do. And I have made a complete Miro board.
+
+36
+00:02:19,349 --> 00:02:25,773
+I will show you. So this is the complete Miro board.
+
+37
+00:02:26,381 --> 00:02:31,013
+On which you have all the resources to actually use all the workflows that
+
+38
+00:02:31,013 --> 00:02:37,290
+I provide to you free. And as I said in the first module in
+
+39
+00:02:37,290 --> 00:02:40,833
+the in this introduction, we will actually see a lot of theory,
+
+40
+00:02:40,833 --> 00:02:44,136
+but you don't really need the theory.
+
+41
+00:02:44,136 --> 00:02:47,869
+So you can also use it without the theory,
+
+42
+00:02:47,869 --> 00:02:52,002
+but it helps to understand better what is happening.
+
+43
+00:02:52,002 --> 00:02:55,115
+A bit about this Miro board.
+
+44
+00:02:55,649 --> 00:02:59,471
+The idea is that we start at the top with the resources.
+
+45
+00:02:59,471 --> 00:03:02,152
+So every time I refer to something,
+
+46
+00:03:02,152 --> 00:03:06,894
+a link or anything, you will find it here under resources.
+
+47
+00:03:06,894 --> 00:03:09,565
+Then this is organized by module.
+
+48
+00:03:09,565 --> 00:03:12,336
+So now we're at module one, introduction.
+
+49
+00:03:12,336 --> 00:03:16,518
+This is everything that we'll be seeing that you will need in terms
+
+50
+00:03:16,518 --> 00:03:20,179
+of link or resources or anything like that.
+
+51
+00:03:20,179 --> 00:03:23,020
+Then in the next module, text to image,
+
+52
+00:03:23,020 --> 00:03:24,491
+we will see this one.
+
+53
+00:03:25,377 --> 00:03:28,198
+Or like these images, module 3,
+
+54
+00:03:28,198 --> 00:03:34,301
+image to image, you see that is the one that is going to take the longest.
+
+55
+00:03:34,301 --> 00:03:37,942
+Image to video and image to 3D.
+
+56
+00:03:37,942 --> 00:03:40,563
+So everything you need is on here.
+
+57
+00:03:40,563 --> 00:03:42,524
+You will have access to this Miro board,
+
+58
+00:03:42,524 --> 00:03:45,005
+so you will be able to access everything.
+
+59
+00:03:45,005 --> 00:03:51,328
+what is also important is that I have provided a lot of extra stuff.
+
+60
+00:03:51,328 --> 00:03:54,689
+So the things here on the right side.
+
+61
+00:03:55,223 --> 00:03:58,054
+They are not necessarily included in the lecture,
+
+62
+00:03:58,054 --> 00:04:04,657
+but I know that at least half of everybody who's watching this
+
+63
+00:04:04,657 --> 00:04:09,959
+is actually interested in exploring and testing a lot with it.
+
+64
+00:04:09,959 --> 00:04:15,981
+So I provided a lot of material that you can have a look at.
+
+65
+00:04:15,981 --> 00:04:22,043
+For example, these images where I was testing one
+
+66
+00:04:22,043 --> 00:04:24,265
+of my AI models where we
+
+67
+00:04:25,047 --> 00:04:30,244
+Where I went from this massing to a hyper-realistic image.
+
+68
+00:04:30,244 --> 00:04:34,049
+So everything is on here. Check it out if you
+
+69
+00:04:34,269 --> 00:04:37,714
+are interested in that.
+
+70
+00:04:37,714 --> 00:04:42,861
+Let's get back to the presentation.
+
+71
+00:04:45,645 --> 00:04:51,308
+So all images that you saw were created using ComfyUI.
+
+72
+00:04:51,308 --> 00:04:54,690
+Now who am I? Probably you have never heard about me.
+
+73
+00:04:54,690 --> 00:04:58,572
+My name is Thomas Nelissen. I'm an architect.
+
+74
+00:04:58,572 --> 00:05:04,075
+I would describe myself as a generative AI specialist and also a junior architect.
+
+75
+00:05:04,075 --> 00:05:10,499
+I studied and graduated at the University of Antwerp in Belgium,
+
+76
+00:05:10,499 --> 00:05:12,420
+because I am from Belgium.
+
+77
+00:05:15,177 --> 00:05:20,440
+How I got into contact with AI was actually during my thesis,
+
+78
+00:05:20,440 --> 00:05:23,439
+so I didn't know anything about AI.
+
+79
+00:05:23,439 --> 00:05:25,259
+I didn't have a technical background,
+
+80
+00:05:25,259 --> 00:05:26,723
+I had an architectural background,
+
+81
+00:05:26,723 --> 00:05:32,606
+but I had the opportunity to do my thesis about generative AI,
+
+82
+00:05:32,606 --> 00:05:38,029
+and I quickly decided to just try it out.
+
+83
+00:05:38,029 --> 00:05:42,262
+This was the final result, the cover of our thesis.
+
+84
+00:05:42,262 --> 00:05:44,823
+I did it together with Sebastian van Dri.
+
+85
+00:05:45,373 --> 00:05:51,387
+And this is what kinda kickstarted me in the field
+
+86
+00:05:51,387 --> 00:05:54,699
+of generative AI. If you're interested in contacting me,
+
+87
+00:05:54,699 --> 00:05:58,201
+here are my credentials. My Instagram and my website
+
+88
+00:05:58,581 --> 00:06:04,105
+are just called thomasnelissen.ai and my email is info at thomasnelissen.ai.
+
+89
+00:06:08,173 --> 00:06:14,115
+So this is the URL. What I do professionally full time is I'm
+
+90
+00:06:14,115 --> 00:06:17,876
+a junior architect at Davis. Davis is one of,
+
+91
+00:06:17,876 --> 00:06:24,318
+if not most interesting, AI native startups in Europe.
+
+92
+00:06:24,318 --> 00:06:28,029
+We're based in Paris currently.
+
+93
+00:06:28,029 --> 00:06:29,819
+What you see here is a founding team.
+
+94
+00:06:29,819 --> 00:06:35,961
+I joined Davis a bit later. and what Davis does is we're setting a new time.
+
+95
+00:06:36,277 --> 00:06:39,118
+standard for real estate development and architecture.
+
+96
+00:06:39,118 --> 00:06:42,239
+So whereas most offices,
+
+97
+00:06:42,239 --> 00:06:46,681
+architectural offices, start from the old paradigm,
+
+98
+00:06:46,681 --> 00:06:52,284
+Davis starts from AI and within the paradigm of AI,
+
+99
+00:06:52,284 --> 00:06:58,126
+we apply it to the built environment and by that we are able
+
+100
+00:06:58,126 --> 00:07:04,569
+to achieve a next level time standard that really is unmatched.
+
+101
+00:07:06,155 --> 00:07:10,068
+So we're also while doing projects,
+
+102
+00:07:10,068 --> 00:07:12,571
+we're also developing our own model.
+
+103
+00:07:12,571 --> 00:07:17,735
+It's called Gaudi One, a state-of-the- art discrete diffusion model.
+
+104
+00:07:17,735 --> 00:07:21,769
+It's super interesting to be a part of this amazing team.
+
+105
+00:07:21,769 --> 00:07:25,842
+so that is a bit my background.
+
+106
+00:07:25,842 --> 00:07:31,017
+If you're interested, go to the website,
+
+107
+00:07:31,017 --> 00:07:33,229
+it's just called Meet Davis.
+
+108
+00:07:34,133 --> 00:07:36,075
+And you can have a look at what we do,
+
+109
+00:07:36,075 --> 00:07:40,178
+how it works, the technology.
+
+110
+00:07:40,178 --> 00:07:45,102
+So Gaudi One, a bit of the team,
+
+111
+00:07:45,102 --> 00:07:49,847
+etc. It's honestly an honor to be part of the of this team,
+
+112
+00:07:49,847 --> 00:07:54,070
+and I'm very happy about that.
+
+113
+00:07:54,070 --> 00:07:58,474
+So, about this course, why this course is important.
+
+114
+00:07:58,474 --> 00:08:01,687
+The next part might sound a bit cheesy.
+
+115
+00:08:02,007 --> 00:08:03,998
+But it's really how I think about it.
+
+116
+00:08:03,998 --> 00:08:07,121
+AI is going to change all industries.
+
+117
+00:08:07,121 --> 00:08:11,604
+It's actually already changing it and has already changed it a lot.
+
+118
+00:08:11,604 --> 00:08:16,207
+So people who dismiss it will become dinosaurs.
+
+119
+00:08:16,207 --> 00:08:19,790
+This means we have to adapt or die.
+
+120
+00:08:19,790 --> 00:08:24,313
+I really believe in choosing a specialization,
+
+121
+00:08:24,313 --> 00:08:27,395
+a niche, something that you will become very good at.
+
+122
+00:08:27,395 --> 00:08:29,317
+For me, choosing my
+
+123
+00:08:29,901 --> 00:08:33,744
+Thesis topic as generative AI within architecture was a first step.
+
+124
+00:08:33,744 --> 00:08:36,846
+Joining Davis was the next step,
+
+125
+00:08:36,846 --> 00:08:43,210
+and I really believe that everybody should do it and become AI native by nature.
+
+126
+00:08:43,210 --> 00:08:46,492
+So AI is transforming architecture,
+
+127
+00:08:46,492 --> 00:08:51,796
+and open source is a driver behind AI development.
+
+128
+00:08:51,796 --> 00:08:55,789
+What is open source? For anybody who doesn't understand,
+
+129
+00:08:55,789 --> 00:08:58,861
+open source is the fact that people are building things.
+
+130
+00:08:59,901 --> 00:09:05,353
+and providing it to the community so I essentially letting people use it for free.
+
+131
+00:09:08,065 --> 00:09:11,747
+I'm going to explain it better along the way.
+
+132
+00:09:11,747 --> 00:09:15,348
+But since open source is a driver behind AI development,
+
+133
+00:09:15,348 --> 00:09:18,390
+I believe that ComfyUI is here to stay.
+
+134
+00:09:18,390 --> 00:09:21,151
+So ComfyUI is the program we'll be using.
+
+135
+00:09:21,151 --> 00:09:23,332
+It's the biggest open source platform.
+
+136
+00:09:23,332 --> 00:09:28,455
+What they do is they you they take all models that other companies
+
+137
+00:09:28,455 --> 00:09:33,557
+or other people are developing and they bring it in one platform for you to use.
+
+138
+00:09:37,345 --> 00:09:42,988
+Before we actually jump in and go into to generating
+
+139
+00:09:42,988 --> 00:09:47,871
+images and stuff, I already showed you the Miro board,
+
+140
+00:09:47,871 --> 00:09:50,672
+but we're gonna have a look at some definitions.
+
+141
+00:09:50,672 --> 00:09:53,623
+Since this is going to be a bit more theoretical,
+
+142
+00:09:53,623 --> 00:09:58,656
+this first module, we need some definitions to make the communication good.
+
+143
+00:09:58,656 --> 00:10:02,519
+Otherwise, I will talk a lot about things that you don't understand
+
+144
+00:10:02,519 --> 00:10:07,031
+and then we get nowhere. These are some things that we will be
+
+145
+00:10:07,511 --> 00:10:11,843
+Quickly discussing. I'm going to go pretty slow.
+
+146
+00:10:11,843 --> 00:10:14,605
+I'm going to speed up after a while.
+
+147
+00:10:14,605 --> 00:10:20,368
+But don't be afraid if you don't understand anything or if not everything is clear.
+
+148
+00:10:20,368 --> 00:10:23,370
+Because I will repeat this over every module,
+
+149
+00:10:23,370 --> 00:10:26,011
+and after a while everything becomes clear.
+
+150
+00:10:26,011 --> 00:10:31,274
+So tokens. how do tokens work?
+
+151
+00:10:31,274 --> 00:10:35,777
+Models, AI models, just to make make sure.
+
+152
+00:10:36,715 --> 00:10:39,827
+we're on the right track. AI models don't read text,
+
+153
+00:10:39,827 --> 00:10:46,432
+they read numbers. A tokenizer is a translator that converts your prompt
+
+154
+00:10:46,653 --> 00:10:51,396
+into a sequence of numbers the model actually can process.
+
+155
+00:10:51,396 --> 00:10:56,139
+So models read numbers. Rule of thumb:
+
+156
+00:10:56,139 --> 00:10:57,701
+you don't have to remember this one,
+
+157
+00:10:57,701 --> 00:11:03,595
+but it's interesting. One token equals 0.75.
+
+158
+00:11:04,223 --> 00:11:06,754
+English words or about four characters.
+
+159
+00:11:06,754 --> 00:11:12,117
+An example of that is let's say you have the prompt a brutalist concrete pavilion
+
+160
+00:11:12,117 --> 00:11:15,659
+at sunset. That is what we as humans prompt,
+
+161
+00:11:15,659 --> 00:11:18,661
+but that's not what the model actually reads.
+
+162
+00:11:18,661 --> 00:11:20,882
+The model would read something like this:
+
+163
+00:11:20,882 --> 00:11:24,684
+clip, it's just the name of a tokenizer,
+
+164
+00:11:24,684 --> 00:11:26,605
+translates this sentence.
+
+165
+00:11:29,887 --> 00:11:34,099
+into "a", "brutal"... sorry, "a", "brutal",
+
+166
+00:11:34,340 --> 00:11:38,442
+ist concrete pavilion at sunset
+
+167
+00:11:38,802 --> 00:11:43,855
+and for every token so brutal is
+
+168
+00:11:43,855 --> 00:11:48,227
+a token ist is a token it gives
+
+169
+00:11:48,468 --> 00:11:54,621
+one number right so this sequence of numbers is just
+
+170
+00:11:54,621 --> 00:11:57,052
+how the computer reads this
+
+171
+00:11:59,201 --> 00:12:04,064
+This sentence. Just something to think about whenever you see tokens.
+
+172
+00:12:04,064 --> 00:12:10,547
+Tokens is a translation from words to later numbers.
+
+173
+00:12:10,547 --> 00:12:14,349
+Now, next definition: noise.
+
+174
+00:12:14,349 --> 00:12:19,132
+Noise is an extremely important one because we will talk a lot about noise.
+
+175
+00:12:19,132 --> 00:12:25,455
+Noise is a bunch of randomly distributed pixels within a frame,
+
+176
+00:12:25,455 --> 00:12:28,247
+as you can actually see on this image.
+
+177
+00:12:28,439 --> 00:12:30,471
+So this is an example of noise.
+
+178
+00:12:30,471 --> 00:12:36,776
+The seed of the noise is the exact configuration
+
+179
+00:12:36,776 --> 00:12:40,259
+of the noise, always a number.
+
+180
+00:12:40,259 --> 00:12:43,441
+So an example of this is this.
+
+181
+00:12:43,441 --> 00:12:48,385
+So we saw that what you see in the background is the noise.
+
+182
+00:12:48,385 --> 00:12:51,188
+This is the seed of the noise.
+
+183
+00:12:51,188 --> 00:12:55,692
+It's just 14 numbers. They look random,
+
+184
+00:12:55,692 --> 00:12:57,343
+but they're not random.
+
+185
+00:12:57,697 --> 00:13:02,159
+You can look at it as if it's like in a national ID.
+
+186
+00:13:02,159 --> 00:13:07,871
+So I made this fictional character just for the sake of this course,
+
+187
+00:13:07,871 --> 00:13:14,044
+it's not a real person. The seed of the noise is like the national ID.
+
+188
+00:13:14,044 --> 00:13:17,535
+So you look at this number, and if you just look at the number,
+
+189
+00:13:17,535 --> 00:13:19,386
+you would say it's a random number.
+
+190
+00:13:19,386 --> 00:13:24,848
+But it's not random because if this person would go to the police or it would
+
+191
+00:13:24,848 --> 00:13:27,189
+go to any other
+
+192
+00:13:27,559 --> 00:13:29,791
+it would it would go to the bank for example.
+
+193
+00:13:29,791 --> 00:13:34,814
+Both know this person by his national ID.
+
+194
+00:13:34,814 --> 00:13:39,377
+So it's not random because if you change one number,
+
+195
+00:13:39,377 --> 00:13:41,088
+it's not the right person anymore.
+
+196
+00:13:41,088 --> 00:13:45,101
+So it's the let's say it's the ID of the noise.
+
+197
+00:13:47,361 --> 00:13:50,642
+That means that if me or anybody,
+
+198
+00:13:50,642 --> 00:13:53,363
+any other human looks at these two images,
+
+199
+00:13:53,363 --> 00:13:55,444
+you cannot see the difference,
+
+200
+00:13:55,444 --> 00:13:58,566
+right? but they are completely different.
+
+201
+00:13:58,566 --> 00:14:01,947
+The structure is completely different.
+
+202
+00:14:01,947 --> 00:14:07,509
+This noise has the seed of this number.
+
+203
+00:14:07,509 --> 00:14:10,370
+So this number is the seed of this noise.
+
+204
+00:14:10,370 --> 00:14:15,362
+I hope that's clear. And even though you cannot see any difference between these
+
+205
+00:14:15,362 --> 00:14:16,983
+two, this one.
+
+206
+00:14:17,217 --> 00:14:20,878
+has a completely different seed.
+
+207
+00:14:20,878 --> 00:14:27,500
+So this one is tied exactly to this one and this one is tied exactly to that one.
+
+208
+00:14:27,500 --> 00:14:31,461
+Remember that one. I'm going to repeat it afterwards.
+
+209
+00:14:31,461 --> 00:14:37,693
+The next one dataset. A dataset in this context is simply
+
+210
+00:14:37,693 --> 00:14:43,484
+a giant folder of images, each one paired with a text caption describing what's
+
+211
+00:14:43,664 --> 00:14:46,025
+in it. It's a set of data.
+
+212
+00:14:47,575 --> 00:14:50,887
+This is just a visual representation of what it is.
+
+213
+00:14:50,887 --> 00:14:56,291
+If we zoom into one, we see that we always have two components.
+
+214
+00:14:56,291 --> 00:14:59,693
+We have an image, it's the most important one,
+
+215
+00:14:59,693 --> 00:15:03,695
+and we have the caption. So it's just
+
+216
+00:15:04,717 --> 00:15:08,719
+a text file that has a text
+
+217
+00:15:08,719 --> 00:15:14,523
+in it that describes the content of the image.
+
+218
+00:15:14,523 --> 00:15:16,855
+So you can see a brutalist building.
+
+219
+00:15:17,421 --> 00:15:19,902
+Perched on the edge of an eroded landscape.
+
+220
+00:15:19,902 --> 00:15:26,344
+That's what you see here. Normally it looks like this like this length.
+
+221
+00:15:26,344 --> 00:15:29,455
+Sometimes it's longer, sometimes it's shorter.
+
+222
+00:15:29,455 --> 00:15:33,786
+But in general, the caption is looking like this.
+
+223
+00:15:33,786 --> 00:15:36,817
+Now, why do I show you this?
+
+224
+00:15:36,817 --> 00:15:41,988
+Because actually, you don't need to know this to go to the next phase.
+
+225
+00:15:41,988 --> 00:15:44,409
+But it's important to understand.
+
+226
+00:15:45,057 --> 00:15:50,018
+That whoever curates the data set decides what the model can imagine.
+
+227
+00:15:50,018 --> 00:15:53,759
+So biases, gaps, aesthetics,
+
+228
+00:15:53,759 --> 00:15:57,600
+everything is baked in before you ever type a prompt.
+
+229
+00:15:57,600 --> 00:16:04,082
+So nothing, no media, no medium is neutral.
+
+230
+00:16:04,082 --> 00:16:08,784
+It always has a direction, and in this case it's the company or the people
+
+231
+00:16:09,184 --> 00:16:12,525
+who have made the dataset.
+
+232
+00:16:14,119 --> 00:16:17,091
+it might sound negative but it's not.
+
+233
+00:16:17,091 --> 00:16:23,496
+I will explain later. Why I really emphasize this is the table
+
+234
+00:16:23,496 --> 00:16:28,720
+we see here is an evolution. So we see that this is a model name.
+
+235
+00:16:28,720 --> 00:16:33,843
+These are all models, AI diffusion models that came out.
+
+236
+00:16:33,843 --> 00:16:37,506
+This one came out in 2022, 23,
+
+237
+00:16:37,506 --> 00:16:41,309
+24, 25. So roughly every year
+
+238
+00:16:42,057 --> 00:16:47,779
+a new very big open source diffusion model comes out.
+
+239
+00:16:47,779 --> 00:16:52,380
+Actually, now we're in 2026, it's actually going faster,
+
+240
+00:16:52,380 --> 00:16:56,381
+so now it's every two every month or every few weeks.
+
+241
+00:16:56,381 --> 00:16:59,842
+What I want to show you is this.
+
+242
+00:16:59,842 --> 00:17:04,423
+In 2022, the first really relevant model came out.
+
+243
+00:17:04,423 --> 00:17:10,105
+It was Stable Diffusion 1.5. This model was trained
+
+244
+00:17:10,709 --> 00:17:13,270
+As we saw before, on datasets,
+
+245
+00:17:13,270 --> 00:17:17,742
+images plus captions, and it was trained
+
+246
+00:17:17,742 --> 00:17:23,334
+on 860 million of them. Now that so might sound a lot,
+
+247
+00:17:23,334 --> 00:17:27,756
+but today flux2 is like the benchmark model,
+
+248
+00:17:27,756 --> 00:17:30,897
+it's the best one, is trained on 32 billion.
+
+249
+00:17:30,897 --> 00:17:36,940
+So in three years we went from 860 million to 32 billion,
+
+250
+00:17:36,940 --> 00:17:40,101
+which means this model, FLUX.
+
+251
+00:17:41,975 --> 00:17:45,636
+FLUX.2, it's has been trained
+
+252
+00:17:45,636 --> 00:17:49,248
+on 32 billion images.
+
+253
+00:17:49,248 --> 00:17:51,649
+That's how you can imagine it.
+
+254
+00:17:51,649 --> 00:17:57,912
+So that means that it saw way more things compared to Stable Diffusion 1.5.
+
+255
+00:17:57,912 --> 00:18:01,213
+So it's I would say it's smarter.
+
+256
+00:18:01,213 --> 00:18:04,854
+If you teach a child only 8 things,
+
+257
+00:18:04,854 --> 00:18:10,137
+of course another child who has been taught 32 things is smarter because
+
+258
+00:18:10,137 --> 00:18:11,137
+it has seen
+
+259
+00:18:11,351 --> 00:18:14,872
+Way more stuff. Now,
+
+260
+00:18:14,872 --> 00:18:16,891
+this is a very simple representation,
+
+261
+00:18:16,891 --> 00:18:21,884
+it's a bit more complex, but this is what I want you to remember from this slide.
+
+262
+00:18:21,884 --> 00:18:25,685
+The next definition:
+
+263
+00:18:25,685 --> 00:18:28,966
+training of the diffusion model.
+
+264
+00:18:28,966 --> 00:18:34,097
+The training of the diffusion model is the process during which
+
+265
+00:18:34,097 --> 00:18:38,528
+the AI model is exposed to a large data set.
+
+266
+00:18:38,528 --> 00:18:40,599
+Remember, images plus captions.
+
+267
+00:18:41,055 --> 00:18:45,829
+And thus it learns the correlation between words and pixels.
+
+268
+00:18:45,829 --> 00:18:50,614
+So just to make sure, we're not going to train a diffusion model.
+
+269
+00:18:50,614 --> 00:18:55,799
+This is something that happens like I said once a year or every few months.
+
+270
+00:18:55,799 --> 00:18:58,822
+This is not something that we can do ourselves.
+
+271
+00:18:58,822 --> 00:19:02,585
+This is it takes an a large amount of computing,
+
+272
+00:19:02,585 --> 00:19:06,016
+a large amount of time, a lot of resources,
+
+273
+00:19:06,016 --> 00:19:07,016
+a lot of money.
+
+274
+00:19:08,087 --> 00:19:13,218
+But this is how companies like Stability AI or even Google
+
+275
+00:19:13,218 --> 00:19:16,519
+and ChatGPT are training their models.
+
+276
+00:19:16,519 --> 00:19:20,560
+So this has nothing to do with the things we will be doing,
+
+277
+00:19:20,560 --> 00:19:24,842
+but it has to do with the models that we will be using.
+
+278
+00:19:24,842 --> 00:19:29,803
+Just remember that. So this we saw before,
+
+279
+00:19:29,803 --> 00:19:33,244
+this is a data set or like one image plus caption.
+
+280
+00:19:33,244 --> 00:19:36,485
+And I'm going to give you a very
+
+281
+00:19:37,057 --> 00:19:40,946
+detailed explanation using one of the images I created.
+
+282
+00:19:40,946 --> 00:19:44,814
+So let's say I would like to make an own diffusion model.
+
+283
+00:19:44,814 --> 00:19:47,561
+It's not going to happen, but let's say we would
+
+284
+00:19:50,103 --> 00:19:56,007
+How would the process go to include this image in the training
+
+285
+00:19:56,007 --> 00:20:00,540
+of a diffusion model? We would be adding noise as the main step.
+
+286
+00:20:00,540 --> 00:20:05,364
+Now, what does that mean? Let's say we take this image and we take a caption,
+
+287
+00:20:05,364 --> 00:20:08,266
+right? So the two essential elements.
+
+288
+00:20:08,266 --> 00:20:11,838
+We say it's a sculptural apartment building,
+
+289
+00:20:11,838 --> 00:20:16,912
+glossy deep blue tiles, Spanish village during the summer.
+
+290
+00:20:20,705 --> 00:20:22,687
+How is the model being trained?
+
+291
+00:20:22,687 --> 00:20:27,351
+It takes this image and it adds noise.
+
+292
+00:20:27,351 --> 00:20:30,834
+Remember, noise was randomly distributed pixels,
+
+293
+00:20:30,834 --> 00:20:34,257
+but it does it in X amount of steps.
+
+294
+00:20:34,257 --> 00:20:36,289
+So first it adds a little bit of noise.
+
+295
+00:20:36,289 --> 00:20:38,862
+You can still see it's kinda the same image.
+
+296
+00:20:38,862 --> 00:20:41,564
+Then it adds more noise, more,
+
+297
+00:20:41,564 --> 00:20:45,928
+more until we have no structure left.
+
+298
+00:20:45,928 --> 00:20:46,928
+So you see.
+
+299
+00:20:47,743 --> 00:20:50,444
+In one, two, three, four, five,
+
+300
+00:20:50,444 --> 00:20:53,096
+six, seven, eight, nine steps,
+
+301
+00:20:53,096 --> 00:20:58,359
+we go from an image that contains our building
+
+302
+00:20:59,019 --> 00:21:01,841
+to something that is completely random.
+
+303
+00:21:01,841 --> 00:21:08,224
+Here in the last step, you can still see a bit of the of the structure lines,
+
+304
+00:21:08,224 --> 00:21:12,466
+but here everything's gone. So it breaks down
+
+305
+00:21:12,667 --> 00:21:16,929
+our image into complete chaos.
+
+306
+00:21:17,399 --> 00:21:21,030
+So let's call this part complete order,
+
+307
+00:21:21,030 --> 00:21:25,830
+and this is complete chaos. This is what we call
+
+308
+00:21:25,830 --> 00:21:28,292
+the forward diffusion process.
+
+309
+00:21:28,292 --> 00:21:30,493
+Again, you don't have to remember this,
+
+310
+00:21:30,493 --> 00:21:33,373
+but if you're interested, that's how we call it.
+
+311
+00:21:33,373 --> 00:21:38,735
+So, a recap. During the training of the AI model,
+
+312
+00:21:38,735 --> 00:21:40,635
+not something that we will do.
+
+313
+00:21:40,635 --> 00:21:44,716
+We go from an image, actually,
+
+314
+00:21:44,716 --> 00:21:46,487
+billions of images.
+
+315
+00:21:47,497 --> 00:21:52,782
+to noise. So every image gets reduced
+
+316
+00:21:52,882 --> 00:21:59,428
+to pure noise in X amount of steps as we see here until
+
+317
+00:21:59,428 --> 00:22:04,053
+we have complete pure noise. So this is pure noise.
+
+318
+00:22:07,767 --> 00:22:12,438
+Now we did it with one image, it will happen with billions of images.
+
+319
+00:22:12,438 --> 00:22:18,980
+So this image of a block of red marble will have the same process.
+
+320
+00:22:18,980 --> 00:22:23,522
+Every time a little bit more noise will be added until nothing is left.
+
+321
+00:22:23,522 --> 00:22:26,963
+Now that's during the training.
+
+322
+00:22:26,963 --> 00:22:29,714
+What we will actually care about,
+
+323
+00:22:29,714 --> 00:22:32,224
+what we will do is during generation,
+
+324
+00:22:32,224 --> 00:22:33,965
+when we generate an image.
+
+325
+00:22:34,731 --> 00:22:36,692
+So during the generation part,
+
+326
+00:22:36,692 --> 00:22:40,124
+this is actually what we will be what we will be doing.
+
+327
+00:22:40,124 --> 00:22:44,086
+We actually flip the process around.
+
+328
+00:22:44,086 --> 00:22:47,868
+So during the training, we go from image to pure noise.
+
+329
+00:22:47,868 --> 00:22:53,211
+During generation, so what we actually prompt and what we generate,
+
+330
+00:22:53,211 --> 00:22:59,995
+it's the other way around. So we start from pure noise and we go to a final image.
+
+331
+00:22:59,995 --> 00:23:02,757
+So we don't have a caption anymore.
+
+332
+00:23:02,757 --> 00:23:03,757
+We don't
+
+333
+00:23:03,755 --> 00:23:06,127
+speak about captions but we talk about prompts.
+
+334
+00:23:06,127 --> 00:23:13,011
+So let's say we prompt facade structure of red marble with the visible white veins.
+
+335
+00:23:13,011 --> 00:23:16,774
+Black window mullions reflection in glass.
+
+336
+00:23:16,774 --> 00:23:20,637
+The model will start from pure noise.
+
+337
+00:23:20,637 --> 00:23:25,760
+It's just an image with like filled with color pixels,
+
+338
+00:23:25,760 --> 00:23:29,373
+like a real image, but no structure.
+
+339
+00:23:29,373 --> 00:23:31,764
+It's just randomly distributed pixels.
+
+340
+00:23:31,764 --> 00:23:32,825
+And then
+
+341
+00:23:33,427 --> 00:23:38,964
+in X amount of steps it will go and make a very detailed image.
+
+342
+00:23:38,964 --> 00:23:42,068
+So it will first do one step,
+
+343
+00:23:42,068 --> 00:23:43,068
+two steps
+
+344
+00:23:45,047 --> 00:23:48,090
+So one, two, three, four,
+
+345
+00:23:48,090 --> 00:23:50,904
+five, six, seven, eight, nine.
+
+346
+00:23:50,904 --> 00:23:56,370
+And in the last step, it the output is a is a detailed image.
+
+347
+00:23:56,370 --> 00:23:58,933
+I hope you can see it here behind my head.
+
+348
+00:24:02,687 --> 00:24:07,899
+Steps. What are steps? Steps is just the amount of times
+
+349
+00:24:08,219 --> 00:24:11,921
+it corrects itself until we have a final image.
+
+350
+00:24:11,921 --> 00:24:16,303
+That is the only thing. So the amount of iterations the model takes to
+
+351
+00:24:16,303 --> 00:24:18,584
+go from pure noise to the final image.
+
+352
+00:24:18,584 --> 00:24:23,786
+To give you an idea, this is just a different workflow, with different weights.
+
+353
+00:24:23,786 --> 00:24:27,707
+So this is also noise. First step,
+
+354
+00:24:27,707 --> 00:24:31,457
+second, third, etc. So
+
+355
+00:24:31,871 --> 00:24:38,704
+Every time it finds a bit more structure in the chaos until we have an image.
+
+356
+00:24:40,875 --> 00:24:45,087
+And while generating, so with while taking these steps,
+
+357
+00:24:45,087 --> 00:24:48,729
+it remembers everything it saw during training.
+
+358
+00:24:48,729 --> 00:24:55,013
+So let's say you prompt here I don't know a castle on a hill with some
+
+359
+00:24:55,013 --> 00:25:01,176
+vegetation and blue sky. All these words get translated into tokens,
+
+360
+00:25:01,176 --> 00:25:05,258
+as we saw before. These tokens are numbers,
+
+361
+00:25:05,258 --> 00:25:09,541
+and these numbers are linked to images.
+
+362
+00:25:09,803 --> 00:25:11,714
+The model saw during the training.
+
+363
+00:25:11,714 --> 00:25:16,498
+So, in this generation process here,
+
+364
+00:25:16,498 --> 00:25:19,560
+while generating, the model thinks,
+
+365
+00:25:19,560 --> 00:25:24,403
+okay, what did I see during my training that reminds me of a castle?
+
+366
+00:25:24,403 --> 00:25:27,745
+What does it mean when something is on a hill?
+
+367
+00:25:27,745 --> 00:25:30,367
+What does green vegetation mean?
+
+368
+00:25:30,367 --> 00:25:33,770
+So, the more it sees during the training,
+
+369
+00:25:33,770 --> 00:25:38,423
+the better or the more references it has when generating something.
+
+370
+00:25:43,789 --> 00:25:48,672
+So, what you see here is just another representation of
+
+371
+00:25:48,672 --> 00:25:52,615
+the forward diffusion process or forward noising process.
+
+372
+00:25:52,615 --> 00:25:55,077
+Remember, this is during training.
+
+373
+00:25:55,077 --> 00:25:59,700
+So, this is not when we are actually generating something.
+
+374
+00:25:59,700 --> 00:26:03,112
+So, you can see we start from an image of a smiling dog.
+
+375
+00:26:03,112 --> 00:26:09,287
+and every time it adds a little bit more noise until
+
+376
+00:26:09,287 --> 00:26:11,008
+we have pure noise.
+
+377
+00:26:12,737 --> 00:26:16,879
+By the end here, the model knows okay,
+
+378
+00:26:16,879 --> 00:26:20,360
+these this structure of pixels,
+
+379
+00:26:20,360 --> 00:26:23,781
+this is what a dog that is smiling means.
+
+380
+00:26:23,781 --> 00:26:29,604
+So it's just learning the relationship between how pixels
+
+381
+00:26:29,604 --> 00:26:32,225
+are structured and a word.
+
+382
+00:26:34,573 --> 00:26:38,835
+So a model that is trained on millions of cat images,
+
+383
+00:26:38,835 --> 00:26:43,537
+labelled cat, learns the visual concept concept of cat,
+
+384
+00:26:43,537 --> 00:26:49,139
+but it will never learn what a Zaha Hadid building is unless that label
+
+385
+00:26:49,219 --> 00:26:52,961
+was in the dataset, so unless it was captioned.
+
+386
+00:26:55,115 --> 00:26:56,616
+Course, this is not rocket science,
+
+387
+00:26:56,616 --> 00:26:59,449
+it's as if you're teaching a child something.
+
+388
+00:26:59,449 --> 00:27:04,553
+If you teach a child only Chinese and then you
+
+389
+00:27:04,553 --> 00:27:08,676
+ask that child a question in French,
+
+390
+00:27:08,676 --> 00:27:13,260
+of course it will not know what you mean because you didn't teach the child French.
+
+391
+00:27:13,260 --> 00:27:18,925
+So training the model is like learning a language.
+
+392
+00:27:21,483 --> 00:27:25,766
+A diffusion model generates images from pure noise.
+
+393
+00:27:25,766 --> 00:27:31,960
+This is just a recap. It finds structure in chaos and it finds patterns in chaos.
+
+394
+00:27:31,960 --> 00:27:38,285
+It can do this because it has spent months looking at billions of images paired with
+
+395
+00:27:38,365 --> 00:27:42,748
+text descriptions, learning what words tend to look like.
+
+396
+00:27:42,748 --> 00:27:46,630
+Then we go to the next definition,
+
+397
+00:27:46,630 --> 00:27:50,263
+which is latent space. This one is a bit more technical.
+
+398
+00:27:50,591 --> 00:27:53,714
+If it's not completely clear, don't worry.
+
+399
+00:27:53,714 --> 00:27:57,326
+we will revise this a lot of times.
+
+400
+00:27:57,326 --> 00:28:02,961
+So latent space is a compressed summary world where the AI does
+
+401
+00:28:02,961 --> 00:28:08,716
+all its thinking and eventually it gets translated back into real pixels
+
+402
+00:28:08,716 --> 00:28:12,589
+at the very last step. Probably this is not clear,
+
+403
+00:28:12,589 --> 00:28:16,362
+but don't worry. Remember that was latent space.
+
+404
+00:28:16,362 --> 00:28:19,735
+Now Empty Latent Image.
+
+405
+00:28:21,281 --> 00:28:24,622
+What Empty Latent Image is pretty self-explanatory,
+
+406
+00:28:24,622 --> 00:28:29,865
+it's a blank canvas. It's a blank canvas in
+
+407
+00:28:29,865 --> 00:28:36,007
+the latent space and it has the size of an image but no content yet.
+
+408
+00:28:36,007 --> 00:28:40,169
+Believe me, this one will become a bit more clear.
+
+409
+00:28:40,169 --> 00:28:43,111
+Why does it do it?
+
+410
+00:28:43,111 --> 00:28:47,332
+It does it because adding noise to a million pixels,
+
+411
+00:28:47,332 --> 00:28:48,353
+for example.
+
+412
+00:28:48,949 --> 00:28:52,360
+And denoising them step by step would take forever and it would
+
+413
+00:28:52,360 --> 00:28:55,572
+be super demanding on your PC.
+
+414
+00:28:55,572 --> 00:29:00,174
+So instead it compresses it down.
+
+415
+00:29:00,174 --> 00:29:02,094
+So let's say you take an image,
+
+416
+00:29:02,094 --> 00:29:05,496
+instead of regenerating that image,
+
+417
+00:29:05,496 --> 00:29:11,638
+that would take way too long because it would have to recalculate every pixel.
+
+418
+00:29:11,638 --> 00:29:15,560
+First, it compresses it down to a way smaller file.
+
+419
+00:29:15,560 --> 00:29:18,381
+Then that file gets
+
+420
+00:29:19,213 --> 00:29:25,749
+changed and in the last step that small file becomes big again.
+
+421
+00:29:28,213 --> 00:29:33,314
+A metaphor that I always use to explain this is to compare it with a zip file.
+
+422
+00:29:33,314 --> 00:29:37,446
+Now just to make sure that there's no confusion,
+
+423
+00:29:37,446 --> 00:29:39,886
+it doesn't work with actually like a zip file,
+
+424
+00:29:39,886 --> 00:29:45,198
+but it's a metaphor. So let's say you have this image and
+
+425
+00:29:45,198 --> 00:29:48,159
+you want to do something with it.
+
+426
+00:29:48,159 --> 00:29:52,310
+So you upload it to an AI bot,
+
+427
+00:29:52,310 --> 00:29:55,096
+for example. This is a heavy image,
+
+428
+00:29:55,096 --> 00:29:56,941
+it has one million pixels.
+
+429
+00:29:58,675 --> 00:30:01,606
+If we generate this one completely again,
+
+430
+00:30:01,606 --> 00:30:06,567
+it will be too hard on the soft on the hardware and it will take 10 minutes.
+
+431
+00:30:06,567 --> 00:30:12,409
+So, what do we do? We make it into a small file.
+
+432
+00:30:12,409 --> 00:30:17,110
+Right? So, a small file you cannot actually look at it anymore because it's
+
+433
+00:30:17,110 --> 00:30:22,071
+too small. And we do this using a VAE Encode.
+
+434
+00:30:22,071 --> 00:30:25,752
+So just remember this name for later because it will come back.
+
+435
+00:30:25,752 --> 00:30:28,053
+A VAE Encode.
+
+436
+00:30:28,607 --> 00:30:31,639
+stands for variational autoencoder.
+
+437
+00:30:31,639 --> 00:30:36,882
+So it auto-encodes this image into
+
+438
+00:30:36,882 --> 00:30:42,346
+a very small file. So it goes from one million pixels
+
+439
+00:30:42,946 --> 00:30:47,069
+to sixteen thousand numbers. So not any more pixels,
+
+440
+00:30:47,069 --> 00:30:53,913
+it becomes numbers. Now everything here in this middle part.
+
+441
+00:30:55,169 --> 00:30:57,370
+We don't see this, it's behind the scenes,
+
+442
+00:30:57,370 --> 00:31:00,300
+behind the scenes of the AI model.
+
+443
+00:31:00,300 --> 00:31:05,532
+So we never see this. But this is happening when you click on generate.
+
+444
+00:31:05,532 --> 00:31:09,433
+Okay. Then in the next step,
+
+445
+00:31:09,433 --> 00:31:15,835
+when the AI has changed this compressed file,
+
+446
+00:31:15,835 --> 00:31:21,676
+it will decode it again. So it will do the opposite of encoding again with a VAE,
+
+447
+00:31:21,676 --> 00:31:23,767
+variational autoencoder.
+
+448
+00:31:24,193 --> 00:31:27,034
+Then it will decode it. What does it mean?
+
+449
+00:31:27,034 --> 00:31:28,934
+It's like unzipping the image.
+
+450
+00:31:28,934 --> 00:31:33,776
+So it makes an image from 16,000 numbers
+
+451
+00:31:34,076 --> 00:31:38,007
+go back to 1 million pixels,
+
+452
+00:31:38,007 --> 00:31:44,228
+and then we can see it again. So this you can see as the first one.
+
+453
+00:31:44,228 --> 00:31:50,560
+This is a human world. It gets translated into AI world,
+
+454
+00:31:50,560 --> 00:31:53,041
+and then it gets
+
+455
+00:31:54,049 --> 00:31:58,933
+Decoded again into human visibility pixels.
+
+456
+00:31:58,933 --> 00:32:03,907
+You don't have to explain or like understand it too too deep,
+
+457
+00:32:03,907 --> 00:32:06,059
+but this is how the thinking must go.
+
+458
+00:32:06,059 --> 00:32:11,463
+Now, what we see here is a screenshot of a very basic,
+
+459
+00:32:11,463 --> 00:32:17,929
+most standard workflow of ComfyUI We're going
+
+460
+00:32:17,929 --> 00:32:23,243
+to go very deep into this before actually opening up Comfy ourselves.
+
+461
+00:32:25,549 --> 00:32:30,253
+How it works, if you've ever used Grasshopper or if you know what Grasshopper is,
+
+462
+00:32:30,253 --> 00:32:33,406
+Grasshopper and Comfy
+
+463
+00:32:33,406 --> 00:32:38,420
+are both visual programming platforms.
+
+464
+00:32:38,420 --> 00:32:42,283
+So it works with nodes. Everything you see here,
+
+465
+00:32:42,283 --> 00:32:46,427
+these things, they're all nodes,
+
+466
+00:32:46,427 --> 00:32:50,970
+blocks, and you connect them with strings to each other.
+
+467
+00:32:50,970 --> 00:32:53,713
+So you connect them with these lines and then
+
+468
+00:32:54,295 --> 00:32:58,314
+The data from this one gets passed on to the next one and you have like a chain.
+
+469
+00:33:00,385 --> 00:33:05,480
+Now what is always consistent is that it goes from left to right.
+
+470
+00:33:05,480 --> 00:33:10,804
+I hope this makes it clear that this is a this is an arrow.
+
+471
+00:33:10,804 --> 00:33:15,879
+so the left part is the input part.
+
+472
+00:33:15,879 --> 00:33:18,361
+Here you input the model, the prompt,
+
+473
+00:33:18,361 --> 00:33:24,827
+the ratio. Then the second part is always generation,
+
+474
+00:33:24,827 --> 00:33:27,349
+and the third part is always output.
+
+475
+00:33:28,053 --> 00:33:29,884
+It may look different, but in general,
+
+476
+00:33:29,884 --> 00:33:32,636
+this is always part of any workflow.
+
+477
+00:33:32,636 --> 00:33:39,421
+Input, generation, output. If we zoom into one node,
+
+478
+00:33:39,421 --> 00:33:45,365
+we see that on the left side we have the input.
+
+479
+00:33:45,365 --> 00:33:47,326
+So again, it goes from left to right.
+
+480
+00:33:47,326 --> 00:33:52,750
+so the node receives input on the left side and
+
+481
+00:33:52,750 --> 00:33:55,592
+it provides output on the right side,
+
+482
+00:33:55,592 --> 00:33:56,723
+just like Grasshopper.
+
+483
+00:34:01,705 --> 00:34:05,528
+Now, node by node, what do these nodes actually mean?
+
+484
+00:34:05,528 --> 00:34:08,949
+The first one is Load Checkpoint.
+
+485
+00:34:08,949 --> 00:34:11,712
+This loads the diffusion model,
+
+486
+00:34:11,712 --> 00:34:13,433
+which is trained on the dataset.
+
+487
+00:34:13,433 --> 00:34:18,857
+So this is for example Stable Diffusion 1.5 or FLUX
+
+488
+00:34:18,897 --> 00:34:24,219
+two or FLUX.1 or any model that is open source.
+
+489
+00:34:24,219 --> 00:34:28,563
+You can see here a hint that this is Stable Diffusion 1.5,
+
+490
+00:34:28,563 --> 00:34:30,784
+but there's
+
+491
+00:34:30,996 --> 00:34:33,938
+A lot of models and we will be seeing a lot as well.
+
+492
+00:34:37,495 --> 00:34:39,186
+This one going to skip for now.
+
+493
+00:34:39,186 --> 00:34:42,348
+The next part is the positive prompt.
+
+494
+00:34:42,348 --> 00:34:46,610
+Now, what does this do? Here you type your prompt,
+
+495
+00:34:46,610 --> 00:34:51,382
+very easy. The next one is the negative prompt,
+
+496
+00:34:51,382 --> 00:34:54,164
+so it's the opposite. Whatever you put in here,
+
+497
+00:34:54,164 --> 00:35:00,057
+the model will avoid. What does this make positive and negative?
+
+498
+00:35:00,057 --> 00:35:04,660
+You might ask, because the node is called just "prompt" in both cases.
+
+499
+00:35:04,660 --> 00:35:06,701
+It's because the output
+
+500
+00:35:06,943 --> 00:35:11,937
+of this one is connected to negative.
+
+501
+00:35:11,937 --> 00:35:16,881
+It's not super clear, but you can see that this string
+
+502
+00:35:16,962 --> 00:35:23,206
+is attached to negative. The output of this container of this node
+
+503
+00:35:23,527 --> 00:35:28,341
+is connected to positive. So that means that this will be received
+
+504
+00:35:28,341 --> 00:35:30,633
+as a positive prompt and this is a negative.
+
+505
+00:35:33,463 --> 00:35:35,214
+This node, Empty Latent Image,
+
+506
+00:35:35,214 --> 00:35:37,195
+this is what we talked about before.
+
+507
+00:35:37,195 --> 00:35:41,097
+This is a before we generate something,
+
+508
+00:35:41,097 --> 00:35:44,259
+we set the ratio of the image.
+
+509
+00:35:44,259 --> 00:35:47,291
+So let's say we have the settings here,
+
+510
+00:35:47,291 --> 00:35:52,944
+512 by 512. It's just an empty container which
+
+511
+00:35:53,044 --> 00:35:57,907
+is made of 512 pixels by 512 pixels.
+
+512
+00:35:57,907 --> 00:36:01,953
+If we change this setting here to
+
+513
+00:36:03,563 --> 00:36:07,456
+width and height like this, then you see that it becomes a rectangle.
+
+514
+00:36:07,456 --> 00:36:13,860
+So this is just how your output image will be will be made.
+
+515
+00:36:13,860 --> 00:36:19,564
+The KSampler, this is where actually the image gets generated.
+
+516
+00:36:19,564 --> 00:36:22,766
+You can see it as like the engine of the car.
+
+517
+00:36:22,766 --> 00:36:27,809
+All the inputs get input here on the left side.
+
+518
+00:36:27,809 --> 00:36:32,833
+The image has a lot of settings here at the bottom.
+
+519
+00:36:33,631 --> 00:36:36,992
+And the output is the image.
+
+520
+00:36:39,405 --> 00:36:45,891
+So we have the KSampler and the output of this node is the ratio.
+
+521
+00:36:45,891 --> 00:36:48,543
+So that is this one. That's what we just saw.
+
+522
+00:36:51,617 --> 00:36:55,581
+The KSampler will add noise to it.
+
+523
+00:36:55,581 --> 00:36:59,734
+You will see seed here, and we just saw the definition of seed,
+
+524
+00:36:59,734 --> 00:37:03,408
+it's the national ID of a noise.
+
+525
+00:37:03,408 --> 00:37:09,333
+So in the first step, it will add noise in this empty image.
+
+526
+00:37:09,333 --> 00:37:12,696
+So it's not empty anymore. And from that noise,
+
+527
+00:37:12,696 --> 00:37:16,099
+it will take x amount of steps.
+
+528
+00:37:16,099 --> 00:37:18,221
+Remember, steps is
+
+529
+00:37:18,497 --> 00:37:22,742
+How many iterations it takes to go from noise to an image.
+
+530
+00:37:22,742 --> 00:37:26,287
+Here it's speed up in one go,
+
+531
+00:37:26,287 --> 00:37:31,073
+but normally it's like a lot of small steps until you have a realistic image.
+
+532
+00:37:33,377 --> 00:37:36,278
+So the amount of iterations to make an image.
+
+533
+00:37:36,278 --> 00:37:39,419
+CFG is a specific one.
+
+534
+00:37:39,419 --> 00:37:45,621
+It's how much it follows your prompt versus how much
+
+535
+00:37:45,761 --> 00:37:49,762
+it does a creative thing, but don't worry about it in this stage.
+
+536
+00:37:49,762 --> 00:37:51,963
+We're gonna skip that one as well.
+
+537
+00:37:51,963 --> 00:37:56,744
+And then save image, it just makes sure that your image gets saved
+
+538
+00:37:57,525 --> 00:37:58,965
+on the software.
+
+539
+00:38:01,441 --> 00:38:06,344
+Now we're going to redo this whole scheme but in a metaphor.
+
+540
+00:38:06,344 --> 00:38:10,367
+And the mut the metaphor is that one of a kitchen.
+
+541
+00:38:10,367 --> 00:38:15,790
+So you have to look at ComfyUI as a restaurant or kitchen.
+
+542
+00:38:15,790 --> 00:38:21,054
+Doesn't really matter. If ComfyUI is a restaurant,
+
+543
+00:38:21,054 --> 00:38:24,896
+then the Load Checkpoint is the chef.
+
+544
+00:38:24,896 --> 00:38:25,896
+So it will
+
+545
+00:38:28,129 --> 00:38:30,610
+What you upload here is the chef.
+
+546
+00:38:30,610 --> 00:38:33,452
+This is the model, the diffusion model,
+
+547
+00:38:33,452 --> 00:38:36,574
+like Stable Diffusion 1.5 or flux 2.
+
+548
+00:38:36,574 --> 00:38:40,396
+And it has seen a lot of images.
+
+549
+00:38:40,396 --> 00:38:42,557
+The chef has seen a lot of dishes.
+
+550
+00:38:42,557 --> 00:38:44,918
+It has been cooking for 20 years,
+
+551
+00:38:44,918 --> 00:38:48,720
+so it knows almost every dish in the whole world.
+
+552
+00:38:48,720 --> 00:38:55,034
+Then the positive prompt is like the order of the client.
+
+553
+00:38:55,034 --> 00:38:56,895
+So the customer comes to the restaurant.
+
+554
+00:38:57,057 --> 00:38:59,738
+And it says okay, I want chicken with potatoes.
+
+555
+00:38:59,738 --> 00:39:06,560
+Very simple. The negative prompt you can look at as the allergy of the client.
+
+556
+00:39:06,560 --> 00:39:09,280
+It's like saying, Okay, I'm the client,
+
+557
+00:39:09,280 --> 00:39:12,941
+I want potatoes, chicken with potatoes,
+
+558
+00:39:12,941 --> 00:39:16,392
+but I'm allergic to garlic or something like that.
+
+559
+00:39:16,392 --> 00:39:18,923
+So I would type in negative prompt garlic.
+
+560
+00:39:18,923 --> 00:39:22,284
+So the chef, the diffusion model,
+
+561
+00:39:22,284 --> 00:39:26,195
+knows that it has to avoid garlic.
+
+562
+00:39:29,695 --> 00:39:34,957
+Empty Latent Image, which is a super confusing thing to understand,
+
+563
+00:39:34,957 --> 00:39:40,790
+it's just the plate. So you can look at it as if it's the empty plate that
+
+564
+00:39:40,790 --> 00:39:43,951
+the chef will make the dish on in the end.
+
+565
+00:39:43,951 --> 00:39:48,053
+So if the plate is very big,
+
+566
+00:39:48,053 --> 00:39:50,654
+like this, then the chef knows:
+
+567
+00:39:50,654 --> 00:39:53,155
+I have to make a lot of food.
+
+568
+00:39:53,155 --> 00:39:58,177
+So I might I might need to make a whole chicken instead of
+
+569
+00:39:58,647 --> 00:40:00,458
+When the plate is super small,
+
+570
+00:40:00,458 --> 00:40:04,159
+it knows half of half of a chicken will be enough.
+
+571
+00:40:04,159 --> 00:40:08,961
+So here you can change the size of the plate that the chef will be cooking on later.
+
+572
+00:40:08,961 --> 00:40:14,644
+The KSampler in this metaphor is the stove.
+
+573
+00:40:14,644 --> 00:40:19,606
+So here the chef comes, it knows the order of the client,
+
+574
+00:40:19,606 --> 00:40:21,927
+it knows the allergy of the client,
+
+575
+00:40:21,927 --> 00:40:27,569
+it knows how big the dish or like the plate.
+
+576
+00:40:27,871 --> 00:40:29,802
+On which the dish must come is.
+
+577
+00:40:29,802 --> 00:40:32,842
+It also knows the steps.
+
+578
+00:40:32,842 --> 00:40:37,484
+How many steps do I have to take to make this dish?
+
+579
+00:40:37,484 --> 00:40:40,424
+So I have to cut the chicken, add seasoning and stuff.
+
+580
+00:40:40,424 --> 00:40:42,845
+So that is the steps. How many steps do I take?
+
+581
+00:40:42,845 --> 00:40:47,016
+The creativity factor here, CFG,
+
+582
+00:40:47,016 --> 00:40:53,028
+is how much does the chef follow the recipe versus how much does
+
+583
+00:40:53,028 --> 00:40:56,561
+he freestyles a bit? So if you put it at 10.
+
+584
+00:40:57,239 --> 00:40:59,951
+The chef really follows the recipe.
+
+585
+00:40:59,951 --> 00:41:03,934
+If you put CFG here to one,
+
+586
+00:41:03,934 --> 00:41:07,426
+it's like saying to the chef, you can do whatever you want.
+
+587
+00:41:07,426 --> 00:41:09,498
+It's like carte blanche, you can do whatever you want.
+
+588
+00:41:09,498 --> 00:41:12,690
+So it's a bit ridiculous,
+
+589
+00:41:12,690 --> 00:41:17,884
+but I noticed that this really helps people to
+
+590
+00:41:18,604 --> 00:41:21,687
+see all the nodes as a function.
+
+591
+00:41:21,687 --> 00:41:24,919
+Then the last node.
+
+592
+00:41:25,331 --> 00:41:27,212
+Save Image becomes the food,
+
+593
+00:41:27,212 --> 00:41:33,403
+so it's the plate where the chicken and the potatoes are on without the garlic.
+
+594
+00:41:33,403 --> 00:41:37,086
+Now I skipped two very important ones deliberately,
+
+595
+00:41:37,086 --> 00:41:42,348
+which is the VAE. The VAE is more like the waiter.
+
+596
+00:41:42,348 --> 00:41:45,409
+So in the beginning, the VAE Encode
+
+597
+00:41:47,290 --> 00:41:50,671
+is the person who goes to the client,
+
+598
+00:41:50,671 --> 00:41:53,172
+to the customer, and he asks, okay,
+
+599
+00:41:53,172 --> 00:41:54,893
+what do you want to eat? Because
+
+600
+00:41:55,137 --> 00:41:57,859
+The customer is never talking directly to the chef.
+
+601
+00:41:57,859 --> 00:42:01,442
+The customer talks to the waiter,
+
+602
+00:42:01,442 --> 00:42:04,655
+and the waiter makes a ticket out of it,
+
+603
+00:42:04,655 --> 00:42:06,767
+and that ticket goes to the chef.
+
+604
+00:42:06,767 --> 00:42:11,971
+So there is no contact between the client or customer and the chef.
+
+605
+00:42:11,971 --> 00:42:15,234
+There's always something in between.
+
+606
+00:42:15,234 --> 00:42:20,518
+And in this case, the way that it transforms into language
+
+607
+00:42:20,679 --> 00:42:23,501
+of the customer to this ticket.
+
+608
+00:42:23,713 --> 00:42:29,698
+So the written description of what the client orders that is the VAE.
+
+609
+00:42:29,698 --> 00:42:31,620
+So you can look at it as the waiter.
+
+610
+00:42:31,620 --> 00:42:35,403
+Now, here in the VAE Decode,
+
+611
+00:42:35,403 --> 00:42:40,647
+it's also a waiter, but it's a different waiter that when the dish is ready,
+
+612
+00:42:40,647 --> 00:42:45,612
+it takes it out of the kitchen and it brings it to the
+
+613
+00:42:45,612 --> 00:42:51,537
+to the to the customer and it takes off this
+
+614
+00:42:52,919 --> 00:42:55,161
+This cap, I don't know how you how you call it,
+
+615
+00:42:55,161 --> 00:42:58,333
+but this very cliche thing of serving something,
+
+616
+00:42:58,333 --> 00:43:03,558
+and this cap take is being taken off at the table so the customer
+
+617
+00:43:03,558 --> 00:43:08,091
+can actually eat the food. So that's why it's a bit harder
+
+618
+00:43:08,091 --> 00:43:14,987
+to explain the VAE, but it's just the way that information gets
+
+619
+00:43:15,367 --> 00:43:21,592
+passed around between the client as prompting and the chef,
+
+620
+00:43:21,592 --> 00:43:22,631
+which is the diffusion model.
+
+621
+00:43:25,941 --> 00:43:31,703
+Okay, now so why are open source models actually interesting?
+
+622
+00:43:31,703 --> 00:43:33,963
+Probably you think, yeah, okay,
+
+623
+00:43:33,963 --> 00:43:37,536
+but why do I need this in very complicated stuff?
+
+624
+00:43:37,536 --> 00:43:42,738
+I can just use ChatGPT or Google Nano Banana.
+
+625
+00:43:42,738 --> 00:43:46,689
+What will this actually be more useful for?
+
+626
+00:43:46,689 --> 00:43:50,291
+Tools like Midjourney, Nano Banana,
+
+627
+00:43:50,291 --> 00:43:53,852
+ChatGPT are black boxes. You type a prompt,
+
+628
+00:43:53,852 --> 00:43:55,223
+an image appears.
+
+629
+00:43:55,595 --> 00:43:59,067
+And you have almost no control over what happens in between.
+
+630
+00:43:59,067 --> 00:44:05,692
+It's like buying a car of which you can't open the hood and change the engine.
+
+631
+00:44:05,692 --> 00:44:09,395
+With open source or open weights,
+
+632
+00:44:09,395 --> 00:44:12,457
+it's just a different name. Models like FLUX,
+
+633
+00:44:12,457 --> 00:44:16,019
+you can open the hood and adjust the engine,
+
+634
+00:44:16,019 --> 00:44:18,581
+or the transmission, or the exhaust,
+
+635
+00:44:18,581 --> 00:44:23,675
+or you can paint the car, you can do whatever you want because you have full control
+
+636
+00:44:23,675 --> 00:44:24,675
+over it.
+
+637
+00:44:25,815 --> 00:44:28,278
+But I'm going maybe a bit too quick,
+
+638
+00:44:28,278 --> 00:44:31,251
+so if it's still not completely clear,
+
+639
+00:44:31,251 --> 00:44:36,716
+no worries. We're going to set up two agents
+
+640
+00:44:37,137 --> 00:44:44,124
+or two experts that will help you when you're actually working
+
+641
+00:44:44,124 --> 00:44:48,799
+with this and when something breaks or when something is not completely clear.
+
+642
+00:44:51,223 --> 00:44:52,513
+So let's go to Miro.
+
+643
+00:44:58,285 --> 00:45:03,448
+Okay, it's glitched a bit. So when you go to module one to introduction,
+
+644
+00:45:03,448 --> 00:45:08,091
+you'll see the first thing we're gonna do is set up a Comfy expert.
+
+645
+00:45:08,091 --> 00:45:12,653
+So it's nothing more than just creating a custom project.
+
+646
+00:45:12,653 --> 00:45:16,776
+So you go to your LLM of choice,
+
+647
+00:45:16,776 --> 00:45:19,918
+mine is Claude.
+
+648
+00:45:19,918 --> 00:45:25,741
+Let's go to resources. I actually want to show you something really quickly.
+
+649
+00:45:26,773 --> 00:45:32,026
+Under models overview you have a link here and it's a website called Arena
+
+650
+00:45:32,608 --> 00:45:36,196
+and what Arena does is it just ranks
+
+651
+00:45:40,469 --> 00:45:44,943
+Overview here. It ranks all models.
+
+652
+00:45:44,943 --> 00:45:50,449
+So you can go to for example chat and you say text.
+
+653
+00:45:53,358 --> 00:46:00,092
+this is a leaderboard of which models are actually best at generating text.
+
+654
+00:46:02,349 --> 00:46:05,471
+So you see at number one it's Claude,
+
+655
+00:46:05,471 --> 00:46:07,693
+Fable 5, then you have Opus.
+
+656
+00:46:07,693 --> 00:46:13,086
+So the first five spots are actually all Anthropic,
+
+657
+00:46:13,086 --> 00:46:15,818
+so it's Claude, and that's why I also use it.
+
+658
+00:46:15,818 --> 00:46:18,080
+I use Claude because it's simply the best right now.
+
+659
+00:46:18,080 --> 00:46:20,662
+You can look at image editing.
+
+660
+00:46:20,662 --> 00:46:25,177
+There it's ChatGPT that is in first place.
+
+661
+00:46:25,177 --> 00:46:28,167
+You also have nano banana. Somewhere here,
+
+662
+00:46:28,167 --> 00:46:31,409
+you also have
+
+663
+00:46:31,533 --> 00:46:36,716
+Click on open source, you can see that FLUX is also up there amongst the best ones.
+
+664
+00:46:36,716 --> 00:46:40,849
+So this website, check it out because it changes every day and they keep
+
+665
+00:46:40,849 --> 00:46:43,121
+it up to date which models are actually good.
+
+666
+00:46:43,121 --> 00:46:45,943
+So that is the reason why
+
+667
+00:46:46,143 --> 00:46:52,187
+I chose Claude to be my LLM.
+
+668
+00:46:52,187 --> 00:46:55,109
+Okay, what we're going to do, just follow my steps,
+
+669
+00:46:55,109 --> 00:46:58,271
+copy this simple prompt,
+
+670
+00:46:58,271 --> 00:47:00,613
+go into
+
+671
+00:47:00,907 --> 00:47:03,683
+your LLM, click on new project,
+
+672
+00:47:03,683 --> 00:47:08,253
+it's here. Then you see this tab,
+
+673
+00:47:08,253 --> 00:47:11,617
+you just name it something, you call it
+
+674
+00:47:14,125 --> 00:47:15,125
+Comfy expert?
+
+675
+00:47:19,051 --> 00:47:24,766
+You can go to instructions. It might look a bit different for you,
+
+676
+00:47:24,766 --> 00:47:27,187
+or if you use ChatGPT, you can also use it,
+
+677
+00:47:27,187 --> 00:47:28,809
+or Gemini, it doesn't really matter.
+
+678
+00:47:28,809 --> 00:47:33,693
+Just ask how can I make a custom project in Gemini and it will give
+
+679
+00:47:33,693 --> 00:47:35,995
+you all the steps. If you're using Claude,
+
+680
+00:47:35,995 --> 00:47:37,676
+this is what you have to do.
+
+681
+00:47:37,676 --> 00:47:42,060
+Paste it here, save instructions.
+
+682
+00:47:42,060 --> 00:47:47,905
+So now all chats that I have within this project will have this as context.
+
+683
+00:47:48,277 --> 00:47:50,499
+And what it is, it's just super simple.
+
+684
+00:47:50,499 --> 00:47:55,184
+It's a URL to the documentation of Comfy Cloud.
+
+685
+00:47:55,184 --> 00:48:00,049
+So if I go on the internet and I type in Comfy Cloud.
+
+686
+00:48:10,401 --> 00:48:11,930
+Yeah, okay, it's launching directly.
+
+687
+00:48:11,930 --> 00:48:12,930
+...
+
+688
+00:48:17,079 --> 00:48:21,862
+Documentation, here it is. On this website,
+
+689
+00:48:21,862 --> 00:48:26,514
+you will find all information that you will ever need if you have questions.
+
+690
+00:48:26,514 --> 00:48:30,937
+So before actually asking questions to me,
+
+691
+00:48:30,937 --> 00:48:34,819
+which you can look at this website.
+
+692
+00:48:34,819 --> 00:48:38,601
+This link is also,
+
+693
+00:48:38,601 --> 00:48:42,723
+of course, under resources, so relevant websites.
+
+694
+00:48:42,723 --> 00:48:46,285
+Here you can see ComfyUI official documentation.
+
+695
+00:48:46,687 --> 00:48:50,160
+If you click here, it brings you to the same page.
+
+696
+00:48:50,160 --> 00:48:53,383
+So here you can say, okay,
+
+697
+00:48:53,383 --> 00:48:57,506
+I want Comfy cloud or I want to install it locally,
+
+698
+00:48:57,506 --> 00:48:59,428
+which I will explain later.
+
+699
+00:49:00,869 --> 00:49:04,832
+Or nodes,
+
+700
+00:49:04,832 --> 00:49:08,375
+like every question you have, tutorials,
+
+701
+00:49:08,375 --> 00:49:13,800
+text-to-image tutorials, it will guide you through all the things you need to know.
+
+702
+00:49:17,549 --> 00:49:19,810
+So if we go back into the instructions,
+
+703
+00:49:19,810 --> 00:49:26,532
+it's just a link to that page and another website called ComfyWiki
+
+704
+00:49:27,233 --> 00:49:30,474
+which has a lot of documentations as well.
+
+705
+00:49:30,474 --> 00:49:33,115
+So if you ask a question, why
+
+706
+00:49:33,115 --> 00:49:38,487
+isn't my ComfyUI working?
+
+707
+00:49:40,983 --> 00:49:44,487
+then it will probably say something like okay can you upload a screenshot
+
+708
+00:49:44,487 --> 00:49:49,544
+and if you provide a screenshot it will actually tell you can try this
+
+709
+00:49:49,544 --> 00:49:53,248
+and that so I'm not going to run this one but
+
+710
+00:49:53,248 --> 00:49:58,935
+you can imagine you can imagine why this
+
+711
+00:49:58,935 --> 00:50:00,337
+is super helpful.
+
+712
+00:50:03,703 --> 00:50:06,366
+So it's just a very easy quick fix.
+
+713
+00:50:06,366 --> 00:50:12,061
+I use it myself all the time because even if this is my full time job,
+
+714
+00:50:12,061 --> 00:50:16,106
+sometimes something happened that I don't fully understand and I always
+
+715
+00:50:16,106 --> 00:50:21,321
+go to my comfy expert before asking anybody a question.
+
+716
+00:50:21,321 --> 00:50:27,317
+And ninety nine percent of the time it will actually help me solve the issue.
+
+717
+00:50:29,741 --> 00:50:36,384
+So what is Comfy? What you see here is two different versions.
+
+718
+00:50:36,384 --> 00:50:41,086
+On the left side, we have ComfyUI running locally,
+
+719
+00:50:41,086 --> 00:50:44,367
+which means that when you generate an image,
+
+720
+00:50:44,367 --> 00:50:48,081
+it will actually use your own PC to generate it.
+
+721
+00:50:48,081 --> 00:50:54,372
+So it means that you will like it will need your
+
+722
+00:50:55,192 --> 00:50:57,293
+own GPU, so your
+
+723
+00:50:57,697 --> 00:51:02,418
+graph graphical processing unit of your PC to make an image.
+
+724
+00:51:02,418 --> 00:51:07,240
+That means it's also free. So you can just go to Comfy,
+
+725
+00:51:07,240 --> 00:51:11,241
+click on download, and it's completely free to run.
+
+726
+00:51:11,241 --> 00:51:17,063
+However, why we're not gonna use this and we're gonna use Comfy Cloud.
+
+727
+00:51:17,063 --> 00:51:22,304
+So here the right part
+
+728
+00:51:23,185 --> 00:51:24,185
+is because
+
+729
+00:51:25,313 --> 00:51:28,916
+These newer models that we will cover in that later on,
+
+730
+00:51:28,916 --> 00:51:33,479
+they have become so big that when you want to run them locally,
+
+731
+00:51:33,479 --> 00:51:37,762
+you need a supercomputer. You need like a very expensive computer.
+
+732
+00:51:37,762 --> 00:51:40,874
+While in the past you could run it locally,
+
+733
+00:51:40,874 --> 00:51:43,936
+right now you need a very,
+
+734
+00:51:43,936 --> 00:51:47,409
+very, very, very good one to run it.
+
+735
+00:51:47,409 --> 00:51:53,113
+So if you're watching this and you're a render artist or you have a super good PC.
+
+736
+00:51:54,263 --> 00:51:56,595
+Probably if you have a su super good one,
+
+737
+00:51:56,595 --> 00:52:03,179
+you will be able to find out how to download everything by the website.
+
+738
+00:52:03,179 --> 00:52:09,124
+It's a bit more technical, but you can install from GitHub and stuff as well.
+
+739
+00:52:09,124 --> 00:52:13,907
+Now I assume that if you don't have a supercomputer,
+
+740
+00:52:13,907 --> 00:52:16,669
+it will be more interesting to do Comfy Cloud.
+
+741
+00:52:16,669 --> 00:52:21,192
+Instead of running locally on your own PC,
+
+742
+00:52:21,192 --> 00:52:22,283
+it just
+
+743
+00:52:22,925 --> 00:52:28,948
+you buy a subscription and you use their the cloud and
+
+744
+00:52:28,948 --> 00:52:33,249
+you use their GPUs. To give you an idea why this is necessary,
+
+745
+00:52:33,249 --> 00:52:36,571
+if you want to run FLUX.2,
+
+746
+00:52:36,571 --> 00:52:39,171
+which is the main model that we will be using,
+
+747
+00:52:39,171 --> 00:52:45,354
+you would need around 32 gigabytes of VRAM,
+
+748
+00:52:45,354 --> 00:52:48,416
+which is a lot. I have a very good PC,
+
+749
+00:52:48,416 --> 00:52:51,657
+I have 12 gigabytes of VRAM, so it's not enough.
+
+750
+00:52:52,257 --> 00:52:56,600
+With Comfy Cloud, you pay a monthly subscription,
+
+751
+00:52:56,600 --> 00:53:01,724
+but you get access to 96 GB of VRAM.
+
+752
+00:53:01,724 --> 00:53:05,806
+So it's absolutely insane. Which means it's also super quick.
+
+753
+00:53:05,806 --> 00:53:11,560
+If you run it locally, it takes two minutes maybe to make
+
+754
+00:53:11,560 --> 00:53:14,472
+an image on Comfy Cloud with this GPU,
+
+755
+00:53:14,472 --> 00:53:21,007
+it takes like five seconds. and I will also show you how to set up
+
+756
+00:53:21,555 --> 00:53:24,729
+an account so no worries about that.
+
+757
+00:53:24,729 --> 00:53:29,314
+So go to the website if you have any questions,
+
+758
+00:53:29,314 --> 00:53:34,881
+take the URL, paste it in your LLM and then you have a virtual assistant that
+
+759
+00:53:35,101 --> 00:53:38,605
+knows way more about it than anybody.
+
+760
+00:53:38,605 --> 00:53:41,579
+Let's set up a Comfy Cloud account.
+
+761
+00:53:47,447 --> 00:53:52,918
+So go to the website of Comfy using Miro,
+
+762
+00:53:52,918 --> 00:53:57,380
+just the same one, all of these lead to the same website.
+
+763
+00:53:57,380 --> 00:54:01,881
+This one is a bit different, but just go to Comfy Cloud,
+
+764
+00:54:01,881 --> 00:54:06,122
+click on the source URL. Again,
+
+765
+00:54:06,122 --> 00:54:08,143
+if you want to do it locally, click here.
+
+766
+00:54:08,143 --> 00:54:12,984
+I'm not going to cover that, but we are going to do launch cloud.
+
+767
+00:54:12,984 --> 00:54:15,895
+Now, if you see this with a new account,
+
+768
+00:54:15,895 --> 00:54:16,895
+it will just
+
+769
+00:54:16,755 --> 00:54:19,369
+Ask you to do to make an account.
+
+770
+00:54:19,369 --> 00:54:23,795
+Now if you do it, just log in with Google like I did,
+
+771
+00:54:23,795 --> 00:54:27,359
+and then you will see this interface.
+
+772
+00:54:27,359 --> 00:54:31,255
+you will see plans and pricing.
+
+773
+00:54:34,733 --> 00:54:38,425
+So you can see that the standard one is $20 a month,
+
+774
+00:54:38,425 --> 00:54:40,295
+so like 16 euros or something.
+
+775
+00:54:40,295 --> 00:54:44,217
+Then you have more credits if you go to Creator,
+
+776
+00:54:44,217 --> 00:54:50,000
+and then Pro is 100. So how it works is you get every month like
+
+777
+00:54:50,000 --> 00:54:53,481
+X amount of credits that you can use.
+
+778
+00:54:53,481 --> 00:54:57,523
+But for things I'm showing,
+
+779
+00:54:57,523 --> 00:55:00,344
+you would need the creator plan.
+
+780
+00:55:00,344 --> 00:55:02,005
+So if you're doing for
+
+781
+00:55:02,457 --> 00:55:04,938
+This for a competition or just for yourself,
+
+782
+00:55:04,938 --> 00:55:06,949
+you can just buy it for one month,
+
+783
+00:55:06,949 --> 00:55:09,461
+it's like twenty eight Euros.
+
+784
+00:55:09,461 --> 00:55:14,724
+Or you run it locally, but then you need a good PC.
+
+785
+00:55:14,724 --> 00:55:19,066
+So then you have 7400 tokens.
+
+786
+00:55:19,066 --> 00:55:24,619
+Normally it's plenty for testing out every month.
+
+787
+00:55:27,031 --> 00:55:30,312
+When you open up the workflow,
+
+788
+00:55:30,312 --> 00:55:36,525
+this is how it looks. So here on the left side you have your task bar.
+
+789
+00:55:36,525 --> 00:55:42,037
+I also really recommend to doing this parallel to me and
+
+790
+00:55:42,037 --> 00:55:44,789
+and seeing directly what everything does.
+
+791
+00:55:44,789 --> 00:55:49,831
+So you can have a new file, you can import export something,
+
+792
+00:55:49,831 --> 00:55:54,413
+you can edit, can do anything.
+
+793
+00:55:54,965 --> 00:55:58,751
+Make a light theme or dark,
+
+794
+00:55:58,751 --> 00:55:59,751
+doesn't really matter.
+
+795
+00:56:04,001 --> 00:56:08,713
+All the same. This one, nodes 2.0 beta version,
+
+796
+00:56:08,713 --> 00:56:13,105
+put it on. It just it shows the visuals a bit different.
+
+797
+00:56:13,105 --> 00:56:15,666
+You can go browse templates, settings,
+
+798
+00:56:15,666 --> 00:56:20,588
+etc. Here on assets, it will be empty for you,
+
+799
+00:56:20,588 --> 00:56:24,009
+but this is some of the past images I generated.
+
+800
+00:56:24,009 --> 00:56:26,821
+You can also see how long it took to generate.
+
+801
+00:56:26,821 --> 00:56:32,233
+So this one you will see later on in this tutorial that we will generate this one.
+
+802
+00:56:32,599 --> 00:56:36,202
+This took fifty seconds because it's quite a big image.
+
+803
+00:56:40,014 --> 00:56:46,410
+then here node library. This is going to be you're not going to use this
+
+804
+00:56:46,410 --> 00:56:51,924
+one a lot. Model library we will use in the next module
+
+805
+00:56:52,244 --> 00:56:55,357
+in the text-to-image one. Workflows,
+
+806
+00:56:55,357 --> 00:56:58,910
+you can save all your workflows here.
+
+807
+00:56:58,910 --> 00:57:03,994
+How do you do it? Let's say you have a workflow and you click on save as,
+
+808
+00:57:03,994 --> 00:57:07,487
+you give it a name, and you will find it on the workflows.
+
+809
+00:57:08,755 --> 00:57:12,988
+Apps you will not use in this workflow in this course.
+
+810
+00:57:12,988 --> 00:57:16,670
+Templates is super super super important.
+
+811
+00:57:16,670 --> 00:57:20,073
+This is probably the most important thing that I will tell you today.
+
+812
+00:57:20,073 --> 00:57:23,765
+Everything that I will show you are my templates,
+
+813
+00:57:23,765 --> 00:57:30,180
+but comfy cloud provides a lot of ready- made templates that you can just use.
+
+814
+00:57:30,180 --> 00:57:33,502
+Everything here, if you click on it,
+
+815
+00:57:33,502 --> 00:57:37,985
+for example, I'm going to
+
+816
+00:57:38,221 --> 00:57:40,388
+Get one that is a bit accessible.
+
+817
+00:57:40,388 --> 00:57:44,240
+Let's say we want a image
+
+818
+00:57:46,719 --> 00:57:49,616
+Edit model for example
+
+819
+00:57:58,421 --> 00:58:03,187
+Doesn't really matter which one but I'm go I'm searching one
+
+820
+00:58:09,751 --> 00:58:14,047
+Here this one. This was like this is one of the most basic ones.
+
+821
+00:58:14,047 --> 00:58:18,794
+I see it's glitching now, so let me refresh it.
+
+822
+00:58:18,794 --> 00:58:20,887
+Sometimes that happens.
+
+823
+00:58:27,501 --> 00:58:30,574
+So now it's there. You can close this one.
+
+824
+00:58:30,574 --> 00:58:34,128
+This is only for local users. So if you're running this locally,
+
+825
+00:58:34,128 --> 00:58:37,162
+here it tells you which model.
+
+826
+00:58:37,162 --> 00:58:43,519
+So you can click on it and it downloads this VAE.
+
+827
+00:58:43,519 --> 00:58:46,863
+I don't need it, but you can download it directly here.
+
+828
+00:58:46,863 --> 00:58:48,445
+And then
+
+829
+00:58:49,845 --> 00:58:54,360
+it will tell you in which folder you have to put all the models and stuff.
+
+830
+00:58:54,360 --> 00:58:56,659
+But for this tutorial it's irrelevant,
+
+831
+00:58:56,659 --> 00:59:01,588
+so I'm going to delete it. So this is how a workflow looks.
+
+832
+00:59:01,588 --> 00:59:04,021
+You can take all the nodes we saw before,
+
+833
+00:59:04,021 --> 00:59:07,525
+you can drag and drop, you can make them smaller or bigger.
+
+834
+00:59:07,525 --> 00:59:10,849
+If you click on it here on the on top.
+
+835
+00:59:12,993 --> 00:59:14,794
+You can give it a color if you want.
+
+836
+00:59:14,794 --> 00:59:20,358
+It's just a preference. make it bigger,
+
+837
+00:59:20,358 --> 00:59:26,062
+can do anything you like. I like to structure them like this.
+
+838
+00:59:26,062 --> 00:59:30,245
+and then when you click on run,
+
+839
+00:59:30,245 --> 00:59:34,909
+let's see what happens. So the input is an image of a woman.
+
+840
+00:59:34,909 --> 00:59:40,973
+This is just a the template. It will say the prompt.
+
+841
+00:59:41,997 --> 00:59:45,658
+To add a beanie on her head and it will do it.
+
+842
+00:59:45,658 --> 00:59:50,859
+So this is a the first example of the most famous
+
+843
+00:59:50,859 --> 00:59:57,181
+workflow currently. And then here you can click on download if
+
+844
+00:59:57,181 --> 00:59:58,802
+you want to download the image.
+
+845
+00:59:58,802 --> 01:00:02,103
+Here we have some settings that we're not going to cover now.
+
+846
+01:00:02,103 --> 01:00:05,363
+I could save this workflow as save as,
+
+847
+01:00:05,363 --> 01:00:10,615
+I could export it, I could delete it if you if we want.
+
+848
+01:00:11,613 --> 01:00:15,225
+Do everything. Now, because I have a lot of workflows open,
+
+849
+01:00:15,225 --> 01:00:16,837
+and I this is just an example,
+
+850
+01:00:16,837 --> 01:00:21,440
+I will close anyway before deleting it,
+
+851
+01:00:21,440 --> 01:00:26,983
+and then it's empty again. This is just a quick overview.
+
+852
+01:00:26,983 --> 01:00:29,465
+If you need something, your account is up here.
+
+853
+01:00:29,465 --> 01:00:31,376
+You can see how many credits you have,
+
+854
+01:00:31,376 --> 01:00:33,828
+you can change your plan, you can log out,
+
+855
+01:00:33,828 --> 01:00:38,061
+account settings. Here, this is an important one,
+
+856
+01:00:38,061 --> 01:00:41,053
+it's running the workflow. So
+
+857
+01:00:41,811 --> 01:00:46,794
+Here batch count, the number right before the running.
+
+858
+01:00:49,173 --> 01:00:51,655
+this is how many times it will run.
+
+859
+01:00:51,655 --> 01:00:55,298
+So if you put fifteen here, which I don't recommend,
+
+860
+01:00:55,298 --> 01:00:59,541
+is when you click run once, it will loop 15 times.
+
+861
+01:00:59,541 --> 01:01:02,022
+So it will generate an image, another one,
+
+862
+01:01:02,022 --> 01:01:05,065
+another one, and it will keep going for 15 times.
+
+863
+01:01:05,065 --> 01:01:10,368
+So just keep it at one. Here you can see which images
+
+864
+01:01:10,589 --> 01:01:14,642
+are in the queue. So let's say you generate five images,
+
+865
+01:01:14,642 --> 01:01:16,503
+then every time the
+
+866
+01:01:16,703 --> 01:01:19,400
+it gets added to the waiting list.
+
+867
+01:01:19,400 --> 01:01:23,591
+That is a brief introduction. We will be using this a lot,
+
+868
+01:01:23,591 --> 01:01:25,877
+so don't worry if it's not all clear.
+
+869
+01:01:28,139 --> 01:01:32,755
+Setting up Comfy Cloud we did. Some practical things.
+
+870
+01:01:32,755 --> 01:01:36,830
+Why do we use Comfy? We kinda explain it.
+
+871
+01:01:36,830 --> 01:01:42,468
+But why do I use Miro to share documents or images?
+
+872
+01:01:42,468 --> 01:01:46,129
+It is because if you go to Miro
+
+873
+01:01:49,003 --> 01:01:52,585
+And you go to an image, all images here work that way,
+
+874
+01:01:52,585 --> 01:01:55,517
+that's why I only provide those images.
+
+875
+01:01:55,517 --> 01:02:01,141
+Let's say you're here. Here it also says importable in Comfy.
+
+876
+01:02:01,141 --> 01:02:05,123
+So when you click on this, you can download it.
+
+877
+01:02:05,123 --> 01:02:08,085
+Let's say we download this one.
+
+878
+01:02:13,717 --> 01:02:16,064
+Downloaded it for me it's already there so
+
+879
+01:02:21,879 --> 01:02:28,385
+We take this image, we drag and drop it in our workflow.
+
+880
+01:02:31,861 --> 01:02:35,904
+And then we see the whole the whole workflow.
+
+881
+01:02:35,904 --> 01:02:40,887
+So this is exactly the exact workflow,
+
+882
+01:02:40,887 --> 01:02:46,011
+exact prompt settings that I used to generate this image.
+
+883
+01:02:46,011 --> 01:02:49,553
+Which means if we click on run now,
+
+884
+01:02:49,553 --> 01:02:52,275
+these nodes will get activated.
+
+885
+01:02:52,275 --> 01:02:55,377
+You will see a blue border around it.
+
+886
+01:02:55,377 --> 01:03:01,271
+And here in the end, you will see exactly the same image appear as here.
+
+887
+01:03:02,637 --> 01:03:03,648
+So let's see what happens.
+
+888
+01:03:06,550 --> 01:03:08,661
+You see how fast it gets generated?
+
+889
+01:03:08,661 --> 01:03:11,634
+This is exactly the same image as here.
+
+890
+01:03:11,634 --> 01:03:16,918
+Why is that? It's because the seed was exactly
+
+891
+01:03:16,918 --> 01:03:22,463
+the same as I used. And here we see all the nodes that
+
+892
+01:03:22,463 --> 01:03:25,547
+I explained very much in depth before,
+
+893
+01:03:25,547 --> 01:03:31,031
+so you can just roll around, you can make it smaller or bigger.
+
+894
+01:03:31,031 --> 01:03:33,433
+You see this.
+
+895
+01:03:34,374 --> 01:03:37,417
+Noodle is connected to that one.
+
+896
+01:03:37,417 --> 01:03:39,655
+It's not really clear because it's behind it.
+
+897
+01:03:41,687 --> 01:03:44,102
+Take it apart and see which one are connected.
+
+898
+01:03:44,102 --> 01:03:47,168
+So the model here is connected to that model.
+
+899
+01:03:47,168 --> 01:03:49,573
+Let's say you break it.
+
+900
+01:03:52,161 --> 01:03:57,673
+You cannot do very like a lot of things wrong because if you drag this
+
+901
+01:03:57,673 --> 01:03:59,723
+one and you want to connect it here,
+
+902
+01:03:59,723 --> 01:04:02,664
+it's not possible. You see it becomes transparent.
+
+903
+01:04:02,664 --> 01:04:05,485
+Because this is a different type of information.
+
+904
+01:04:05,485 --> 01:04:10,386
+So if you go around here, it will snap,
+
+905
+01:04:10,386 --> 01:04:14,467
+it will automatically go there because it's made to do that.
+
+906
+01:04:14,467 --> 01:04:17,408
+And then when you leave it gets connected.
+
+907
+01:04:20,755 --> 01:04:24,181
+Add node in between. You can add anything.
+
+908
+01:04:24,181 --> 01:04:28,107
+It's a bit advanced, but this is the general idea.
+
+909
+01:04:30,893 --> 01:04:32,896
+So this is the most basic basic workflow.
+
+910
+01:04:32,896 --> 01:04:37,502
+which is important is the seed.
+
+911
+01:04:37,502 --> 01:04:40,947
+Remember that it's like the national ID of the image,
+
+912
+01:04:40,947 --> 01:04:41,947
+which
+
+913
+01:04:44,085 --> 01:04:49,769
+If you click here, you can fix it on this value.
+
+914
+01:04:49,769 --> 01:04:54,353
+If you randomize it, then every time it just it's a different seed.
+
+915
+01:04:54,353 --> 01:04:57,915
+So it will always do it will always follow the prompt,
+
+916
+01:04:57,915 --> 01:05:02,759
+which is beautiful scenery nature glass bottle landscape,
+
+917
+01:05:02,759 --> 01:05:06,772
+purple galaxy bottle. It's a super weird prompt,
+
+918
+01:05:06,772 --> 01:05:11,125
+but you see that it did that.
+
+919
+01:05:12,853 --> 01:05:19,775
+If we rerun, now it has a different seed because last time when we run it,
+
+920
+01:05:19,775 --> 01:05:24,057
+it said randomize value,
+
+921
+01:05:24,057 --> 01:05:27,578
+it shuffles the value randomly after each generation.
+
+922
+01:05:27,578 --> 01:05:33,410
+So we click on run and it will still be beautiful scenery,
+
+923
+01:05:33,410 --> 01:05:35,320
+nature glass, bottle landscape,
+
+924
+01:05:35,320 --> 01:05:37,801
+but it will be a different image than this one.
+
+925
+01:05:40,311 --> 01:05:44,823
+See, so if I do it again, it will always be a different one.
+
+926
+01:05:51,991 --> 01:05:54,826
+Now you see it's active so it's generating.
+
+927
+01:05:54,826 --> 01:05:58,273
+Sometimes it's super fast, sometimes it takes some time.
+
+928
+01:06:01,005 --> 01:06:02,526
+So it's always this one.
+
+929
+01:06:05,133 --> 01:06:09,555
+Now why do I show this? It's because when you click here and you click
+
+930
+01:06:09,555 --> 01:06:13,047
+on fixed value, we run it again.
+
+931
+01:06:13,047 --> 01:06:16,559
+Now one time it's still going to be a different image.
+
+932
+01:06:16,559 --> 01:06:19,561
+From now of on,
+
+933
+01:06:19,561 --> 01:06:26,354
+if we click on run, it will be exactly the same image every time.
+
+934
+01:06:26,354 --> 01:06:30,927
+You see it didn't change it. Job completed and it's still the same image because
+
+935
+01:06:30,927 --> 01:06:34,859
+we locked the seed. So it's not making a new seed anymore.
+
+936
+01:06:35,053 --> 01:06:39,701
+It's taking exactly the same. So we can click here a thousand times
+
+937
+01:06:39,701 --> 01:06:43,507
+and it will always be this image as the output image.
+
+938
+01:06:43,507 --> 01:06:46,573
+Every time. If I download
+
+939
+01:06:49,025 --> 01:06:51,030
+You see job complete, it's the same image.
+
+940
+01:06:51,030 --> 01:06:55,140
+If I download this one and I take it
+
+941
+01:06:57,707 --> 01:06:58,709
+And I input it here.
+
+942
+01:07:01,195 --> 01:07:03,847
+You can download this one and try it,
+
+943
+01:07:03,847 --> 01:07:05,468
+and it will be exactly the same.
+
+944
+01:07:05,468 --> 01:07:09,501
+Same for here. Look at the seed,
+
+945
+01:07:09,501 --> 01:07:11,712
+and you will see a different seed number.
+
+946
+01:07:11,712 --> 01:07:18,537
+Okay. Let's say we keep the seed locked or fixed.
+
+947
+01:07:18,537 --> 01:07:23,700
+And we change the steps to four steps.
+
+948
+01:07:23,700 --> 01:07:28,163
+So now the model only has four steps to generate the image,
+
+949
+01:07:28,163 --> 01:07:30,225
+which results in
+
+950
+01:07:30,847 --> 01:07:37,250
+a broken image because it didn't have enough steps to generate the image.
+
+951
+01:07:37,250 --> 01:07:39,725
+I will quickly go back in the slides.
+
+952
+01:07:42,573 --> 01:07:43,573
+To show you
+
+953
+01:07:47,821 --> 01:07:53,443
+Here. So it's like saying instead of having these na ten steps,
+
+954
+01:07:53,443 --> 01:07:58,105
+you have to stop here.
+
+955
+01:07:58,105 --> 01:08:02,447
+Of course the image is not going to be good because it was still generating,
+
+956
+01:08:02,447 --> 01:08:06,529
+so we cut it actually short. So that's what I just did.
+
+957
+01:08:08,898 --> 01:08:14,779
+Right for now how do you know how much steps to put in?
+
+958
+01:08:14,779 --> 01:08:20,421
+The rule of thumb is the templates I will provide or the templates that
+
+959
+01:08:20,421 --> 01:08:26,602
+are for of Comfy, they have the best settings,
+
+960
+01:08:26,602 --> 01:08:30,343
+so don't change that. It's more like an advanced things to
+
+961
+01:08:30,582 --> 01:08:36,734
+to actually change it rather than something that you as a beginner have
+
+962
+01:08:36,734 --> 01:08:38,465
+to do. So don't change it.
+
+963
+01:08:39,288 --> 01:08:40,990
+unless you're just playing around with it.
+
+964
+01:08:40,990 --> 01:08:45,073
+So if you put it back at twenty and you generate again,
+
+965
+01:08:45,073 --> 01:08:48,935
+you will see it's exactly the same image as before.
+
+966
+01:08:48,935 --> 01:08:55,600
+A CFG, remember this is how much the model gets like
+
+967
+01:08:55,600 --> 01:08:59,723
+follows the prompt versus how much creativity it can do.
+
+968
+01:08:59,723 --> 01:09:04,345
+So if we put it at twenty, so very high,
+
+969
+01:09:04,345 --> 01:09:08,479
+it'll try to follow the prompt extremely closely.
+
+970
+01:09:09,281 --> 01:09:10,281
+Extremely closely.
+
+971
+01:09:18,038 --> 01:09:19,038
+Generating
+
+972
+01:09:29,133 --> 01:09:32,794
+Which means like it's breaking the image because it's trying
+
+973
+01:09:32,794 --> 01:09:35,435
+to follow it so exactly that it's too much.
+
+974
+01:09:35,435 --> 01:09:40,446
+Again, if we put it back at eight and we run,
+
+975
+01:09:40,446 --> 01:09:45,997
+it's again the same image. Now let's say we put it at one.
+
+976
+01:09:45,997 --> 01:09:51,799
+So one means that there is it can do whatever it wants.
+
+977
+01:09:51,799 --> 01:09:53,830
+It doesn't really have to follow the prompt,
+
+978
+01:09:53,830 --> 01:09:56,141
+it doesn't have to make a glass bott bottle,
+
+979
+01:09:56,141 --> 01:09:57,601
+it has a lot of freedom.
+
+980
+01:09:58,093 --> 01:10:00,715
+So you can see it doesn't follow it correctly,
+
+981
+01:10:00,715 --> 01:10:06,598
+it's just doing something. So it's important to keep the CFG around 8.
+
+982
+01:10:06,598 --> 01:10:11,522
+For this model, for Stable Diffusion 1.5.
+
+983
+01:10:11,522 --> 01:10:13,923
+For newer model, it's different settings,
+
+984
+01:10:13,923 --> 01:10:18,276
+but don't worry about that. Last thing what we're going to see is
+
+985
+01:10:18,276 --> 01:10:22,499
+Empty Latent Image. So let's say we put it at 1024,
+
+986
+01:10:22,499 --> 01:10:23,499
+the width.
+
+987
+01:10:26,305 --> 01:10:29,011
+Then you will see the output image becomes a rectangle.
+
+988
+01:10:32,333 --> 01:10:36,140
+So just play around with it, what happens batch size,
+
+989
+01:10:36,140 --> 01:10:41,269
+let's say we put it at three, it's actually the same as if you put it at here.
+
+990
+01:10:44,301 --> 01:10:46,572
+So now it will generate three images.
+
+991
+01:10:46,572 --> 01:10:48,031
+So one
+
+992
+01:10:50,317 --> 01:10:51,317
+to entry.
+
+993
+01:10:56,493 --> 01:11:00,088
+Okay, I hope that is a bit clear.
+
+994
+01:11:04,183 --> 01:11:06,144
+Let us advance a bit more.
+
+995
+01:11:08,205 --> 01:11:09,596
+So what happened in the workflow?
+
+996
+01:11:09,596 --> 01:11:12,228
+We had a look at that. Now the next thing,
+
+997
+01:11:12,228 --> 01:11:16,740
+ways of prompting. There's three main ways of prompting.
+
+998
+01:11:16,740 --> 01:11:18,952
+So the first one is keyword prompting,
+
+999
+01:11:18,952 --> 01:11:23,755
+keyword prompting,
+
+1000
+01:11:23,755 --> 01:11:25,756
+sorry, it's just putting words.
+
+1001
+01:11:25,756 --> 01:11:27,407
+This is not how we do it anymore.
+
+1002
+01:11:27,407 --> 01:11:30,339
+This is more how it was back in the days.
+
+1003
+01:11:30,339 --> 01:11:33,121
+This is also something you just saw.
+
+1004
+01:11:35,287 --> 01:11:37,661
+Here it's just the words beautiful scenery,
+
+1005
+01:11:37,661 --> 01:11:43,009
+nature, glass. This is how old workflows like this
+
+1006
+01:11:43,009 --> 01:11:45,653
+one used to used to be prompted.
+
+1007
+01:11:48,321 --> 01:11:50,802
+Then natural language, this is how we do it now.
+
+1008
+01:11:50,802 --> 01:11:56,465
+It's just sentences, a wide angle shot of a minimalistic brutalist concrete,
+
+1009
+01:11:56,465 --> 01:12:02,629
+etc. The general rule is the earlier you put something in the prompt,
+
+1010
+01:12:02,629 --> 01:12:06,951
+the more serious it has it will be taken.
+
+1011
+01:12:06,951 --> 01:12:08,992
+So if it's something super important,
+
+1012
+01:12:08,992 --> 01:12:11,814
+let's say it has super important that is Barcelona,
+
+1013
+01:12:11,814 --> 01:12:16,937
+put it early in a prompt because the further it is to the back,
+
+1014
+01:12:16,937 --> 01:12:17,937
+the less
+
+1015
+01:12:17,779 --> 01:12:20,450
+serious it will be taken. But that's just a rule of thumb.
+
+1016
+01:12:20,450 --> 01:12:26,373
+The third way of prompting is called JSON prompting and we will
+
+1017
+01:12:26,973 --> 01:12:31,975
+use it like we won't do it ourselves but we will use an AI assistant
+
+1018
+01:12:32,155 --> 01:12:37,187
+to prompt for us in this way. Now these three ways of prompting this they
+
+1019
+01:12:37,187 --> 01:12:40,309
+say the same thing. They say something about Barcelona,
+
+1020
+01:12:40,309 --> 01:12:41,939
+brutalist, concrete and stuff,
+
+1021
+01:12:41,939 --> 01:12:45,241
+but just a different way of
+
+1022
+01:12:45,877 --> 01:12:49,745
+Structuring the information so the model understands it better.
+
+1023
+01:12:49,745 --> 01:12:53,493
+So we will mostly be using these two here.
+
+1024
+01:12:57,549 --> 01:12:59,434
+So these two.
+
+1025
+01:13:01,879 --> 01:13:06,431
+Why do I show all of them? It's because this is these are older models,
+
+1026
+01:13:06,431 --> 01:13:08,553
+and when we talk a bit about history,
+
+1027
+01:13:08,553 --> 01:13:13,755
+they are going to be part, you will see these names pop up.
+
+1028
+01:13:13,755 --> 01:13:17,417
+Natural language is more the newer models,
+
+1029
+01:13:17,417 --> 01:13:19,969
+and AI Assistant is only only FLUX.2,
+
+1030
+01:13:19,969 --> 01:13:23,871
+which is the newest one. JSON prompting,
+
+1031
+01:13:23,871 --> 01:13:30,224
+it's just a structure. As if you say create a list of five startup ideas related
+
+1032
+01:13:30,224 --> 01:13:31,225
+to sustainability.
+
+1033
+01:13:31,799 --> 01:13:34,155
+You can also say generate ideas,
+
+1034
+01:13:34,155 --> 01:13:37,543
+domain sustainability, type startup,
+
+1035
+01:13:37,543 --> 01:13:41,533
+count five. It's the same information but in a different structure.
+
+1036
+01:13:45,313 --> 01:13:50,194
+Prompt coach setup. So if we go to Miro.
+
+1037
+01:13:53,549 --> 01:13:57,515
+We will see the next thing here.
+
+1038
+01:13:57,515 --> 01:13:59,147
+So you can actually skip this,
+
+1039
+01:13:59,147 --> 01:14:02,763
+it's just for information. Prompt coach setup.
+
+1040
+01:14:02,763 --> 01:14:05,367
+There's two ways of doing this.
+
+1041
+01:14:05,367 --> 01:14:09,303
+So we will be using quite some models and I made this prompt.
+
+1042
+01:14:16,877 --> 01:14:21,068
+So as you can see here, I have two variants of the prompt coach setup.
+
+1043
+01:14:21,068 --> 01:14:23,609
+This is just an easy one. It's actually the best one.
+
+1044
+01:14:23,609 --> 01:14:26,710
+This is the one I'll also be using.
+
+1045
+01:14:26,710 --> 01:14:29,940
+And then you have this ultra detailed one,
+
+1046
+01:14:29,940 --> 01:14:35,442
+which is way too long. But it gives you like an idea of like you can read
+
+1047
+01:14:35,442 --> 01:14:41,324
+it and go through it. So what we will be doing,
+
+1048
+01:14:41,324 --> 01:14:44,544
+copy and paste,
+
+1049
+01:14:44,544 --> 01:14:46,585
+make a new project.
+
+1050
+01:14:48,297 --> 01:14:51,115
+In your favorite LLM, doesn't matter which one.
+
+1051
+01:14:54,145 --> 01:14:55,925
+You copy and paste it in here,
+
+1052
+01:14:55,925 --> 01:14:59,867
+save instructions, and then you can just say start.
+
+1053
+01:14:59,867 --> 01:15:03,928
+And it will if you have a prompt,
+
+1054
+01:15:03,928 --> 01:15:05,758
+or you just have to have an idea,
+
+1055
+01:15:05,758 --> 01:15:09,389
+like I don't know, rocky mountain building or something,
+
+1056
+01:15:09,389 --> 01:15:12,850
+or pavilion in Barcelona, put your prompt here,
+
+1057
+01:15:12,850 --> 01:15:17,851
+it will ask for which model, and then it will ask,
+
+1058
+01:15:17,851 --> 01:15:19,652
+do you want a long or a short prompt?
+
+1059
+01:15:19,652 --> 01:15:23,723
+And then it will based on your model that you
+
+1060
+01:15:24,563 --> 01:15:29,000
+said it will automatically make the prompt good for that model.
+
+1061
+01:15:29,000 --> 01:15:33,909
+So you don't have to prompt anything yourself and use it like that.
+
+1062
+01:15:33,909 --> 01:15:36,383
+We will be using this later on.
+
+1063
+01:15:38,925 --> 01:15:42,678
+So that being said, the prompt coach setup is done.
+
+1064
+01:15:46,029 --> 01:15:51,994
+So now we're going to head in a quick history overview of the diffusion models.
+
+1065
+01:15:51,994 --> 01:15:55,807
+In the kitchen or restaurant metaphor,
+
+1066
+01:15:55,807 --> 01:16:00,110
+these are the chefs, right? So what you see here are
+
+1067
+01:16:00,110 --> 01:16:03,543
+the models that were released.
+
+1068
+01:16:03,543 --> 01:16:05,905
+So it all started with Stable Diffusion 1,
+
+1069
+01:16:05,905 --> 01:16:10,288
+Stable Diffusion 2, SDXL, Cascade,
+
+1070
+01:16:10,288 --> 01:16:13,971
+and then eventually FLUX.1 came,
+
+1071
+01:16:13,971 --> 01:16:15,673
+FLUX Kontext, FLUX.2.
+
+1072
+01:16:16,023 --> 01:16:19,671
+So these are all just models that were released.
+
+1073
+01:16:24,107 --> 01:16:27,672
+between twenty twenty two and twenty twenty four.
+
+1074
+01:16:27,672 --> 01:16:31,137
+so these are just example images.
+
+1075
+01:16:33,697 --> 01:16:37,593
+The main thing yet you have to remember here is that there were two very important
+
+1076
+01:16:37,593 --> 01:16:42,421
+companies. The first one is not really relevant anymore.
+
+1077
+01:16:42,421 --> 01:16:48,681
+It's stability AI. This is the company behind all the
+
+1078
+01:16:51,649 --> 01:16:54,710
+like all these models,
+
+1079
+01:16:54,710 --> 01:17:00,893
+so the first five very famous ones and then the other
+
+1080
+01:17:00,893 --> 01:17:06,146
+the last four or like last three in this image were all made
+
+1081
+01:17:06,146 --> 01:17:12,179
+by black forest labs. So the idea is that the people from stability
+
+1082
+01:17:12,179 --> 01:17:17,281
+ai they some of them went and founded black forest labs.
+
+1083
+01:17:19,501 --> 01:17:22,482
+Now this probably doesn't mean a lot to you,
+
+1084
+01:17:22,482 --> 01:17:25,824
+but what you see here is that FLUX.1,
+
+1085
+01:17:25,824 --> 01:17:29,745
+when it came out in 2024,
+
+1086
+01:17:29,745 --> 01:17:34,197
+they released a lot of models that each has a specific function.
+
+1087
+01:17:34,197 --> 01:17:38,369
+Now in 2025, beginning 2026,
+
+1088
+01:17:38,369 --> 01:17:41,910
+they launched FLUX.2,
+
+1089
+01:17:41,910 --> 01:17:45,682
+and you have a lot of different models,
+
+1090
+01:17:45,682 --> 01:17:48,033
+and we're not going to go deep into that.
+
+1091
+01:17:48,545 --> 01:17:53,269
+We will be using FLUX SDXL, that's the workflow we already used.
+
+1092
+01:17:53,269 --> 01:17:56,591
+We use SDXL here, sorry,
+
+1093
+01:17:56,591 --> 01:18:00,814
+Stable Diffusion 1 and Stable Diffusion XL.
+
+1094
+01:18:00,814 --> 01:18:04,777
+Of Black Forest Labs we will be using FLUX.1
+
+1095
+01:18:05,318 --> 01:18:09,671
+and FLUX.2 klein 9B. Very specific.
+
+1096
+01:18:12,759 --> 01:18:14,520
+Where you actually find these models,
+
+1097
+01:18:14,520 --> 01:18:17,692
+when you use Comfy Cloud, you don't need to download anything.
+
+1098
+01:18:17,692 --> 01:18:20,394
+Everything is already on Comfy Cloud.
+
+1099
+01:18:20,394 --> 01:18:22,855
+But if you're interested in this,
+
+1100
+01:18:22,855 --> 01:18:25,527
+you can go to this link.
+
+1101
+01:18:31,543 --> 01:18:35,915
+Go to Hugging Face and you type in let's start
+
+1102
+01:18:35,915 --> 01:18:40,247
+by SD one point five
+
+1103
+01:18:45,857 --> 01:18:47,274
+Let's say stability.
+
+1104
+01:18:51,319 --> 01:18:54,994
+Yeah, so this is the company stability AI.
+
+1105
+01:18:54,994 --> 01:19:00,150
+Here you see their repository Stable Diffusion XL for example.
+
+1106
+01:19:00,150 --> 01:19:04,436
+This was one of the older models.
+
+1107
+01:19:04,436 --> 01:19:09,052
+If you download it here, it's six, almost seven, gigabytes,
+
+1108
+01:19:09,052 --> 01:19:10,052
+okay?
+
+1109
+01:19:12,301 --> 01:19:16,568
+So that is this one,
+
+1110
+01:19:16,568 --> 01:19:21,336
+the old models. If we go to FLUX.2 klein 9B.
+
+1111
+01:19:23,725 --> 01:19:25,846
+We just search it on Hugging Face.
+
+1112
+01:19:28,493 --> 01:19:31,756
+So by Black Forest Labs, FLUX.2 klein 9B,
+
+1113
+01:19:31,756 --> 01:19:33,899
+if you go to site files and versions,
+
+1114
+01:19:33,899 --> 01:19:35,961
+you can download it from here.
+
+1115
+01:19:38,849 --> 01:19:42,691
+This one is eighteen gigabytes,
+
+1116
+01:19:42,691 --> 01:19:46,693
+which is not that big because it's just nine billion parameters.
+
+1117
+01:19:46,693 --> 01:19:49,594
+But if you go to the developer one,
+
+1118
+01:19:49,594 --> 01:19:52,936
+so this one, this is the full on big,
+
+1119
+01:19:52,936 --> 01:19:54,507
+big, big model they released.
+
+1120
+01:19:57,069 --> 01:20:00,490
+You can see it is 64 gigabytes.
+
+1121
+01:20:00,490 --> 01:20:05,032
+It's gigantic. It's trained on 32 billion images.
+
+1122
+01:20:05,032 --> 01:20:09,714
+It's so big and it's also pretty slow to run.
+
+1123
+01:20:09,714 --> 01:20:13,675
+If I run it with this laptop it will probably explode.
+
+1124
+01:20:13,675 --> 01:20:18,527
+So it's just to prove that these models became very very big.
+
+1125
+01:20:20,941 --> 01:20:24,532
+all these things you don't have to understand.
+
+1126
+01:20:24,532 --> 01:20:28,103
+It's more that when these new models came out,
+
+1127
+01:20:28,103 --> 01:20:34,545
+the difference is that the in the beginning it was you had text models
+
+1128
+01:20:34,545 --> 01:20:38,036
+and you had image models and now they're more and more combined.
+
+1129
+01:20:38,036 --> 01:20:40,727
+So they also understand text super well,
+
+1130
+01:20:40,727 --> 01:20:43,288
+they understand image also very,
+
+1131
+01:20:43,288 --> 01:20:47,959
+very good. FLUX.2 under understands hex codes.
+
+1132
+01:20:48,373 --> 01:20:50,936
+So if you have a specific color that you want,
+
+1133
+01:20:50,936 --> 01:20:55,461
+you can find the hex code and it will understand exactly that color.
+
+1134
+01:20:55,461 --> 01:20:57,784
+It understands JSON prompting,
+
+1135
+01:20:57,784 --> 01:20:58,805
+as we saw before.
+
+1136
+01:21:01,217 --> 01:21:04,089
+it has a great contextual understanding,
+
+1137
+01:21:04,089 --> 01:21:08,202
+which means it knows a lot,
+
+1138
+01:21:08,202 --> 01:21:10,864
+a lot, and output quality is super good,
+
+1139
+01:21:10,864 --> 01:21:16,217
+you can go up to 4k. All these things I'm going to skip because it's
+
+1140
+01:21:16,217 --> 01:21:20,290
+a bit too theoretical, but you can have a look at it if you're interested.
+
+1141
+01:21:20,290 --> 01:21:23,602
+This table we already saw,
+
+1142
+01:21:23,602 --> 01:21:30,597
+it's a bit of an overview. We went from 860 million parameters in 2022.
+
+1143
+01:21:30,807 --> 01:21:33,772
+to thirty two billion parameters in twenty twenty five.
+
+1144
+01:21:37,362 --> 01:21:43,583
+these are just some stats and some differences between the models.
+
+1145
+01:21:46,317 --> 01:21:48,378
+So if you're interested check it out.
+
+1146
+01:21:48,378 --> 01:21:54,544
+You don't need to know all this to actually use it and use the templates.
+
+1147
+01:21:54,544 --> 01:22:00,109
+This PDF, by the way, is also you will find
+
+1148
+01:22:00,109 --> 01:22:04,072
+it under models overview, just an overview I made.
+
+1149
+01:22:04,072 --> 01:22:09,227
+You can toggle here to understand some
+
+1150
+01:22:11,255 --> 01:22:12,255
+Things better.
+
+1151
+01:22:15,829 --> 01:22:18,930
+Now now we understand why open source can be interesting,
+
+1152
+01:22:18,930 --> 01:22:22,452
+but how could I utilize this myself?
+
+1153
+01:22:22,452 --> 01:22:25,633
+A very important one is LoRAs.
+
+1154
+01:22:25,633 --> 01:22:28,535
+LoRAs are low-rank adaptations,
+
+1155
+01:22:28,535 --> 01:22:30,896
+it's just the meaning of the word.
+
+1156
+01:22:30,896 --> 01:22:35,007
+What it is, is when we're talking about AI models,
+
+1157
+01:22:35,007 --> 01:22:38,679
+diffusion models, it's trained on billions of images,
+
+1158
+01:22:38,679 --> 01:22:43,041
+that's not something what that we are doing as as users.
+
+1159
+01:22:44,293 --> 01:22:48,936
+because we don't have the resources to do that and it's just too too big to do.
+
+1160
+01:22:48,936 --> 01:22:55,581
+A LoRA anybody can make because a LoRA is trained on 20 to 30 images.
+
+1161
+01:22:55,581 --> 01:22:58,964
+That's why it's called a low-rank adaptation.
+
+1162
+01:22:58,964 --> 01:23:02,786
+So it's a very small file, it's just 100 megabytes.
+
+1163
+01:23:02,786 --> 01:23:06,209
+And this file only knows one thing,
+
+1164
+01:23:06,209 --> 01:23:11,773
+and it is a style. So let's say we have this prompt,
+
+1165
+01:23:11,773 --> 01:23:12,773
+just
+
+1166
+01:23:12,437 --> 01:23:17,949
+A long prompt like a to make an image as if it
+
+1167
+01:23:17,949 --> 01:23:20,660
+was designed by Calatrava or anything like that.
+
+1168
+01:23:20,660 --> 01:23:24,402
+It's just for proving a point.
+
+1169
+01:23:24,402 --> 01:23:29,584
+Without a LoRA it looks like this.
+
+1170
+01:23:29,584 --> 01:23:31,485
+It's not really Calatrava-like,
+
+1171
+01:23:31,485 --> 01:23:33,706
+but it's more blob architecture.
+
+1172
+01:23:33,706 --> 01:23:37,367
+But you can see that the aesthetics are quite plasticky,
+
+1173
+01:23:37,367 --> 01:23:41,669
+it's quite AI generated. Now I made a LoRA that
+
+1174
+01:23:42,575 --> 01:23:48,810
+is trained specific on specifically on real images photographed
+
+1175
+01:23:48,810 --> 01:23:53,774
+by analog photography. So it won't be as AI generated.
+
+1176
+01:23:53,774 --> 01:23:58,177
+So if we take the same prompt but we use mylora
+
+1177
+01:24:00,661 --> 01:24:06,902
+And this model is trained on just these these twenty to thirty images made
+
+1178
+01:24:06,902 --> 01:24:10,027
+by a specific camera that I really like.
+
+1179
+01:24:12,749 --> 01:24:17,321
+So then this is the output, which again it's a bit it looks the same,
+
+1180
+01:24:17,321 --> 01:24:21,062
+it's still blob, it still has a road in front,
+
+1181
+01:24:21,062 --> 01:24:24,034
+it still has some trees or like some vegetation,
+
+1182
+01:24:24,034 --> 01:24:27,095
+but you can see that this already looks way more realistic,
+
+1183
+01:24:27,095 --> 01:24:28,846
+and this is just how I like it.
+
+1184
+01:24:28,846 --> 01:24:34,998
+It's not better or worse, it's just an example to steer the output image
+
+1185
+01:24:35,018 --> 01:24:40,751
+in a style that you prefer. And then we have Nano Banana Pro to compare a bit,
+
+1186
+01:24:40,751 --> 01:24:41,751
+the same prompt.
+
+1187
+01:24:42,891 --> 01:24:44,874
+you have less less control, I would say.
+
+1188
+01:24:47,211 --> 01:24:53,165
+And this is just another example of an image with a with the same prompt without
+
+1189
+01:24:53,165 --> 01:24:56,107
+and with my custom LoRA. Now,
+
+1190
+01:24:56,107 --> 01:24:58,589
+just to explain it a bit better,
+
+1191
+01:24:58,589 --> 01:25:01,261
+training a LoRA not super difficult.
+
+1192
+01:25:01,261 --> 01:25:04,193
+I think I've already trained about 20 of them.
+
+1193
+01:25:04,193 --> 01:25:06,114
+You just need to know how to do it.
+
+1194
+01:25:06,114 --> 01:25:11,378
+we're not going to cover how to actually train a LoRA because that's
+
+1195
+01:25:11,378 --> 01:25:15,501
+a course in itself. but in the
+
+1196
+01:25:16,375 --> 01:25:19,689
+file and the folder you will receive from this lecture.
+
+1197
+01:25:19,689 --> 01:25:24,464
+There will be a folder of LoRA and in the next module,
+
+1198
+01:25:24,464 --> 01:25:28,270
+so in text to image, I will actually show you how you import them,
+
+1199
+01:25:28,270 --> 01:25:31,104
+how you use them, how you can tweak them,
+
+1200
+01:25:31,104 --> 01:25:32,104
+etc.
+
+1201
+01:25:34,965 --> 01:25:38,716
+So for example, if we take this massing from
+
+1202
+01:25:39,886 --> 01:25:43,427
+the third module, which is image to image,
+
+1203
+01:25:43,427 --> 01:25:47,228
+and we have this reference style image,
+
+1204
+01:25:47,228 --> 01:25:51,049
+and we want to apply it on the on the geometry.
+
+1205
+01:25:51,049 --> 01:25:54,190
+Without the LoRA it looks like this on FLUX.2.
+
+1206
+01:25:54,190 --> 01:25:56,971
+It's just it's pretty plasticky.
+
+1207
+01:25:56,971 --> 01:25:58,972
+Graphically it's not super good.
+
+1208
+01:25:58,972 --> 01:26:01,832
+With my LoRA, it can look like this.
+
+1209
+01:26:01,832 --> 01:26:04,153
+I wouldn't say it's perfect, but it
+
+1210
+01:26:04,991 --> 01:26:11,046
+It's way more realistic, it has these soft soft shadows and
+
+1211
+01:26:11,046 --> 01:26:13,328
+not this like plastic aesthetic.
+
+1212
+01:26:13,328 --> 01:26:18,633
+very important is that LoRAs are model specific.
+
+1213
+01:26:18,633 --> 01:26:22,536
+So LoRA trained on Stable Diffusion one point five,
+
+1214
+01:26:22,536 --> 01:26:28,742
+the older model, it won't work on FLUX.2 and vice versa.
+
+1215
+01:26:28,742 --> 01:26:31,804
+It's like speaking Dutch to a French guy.
+
+1216
+01:26:31,804 --> 01:26:32,804
+It
+
+1217
+01:26:32,833 --> 01:26:35,135
+doesn't know what you're talking about and it won't work.
+
+1218
+01:26:35,135 --> 01:26:39,819
+So always check for which model the LoRA was created.
+
+1219
+01:26:39,819 --> 01:26:45,944
+Now in general if you find a workflow and if you download it will be
+
+1220
+01:26:45,984 --> 01:26:51,229
+it will be clear which which LoRA and which model.
+
+1221
+01:26:51,229 --> 01:26:56,723
+So don't worry about it but just know that you cannot just take a LoRA that
+
+1222
+01:26:56,723 --> 01:27:00,907
+was trained on SD 1.5 and apply it to FLUX.2.
+
+1223
+01:27:01,847 --> 01:27:08,549
+how to find interesting LoRAs at these websites Hugging Face and Civitai which
+
+1224
+01:27:08,549 --> 01:27:14,792
+are also on the on the Miro board if you go up LoRA links you
+
+1225
+01:27:14,792 --> 01:27:20,504
+can find on Hugging Face on Civitai and GitHub or just on the internet.
+
+1226
+01:27:20,504 --> 01:27:24,365
+Yeah that being said you can check it out.
+
+1227
+01:27:29,459 --> 01:27:33,611
+Or ask of course your LLM to provide some URLs.
+
+1228
+01:27:33,611 --> 01:27:38,614
+This denoising scheme is a bit confusing,
+
+1229
+01:27:38,614 --> 01:27:43,777
+so I'm going to skip that one and going to jump straight into this one.
+
+1230
+01:27:43,777 --> 01:27:48,779
+What we see here is exactly the same as we saw before.
+
+1231
+01:27:48,779 --> 01:27:52,481
+You have an input, let's say text or image,
+
+1232
+01:27:52,481 --> 01:27:56,764
+and then in X amount of steps you go to an output.
+
+1233
+01:27:56,764 --> 01:27:59,115
+This is just the diffusion process.
+
+1234
+01:28:00,129 --> 01:28:06,834
+What a LoRA does is it jumps in between the steps.
+
+1235
+01:28:06,834 --> 01:28:12,539
+So let's say we say we have a text prompt saying
+
+1236
+01:28:14,401 --> 01:28:17,383
+cat. Very very simple. We say cat.
+
+1237
+01:28:17,383 --> 01:28:24,069
+without a LoRA it will just take steps and it will do anything like cat,
+
+1238
+01:28:24,069 --> 01:28:27,952
+but we don't have control because it can be a photo of a cat,
+
+1239
+01:28:27,952 --> 01:28:29,033
+it can be
+
+1240
+01:28:29,681 --> 01:28:35,733
+A sketch of a cat, it can be a cat that is running or laying down or jumping,
+
+1241
+01:28:35,733 --> 01:28:37,964
+it can be anything we don't know.
+
+1242
+01:28:37,964 --> 01:28:42,525
+If we train a LoRA specifically on cats,
+
+1243
+01:28:42,525 --> 01:28:47,066
+black cats, which are lying on their back,
+
+1244
+01:28:47,066 --> 01:28:51,948
+then the LoRA will tell in between every step,
+
+1245
+01:28:51,948 --> 01:28:54,829
+okay, you're still making an image of a cat,
+
+1246
+01:28:54,829 --> 01:28:55,829
+but
+
+1247
+01:28:55,989 --> 01:29:00,290
+Remember to make it a black cat and it must be laying on its back,
+
+1248
+01:29:00,290 --> 01:29:05,772
+or I don't know, a LoRA trained on sketches of cats will make only that.
+
+1249
+01:29:05,772 --> 01:29:08,472
+So you see the LoRA only knows one thing.
+
+1250
+01:29:08,472 --> 01:29:14,294
+It knows an aesthetic or a visual character or an architect for example,
+
+1251
+01:29:14,294 --> 01:29:20,256
+and it can only do that. So it b it steers the big unit,
+
+1252
+01:29:20,256 --> 01:29:25,477
+so the big diffusion model, which is let's say sixty four.
+
+1253
+01:29:25,793 --> 01:29:31,449
+Gigabytes while the LoRA is only one hundred megabytes and it steers
+
+1254
+01:29:31,449 --> 01:29:33,722
+it in a aesthetic direction.
+
+1255
+01:29:33,722 --> 01:29:39,718
+And then you can see the "without" and the "with" just because I trained
+
+1256
+01:29:39,718 --> 01:29:43,903
+it on thirty five millimeter analog photography.
+
+1257
+01:29:46,485 --> 01:29:47,509
+Just some examples.
+
+1258
+01:29:50,443 --> 01:29:56,575
+If you're interested in it, be sure to follow it because I've re received
+
+1259
+01:29:56,575 --> 01:29:59,596
+a lot of requests on a course on LoRA training,
+
+1260
+01:29:59,596 --> 01:30:05,378
+so we might actually set this up in detail to teach you how to how
+
+1261
+01:30:05,378 --> 01:30:09,039
+to do this in the future. But follow the platform,
+
+1262
+01:30:09,039 --> 01:30:14,261
+follow me personally, and you will be notified when we are doing so.
+
+1263
+01:30:17,237 --> 01:30:21,746
+This is just a quick heads up on how I do it and how I automate a lot
+
+1264
+01:30:21,746 --> 01:30:26,847
+of the boring the boring stuff that comes with LoRA training.
+
+1265
+01:30:32,649 --> 01:30:37,713
+Okay, that being said, we have covered everything for module one,
+
+1266
+01:30:37,713 --> 01:30:42,676
+which is the introduction. So I'm going to end this module,
+
+1267
+01:30:42,676 --> 01:30:46,679
+and the next one we will continue with is Module 2,
+
+1268
+01:30:46,679 --> 01:30:49,341
+Text to Image. Thank you.

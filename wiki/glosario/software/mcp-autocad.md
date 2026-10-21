@@ -2,13 +2,14 @@
 tipo: software
 software: mcp-autocad
 fecha_creacion: 2026-09-27
-ultima_actualizacion: 2026-09-27
-tags: [glosario, software, mcp, autocad, com, limuzi013, opencode]
+ultima_actualizacion: 2026-10-21
+tags: [glosario, software, mcp, autocad, com, limuzi013, opencode, lt]
 ---
 
 # MCP autocad (limuzi013)
 
 > Servidor MCP local que controla una sesión AutoCAD completa abierta vía COM. Lee y edita el dibujo activo; solo guarda dentro de una carpeta dedicada.
+> **⚠ Estado 21/10/2026 — en pausa por entorno:** requiere **AutoCAD full** y la máquina del estudio tiene **AutoCAD LT 2027**, que *"cannot be accessed or manipulated by external applications"* por COM. Mientras siga el LT, el control del CAD pasa por **AutoLISP** y la alternativa es el **MCP oficial de Autodesk 2027** (soporta `ACADLT`): `NETLOAD acmcp.dll` + `MCPCONFIG` + `MCPHTTPSTART` → `http://localhost:5001/mcp` — pendiente de prueba. Ver [[wiki/glosario/software/autocad|AutoCAD § AutoCAD LT 2027 — qué cambia]].
 
 - [[#Resumen]]
 - [[#Requisitos]]
@@ -39,6 +40,8 @@ tags: [glosario, software, mcp, autocad, com, limuzi013, opencode]
 - Windows con **AutoCAD completo** (no LT) instalado.
 - AutoCAD abierto con un dibujo activo antes de llamar cualquier herramienta.
 - Python 3.10+.
+
+> **Estado en el estudio (21/10/2026):** la instalación es **AutoCAD LT 2027** → este servidor no puede conectarse (LT no expone COM/ActiveX externo). Se reactiva instalando el AutoCAD 2027 full (`P:\autocad\AutoCAD.2027_English_64bit`) o usando el MCP oficial de Autodesk 2027.
 
 ## Instalación
 
@@ -245,7 +248,7 @@ Dibuja un círculo.
 - `center_mm`: centro en mm.
 - `radius_mm` (>0): radio en mm.
 - `layer`, `space` (opcionales).
-- **Uso:** shafts,柱子, pre-armado.
+- **Uso:** shafts, columnas, pre-armado.
 
 ### draw_arc
 
@@ -388,7 +391,8 @@ Captura la ventana de AutoCAD y devuelve la imagen como adjunto MCP.
 ## Estado y verificación
 
 - ✅ instalado y conectado (`mcp list` 6/6, 2026-09-27).
-- ⚠️ pendiente prueba funcional con AutoCAD 2027 abierto: requiere `autocad_status` con dibujo activo (validación `acax26enu.tlb`).
+- ⚠ pendiente prueba funcional con AutoCAD 2027 abierto: requiere `autocad_status` con dibujo activo (validación `acax26enu.tlb`).
+- 🔴 **en pausa desde el 21/10/2026**: el AutoCAD full fue desinstalado y la máquina quedó con **LT 2027** (sin COM externo). Vía sustituta en pruebas: MCP oficial de Autodesk 2027 (`ACADLT` soportado) → `localhost:5001/mcp`.
 - `opencode mcp debug autocad` — solo para servidores remotos; este es local, usar `mcp list`.
 
 ---

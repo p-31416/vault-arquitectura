@@ -91,12 +91,12 @@ Duración: 10:22 — Idioma: en
 
 ## Referencias
 
-| # | Fuente | URL | Nota |
-|---|---|---|---|
-| 1 | Video architutors (esta ficha) | https://www.youtube.com/watch?v=RAMs89SS6cM | primaria, duración 10:22 |
-| 2 | Comfy Org oficial | https://comfy.org | oficial |
-| 3 | ComfyUI GitHub oficial | https://github.com/Comfy-Org/ComfyUI | oficial |
-| 4 | Modelo Flux.1-dev HuggingFace | https://huggingface.co/black-forest-labs/FLUX.1-dev | oficial, familia Flux 12B |
-| 5 | Docs ComfyUI Flux.2 Klein | https://docs.comfy.org/tutorials/flux/flux-2-klein | oficial |
+| #   | Fuente                         | URL                                                 | Nota                      |
+| --- | ------------------------------ | --------------------------------------------------- | ------------------------- |
+| 1   | Video architutors (esta ficha) | https://www.youtube.com/watch?v=RAMs89SS6cM         | primaria, duración 10:22  |
+| 2   | Comfy Org oficial              | https://comfy.org                                   | oficial                   |
+| 3   | ComfyUI GitHub oficial         | https://github.com/Comfy-Org/ComfyUI                | oficial                   |
+| 4   | Modelo Flux.1-dev HuggingFace  | https://huggingface.co/black-forest-labs/FLUX.1-dev | oficial, familia Flux 12B |
+| 5   | Docs ComfyUI Flux.2 Klein      | https://docs.comfy.org/tutorials/flux/flux-2-klein  | oficial                   |
 
 > Material de terceros (architutors), de uso interno del estudio.

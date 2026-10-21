@@ -217,5 +217,5 @@ System prompt (resumen): fecha HOY `America/Argentina/Buenos_Aires`; nadie inven
 * n8n Telegram node: https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/ (verificado 2026-10-13 — 200)
 * n8n Telegram file:get: https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.telegram/file-operations.md (verificado 2026-10-13 — 200)
 * n8n Telegram Trigger: https://docs.n8n.io/integrations/builtin/trigger-nodes/n8n-nodes-base.telegramtrigger.md (verificado 2026-10-13 — 200)
-* Vault: [[proyectos/STUDIO_OS-Emilia/documentacion/arquitectura-n8n-os-emilia|arquitectura-n8n-os-emilia]] · [[specs/260924-plan-os-emilia-n8n|plan-os-emilia-n8n]] · [[wiki/glosario/software/telegram|telegram]] · [[wiki/glosario/software/n8n|n8n]] · agente `.opencode/agents/fathom-pm.md` → Leantime
+* Vault: [[proyectos/STUDIO_OS-Emilia/documentacion/arquitectura-n8n-os-emilia|arquitectura-n8n-os-emilia]] · [[260924-plan-os-emilia-n8n|plan-os-emilia-n8n]] · [[wiki/glosario/software/telegram|telegram]] · [[wiki/glosario/software/n8n|n8n]] · agente `.opencode/agents/fathom-pm.md` → Leantime
 * n8n: Router `YWpuV5p0vCDTbIHz`, Agenda `UTkII2kd3RHDlizo`, Cancel `B7gGFGcD89vKfc5k`, Modif `c08s62Lo9EmAEJJf`, Fathom `UeDkqVZSeLnae5cF`, entrada modelo `pw5OHhXNjeXSnD3u`, agenda modelo `w8iMJ01WGCSxvSMg`

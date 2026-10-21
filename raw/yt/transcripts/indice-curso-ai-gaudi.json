@@ -1,0 +1,123 @@
+{
+  "origen_html": "G:\\Mi unidad\\OS-Emilia\\AIxGaudi\\My account - Archademy.ai.html",
+  "cdn": "https://vz-4ced3a48-15e.b-cdn.net",
+  "miro_board": "https://miro.com/app/board/uXjVHRM2XQU=/",
+  "miro_password": "Gaudi2026",
+  "modulos": [
+    {
+      "modulo": "miro-board",
+      "titulo": "Miro Board",
+      "estado": "sin video"
+    },
+    {
+      "modulo": "intro-generative-ai",
+      "titulo": "Introduction to Generative AI",
+      "lang": "en",
+      "cues": 1268,
+      "md": "P:\\00-repos\\proyecto-pi\\vault-arquitectura\\raw\\yt\\transcripts\\2026-10-21_mux-intro-generative-ai.en.md",
+      "url": "https://vz-4ced3a48-15e.b-cdn.net/35e568e8-6e1d-4fa6-9f27-17ab889df703/captions/en.vtt"
+    },
+    {
+      "modulo": "intro-generative-ai",
+      "titulo": "Introduction to Generative AI",
+      "lang": "es",
+      "cues": 1268,
+      "md": "P:\\00-repos\\proyecto-pi\\vault-arquitectura\\raw\\yt\\transcripts\\2026-10-21_mux-intro-generative-ai.es.md",
+      "url": "https://vz-4ced3a48-15e.b-cdn.net/35e568e8-6e1d-4fa6-9f27-17ab889df703/captions/es.vtt"
+    },
+    {
+      "modulo": "text-to-image",
+      "titulo": "Text-to-Image",
+      "lang": "en",
+      "cues": 659,
+      "md": "P:\\00-repos\\proyecto-pi\\vault-arquitectura\\raw\\yt\\transcripts\\2026-10-21_mux-text-to-image.en.md",
+      "url": "https://vz-4ced3a48-15e.b-cdn.net/b4331c95-55f3-422a-a313-e498cb0a01bb/captions/en.vtt"
+    },
+    {
+      "modulo": "text-to-image",
+      "titulo": "Text-to-Image",
+      "lang": "es",
+      "cues": 659,
+      "md": "P:\\00-repos\\proyecto-pi\\vault-arquitectura\\raw\\yt\\transcripts\\2026-10-21_mux-text-to-image.es.md",
+      "url": "https://vz-4ced3a48-15e.b-cdn.net/b4331c95-55f3-422a-a313-e498cb0a01bb/captions/es.vtt"
+    },
+    {
+      "modulo": "image-to-image",
+      "titulo": "Image-to-Image",
+      "lang": "en",
+      "cues": 1047,
+      "md": "P:\\00-repos\\proyecto-pi\\vault-arquitectura\\raw\\yt\\transcripts\\2026-10-21_mux-image-to-image.en.md",
+      "url": "https://vz-4ced3a48-15e.b-cdn.net/86c3a1b4-93e8-4cf8-b97b-6a2a5d5cd6b8/captions/en.vtt"
+    },
+    {
+      "modulo": "image-to-image",
+      "titulo": "Image-to-Image",
+      "lang": "es",
+      "cues": 1047,
+      "md": "P:\\00-repos\\proyecto-pi\\vault-arquitectura\\raw\\yt\\transcripts\\2026-10-21_mux-image-to-image.es.md",
+      "url": "https://vz-4ced3a48-15e.b-cdn.net/86c3a1b4-93e8-4cf8-b97b-6a2a5d5cd6b8/captions/es.vtt"
+    },
+    {
+      "modulo": "image-to-video",
+      "titulo": "Image-to-Video",
+      "lang": "en",
+      "cues": 333,
+      "md": "P:\\00-repos\\proyecto-pi\\vault-arquitectura\\raw\\yt\\transcripts\\2026-10-21_mux-image-to-video.en.md",
+      "url": "https://vz-4ced3a48-15e.b-cdn.net/b0e1ea14-2be9-47ae-8515-cf3c5cbe00ea/captions/en.vtt"
+    },
+    {
+      "modulo": "image-to-video",
+      "titulo": "Image-to-Video",
+      "lang": "es",
+      "cues": 333,
+      "md": "P:\\00-repos\\proyecto-pi\\vault-arquitectura\\raw\\yt\\transcripts\\2026-10-21_mux-image-to-video.es.md",
+      "url": "https://vz-4ced3a48-15e.b-cdn.net/b0e1ea14-2be9-47ae-8515-cf3c5cbe00ea/captions/es.vtt"
+    },
+    {
+      "modulo": "image-to-3d",
+      "titulo": "Image-to-3D",
+      "lang": "en",
+      "cues": 249,
+      "md": "P:\\00-repos\\proyecto-pi\\vault-arquitectura\\raw\\yt\\transcripts\\2026-10-21_mux-image-to-3d.en.md",
+      "url": "https://vz-4ced3a48-15e.b-cdn.net/f3c115f8-2839-4e53-871b-8949cf80f267/captions/en.vtt"
+    },
+    {
+      "modulo": "image-to-3d",
+      "titulo": "Image-to-3D",
+      "lang": "es",
+      "cues": 249,
+      "md": "P:\\00-repos\\proyecto-pi\\vault-arquitectura\\raw\\yt\\transcripts\\2026-10-21_mux-image-to-3d.es.md",
+      "url": "https://vz-4ced3a48-15e.b-cdn.net/f3c115f8-2839-4e53-871b-8949cf80f267/captions/es.vtt"
+    },
+    {
+      "modulo": "round-table",
+      "titulo": "Round Table: Gaudí and the Architect's Role in the Age of AI",
+      "lang": "en",
+      "estado": "sin subtitulos",
+      "url": "https://vz-4ced3a48-15e.b-cdn.net/68e094ac-771c-44fe-a821-d5fe13b32075/captions/en.vtt"
+    },
+    {
+      "modulo": "round-table",
+      "titulo": "Round Table: Gaudí and the Architect's Role in the Age of AI",
+      "lang": "es",
+      "estado": "sin subtitulos",
+      "url": "https://vz-4ced3a48-15e.b-cdn.net/68e094ac-771c-44fe-a821-d5fe13b32075/captions/es.vtt"
+    },
+    {
+      "modulo": "gaudi-workflow",
+      "titulo": "The Gaudí Workflow",
+      "lang": "en",
+      "cues": 454,
+      "md": "P:\\00-repos\\proyecto-pi\\vault-arquitectura\\raw\\yt\\transcripts\\2026-10-21_mux-gaudi-workflow.en.md",
+      "url": "https://vz-4ced3a48-15e.b-cdn.net/4233014c-96df-4e45-9860-6ddb7dcc5923/captions/en.vtt"
+    },
+    {
+      "modulo": "gaudi-workflow",
+      "titulo": "The Gaudí Workflow",
+      "lang": "es",
+      "cues": 454,
+      "md": "P:\\00-repos\\proyecto-pi\\vault-arquitectura\\raw\\yt\\transcripts\\2026-10-21_mux-gaudi-workflow.es.md",
+      "url": "https://vz-4ced3a48-15e.b-cdn.net/4233014c-96df-4e45-9860-6ddb7dcc5923/captions/es.vtt"
+    }
+  ]
+}

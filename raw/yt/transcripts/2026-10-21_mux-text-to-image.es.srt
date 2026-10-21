@@ -1,0 +1,2635 @@
+1
+00:00:01,112 --> 00:00:03,744
+Hola a todos y bienvenidos a la parte dos.
+
+2
+00:00:03,744 --> 00:00:10,388
+Esta parte es sobre text to image y estará más enfocada en la aplicación práctica:
+
+3
+00:00:10,388 --> 00:00:13,120
+vamos a usar workflows de verdad,
+
+4
+00:00:13,120 --> 00:00:15,411
+vamos a probar mucho. Como la parte uno,
+
+5
+00:00:15,411 --> 00:00:18,593
+la introducción, era más teórica y de fundamentos.
+
+6
+00:00:18,593 --> 00:00:21,455
+Aquí vamos a generar de verdad,
+
+7
+00:00:21,455 --> 00:00:25,438
+vamos a usar Comfy Cloud, LoRA, etc.
+
+8
+00:00:29,112 --> 00:00:34,463
+Antes de empezar, quiero contextualizar un poco lo que vamos a hacer.
+
+9
+00:00:34,463 --> 00:00:39,785
+Lo que ves aquí delante es una representación esquemática de
+
+10
+00:00:39,905 --> 00:00:43,026
+la fase de diseño o, en general, del proceso creativo.
+
+11
+00:00:43,026 --> 00:00:49,588
+A la izquierda ves que todo lo que hacemos los arquitectos o diseñadores
+
+12
+00:00:49,588 --> 00:00:53,629
+siempre parte de una idea. Después de esa idea,
+
+13
+00:00:53,629 --> 00:00:57,290
+ves que hay una fase grande, no
+
+14
+00:00:57,864 --> 00:01:03,188
+lineal, que va entre el intercambio de conocimiento,
+
+15
+00:01:03,188 --> 00:01:05,179
+las tareas de diseño y la comunicación.
+
+16
+00:01:05,179 --> 00:01:10,583
+Y luego se endereza otra vez hacia la fabricación y la visualización.
+
+17
+00:01:10,583 --> 00:01:13,805
+Y este ciclo se repite X veces,
+
+18
+00:01:13,805 --> 00:01:18,068
+pero, en general, es un enfoque no lineal.
+
+19
+00:01:18,068 --> 00:01:24,372
+Donde el text to image suele ser muy aplicable
+
+20
+00:01:24,372 --> 00:01:27,034
+es en las fases iniciales, cuando solo tienes una idea
+
+21
+00:01:27,414 --> 00:01:29,596
+y quieres comunicar lo que estás pensando,
+
+22
+00:01:29,596 --> 00:01:32,758
+pero todavía no necesitas mucho control.
+
+23
+00:01:32,758 --> 00:01:35,881
+En general, ese control
+
+24
+00:01:36,714 --> 00:01:41,365
+hace falta más en las fases posteriores.
+
+25
+00:01:41,365 --> 00:01:46,649
+Pero para text to image, las fases iniciales son más adecuadas.
+
+26
+00:01:46,649 --> 00:01:51,773
+Y la razón es que al principio no necesitamos ese control
+
+27
+00:01:51,994 --> 00:01:54,986
+para cambiar cosas concretas,
+
+28
+00:01:54,986 --> 00:01:56,427
+solo queremos comunicar
+
+29
+00:01:56,800 --> 00:01:57,800
+una idea.
+
+30
+00:01:59,607 --> 00:02:01,528
+Lo que vemos aquí es el modelo del doble diamante.
+
+31
+00:02:01,528 --> 00:02:06,822
+Es un marco teórico que muestra que siempre empezamos en
+
+32
+00:02:06,822 --> 00:02:11,425
+un punto concreto y después empezamos a divergir.
+
+33
+00:02:11,425 --> 00:02:15,208
+Divergir significa abrirse, probar muchas cosas,
+
+34
+00:02:15,208 --> 00:02:20,522
+ver qué opciones hay. Y en algún momento le damos la vuelta y
+
+35
+00:02:20,522 --> 00:02:25,466
+empezamos a converger otra vez. El text to image es aplicable en la
+
+36
+00:02:25,466 --> 00:02:27,147
+fase inicial, cuando queremos
+
+37
+00:02:27,635 --> 00:02:32,549
+ver qué opciones tenemos y probar muchas cosas.
+
+38
+00:02:32,549 --> 00:02:36,091
+Después, el image to image es más adecuado.
+
+39
+00:02:36,091 --> 00:02:42,076
+Ese es el siguiente módulo, donde tendremos mucho más control que con text to image.
+
+40
+00:02:42,076 --> 00:02:46,889
+Pero también es otra fase, así que por ahora nos vamos a centrar
+
+41
+00:02:46,889 --> 00:02:51,923
+en text to image; más adelante, image to image, image to video, todo eso
+
+42
+00:02:51,923 --> 00:02:54,465
+será más adecuado ahí.
+
+43
+00:02:57,164 --> 00:03:00,396
+Como dije, esto iba a ser más práctico.
+
+44
+00:03:00,396 --> 00:03:01,898
+Así que vamos a
+
+45
+00:03:01,898 --> 00:03:08,803
+entrar directamente en Miro.
+
+46
+00:03:08,803 --> 00:03:12,046
+Como ves, preparé el módulo 2, text to image.
+
+47
+00:03:12,046 --> 00:03:16,639
+Por ahora está vacío. Pero cuando entres al tablero,
+
+48
+00:03:16,639 --> 00:03:22,714
+estará lleno de imágenes para que puedas descargar los workflows.
+
+49
+00:03:22,714 --> 00:03:26,167
+Te lo dejé preparado aquí en Comfy.
+
+50
+00:03:27,723 --> 00:03:29,444
+Y, como viste en el módulo anterior,
+
+51
+00:03:29,444 --> 00:03:33,498
+este es el workflow más básico posible.
+
+52
+00:03:33,498 --> 00:03:35,960
+Empezamos con el checkpoint, después el prompt,
+
+53
+00:03:35,960 --> 00:03:38,632
+el prompt negativo, la empty latent image,
+
+54
+00:03:38,632 --> 00:03:42,585
+que define la proporción de salida de nuestra imagen.
+
+55
+00:03:42,585 --> 00:03:44,587
+Después tenemos el KSampler,
+
+56
+00:03:44,587 --> 00:03:50,492
+que era el fogón, ¿recuerdas?, donde ponemos los ajustes y afinamos un poco.
+
+57
+00:03:50,492 --> 00:03:56,517
+Luego el decode, que vuelve a crear una imagen a partir de nuestro
+
+58
+00:03:56,809 --> 00:04:00,662
+mundo de IA, y después el Save Image.
+
+59
+00:04:02,785 --> 00:04:04,736
+Este tutorial lo voy a hacer con un prompt
+
+60
+00:04:04,736 --> 00:04:10,449
+muy, muy simple: "concrete house in desert rocky landscape".
+
+61
+00:04:10,449 --> 00:04:17,103
+El motivo es que este workflow que ves aquí es para un modelo
+
+62
+00:04:17,103 --> 00:04:23,777
+que se llama DreamShaper, pero que en esencia es un modelo Stable Diffusion 1.5,
+
+63
+00:04:23,777 --> 00:04:27,219
+lo que significa que a día de hoy es un modelo viejísimo.
+
+64
+00:04:27,219 --> 00:04:31,351
+Salió en 2022. Así que
+
+65
+00:04:31,787 --> 00:04:34,799
+visualmente va a decepcionar un poco,
+
+66
+00:04:34,799 --> 00:04:37,260
+pero va bien para aprender lo básico.
+
+67
+00:04:37,260 --> 00:04:42,022
+El prompt positivo ya lo vimos. El negativo es gato,
+
+68
+00:04:42,022 --> 00:04:46,305
+perro y parque acuático. Después verás por qué.
+
+69
+00:04:46,305 --> 00:04:49,316
+Como vimos, hacemos clic en "run".
+
+70
+00:04:49,316 --> 00:04:53,569
+Esto activa todo lo que hay en el lienzo.
+
+71
+00:04:53,569 --> 00:04:59,252
+Ves que el trabajo está en cola y la imagen se está generando.
+
+72
+00:04:59,252 --> 00:05:01,333
+Como es un modelo
+
+73
+00:05:01,803 --> 00:05:07,167
+superligero, fue rapidísimo. Lo que vemos es una casa de hormigón en el desierto
+
+74
+00:05:07,167 --> 00:05:10,660
+y un paisaje rocoso. Claro que no hace falta que te explique que esto
+
+75
+00:05:10,660 --> 00:05:13,062
+visualmente no es gran cosa.
+
+76
+00:05:13,062 --> 00:05:20,048
+¿Por qué te lo muestro? Para enseñarte todas las funciones de aquí.
+
+77
+00:05:20,048 --> 00:05:24,211
+Si entramos en el KSampler y mantenemos el prompt,
+
+78
+00:05:24,211 --> 00:05:26,623
+el prompt negativo, la empty latent image,
+
+79
+00:05:26,623 --> 00:05:31,297
+lo dejamos todo intacto para saber que los cambios que vamos
+
+80
+00:05:31,699 --> 00:05:35,943
+a ver no se deben al prompt,
+
+81
+00:05:35,943 --> 00:05:40,087
+sino solo a los ajustes. Empecemos por arriba.
+
+82
+00:05:40,087 --> 00:05:42,319
+Vemos la seed. Recuerda:
+
+83
+00:05:42,319 --> 00:05:44,901
+es la posición de partida de los píxeles.
+
+84
+00:05:44,901 --> 00:05:51,817
+Si hacemos clic aquí, podemos cambiar cómo gestiona el workflow
+
+85
+00:05:51,817 --> 00:05:54,129
+la seed. Por ahora está en "fixed value".
+
+86
+00:05:54,129 --> 00:05:57,933
+Como dice, cuando generamos una imagen,
+
+87
+00:05:58,283 --> 00:05:59,915
+la seed siempre será la misma.
+
+88
+00:05:59,915 --> 00:06:04,882
+Siempre partirá de la misma configuración de píxeles.
+
+89
+00:06:04,882 --> 00:06:07,426
+Si pasamos a "randomize value",
+
+90
+00:06:07,426 --> 00:06:11,271
+siempre será una seed completamente distinta,
+
+91
+00:06:11,271 --> 00:06:12,271
+lo que significa...
+
+92
+00:06:14,347 --> 00:06:17,279
+Vamos a hacer clic derecho aquí,
+
+93
+00:06:17,279 --> 00:06:21,381
+duplicar, y te muestro cuál es el impacto.
+
+94
+00:06:21,381 --> 00:06:25,363
+Así mantenemos nuestro workflow intacto.
+
+95
+00:06:25,363 --> 00:06:32,087
+Y en el segundo hago clic aquí y elijo "randomize value".
+
+96
+00:06:32,087 --> 00:06:37,360
+Por ahora no ha cambiado, porque dice que mezcla
+
+97
+00:06:37,360 --> 00:06:40,512
+el valor al azar después de cada generación.
+
+98
+00:06:40,512 --> 00:06:42,763
+Así que, por ahora, la seed sigue siendo
+
+99
+00:06:43,093 --> 00:06:44,727
+la misma. Si hacemos clic en "run"...
+
+100
+00:06:47,905 --> 00:06:52,195
+Vemos que la seed ya cambió.
+
+101
+00:06:52,195 --> 00:06:54,703
+Ahora se está generando.
+
+102
+00:07:03,581 --> 00:07:04,581
+Déjame mirar.
+
+103
+00:07:07,605 --> 00:07:11,888
+Tuve que recargar la página porque mi internet iba un poco lento,
+
+104
+00:07:11,888 --> 00:07:15,420
+pero, como ves, es una imagen distinta.
+
+105
+00:07:15,420 --> 00:07:20,214
+También hizo una casa de hormigón en el desierto con un paisaje rocoso,
+
+106
+00:07:20,214 --> 00:07:23,036
+pero es otra imagen. Si generamos otra vez,
+
+107
+00:07:23,036 --> 00:07:26,078
+fíjate en esta parte:
+
+108
+00:07:26,078 --> 00:07:30,421
+veremos que vuelve a cambiar la seed.
+
+109
+00:07:30,421 --> 00:07:32,302
+Y cada vez que haces clic aquí,
+
+110
+00:07:32,302 --> 00:07:36,025
+la seed cambia, porque elegimos "randomize value".
+
+111
+00:07:37,261 --> 00:07:43,289
+Ahora, si elegimos "fixed value" y volvemos a ejecutar
+
+112
+00:07:47,306 --> 00:07:48,306
+el workflow...
+
+113
+00:07:55,255 --> 00:07:57,766
+Verás que genera una imagen distinta,
+
+114
+00:07:57,766 --> 00:08:01,208
+pero ahora la seed está fija.
+
+115
+00:08:01,208 --> 00:08:05,911
+Si hacemos clic en "run" otra vez, será la misma imagen, porque bloqueamos la seed,
+
+116
+00:08:05,911 --> 00:08:09,533
+¿sí? No cambió nada.
+
+117
+00:08:09,533 --> 00:08:11,473
+Podemos hacer clic un millón de veces:
+
+118
+00:08:11,473 --> 00:08:13,795
+siempre será exactamente la misma imagen.
+
+119
+00:08:13,795 --> 00:08:16,557
+No cambiamos el prompt,
+
+120
+00:08:16,557 --> 00:08:20,039
+no cambiamos el prompt negativo.
+
+121
+00:08:20,039 --> 00:08:23,801
+Y ahora no vamos a cambiar la seed,
+
+122
+00:08:24,235 --> 00:08:26,467
+porque sabemos que, si la cambiamos,
+
+123
+00:08:26,467 --> 00:08:29,589
+será otra imagen. Si la mantenemos,
+
+124
+00:08:29,589 --> 00:08:31,771
+siempre será más o menos parecida.
+
+125
+00:08:31,771 --> 00:08:35,453
+Volvamos a nuestro ejemplo anterior.
+
+126
+00:08:35,453 --> 00:08:39,027
+Para asegurarnos: si hago clic en "run",
+
+127
+00:08:39,027 --> 00:08:41,860
+vuelve a salir la misma imagen de partida.
+
+128
+00:08:41,860 --> 00:08:48,105
+Y voy a ir a Miro y
+
+129
+00:08:51,309 --> 00:08:57,243
+poner esta imagen aquí para que podamos ver la comparación con los workflows
+
+130
+00:08:57,424 --> 00:09:00,892
+y los modelos más nuevos.
+
+131
+00:09:03,317 --> 00:09:04,317
+Bien.
+
+132
+00:09:07,009 --> 00:09:08,290
+Ya sabemos qué hace la seed.
+
+133
+00:09:08,290 --> 00:09:10,932
+Vamos a jugar con los steps. Los steps,
+
+134
+00:09:10,932 --> 00:09:16,175
+recuerda, son las iteraciones que hace el modelo para crear la imagen.
+
+135
+00:09:16,175 --> 00:09:17,957
+Si los ponemos en cinco,
+
+136
+00:09:20,257 --> 00:09:21,968
+con el mismo prompt, la misma seed,
+
+137
+00:09:21,968 --> 00:09:28,480
+todo igual, veremos que la imagen queda completamente sin terminar.
+
+138
+00:09:28,480 --> 00:09:31,582
+¿Por qué? Porque cortamos la generación.
+
+139
+00:09:31,582 --> 00:09:33,652
+Todavía estaba generando y dijimos: para,
+
+140
+00:09:33,652 --> 00:09:35,833
+para en cinco pasos. Claro,
+
+141
+00:09:35,833 --> 00:09:37,524
+ves que el resultado no es bueno.
+
+142
+00:09:37,524 --> 00:09:41,286
+Si ponemos 10 y lo repetimos,
+
+143
+00:09:41,286 --> 00:09:45,687
+va a seguir el mismo camino de generación y se detendrá en 10.
+
+144
+00:09:45,687 --> 00:09:49,189
+Y ya ves que es mucho mejor que antes.
+
+145
+00:09:50,017 --> 00:09:52,738
+Si lo volvemos a poner en veinte...
+
+146
+00:09:56,479 --> 00:09:59,111
+Otra vez, es exactamente igual que antes.
+
+147
+00:09:59,111 --> 00:10:01,042
+Así que es determinista.
+
+148
+00:10:01,042 --> 00:10:05,796
+No es aleatorio. Puedes rastrear por qué pasó lo que pasó.
+
+149
+00:10:05,796 --> 00:10:09,358
+El CFG es la cantidad de creatividad.
+
+150
+00:10:09,358 --> 00:10:13,551
+Si pasas el cursor por aquí, también te dice qué es.
+
+151
+00:10:13,551 --> 00:10:16,163
+Así que, si no te acuerdas o no lo sabes,
+
+152
+00:10:16,163 --> 00:10:22,287
+pregúntale a tu experto en Comfy o simplemente pasa el cursor
+
+153
+00:10:22,808 --> 00:10:24,599
+por encima del valor.
+
+154
+00:10:26,039 --> 00:10:28,448
+Si ponemos esto en uno...
+
+155
+00:10:30,935 --> 00:10:31,935
+Veamos qué pasa.
+
+156
+00:10:35,167 --> 00:10:39,912
+Queda completamente crudo, porque los valores más altos dan
+
+157
+00:10:39,912 --> 00:10:42,504
+imágenes que se ajustan más al prompt,
+
+158
+00:10:42,504 --> 00:10:44,846
+lo que significa que, si lo ponemos muy bajo,
+
+159
+00:10:44,846 --> 00:10:46,838
+el modelo puede hacer lo que quiera.
+
+160
+00:10:46,838 --> 00:10:50,031
+Tiene mucha libertad, pero en este caso no es suficiente.
+
+161
+00:10:50,031 --> 00:10:51,855
+Si lo ponemos en 20...
+
+162
+00:10:57,823 --> 00:11:04,248
+Intenta hacer tan literalmente lo que dice el prompt que sobresatura
+
+163
+00:11:04,248 --> 00:11:08,922
+y machaca los píxeles. Y por eso, para este workflow,
+
+164
+00:11:08,922 --> 00:11:12,945
+8 es lo mejor. ¿Cómo lo sé?
+
+165
+00:11:12,945 --> 00:11:19,351
+Es muy simple. Voy al prompt coach,
+
+166
+00:11:19,431 --> 00:11:25,556
+o mejor al otro: voy al experto en Comfy y entonces,
+
+167
+00:11:25,556 --> 00:11:26,556
+por ejemplo...
+
+168
+00:11:27,051 --> 00:11:31,276
+Digamos que tenemos una imagen muy mala,
+
+169
+00:11:31,276 --> 00:11:32,630
+así que lo ponemos en uno.
+
+170
+00:11:38,507 --> 00:11:40,337
+Haría una captura de esta página.
+
+171
+00:11:44,877 --> 00:11:48,679
+Tenemos la captura y entonces la pegaría aquí y
+
+172
+00:11:48,679 --> 00:11:50,160
+diría: por qué
+
+173
+00:11:52,421 --> 00:11:57,024
+mi imagen de salida no es buena.
+
+174
+00:11:57,024 --> 00:12:03,528
+Ni siquiera hace falta que escribas perfecto.
+
+175
+00:12:03,628 --> 00:12:07,390
+Y en más o menos un minuto me dirá:
+
+176
+00:12:07,390 --> 00:12:12,513
+vale, veo que estás usando un workflow de Stable Diffusion 1.5.
+
+177
+00:12:12,949 --> 00:12:14,470
+Está intentando diagnosticarlo.
+
+178
+00:12:14,470 --> 00:12:17,822
+Y después dirá: el CFG está demasiado bajo,
+
+179
+00:12:17,822 --> 00:12:22,194
+ponlo en 8, por ejemplo. Dicho esto,
+
+180
+00:12:22,194 --> 00:12:28,098
+vamos al siguiente workflow para ver el impacto de uno distinto.
+
+181
+00:12:28,098 --> 00:12:30,339
+Ya lo tengo preparado aquí.
+
+182
+00:12:30,339 --> 00:12:33,721
+Y lo que ves es que el workflow en sí no es distinto.
+
+183
+00:12:33,721 --> 00:12:36,522
+Lo único que cambia es el modelo.
+
+184
+00:12:36,522 --> 00:12:39,704
+Este es un modelo Stable Diffusion XL,
+
+185
+00:12:39,704 --> 00:12:40,845
+y lo ves aquí.
+
+186
+00:12:42,029 --> 00:12:46,128
+También puedes ir a Templates y al filtro de modelos.
+
+187
+00:12:48,789 --> 00:12:53,639
+Haces clic en SDXL y ahí tienes, por ejemplo, "SDXL simple".
+
+188
+00:12:53,639 --> 00:12:56,676
+Este no es un workflow simple,
+
+189
+00:12:56,676 --> 00:12:58,069
+así que abruma un poco.
+
+190
+00:12:58,069 --> 00:12:59,592
+Vamos a cerrarlo.
+
+191
+00:13:02,261 --> 00:13:08,234
+También puedes probar este. Aquí ves que ya es, si
+
+192
+00:13:08,234 --> 00:13:09,349
+borramos esto...
+
+193
+00:13:12,301 --> 00:13:14,965
+Ya es más simple. Pero, por ahora,
+
+194
+00:13:14,965 --> 00:13:18,580
+para este tutorial, yo me quedaría con los que te doy, porque son
+
+195
+00:13:18,580 --> 00:13:23,496
+los más puros. Es la esencia y nada más.
+
+196
+00:13:23,496 --> 00:13:26,671
+Si tomamos el mismo prompt,
+
+197
+00:13:26,671 --> 00:13:29,405
+etc., todo igual, y lo ejecutamos...
+
+198
+00:13:35,361 --> 00:13:41,407
+Veremos que esta imagen ya es visualmente mucho más interesante que
+
+199
+00:13:41,788 --> 00:13:47,153
+la anterior. No hace falta que lo explique todo otra vez, porque es
+
+200
+00:13:47,153 --> 00:13:51,097
+lo mismo. Así que voy a dejar esta imagen
+
+201
+00:13:54,487 --> 00:13:56,762
+aquí para que puedas revisarla.
+
+202
+00:13:56,762 --> 00:14:00,792
+Después vamos a pasar a FLUX.1.
+
+203
+00:14:03,691 --> 00:14:05,768
+De nuevo, te preparé los workflows.
+
+204
+00:14:08,383 --> 00:14:13,415
+Si lo arrastramos aquí, ves que este workflow es muy distinto.
+
+205
+00:14:13,415 --> 00:14:15,156
+Cerremos este archivo markdown.
+
+206
+00:14:15,156 --> 00:14:18,037
+Y aquí tenemos el mismo prompt:
+
+207
+00:14:18,037 --> 00:14:20,518
+"concrete house in desert, rocky landscape".
+
+208
+00:14:20,518 --> 00:14:26,081
+Como vemos, la resolución está puesta en 1024 por 1024.
+
+209
+00:14:26,081 --> 00:14:32,694
+Esto es porque el modelo FLUX está entrenado con imágenes de más resolución.
+
+210
+00:14:32,694 --> 00:14:35,185
+Así que funciona mejor a 1024
+
+211
+00:14:36,394 --> 00:14:38,017
+que a 512 por 512.
+
+212
+00:14:38,017 --> 00:14:39,991
+Pero, en general, puedes experimentar con esto.
+
+213
+00:14:42,539 --> 00:14:47,811
+Si entramos en el subgraph, vemos que este es el workflow real que hay detrás
+
+214
+00:14:48,312 --> 00:14:53,254
+del subgraph. Pero, por ahora, si hacemos clic en "run",
+
+215
+00:14:53,254 --> 00:14:59,877
+veremos el aumento de calidad de imagen respecto a los modelos antiguos.
+
+216
+00:15:03,701 --> 00:15:05,788
+Aquí vemos cómo se va generando.
+
+217
+00:15:10,569 --> 00:15:13,473
+Como ves, esto es otra vez mucho más interesante.
+
+218
+00:15:13,473 --> 00:15:18,029
+Quizá, si haces mucho zoom, sigue estando pixelado,
+
+219
+00:15:18,029 --> 00:15:21,844
+no es superrealista, yo diría,
+
+220
+00:15:21,844 --> 00:15:25,709
+pero, en general, es una buena imagen.
+
+221
+00:15:30,497 --> 00:15:32,368
+Además, fíjate: es una resolución mayor,
+
+222
+00:15:32,368 --> 00:15:35,738
+así que tengo que reducirla un poco.
+
+223
+00:15:35,738 --> 00:15:41,000
+Esto era solo la preparación, porque estamos llegando a FLUX.2.
+
+224
+00:15:41,000 --> 00:15:45,211
+El modelo que vamos a usar se llama klein 9B.
+
+225
+00:15:45,211 --> 00:15:49,882
+Otra vez, puedes usar el workflow que dejo aquí,
+
+226
+00:15:49,882 --> 00:15:53,964
+o te vas al apartado de plantillas
+
+227
+00:15:55,644 --> 00:15:58,705
+y buscas FLUX.
+
+228
+00:16:00,673 --> 00:16:06,476
+Klein... Bueno, eso fue sin querer.
+
+229
+00:16:09,013 --> 00:16:12,436
+Todos los workflows nativos de Comfy
+
+230
+00:16:12,436 --> 00:16:15,578
+los encuentras aquí. Y ves la diferencia entre modelos.
+
+231
+00:16:15,578 --> 00:16:19,921
+Esto es FLUX.2. Esta es la familia de modelos.
+
+232
+00:16:19,921 --> 00:16:26,306
+Después tenemos klein 4B. Klein es solo una forma de decir que es
+
+233
+00:16:26,306 --> 00:16:30,729
+un archivo pequeño, o sea, que no carga tu computadora como los otros.
+
+234
+00:16:30,729 --> 00:16:33,671
+Y está entrenado con 4.000 millones de parámetros.
+
+235
+00:16:33,671 --> 00:16:35,543
+Aquí vemos klein
+
+236
+00:16:36,273 --> 00:16:38,595
+9B, que es el que vamos a usar.
+
+237
+00:16:38,595 --> 00:16:41,757
+Está entrenado con 9.000 millones. Es un modelo más inteligente,
+
+238
+00:16:41,757 --> 00:16:45,639
+pero también más pesado. Si hacemos clic aquí,
+
+239
+00:16:45,639 --> 00:16:48,433
+vemos que este workflow tiene
+
+240
+00:16:51,565 --> 00:16:54,628
+un aspecto bastante básico. Si entramos en el subgraph,
+
+241
+00:16:54,628 --> 00:16:58,482
+no es nada del otro mundo, y no tienes que cambiar nada aquí dentro,
+
+242
+00:16:58,482 --> 00:17:03,277
+así que quédate con este. Bien,
+
+243
+00:17:03,277 --> 00:17:06,981
+voy a traer mi plantilla.
+
+244
+00:17:09,815 --> 00:17:11,823
+Solo para mantener la coherencia.
+
+245
+00:17:15,575 --> 00:17:18,227
+"Concrete house in desert rocky landscape",
+
+246
+00:17:18,227 --> 00:17:22,529
+1024 por 1024 píxeles, nada especial.
+
+247
+00:17:22,529 --> 00:17:25,991
+Si hacemos clic en "run", verás que esta calidad de salida,
+
+248
+00:17:25,991 --> 00:17:31,655
+arquitectónica, visual, todo, es otra vez mucho más interesante que
+
+249
+00:17:31,655 --> 00:17:36,998
+las anteriores. Pero también tarda mucho más en generarse, porque es
+
+250
+00:17:36,998 --> 00:17:38,799
+un modelo más pesado, más nuevo,
+
+251
+00:17:38,799 --> 00:17:41,291
+entrenado con muchas más imágenes que los antiguos.
+
+252
+00:17:43,903 --> 00:17:46,794
+O sea, esta imagen está muy bien.
+
+253
+00:17:46,794 --> 00:17:48,195
+Así que perfecto. Otra vez, la dejo aquí.
+
+254
+00:17:48,195 --> 00:17:59,601
+...
+
+255
+00:18:07,597 --> 00:18:14,581
+Esta fue una demostración muy rápida de los modelos antiguos frente a los nuevos.
+
+256
+00:18:14,581 --> 00:18:18,043
+Y ves que hay un motivo por el que estos modelos nuevos
+
+257
+00:18:18,043 --> 00:18:19,704
+son mucho más interesantes de usar.
+
+258
+00:18:19,704 --> 00:18:22,806
+Estos, digamos los dos primeros,
+
+259
+00:18:22,806 --> 00:18:27,949
+no son interesantes hoy en día porque les falta calidad.
+
+260
+00:18:27,949 --> 00:18:31,411
+Yo diría que FLUX.1 en algunos casos todavía puede interesar,
+
+261
+00:18:31,411 --> 00:18:33,572
+pero la mayoría de las veces, FLUX.2,
+
+262
+00:18:33,572 --> 00:18:34,973
+sobre todo este,
+
+263
+00:18:35,433 --> 00:18:37,356
+es de lejos la mejor opción para ti.
+
+264
+00:18:37,356 --> 00:18:42,283
+Y por eso recomiendo mucho usar Comfy Cloud, porque si no
+
+265
+00:18:42,283 --> 00:18:46,379
+seguramente tardaría muchísimo generarlo en local.
+
+266
+00:18:48,949 --> 00:18:52,113
+Ahora hay un par de cosas que podríamos hacer aquí.
+
+267
+00:18:52,113 --> 00:18:55,637
+Una es iterar mucho sobre el prompt.
+
+268
+00:18:55,637 --> 00:19:01,043
+Para eso irías a tu experto en Comfy o a tu prompt coach.
+
+269
+00:19:01,043 --> 00:19:02,043
+Te lo muestro.
+
+270
+00:19:04,565 --> 00:19:08,047
+Fui al prompt coach que configuramos juntos,
+
+271
+00:19:08,047 --> 00:19:12,589
+que en general eran solo estas instrucciones,
+
+272
+00:19:12,589 --> 00:19:17,191
+tal como las encuentras en Miro.
+
+273
+00:19:17,191 --> 00:19:20,753
+En "prompt coach setup", simplemente copié y pegué esto
+
+274
+00:19:23,763 --> 00:19:25,916
+en mi LLM favorito, que es Claude.
+
+275
+00:19:25,916 --> 00:19:29,080
+Lo pego aquí. Escribo "start".
+
+276
+00:19:29,080 --> 00:19:34,127
+Me preguntará para qué modelo estoy intentando hacer algo.
+
+277
+00:19:34,127 --> 00:19:35,127
+Y
+
+278
+00:19:37,343 --> 00:19:42,030
+también qué quiero mejorar. Así que diré: "concrete house in desert,
+
+279
+00:19:42,030 --> 00:19:46,587
+rocky landscape", y el modelo es FLUX.2 klein.
+
+280
+00:19:46,587 --> 00:19:47,849
+Y si vamos...
+
+281
+00:19:51,443 --> 00:19:53,168
+Piensa en todo lo que sabe,
+
+282
+00:19:53,168 --> 00:19:55,083
+claro, nada especial.
+
+283
+00:20:00,685 --> 00:20:02,266
+Aquí me dio tres opciones:
+
+284
+00:20:02,266 --> 00:20:05,508
+referencia a Tadao Ando, Rick Joy
+
+285
+00:20:05,508 --> 00:20:11,973
+o Kogan. Yo diría, por ejemplo, la cero uno.
+
+286
+00:20:14,253 --> 00:20:19,135
+Me gusta Tadao Ando, y me dará algo así.
+
+287
+00:20:19,135 --> 00:20:24,477
+Pero específicamente para FLUX.2.
+
+288
+00:20:24,477 --> 00:20:26,878
+Y como ves aquí, para FLUX.2
+
+289
+00:20:26,878 --> 00:20:32,440
+este prompt coach sabe que FLUX.2 entiende el JSON prompting.
+
+290
+00:20:32,440 --> 00:20:35,862
+Y, como vimos antes, el JSON prompting es solo la forma
+
+291
+00:20:35,862 --> 00:20:40,764
+en que esto está organizado.
+
+292
+00:20:40,764 --> 00:20:43,805
+La información, estructurada así.
+
+293
+00:20:44,149 --> 00:20:45,221
+Yo copiaría esto.
+
+294
+00:20:51,307 --> 00:20:57,343
+Lo haría un poco más grande y después pegaría el prompt JSON aquí.
+
+295
+00:20:57,343 --> 00:21:00,846
+¿Qué va a pasar cuando generemos esto?
+
+296
+00:21:00,846 --> 00:21:02,688
+No he leído el prompt entero.
+
+297
+00:21:02,688 --> 00:21:05,931
+Se está trabando un poco.
+
+298
+00:21:05,931 --> 00:21:09,815
+Así que la verdad es que no sé qué va a generar.
+
+299
+00:21:09,815 --> 00:21:12,037
+Veo que tomó algunas paletas de color.
+
+300
+00:21:14,709 --> 00:21:19,851
+Hizo este volumen de aspecto muy básico.
+
+301
+00:21:22,401 --> 00:21:28,486
+La ventaja de este prompt JSON es que, si quiero
+
+302
+00:21:28,486 --> 00:21:30,364
+cambiar algo de la escena,
+
+303
+00:21:30,364 --> 00:21:34,111
+lo haría aquí. Si quiero cambiar algo de la descripción,
+
+304
+00:21:34,111 --> 00:21:39,355
+está aquí. Si quiero cambiar el estilo o los colores,
+
+305
+00:21:39,355 --> 00:21:41,627
+la iluminación, el ambiente, el fondo,
+
+306
+00:21:41,627 --> 00:21:48,422
+la composición, todo, sabría exactamente dónde tengo que tocar el prompt.
+
+307
+00:21:48,422 --> 00:21:51,385
+Bien, eso es lo que puedes hacer aquí.
+
+308
+00:21:51,765 --> 00:21:54,749
+Si tienes una idea clara de lo que quieres,
+
+309
+00:21:54,749 --> 00:22:01,217
+puedes cambiar el prompt de forma casi quirúrgica.
+
+310
+00:22:03,925 --> 00:22:09,428
+Ahora bien, el prompt coach tiende a complicarlo demasiado.
+
+311
+00:22:09,428 --> 00:22:16,291
+Así que yo le diría: hazlo de máximo cincuenta palabras,
+
+312
+00:22:16,291 --> 00:22:19,253
+sin estructura JSON.
+
+313
+00:22:22,465 --> 00:22:26,239
+Para mantenerlo más simple, porque en esta fase inicial de diseño
+
+314
+00:22:26,239 --> 00:22:29,293
+no sé cuáles son las restricciones.
+
+315
+00:22:34,495 --> 00:22:37,969
+Bien, me dio este prompt, "deep focus".
+
+316
+00:22:37,969 --> 00:22:41,273
+Probemos este.
+
+317
+00:22:44,267 --> 00:22:45,267
+Y veamos qué pasa.
+
+318
+00:22:47,969 --> 00:22:53,388
+Claro, esta es una idea bastante básica: una estructura de hormigón en
+
+319
+00:22:53,388 --> 00:22:59,478
+el desierto. Puedes ser mucho más experimental con esto e intentar
+
+320
+00:22:59,478 --> 00:23:02,092
+llevar los límites más lejos.
+
+321
+00:23:06,797 --> 00:23:12,746
+Como ves, las cualidades visuales son bastante interesantes con
+
+322
+00:23:12,746 --> 00:23:14,349
+el sol y el fondo.
+
+323
+00:23:14,349 --> 00:23:17,254
+Me gusta mucho la estética visual de aquí.
+
+324
+00:23:17,254 --> 00:23:21,560
+Ahora, la siguiente parte de la presentación.
+
+325
+00:23:25,889 --> 00:23:28,596
+Lo cambio así.
+
+326
+00:23:31,885 --> 00:23:37,688
+Bien, es el workflow de FLUX.2 klein,
+
+327
+00:23:37,688 --> 00:23:39,589
+el impacto de los tipos de prompt que acabamos de ver.
+
+328
+00:23:39,589 --> 00:23:44,661
+Y otra cosa que voy a añadir es mostrarte
+
+329
+00:23:44,661 --> 00:23:50,264
+cómo implementar un LoRA en este workflow.
+
+330
+00:23:50,264 --> 00:23:55,857
+Y así ves el impacto real del LoRA mientras generamos imágenes.
+
+331
+00:23:59,718 --> 00:24:03,780
+Bien, vimos cómo hacer estas imágenes
+
+332
+00:24:03,801 --> 00:24:08,044
+interesantes solo a partir de texto.
+
+333
+00:24:08,044 --> 00:24:11,686
+Ahora vamos a avanzar hacia implementar un LoRA.
+
+334
+00:24:11,686 --> 00:24:17,841
+Vamos al workflow y volvemos
+
+335
+00:24:17,841 --> 00:24:20,133
+al que teníamos antes, que era
+
+336
+00:24:25,281 --> 00:24:28,782
+este. Lo voy a dejar en
+
+337
+00:24:31,359 --> 00:24:35,283
+la posición de partida que tenía antes para que lo reconozcas.
+
+338
+00:24:38,957 --> 00:24:43,119
+Como ves, a veces va un poco lento,
+
+339
+00:24:43,119 --> 00:24:46,211
+también porque estás usando un servicio en la nube,
+
+340
+00:24:46,211 --> 00:24:48,883
+así que a veces la conexión tarda unos segundos.
+
+341
+00:24:48,883 --> 00:24:51,504
+En general es rapidísimo.
+
+342
+00:24:51,504 --> 00:24:56,938
+Si va lento, si no genera y no da ningún código de error,
+
+343
+00:24:56,938 --> 00:25:01,130
+puedes refrescar y probablemente se arregle,
+
+344
+00:25:01,130 --> 00:25:05,333
+aunque diga esto. Veamos qué pasa.
+
+345
+00:25:11,923 --> 00:25:16,436
+Lo refresqué y tenemos esta imagen.
+
+346
+00:25:16,436 --> 00:25:20,069
+Ahora vamos a añadir un LoRA a este workflow.
+
+347
+00:25:20,069 --> 00:25:23,361
+Entramos en el subgraph; esto va a ser un poco más técnico,
+
+348
+00:25:23,361 --> 00:25:29,705
+pero sigue mis pasos. Lo que hacemos es ponernos aquí arriba y hacer doble clic.
+
+349
+00:25:29,705 --> 00:25:34,929
+Vamos a escribir
+
+350
+00:25:34,929 --> 00:25:40,453
+"load LoRA". Y, como ves aquí en el lado derecho,
+
+351
+00:25:40,789 --> 00:25:45,572
+es el logo de Comfy, o sea, es un nodo oficial que hizo el propio Comfy,
+
+352
+00:25:45,572 --> 00:25:48,754
+así que funciona muy bien. A veces ves otros nombres.
+
+353
+00:25:48,754 --> 00:25:53,097
+Son otras personas que hacen
+
+354
+00:25:53,098 --> 00:25:58,891
+sus propios nodos, y después Comfy los verifica.
+
+355
+00:25:58,891 --> 00:26:02,744
+Son todos seguros, así que no tienes que preocuparte.
+
+356
+00:26:02,744 --> 00:26:06,367
+Pero, por ahora, haz clic en este primero.
+
+357
+00:26:06,367 --> 00:26:09,689
+Después puedes arrastrarlo donde quieras. Para este
+
+358
+00:26:10,251 --> 00:26:13,004
+workflow, yo lo pondría arriba.
+
+359
+00:26:13,004 --> 00:26:16,249
+Desapareció. Probemos otra vez.
+
+360
+00:26:19,639 --> 00:26:22,772
+Lo pegamos aquí. Ahora,
+
+361
+00:26:22,772 --> 00:26:24,873
+claro, como no está enlazado al workflow,
+
+362
+00:26:24,873 --> 00:26:30,288
+no va a funcionar. Tu pregunta puede ser: ¿dónde lo enlazo
+
+363
+00:26:30,288 --> 00:26:33,611
+en medio de todo esto sin romper el workflow?
+
+364
+00:26:33,611 --> 00:26:39,526
+Es supersimple. Ves que necesitamos una entrada de modelo y tenemos
+
+365
+00:26:39,526 --> 00:26:44,069
+una salida de modelo. Si buscas dónde hay
+
+366
+00:26:44,069 --> 00:26:48,203
+una salida que diga "model", solo está esta.
+
+367
+00:26:48,609 --> 00:26:50,870
+Así que, digamos que quieres conectarlo.
+
+368
+00:26:50,870 --> 00:26:53,891
+Solo hay una manera de conectarlo,
+
+369
+00:26:53,891 --> 00:26:57,133
+y es esta. Digamos que quiero conectarlo aquí.
+
+370
+00:26:57,133 --> 00:27:02,045
+No se puede. Se pone gris porque es otra entrada,
+
+371
+00:27:02,045 --> 00:27:04,116
+¿sí? Es otro tipo de información.
+
+372
+00:27:04,116 --> 00:27:09,558
+Así que no te puedes equivocar, porque esta es la única forma de enlazarlo.
+
+373
+00:27:09,558 --> 00:27:14,700
+Digamos que quiero enlazarlo aquí y lo suelto:
+
+374
+00:27:14,700 --> 00:27:16,171
+no pasa nada.
+
+375
+00:27:17,129 --> 00:27:20,250
+También lo puedo tomar de aquí y enlazarlo.
+
+376
+00:27:20,250 --> 00:27:23,711
+Ves que este está enlazado, pero detrás,
+
+377
+00:27:23,711 --> 00:27:27,313
+detrás de este, si lo muevo,
+
+378
+00:27:27,313 --> 00:27:32,115
+todavía ves que este modelo está enlazado al siguiente.
+
+379
+00:27:32,115 --> 00:27:38,397
+Así que, si haces esto, se salta y ahora esta cadena queda conectada.
+
+380
+00:27:41,047 --> 00:27:44,759
+No te intimides, parece más difícil de lo que es.
+
+381
+00:27:44,759 --> 00:27:50,844
+Ahora vemos que el modelo está enlazado,
+
+382
+00:27:50,844 --> 00:27:54,266
+o que el nodo está enlazado dentro del workflow.
+
+383
+00:27:54,266 --> 00:28:00,090
+Lo que tenemos que hacer ahora es importar un LoRA a nuestra cuenta para activarlo.
+
+384
+00:28:00,090 --> 00:28:02,732
+Cómo lo vamos a hacer
+
+385
+00:28:02,792 --> 00:28:07,855
+está bien explicado en Miro.
+
+386
+00:28:07,855 --> 00:28:10,497
+Es este documento, un PDF
+
+387
+00:28:11,029 --> 00:28:14,190
+hecho por Ismail Salid, así que un gran agradecimiento para él.
+
+388
+00:28:14,190 --> 00:28:18,231
+Si no queda claro, puedes seguir este
+
+389
+00:28:18,711 --> 00:28:24,953
+y así sabrás cómo importar modelos a tu cuenta
+
+390
+00:28:25,073 --> 00:28:28,334
+de Comfy Cloud. Pero lo vamos a hacer juntos.
+
+391
+00:28:28,334 --> 00:28:31,015
+Esto es solo un respaldo por si no queda claro:
+
+392
+00:28:31,015 --> 00:28:36,997
+síguelo aquí. Vas al sitio web llamado Hugging Face.
+
+393
+00:28:39,115 --> 00:28:44,749
+Como ves aquí arriba, dejé el enlace para que puedas
+
+394
+00:28:44,749 --> 00:28:49,412
+usarlo si no queda claro. Te creas una cuenta nueva,
+
+395
+00:28:49,412 --> 00:28:50,919
+o sea, haces clic en "sign up".
+
+396
+00:28:52,993 --> 00:28:54,233
+Cuando ya tienes tu cuenta,
+
+397
+00:28:54,233 --> 00:28:57,424
+la ves aquí arriba. Yo me hice una nueva aquí.
+
+398
+00:28:57,424 --> 00:29:01,245
+Hay muchísima información en este sitio web,
+
+399
+00:29:01,245 --> 00:29:02,856
+y Hugging Face, en esencia,
+
+400
+00:29:02,856 --> 00:29:07,037
+es la mayor plataforma de IA. Puedes venir aquí, hacer clic en "models",
+
+401
+00:29:07,037 --> 00:29:10,738
+y encontrarás muchísimos modelos open source,
+
+402
+00:29:10,738 --> 00:29:16,119
+y LoRA también. Es supertécnico en cierto modo,
+
+403
+00:29:16,119 --> 00:29:20,140
+pero nosotros lo vamos a usar para buscar,
+
+404
+00:29:20,140 --> 00:29:22,501
+por ejemplo, FLUX.2.
+
+405
+00:29:24,247 --> 00:29:25,269
+Si haces clic aquí...
+
+406
+00:29:28,319 --> 00:29:32,873
+Aquí podrías descargar FLUX.2 klein 9B,
+
+407
+00:29:32,873 --> 00:29:37,036
+y no hace falta que lo hagas, porque Comfy Cloud ya lo hizo por nosotros.
+
+408
+00:29:37,036 --> 00:29:40,539
+Pero para quien intente ejecutarlo en local,
+
+409
+00:29:40,539 --> 00:29:43,341
+o sea, usarlo en su propia computadora,
+
+410
+00:29:43,341 --> 00:29:45,083
+entonces sí tendría que descargarlo:
+
+411
+00:29:45,083 --> 00:29:48,926
+este archivo enorme de aquí. Pero, por ahora,
+
+412
+00:29:48,926 --> 00:29:55,111
+no hace falta. Lo que queremos hacer, si volvemos, es
+
+413
+00:29:55,111 --> 00:29:56,973
+poder cargar un LoRA
+
+414
+00:29:57,993 --> 00:30:03,285
+en nuestro workflow. Los pasos que hay que dar son los siguientes.
+
+415
+00:30:05,921 --> 00:30:11,147
+Lo primero es ir a Black Forest Labs, FLUX.2 klein 9B.
+
+416
+00:30:11,147 --> 00:30:12,859
+Si no sabes cómo,
+
+417
+00:30:12,859 --> 00:30:16,823
+haz clic aquí: FLUX.2 klein.
+
+418
+00:30:19,915 --> 00:30:23,349
+Y aparecerá arriba. Haces clic aquí,
+
+419
+00:30:23,349 --> 00:30:26,523
+y esta es la ficha del modelo.
+
+420
+00:30:26,523 --> 00:30:29,317
+Tiene mucha información sobre el modelo:
+
+421
+00:30:29,317 --> 00:30:32,401
+cómo ejecutarlo, limitaciones, documentación.
+
+422
+00:30:32,401 --> 00:30:34,684
+Si te interesa, puedes mirarlo aquí.
+
+423
+00:30:34,684 --> 00:30:38,869
+Lo que tenemos que hacer es clic en "agree and access repository".
+
+424
+00:30:42,061 --> 00:30:46,475
+"Files and versions". Esto es solo con fines educativos,
+
+425
+00:30:46,475 --> 00:30:50,309
+para enseñarte cómo se hace. Está vinculado a
+
+426
+00:30:53,453 --> 00:30:59,896
+Black Forest Labs, así que también ves cuántas descargas
+
+427
+00:30:59,896 --> 00:31:05,698
+tuvieron el mes pasado, etc. Ahora decimos que aceptamos
+
+428
+00:31:05,698 --> 00:31:09,030
+los términos de FLUX, o de Black Forest Labs.
+
+429
+00:31:09,030 --> 00:31:11,741
+Así que lo más difícil ya está hecho.
+
+430
+00:31:11,741 --> 00:31:14,762
+Ahora vamos aquí, al lado derecho,
+
+431
+00:31:14,762 --> 00:31:18,644
+vamos a "New Model",
+
+432
+00:31:18,644 --> 00:31:20,805
+le ponemos un nombre.
+
+433
+00:31:21,825 --> 00:31:24,406
+El nombre depende un poco de cuál estés usando.
+
+434
+00:31:24,406 --> 00:31:29,529
+En Miro he preparado algo.
+
+435
+00:31:29,529 --> 00:31:34,711
+En este curso va incluido un LoRA.
+
+436
+00:31:34,711 --> 00:31:37,152
+Se llama Rhino to Image LoRA Basic.
+
+437
+00:31:37,152 --> 00:31:43,005
+Es un archivo safetensors que vas a encontrar en la carpeta que recibes
+
+438
+00:31:43,005 --> 00:31:47,317
+del curso. Ahora bien, como esto es mi trabajo a tiempo completo
+
+439
+00:31:47,637 --> 00:31:49,488
+y pruebo muchísimos LoRA,
+
+440
+00:31:49,488 --> 00:31:51,659
+hago muchos yo mismo.
+
+441
+00:31:51,659 --> 00:31:56,291
+También hice un LoRA premium que te voy a enseñar.
+
+442
+00:31:56,291 --> 00:32:00,090
+No tienes que comprarlo, pero si te interesa,
+
+443
+00:32:00,090 --> 00:32:05,046
+lo encuentras en mi web y te lo muestro rápidamente aquí.
+
+444
+00:32:05,046 --> 00:32:08,347
+Es una web muy, muy sencilla.
+
+445
+00:32:08,347 --> 00:32:11,609
+Lo único que vas a encontrar son mis workflows.
+
+446
+00:32:13,905 --> 00:32:17,567
+Y es este.
+
+447
+00:32:17,567 --> 00:32:19,527
+Aquí, en el lado derecho, como ves,
+
+448
+00:32:19,527 --> 00:32:22,068
+puse un descuento muy grande.
+
+449
+00:32:22,068 --> 00:32:25,600
+Normalmente son 100, ahora van a ser 49.
+
+450
+00:32:25,600 --> 00:32:31,672
+Y creo que vale la pena porque, si haces clic aquí,
+
+451
+00:32:31,672 --> 00:32:33,963
+verás el antes y el después.
+
+452
+00:32:33,963 --> 00:32:38,805
+Esto es parte del segundo... perdón, del tercer módulo,
+
+453
+00:32:38,805 --> 00:32:42,237
+que es image to image, pero ves la calidad de este LoRA.
+
+454
+00:32:42,707 --> 00:32:47,197
+Es buenísima, y es porque lo entrené durante mucho tiempo. Puedes
+
+455
+00:32:47,197 --> 00:32:48,269
+pasar de esto
+
+456
+00:32:51,437 --> 00:32:54,221
+a esto, pero también podemos usarlo para text to image.
+
+457
+00:32:54,221 --> 00:32:57,615
+Si te interesa, haz clic aquí, en "add to cart".
+
+458
+00:32:57,615 --> 00:33:02,312
+Este descuento solo estará mientras dure el concurso.
+
+459
+00:33:02,312 --> 00:33:06,177
+Después, el descuento desaparece.
+
+460
+00:33:08,417 --> 00:33:11,709
+Cuál uses da igual.
+
+461
+00:33:11,709 --> 00:33:13,971
+Puedes seguir los pasos con los dos,
+
+462
+00:33:13,971 --> 00:33:16,723
+tanto con el gratuito como con el premium.
+
+463
+00:33:16,723 --> 00:33:22,517
+La diferencia es solo la calidad visual: la del premium
+
+464
+00:33:22,517 --> 00:33:25,589
+es mejor, claro.
+
+465
+00:33:25,589 --> 00:33:28,682
+Así que tomas ese archivo. En mi caso,
+
+466
+00:33:28,682 --> 00:33:30,293
+va a ser el premium.
+
+467
+00:33:33,323 --> 00:33:35,398
+Le pones un nombre, el que sea,
+
+468
+00:33:35,398 --> 00:33:36,398
+eso es...
+
+469
+00:33:38,849 --> 00:33:39,849
+Tomo este.
+
+470
+00:33:44,001 --> 00:33:45,783
+Da igual cómo lo llames,
+
+471
+00:33:45,783 --> 00:33:49,736
+lo que quieras. Lo dejamos en privado.
+
+472
+00:33:49,736 --> 00:33:52,849
+No hacemos clic en "public", porque si no quedaría expuesto
+
+473
+00:33:52,849 --> 00:33:55,671
+a todo el mundo. Hacemos clic en "private",
+
+474
+00:33:55,671 --> 00:33:59,174
+esto es importantísimo. Y después hacemos clic en "create model".
+
+475
+00:33:59,174 --> 00:34:02,658
+Y ya hemos creado un modelo nuevo.
+
+476
+00:34:02,658 --> 00:34:04,910
+Como todavía no hemos subido nada,
+
+477
+00:34:04,910 --> 00:34:09,934
+está vacío. Vamos a "files and versions" y vemos que no hay nada aún.
+
+478
+00:34:09,934 --> 00:34:10,934
+Solo hay
+
+479
+00:34:11,167 --> 00:34:13,717
+un commit inicial y algunos atributos de git,
+
+480
+00:34:13,717 --> 00:34:19,580
+pero está vacío. El siguiente paso es hacer clic en "contribute", a la derecha,
+
+481
+00:34:19,580 --> 00:34:23,420
+y aquí podemos hacer clic en "upload files".
+
+482
+00:34:23,420 --> 00:34:28,943
+En la carpeta que recibiste está el gratuito,
+
+483
+00:34:28,943 --> 00:34:30,842
+se verá muy claro dónde está,
+
+484
+00:34:30,842 --> 00:34:34,185
+o en mi web tienes el premium.
+
+485
+00:34:34,185 --> 00:34:35,344
+Así que
+
+486
+00:34:38,187 --> 00:34:40,859
+lo arrastras aquí dentro.
+
+487
+00:34:40,859 --> 00:34:45,042
+Como ves, Rhino to Image LoRA premium ya está ahí.
+
+488
+00:34:45,042 --> 00:34:49,824
+Y después hacemos clic en "commit changes".
+
+489
+00:34:52,577 --> 00:34:54,118
+Como ves, se está subiendo:
+
+490
+00:34:54,118 --> 00:34:57,760
+subimos el archivo del LoRA,
+
+491
+00:34:57,760 --> 00:35:01,302
+que es un safetensors, a nuestra cuenta de Hugging Face.
+
+492
+00:35:01,302 --> 00:35:03,854
+Y ahora vemos que está aquí.
+
+493
+00:35:03,854 --> 00:35:07,866
+Se llama Thomas Rhino to Image LoRA Premium.
+
+494
+00:35:07,866 --> 00:35:10,248
+Y este es el archivo en sí.
+
+495
+00:35:10,248 --> 00:35:14,190
+Como ves, son unos 127 megabytes.
+
+496
+00:35:14,190 --> 00:35:16,102
+Puedes volver a descargarlo desde aquí,
+
+497
+00:35:16,102 --> 00:35:18,263
+pero, claro, no hace falta.
+
+498
+00:35:20,353 --> 00:35:24,598
+¿Y cuál es el siguiente paso?
+
+499
+00:35:24,598 --> 00:35:27,280
+Otra vez, hacer clic en la cuenta,
+
+500
+00:35:27,280 --> 00:35:32,947
+y ahora tenemos que hacer clic en "access tokens", porque tenemos que dar
+
+501
+00:35:32,987 --> 00:35:37,411
+a nuestra cuenta de Comfy Cloud acceso a este repositorio.
+
+502
+00:35:37,411 --> 00:35:42,357
+Hacemos clic en "access tokens", "create new token".
+
+503
+00:35:44,417 --> 00:35:47,679
+Le pones un nombre, pero antes de ponerle el nombre,
+
+504
+00:35:47,679 --> 00:35:52,451
+tenemos que hacer clic en "read". No "fine-grained" ni "write",
+
+505
+00:35:52,451 --> 00:35:59,135
+solo "read". Esto significa que el repositorio de Hugging Face solo da acceso
+
+506
+00:35:59,135 --> 00:36:01,386
+a leer nuestros archivos, nada más.
+
+507
+00:36:01,386 --> 00:36:07,550
+Le ponemos un nombre, por ejemplo "comfycloud";
+
+508
+00:36:07,550 --> 00:36:09,631
+da igual cuál sea el nombre,
+
+509
+00:36:09,631 --> 00:36:12,272
+y haces clic en "create token".
+
+510
+00:36:12,272 --> 00:36:13,272
+Ahora bien,
+
+511
+00:36:13,431 --> 00:36:18,362
+este token que ves aquí tienes que mantenerlo privado.
+
+512
+00:36:18,362 --> 00:36:23,464
+Como esta es una cuenta falsa, da igual que tú veas cuál es,
+
+513
+00:36:23,464 --> 00:36:27,625
+pero es importantísimo que tú lo mantengas privado, porque es
+
+514
+00:36:27,825 --> 00:36:33,106
+un token que da acceso a tu cuenta,
+
+515
+00:36:33,106 --> 00:36:38,608
+a todo lo que hayas subido. Si se publica en internet,
+
+516
+00:36:38,608 --> 00:36:42,529
+otras personas pueden acceder. Es como una contraseña.
+
+517
+00:36:42,753 --> 00:36:48,407
+Llamémosle contraseña. Pero, por ahora, da igual que lo veas en mi caso.
+
+518
+00:36:48,407 --> 00:36:50,285
+Yo haría clic en "copy".
+
+519
+00:36:54,849 --> 00:36:58,453
+Después vuelvo a Comfy, a Comfy Cloud,
+
+520
+00:36:58,453 --> 00:37:03,760
+voy a ajustes y aquí ves "secrets".
+
+521
+00:37:03,760 --> 00:37:07,365
+Ves que yo ya lo he hecho,
+
+522
+00:37:07,365 --> 00:37:11,610
+claro, porque si no, no podría dar este curso.
+
+523
+00:37:11,610 --> 00:37:13,963
+Yo haría clic en "add secrets".
+
+524
+00:37:17,237 --> 00:37:24,200
+Le pones un nombre y aquí pegas tu nuevo valor, así,
+
+525
+00:37:25,761 --> 00:37:28,622
+y haces clic en "save". El proveedor:
+
+526
+00:37:28,622 --> 00:37:33,004
+antes de hacer clic en "save", tienes que seleccionar Hugging Face.
+
+527
+00:37:33,004 --> 00:37:36,625
+Eso es importantísimo. Yo no puedo hacerlo porque ya tengo
+
+528
+00:37:37,226 --> 00:37:40,047
+mi token seleccionado, pero haz clic en Hugging Face,
+
+529
+00:37:40,047 --> 00:37:45,239
+ponle un nombre cualquiera y haz clic en "save".
+
+530
+00:37:48,299 --> 00:37:52,331
+Después volvemos a Comfy y ya casi hemos terminado.
+
+531
+00:37:52,331 --> 00:37:55,152
+Esto solo tienes que hacerlo una vez;
+
+532
+00:37:55,152 --> 00:37:57,273
+después es mucho más simple.
+
+533
+00:37:57,273 --> 00:38:02,735
+Volvemos a nuestra cuenta. Hacemos clic en nuestra cuenta.
+
+534
+00:38:02,735 --> 00:38:06,276
+Aquí vemos el modelo que acabamos de subir,
+
+535
+00:38:06,276 --> 00:38:12,639
+el LoRA. Si lo pruebas primero con el básico
+
+536
+00:38:12,639 --> 00:38:14,104
+y después con el premium,
+
+537
+00:38:14,104 --> 00:38:16,120
+solo tienes que repetir los pasos dos veces;
+
+538
+00:38:16,120 --> 00:38:17,361
+entonces,
+
+539
+00:38:17,921 --> 00:38:19,605
+claro, aquí habrá dos modelos.
+
+540
+00:38:19,605 --> 00:38:22,293
+Tiene sentido. No es nada del otro mundo.
+
+541
+00:38:24,535 --> 00:38:29,199
+Vamos a "files and versions", y aquí
+
+542
+00:38:29,199 --> 00:38:34,693
+tienes que hacer clic derecho en el botón de descarga,
+
+543
+00:38:34,693 --> 00:38:39,637
+¿sí? No doble clic. También puedes hacerlo aquí,
+
+544
+00:38:39,637 --> 00:38:43,621
+pero tiene que ser clic derecho, o en este botón o aquí,
+
+545
+00:38:43,621 --> 00:38:47,094
+y después haces clic en "copy link address".
+
+546
+00:38:47,094 --> 00:38:52,388
+Bien. Hacemos clic aquí,
+
+547
+00:38:52,388 --> 00:38:53,567
+dice "link address".
+
+548
+00:38:53,911 --> 00:38:54,911
+¿Copiado?
+
+549
+00:38:57,047 --> 00:38:59,381
+Por última vez, vamos a Comfy.
+
+550
+00:38:59,381 --> 00:39:01,585
+...
+
+551
+00:39:04,107 --> 00:39:09,121
+Hacemos clic en "model library", "import",
+
+552
+00:39:10,222 --> 00:39:14,426
+y aquí pegamos el enlace.
+
+553
+00:39:14,426 --> 00:39:18,869
+Si hacemos clic en "continue", en mi caso no va a funcionar,
+
+554
+00:39:18,869 --> 00:39:21,932
+pero a ti sí te va a funcionar.
+
+555
+00:39:21,932 --> 00:39:26,086
+Si algo no funciona, puede pasar,
+
+556
+00:39:26,086 --> 00:39:28,818
+quizá te saltaste un paso o un detalle.
+
+557
+00:39:28,818 --> 00:39:31,600
+No te preocupes, ve a
+
+558
+00:39:35,681 --> 00:39:40,203
+este documento: aquí está explicado cada paso que dimos,
+
+559
+00:39:42,497 --> 00:39:43,754
+de otra manera.
+
+560
+00:39:45,869 --> 00:39:52,155
+Solo sigue los pasos. Y si aun así no funciona,
+
+561
+00:39:52,155 --> 00:39:55,799
+vuelve a ver este video. Y si todavía no funciona,
+
+562
+00:39:55,799 --> 00:40:01,465
+usa tu experto en Comfy, porque te va a guiar por el proceso.
+
+563
+00:40:01,465 --> 00:40:07,030
+Bien, si hiciste todo esto correctamente y refrescas la página,
+
+564
+00:40:07,030 --> 00:40:09,473
+puedes hacer clic en "load LoRA".
+
+565
+00:40:12,075 --> 00:40:17,329
+Vas a "my models" y ahí ya estará disponible este LoRA.
+
+566
+00:40:17,329 --> 00:40:22,123
+En mi caso tiene otro nombre porque esto fue durante las pruebas.
+
+567
+00:40:24,619 --> 00:40:26,810
+Y ahora el LoRA está enlazado a nuestro workflow.
+
+568
+00:40:26,810 --> 00:40:29,561
+Entiendo que puedan parecer muchos pasos.
+
+569
+00:40:29,561 --> 00:40:33,072
+Parece supertécnico,
+
+570
+00:40:33,072 --> 00:40:35,353
+pero solo sigue los pasos sencillos que di yo,
+
+571
+00:40:35,353 --> 00:40:40,495
+y vas a poder enlazar el LoRA en este workflow
+
+572
+00:40:40,556 --> 00:40:44,637
+de text to image. Veamos cuál es el impacto.
+
+573
+00:40:44,637 --> 00:40:48,719
+Hacemos clic en "run". Y ahora el prompt,
+
+574
+00:40:48,719 --> 00:40:53,841
+todo, sigue igual, solo estamos añadiendo el LoRA sobre nuestro
+
+575
+00:40:55,671 --> 00:41:01,564
+modelo base, que es FLUX.2, y verás cuál es el impacto en cuanto
+
+576
+00:41:01,564 --> 00:41:02,695
+al estilo.
+
+577
+00:41:05,229 --> 00:41:08,454
+Bien, el workflow ya cargó y este es el resultado.
+
+578
+00:41:08,454 --> 00:41:12,560
+Ahora te puedes preguntar: ¿cuál es la gran diferencia?
+
+579
+00:41:12,560 --> 00:41:14,904
+Porque, claro, vemos que el edificio es distinto,
+
+580
+00:41:14,904 --> 00:41:18,289
+pero ahora hablo solo de las características visuales.
+
+581
+00:41:18,289 --> 00:41:20,929
+Así que lo voy a añadir
+
+582
+00:41:23,841 --> 00:41:27,009
+a Miro para ponerlas una al lado de la otra.
+
+583
+00:41:31,905 --> 00:41:35,226
+Y esto es con la fuerza del LoRA al 100 %.
+
+584
+00:41:35,226 --> 00:41:39,467
+La diferencia es que las dos
+
+585
+00:41:39,467 --> 00:41:45,239
+son imágenes interesantes. La única diferencia es que esta, la de
+
+586
+00:41:45,239 --> 00:41:49,650
+la derecha, está influida por este ligero grano analógico,
+
+587
+00:41:49,650 --> 00:41:55,131
+y eso es porque mi LoRA está entrenado con fotografía de arquitectura de 35 mm.
+
+588
+00:41:55,131 --> 00:41:59,533
+Así que puedes seguir usando el básico,
+
+589
+00:41:59,533 --> 00:42:00,993
+no hace falta que uses un LoRA.
+
+590
+00:42:01,638 --> 00:42:04,906
+Pero, si te interesa, lo encuentras aquí.
+
+591
+00:42:07,037 --> 00:42:10,720
+Entramos en el workflow y entramos en el subgraph.
+
+592
+00:42:10,720 --> 00:42:14,003
+Verás que podemos jugar con la fuerza.
+
+593
+00:42:14,003 --> 00:42:18,336
+Si la ponemos en 0,5, pulsamos enter
+
+594
+00:42:18,336 --> 00:42:24,211
+y hacemos clic en "run", ahora este LoRA solo se activará al 50 %,
+
+595
+00:42:24,211 --> 00:42:29,395
+así que no será tan dominante a la hora de cambiar la imagen como
+
+596
+00:42:29,655 --> 00:42:32,678
+lo fue antes. Otra vez,
+
+597
+00:42:32,678 --> 00:42:35,680
+puedes ver cómo se genera la imagen,
+
+598
+00:42:35,680 --> 00:42:36,680
+cómo el modelo se va
+
+599
+00:42:37,281 --> 00:42:39,659
+corrigiendo para darte una imagen buena.
+
+600
+00:42:42,123 --> 00:42:46,436
+Y este es el resultado. Es interesante porque,
+
+601
+00:42:48,845 --> 00:42:51,267
+si lo comparamos aquí en Miro,
+
+602
+00:42:51,267 --> 00:42:53,733
+lo voy a poner aquí.
+
+603
+00:42:57,268 --> 00:42:58,268
+Así.
+
+604
+00:43:13,175 --> 00:43:15,241
+La de la izquierda es sin LoRA,
+
+605
+00:43:15,241 --> 00:43:17,478
+esta es con el cincuenta por ciento,
+
+606
+00:43:17,478 --> 00:43:21,089
+y esta es con el cien por cien.
+
+607
+00:43:24,265 --> 00:43:27,907
+Pues eso es todo. Ahora puedes buscar LoRA nuevos,
+
+608
+00:43:27,907 --> 00:43:30,207
+puedes encontrar otros distintos, y cada,
+
+609
+00:43:30,207 --> 00:43:33,769
+cada LoRA tiene un impacto diferente.
+
+610
+00:43:33,769 --> 00:43:37,050
+Y te preguntarás por qué soy tan fan
+
+611
+00:43:37,050 --> 00:43:43,453
+de este LoRA. Es porque en el siguiente módulo
+
+612
+00:43:43,773 --> 00:43:50,716
+veremos que podemos convertir esta imagen básica de Rhino en este render
+
+613
+00:43:50,716 --> 00:43:53,497
+de alta resolución
+
+614
+00:43:53,857 --> 00:43:58,859
+con solo dar una imagen de referencia de un bloque de mármol.
+
+615
+00:43:58,859 --> 00:44:02,200
+Y aquí es donde el LoRA
+
+616
+00:44:02,200 --> 00:44:05,182
+resulta realmente útil. Porque, si no lo usas,
+
+617
+00:44:05,182 --> 00:44:07,403
+queda un poco plástico.
+
+618
+00:44:07,403 --> 00:44:12,565
+Te doy un ejemplo.
+
+619
+00:44:12,565 --> 00:44:17,067
+Por ejemplo, esto es cuando no usas un LoRA.
+
+620
+00:44:17,067 --> 00:44:20,788
+Es un poco plástico, saturado,
+
+621
+00:44:20,788 --> 00:44:22,509
+superduro de contraste.
+
+622
+00:44:23,301 --> 00:44:25,802
+Y el mismo workflow, el mismo prompt,
+
+623
+00:44:25,802 --> 00:44:29,424
+pero con LoRA es este. Es mucho más suave,
+
+624
+00:44:29,424 --> 00:44:34,536
+es mucho más sutil arquitectónicamente,
+
+625
+00:44:34,536 --> 00:44:37,387
+es mucho más interesante, en mi opinión.
+
+626
+00:44:37,387 --> 00:44:41,248
+Así que échale un vistazo.
+
+627
+00:44:41,248 --> 00:44:44,310
+También viene Spectrum.
+
+628
+00:44:44,310 --> 00:44:48,311
+Explicaré qué es en el siguiente módulo,
+
+629
+00:44:48,311 --> 00:44:52,353
+y también otro LoRA distinto. Pero para
+
+630
+00:44:52,749 --> 00:44:57,375
+el curso he dado un cincuenta por ciento de descuento mientras
+
+631
+00:44:57,375 --> 00:44:59,573
+dure el concurso.
+
+632
+00:45:03,223 --> 00:45:08,395
+Volvamos al text to image. Vimos cuatro modelos:
+
+633
+00:45:08,395 --> 00:45:10,596
+Stable Diffusion 1.5,
+
+634
+00:45:10,596 --> 00:45:14,518
+Stable Diffusion XL, FLUX.1 y FLUX.2.
+
+635
+00:45:14,518 --> 00:45:19,400
+Hemos visto cómo usar un LoRA,
+
+636
+00:45:19,400 --> 00:45:25,112
+que es un proceso con muchos pasos distintos,
+
+637
+00:45:25,112 --> 00:45:26,683
+pero solo tienes que hacerlo una vez,
+
+638
+00:45:26,683 --> 00:45:32,225
+y después tu LoRA está en tu cuenta de Comfy y puedes acceder siempre
+
+639
+00:45:32,713 --> 00:45:39,386
+muy fácilmente. Lo siguiente que podríamos hacer es jugar un poco más con
+
+640
+00:45:39,386 --> 00:45:42,667
+el prompt coach. Si tienes una idea concreta,
+
+641
+00:45:42,667 --> 00:45:44,978
+pásala siempre primero por el prompt coach,
+
+642
+00:45:44,978 --> 00:45:49,740
+dale vueltas a tus ideas con el bot de IA,
+
+643
+00:45:49,740 --> 00:45:53,642
+y después copia, pega y pruébalo.
+
+644
+00:45:53,642 --> 00:45:56,143
+Juega un poco con los parámetros.
+
+645
+00:45:56,143 --> 00:46:00,444
+Si no funciona, vuelve a los ajustes anteriores,
+
+646
+00:46:00,444 --> 00:46:01,975
+y siempre puedes descargar
+
+647
+00:46:02,263 --> 00:46:06,341
+esta plantilla de aquí. Descárgala.
+
+648
+00:46:10,037 --> 00:46:11,037
+Mm.
+
+649
+00:46:13,907 --> 00:46:15,587
+Entra en Comfy.
+
+650
+00:46:18,167 --> 00:46:24,800
+Arrastra y suelta, y tendrás exactamente el mismo prompt, ajustes y seed que yo.
+
+651
+00:46:28,735 --> 00:46:31,607
+Bien, esto es el final del módulo dos,
+
+652
+00:46:31,607 --> 00:46:36,840
+text to image. En el lado derecho del tablero de Miro,
+
+653
+00:46:36,840 --> 00:46:41,734
+del todo aquí, dejé recursos extra para quien tenga interés.
+
+654
+00:46:41,734 --> 00:46:44,436
+Puedes hacer clic aquí,
+
+655
+00:46:44,436 --> 00:46:50,240
+descargar la imagen, y verás el workflow entero con el prompt,
+
+656
+00:46:50,240 --> 00:46:56,564
+etc. Porque esto es algo que yo usaba para probar ideas,
+
+657
+00:46:56,564 --> 00:46:58,125
+como por ejemplo esta torre.
+
+658
+00:46:59,967 --> 00:47:03,168
+Así que échale un vistazo, es un extra del curso.
+
+659
+00:47:07,000 --> 00:47:09,927
+Gracias, y nos vemos en el módulo tres.

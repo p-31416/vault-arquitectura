@@ -3,16 +3,18 @@ tipo: metodologia
 mvp: 02
 set: SET_01-REP
 fecha_creacion: 2026-10-15
-ultima_actualizacion: 2026-10-15
-tags: [mvp_02, SET_01, playbook, autocad, full, replanteo, comandos]
+ultima_actualizacion: 2026-10-21
+tags: [mvp_02, SET_01, playbook, autocad, full, replanteo, comandos, autocad-lt]
 idioma: es
-estado: borrador-para-lectura
+estado: vigente-lt-2027
 ---
 
-# PB-02 — Replanteo desde 0 (Full EN base, variante LT vigente, paso a paso)
+# PB-02 — Replanteo desde 0 (variante LT 2027 vigente, Full EN como alternativa)
 
-> Borrador para lectura. PDFs en pausa. Base: AutoCAD Full inglés 2024-2027, dibujo nuevo desde `acadiso.dwt`. Uso vigente: LT (ver notas LT abajo).
-> Regla: comando `_COMANDO` corre EN en cualquier UI. Tabla EN primero / ES segundo.
+> **Actualizado 21/10/2026.** La máquina del estudio tiene **AutoCAD LT 2027** (`C:\Program Files\Autodesk\AutoCAD LT 2027`), no el Full 2027. Todo el flujo de este playbook es válido en LT; lo que cambia está marcado como **⚠ LT**. Comandos con prefijo `_` (p. ej. `_COMANDO`) corren en inglés en cualquier UI.
+> **Regla:** comando `_COMANDO` corre EN en cualquier UI. Tabla EN primero / ES segundo.
+> **Lo que LT no trae:** COM/ActiveX externo, `DATAEXTRACTION` / `ATTIN` / `ATTOUT`. **Lo que sí trae:** AutoLISP (`APPLOAD`, desde LT 2024 en Windows), `TABLA` con vínculo de datos (exige Excel instalado), `STANDARDS`, palettes y DesignCenter.
+> Fuentes oficiales: [LT 2027 — LISP en LT](https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/Unable-to-load-lisp-in-AutoCAD-LT.html) · [LT 2027 — Tool Palettes](https://help.autodesk.com/view/ACDLT/2027/ENU/?guid=GUID-6668905A-3FAD-4EED-82A2-5D6177AD4280) · [LT 2027 — DesignCenter](https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/How-to-insert-blocks-using-DesignCenter-for-AutoCAD-LT.html).
 
 ## 0. Comandos madre (ficha oficial + atajo)
 
@@ -48,15 +50,17 @@ Edición base: `LINE`/`LINEA` (`L`), `OFFSET`/`DESFASE` (`O`), `RECTANG` (`REC`)
 6. `LAYOUT` New → renombra `REP-PTipo-A1` → `PAGESETUP` → `DWG To PDF.pc3` → ISO full bleed A1 841x594 landscape → Plot area Layout → Plot scale 1:1 → `MVIEW` 1 ventana → clic dentro → `ZOOM 20 XP` → verifica `1:50 (m)` → Display Locked Yes.
 7. `PAGESETUP` → Plot style table `monochrome.ctb` (vigente, viene con todo AutoCAD) → guarda en ruta tablas (`OPTIONS` → Files). Prueba plot: todo negro, mide 20 mm por cada metro en viewport 1:50.
 8. `SAVEAS` DWT + `SAVEAS` DWS (`SET-REP.dws` misma base). Asocia vía Configure Standards.
-9. Full: `APPLOAD` → `lisp/SET_01-REP.lsp` → `SET-REPLANTEO` en dibujo limpio → verifica 29 capas. LT 2024+ Win: mismo flujo ([LISP en LT](https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/Unable-to-load-lisp-in-AutoCAD-LT.html)). LT 2023- / LT Mac (`Unknown Command`): setup manual pasos 2-8, el DWT ya trae todo.
+9. **LT 2024+ Win (vigente en el estudio):** `APPLOAD` → `lisp/SET_01-REP.lsp` → `SET-REPLANTEO` en dibujo limpio → verifica 29 capas ([LISP en LT](https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/Unable-to-load-lisp-in-AutoCAD-LT.html)). Con `SECURELOAD = 1` y `TRUSTEDPATHS` vacío, AutoCAD pide confirmar la ruta de búsqueda al cargar: agregar la carpeta a *Ubicaciones de confianza* o contestar Sí/Continuar. LT 2023- / LT Mac (`Unknown Command`): setup manual pasos 2-8, el DWT ya trae todo.
+10. **⚠ LT — límites del entorno:** sin COM/ActiveX externo → el MCP `autocad` del vault no llega al LT y la automatización del CAD va por AutoLISP. Instalación real: `C:\Program Files\Autodesk\AutoCAD LT 2027`. El AutoCAD 2027 full (instalador en `P:\autocad\AutoCAD.2027_English_64bit`) devuelve la vía COM y el `STANDARDS`/`CHECKSTANDARDS` en pantalla.
 
 ## 1.5 Bloques en memoria + palettes (LT sí)
 
 Memoria = definiciones dentro del DWT/plano (pestaña Current Drawing de Blocks palette). Organización vigente:
 
 * DWT SET_01 trae en memoria solo lo general + replanteo (13): (a) Vanos dinámicos 2: `VENTANA BAJA SIMPLE`, `PUERTA BATIENTE` en `A-CARP-02` · (b) Tags/niveles 5: `SIMB-MURO`, `SIMBOLO DE EJE`, `SIMBOLO NIVEL PISO CORTE`, `C40.20`, `Tabela_Esquadrias` · (c) Carátula 1: `G-CART-MEPA` en `ROT-*` + 4 puntas de cota. Cada `INSERT` fija capa de inserción + punto (vanos al centro, tags horizontales) según [[proyectos/MVP_02-autocad-standards/SET_01-REP_Replanteo/docs/bloques-personalizados|bloques-personalizados]].
+* **Bloque nuevo (fuera del DWT por ahora):** `SIMB-LOC_ID` — rectángulo 0.30 × 0.30 m + `N_LOC` visible (número) + `TXT_LOC` invisible (nombre). Se crea e inserta con `lisp/SET-01-SIMB-LOC-ID.lsp` (comando `SIMB-LOC_ID`, control `LOC-ID-CHECK`, diagnóstico `LOC-ID-DIAG`). **Estado 21/10:** bloque definido y probado en LT, con **0 ejemplares** en REP-ARAOZ → los 28 locales siguen numerados a mano sobre los rótulos legacy `*U482`.
 * Generales vs disciplina: `GEN-` (niveles corte/vista/planta, ejes, norte, escala gráfica) viven en DWT SET_01; `SAN-`, `ELE-`, etc. (artefactos, bocas, tableros) viven en bibliotecas por disciplina (`SET_XX-YYY_bloques.dwg`), fuera de memoria SET_01 — entran vía Libraries/DesignCenter solo cuando el SET los pide. Así la memoria avanza liviana y cada disciplina avanza con su madre.
-* Nivel dinámico que mide (propuesta): un solo bloque `GEN-NIVEL` con visibilidades Corte/Vista/Planta + `Block Table` que alinea atributo `NPT` con visibilidad ([attribute + visibility via Block Table](https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/Connecting-attribute-values-to-visibility-states-for-dynamic-blocks-in-AutoCAD.html)). En corte suma grip linear/stretch para altura gráfica + `NPT` editable (semi-auto, cierra con `DATAEXTRACTION`); evita anidados con visibilidades y `COPY` con portapapeles dentro de `BEDIT` ([avoid duplicates](https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/Dynamic-block-entities-are-duplicated-after-modifications-are-made-using-the-Block-Editor-in-AutoCAD.html)).
+* Nivel dinámico que mide (**a construir**): un solo bloque `GEN-NIVEL` con visibilidades Corte/Vista/Planta + `Block Table` que alinea atributo `NPT` con visibilidad ([attribute + visibility via Block Table](https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/Connecting-attribute-values-to-visibility-states-for-dynamic-blocks-in-AutoCAD.html)). En corte suma grip linear/stretch para altura gráfica + `NPT` editable (semi-auto; el cómputo sale por LSP en LT, ver §3); evita anidados con visibilidades y `COPY` con portapapeles dentro de `BEDIT` ([avoid duplicates](https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/Dynamic-block-entities-are-duplicated-after-modifications-are-made-using-the-Block-Editor-in-AutoCAD.html)).
 * Palettes LT: `TOOLPALETTES` → New Palette `SET_01-REP` → arrastra desde DesignCenter (`ADCENTER` → dibujo madre → Blocks) o desde `SET_01-REP_bloques.dwg`; por herramienta fija Description (tooltip) + Layer por defecto (crea la capa si falta) + escala/ángulo según [Tool Palettes LT](https://help.autodesk.com/view/ACDLT/2027/ENU/?guid=GUID-6668905A-3FAD-4EED-82A2-5D6177AD4280). Separa con texto/separadores en grupos GEN / REP / disciplina. Comparte vía Drive: exporta `.xtp` + apunta Support Path a `W03-CAD/SET_01-REP/` ([share palettes](https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/How-to-share-tool-palettes-containing-custom-blocks.html)).
 * Blocks palette como alternativa sin palettes: Libraries tab → Browse a `SET_01-REP_bloques.dwg` (biblioteca) o Current/Recent/Favorites en el plano ([Blocks palette](https://help.autodesk.com/view/ACD/2027/ENU/?guid=GUID-E3413A03-8EEF-44D5-B5C7-8B345A9257FE) · [symbol libraries](https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/How-to-create-and-organize-symbol-libraries-in-AutoCAD.html)). Si un nombre ya existe en el plano, manda la definición local: actualiza con re-`INSERT`/`-INSERT`, nunca con `EXPLODE`.
 
@@ -79,7 +83,18 @@ Plantilla lista arriba. Xref fondo `XREF ATTACH ARQ-ARAOZ` en `0-REF` si aplica.
 
 ## 3. Cómputos
 
-`DATAEXTRACTION` → objetos `A-CARP-02` + `SIMB-MURO` → atributos → CSV → Sheet `W03-CAD`. Detalle columnas en [[proyectos/MVP_02-autocad-standards/SET_01-REP_Replanteo/docs/cuadro-carpinterias|cuadro-carpinterias]].
+**⚠ LT 2027 (vigente en la máquina del estudio):** `DATAEXTRACTION` **no existe** (*Unknown command*; el help oficial de AutoCAD LT dice *"AutoCAD LT doesn't support data extraction commands"*). Las vías reales son:
+
+| Vía | Qué | Estado |
+|---|---|---|
+| `ATTEXT` + `LIST` | Extrae valores de atributos a un archivo de texto con plantilla | alternativa oficial en LT |
+| LSP que dibuja la tabla dentro del DWG | lee el CSV y dibuja la tabla (patrón de `SET-01-CUADRO-NIVELES.lsp`, capa `A-CUADRO-NIVELES`) | **usada en REP-ARAOZ** |
+| `TABLA` + vínculo de datos (`DATALINK` → `-TABLE` → `ACTUALVINCUDAT`) | tabla viva ligada al CSV | ⚠ exige Excel instalado + proveedor ACE/OLE DB (sin Excel, el preview queda vacío) |
+| `DATAEXTRACTION` → CSV → Sheet | el flujo original | solo en **Full**; en pausa desde el 20/10 |
+
+Columnas del cuadro de carpinterías en [[proyectos/MVP_02-autocad-standards/SET_01-REP_Replanteo/docs/cuadro-carpinterias|cuadro-carpinterias]].
+
+**Medición del plano real (REP-ARAOZ):** 28 locales numerados `01`…`28` (rótulos legacy `*U482`, numeración puesta a mano) → planilla en [[proyectos/MVP_02-autocad-standards/SET_01-REP_Replanteo/docs/planilla-locales|planilla-locales]]; niveles del proyecto (14 filas × 3 columnas) → [[proyectos/MVP_02-autocad-standards/SET_01-REP_Replanteo/docs/planilla-niveles|planilla-niveles]].
 
 ## 4. Reglas madre
 

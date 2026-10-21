@@ -6,20 +6,25 @@ flowchart TB
         F3["+ newsletters · TikTok · X · catálogos de fabricantes (a proponer)"]
         F1 --- F2 --- F3
     end
-    subgraph SH ["@sherlock: SOLO exterior (buscar + transcript)"]
+    subgraph SH ["@sherlock: SOLO exterior (buscar + transcript + ficha)"]
         direction TB
         S1["Busca exterior (web, redes, APIs)"]
         D1{"¿Transcript?"}
         R1["Reporte links a raw/research/"]
-        T1["Transcript a <fuente>/transcripts/"]
-        P1["Stub pendiente a raw/contenidos/"]
+        T1["Transcript + ficha a raw/pdf/"]
+        K1["Candidatos (citas) → espera OK de SOL"]
+        D3{"¿SOL aprueba la ficha?"}
+        P1["Stub de traspaso a raw/contenidos/"]
         S1 --> D1
         D1 -->|no| R1
-        D1 -->|sí, API| T1 --> P1
+        D1 -->|sí, API o archivo| T1 --> D3
+        D3 -->|"s"| P1
+        R1 --> K1
+        K1 -.->|"s por fuente"| T1
     end
-    subgraph CO ["@contenidos: FORMATEA (único acceso wiki: wiki/fuentes)"]
+    subgraph CO ["@contenidos: EXTIENDE la ficha aprobada (único acceso wiki: wiki/fuentes)"]
         direction TB
-        C1["Toma pendiente + template + desarrolla"]
+        C1["Toma la ficha aprobada + template + extiende"]
         D2{"¿OK? (SOL)"}
         C2["MUEVE a wiki/fuentes (tema) + borra raw"]
         C1 --> D2 -->|sí| C2

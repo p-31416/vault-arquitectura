@@ -142,8 +142,8 @@ Revela el latente a píxeles visibles usando el VAE del checkpoint. No tiene par
 | 2026-10-14 | 1.1.1c | 42 | ladder strength 1.0 (2ª del prefijo b) | `salidas/n_04-1.1.1c.png` (origen `WF04-1.1.1b_00002_.png`, prompt_id `76c52338`) | ![1.1.1c](salidas/n_04-1.1.1c.png) | 164s | ✅ croquis de línea puro sobre blanco, misma volumetría | A 1.0 pierde el poco sombreado de 0.8 |
 | 2026-10-14 | 1.1.1b | 42 | ladder strength 0.8 | `salidas/n_04-1.1.1b.png` (origen `WF04-1.1.1b_00001_.png`, prompt_id `c0ee70af`) | ![1.1.1b](salidas/n_04-1.1.1b.png) | 148s | ✅ línea arquitectónica con sombreado leve, fondo blanco | El sketch responde a 0.8 (el markers pedía 1.0): sweet spot 0.8-1.0 |
 | 2026-10-14 | 1.1.1 | 42 | +sketch 0.5/0.5, trigger `linear` + fondo simple | `salidas/n_04-1.1.1.png` (origen `WF04-1.1.1_00001_.png`, prompt_id `84c1a55f`) | ![1.1.1](salidas/n_04-1.1.1.png) | 151s | ⚠️ monocromo lavado, sigue foto sin línea: base del ladder | Motivó 1.1.1b/c |
-| _(pendiente)_ | 1.1.2   | 42   | stack        | `salidas/n_04-1.1.2.png`                                                        | —                                |            |                                                                      |                                                              |
-| _(pendiente)_ | 2.0.0   | 42   | SDXL         | `salidas/n_04-2.0.0.png`                                                        | —                                | ~560s est. |                                                                      | Solo si hay ventana de tiempo                                |
+| 2026-10-15 | 1.1.2 | 42 | stack markers 0.8 + sketch 0.8 en serie | `salidas/n_04-1.1.2.png` (origen `WF04-1.1.2_00001_.png`, prompt_id `8d8f97cd`) | ![1.1.2](salidas/n_04-1.1.2.png) | 196s | ✅ línea negra + aguadas marker, papel blanco, serie txt2img cerrada | Stack suma sin barro: el mejor croquis de la serie |
+| 2026-10-15 | 2.0.0 | 42 | SDXL Juggernaut, dpmpp_2m/karras 35, cfg 4, 1216×832, --lowvram --cpu-vae | `salidas/n_04-2.0.0.png` (origen `WF04-2.0.0_00001_.png`, prompt_id `2f8b9f3d`) | ![2.0.0](salidas/n_04-2.0.0.png) | 651s | ✅ pabellón hormigón al dusk, interiores cálidos, fotorrealismo entrega | Salto de calidad confirma SDXL para entrega, SD1.5 para iterar |
 
 ## 6. Evaluación
 
@@ -175,6 +175,7 @@ DoD de la serie: 1.0.0 con volumetría coherente y material legible · 1.1.x pre
 
 | Fecha | Versión | Cambio | Motivo |
 |---|---|---|---|
+| 2026-10-15 | 1.1.2 | Stack markers 0.8 + sketch 0.8 (seed 42): 196s → `n_04-1.1.2.png` | Línea negra + aguadas, serie txt2img cerrada |
 | 2026-10-14 | 1.1.0b/c | Ladder markers 0.8 y 1.0 (misma seed 42, +`on white paper`, +`photo` en negativo): 150/149s → `n_04-1.1.0b/c.png` | 0.6 no movía el estilo; 0.8 híbrido; 1.0 marker total. Sweet spot ≈ 1.0 |
 | 2026-10-14 | 1.0.1a/b/c | 3 corridas SOL en canvas (seeds randomize, prompt inglés): 198/136/135s → `n_04-1.0.1a/b/c.png` | Reproducibilidad por seed + randomize funcional; seeds extraídas del PNG |
 | 2026-10-14 | doc | §2 inventario local de modelos · §3 expandido nodo por nodo (colores verde/rojo, glosario KSampler con seed/control_after_generate, proporciones de lienzo) · backlog suma agente foto/cine · índice con sub-wikilinks | Pedido SOL: documento único completo estilo A-WF-estadio |

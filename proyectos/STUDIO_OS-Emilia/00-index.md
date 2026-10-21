@@ -15,49 +15,61 @@ estado: activo
 tags: [studio-os, consultoria, arquitectura-aumentada, sprint]
 ---
 
-# Emilia Pimenta — Studio OS
+# Emilia Pimenta ï¿½ Studio OS
 
-Propuesta de ecosistema operativo para estudio de arquitectura. No es "implementar IA", es rediseñar el flujo de trabajo para conectar personas, información, herramientas, automatizaciones e IA.
+Propuesta de ecosistema operativo para estudio de arquitectura. No es "implementar IA", es rediseï¿½ar el flujo de trabajo para conectar personas, informaciï¿½n, herramientas, automatizaciones e IA.
 
-**Fuente base:** [[Resumen_Propuesta_Emilia_Studio_OS(1).txt|Resumen conceptual]] (copia en raíz del vault, mover a `activos/documentos/` si se archiva)
+**Fuente base:** [[Resumen_Propuesta_Emilia_Studio_OS(1).txt|Resumen conceptual]] (copia en raï¿½z del vault, mover a `activos/documentos/` si se archiva)
 
 ## Objetivo
 
 Construir progresivamente un ecosistema que integre:
-captación y gestión de clientes ? organización de proyectos y documentación ? potenciación del diseño ? representación/visualización ? registro de obra ? administración (honorarios, presupuestos, contratos, facturación) ? memoria y conocimiento reutilizable.
+captaciï¿½n y gestiï¿½n de clientes ? organizaciï¿½n de proyectos y documentaciï¿½n ? potenciaciï¿½n del diseï¿½o ? representaciï¿½n/visualizaciï¿½n ? registro de obra ? administraciï¿½n (honorarios, presupuestos, contratos, facturaciï¿½n) ? memoria y conocimiento reutilizable.
 
 ## Tesis central
 
 > El objetivo no es digitalizar al arquitecto. Es aumentar su capacidad sin quitarle el control sobre la arquitectura.
 
-- Se conserva: criterio, intención, sensibilidad, experiencia, decisión arquitectónica
-- Se agrega: memoria, búsqueda semántica, automatización, IA, representación, agentes, datos, infraestructura local
+- Se conserva: criterio, intenciï¿½n, sensibilidad, experiencia, decisiï¿½n arquitectï¿½nica
+- Se agrega: memoria, bï¿½squeda semï¿½ntica, automatizaciï¿½n, IA, representaciï¿½n, agentes, datos, infraestructura local
 
 ## Entregables
 
-- [[proyectos/STUDIO_OS-Emilia/presentacion/05-propuesta-comercial-viernes|Propuesta comercial viernes]] — **vigente · trimestral 1.800 (3×600) · 60hs/mes · con Filosofía Pitautech** ? presentar 12/09
-- [[wiki/glosario/interno/standares/ptech-filosofia|Filosofía Pitautech]] — extraído de `raw/brainstorm/Pitautech_Propuesta_I+D_Arquitectura_Vault.md` (18 capítulos, capacidad no horas, Vault memoria computable)
-- [[specs/260909-esquema-mes1-60hs-studio-os-emilia|Esquema Mes 1 interno 60hs]] — detalle operativo 60hs + OKRs + milestones + trimestral 180hs (fuente de la propuesta)
-- [[proyectos/STUDIO_OS-Emilia/presentacion/00-presentacion-studio-os|Presentación Studio OS]] — deck histórico (16 slides, pre-ptech-filosofia, referencia)
-- [[proyectos/STUDIO_OS-Emilia/presentacion/01-guion-presentacion|Guion de presentación]] — notas del orador por slide (histórico)
-- [[proyectos/STUDIO_OS-Emilia/presentacion/02-anexo-sprint|Anexo Sprint 30 días]] — detalle histórico (30 días, previo a trimestral)
-- Archived: `presentacion/archived/03-propuesta-viernes-esquema.md` + `04-propuesta-viernes-lab-partnership.md` — unificados en 05 el 2026-09-09 (ver `archived/README.md`)
-- [[proyectos/STUDIO_OS-Emilia/03-cuestionario-plan-studio-os|Cuestionario Plan (30/30 respondido 2026-08-27)]] — base de relevamiento
-- [[proyectos/STUDIO_OS-Emilia/04-plan-studio-os|Plan Studio OS v0.1]] — arquitectura sistemas + roadmap modular
-- [[specs/260907-ghl-ingest-6-etapas|06 — Plan ingest GHL 6 etapas ? vault Pitau Tech]] — pipeline captura sin descarga ? raw ? vault ? glosario ? servicios (para diagnóstico HOY)
+- [[proyectos/STUDIO_OS-Emilia/presentacion/05-propuesta-comercial-viernes|Propuesta comercial viernes]] ï¿½ **vigente ï¿½ trimestral 1.800 (3ï¿½600) ï¿½ 60hs/mes ï¿½ con Filosofï¿½a Pitautech** ? presentar 12/09
+- [[wiki/glosario/interno/standares/ptech-filosofia|Filosofï¿½a Pitautech]] ï¿½ extraï¿½do de `raw/brainstorm/Pitautech_Propuesta_I+D_Arquitectura_Vault.md` (18 capï¿½tulos, capacidad no horas, Vault memoria computable)
+- [[specs/260909-esquema-mes1-60hs-studio-os-emilia|Esquema Mes 1 interno 60hs]] ï¿½ detalle operativo 60hs + OKRs + milestones + trimestral 180hs (fuente de la propuesta)
+- [[proyectos/STUDIO_OS-Emilia/presentacion/00-presentacion-studio-os|Presentaciï¿½n Studio OS]] ï¿½ deck histï¿½rico (16 slides, pre-ptech-filosofia, referencia)
+- [[proyectos/STUDIO_OS-Emilia/presentacion/01-guion-presentacion|Guion de presentaciï¿½n]] ï¿½ notas del orador por slide (histï¿½rico)
+- [[proyectos/STUDIO_OS-Emilia/presentacion/02-anexo-sprint|Anexo Sprint 30 dï¿½as]] ï¿½ detalle histï¿½rico (30 dï¿½as, previo a trimestral)
+- Archived: `presentacion/archived/03-propuesta-viernes-esquema.md` + `04-propuesta-viernes-lab-partnership.md` ï¿½ unificados en 05 el 2026-09-09 (ver `archived/README.md`)
+- [[proyectos/STUDIO_OS-Emilia/03-cuestionario-plan-studio-os|Cuestionario Plan (30/30 respondido 2026-08-27)]] ï¿½ base de relevamiento
+- [[proyectos/STUDIO_OS-Emilia/04-plan-studio-os|Plan Studio OS v0.1]] ï¿½ arquitectura sistemas + roadmap modular
+- [[specs/260907-ghl-ingest-6-etapas|06 ï¿½ Plan ingest GHL 6 etapas ? vault Pitau Tech]] ï¿½ pipeline captura sin descarga ? raw ? vault ? glosario ? servicios (para diagnï¿½stico HOY)
+
+## DocumentaciÃ³n vigente (21/10)
+
+- [[proyectos/STUDIO_OS-Emilia/presentacion/dashboard-mes1-emilia|**Dashboard general â€” la puerta**]] â†’ **el archivo de entrada**: los 6 temas con dÃ³nde estÃ¡ cada cosa (sesiones Â· .md Â· dashboards) y los 3 pendientes de la reuniÃ³n. Se abre con doble clic (HTML autocontenido) y desde ahÃ­ se llega a los otros 4 dashboards
+- [[proyectos/STUDIO_OS-Emilia/presentacion/09-agenda-reunion-2026-10-21|Ãndice de la reuniÃ³n del 21/10]] â†’ el detalle por tema (sesiones trabajadas, .md creados y dashboards) de fuentes, agentes Telegram, CAD/SET, Comfy, Leantime y estudio
+- [[proyectos/STUDIO_OS-Emilia/documentacion/plan-minimo-sesion-2026-10-21|Plan mÃ­nimo de la sesiÃ³n con Emilia]] â†’ arquitectura final, quÃ© quedÃ³ listo, los 3 pendientes y el rollback
+- [[proyectos/STUDIO_OS-Emilia/documentacion/que-le-pedimos-a-emilia-2026-10-21|QuÃ© le pedimos a Emilia]] â†’ los 3 datos que hay que pedirle + 7 preguntas + el guion de prueba en vivo
+- [[proyectos/STUDIO_OS-Emilia/documentacion/fuentes-contexto-chatgpt-emilia|Fuentes â†’ contexto de ChatGPT]] â†’ cÃ³mo se comparte el corpus (un Doc en el Drive o un proyecto compartido) y el bucle de vuelta al vault
+- [[proyectos/STUDIO_OS-Emilia/documentacion/arquitectura-n8n-os-emilia|Arquitectura n8n]] â†’ v2.1: el mapa nodo por nodo (un flujo completo por persona + despachador por `chat_id`)
+- [[specs/261020-plan-procesado-fuentes-pdf-gaudi|Plan de procesado de fuentes PDF (AIÃ—GaudÃ­)]] â†’ gates 1-3 pendientes
+- [[specs/261019-plan-concurso-gaudi-nexus-ia|Plan del concurso GaudÃ­ Nexus]] â†’ entrega 16/12/2026
+- [[proyectos/STUDIO_OS-Emilia/presentacion/07-revision-autocad-2026-10-22|RevisiÃ³n AutoCAD (22/10)]]
 
 ## Fases comerciales
 
-| Fase | Nombre | Descripción |
+| Fase | Nombre | Descripciï¿½n |
 |------|--------|-------------|
-| 1 | Mes 1 OBSERVAR — 60hs (USD 600) | Relevamiento + mapa operativo + Vault inicial + representación + estándares CAD sobre casa. Capacidad 3h/día. Ver `[[specs/260909-esquema-mes1-60hs-studio-os-emilia]]` |
-| 2 | Mes 2 EXPERIMENTAR — 60hs (USD 600) | Prototipos, agentes, automatizaciones con ahorro medido |
-| 3 | Mes 3 SISTEMATIZAR — 60hs (USD 600) | Protocolos, capacitación, roadmap 2027 |
-| **Total trimestral** | **180hs (USD 1.800)** | **Programa I+D 90 días — Mes 1 acreditable sin límite** · `[[wiki/glosario/interno/standares/ptech-filosofia|Filosofía Pitautech]]` |
+| 1 | Mes 1 OBSERVAR ï¿½ 60hs (USD 600) | Relevamiento + mapa operativo + Vault inicial + representaciï¿½n + estï¿½ndares CAD sobre casa. Capacidad 3h/dï¿½a. Ver `[[specs/260909-esquema-mes1-60hs-studio-os-emilia]]` |
+| 2 | Mes 2 EXPERIMENTAR ï¿½ 60hs (USD 600) | Prototipos, agentes, automatizaciones con ahorro medido |
+| 3 | Mes 3 SISTEMATIZAR ï¿½ 60hs (USD 600) | Protocolos, capacitaciï¿½n, roadmap 2027 |
+| **Total trimestral** | **180hs (USD 1.800)** | **Programa I+D 90 dï¿½as ï¿½ Mes 1 acreditable sin lï¿½mite** ï¿½ `[[wiki/glosario/interno/standares/ptech-filosofia|Filosofï¿½a Pitautech]]` |
 
-## Próximos pasos
+## Prï¿½ximos pasos
 
 - [ ] Validar deck con Sol
-- [ ] Definir fecha de reunión con Emilia
+- [ ] Definir fecha de reuniï¿½n con Emilia
 - [ ] Preparar demo Telegram ? ComfyUI (croquis ? render)
 - [ ] Relevamiento previo (cuestionario infraestructura 24GB GPUs, flujos actuales)

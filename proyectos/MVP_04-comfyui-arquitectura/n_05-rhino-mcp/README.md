@@ -1,5 +1,9 @@
 # Nivel 05: Rhino MCP — Conexión en Tiempo Real
 
+## Workflow implementado
+
+- [[proyectos/MVP_04-comfyui-arquitectura/n_05-rhino-mcp/WF-rhino-to-image/00-README|WF-rhino-to-image]] — «Rhino-to-Image»: volumetría de Rhino → render fotorrealista con FLUX.2 [klein] 9B + LoRA `rhino-to-image` (curso AI×Gaudí). El bloqueo de geometría es nativo (`ReferenceLatent`), sin ControlNet.
+
 ## Objetivo (futuro)
 
 Conectar Rhino + Grasshopper con ComfyUI vía MCP para un loop de diseño en tiempo real: el arquitecto modela en Rhino, el render se actualiza automáticamente en ComfyUI, y las iteraciones vuelven al modelo.

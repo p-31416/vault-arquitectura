@@ -3,16 +3,16 @@ tipo: metodologia
 mvp: 02
 set: SET_01-REP
 fecha_creacion: 2026-10-15
-ultima_actualizacion: 2026-10-15
-tags: [mvp_02, SET_01, informe, emilia, kit, drive]
+ultima_actualizacion: 2026-10-21
+tags: [mvp_02, SET_01, informe, emilia, kit, drive, autocad-lt]
 idioma: es
-estado: borrador-para-lectura
+estado: vigente-lt-2027
 ---
 
 # PB-01 — SET_01-REP Informe (qué recibe Emilia)
 
-> Borrador para lectura. PDFs en pausa hasta tu `s`. Spec/ft quedan intactos como auditoría.
-> Audiencia: Emilia. Tiempo lectura: 10 min. Base Full EN.
+> **Actualizado 21/10/2026.** La máquina del estudio tiene **AutoCAD LT 2027**. El kit se usa en LT (no en el Full 2027): todo lo de capas, estilos, cotas, bloques y DWT/DWS funciona igual; lo que cambia es que **LT no expone COM**, **no trae `DATAEXTRACTION`/`ATTIN`/`ATTOUT`** y el **vínculo de datos exige Excel instalado** (ver PB-02 §3). PDFs en pausa a la espera del `s` del estudio.
+> Audiencia: Emilia. Tiempo lectura: 10 min.
 
 ## 1. Qué es
 
@@ -31,8 +31,9 @@ Destino Drive: `G:\Mi unidad\OS-Emilia\W03-CAD\SET_01-REP\` (espejo local gitign
 | `monochrome.ctb` | **CTB vigente**: viene con todo AutoCAD (Full + LT), grafica todo negro. `EP-ISO.ctb` con grosores queda en backlog hasta manejar varias escalas | Usa sin instalar, elige en `PAGESETUP` / `PLOT` |
 | `SET_01-REP_bloques.dwg` | Biblioteca madre editable (fuente de los 13 bloques del DWT, para `WBLOCK` / Tool Palettes / DesignCenter) — avanza como respaldo, el uso diario sale del DWT | Medido, consolida en PB-02 paso 5 |
 | `SET_01-REP.lsp` | Comando `SET-REPLANTEO`: crea 29 capas (color/tipo/estado) + fija variables (`INSUNITS 6`, `LUNITS`, `MEASUREMENT`) + reporta verificación. Avanza idempotente en dibujo limpio; en siguiente ciclo suma estilos + escalas + layout | Borrador spec §7, API real en siguiente ciclo |
-| `PB-01-SET-informe.md` + `.pdf` | Este informe | Borrador (este archivo) |
-| `PB-02-replanteo-desde-0.md` + `.pdf` | Instructivo paso a paso Full EN | Borrador, PDFs en pausa |
+| `lisp/SET-01-*.lsp` (4 archivos) | `SET-01-HORIZ` (twist del viewport) · `SET-01-SIMB-LOC-ID` (bloque de locales `SIMB-LOC_ID` + control) · `SET-01-NORM-TEXTOS` (giros de atributos) · `SET-01-CUADRO-NIVELES` (tabla de niveles en el DWG) | **Listos y probados en LT** (21/10) |
+| `PB-01-SET-informe.md` + `.pdf` | Este informe | Actualizado 21/10, PDFs en pausa |
+| `PB-02-replanteo-desde-0.md` + `.pdf` | Instructivo paso a paso (variante LT 2027 vigente) | Actualizado 21/10, PDFs en pausa |
 
 CTB vigente: `monochrome.ctb` (preinstalado en Plot Styles, grafica todo negro — [Table Reference](https://help.autodesk.com/view/ACD/2027/ENU/?guid=GUID-F6DF548E-DF71-45F7-8DC5-A1EAD73998B1) · [How to Plot B/W](https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/How-to-Plot-in-Grayscale-or-Black-and-White-from-AutoCAD-Products.html)). `EP-ISO.ctb` con grosores ISO avanza en backlog hasta manejar varias escalas.
 
@@ -52,14 +53,14 @@ Palettes en LT: sí incluidas (LT trae `TOOLPALETTES` + `ADCENTER` + Blocks pale
 | 4 | TEXTSTYLES 9 | cumple | spec §4.2, destino `EP-2.5/EP-3.5` backlog |
 | 5 | DIMSTYLES 3 | cumple | spec §4.2, destino `EP-ARQ` backlog |
 | 6 | BLOQUES 13 | cumple | [[proyectos/MVP_02-autocad-standards/SET_01-REP_Replanteo/docs/bloques-personalizados\|bloques-personalizados]] |
-| 7 | DINÁMICOS/ATRIB → cómputos | cumple | [[proyectos/MVP_02-autocad-standards/SET_01-REP_Replanteo/docs/cuadro-carpinterias\|cuadro-carpinterias]] |
-| 8 | TEMPLATE | avanza parcial | ruta activos, doc `template-dwt.md` siguiente ciclo |
-| 9 | AUTOLISP | avanza parcial | spec §7, `lisp/` con API real siguiente ciclo |
+| 7 | DINÁMICOS/ATRIB → cómputos | cumple | [[proyectos/MVP_02-autocad-standards/SET_01-REP_Replanteo/docs/cuadro-carpinterias\|cuadro-carpinterias]] · en LT el cómputo sale por LSP, no por `DATAEXTRACTION` (PB-02 §3) |
+| 8 | TEMPLATE | avanza parcial | ruta activos, doc `template-dwt.md` siguiente ciclo · falta regenerar el DWT con `SIMB-LOC_ID` |
+| 9 | AUTOLISP | avanza parcial | spec §7 · **4 LSP listos y probados** en `lisp/` (`HORIZ`, `SIMB-LOC-ID`, `NORM-TEXTOS`, `CUADRO-NIVELES`); falta el `SET-REPLANTEO` de capas |
 | 10 | GLOSARIO | diferido | avanza hacia wiki tras evaluar SET_01 |
 
 ## 4. Por qué así (registro único)
 
-- [[proyectos/MVP_02-autocad-standards/03-adr-SET_01\|03-adr-SET_01]] — ADR-A unidades/escala (metros `INSUNITS 6` + custom `1:50 (m)` 20 XP) · ADR-B capas/rótulo (nombres archivo + `ROT-` paper-only) · ADR-C bloques/cómputos/FIELD (intactos + `DATAEXTRACTION` + `FIELD`) · ADR-D entorno/Drive (Full EN + kit con DWS + `monochrome.ctb` vigente)
+- [[proyectos/MVP_02-autocad-standards/03-adr-SET_01\|03-adr-SET_01]] — ADR-A unidades/escala (metros `INSUNITS 6` + custom `1:50 (m)` 20 XP) · ADR-B capas/rótulo (nombres archivo + `ROT-` paper-only) · ADR-C bloques/cómputos/FIELD (intactos + extracción + `FIELD`) · ADR-D entorno/Drive (**LT 2027 vigente** + kit con DWS + `monochrome.ctb` vigente)
 
 Tras tu aprobación avanzan hacia `wiki/estandares/` + `wiki/glosario/software/autocad` + `log.md`.
 
@@ -75,7 +76,11 @@ Tras tu aprobación avanzan hacia `wiki/estandares/` + `wiki/glosario/software/a
 - Catálogo bloques: `docs/bloques-personalizados.md`
 - Operativa diaria: `PB-02` (este set, siguiente archivo)
 - Primer plano JR: `docs/guia-jr-replanteo.md` (integra hacia PB-02, conserva glosario mínimo)
+- Datos del plano real: `docs/planilla-locales.md` (28 locales) · `docs/planilla-niveles.md` (14 filas × 3 columnas)
+- Herramientas: `lisp/` (4 LSP + notas) y `scripts/` (4 scripts Python)
 
 ## 7. Siguiente paso
 
 Lees PB-01 + PB-02 en MD. Con tu `s`: paso a PDF para Drive. Tras evaluar SET_01: pase a wiki + mkdocs online.
+
+**Pendiente técnico al 21/10:** insertar los 28 ejemplares de `SIMB-LOC_ID` en REP-ARAOZ (quedan 0), regenerar el DWT con ese bloque, crear `GEN-NIVEL` y probar el MCP oficial de Autodesk en LT.

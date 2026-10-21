@@ -36,6 +36,17 @@ if (Test-Path $envFile) {
     Write-Host "WARN No se encontro .env en $PSScriptRoot" -ForegroundColor Yellow
 }
 
+# Configurar perfil OpenCode (XDG) según directorio de trabajo
+if ($PSScriptRoot -like "*\proyecto-pi*") {
+    $env:XDG_DATA_HOME = "P:\00-repos\.opencode-profiles\proyecto-pi\data"
+    $env:XDG_CONFIG_HOME = "P:\00-repos\.opencode-profiles\proyecto-pi\config"
+    Write-Host "ok Perfil OpenCode: Proyecto Pi (Free / Zen)" -ForegroundColor DarkCyan
+} elseif ($PSScriptRoot -like "*\pitau-tech*") {
+    $env:XDG_DATA_HOME = "P:\00-repos\.opencode-profiles\pitau\data"
+    $env:XDG_CONFIG_HOME = "P:\00-repos\.opencode-profiles\pitau\config"
+    Write-Host "ok Perfil OpenCode: Pitautech (Go Pago + Zen)" -ForegroundColor DarkGreen
+}
+
 # Ejecutar comando
 $cmd = $Command[0]
 $cmdArgs = @()

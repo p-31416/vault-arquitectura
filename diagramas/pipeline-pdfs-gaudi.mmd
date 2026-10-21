@@ -1,0 +1,35 @@
+flowchart TB
+    subgraph EX ["FUENTES — Drive, solo lectura"]
+        F["G:\Mi unidad\OS-Emilia\AIxGaudi\Bibliography<br/>31 PDF · 1.062 págs · 397k palabras<br/>30 fuentes + 1 índice"]
+    end
+    subgraph G0 ["GATE 0 — @sherlock: extracción (script que corre SOL)"]
+        G0A["Ghostscript txtwrite por página<br/>acentos OK + abre el PDF cifrado"]
+        G0B["pypdf: metadata + outline + figuras"]
+        G0C["OCR tesseract<br/>solo los 2 escaneados"]
+        G0D["30 fichas + 30 transcripciones<br/>raw/pdf/"]
+    end
+    subgraph G1 ["GATE 1 — @sherlock: verificación externa (citas, DOI, papers derivados)"]
+        G1A["6 lotes temáticos<br/>biomimicria 8 · morfogénesis 7 · estructura 6<br/>parametrismo 3 · historia 5 · fractales 1"]
+        G1B["raw/research/ + raw/research-cache/<br/>+ ## Candidatos (espera OK de SOL)"]
+    end
+    subgraph G2 ["GATE 2 — @contenidos: extiende la ficha (formatea)"]
+        G2A["6 reportes con template de 11 secciones<br/>raw/contenidos/"]
+    end
+    subgraph G3 ["GATE 3 — wiki (con s de SOL)"]
+        G3A["30 páginas wiki/fuentes/&lt;slug&gt;.md"]
+        G3B["hub 00-index-pdf.md"]
+    end
+    subgraph G4 ["GATE 4 — @vaultworm-arq (1 vez/semana)"]
+        G4A["wiki/glosario/** + wiki/estudio/**"]
+    end
+    EX --> G0A
+    EX --> G0B
+    G0A --> G0D
+    G0B --> G0D
+    G0C --> G0D
+    G0D -->|"¿Avanzo a curaduría? s/N"| G1A
+    G1A --> G1B
+    G1B -->|"¿Avanzo a wiki? s/N"| G2A
+    G2A -->|"s de SOL"| G3A
+    G3A --> G3B
+    G3B --> G4A

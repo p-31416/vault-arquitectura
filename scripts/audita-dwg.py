@@ -104,7 +104,13 @@ def audit(dwg_path: Path) -> dict:
             mtext_count += 1
 
     # 5. Bloques definidos
-    defined_blocks = sorted(doc.blocks.names())
+    # ezdxf 1.4.x: `doc.blocks.names()` ya no existe. La API actual es
+    # `doc.blocks.block_names()`, que devuelve los nombres de todos los bloques
+    # definidos (incluye *Model_Space, *Paper_Space y los anónimos *D / *U).
+    try:
+        defined_blocks = sorted(doc.blocks.block_names())
+    except AttributeError:
+        defined_blocks = sorted(b.name for b in doc.blocks)
 
     # 6. Delta contra spec
     missing = sorted(spec_names - existing_names)

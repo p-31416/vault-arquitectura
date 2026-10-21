@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard Vault — fuentes → wiki · Studio OS × Emilia</title>
+<style>:root{--ink:#f2f0eb;--muted:#a8a49c;--line:#33312e;--sand:#141412;--card:#1e1e1c;--clay:#ffb454;--sage:#7fd08a;--blue:#6aa8ff}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--sand);color:var(--ink);line-height:1.5}.wrap{max-width:1000px;margin:0 auto;padding:0 24px}header.top{position:sticky;top:0;z-index:20;background:#1a1a18;border-bottom:3px solid var(--clay);box-shadow:0 2px 10px rgba(0,0,0,.5)}.bar{display:flex;justify-content:space-between;align-items:center;padding:12px 0;gap:12px;flex-wrap:wrap}.brand{font-weight:800;font-size:22px;letter-spacing:.02em}.brand small{font-weight:400;color:var(--muted);font-size:13px}nav.tabs{display:flex;gap:8px;flex-wrap:wrap;padding:12px 0 16px}nav.tabs button{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:10px 16px;font-weight:600;font-size:13px;cursor:pointer}nav.tabs button.active{background:var(--ink);color:#141412;border-color:var(--ink)}.tab{display:none}.tab.active{display:block;animation:fade .35s ease}@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}.hero{padding:28px 0 8px}.eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}h1{font-size:36px;line-height:1.05;margin:8px 0;font-weight:700;letter-spacing:-.02em}h1 em{color:var(--clay);font-style:normal}.lead{color:var(--muted);font-size:15px;max-width:760px}.grid{display:grid;gap:14px}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}.g2{grid-template-columns:1fr 1fr}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}.card h3{margin:4px 0 6px;font-size:15px}.card p{margin:0;font-size:13px;color:var(--muted)}.card b{color:var(--ink)}.k{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--clay);font-weight:700}.bignum{font-size:40px;font-weight:800;letter-spacing:-.02em;color:var(--sage)}table{border-collapse:collapse;width:100%;font-size:13px;margin-top:12px}th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}th{background:#22211f;color:var(--ink)}td{color:#d8d5cf}code{background:#2a2926;padding:1px 6px;border-radius:5px;font-size:12px;color:#ffd9a0}a{color:var(--blue)}.small{font-size:12px;color:var(--muted)}.flow{display:flex;gap:0;align-items:stretch;flex-wrap:wrap;margin:14px 0}.fnode{background:var(--card);border:1px solid var(--blue);border-radius:12px;padding:10px 14px;font-size:13px;max-width:190px}.farr{align-self:center;color:var(--clay);font-weight:800;padding:0 8px;font-size:18px}.pill{border-radius:10px;padding:12px 16px;background:var(--card);border:1px solid var(--line);margin:8px 0;font-size:13px}.pill.ok{border-color:var(--sage)}.pill.warn{border-color:var(--clay)}.notepad{background:#1c1b17 repeating-linear-gradient(#1c1b17,#1c1b17 27px,#2c2a24 28px);border:1px solid var(--line);border-radius:8px;padding:16px 18px 16px 46px;position:relative;font-size:13px;line-height:28px;color:#d8d5cf}.notepad:before{content:"";position:absolute;top:0;bottom:0;left:30px;width:2px;background:var(--clay);opacity:.6}.navline{font-size:13px;color:var(--muted);padding:14px 0 0}.navline a{margin-right:10px}@media(max-width:860px){.g3,.g4,.g2{grid-template-columns:1fr}h1{font-size:28px}}</style>
+</head>
+<body>
+<header class="top"><div class="wrap"><div class="bar"><div class="brand">VAULT <small>· Studio OS × Emilia · Mes 1</small></div><div class="small">serie dashboards · modo oscuro</div></div></div></header>
+<main class="wrap">
+<p class="navline"><a href="dashboard-mes1-emilia.html">← Mes 1 general</a><a href="dashboard-autocad.html">→ AutoCAD</a><a href="dashboard-comfy.html">→ ComfyUI</a><a href="dashboard-estudio-os.html">→ Estudio OS · n8n</a><b style="color:var(--clay)">· Vault (vos estás acá)</b></p>
+<nav class="tabs" role="tablist">
+<button class="active" data-t="flujo">1 · Flujo fuentes</button>
+<button data-t="agentes">2 · Agentes</button>
+<button data-t="carpetas">3 · Carpetas</button>
+<button data-t="mes1">4 · Mes 1</button>
+<button data-t="mes2">5 · Mes 2 auto</button>
+<button data-t="demo">6 · Demo + pedidos</button>
+</nav>
+
+<!-- TAB 1 -->
+<section class="tab active" id="flujo">
+<div class="hero"><div class="eyebrow">Vault vivo · de dónde entra el conocimiento</div>
+<h1>Todo link <em>entra por Telegram y termina en wiki.</em></h1>
+<p class="lead">Mes 1: 7 filas Vault (19.4% del mes) · YT 709 videos curados · 20 research Sherlock · PDF Baudrillard · Leantime. Este dashboard cierra la serie: faltaba el del Vault.</p></div>
+<div class="grid g4">
+<div class="card" style="text-align:center"><div class="bignum">7</div><div class="k">filas Vault</div><p>19.4% de 36 · sin dashboard hasta hoy</p></div>
+<div class="card" style="text-align:center"><div class="bignum">709</div><div class="k">videos YT</div><p>API + Takeout · 08/10 la más larga</p></div>
+<div class="card" style="text-align:center"><div class="bignum">20</div><div class="k">research</div><p>Sherlock: Chipperfield, Ching + más</p></div>
+<div class="card" style="text-align:center;background:#11120f;border-color:#11120f"><div class="bignum" style="color:#fff">1</div><div class="k">cola viva</div><p style="color:#c9c9c5">Sheet Fuentes-Inbox + grupo Fuentes</p></div>
+</div>
+<div class="card" style="margin-top:14px;border-left:6px solid var(--clay)">
+<div class="k">El gráfico de las fuentes — cómo ingresan, por quién pasan</div>
+<h3>Una sola ecuación: Captura → Crudo → Ficha → Wiki (con s)</h3>
+<div class="flow">
+<div class="fnode"><b>CAPTURA</b><br><span class="small">YT API+Takeout · IG links · WEB · PDF · SHARE · IDEA</span></div><div class="farr">→</div>
+<div class="fnode"><b>@sherlock BUSCA</b><br><span class="small">exterior · verifica 200 sin 404</span></div><div class="farr">→</div>
+<div class="fnode"><b>@contenidos PROCESA</b><br><span class="small">transcript/OCR → crudo + ficha 📇</span></div><div class="farr">→</div>
+<div class="fnode"><b>gate s (SOL)</b><br><span class="small">¿Avanzo? sin s no hay wiki</span></div><div class="farr">→</div>
+<div class="fnode"><b>@vaultworm CONECTA</b><br><span class="small">1×/semana → glosario/estudio</span></div><div class="farr">→</div>
+<div class="fnode"><b>WIKI ↩ crudo</b><br><span class="small">wiki/fuentes/ + link de vuelta</span></div>
+</div>
+<p class="small">Fuente: specs/261009-spec-ingesta-fuentes §6 diagrama + §12 handoff adelgazado v3. Binarios en <code>activos/</code>, nunca en git. <code>raw/</code> append-only.</p>
+</div>
+<div class="pill ok"><b>Lo que ya anda hoy:</b> hay un agente viviendo en el grupo Fuentes de Telegram. Le tirás un link y al instante responde <b>“Guardado ✓ / Anotado ✓”</b> — ya quedó cargado en el Sheet. Ese link lo toma después otro agente (worker nube) para investigar o extraer, lo procesa contenidos y termina como fuente en <code>wiki/fuentes/</code> para extraer los temas pertinentes.</div>
+</section>
+
+<!-- TAB 2 -->
+<section class="tab" id="agentes">
+<div class="hero"><div class="eyebrow">Quién hace qué</div><h1>Cada agente, <em>su tarea y su carpeta.</em></h1></div>
+<table><tr><th>Agente</th><th>Hace</th><th>No hace</th><th>Escribe en</th><th>Trigger</th></tr>
+<tr><td><b>@sherlock</b><br><span class="small">temp 0.2 · solo busca</span></td><td>Busca web/redes/YT, verifica 200, trae transcript o reporte links</td><td>No ficha, no propone wiki</td><td><code>raw/research/&lt;fecha&gt;-&lt;slug&gt;.md</code><br><code>raw/yt/transcripts/</code> + stub <code>raw/contenidos/sherlock-&lt;slug&gt;.md</code> estado pendiente-formato</td><td><code>@sherlock investiga &lt;tema&gt;</code></td></tr>
+<tr><td><b>@contenidos</b><br><span class="small">temp 0.3 · procesa</span></td><td>Lee OBS/PDF/manual, aplica template ficha colegio, desarrolla tema</td><td>No busca salvo que SOL le entregue · no escribe wiki sin s</td><td><code>raw/contenidos/&lt;fecha&gt;-&lt;slug&gt;.md</code> → con s <b>MUEVE</b> a <code>wiki/fuentes/&lt;slug&gt;.md</code> y borra raw</td><td><code>@contenidos procesa &lt;URL&gt;</code> o post-sherlock con s</td></tr>
+<tr><td><b>@vaultworm-arq</b><br><span class="small">temp 0.3 · bibliotecario</span></td><td>Digest sesiones + barre <code>wiki/fuentes/</code> 1×/semana, propone destino + conexiones</td><td>No captura ni transcribe</td><td><code>raw/vaultworm-arq/digest-*.md</code> → con <code>avanza</code> escribe <code>wiki/glosario/**</code> + índices + log</td><td>schedule 23:00 AR + <code>@vaultworm-arq digest/avanza</code></td></tr>
+<tr><td><b>Agente Fuentes Telegram</b><br><span class="small">Router <code>YWpuV5p0vCDTbIHz</code> 17n · sin IA</span></td><td>Vive en grupo Fuentes: Route por <code>FUENTES_CHAT_ID</code> → Has Link → Prepara Fila → Append Sheet → Ack</td><td>No decide criterio · Agenda nunca ve links</td><td>Sheet <code>Fuentes-Inbox</code> ID <code>18iDrvNUOApNFsEDDQ4rMMo40cw4t0hn3CApLK9iLpvI</code> cols A→I · Estado pendiente→en-sherlock→en-reporte→en-wiki</td><td>Tirar link / texto al grupo</td></tr>
+<tr><td><b>Worker nube</b><br><span class="small"><code>sherlock-fuentes.yml</code> 07:30 AR</span></td><td>Lee pendientes Sheet → fetch jina/yt-dlp → crudo + marca procesado + push git, PC apagada</td><td>No escribe wiki</td><td><code>raw/research/</code> + Sheet <code>procesado</code> + <code>Destino vault</code></td><td>cron + dispatch manual</td></tr>
+</table>
+<p class="small">Regla de oro: Emilia edita SOLO Tema y Prioridad (cols E-F). Sin <code>s</code> no hay <code>write</code> en <code>wiki/</code>. Convención <code>wiki/fuentes/</code>: <code>{tema_ppal}-{tema_secundario}-{canal}</code>, tags sin <code>:</code> ni espacios.</p>
+</section>
+
+<!-- TAB 3 -->
+<section class="tab" id="carpetas">
+<div class="hero"><div class="eyebrow">Dónde se escribe</div><h1>Del grupo <em>al estante.</em></h1></div>
+<table><tr><th>Carpeta</th><th>Qué guarda</th><th>Quién escribe</th></tr>
+<tr><td><code>raw/yt/ + raw/yt-emilia/</code></td><td>Bowls personales (Takeout + key propia) → merge por video_id a catálogo compartido</td><td>scripts + SOL/Emilia</td></tr>
+<tr><td><code>raw/research/</code></td><td>Informes Sherlock + crudos worker nube (cita + tags + esqueleto)</td><td>sherlock / worker</td></tr>
+<tr><td><code>raw/contenidos/</code></td><td>Solo pendientes (stubs + reportes legibles HITL con Destino wiki + Gate)</td><td>contenidos</td></tr>
+<tr><td><code>raw/entradas-emilia/</code></td><td>SHARE ChatGPT + IDEAs sin URL (texto verbatim 140 car.)</td><td>Router rama SHARE/IDEA</td></tr>
+<tr><td><code>raw/pdf/ + raw/yt/transcripts/</code></td><td>OCR Tesseract / transcripts verbatim por página o video</td><td>pipeline PDF / YT</td></tr>
+<tr><td><code>wiki/fuentes/</code></td><td>Fichas finales por tema (ficha colegio: autor, título, índice verbatim, glosario, temas, epígrafe, origen, crudo, quien_guardó)</td><td>contenidos con s</td></tr>
+<tr><td><code>wiki/glosario/ + wiki/estudio/</code></td><td>Conocimiento permanente conectado (≥2 conceptos relacionados + refs 200)</td><td>vaultworm (glosario) / contenidos (estudio)</td></tr>
+<tr><td><code>activos/revistas/ + Drive OS-Emilia/</code></td><td>Binarios por referencia (PDF, JPG q70 1024px, videos) — nunca en git</td><td>ingesta</td></tr>
+</table>
+<div class="notepad" style="margin-top:14px"><span style="font-weight:800">FICHA 📇 — image-first:</span> la imagen es la puerta (epígrafe = caption IG = descripción YT + sección heredada). Cada ficha lleva trazabilidad <code>fuente_cruda + ficha</code> para re-analizar sin re-ingestar.</div>
+</section>
+
+<!-- TAB 4 -->
+<section class="tab" id="mes1">
+<div class="hero"><div class="eyebrow">Mes 1 — lo hecho a mano</div><h1>7 sesiones <em>que dejaron sistema.</em></h1></div>
+<table><tr><th>Fecha</th><th>Sesión</th><th>Dejó</th></tr>
+<tr><td>27/09</td><td>Fix índices wiki</td><td>vault navegable</td></tr>
+<tr><td>08/10</td><td>Curación YT 709 videos</td><td>catálogo + bowls Sol/Emilia</td></tr>
+<tr><td>09/10</td><td>Agentes + piloto video 1</td><td>cadena sherlock→contenidos→vaultworm</td></tr>
+<tr><td>09/10</td><td>Sherlock Chipperfield + Ching</td><td>20 research verificados</td></tr>
+<tr><td>09/10</td><td>Vista YT mock 3D + VR</td><td>rumbo galería web / canvas</td></tr>
+<tr><td>13/10</td><td>Baudrillard PDF pipeline</td><td>OCR → raw/pdf/ + Drive</td></tr>
+<tr><td>13/10</td><td>Codex transcript + inbox</td><td>puente GPT↔vault</td></tr>
+</table>
+<p class="small">Specs base: 261009-ingesta (ecuación única) · 261013-inbox (§9 rama Router verificada 14/10 con fila real YT) · 261016-worker + 261016-unificado (4 vivos, QW1-QW8).</p>
+</section>
+
+<!-- TAB 5 -->
+<section class="tab" id="mes2">
+<div class="hero"><div class="eyebrow">Propuesta Mes 2 — MEDES 2 · automatizar el RAW</div><h1>Vos solo <em>recibís para leer.</em> El resto va solo.</h1>
+<p class="lead">Hoy ya tirás el link al grupo y queda en el Sheet. Mes 2 cierra el loop: el link amanece procesado en <code>raw/</code> y vos solo abrís el documento con los pasos a seguir.</p></div>
+<div class="card" style="background:#11120f;border-color:#11120f">
+<div class="k">Flujo Mes 2 — PC apagada incluida</div>
+<div class="flow">
+<div class="fnode"><b>1 · Tirás link</b><br><span class="small" style="color:var(--muted)">grupo Fuentes Telegram</span></div><div class="farr">→</div>
+<div class="fnode"><b>2 · Agente anota</b><br><span class="small" style="color:var(--muted)">Router → Sheet tipo auto + “Anotado ✓”</span></div><div class="farr">→</div>
+<div class="fnode"><b>3 · Worker 07:30</b><br><span class="small" style="color:var(--muted)">nube → raw/research/ + procesado</span></div><div class="farr">→</div>
+<div class="fnode"><b>4 · Contenidos ficha</b><br><span class="small" style="color:var(--muted)">stub → reporte legible</span></div><div class="farr">→</div>
+<div class="fnode"><b>5 · Recibís doc</b><br><span class="small" style="color:var(--muted)">digest 07:30 + pasos 1/2/3</span></div><div class="farr">→</div>
+<div class="fnode"><b>6 · s → wiki</b><br><span class="small" style="color:var(--muted)">wiki/fuentes/ → vaultworm → glosario</span></div>
+</div>
+</div>
+<div class="grid g2" style="margin-top:14px">
+<div class="card"><div class="k">Qué cambia para vos</div><h3>Nada que aprender, solo leer</h3><p>Digest en lenguaje cotidiano: “3 fuentes nuevas: 1. IG Chipperfield 2. YT MoureDev 3. share ChatGPT. Respondé 1/2/3 para priorizar.” Lo priorizado avanza solo a agentes.</p></div>
+<div class="card"><div class="k">Ahorro</div><h3>~10 min × 25 links/sem ≈ 18hs/mes</h3><p>Más capacidad imposible sin sistema: fuente online → memoria sin perder nada. Cron hermano del Fathom 07:00, gratis (Actions 2000 min, 3 links ≈ 2 min).</p></div>
+</div>
+<div class="card" style="margin-top:14px"><div class="k">Quick wins (7 días)</div><p>QW1 grupo + chat_id + Sheet a OS-Emilia/ (15 min) · QW2 1 share Emilia → raw/entradas-emilia/ (10 min) · QW3 rama IDEA + PDF-link (30 min) · QW6 worker dispatch + ver commit raw/research/ + Sheet procesado (20 min). Done: mensaje “investigar Comfy” → fila IDEA pendiente + stub vía worker visible en digest.</p></div>
+</section>
+
+<!-- TAB 6 -->
+<section class="tab" id="demo">
+<div class="hero"><div class="eyebrow">Cierre</div><h1>Demo en vivo <em>+ qué te pido.</em></h1></div>
+<div class="grid g2">
+<div class="card"><div class="k">Demo 3 min (yo opero, vos mirás)</div><h3>Link → Sheet → crudo</h3><p>1. Tiro un YT al grupo → “Anotado ✓”. 2. Muestro la fila nueva en Sheet Fuentes-Inbox. 3. Muestro el crudo en raw/research/ + destino vault.</p></div>
+<div class="card"><div class="k">Checklist reunión</div><h3>Para que ande con vos</h3><p>Agregarte al grupo + 1 link tuyo (leo tu chat_id → FUENTES_CHAT_ID) · mover Sheet a OS-Emilia/ + compartirte · 1 share ChatGPT para probar carril SHARE.</p></div>
+</div>
+<p class="small" style="margin-top:12px">Docs: specs/261009-ingesta · 261013-inbox §9-11 · 261016-worker · 261016-unificado QW1-QW8 · arquitectura-n8n v1.3 · wiki metodologia-curacion-youtube + pbk-agentes-vaultarq + pbk-sherlock. Eficiencia = resultados / recursos.</p>
+<div style="text-align:center;padding:18px 0"><div style="font-weight:800;font-size:20px">Más arquitectura. Menos fricción.</div><div class="small">Cada fuente alimenta la próxima obra.</div></div>
+</section>
+</main>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+document.querySelectorAll('nav.tabs button').forEach(function(b){
+b.addEventListener('click',function(){
+document.querySelectorAll('nav.tabs button').forEach(function(x){x.classList.remove('active')});
+document.querySelectorAll('.tab').forEach(function(x){x.classList.remove('active')});
+b.classList.add('active');var s=document.getElementById(b.dataset.t);if(s)s.classList.add('active');
+window.scrollTo({top:0,behavior:'smooth'});});});});
+</script>
+</body>
+</html>

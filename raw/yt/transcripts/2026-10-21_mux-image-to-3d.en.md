@@ -1,0 +1,265 @@
+---
+tipo: transcript
+fuente: archademy.ai (curso AI x Gaudi, area de participantes)
+modulo: image-to-3d
+titulo: Image-to-3D
+idioma: en
+fecha_creacion: 2026-10-21
+tags: [yt, transcript, curso-ai-gaudi, mux, image-to-3d]
+---
+
+# Image-to-3D — en
+
+> Transcripcion automatica de los subtitulos del modulo del curso (Mux).
+> Origen: https://vz-4ced3a48-15e.b-cdn.net/f3c115f8-2839-4e53-871b-8949cf80f267/captions/en.vtt
+> Duracion de la pista de subtitulos: 00:19:32,240 --> 00:19:33,240
+
+[00:00:02] Hello and welcome everyone to module 5.
+[00:00:05] The topic here is image to 3D.
+[00:00:09] I haven't prepared a PowerPoint file since this is going to be a quick one,
+[00:00:15] and I'm going to show you the examples live.
+[00:00:18] We're going to see how we can model some furniture.
+[00:00:24] We're going to quickly see how we can also model a real image we generated,
+[00:00:29] and then nine different
+[00:00:31] options of preparing an image to be generated into
+[00:00:36] 3D better than before.
+[00:00:42] So I imported this image of this specific table
+[00:00:49] in the workflow. The Hunyuan3D node I put
+[00:00:54] it at model 3.0, face count at 50k.
+[00:00:58] sorry, 500k. I put it at low poly for now because, well,
+[00:01:04] it's just a tutorial, but you can also put it at normal or geometry,
+[00:01:08] then it will take longer, cost more credits.
+[00:01:11] like for example, geometry will be cheaper,
+[00:01:13] normal will be 105,
+[00:01:16] and low poly will be 126.
+[00:01:21] You can choose which type of polygon,
+[00:01:26] just whatever you prefer, and then the model makes a 3D object out of that.
+[00:01:32] Now, as you can see, this is not a super complex shape.
+[00:01:37] So, first of all
+[00:01:39] You could raise the question, why do I need a 3D model out of it?
+[00:01:43] I can just model it myself in Rhino.
+[00:01:45] Of course that makes sense for a simple shape like this one.
+[00:01:52] So you can just model it in Rhino,
+[00:01:55] but for more complex shapes,
+[00:01:58] it can be more interesting. For now,
+[00:02:00] let's see how we can put this in our Rhino software,
+[00:02:05] or you can use SketchUp or any 3D software you're using.
+[00:02:08] So you go you click here, then on export,
+[00:02:12] then you click on export model and you can select anything.
+[00:02:17] I always use OBJ because it's
+[00:02:20] Pretty widely supported.
+[00:02:24] Then I open up my Rhino software.
+[00:02:27] Again, for you it can be SketchUp or any other 3D model.
+[00:02:31] For Rhino, the way I do it is I go to File,
+[00:02:35] I go to import.
+[00:02:41] I select this one, you can change the settings,
+[00:02:44] but for me it's not super relevant for now.
+[00:02:47] And here it gets imported.
+[00:02:50] If we go here, by the way, a very convenient Rhino command is zoom,
+[00:02:56] so you can drag a small one,
+[00:03:01] a small rectangle, and it zooms in here.
+[00:03:04] Then we put it
+[00:03:08] top and it becomes interesting now when we go back
+[00:03:12] to Miro and we go to the actual product page, the product
+[00:03:22] website there is going to be a dimension for sure.
+[00:03:25] So for example here it says the diameter is 150 centimeters.
+[00:03:31] So what we could do is we just scale it up like this object
+[00:03:38] to scale and then we
+[00:03:40] and say this is 1.5
+[00:03:46] and now it's to the correct scale.
+[00:03:51] And this way you have a 3D model from an image.
+[00:03:55] So I'll make a screenshot here.
+[00:04:04] Put it next to
+[00:04:10] Next to it on Miro.
+[00:04:20] Okay, then we go back here.
+[00:04:29] So this shape, this table is already way more complex to model in 3D.
+[00:04:34] So we just follow the same workflow,
+[00:04:38] we input it here, and this is the output.
+[00:04:42] Let me zoom in so you can see.
+[00:04:45] And as you can see, it's a very nice 3D model of that table.
+[00:04:50] Same steps, click here, OBJ download.
+[00:04:58] And you can import it into Rhino.
+[00:05:00] Here you can see that is low poly because it reduced all the faces,
+[00:05:06] but it's perfectly symmetrical.
+[00:05:08] this is actually how I use image to 3D in real life or in real practice.
+[00:05:14] There's a lot of other use cases that we could look at,
+[00:05:19] but this is the one that is the real
+[00:05:26] Time saver in some way if you don't have a 3D file of something.
+[00:05:31] If we go to Arctic mode, you can see that the shape is pretty smooth.
+[00:05:35] so in that way it works super well.
+[00:05:43] Another example of an image to 3D workflow is this one.
+[00:05:48] I've opened it up here for you.
+[00:05:53] So how it works is
+[00:05:59] We need at least two input images.
+[00:06:02] This workflow is based on Tripo multiview to model.
+[00:06:07] So if you go to template and you search for Tripo,
+[00:06:12] Tripo is just a brand.
+[00:06:15] multiview to model. It was this workflow.
+[00:06:19] So you can just use this one or the one I provided.
+[00:06:24] What you have to do is upload at least
+[00:06:28] two images of the same model. So this is a front view of my
+[00:06:33] imaginary tower I made and this is a back view.
+[00:06:37] And then if you activate this workflow it will make a 3D
+[00:06:43] out of it like we see here.
+[00:06:46] It also generated a bit of the context which is not ideal.
+[00:06:52] And this is a very big
+[00:06:58] Piece of working with image to 3D because often you think that this is
+[00:07:04] a good image to put into 3D, but there's a lot of clutter,
+[00:07:07] there's a lot of details that you actually don't want to put into 3D.
+[00:07:12] For example, the cars here or the neighboring buildings,
+[00:07:15] etc. And then your 3D model is a bit cluttered.
+[00:07:19] Now there is a way to avoid this,
+[00:07:24] to get just a clean model.
+[00:07:27] And I've listed them here.
+[00:07:32] So these are preparation options.
+[00:07:35] And what I mean by this is if you directly make a 3D model out of this,
+[00:07:39] again it will be very cluttered because there are so many details that will clutter
+[00:07:46] the view. What we can do is prepare the image.
+[00:07:49] So we take a step in between. Option one is
+[00:07:55] you convert it into an image as if you made it look like
+[00:08:00] all the details are gone. So no more vegetation here that would clutter
+[00:08:05] the output. And if you want to do that,
+[00:08:08] you can download
+[00:08:15] So you can just go to this image,
+[00:08:17] download it.
+[00:08:29] Import it into Comfy and you can see the prompt that I use.
+[00:08:34] So this is just Nano Banana Pro,
+[00:08:36] which turns my input image into a model that
+[00:08:42] is much easier to understand to convert into a 3D model.
+[00:08:48] However, this one is not perfect because we can still see
+[00:08:51] the neighboring buildings and the trees in the back.
+[00:08:55] So we can also
+[00:09:00] Also, try this one, for example,
+[00:09:02] where we convert the building into as if it's modeled in concrete,
+[00:09:08] and it just shows the absolute basic shape.
+[00:09:13] Again, use this prompt to make this conversion,
+[00:09:17] or we make it look like it's a 3D model.
+[00:09:22] So it's better at understanding how to make this into
+[00:09:28] a 3D file than this one.
+[00:09:31] Or we make a normal map out of this.
+[00:09:33] Or this one. This one is my favorite and this is also the one that
+[00:09:38] I used to
+[00:09:43] make this one and to make it clear what I mean is that
+[00:09:49] I would download this image.
+[00:09:56] I would go to the image to 3D workflow we just saw before.
+[00:10:05] And here I would upload it.
+[00:10:13] And the output of this
+[00:10:21] Is a way cleaner 3D model that you can import into Rhino.
+[00:10:26] Now you might be wondering how all these things chain together.
+[00:10:31] So we saw these tables, how to make these tables.
+[00:10:36] the next example will cover this tower
+[00:10:43] where we actually combine one of these preparation steps and we import
+[00:10:47] it into Rhino and then you will see the
+[00:10:50] The impact of preparing the image.
+[00:10:56] So if we look at the workflow that I will be using,
+[00:10:59] it's very easy to find,
+[00:11:03] just type in 3D.
+[00:11:08] It's this one. So Tripo 3.1 image to model.
+[00:11:13] And it's a very simple one. It works on API as you can see.
+[00:11:17] So with these settings, if you click on texture and PBR,
+[00:11:23] it's this amount of credits.
+[00:11:26] You can also go to older models,
+[00:11:28] they're probably less expensive.
+[00:11:31] No, they cost the same.
+[00:11:33] So I would advise you to take the latest one.
+[00:11:38] And then you just input an image and click on run.
+[00:11:41] Now the difference between which input image
+[00:11:46] you provide like this highly impacts the output.
+[00:11:51] As we can see here.
+[00:11:59] So
+[00:12:03] In the first example, I already ran it,
+[00:12:05] but I took this image. As you can see,
+[00:12:07] this image has a lot of clutter,
+[00:12:09] so it has a lot of details that I wouldn't really care about if I just want
+[00:12:14] to make a 3D model out of this building.
+[00:12:16] When I do this workflow and I export
+[00:12:22] it as an FBX, I think it was,
+[00:12:25] or an OBJ, it doesn't really matter.
+[00:12:27] And I input it into Rhino and I go to,
+[00:12:31] for example, Arctic mode.
+[00:12:33] You can see that the 3D model worked quite well. It's not the easiest
+[00:12:39] image to turn into a 3D model because there's a lot of things happening it's
+[00:12:44] not super clean I would say the resolution as well is not that high there's
+[00:12:50] a lot of artifacts on the buildings that actually are not ideal
+[00:12:55] but even though like it did a good job it made it a bit more abstract
+[00:13:02] Of course, as you can see, this thing,
+[00:13:06] like these cars, they got morphed into yeah,
+[00:13:10] something that is not a car. and of course it only
+[00:13:15] has that front front elevation view I would say
+[00:13:20] or like frontal perspective. It doesn't know anything about the back
+[00:13:25] and still it did it did quite a good job because this is how I imagined
+[00:13:29] the building to actually look like.
+[00:13:32] So now we're gonna do the same,
+[00:13:34] but instead of providing this image,
+[00:13:37] I'm gonna provide a better version.
+[00:13:42] So how I made this you can find on Miro.
+[00:13:50] So if you go to preparation option seven and you click on download.
+[00:13:57] No.
+[00:14:01] You go to Comfy and you take that image and you import it here,
+[00:14:06] you can see what I actually did.
+[00:14:08] So I took the base image, and this is super simple NanoBanana
+[00:14:14] Pro workflow. You can also use Nano Banana to any image
+[00:14:20] to image workflow, and with a simple prompt saying create an ambient occlusion
+[00:14:26] map for this image, etc.
+[00:14:30] From this one, it made this.
+[00:14:33] You see, so this step it removes a lot of the clutter and it just says okay,
+[00:14:40] okay, make the geometry pure,
+[00:14:43] remove all the details, and then if we take this one and
+[00:14:48] we provide it in the workflow.
+[00:14:57] We will put it in the same Rhino file so we can compare it better.
+[00:15:01] So again we click on export. For now we're gonna use FBX,
+[00:15:06] but it doesn't really matter. You can also take OBJ.
+[00:15:13] You can see I downloaded it, then I go back
+[00:15:17] to shaded mode like this.
+[00:15:24] Then I drag the file in, I would say import yes.
+[00:15:35] Okay, here of course as you can see the scale was a bit different,
+[00:15:39] so I didn't look at the settings very well.
+[00:15:45] So let's scale this up a bit.
+[00:15:58] Okay, so I scaled it up. As you can see,
+[00:16:01] it doesn't have the context because we removed it since I didn't think that
+[00:16:05] the context was actually relevant for getting a 3D model.
+[00:16:09] If we then look at the geometry,
+[00:16:11] I would say it's more pure because a lot of the unnecessary details are removed.
+[00:16:16] So it doesn't have like the
+[00:16:23] These details. But of course, this example is a bit weird because
+[00:16:29] the building is so strange and it's so irregular that it's also hard to make
+[00:16:35] a clean model out of this. But I think you get the idea that when
+[00:16:38] you do it directly, you include everything in the image,
+[00:16:41] but that's not always a good case or or a good thing.
+[00:16:45] So taking this extra step, removing all the unnecessary things,
+[00:16:50] and then making a 3D model can be
+[00:16:53] can be a good step, whatever you are doing.
+[00:16:55] It can be for furniture, it works for all of them.
+[00:17:02] So check out these preparation steps.
+[00:17:05] There's a lot of different ones.
+[00:17:07] For example, this one is also super interesting.
+[00:17:09] What it does is it takes your base image
+[00:17:14] and it generates four different, how would I say,
+[00:17:20] perspectives out of it.
+[00:17:23] And the same if you download this one.
+[00:17:30] You go into Comfy.
+[00:17:35] You can see it's also just a Nano Banana Pro.
+[00:17:37] So the prompt is about making a four-tile image
+[00:17:43] with a different perspective in each tile.
+[00:17:46] And that way you have four perspectives on this building.
+[00:17:52] And then if you go to a workflow like this one.
+[00:18:00] So you type 3D.
+[00:18:04] There is one that gets multiview,
+[00:18:07] so Tripo v1, which is multiview to model.
+[00:18:11] So we click on here. And here you can see that the main node requires an image,
+[00:18:18] an image on the left side, backside,
+[00:18:21] and right side. So here you can place these other generated views.
+[00:18:27] So it has a bit more context. You see here it wouldn't
+[00:18:33] make it like an oval shape because the input that
+[00:18:39] we would provide here is more like a round one or like a star shape.
+[00:18:43] So you see it's just adding a step in between
+[00:18:48] to provide more accurate information and then it will make a better 3D model.
+[00:18:55] But it kind of depends on what you're trying to achieve because
+[00:18:58] if you're just trying to make a simple model out of
+[00:19:02] Such a shape, just one image is good enough.
+[00:19:06] When the image is more complex,
+[00:19:08] like this one, it can be a good thing
+[00:19:13] to actually make it like to use a preparation step.
+[00:19:19] I will provide the screenshots and workflows of this one on Miro as well,
+[00:19:26] and with that, I'm going to end this module 5 image to
+[00:19:32] 3D.

@@ -96,6 +96,8 @@ tags: [plan, trimestral, 190hs, 60hs-mes, ptech, studio-os, vigente, lectura-spe
 
 **Objeto de estudio Mes 1:** entrega **Nayara Alvares Campos — Brasil** (implementación Vault con agentes sobre base ya entregada).
 
+> **Nota cierre 16/10:** el objeto real avanzó hacia plano de replanteo en producción (SET_01: spec + ft + ADR + 2 playbooks + DWT + LSP), con Nayara como referencia. 81hs reales, ahorro ~13.5hs/mes, detalle en dashboard cierre.
+
 | Semana | Horas | Temas | Entregable verificable |
 |---|---|---|---|
 | **S1 Vault vivo** | 15h | Filosofía, inventario PCs, Meet→Vault (Fathom), agentes (agenda + transcripción → Vault), nomenclaturas, instalación PC Emilia, sync | Vault operativo + 1 reunión transcripta muestra + guía wiki + agentes funcionando |

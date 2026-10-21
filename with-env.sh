@@ -15,6 +15,18 @@ set -a
 [ -f .env ] && . ./.env      # carga TODAS tus credenciales del .env
 set +a
 
+# Configura perfil OpenCode según ruta
+case "$PWD" in
+  *proyecto-pi*)
+    export XDG_DATA_HOME="P:/00-repos/.opencode-profiles/proyecto-pi/data"
+    export XDG_CONFIG_HOME="P:/00-repos/.opencode-profiles/proyecto-pi/config"
+    ;;
+  *pitau-tech*)
+    export XDG_DATA_HOME="P:/00-repos/.opencode-profiles/pitau/data"
+    export XDG_CONFIG_HOME="P:/00-repos/.opencode-profiles/pitau/config"
+    ;;
+esac
+
 # Expande ${VAR} dentro de un string usando las vars ya cargadas (bash puro).
 expand() {
   local s="$1" out="" before var

@@ -1,0 +1,144 @@
+1
+00:00:00,000 --> 00:00:04,680
+This is ComfyUI for animation, concept
+
+2
+00:00:02,840 --> 00:00:06,360
+exploration.
+
+3
+00:00:04,680 --> 00:00:08,800
+This workflow takes a concept art
+
+4
+00:00:06,360 --> 00:00:10,840
+illustration, generates a 3D proxy of
+
+5
+00:00:08,800 --> 00:00:12,920
+the subject, and lets you rotate and
+
+6
+00:00:10,840 --> 00:00:15,200
+pose it freely before generating a
+
+7
+00:00:12,920 --> 00:00:17,440
+polished still frame or video from any
+
+8
+00:00:15,200 --> 00:00:20,080
+angle. Start by loading your concept art
+
+9
+00:00:17,440 --> 00:00:22,240
+of a prop into the load image node.
+
+10
+00:00:20,080 --> 00:00:25,040
+Trypo generates a 3D model from it and
+
+11
+00:00:22,240 --> 00:00:27,480
+saves it as a GLB file.
+
+12
+00:00:25,040 --> 00:00:29,960
+Once that's done, bypass the previous
+
+13
+00:00:27,480 --> 00:00:32,240
+step and drag the 3D model into the load
+
+14
+00:00:29,960 --> 00:00:36,560
+3D node and set the material mode to
+
+15
+00:00:32,240 --> 00:00:38,560
+normal in the viewports top left panel.
+
+16
+00:00:36,560 --> 00:00:40,000
+From here, the workflow splits into two
+
+17
+00:00:38,560 --> 00:00:42,360
+methods.
+
+18
+00:00:40,000 --> 00:00:44,000
+For still frame exploration, pan and
+
+19
+00:00:42,360 --> 00:00:46,600
+rotate the viewport to the angle you
+
+20
+00:00:44,000 --> 00:00:49,560
+want. The load 3D node outputs the
+
+21
+00:00:46,600 --> 00:00:51,320
+current view as an image automatically.
+
+22
+00:00:49,560 --> 00:00:53,680
+That image, combined with your original
+
+23
+00:00:51,320 --> 00:00:56,520
+concept art and an optional background,
+
+24
+00:00:53,680 --> 00:00:58,800
+goes into GPT image 2 to generate a
+
+25
+00:00:56,520 --> 00:01:00,760
+polished on-style illustration at the
+
+26
+00:00:58,800 --> 00:01:03,200
+new angle. For camera movement
+
+27
+00:01:00,760 --> 00:01:05,280
+exploration, click start recording in
+
+28
+00:01:03,200 --> 00:01:08,280
+the load 3D node, move through your
+
+29
+00:01:05,280 --> 00:01:10,080
+camera path, then click stop recording.
+
+30
+00:01:08,280 --> 00:01:12,440
+The recorded video becomes the motion
+
+31
+00:01:10,080 --> 00:01:14,440
+reference for SeeDance 2.0, which
+
+32
+00:01:12,440 --> 00:01:16,800
+generates a fluid camera move through
+
+33
+00:01:14,440 --> 00:01:19,280
+the stylized scene using the subject and
+
+34
+00:01:16,800 --> 00:01:21,160
+background as references. Bypass the
+
+35
+00:01:19,280 --> 00:01:25,240
+method you're not using and the workflow
+
+36
+00:01:21,160 --> 00:01:25,240
+runs cleanly through the one you need.
+

@@ -1,0 +1,995 @@
+1
+00:00:02,104 --> 00:00:05,076
+Hello and welcome everyone to module 5.
+
+2
+00:00:05,076 --> 00:00:09,378
+The topic here is image to 3D.
+
+3
+00:00:09,378 --> 00:00:15,271
+I haven't prepared a PowerPoint file since this is going to be a quick one,
+
+4
+00:00:15,271 --> 00:00:18,763
+and I'm going to show you the examples live.
+
+5
+00:00:18,763 --> 00:00:24,346
+We're going to see how we can model some furniture.
+
+6
+00:00:24,346 --> 00:00:29,549
+We're going to quickly see how we can also model a real image we generated,
+
+7
+00:00:29,549 --> 00:00:31,660
+and then nine different
+
+8
+00:00:31,860 --> 00:00:36,280
+options of preparing an image to be generated into
+
+9
+00:00:36,280 --> 00:00:38,956
+3D better than before.
+
+10
+00:00:42,990 --> 00:00:48,553
+So I imported this image of this specific table
+
+11
+00:00:49,414 --> 00:00:54,957
+in the workflow. The Hunyuan3D node I put
+
+12
+00:00:54,957 --> 00:00:58,899
+it at model 3.0, face count at 50k.
+
+13
+00:00:58,899 --> 00:01:04,702
+sorry, 500k. I put it at low poly for now because, well,
+
+14
+00:01:04,702 --> 00:01:08,314
+it's just a tutorial, but you can also put it at normal or geometry,
+
+15
+00:01:08,314 --> 00:01:10,936
+then it will take longer, cost more credits.
+
+16
+00:01:11,436 --> 00:01:13,928
+like for example, geometry will be cheaper,
+
+17
+00:01:13,928 --> 00:01:16,991
+normal will be 105,
+
+18
+00:01:16,991 --> 00:01:21,755
+and low poly will be 126.
+
+19
+00:01:21,755 --> 00:01:26,579
+You can choose which type of polygon,
+
+20
+00:01:26,579 --> 00:01:32,784
+just whatever you prefer, and then the model makes a 3D object out of that.
+
+21
+00:01:32,784 --> 00:01:37,669
+Now, as you can see, this is not a super complex shape.
+
+22
+00:01:37,669 --> 00:01:39,030
+So, first of all
+
+23
+00:01:39,394 --> 00:01:43,349
+You could raise the question, why do I need a 3D model out of it?
+
+24
+00:01:43,349 --> 00:01:45,341
+I can just model it myself in Rhino.
+
+25
+00:01:45,341 --> 00:01:48,665
+Of course that makes sense for a simple shape like this one.
+
+26
+00:01:52,046 --> 00:01:55,147
+So you can just model it in Rhino,
+
+27
+00:01:55,147 --> 00:01:58,328
+but for more complex shapes,
+
+28
+00:01:58,328 --> 00:02:00,628
+it can be more interesting. For now,
+
+29
+00:02:00,628 --> 00:02:05,620
+let's see how we can put this in our Rhino software,
+
+30
+00:02:05,620 --> 00:02:08,951
+or you can use SketchUp or any 3D software you're using.
+
+31
+00:02:08,951 --> 00:02:12,772
+So you go you click here, then on export,
+
+32
+00:02:12,772 --> 00:02:17,493
+then you click on export model and you can select anything.
+
+33
+00:02:17,493 --> 00:02:20,024
+I always use OBJ because it's
+
+34
+00:02:20,782 --> 00:02:22,479
+Pretty widely supported.
+
+35
+00:02:24,952 --> 00:02:27,926
+Then I open up my Rhino software.
+
+36
+00:02:27,926 --> 00:02:31,430
+Again, for you it can be SketchUp or any other 3D model.
+
+37
+00:02:31,430 --> 00:02:35,355
+For Rhino, the way I do it is I go to File,
+
+38
+00:02:35,355 --> 00:02:37,678
+I go to import.
+
+39
+00:02:41,140 --> 00:02:44,662
+I select this one, you can change the settings,
+
+40
+00:02:44,662 --> 00:02:47,273
+but for me it's not super relevant for now.
+
+41
+00:02:47,273 --> 00:02:50,615
+And here it gets imported.
+
+42
+00:02:50,615 --> 00:02:56,818
+If we go here, by the way, a very convenient Rhino command is zoom,
+
+43
+00:02:56,818 --> 00:03:01,280
+so you can drag a small one,
+
+44
+00:03:01,280 --> 00:03:04,161
+a small rectangle, and it zooms in here.
+
+45
+00:03:04,161 --> 00:03:05,612
+Then we put it
+
+46
+00:03:08,194 --> 00:03:12,637
+top and it becomes interesting now when we go back
+
+47
+00:03:12,637 --> 00:03:18,841
+to Miro and we go to the actual product page, the product
+
+48
+00:03:22,060 --> 00:03:25,631
+website there is going to be a dimension for sure.
+
+49
+00:03:25,631 --> 00:03:31,813
+So for example here it says the diameter is 150 centimeters.
+
+50
+00:03:31,813 --> 00:03:38,234
+So what we could do is we just scale it up like this object
+
+51
+00:03:38,234 --> 00:03:40,165
+to scale and then we
+
+52
+00:03:40,165 --> 00:03:45,977
+and say this is 1.5
+
+53
+00:03:46,257 --> 00:03:49,408
+and now it's to the correct scale.
+
+54
+00:03:51,628 --> 00:03:55,963
+And this way you have a 3D model from an image.
+
+55
+00:03:55,963 --> 00:03:58,106
+So I'll make a screenshot here.
+
+56
+00:04:04,686 --> 00:04:05,894
+Put it next to
+
+57
+00:04:10,816 --> 00:04:12,043
+Next to it on Miro.
+
+58
+00:04:20,959 --> 00:04:24,477
+Okay, then we go back here.
+
+59
+00:04:29,198 --> 00:04:34,843
+So this shape, this table is already way more complex to model in 3D.
+
+60
+00:04:34,843 --> 00:04:38,757
+So we just follow the same workflow,
+
+61
+00:04:38,757 --> 00:04:42,250
+we input it here, and this is the output.
+
+62
+00:04:42,250 --> 00:04:45,133
+Let me zoom in so you can see.
+
+63
+00:04:45,133 --> 00:04:50,858
+And as you can see, it's a very nice 3D model of that table.
+
+64
+00:04:50,858 --> 00:04:55,182
+Same steps, click here, OBJ download.
+
+65
+00:04:58,126 --> 00:05:00,567
+And you can import it into Rhino.
+
+66
+00:05:00,567 --> 00:05:06,348
+Here you can see that is low poly because it reduced all the faces,
+
+67
+00:05:06,348 --> 00:05:08,839
+but it's perfectly symmetrical.
+
+68
+00:05:08,839 --> 00:05:14,971
+this is actually how I use image to 3D in real life or in real practice.
+
+69
+00:05:14,971 --> 00:05:19,152
+There's a lot of other use cases that we could look at,
+
+70
+00:05:19,152 --> 00:05:24,466
+but this is the one that is the real
+
+71
+00:05:26,786 --> 00:05:31,470
+Time saver in some way if you don't have a 3D file of something.
+
+72
+00:05:31,470 --> 00:05:35,013
+If we go to Arctic mode, you can see that the shape is pretty smooth.
+
+73
+00:05:35,013 --> 00:05:40,428
+so in that way it works super well.
+
+74
+00:05:43,498 --> 00:05:48,716
+Another example of an image to 3D workflow is this one.
+
+75
+00:05:48,716 --> 00:05:53,634
+I've opened it up here for you.
+
+76
+00:05:53,634 --> 00:05:56,078
+So how it works is
+
+77
+00:05:59,020 --> 00:06:02,812
+We need at least two input images.
+
+78
+00:06:02,812 --> 00:06:07,483
+This workflow is based on Tripo multiview to model.
+
+79
+00:06:07,483 --> 00:06:12,495
+So if you go to template and you search for Tripo,
+
+80
+00:06:12,495 --> 00:06:15,937
+Tripo is just a brand.
+
+81
+00:06:15,937 --> 00:06:19,778
+multiview to model. It was this workflow.
+
+82
+00:06:19,778 --> 00:06:24,420
+So you can just use this one or the one I provided.
+
+83
+00:06:24,420 --> 00:06:28,422
+What you have to do is upload at least
+
+84
+00:06:28,662 --> 00:06:33,265
+two images of the same model. So this is a front view of my
+
+85
+00:06:33,305 --> 00:06:37,947
+imaginary tower I made and this is a back view.
+
+86
+00:06:37,947 --> 00:06:43,030
+And then if you activate this workflow it will make a 3D
+
+87
+00:06:43,030 --> 00:06:46,812
+out of it like we see here.
+
+88
+00:06:46,812 --> 00:06:52,996
+It also generated a bit of the context which is not ideal.
+
+89
+00:06:52,996 --> 00:06:57,138
+And this is a very big
+
+90
+00:06:58,382 --> 00:07:04,387
+Piece of working with image to 3D because often you think that this is
+
+91
+00:07:04,387 --> 00:07:07,720
+a good image to put into 3D, but there's a lot of clutter,
+
+92
+00:07:07,720 --> 00:07:12,004
+there's a lot of details that you actually don't want to put into 3D.
+
+93
+00:07:12,004 --> 00:07:15,637
+For example, the cars here or the neighboring buildings,
+
+94
+00:07:15,637 --> 00:07:19,220
+etc. And then your 3D model is a bit cluttered.
+
+95
+00:07:19,220 --> 00:07:24,154
+Now there is a way to avoid this,
+
+96
+00:07:24,154 --> 00:07:26,146
+to get just a clean model.
+
+97
+00:07:27,618 --> 00:07:29,057
+And I've listed them here.
+
+98
+00:07:32,910 --> 00:07:35,332
+So these are preparation options.
+
+99
+00:07:35,332 --> 00:07:39,856
+And what I mean by this is if you directly make a 3D model out of this,
+
+100
+00:07:39,856 --> 00:07:46,092
+again it will be very cluttered because there are so many details that will clutter
+
+101
+00:07:46,092 --> 00:07:49,905
+the view. What we can do is prepare the image.
+
+102
+00:07:49,905 --> 00:07:54,889
+So we take a step in between. Option one is
+
+103
+00:07:55,310 --> 00:08:00,024
+you convert it into an image as if you made it look like
+
+104
+00:08:00,460 --> 00:08:05,651
+all the details are gone. So no more vegetation here that would clutter
+
+105
+00:08:05,651 --> 00:08:08,077
+the output. And if you want to do that,
+
+106
+00:08:08,077 --> 00:08:09,107
+you can download
+
+107
+00:08:15,662 --> 00:08:17,637
+So you can just go to this image,
+
+108
+00:08:17,637 --> 00:08:19,853
+download it.
+
+109
+00:08:29,462 --> 00:08:34,082
+Import it into Comfy and you can see the prompt that I use.
+
+110
+00:08:34,082 --> 00:08:36,004
+So this is just Nano Banana Pro,
+
+111
+00:08:36,004 --> 00:08:42,596
+which turns my input image into a model that
+
+112
+00:08:42,596 --> 00:08:48,287
+is much easier to understand to convert into a 3D model.
+
+113
+00:08:48,287 --> 00:08:51,418
+However, this one is not perfect because we can still see
+
+114
+00:08:51,418 --> 00:08:55,049
+the neighboring buildings and the trees in the back.
+
+115
+00:08:55,049 --> 00:08:59,250
+So we can also
+
+116
+00:09:00,970 --> 00:09:02,671
+Also, try this one, for example,
+
+117
+00:09:02,671 --> 00:09:08,314
+where we convert the building into as if it's modeled in concrete,
+
+118
+00:09:08,314 --> 00:09:13,417
+and it just shows the absolute basic shape.
+
+119
+00:09:13,417 --> 00:09:17,239
+Again, use this prompt to make this conversion,
+
+120
+00:09:17,239 --> 00:09:22,422
+or we make it look like it's a 3D model.
+
+121
+00:09:22,422 --> 00:09:28,555
+So it's better at understanding how to make this into
+
+122
+00:09:28,555 --> 00:09:29,996
+a 3D file than this one.
+
+123
+00:09:31,023 --> 00:09:33,487
+Or we make a normal map out of this.
+
+124
+00:09:33,487 --> 00:09:38,898
+Or this one. This one is my favorite and this is also the one that
+
+125
+00:09:38,898 --> 00:09:40,681
+I used to
+
+126
+00:09:43,988 --> 00:09:49,382
+make this one and to make it clear what I mean is that
+
+127
+00:09:49,382 --> 00:09:51,437
+I would download this image.
+
+128
+00:09:56,878 --> 00:10:01,679
+I would go to the image to 3D workflow we just saw before.
+
+129
+00:10:05,421 --> 00:10:06,922
+And here I would upload it.
+
+130
+00:10:13,633 --> 00:10:15,140
+And the output of this
+
+131
+00:10:21,279 --> 00:10:26,683
+Is a way cleaner 3D model that you can import into Rhino.
+
+132
+00:10:26,683 --> 00:10:31,776
+Now you might be wondering how all these things chain together.
+
+133
+00:10:31,776 --> 00:10:36,049
+So we saw these tables, how to make these tables.
+
+134
+00:10:36,049 --> 00:10:42,934
+the next example will cover this tower
+
+135
+00:10:43,384 --> 00:10:47,677
+where we actually combine one of these preparation steps and we import
+
+136
+00:10:47,677 --> 00:10:49,939
+it into Rhino and then you will see the
+
+137
+00:10:50,307 --> 00:10:53,016
+The impact of preparing the image.
+
+138
+00:10:56,377 --> 00:10:59,823
+So if we look at the workflow that I will be using,
+
+139
+00:10:59,823 --> 00:11:03,800
+it's very easy to find,
+
+140
+00:11:03,800 --> 00:11:05,145
+just type in 3D.
+
+141
+00:11:08,513 --> 00:11:13,086
+It's this one. So Tripo 3.1 image to model.
+
+142
+00:11:13,086 --> 00:11:17,589
+And it's a very simple one. It works on API as you can see.
+
+143
+00:11:17,589 --> 00:11:23,863
+So with these settings, if you click on texture and PBR,
+
+144
+00:11:23,863 --> 00:11:26,595
+it's this amount of credits.
+
+145
+00:11:26,595 --> 00:11:28,930
+You can also go to older models,
+
+146
+00:11:28,930 --> 00:11:31,719
+they're probably less expensive.
+
+147
+00:11:31,719 --> 00:11:33,740
+No, they cost the same.
+
+148
+00:11:33,740 --> 00:11:36,702
+So I would advise you to take the latest one.
+
+149
+00:11:38,595 --> 00:11:41,798
+And then you just input an image and click on run.
+
+150
+00:11:41,798 --> 00:11:46,823
+Now the difference between which input image
+
+151
+00:11:46,823 --> 00:11:51,428
+you provide like this highly impacts the output.
+
+152
+00:11:51,428 --> 00:11:54,631
+As we can see here.
+
+153
+00:11:59,531 --> 00:12:00,531
+So
+
+154
+00:12:03,085 --> 00:12:05,367
+In the first example, I already ran it,
+
+155
+00:12:05,367 --> 00:12:07,919
+but I took this image. As you can see,
+
+156
+00:12:07,919 --> 00:12:09,760
+this image has a lot of clutter,
+
+157
+00:12:09,760 --> 00:12:14,754
+so it has a lot of details that I wouldn't really care about if I just want
+
+158
+00:12:14,754 --> 00:12:16,786
+to make a 3D model out of this building.
+
+159
+00:12:16,786 --> 00:12:22,831
+When I do this workflow and I export
+
+160
+00:12:22,831 --> 00:12:25,713
+it as an FBX, I think it was,
+
+161
+00:12:25,713 --> 00:12:27,455
+or an OBJ, it doesn't really matter.
+
+162
+00:12:27,455 --> 00:12:31,478
+And I input it into Rhino and I go to,
+
+163
+00:12:31,478 --> 00:12:32,749
+for example, Arctic mode.
+
+164
+00:12:33,283 --> 00:12:38,966
+You can see that the 3D model worked quite well. It's not the easiest
+
+165
+00:12:39,163 --> 00:12:44,259
+image to turn into a 3D model because there's a lot of things happening it's
+
+166
+00:12:44,259 --> 00:12:50,653
+not super clean I would say the resolution as well is not that high there's
+
+167
+00:12:50,653 --> 00:12:55,575
+a lot of artifacts on the buildings that actually are not ideal
+
+168
+00:12:55,856 --> 00:13:01,869
+but even though like it did a good job it made it a bit more abstract
+
+169
+00:13:02,253 --> 00:13:06,205
+Of course, as you can see, this thing,
+
+170
+00:13:06,205 --> 00:13:10,087
+like these cars, they got morphed into yeah,
+
+171
+00:13:10,087 --> 00:13:15,991
+something that is not a car. and of course it only
+
+172
+00:13:15,991 --> 00:13:20,313
+has that front front elevation view I would say
+
+173
+00:13:20,313 --> 00:13:25,336
+or like frontal perspective. It doesn't know anything about the back
+
+174
+00:13:25,576 --> 00:13:29,468
+and still it did it did quite a good job because this is how I imagined
+
+175
+00:13:29,468 --> 00:13:30,839
+the building to actually look like.
+
+176
+00:13:32,463 --> 00:13:34,184
+So now we're gonna do the same,
+
+177
+00:13:34,184 --> 00:13:37,075
+but instead of providing this image,
+
+178
+00:13:37,075 --> 00:13:42,828
+I'm gonna provide a better version.
+
+179
+00:13:42,828 --> 00:13:48,121
+So how I made this you can find on Miro.
+
+180
+00:13:50,499 --> 00:13:54,455
+So if you go to preparation option seven and you click on download.
+
+181
+00:13:57,463 --> 00:13:58,463
+No.
+
+182
+00:14:01,091 --> 00:14:06,853
+You go to Comfy and you take that image and you import it here,
+
+183
+00:14:06,853 --> 00:14:08,573
+you can see what I actually did.
+
+184
+00:14:08,573 --> 00:14:14,405
+So I took the base image, and this is super simple NanoBanana
+
+185
+00:14:14,405 --> 00:14:20,577
+Pro workflow. You can also use Nano Banana to any image
+
+186
+00:14:20,577 --> 00:14:26,498
+to image workflow, and with a simple prompt saying create an ambient occlusion
+
+187
+00:14:26,498 --> 00:14:28,339
+map for this image, etc.
+
+188
+00:14:30,105 --> 00:14:33,858
+From this one, it made this.
+
+189
+00:14:33,858 --> 00:14:40,092
+You see, so this step it removes a lot of the clutter and it just says okay,
+
+190
+00:14:40,092 --> 00:14:43,234
+okay, make the geometry pure,
+
+191
+00:14:43,234 --> 00:14:48,588
+remove all the details, and then if we take this one and
+
+192
+00:14:48,588 --> 00:14:52,301
+we provide it in the workflow.
+
+193
+00:14:57,423 --> 00:15:01,068
+We will put it in the same Rhino file so we can compare it better.
+
+194
+00:15:01,068 --> 00:15:06,194
+So again we click on export. For now we're gonna use FBX,
+
+195
+00:15:06,194 --> 00:15:09,719
+but it doesn't really matter. You can also take OBJ.
+
+196
+00:15:13,049 --> 00:15:17,105
+You can see I downloaded it, then I go back
+
+197
+00:15:17,105 --> 00:15:20,631
+to shaded mode like this.
+
+198
+00:15:24,451 --> 00:15:29,318
+Then I drag the file in, I would say import yes.
+
+199
+00:15:35,407 --> 00:15:39,195
+Okay, here of course as you can see the scale was a bit different,
+
+200
+00:15:39,195 --> 00:15:42,703
+so I didn't look at the settings very well.
+
+201
+00:15:45,615 --> 00:15:47,544
+So let's scale this up a bit.
+
+202
+00:15:58,167 --> 00:16:01,648
+Okay, so I scaled it up. As you can see,
+
+203
+00:16:01,648 --> 00:16:05,980
+it doesn't have the context because we removed it since I didn't think that
+
+204
+00:16:05,980 --> 00:16:09,491
+the context was actually relevant for getting a 3D model.
+
+205
+00:16:09,491 --> 00:16:11,562
+If we then look at the geometry,
+
+206
+00:16:11,562 --> 00:16:16,514
+I would say it's more pure because a lot of the unnecessary details are removed.
+
+207
+00:16:16,514 --> 00:16:19,827
+So it doesn't have like the
+
+208
+00:16:23,917 --> 00:16:29,331
+These details. But of course, this example is a bit weird because
+
+209
+00:16:29,331 --> 00:16:35,096
+the building is so strange and it's so irregular that it's also hard to make
+
+210
+00:16:35,096 --> 00:16:38,449
+a clean model out of this. But I think you get the idea that when
+
+211
+00:16:38,449 --> 00:16:41,982
+you do it directly, you include everything in the image,
+
+212
+00:16:41,982 --> 00:16:45,544
+but that's not always a good case or or a good thing.
+
+213
+00:16:45,544 --> 00:16:50,008
+So taking this extra step, removing all the unnecessary things,
+
+214
+00:16:50,008 --> 00:16:53,409
+and then making a 3D model can be
+
+215
+00:16:53,593 --> 00:16:55,617
+can be a good step, whatever you are doing.
+
+216
+00:16:55,617 --> 00:16:59,575
+It can be for furniture, it works for all of them.
+
+217
+00:17:02,807 --> 00:17:05,548
+So check out these preparation steps.
+
+218
+00:17:05,548 --> 00:17:07,089
+There's a lot of different ones.
+
+219
+00:17:07,089 --> 00:17:09,230
+For example, this one is also super interesting.
+
+220
+00:17:09,230 --> 00:17:14,333
+What it does is it takes your base image
+
+221
+00:17:14,893 --> 00:17:20,556
+and it generates four different, how would I say,
+
+222
+00:17:20,556 --> 00:17:23,498
+perspectives out of it.
+
+223
+00:17:23,498 --> 00:17:26,219
+And the same if you download this one.
+
+224
+00:17:30,915 --> 00:17:31,982
+You go into Comfy.
+
+225
+00:17:35,587 --> 00:17:37,608
+You can see it's also just a Nano Banana Pro.
+
+226
+00:17:37,608 --> 00:17:43,284
+So the prompt is about making a four-tile image
+
+227
+00:17:43,284 --> 00:17:46,217
+with a different perspective in each tile.
+
+228
+00:17:46,217 --> 00:17:52,642
+And that way you have four perspectives on this building.
+
+229
+00:17:52,642 --> 00:17:57,507
+And then if you go to a workflow like this one.
+
+230
+00:18:00,015 --> 00:18:01,367
+So you type 3D.
+
+231
+00:18:04,377 --> 00:18:07,990
+There is one that gets multiview,
+
+232
+00:18:07,990 --> 00:18:11,913
+so Tripo v1, which is multiview to model.
+
+233
+00:18:11,913 --> 00:18:18,379
+So we click on here. And here you can see that the main node requires an image,
+
+234
+00:18:18,379 --> 00:18:21,011
+an image on the left side, backside,
+
+235
+00:18:21,011 --> 00:18:27,847
+and right side. So here you can place these other generated views.
+
+236
+00:18:27,847 --> 00:18:32,471
+So it has a bit more context. You see here it wouldn't
+
+237
+00:18:33,055 --> 00:18:39,248
+make it like an oval shape because the input that
+
+238
+00:18:39,248 --> 00:18:43,521
+we would provide here is more like a round one or like a star shape.
+
+239
+00:18:43,521 --> 00:18:47,723
+So you see it's just adding a step in between
+
+240
+00:18:48,103 --> 00:18:55,067
+to provide more accurate information and then it will make a better 3D model.
+
+241
+00:18:55,067 --> 00:18:58,619
+But it kind of depends on what you're trying to achieve because
+
+242
+00:18:58,619 --> 00:19:02,201
+if you're just trying to make a simple model out of
+
+243
+00:19:02,913 --> 00:19:06,466
+Such a shape, just one image is good enough.
+
+244
+00:19:06,466 --> 00:19:08,768
+When the image is more complex,
+
+245
+00:19:08,768 --> 00:19:13,822
+like this one, it can be a good thing
+
+246
+00:19:13,822 --> 00:19:19,737
+to actually make it like to use a preparation step.
+
+247
+00:19:19,737 --> 00:19:26,602
+I will provide the screenshots and workflows of this one on Miro as well,
+
+248
+00:19:26,602 --> 00:19:31,867
+and with that, I'm going to end this module 5 image to
+
+249
+00:19:32,240 --> 00:19:33,240
+3D.

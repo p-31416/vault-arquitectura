@@ -1,0 +1,1490 @@
+{
+  "archivo": "Barcelona-2D.dxf",
+  "fecha": "2026-10-21T01:27:22",
+  "ezdxf_version": "1.4.4",
+  "units": "6",
+  "insunits": 6,
+  "measurement": 0,
+  "extmin": [
+    409692.71,
+    4560548.975000001,
+    0.0
+  ],
+  "extmax": [
+    450136.531,
+    4599261.38,
+    0.0
+  ],
+  "layouts": [
+    "Layout1"
+  ],
+  "layers_total": 96,
+  "layers_existentes": [
+    {
+      "name": "0",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Acc\u00e9s Rondes (sentit no horari)",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Acc\u00e9s Rondes (sentit horari)",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Sortides Rondes (sentit no horari)",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Sortides Rondes (sentit horari)",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Ascensors",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Estacio mar\u00edtima",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Parades taxi",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Hospitals",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Funicular",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Estacions RENFE",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Estacions Metro",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Estacions FGC",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Tramvies (TramBaix i TramBesos)",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Tramvia Blau",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Escales Mec\u00e0niques",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Telef\u00e8ric",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Torres de Comunicaci\u00f3",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Estaci\u00f3 Ferrocarril Aeroport",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Carrers amplada MITJANA Districte 5",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Numeraci\u00f3 postal Districte 5",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Numeraci\u00f3 postal Districte 1",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Numeraci\u00f3 postal Districte 2",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Numeraci\u00f3 postal Districte 3",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Numeraci\u00f3 postal Districte 4",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Numeraci\u00f3 postal Districte 6",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Numeraci\u00f3 postal Districte 7",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Numeraci\u00f3 postal Districte 8",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Numeraci\u00f3 postal Districte 9",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Numeraci\u00f3 postal Districte 10",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Carrers amplada PETITA Districte 4",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Carrers amplada GRAN Districte 2",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Carrers amplada MITJANA Districte 3",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Carrers amplada GRAN Districte 3",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Carrers amplada PETITA Districte 3",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Carrers amplada MITJANA Districte 1",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Carrers amplada PETITA Districte 1",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Carrers amplada MITJANA Districte 2",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Carrers amplada GRAN Districte 1",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Carrers amplada PETITA Districte 10",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Carrers amplada MITJANA Districte 10",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Carrers amplada GRAN Districte 10",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Carrers amplada PETITA Districte 2",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Carrers amplada MITJANA Districte 4",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Edificis en Illes parcialment edificades",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Carrers amplada GRAN Districte 6",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Punt altimetria (trama urbana)",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Carrers amplada PETITA Districte 6",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Punt altimetria (turons)",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Carrers amplada MITJANA Districte 6",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "T\u00fanels - Rondes - Vies ferries - Escales",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Carrers amplada PETITA Districte 7",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Solars",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Carrers amplada MITJANA Districte 7",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Zona Forestal",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Carrers amplada PETITA Districte 9",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Zona Verd Privat",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Carrers amplada MITJANA Districte 9",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Elements Constructius (Parcs i Via p\u00fablica)",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Carrers amplada GRAN Districte 9",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Pistes forestals",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Carrers amplada PETITA Districte 5",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Camps Esportius",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Carrers amplada GRAN Districte 5",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Illes Peatonals i voreres",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Carrers amplada GRAN Districte 7",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Parterres (Carrers i Places)",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Carrers amplada PETITA Districte 8",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Cobertes Edificis",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Carrers amplada MITJANA Districte 8",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Edificaci\u00f3 en Cementiris",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Carrers amplada GRAN Districte 4",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Edificis Culturals",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Carrers amplada GRAN Districte 8",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Edificis Educatius",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Edificis Esportius",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Edificis Religiosos",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Edificis Sanitaris",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Edificis singulars (Gen\u00e8rics)",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Illa Edificada",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "L\u00edmit port aut\u00f2nom",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "L\u00edmits aigua (mar - rius)",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "L\u00edmits aigua (piscines - fonts)",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "L\u00ednies de Projectes",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Mercats Municipals",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Parterres (Parcs i Jardins)",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Separadors Vials",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Seus de Districte",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Tramvies (vies)",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Zona Verd P\u00fablic",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Zones Peatonals",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Corbes de nivell",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Cotes",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Monuments",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Camins \u00fas restringit vehicles",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    },
+    {
+      "name": "Defpoints",
+      "color": 7,
+      "linetype": "Continuous",
+      "on": true,
+      "frozen": false,
+      "locked": false
+    }
+  ],
+  "layers_delta_ok": [],
+  "layers_delta_ko": [],
+  "missing": [
+    "A-ABER",
+    "A-LOCA",
+    "A-MURO",
+    "A-TABI",
+    "G-AUXI",
+    "G-CART",
+    "G-COTA",
+    "G-MARC",
+    "G-REFE",
+    "G-TEXT",
+    "G-VPRT",
+    "R-COTA",
+    "R-COTP",
+    "R-EJAX",
+    "R-EJES",
+    "R-FUND",
+    "R-NIVE",
+    "R-PTOS",
+    "S-COLU",
+    "S-EJES",
+    "S-FUND",
+    "S-VIGA"
+  ],
+  "extra": [
+    "0",
+    "Acc\u00e9s Rondes (sentit horari)",
+    "Acc\u00e9s Rondes (sentit no horari)",
+    "Ascensors",
+    "Camins \u00fas restringit vehicles",
+    "Camps Esportius",
+    "Carrers amplada GRAN Districte 1",
+    "Carrers amplada GRAN Districte 10",
+    "Carrers amplada GRAN Districte 2",
+    "Carrers amplada GRAN Districte 3",
+    "Carrers amplada GRAN Districte 4",
+    "Carrers amplada GRAN Districte 5",
+    "Carrers amplada GRAN Districte 6",
+    "Carrers amplada GRAN Districte 7",
+    "Carrers amplada GRAN Districte 8",
+    "Carrers amplada GRAN Districte 9",
+    "Carrers amplada MITJANA Districte 1",
+    "Carrers amplada MITJANA Districte 10",
+    "Carrers amplada MITJANA Districte 2",
+    "Carrers amplada MITJANA Districte 3",
+    "Carrers amplada MITJANA Districte 4",
+    "Carrers amplada MITJANA Districte 5",
+    "Carrers amplada MITJANA Districte 6",
+    "Carrers amplada MITJANA Districte 7",
+    "Carrers amplada MITJANA Districte 8",
+    "Carrers amplada MITJANA Districte 9",
+    "Carrers amplada PETITA Districte 1",
+    "Carrers amplada PETITA Districte 10",
+    "Carrers amplada PETITA Districte 2",
+    "Carrers amplada PETITA Districte 3",
+    "Carrers amplada PETITA Districte 4",
+    "Carrers amplada PETITA Districte 5",
+    "Carrers amplada PETITA Districte 6",
+    "Carrers amplada PETITA Districte 7",
+    "Carrers amplada PETITA Districte 8",
+    "Carrers amplada PETITA Districte 9",
+    "Cobertes Edificis",
+    "Corbes de nivell",
+    "Cotes",
+    "Defpoints",
+    "Edificaci\u00f3 en Cementiris",
+    "Edificis Culturals",
+    "Edificis Educatius",
+    "Edificis Esportius",
+    "Edificis Religiosos",
+    "Edificis Sanitaris",
+    "Edificis en Illes parcialment edificades",
+    "Edificis singulars (Gen\u00e8rics)",
+    "Elements Constructius (Parcs i Via p\u00fablica)",
+    "Escales Mec\u00e0niques",
+    "Estacio mar\u00edtima",
+    "Estacions FGC",
+    "Estacions Metro",
+    "Estacions RENFE",
+    "Estaci\u00f3 Ferrocarril Aeroport",
+    "Funicular",
+    "Hospitals",
+    "Illa Edificada",
+    "Illes Peatonals i voreres",
+    "L\u00edmit port aut\u00f2nom",
+    "L\u00edmits aigua (mar - rius)",
+    "L\u00edmits aigua (piscines - fonts)",
+    "L\u00ednies de Projectes",
+    "Mercats Municipals",
+    "Monuments",
+    "Numeraci\u00f3 postal Districte 1",
+    "Numeraci\u00f3 postal Districte 10",
+    "Numeraci\u00f3 postal Districte 2",
+    "Numeraci\u00f3 postal Districte 3",
+    "Numeraci\u00f3 postal Districte 4",
+    "Numeraci\u00f3 postal Districte 5",
+    "Numeraci\u00f3 postal Districte 6",
+    "Numeraci\u00f3 postal Districte 7",
+    "Numeraci\u00f3 postal Districte 8",
+    "Numeraci\u00f3 postal Districte 9",
+    "Parades taxi",
+    "Parterres (Carrers i Places)",
+    "Parterres (Parcs i Jardins)",
+    "Pistes forestals",
+    "Punt altimetria (trama urbana)",
+    "Punt altimetria (turons)",
+    "Separadors Vials",
+    "Seus de Districte",
+    "Solars",
+    "Sortides Rondes (sentit horari)",
+    "Sortides Rondes (sentit no horari)",
+    "Telef\u00e8ric",
+    "Torres de Comunicaci\u00f3",
+    "Tramvia Blau",
+    "Tramvies (TramBaix i TramBesos)",
+    "Tramvies (vies)",
+    "T\u00fanels - Rondes - Vies ferries - Escales",
+    "Zona Forestal",
+    "Zona Verd Privat",
+    "Zona Verd P\u00fablic",
+    "Zones Peatonals"
+  ],
+  "entity_types": {
+    "HATCH": 43032,
+    "LWPOLYLINE": 75228,
+    "INSERT": 1344,
+    "LINE": 7213,
+    "POINT": 42,
+    "SOLID": 316,
+    "MTEXT": 547,
+    "SPLINE": 1,
+    "CIRCLE": 99,
+    "TEXT": 34574
+  },
+  "per_layer_count": {
+    "Edificis en Illes parcialment edificades": 28118,
+    "Punt altimetria (trama urbana)": 432,
+    "Punt altimetria (turons)": 302,
+    "T\u00fanels - Rondes - Vies ferries - Escales": 10625,
+    "Solars": 3937,
+    "Zona Forestal": 252,
+    "Zona Verd Privat": 2183,
+    "Elements Constructius (Parcs i Via p\u00fablica)": 9285,
+    "Pistes forestals": 181,
+    "Camps Esportius": 10311,
+    "Illes Peatonals i voreres": 3303,
+    "Parterres (Carrers i Places)": 7324,
+    "Cobertes Edificis": 1380,
+    "Edificaci\u00f3 en Cementiris": 3830,
+    "Edificis Culturals": 224,
+    "Edificis Educatius": 1220,
+    "Edificis Esportius": 418,
+    "Edificis Religiosos": 262,
+    "Edificis Sanitaris": 370,
+    "Edificis singulars (Gen\u00e8rics)": 2961,
+    "Illa Edificada": 7185,
+    "L\u00edmit port aut\u00f2nom": 15,
+    "L\u00edmits aigua (mar - rius)": 353,
+    "L\u00edmits aigua (piscines - fonts)": 3474,
+    "L\u00ednies de Projectes": 661,
+    "Mercats Municipals": 82,
+    "Parterres (Parcs i Jardins)": 10681,
+    "Separadors Vials": 2650,
+    "Seus de Districte": 34,
+    "Tramvies (vies)": 119,
+    "Zona Verd P\u00fablic": 4097,
+    "Zones Peatonals": 1358,
+    "Corbes de nivell": 8660,
+    "Cotes": 101,
+    "Monuments": 185,
+    "Camins \u00fas restringit vehicles": 5,
+    "Acc\u00e9s Rondes (sentit no horari)": 60,
+    "Acc\u00e9s Rondes (sentit horari)": 87,
+    "Sortides Rondes (sentit no horari)": 78,
+    "Sortides Rondes (sentit horari)": 72,
+    "Ascensors": 1,
+    "Estacio mar\u00edtima": 8,
+    "Parades taxi": 184,
+    "Hospitals": 69,
+    "Funicular": 15,
+    "Estacions RENFE": 19,
+    "Estacions Metro": 642,
+    "Estacions FGC": 91,
+    "Tramvies (TramBaix i TramBesos)": 199,
+    "Tramvia Blau": 3,
+    "Escales Mec\u00e0niques": 26,
+    "Telef\u00e8ric": 6,
+    "Torres de Comunicaci\u00f3": 2,
+    "Estaci\u00f3 Ferrocarril Aeroport": 1,
+    "Carrers amplada MITJANA Districte 5": 748,
+    "Numeraci\u00f3 postal Districte 5": 3285,
+    "Numeraci\u00f3 postal Districte 1": 1079,
+    "Numeraci\u00f3 postal Districte 2": 1798,
+    "Numeraci\u00f3 postal Districte 3": 1992,
+    "Numeraci\u00f3 postal Districte 4": 1208,
+    "Numeraci\u00f3 postal Districte 6": 1934,
+    "Numeraci\u00f3 postal Districte 7": 2494,
+    "Numeraci\u00f3 postal Districte 8": 2326,
+    "Numeraci\u00f3 postal Districte 9": 1804,
+    "Numeraci\u00f3 postal Districte 10": 2571,
+    "Carrers amplada PETITA Districte 4": 435,
+    "Carrers amplada GRAN Districte 2": 55,
+    "Carrers amplada MITJANA Districte 3": 814,
+    "Carrers amplada GRAN Districte 3": 57,
+    "Carrers amplada PETITA Districte 3": 726,
+    "Carrers amplada MITJANA Districte 1": 214,
+    "Carrers amplada PETITA Districte 1": 1325,
+    "Carrers amplada MITJANA Districte 2": 423,
+    "Carrers amplada GRAN Districte 1": 20,
+    "Carrers amplada PETITA Districte 10": 786,
+    "Carrers amplada MITJANA Districte 10": 618,
+    "Carrers amplada GRAN Districte 10": 58,
+    "Carrers amplada PETITA Districte 2": 259,
+    "Carrers amplada MITJANA Districte 4": 362,
+    "Carrers amplada GRAN Districte 6": 27,
+    "Carrers amplada PETITA Districte 6": 810,
+    "Carrers amplada MITJANA Districte 6": 207,
+    "Carrers amplada PETITA Districte 7": 999,
+    "Carrers amplada MITJANA Districte 7": 742,
+    "Carrers amplada PETITA Districte 9": 628,
+    "Carrers amplada MITJANA Districte 9": 482,
+    "Carrers amplada GRAN Districte 9": 32,
+    "Carrers amplada PETITA Districte 5": 1524,
+    "Carrers amplada GRAN Districte 5": 39,
+    "Carrers amplada GRAN Districte 7": 38,
+    "Carrers amplada PETITA Districte 8": 621,
+    "Carrers amplada MITJANA Districte 8": 665,
+    "Carrers amplada GRAN Districte 4": 18,
+    "Carrers amplada GRAN Districte 8": 32
+  },
+  "per_layer_types": {
+    "Edificis en Illes parcialment edificades": {
+      "HATCH": 14054,
+      "LWPOLYLINE": 14063,
+      "LINE": 1
+    },
+    "Punt altimetria (trama urbana)": {
+      "INSERT": 185,
+      "MTEXT": 247
+    },
+    "Punt altimetria (turons)": {
+      "INSERT": 124,
+      "MTEXT": 178
+    },
+    "T\u00fanels - Rondes - Vies ferries - Escales": {
+      "LWPOLYLINE": 9072,
+      "LINE": 1552,
+      "POINT": 1
+    },
+    "Solars": {
+      "HATCH": 1967,
+      "LWPOLYLINE": 1970
+    },
+    "Zona Forestal": {
+      "HATCH": 125,
+      "LWPOLYLINE": 127
+    },
+    "Zona Verd Privat": {
+      "HATCH": 1090,
+      "LWPOLYLINE": 1092,
+      "POINT": 1
+    },
+    "Elements Constructius (Parcs i Via p\u00fablica)": {
+      "LINE": 3213,
+      "LWPOLYLINE": 6049,
+      "POINT": 23
+    },
+    "Pistes forestals": {
+      "HATCH": 179,
+      "SOLID": 1,
+      "LWPOLYLINE": 1
+    },
+    "Camps Esportius": {
+      "LWPOLYLINE": 9041,
+      "LINE": 1270
+    },
+    "Illes Peatonals i voreres": {
+      "HATCH": 1651,
+      "LWPOLYLINE": 1652
+    },
+    "Parterres (Carrers i Places)": {
+      "HATCH": 3655,
+      "LWPOLYLINE": 3668,
+      "LINE": 1
+    },
+    "Cobertes Edificis": {
+      "LWPOLYLINE": 898,
+      "LINE": 479,
+      "POINT": 3
+    },
+    "Edificaci\u00f3 en Cementiris": {
+      "HATCH": 1915,
+      "LWPOLYLINE": 1915
+    },
+    "Edificis Culturals": {
+      "HATCH": 112,
+      "LWPOLYLINE": 112
+    },
+    "Edificis Educatius": {
+      "HATCH": 610,
+      "LWPOLYLINE": 610
+    },
+    "Edificis Esportius": {
+      "HATCH": 209,
+      "LWPOLYLINE": 209
+    },
+    "Edificis Religiosos": {
+      "HATCH": 131,
+      "LWPOLYLINE": 131
+    },
+    "Edificis Sanitaris": {
+      "HATCH": 185,
+      "LWPOLYLINE": 185
+    },
+    "Edificis singulars (Gen\u00e8rics)": {
+      "HATCH": 1480,
+      "LWPOLYLINE": 1481
+    },
+    "Illa Edificada": {
+      "HATCH": 3591,
+      "LWPOLYLINE": 3593,
+      "POINT": 1
+    },
+    "L\u00edmit port aut\u00f2nom": {
+      "LINE": 14,
+      "LWPOLYLINE": 1
+    },
+    "L\u00edmits aigua (mar - rius)": {
+      "SOLID": 11,
+      "HATCH": 342
+    },
+    "L\u00edmits aigua (piscines - fonts)": {
+      "HATCH": 1734,
+      "LWPOLYLINE": 1740
+    },
+    "L\u00ednies de Projectes": {
+      "LINE": 616,
+      "LWPOLYLINE": 38,
+      "POINT": 7
+    },
+    "Mercats Municipals": {
+      "HATCH": 41,
+      "LWPOLYLINE": 41
+    },
+    "Parterres (Parcs i Jardins)": {
+      "HATCH": 5336,
+      "LWPOLYLINE": 5345
+    },
+    "Separadors Vials": {
+      "HATCH": 1322,
+      "LWPOLYLINE": 1327,
+      "SPLINE": 1
+    },
+    "Seus de Districte": {
+      "HATCH": 12,
+      "LWPOLYLINE": 12,
+      "INSERT": 10
+    },
+    "Tramvies (vies)": {
+      "LINE": 66,
+      "LWPOLYLINE": 50,
+      "POINT": 3
+    },
+    "Zona Verd P\u00fablic": {
+      "HATCH": 2047,
+      "LWPOLYLINE": 2050
+    },
+    "Zones Peatonals": {
+      "HATCH": 1048,
+      "SOLID": 304,
+      "POINT": 2,
+      "LWPOLYLINE": 3,
+      "LINE": 1
+    },
+    "Corbes de nivell": {
+      "LWPOLYLINE": 8659,
+      "POINT": 1
+    },
+    "Cotes": {
+      "MTEXT": 101
+    },
+    "Monuments": {
+      "HATCH": 92,
+      "LWPOLYLINE": 93
+    },
+    "Camins \u00fas restringit vehicles": {
+      "HATCH": 5
+    },
+    "Acc\u00e9s Rondes (sentit no horari)": {
+      "HATCH": 20,
+      "CIRCLE": 20,
+      "TEXT": 20
+    },
+    "Acc\u00e9s Rondes (sentit horari)": {
+      "HATCH": 29,
+      "CIRCLE": 29,
+      "TEXT": 29
+    },
+    "Sortides Rondes (sentit no horari)": {
+      "HATCH": 26,
+      "CIRCLE": 26,
+      "TEXT": 26
+    },
+    "Sortides Rondes (sentit horari)": {
+      "HATCH": 24,
+      "CIRCLE": 24,
+      "TEXT": 24
+    },
+    "Ascensors": {
+      "INSERT": 1
+    },
+    "Estacio mar\u00edtima": {
+      "INSERT": 8
+    },
+    "Parades taxi": {
+      "INSERT": 184
+    },
+    "Hospitals": {
+      "INSERT": 69
+    },
+    "Funicular": {
+      "INSERT": 8,
+      "TEXT": 7
+    },
+    "Estacions RENFE": {
+      "INSERT": 14,
+      "TEXT": 5
+    },
+    "Estacions Metro": {
+      "INSERT": 492,
+      "TEXT": 146,
+      "MTEXT": 4
+    },
+    "Estacions FGC": {
+      "INSERT": 65,
+      "TEXT": 26
+    },
+    "Tramvies (TramBaix i TramBesos)": {
+      "INSERT": 147,
+      "TEXT": 52
+    },
+    "Tramvia Blau": {
+      "INSERT": 2,
+      "TEXT": 1
+    },
+    "Escales Mec\u00e0niques": {
+      "INSERT": 26
+    },
+    "Telef\u00e8ric": {
+      "INSERT": 6
+    },
+    "Torres de Comunicaci\u00f3": {
+      "INSERT": 2
+    },
+    "Estaci\u00f3 Ferrocarril Aeroport": {
+      "INSERT": 1
+    },
+    "Carrers amplada MITJANA Districte 5": {
+      "TEXT": 748
+    },
+    "Numeraci\u00f3 postal Districte 5": {
+      "TEXT": 3285
+    },
+    "Numeraci\u00f3 postal Districte 1": {
+      "TEXT": 1079
+    },
+    "Numeraci\u00f3 postal Districte 2": {
+      "TEXT": 1798
+    },
+    "Numeraci\u00f3 postal Districte 3": {
+      "TEXT": 1992
+    },
+    "Numeraci\u00f3 postal Districte 4": {
+      "TEXT": 1208
+    },
+    "Numeraci\u00f3 postal Districte 6": {
+      "TEXT": 1934
+    },
+    "Numeraci\u00f3 postal Districte 7": {
+      "TEXT": 2494
+    },
+    "Numeraci\u00f3 postal Districte 8": {
+      "TEXT": 2326
+    },
+    "Numeraci\u00f3 postal Districte 9": {
+      "TEXT": 1804
+    },
+    "Numeraci\u00f3 postal Districte 10": {
+      "TEXT": 2571
+    },
+    "Carrers amplada PETITA Districte 4": {
+      "TEXT": 435
+    },
+    "Carrers amplada GRAN Districte 2": {
+      "TEXT": 55
+    },
+    "Carrers amplada MITJANA Districte 3": {
+      "TEXT": 814
+    },
+    "Carrers amplada GRAN Districte 3": {
+      "TEXT": 57
+    },
+    "Carrers amplada PETITA Districte 3": {
+      "TEXT": 726
+    },
+    "Carrers amplada MITJANA Districte 1": {
+      "TEXT": 214
+    },
+    "Carrers amplada PETITA Districte 1": {
+      "TEXT": 1325
+    },
+    "Carrers amplada MITJANA Districte 2": {
+      "TEXT": 423
+    },
+    "Carrers amplada GRAN Districte 1": {
+      "TEXT": 20
+    },
+    "Carrers amplada PETITA Districte 10": {
+      "TEXT": 785,
+      "MTEXT": 1
+    },
+    "Carrers amplada MITJANA Districte 10": {
+      "TEXT": 618
+    },
+    "Carrers amplada GRAN Districte 10": {
+      "TEXT": 58
+    },
+    "Carrers amplada PETITA Districte 2": {
+      "TEXT": 257,
+      "MTEXT": 2
+    },
+    "Carrers amplada MITJANA Districte 4": {
+      "TEXT": 362
+    },
+    "Carrers amplada GRAN Districte 6": {
+      "TEXT": 27
+    },
+    "Carrers amplada PETITA Districte 6": {
+      "TEXT": 810
+    },
+    "Carrers amplada MITJANA Districte 6": {
+      "TEXT": 207
+    },
+    "Carrers amplada PETITA Districte 7": {
+      "TEXT": 996,
+      "MTEXT": 3
+    },
+    "Carrers amplada MITJANA Districte 7": {
+      "TEXT": 742
+    },
+    "Carrers amplada PETITA Districte 9": {
+      "TEXT": 624,
+      "MTEXT": 4
+    },
+    "Carrers amplada MITJANA Districte 9": {
+      "TEXT": 482
+    },
+    "Carrers amplada GRAN Districte 9": {
+      "TEXT": 32
+    },
+    "Carrers amplada PETITA Districte 5": {
+      "TEXT": 1518,
+      "MTEXT": 6
+    },
+    "Carrers amplada GRAN Districte 5": {
+      "TEXT": 39
+    },
+    "Carrers amplada GRAN Districte 7": {
+      "TEXT": 38
+    },
+    "Carrers amplada PETITA Districte 8": {
+      "TEXT": 620,
+      "MTEXT": 1
+    },
+    "Carrers amplada MITJANA Districte 8": {
+      "TEXT": 665
+    },
+    "Carrers amplada GRAN Districte 4": {
+      "TEXT": 18
+    },
+    "Carrers amplada GRAN Districte 8": {
+      "TEXT": 32
+    }
+  },
+  "defined_blocks": [
+    "*model_space",
+    "*paper_space",
+    "*u11",
+    "*u13",
+    "*u15",
+    "*u17",
+    "*u19",
+    "*u34",
+    "*u36",
+    "*u38",
+    "aeropo",
+    "ascens",
+    "blau",
+    "escala",
+    "ffcc",
+    "funicu",
+    "hospi",
+    "l1",
+    "l10",
+    "l11",
+    "l2",
+    "l3",
+    "l4",
+    "l5",
+    "l6",
+    "l7",
+    "l8",
+    "l9",
+    "mariti",
+    "metro",
+    "ptoalt",
+    "ptoalt_1",
+    "renfe",
+    "seu",
+    "t1",
+    "t2",
+    "t3",
+    "t4",
+    "t5",
+    "t6",
+    "taxi",
+    "telefe",
+    "terminatoropen_0.5",
+    "torre1",
+    "torre2",
+    "tramvi"
+  ],
+  "insert_blocks_count": 1344,
+  "mtext_count": 547,
+  "text_ejemplos": [
+    [
+      "Carrers amplada MITJANA Districte 5",
+      "C. de L\u00e1zaro    C\u00e1rdenas"
+    ],
+    [
+      "Carrers amplada MITJANA Districte 5",
+      "C.  de  Jacinto    Benavente"
+    ],
+    [
+      "Numeraci\u00f3 postal Districte 5",
+      "18"
+    ],
+    [
+      "Numeraci\u00f3 postal Districte 1",
+      "26"
+    ],
+    [
+      "Numeraci\u00f3 postal Districte 1",
+      "23"
+    ],
+    [
+      "Numeraci\u00f3 postal Districte 1",
+      "21"
+    ],
+    [
+      "Numeraci\u00f3 postal Districte 1",
+      "29"
+    ],
+    [
+      "Numeraci\u00f3 postal Districte 1",
+      "8"
+    ],
+    [
+      "Numeraci\u00f3 postal Districte 1",
+      "20"
+    ],
+    [
+      "Numeraci\u00f3 postal Districte 1",
+      "17"
+    ],
+    [
+      "Numeraci\u00f3 postal Districte 1",
+      "14"
+    ],
+    [
+      "Numeraci\u00f3 postal Districte 1",
+      "8"
+    ],
+    [
+      "Numeraci\u00f3 postal Districte 1",
+      "5"
+    ],
+    [
+      "Numeraci\u00f3 postal Districte 1",
+      "2"
+    ],
+    [
+      "Numeraci\u00f3 postal Districte 1",
+      "28"
+    ]
+  ]
+}

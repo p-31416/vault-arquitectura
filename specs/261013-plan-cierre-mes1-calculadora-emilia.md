@@ -19,7 +19,7 @@ Objetivo hoy 13/10: dejar lo mayor verificado para presentar mañana un reporte 
 
 Enfoque aprobado: cada plan avanza en pomodoros de 25 min que avanzan a Leantime como tasks ≤25 min interlinkeadas, con registro de horas del botón de Leantime como cómputo exacto. Proyecto Leantime: `O.S_ARQ-Emi` id 4, usuaria Emilia id 5 **aceptada el 13/10** (ver [[specs/260929-alta-emilia-leantime|alta Leantime]] y sesión 09/10).
 
-Base técnica: [[proyectos/STUDIO_OS-Emilia/documentacion/arquitectura-n8n-os-emilia|arquitectura n8n v1.3]] + manual [[proyectos/STUDIO_OS-Emilia/documentacion/playbook-os-emilia-n8n|playbook Emilia v1.0]] + plan [[specs/260924-plan-os-emilia-n8n|plan OS-Emilia n8n]] + trimestral [[specs/260910-plan-trimestral-unificado-studio-os-emilia|plan trimestral]] + esquema [[specs/260909-esquema-mes1-60hs-studio-os-emilia|esquema Mes 1]].
+Base técnica: [[proyectos/STUDIO_OS-Emilia/documentacion/arquitectura-n8n-os-emilia|arquitectura n8n v1.3]] + manual [[proyectos/STUDIO_OS-Emilia/documentacion/playbook-os-emilia-n8n|playbook Emilia v1.0]] + plan [[260924-plan-os-emilia-n8n|plan OS-Emilia n8n]] + trimestral [[specs/260910-plan-trimestral-unificado-studio-os-emilia|plan trimestral]] + esquema [[specs/260909-esquema-mes1-60hs-studio-os-emilia|esquema Mes 1]].
 
 ## PLAN semanal
 
@@ -46,9 +46,9 @@ Tipos de hora para el cuadrito réplica: `arq | n8n-build | api | data | prompt-
 
 ### C. Números cierre Mes 1 (2h, 5 pomodoros)
 
-- [ ] C1 Tabla tracking 60hs por bloque (vault/Fathom/CAD/doc/reuniones) con desvío vs planificado.
-- [ ] C2 Medición 3 procesos manual vs sistema (ej: buscar plano 15→2 min, presupuesto 2h→0.5h, informe obra).
-- [ ] C3 Cálculo ahorro proyectado ≥12hs/mes como base ROI Mes 2.
+- [x] C1 Tabla tracking 60hs por bloque (16/10: 81hs reales = 65 al 13/10 + 16 semana cierre 4+4+8; 63 sesiones; desvío +35% por objeto real replanteo vs Nayara).
+- [x] C2 Medición 3 procesos manual vs sistema (agendar 15→1 mensaje ≈1.9hs/mes ×8 · Fathom 45→5min ≈7.3hs/mes ×11 · buscar plano 15→2min ≈4.3hs/mes ×20).
+- [x] C3 Cálculo ahorro proyectado ≥12hs/mes como base ROI Mes 2 (medido ~13.5hs/mes · capacidad 0.22 · ROI 0.17 · payback mes 7).
 - [ ] C4 Factura C 600 USD: se emite vie 16/10 mañana (vence 23/10: saldo Mes 1 + Mes 2 adelantado).
 - [ ] C5 Borrador roadmap Mes 2 EXPERIMENTAR con precio por módulo anclado a horas liberadas.
 - [ ] C6 Agendar reunión cierre real vie 16/10 post-mediodía con Emilia en Cal.com (propuesta ~12-14h, confirmar disponibilidad) + acta.
@@ -68,11 +68,11 @@ Tipos de hora para el cuadrito réplica: `arq | n8n-build | api | data | prompt-
 
 Vault trabajado siempre por Sol; Emilia no sincroniza manual ni opera Antigravity/Codex desktop — trabaja con GPT online, que no iguala capacidades desktop. Plan remedial mañana 14/10 para cerrar el 50%: definir dispositivo (PC vs celular), instalar Codex desktop + vault sincronizado en su PC, primera ficha alimentada por ella en vivo con verificación personal de Sol. Doc soporte: task 456.
 
-### O2 Números reales — reporte base 16/09→13/10
+### O2 Números reales — cierre 16/10 (81hs)
 
-* 30 sesiones en `raw/sessions/` + 11 transcripts Fathom en `raw/reuniones/` (17/09, 24/09, 26/09, 03/10).
-* Sol confirma el total de horas de su registro (número en su cabeza); desde hoy la metodología oficial es carga de horas en Leantime con el botón Time Tracking por task ≤25 min, visible para Emilia. Metodología: 1 task = 1 pomodoro 25 min (`planHours 0.42`); al terminar cada bloque se registra el tiempo real en el botón; el desvío plan vs real sale del propio Leantime.
-* Pendiente: Sol sube las horas del mes a Leantime antes del vie 16.
+* 63 sesiones en `raw/sessions/` + 20 transcripts Fathom en `raw/reuniones/` + dump 13/10 + semana cierre 16hs (4+4+8).
+* Metodología oficial: carga de horas en Leantime con botón Time Tracking por task ≤25 min (`planHours 0.42`), visible para Emilia. Desvío +35% por objeto real replanteo.
+* Sol sube las horas del mes a Leantime antes del vie 16 (pendiente operativo).
 
 ### O3 Herramientas — lista de lo construido en el mes
 
@@ -132,7 +132,7 @@ Vault trabajado siempre por Sol; Emilia no sincroniza manual ni opera Antigravit
 
 * [[proyectos/STUDIO_OS-Emilia/documentacion/arquitectura-n8n-os-emilia|arquitectura-n8n-os-emilia v1.3]]
 * [[proyectos/STUDIO_OS-Emilia/documentacion/playbook-os-emilia-n8n|playbook-os-emilia-n8n v1.0]]
-* [[specs/260924-plan-os-emilia-n8n|plan-os-emilia-n8n]]
+* [[260924-plan-os-emilia-n8n|plan-os-emilia-n8n]]
 * [[specs/260929-alta-emilia-leantime|alta-emilia-leantime]]
 * [[proyectos/STUDIO_OS-Emilia/reuniones/2026-09-11-reporte-fathom-emilia-hoy|reporte Fathom 11/09]]
 * Sesión [[raw/sessions/2026-10-08-sesion-n8n-fathom-agenda|sesión 08/10 n8n]] con execs 3489/3495/3500/3505/3525.

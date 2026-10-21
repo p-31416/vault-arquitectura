@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reporte Estudio OS v2 — lo que corre hoy con n8n</title>
+<style>:root{--ink:#f2f1ea;--muted:#a9ada1;--line:#33352e;--sand:#171814;--card:#20211c;--card2:#26271f;--clay:#c9a98a;--sage:#9ab0a2;--green:#7fd08a;--blue:#6aa8ff;--amber:#ffb454}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--sand);color:var(--ink);line-height:1.5}.wrap{max-width:1000px;margin:0 auto;padding:0 24px}header.top{position:sticky;top:0;z-index:20;background:#1e1f1a;border-bottom:3px solid var(--clay);box-shadow:0 2px 10px rgba(0,0,0,.4)}.bar{display:flex;justify-content:space-between;align-items:center;padding:12px 0;gap:12px;flex-wrap:wrap}.brand{font-weight:800;font-size:22px;color:var(--ink);letter-spacing:.02em}.brand small{display:block;font-weight:600;color:var(--muted);font-size:12px;letter-spacing:.06em}nav.tabs{display:flex;gap:8px;flex-wrap:wrap;padding:12px 0 16px}nav.tabs button{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:10px 16px;font-weight:600;font-size:13px;cursor:pointer}nav.tabs button.active{background:var(--clay);color:#171814;border-color:var(--clay)}.tab{display:none}.tab.active{display:block;animation:fade .35s ease}@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}.hero{padding:28px 0 8px}.eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}h1{font-size:40px;line-height:1;margin:8px 0;font-weight:700;letter-spacing:-.02em}h1 em{color:var(--clay);font-style:normal}.lead{color:var(--muted);font-size:15px;max-width:760px}.grid{display:grid;gap:14px}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}.g2{grid-template-columns:1fr 1fr}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}.card h3{margin:4px 0 6px;font-size:15px}.card p{margin:0;font-size:13px;color:var(--muted)}.card p b,.card li b{color:var(--ink)}.k{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--clay);font-weight:700}.bignum{font-size:44px;font-weight:800;letter-spacing:-.02em;line-height:1}.bignum small{font-size:13px;font-weight:500;color:var(--muted);letter-spacing:0}table{width:100%;border-collapse:collapse;background:var(--card);border-radius:14px;overflow:hidden;border:1px solid var(--line);font-size:13px}th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);padding:10px 12px;background:var(--card2);border-bottom:1px solid var(--line)}td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}tr:last-child td{border:none}.total{background:var(--clay);color:#171814;font-weight:700}.total td{border:none}.bar{height:12px;background:#2c2d26;border-radius:999px;overflow:hidden;margin-top:8px}.fill{height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,var(--clay),#e8c8a8);transition:width 1s ease}.fill.g{background:linear-gradient(90deg,#4d8a5c,var(--green))}.fill.b{background:linear-gradient(90deg,#3d6ab0,var(--blue))}.fill.a{background:linear-gradient(90deg,#8a6a2e,var(--amber))}.flowline{display:flex;gap:0;align-items:stretch;flex-wrap:wrap;margin:14px 0}.fnode{background:var(--card);border:1px solid var(--blue);border-radius:10px;padding:10px 14px;font-size:13px;max-width:200px}.fnode p{font-size:12px;color:var(--muted);margin:4px 0 0}.farr{align-self:center;color:var(--clay);font-weight:800;padding:0 8px;font-size:18px}.notepad{background:#23241d repeating-linear-gradient(#23241d,#23241d 27px,#33352e 28px);border:1px solid var(--line);border-radius:8px;padding:16px 18px 16px 46px;position:relative;font-size:13px;line-height:28px}.notepad:before{content:"";position:absolute;top:0;bottom:0;left:30px;width:2px;background:var(--clay);opacity:.6}.notepad ol{margin:0;padding-left:18px}.notepad .np-title{font-weight:800;letter-spacing:.06em;font-size:12px}.tag{display:inline-block;font-size:11px;padding:2px 8px;border-radius:6px;border:1px solid var(--green);color:var(--green);margin-left:6px}.tag.old{border-color:var(--amber);color:var(--amber)}.tag.test{border-color:var(--blue);color:var(--blue)}code{background:#2c2d26;padding:1px 5px;border-radius:4px;font-size:12px}a{color:var(--clay)}td a{color:var(--clay);font-weight:700}.btn{border-radius:999px;padding:11px 18px;font-weight:700;font-size:13px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;text-decoration:none;display:inline-block}.btn.dark{background:var(--clay);color:#171814;border-color:var(--clay)}.cta{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}.small{font-size:12px;color:var(--muted)}.med{color:var(--green)}.est{color:var(--amber)}.glink{color:inherit;text-decoration:underline dotted;text-decoration-color:var(--clay);text-underline-offset:3px;cursor:pointer}@media(max-width:860px){.g3,.g4,.g2{grid-template-columns:1fr}h1{font-size:30px}}</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+<div class="bar">
+<div class="brand">STUDIO OS × EMILIA<small>Reporte Estudio OS v2 · vigente 16/10 · modo oscuro</small></div>
+<div class="cta" style="margin:0"><a class="btn" href="dashboard-mes1-emilia.html">← Mes 1</a></div>
+</div>
+<nav class="tabs" role="tablist">
+<button class="active" data-t="sist">1 · Sistema</button>
+<button data-t="flujos">2 · Flujos</button>
+<button data-t="ahorro">3 · Ahorro</button>
+<button data-t="demos">4 · Demos + pedidos</button>
+<button data-t="docs">5 · Documentos</button>
+</nav>
+</div></header>
+<main class="wrap">
+
+<!-- TAB 1 SISTEMA -->
+<section class="tab active" id="sist">
+<div class="hero">
+<div class="eyebrow">Reporte vigente 16/10 — reemplaza v1</div>
+<h1>Lo que corre solo <em>con n8n.</em></h1>
+<p class="lead">Bot privado <code>@emiliaospi_bot</code> conectado a Fathom, Cal.com y Drive <code>OS-Emilia</code>. Cada mañana a las 07:00 trabaja solo; durante el día responde a pedido por voz o texto. Verificado workflow por workflow vía MCP el 16/10. Eficiencia = resultados / recursos.</p>
+</div>
+<div class="grid g4">
+<div class="card"><div class="k">Workflows en carpeta</div><div class="bignum" data-count="6"><small> vigentes</small></div><p>Fathom Core + Router + Voz + Agenda Sub + SET_01 + Limpiar</p></div>
+<div class="card"><div class="k">Cron diario</div><div class="bignum">07:00<small> AR</small></div><p>Ventana 26h · 26 execs success · corre dormido</p></div>
+<div class="card"><div class="k">Ahorro medido</div><div class="bignum" data-count="13.5"><small> h/mes</small></div><p>≥ meta 12h · ficha amplia ~17h</p></div>
+<div class="card"><div class="k">Réplica total</div><div class="bignum" data-count="128"><small> USD</small></div><p>39/mes operativo · 180 valor/mes · payback 0.7 mes</p></div>
+</div>
+<div class="grid g3" style="margin-top:14px">
+<div class="card" style="border-top:6px solid var(--green)"><div class="k">Vigente</div><h3>Agente de voz y texto</h3><p>Cancel, Modif y /agendar por comandos culminaron su ciclo — el agente los integra: se le habla normal y agenda, mueve y cancela en Cal.com + Google Calendar.</p></div>
+<div class="card" style="border-top:6px solid var(--blue)"><div class="k">Vigente</div><h3>/sync continúa</h3><p>Fathom archiva solo cada 07:00; con <code>/sync</code> se trae lo nuevo en el momento, sin esperar.</p></div>
+<div class="card" style="border-top:6px solid var(--clay)"><div class="k">En reunión</div><h3>Cuenta Cal.com de Emilia</h3><p>Conectar su cuenta (evento 60 min con Meet) para agendar sobre su calendario real. La demo corre sobre la cuenta Sol.</p></div>
+</div>
+<div class="card" style="margin-top:14px">
+<div class="k">El sistema en 30 segundos</div>
+<div class="flowline">
+<div class="fnode"><b>Telegram</b><p>vos escribís o hablás, con PC apagada</p></div><div class="farr">→</div>
+<div class="fnode"><b>n8n decide</b><p>identidad → voz / link / comando</p></div><div class="farr">→</div>
+<div class="fnode"><b>Fathom + Cal.com + Drive</b><p>archiva, agenda, confirma</p></div><div class="farr">→</div>
+<div class="fnode"><b>07:00 solo</b><p>trae lo nuevo del día anterior</p></div>
+</div>
+</div>
+<div class="card" style="margin-top:14px">
+<div class="k">Mapa de workflows — medido, no estimado</div>
+<table><tr><th>Workflow</th><th>ID · nodos</th><th>Estado 16/10</th></tr>
+<tr><td><b>Fathom Core</b> — .md a Drive + Doc</td><td><code>UeDkqVZSeLnae5cF</code> · 13n</td><td class="med">activo · cron 07:00 + /sync</td></tr>
+<tr><td><b>Telegram Router</b> — identidad + fuentes</td><td><code>YWpuV5p0vCDTbIHz</code> · 17n</td><td class="med">activo · solo Fathom + Help</td></tr>
+<tr><td><b>Agent Voz TEST</b> — camino principal</td><td><code>Gpd6NHB4HQdU7ary</code> · 26n</td><td class="med">activo TEST · perfil Sol</td></tr>
+<tr><td><b>Agenda Sub TEST</b> — ejecutor Cal.com</td><td><code>ygdjqRfXpxKMFWEN</code> · 12n</td><td class="med">activo TEST · 6 tools + Calendar</td></tr>
+<tr><td><b>SET_01 planilla</b> — cuadro CAD → Sheet</td><td><code>VIQmMEZ9tkDBfKjd</code> · 12n</td><td class="med">activo · webhook</td></tr>
+<tr><td><b>Limpiar Memoria</b> — mantenimiento</td><td><code>uOonS1LWzowvwyns</code> · 6n</td><td>inactivo · manual</td></tr>
+</table>
+<p class="small">Antecedentes que ya no existen (referencia histórica): Agenda <code>UTkII2kd3RHDlizo</code> · Cancel <code>B7gGFGcD89vKfc5k</code> · Modif <code>c08s62Lo9EmAEJJf</code> · Fathom Cron · Format Doc. Data Table <code>Bot State</code> creada, conexión fase 2.</p>
+</div>
+</section>
+
+<!-- TAB 2 FLUJOS -->
+<section class="tab" id="flujos">
+<div class="hero">
+<div class="eyebrow">Cada workflow, parte por parte</div>
+<h1>Cinco flujos <em>y un ayudante.</em></h1>
+<p class="lead">Detalle nodo por nodo en <a class="glink" data-goto="docs">documentos</a>. Acá lo esencial de cada uno y cómo contribuye.</p>
+</div>
+<div class="grid g2">
+<div class="card"><div class="k">Fathom Core · 13 nodos</div><h3>Reuniones solas al Drive</h3><p>Fetch 26h → Split → Build (nombre <code>fecha_slug_recordingid.md</code>) → Classify por lados (emilia/proyectopi/externo) → Save .md + Create Doc + Move + Apply formato. Carpetas <code>Reuniones-Internas/Clientes</code>. Import al vault idempotente.</p></div>
+<div class="card"><div class="k">Router · 17 nodos</div><h3>Una puerta, tres destinos</h3><p>Sol <code>8459099332</code> → agente Voz. Grupo Fuentes <code>-5417177870</code> → link → Jina → parseo → Sheet <code>Fuentes-Inbox</code> → "Anotado ✓". Resto → <code>/sync</code> + <code>/help</code>. 1 trigger por token.</p></div>
+<div class="card"><div class="k">Agent Voz · 26 nodos</div><h3>Hablar en vez de tipear comandos</h3><p>Voz (Gemini STT) o texto → lote Redis 12s → Agent OpenRouter + memoria Postgres + tools (Agenda, Fathom, contactos Sheet). Cita lo entendido, pide Confirmar, responde con Ref.</p></div>
+<div class="card"><div class="k">Agenda Sub · 12 nodos</div><h3>Manos sobre Cal.com</h3><p>Agente ejecutor + 6 tools (disponibilidad, listar, agendar online/presencial, actualizar, cancelar) + Google Calendar. Evento <code>7467793</code>, Lun–Vie 9–17. Exige ficha con email. Regla de oro: nunca desde Google.</p></div>
+</div>
+<div class="card" style="margin-top:14px"><div class="k">SET_01 · 12 nodos · webhook</div><h3>Del plano a la planilla sin re-tipear</h3><p><code>POST /set01-carpinterias</code> → busca/crea <code>SET_01-REP-carpinterias</code> → matriz 8 columnas → escribe rango → mueve a <code>W03-CAD</code>. Re-posteable. Ver <a href="dashboard-autocad.html">dashboard AutoCAD</a>.</p></div>
+</section>
+
+<!-- TAB 3 AHORRO -->
+<section class="tab" id="ahorro">
+<div class="hero">
+<div class="eyebrow">Minutos que libera cada flujo</div>
+<h1>Cada workflow <em>ahorra X.</em></h1>
+<p class="lead">Método: <code>(t_manual − t_auto) × N</code>, N contado en Sheet/ejecuciones. Total cierre <b>~13.5h/mes ≥ meta 12h</b>.</p>
+</div>
+<div class="card">
+<div class="k">Fathom sync ×11/mes · 45 min c/u → ~8h/mes</div>
+<div class="bar"><div class="fill g" data-w="100%" style="width:100%"></div></div>
+<div class="k" style="margin-top:10px">Inbox fuentes 25 links/sem · ~10 min c/u → ~8h/mes + imposible sin sistema</div>
+<div class="bar"><div class="fill g" data-w="100%" style="width:100%"></div></div>
+<div class="k" style="margin-top:10px">Agente voz/agenda ×8/mes · 14 min c/u → ~2h/mes</div>
+<div class="bar"><div class="fill b" data-w="25%" style="width:25%"></div></div>
+<div class="k" style="margin-top:10px">Voz/notas 5 por semana · 8 min c/u → ~3h/mes</div>
+<div class="bar"><div class="fill b" data-w="35%" style="width:35%"></div></div>
+<div class="k" style="margin-top:10px">Croquis Comfy (a validar M2) · 60 → 1 min = 60X</div>
+<div class="bar"><div class="fill a" data-w="60%" style="width:60%"></div></div>
+</div>
+<div class="card" style="margin-top:14px">
+<div class="k">Horas trabajadas vs liberadas · 16h teóricas</div>
+<table><tr><th>Concepto</th><th>Horas</th><th>Detalle</th></tr>
+<tr><td>Build n8n del mes</td><td class="med"><b>11.25hs</b> = 27 pomodoros</td><td>Router 3 + Agenda 6 + Cancel/Modif 4 + Fathom 8 + voz 6 · ≈ <b>14% del mes</b> en Estudio OS</td></tr>
+<tr><td>Ventana teórica</td><td><b>16hs</b> semana cierre</td><td>Mes total 81hs = 65 + 16 cierre · el build cabe con margen</td></tr>
+<tr><td>Ahorro recurrente</td><td class="med"><b>~13.5h/mes</b> (hasta ~17h)</td><td>Cada mes devuelve lo construido · capacidad 0.22 · ROI 0.17 · payback mes 7</td></tr>
+<tr class="total"><td>Calculadora réplica</td><td>USD 128 + 39/mes</td><td>Valor 180/mes · payback 0.7 mes · <code>scripts/calculadora-costo-flujo-n8n.py</code></td></tr>
+</table>
+<p class="small" style="margin-top:10px"><b style="color:var(--clay)">Cómo sale el número:</b> 27 pomodoros de 25 min (Router 3 + Agenda 6 + Cancel/Modif 4 + Fathom 8 + voz/memoria 6) = 11.25hs de build × ~11.4 USD/hora = <b>USD 128</b> por única vez. Operativo <b>39/mes</b> = tokens por ejecución (0.36) + VPS + 2hs de mantenimiento. Valor <b>180/mes</b> = las ~13.5hs liberadas valorizadas a hora estudio. Payback: 128 ÷ 180 ≈ <b>0.7 mes</b> — desde el primer mes devuelve lo invertido.</p>
+</div>
+<div class="card" style="margin-top:14px">
+<div class="k">Si se vendiera cada flujo — cotización mercado + ahorro</div>
+<table><tr><th>Flujo vendible</th><th>USD (ref)</th><th>Ahorro/mes</th></tr>
+<tr><td>Fathom → Drive + Doc</td><td class="med"><b>60</b></td><td class="med">~8h</td></tr>
+<tr><td>Agente agenda voz/texto + Cal.com</td><td class="med"><b>50</b></td><td class="med">~2h + revisión conversacional</td></tr>
+<tr><td>Inbox fuentes + digest</td><td class="med"><b>40</b></td><td class="med">~8h + capacidad nueva</td></tr>
+<tr class="total"><td>Pack partnership</td><td>150 incluidos</td><td>~13.5h/mes medidos</td></tr>
+</table>
+<p class="small">Prorrateo réplica (128/11.25h ≈ 11.4 USD/h): Fathom ≈ 38 · Voz ≈ 28 · Agenda ≈ 28 · Cancel/Modif ≈ 19 · Router ≈ 14. Cada doc de workflow repite su cotización para cotizar por módulo en Mes 2.</p>
+</div>
+</section>
+
+<!-- TAB 4 DEMOS -->
+<section class="tab" id="demos">
+<div class="hero">
+<div class="eyebrow">Guion de la reunión · 15 min</div>
+<h1>Ella opera, <em>nosotros miramos.</em></h1>
+</div>
+<div class="notepad"><div class="np-title">DEMOS EN VIVO</div>
+<ol>
+<li><b>Agendar hablando (Sol demuestra):</b> voz o texto para la próxima semana — el agente resuelve contacto, pide email si falta, confirma con Ref y crea el booking + invitación.</li>
+<li><b>Link al grupo → memoria:</b> un link de YouTube o Instagram al grupo Fuentes → fila nueva en <code>Fuentes-Inbox</code> + "Anotado ✓".</li>
+<li><b>/sync a pedido:</b> trae las reuniones nuevas de Fathom al Drive + Google Doc.</li>
+<li><b>Drive:</b> abrir <code>Reuniones-Clientes</code>, un Doc formateado y <code>clientes-contactos</code>.</li>
+</ol>
+</div>
+<div class="card" style="margin-top:14px">
+<div class="k">Qué pide a Emilia — checklist reunión</div>
+<table><tr><th>#</th><th>Pedido</th><th>Para qué</th><th>Estado</th></tr>
+<tr><td>1</td><td>Su <b>chat_id</b>: agregarla al grupo + 1 link + <code>/start</code></td><td>Leer chat_id → pegar <code>FUENTES_CHAT_ID</code> + cerrar Router</td><td class="est">en reunión · 15 min</td></tr>
+<tr><td>2</td><td><b>Cuenta Cal.com suya</b> + evento 60 min Meet</td><td>Agendar sobre su calendario real (hoy demo en cuenta Sol)</td><td class="est">en reunión</td></tr>
+<tr><td>3</td><td>Hoja <b>clientes-contactos</b> al día</td><td>Agendar solo con el nombre, sin dictar email</td><td class="est">ella la alimenta</td></tr>
+<tr><td>4</td><td><b>Libros en Aleph</b> → carpeta Drive</td><td>Confirmar destino en <code>OS-Emilia/</code> y formato para el inbox</td><td class="est">a precisar</td></tr>
+<tr><td>5</td><td>Mover Sheet a <code>OS-Emilia/</code> + compartirle</td><td>Sheet <code>18iDrvNUOApNFsEDDQ4rMMo40cw4t0hn3CApLK9iLpvI</code> verificado 14/10</td><td class="est">post-reunión</td></tr>
+</table>
+</div>
+</section>
+
+<!-- TAB 5 DOCS -->
+<section class="tab" id="docs">
+<div class="hero">
+<div class="eyebrow">Un documento por workflow</div>
+<h1>Cada flujo <em>tiene su papel.</em></h1>
+<p class="lead">Cada doc explica sus partes, cómo contribuye, cuánto ahorra y cuánto cotiza.</p>
+</div>
+<div class="card">
+<table><tr><th>Doc</th><th>Workflow</th><th>Contenido + cotización</th></tr>
+<tr><td><a href="../documentacion/arquitectura-n8n-os-emilia.md">arquitectura-n8n-os-emilia.md v2.0</a></td><td>Todos (referencia madre)</td><td>Nodo por nodo, credenciales, caveats, cómo probar. <b>Fathom 60 · Agenda 50 USD.</b></td></tr>
+<tr><td><a href="../documentacion/resumen-flujo-fathom.md">resumen-flujo-fathom.md</a></td><td>Fathom <code>UeDkqVZSeLnae5cF</code></td><td>Cadena, ahorro 15 min/reunión → 5h/mes. <b>60 USD.</b></td></tr>
+<tr><td><a href="../documentacion/resumen-flujo-router.md">resumen-flujo-router.md</a></td><td>Router <code>YWpuV5p0vCDTbIHz</code> 17n</td><td>Identidad → fuentes → /sync · /help. 8h/mes. <b>40 USD.</b></td></tr>
+<tr><td><a href="../documentacion/resumen-flujo-voz.md">resumen-flujo-voz.md</a></td><td>Voz <code>Gpd6NHB4HQdU7ary</code> 26n</td><td>STT→lote→Agent→tools. <b>50 USD / 2h/mes.</b></td></tr>
+<tr><td><a href="../documentacion/resumen-flujo-agenda-sub.md">resumen-flujo-agenda-sub.md</a></td><td>Agenda Sub <code>ygdjqRfXpxKMFWEN</code> 12n</td><td>Ejecutor Cal.com, evento <code>7467793</code>. <b>Incluido en agente.</b></td></tr>
+<tr><td><a href="../documentacion/resumen-flujo-set01.md">resumen-flujo-set01.md</a></td><td>SET_01 <code>VIQmMEZ9tkDBfKjd</code> 12n</td><td>Webhook CAD→planilla viva. <b>Con SET_01 CAD.</b></td></tr>
+<tr><td><a href="../documentacion/playbook-os-emilia-n8n.md">playbook-os-emilia-n8n.md v2.0</a></td><td>Guía Emilia, sin tecnicismos</td><td>Lenguaje natural + <code>/sync</code> + <code>/help</code> + grupo Fuentes + FAQ.</td></tr>
+<tr><td><a href="../../MVP_06-agente-voz/01-spec-mvp_06.md">MVP_06 spec canónico</a></td><td>Voz + Agenda (diseño)</td><td>SPEC + ADRs + costos + plan. <b>50 USD.</b></td></tr>
+<tr><td><a href="dashboard-autocad.html">dashboard-autocad</a> + <a href="dashboard-comfy.html">dashboard-comfy</a></td><td>SET_01 · Comfy 52 renders</td><td>Cuadro en 1 min · croquis 60X a validar.</td></tr>
+</table>
+</div>
+<p class="small" style="margin-top:14px">Refs oficiales: <a href="https://docs.n8n.io/">docs.n8n.io</a> · <a href="https://developer.cal.com/api/v2/bookings">developer.cal.com — Bookings</a> · <a href="https://developers.fathom.ai/">developers.fathom.ai</a> · <a href="https://core.telegram.org/bots/api">core.telegram.org/bots/api</a>. Generado 16/10 para cierre Mes 1. Estilo tomado de la propuesta comercial, en modo oscuro.</p>
+</section>
+
+</main>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('nav.tabs button').forEach(function(b) {
+    b.addEventListener('click', function() {
+      document.querySelectorAll('nav.tabs button').forEach(function(x) { x.classList.remove('active'); });
+      document.querySelectorAll('.tab').forEach(function(x) { x.classList.remove('active'); });
+      b.classList.add('active');
+      var s = document.getElementById(b.dataset.t);
+      if (s) { s.classList.add('active'); }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      document.querySelectorAll('.fill').forEach(function(f) {
+        f.style.width = '0';
+        setTimeout(function() { f.style.width = f.dataset.w; }, 150);
+      });
+    });
+  });
+  var io = new IntersectionObserver(function(es) {
+    es.forEach(function(e) {
+      if (e.isIntersecting) {
+        var el = e.target;
+        var end = parseFloat(el.dataset.count);
+        var t0 = performance.now();
+        var small = el.querySelector('small').outerHTML;
+        var step = function(t) {
+          var p = Math.min(1, (t - t0) / 900);
+          el.innerHTML = (Math.round(end * p * 10) / 10) + small;
+          if (p < 1) { requestAnimationFrame(step); }
+        };
+        requestAnimationFrame(step);
+        io.unobserve(el);
+      }
+    });
+  }, { threshold: 0.4 });
+  document.querySelectorAll('[data-goto]').forEach(function(a) {
+    a.addEventListener('click', function(ev) {
+      ev.preventDefault();
+      document.querySelectorAll('nav.tabs button').forEach(function(x) { x.classList.remove('active'); });
+      document.querySelectorAll('.tab').forEach(function(x) { x.classList.remove('active'); });
+      var t = document.getElementById(a.dataset.goto);
+      var nb = document.querySelector('nav.tabs button[data-t="' + a.dataset.goto + '"]');
+      if (t) { t.classList.add('active'); }
+      if (nb) { nb.classList.add('active'); }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+  document.querySelectorAll('.bignum[data-count]').forEach(function(el) { io.observe(el); });
+  setTimeout(function() {
+    document.querySelectorAll('.fill').forEach(function(f) { f.style.width = f.dataset.w; });
+  }, 400);
+});
+</script>
+</body>
+</html>

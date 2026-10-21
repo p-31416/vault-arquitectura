@@ -1,0 +1,173 @@
+{
+  "1": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "flux-2-klein-9b-fp8.safetensors",
+      "weight_dtype": "default"
+    }
+  },
+  "2": {
+    "class_type": "LoraLoaderModelOnly",
+    "inputs": {
+      "model": ["1", 0],
+      "lora_name": "rhino-to-image-lora.basic.safetensors",
+      "strength_model": 0.8
+    }
+  },
+  "3": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "clip_name": "qwen_3_8b_fp8mixed.safetensors",
+      "type": "flux2",
+      "device": "default"
+    }
+  },
+  "4": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "full_encoder_small_decoder.safetensors"
+    }
+  },
+  "5": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "geo_shaded.png",
+      "upload": "image"
+    }
+  },
+  "6": {
+    "class_type": "ImageScaleToTotalPixels",
+    "inputs": {
+      "image": ["5", 0],
+      "upscale_method": "lanczos",
+      "megapixels": 1.0,
+      "resolution_steps": 1
+    }
+  },
+  "7": {
+    "class_type": "VAEEncode",
+    "inputs": {
+      "pixels": ["6", 0],
+      "vae": ["4", 0]
+    }
+  },
+  "8": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "material.jpg",
+      "upload": "image"
+    }
+  },
+  "9": {
+    "class_type": "ImageScaleToTotalPixels",
+    "inputs": {
+      "image": ["8", 0],
+      "upscale_method": "lanczos",
+      "megapixels": 0.5,
+      "resolution_steps": 1
+    }
+  },
+  "10": {
+    "class_type": "VAEEncode",
+    "inputs": {
+      "pixels": ["9", 0],
+      "vae": ["4", 0]
+    }
+  },
+  "11": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "{\"subject\": \"volumetric study of a brick hyperbolic paraboloid pavilion\", \"material\": \"handmade brick, rough mortar joints\", \"lighting\": \"late afternoon sun, hard shadows, warm bounce light\", \"view\": \"three quarter exterior, eye level, 24mm\", \"style\": \"architectural photography, raw photo, high detail\"}",
+      "clip": ["3", 0]
+    }
+  },
+  "12": {
+    "class_type": "ReferenceLatent",
+    "inputs": {
+      "conditioning": ["11", 0],
+      "latent": ["7", 0]
+    }
+  },
+  "13": {
+    "class_type": "ReferenceLatent",
+    "inputs": {
+      "conditioning": ["12", 0],
+      "latent": ["10", 0]
+    }
+  },
+  "14": {
+    "class_type": "FluxKontextMultiReferenceLatentMethod",
+    "inputs": {
+      "conditioning": ["13", 0],
+      "reference_latents_method": "index"
+    }
+  },
+  "15": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "",
+      "clip": ["3", 0]
+    }
+  },
+  "16": {
+    "class_type": "CFGGuider",
+    "inputs": {
+      "model": ["2", 0],
+      "positive": ["14", 0],
+      "negative": ["15", 0],
+      "cfg": 1.0
+    }
+  },
+  "17": {
+    "class_type": "EmptyFlux2LatentImage",
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "batch_size": 1
+    }
+  },
+  "18": {
+    "class_type": "Flux2Scheduler",
+    "inputs": {
+      "steps": 4,
+      "width": 1024,
+      "height": 1024
+    }
+  },
+  "19": {
+    "class_type": "KSamplerSelect",
+    "inputs": {
+      "sampler_name": "euler"
+    }
+  },
+  "20": {
+    "class_type": "RandomNoise",
+    "inputs": {
+      "noise_seed": 42
+    }
+  },
+  "21": {
+    "class_type": "SamplerCustomAdvanced",
+    "inputs": {
+      "noise": ["20", 0],
+      "guider": ["16", 0],
+      "sampler": ["19", 0],
+      "sigmas": ["18", 0],
+      "latent_image": ["17", 0]
+    }
+  },
+  "22": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": ["21", 0],
+      "vae": ["4", 0]
+    }
+  },
+  "23": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "images": ["22", 0],
+      "filename_prefix": "n_05-A-01"
+    }
+  }
+}

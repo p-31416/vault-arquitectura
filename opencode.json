@@ -1,12 +1,5 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "provider": {
-    "opencode": {
-      "options": {
-        "apiKey": "{env:OPENCODE_API_KEY}"
-      }
-    }
-  },
   "mcp": {
     "comfyui": {
       "type": "local",
@@ -58,6 +51,12 @@
       "environment": { "ACAD_MCP_OUTPUT_ROOT": "P:/00-repos/proyecto-pi/vault-arquitectura/activos/caddy-salidas" },
       "enabled": true,
       "timeout": 20000
+    },
+    "rhino": {
+      "type": "local",
+      "command": ["C:/Users/Solch16/AppData/Local/Programs/Python/Python312/Scripts/uvx.exe", "--with", "mcp<2", "reer-rhino-mcp"],
+      "enabled": true,
+      "timeout": 60000
     }
   }
 }

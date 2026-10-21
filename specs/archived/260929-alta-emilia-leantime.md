@@ -15,7 +15,7 @@ estado: plan
 
 - Puente MCP local ok: `P:/00-repos/npm-global/node_modules/leantime-mcp/bin/leantime-mcp.js` presente, `LEANTIME_TOKEN` en env (68 chars, valor nunca impreso), config en `opencode.json:33-36` hacia `https://pitau.tech/mcp`.
 - Payload existente fuera de git: `P:\00-repos\pitau-tech\user-emilia.json` con `arq.emiliapimentalombardi@gmail.com` / Emilia Pimental Lombardi / `member`.
-- Servicio remoto en revisión: `GET https://pitau.tech/` → 404 Laravel, `POST https://pitau.tech/mcp` con JSON válido → `{"error":"Not found"}`. `https://n8n.pitau.tech/` → 200, el VPS vive. Ver plan vigente en [[specs/260924-plan-os-emilia-n8n|Plan OS-Emilia n8n]] y criterio PM en [[wiki/glosario/interno/pbooks/pbk-pm_vault|pbk-pm_vault]].
+- Servicio remoto en revisión: `GET https://pitau.tech/` → 404 Laravel, `POST https://pitau.tech/mcp` con JSON válido → `{"error":"Not found"}`. `https://n8n.pitau.tech/` → 200, el VPS vive. Ver plan vigente en [[260924-plan-os-emilia-n8n|Plan OS-Emilia n8n]] y criterio PM en [[wiki/glosario/interno/pbooks/pbk-pm_vault|pbk-pm_vault]].
 - Decisión de acceso: rol `Read-Only` a nivel compañía, asignada solo a `STUDIO_OS-Emilia` con `inherit`. Si aporta comentarios, subir a `Commenter` solo en ese proyecto.
 
 ## 2. Pre-requisitos (2 min)

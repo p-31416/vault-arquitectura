@@ -1,8 +1,8 @@
 ---
 tipo: software
 fecha_creacion: 2026-10-05
-ultima_actualizacion: 2026-10-05
-tags: [leantime, pm, agile, kanban, sprints, okrs, mcp, vps, easypanel, estudio, emilia]
+ultima_actualizacion: 2026-10-20
+tags: [leantime, pm, agile, kanban, sprints, okrs, mcp, jsonrpc, api, vps, easypanel, estudio, emilia]
 idioma: es
 ---
 
@@ -18,9 +18,9 @@ Instancia del estudio: `https://pitautech-leantime.3nq4ow.easypanel.host` — Ea
 - [[#MCP Server — conexión desde OpenCode]]
 - [[#Credenciales]]
 - [[#Diagnóstico 2026-10-05 — MCP leantime caído y reparado]]
+- [[#Horas — time tracking]]
 - [[#Conceptos relacionados]]
 - [[#Referencias]]
-
 ## Instalación y arquitectura
 
 - **Servidor**: Leantime 3.10.3+ self-hosted en EasyPanel (VPS), plugin **MCP Server** habilitado, ruta `/mcp` expuesta.
@@ -47,6 +47,39 @@ Notas operativas:
 
 - La credencial viaja en **header**, nunca en la línea de comando → deja de quedar expuesta en `opencode mcp list` y en la lista de procesos.
 - El token en `.env` local; en la config solo `{env:LEANTIME_TOKEN}`.
+
+### El MCP `/mcp` expone 0 tools — la vía real es la API JSON-RPC
+
+Verificado el 2026-10-19: `POST /mcp` responde `initialize` (200, `serverInfo: "Laravel MCP" 1.0.0`) pero `tools/list` devuelve `{"tools":[]}` — **el plugin MCP Server no publica ninguna tool**, aunque el endpoint "funcione" y `opencode mcp list` lo muestre como conectado. Por eso el MCP no sirve para cargar tasks.
+
+La API que sí funciona es **`POST /api/jsonrpc`** con el mismo header `x-api-key`, y los métodos son `leantime.rpc.<Servicio>.<Clase>.<metodo>` (los del *service*, no los del repositorio):
+
+| Necesidad | Método | Notas |
+|---|---|---|
+| Leer | `Tickets.getAll`, `Tickets.getAllMilestones` (`searchCriteria.currentProject`), `Tickets.getStatusLabels`, `Tickets.getAllSubtasks` (`ticketId`) | `getAll` devuelve `type` real (`task`/`subtask`/`milestone`) |
+| Crear card | `Tickets.addTicket` con `values.headline/type/projectId/milestoneid/sprint/status/priority/planHours/dateToFinish/editorId/collaborators/acceptanceCriteria` | `type: 'task'` = card, `type: 'subtask'` + `dependingTicketId` = subtask. `upsertSubtask` **no** funciona por RPC (`parentTicket` llega como array) |
+| Crear milestone | `Tickets.quickAddMilestone` con `params.{headline,projectId,dateToFinish,description}` | Se crea con `sprint = 0`; linkear después con `updateTicket` |
+| Editar | `Tickets.updateTicket` con **`values.id`** (no `params.id`) | Si falta `id` → `Undefined array key "id"`. `type` y `projectId` **siempre** (sin `type` degrada el milestone a task) |
+| Borrar | `Tickets.delete` con `id` | Sí funciona (limpia probes) |
+| Proyecto | `Projects.addProject` con `values.{name,details,clientId,type,assignedUsers[{id,projectRole}]}` | `projectRole: ''` no crea relación: usar `Projects.editUserProjectRelations` con `id` + lista completa de `projects` (**reemplaza**, no suma) |
+| Sprint | `Sprints.addSprint` con `params.{name,projectId,startDate,endDate}` · `Sprints.editSprint` con `params.id` | No hay método de borrado expuesto: un sprint de prueba se repara con `editSprint` |
+| Miembros | `Projects.getUsersAssignedToProject` (`projectId`) · `Projects.getProjectsAssignedToUser` (`userId`) · `Projects.isUserMemberOfProject` | `Projects.addUserToProject` **no** está expuesto por RPC |
+| **Horas (timesheets)** | `Timesheets.logTime(ticketId, params)` con `params.{dateString,hours,kind,description}` · `Timesheets.getAll(dateFrom,dateTo)` · `Timesheets.deleteTime(id)` · `Timesheets.upsertTime(ticketId,params)` · `Timesheets.getBookedHourTypes()` | `ticketId` = la tarjeta contra la que se imputa. `kind` **obligatorio** (`GENERAL`, `GENERAL_BILLABLE`, `GENERAL_NOT_BILLABLE`, `PROJECTMANAGEMENT`, `DEVELOPMENT`, `BUGFIXING_NOT_BILLABLE`, `TESTING`). Ver "Horas —.time tracking." abajo |
+
+Límites prácticos: la API tira **429 "Too many requests per minute"** → esperar 20 s y reintentar (el script `scripts/leantime_rpc.py` ya lo hace, con 1,6 s entre llamadas). Los **Goals no están expuestos** por la API: se crean a mano en la UI.
+
+Cliente en el vault: `scripts/leantime_rpc.py` (+ `_notas.md`) y `scripts/carga_leantime_planes_261019.py` (carga de los 2 planes del 19/10).
+
+## Horas — time tracking
+
+Las horas trabajadas se imputan **contra una tarjeta** (o milestone), con fecha, cantidad, tipo y descripción. El método es `Timesheets.logTime(ticketId, params)`, del servicio `Timesheets` (`app/Domain/Timesheets/Services/Timesheets.php`).
+
+Dos trampas medidas el 2026-10-20:
+
+1. **La fecha se desplaza 7 h por RPC.** La instancia corre en UTC+7 y la UI manda hora local; el RPC no. Para que una entrada se lea a las `19:00:00` (la convención del estudio, fin de jornada) hay que mandar `dateString` con `12:00:00`. Mandar `19:00:00` deja la entrada **un día después**.
+2. **`logTime` suma, no crea.** Si ya hay una entrada para ese mismo ticket+fecha+tipo, **incrementa las horas** de la fila existente y concatena las descripciones (separador `--`). 2 entradas de 1 h del mismo ticket el mismo día quedan como 1 fila de 2 h.
+
+Cliente en el vault: `scripts/leantime_registrar_horas.py` (+ `_notas.md`) — trae `--dry`, `--verificar` y `--borrar` para el rollback.
 
 ## Credenciales
 

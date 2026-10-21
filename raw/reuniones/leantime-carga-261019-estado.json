@@ -1,0 +1,413 @@
+{
+  "fecha": "2026-10-19",
+  "via": "Leantime JSON-RPC (POST /api/jsonrpc, x-api-key) — el MCP /mcp expone 0 tools",
+  "proyectos": {
+    "4": {
+      "nombre": "O.S_ARQ-Emi",
+      "sprint": 27,
+      "sprint_nombre": "S1 Agentes + agenda Emilia (19/10-23/10)",
+      "milestones": {
+        "464": "M-A4 Modelos Comfy + agente semanal (23/10)",
+        "463": "M-A3 Metodo de catalogacion + biblioteca (22/10)",
+        "462": "M-A2 Agenda de Emilia viva (21/10)",
+        "461": "M-A1 Curso entregado + chat compartido (20/10)"
+      },
+      "cards": 20,
+      "subtasks": 52,
+      "planHours": 45.52
+    },
+    "6": {
+      "nombre": "Proyecto Pi - Concurso Gaudi Nexus",
+      "sprint": 28,
+      "sprint_nombre": "S1 Bases + primer flujo (19/10-23/10)",
+      "milestones": {
+        "542": "M-B6 Entrega del concurso (16/12/2026)",
+        "541": "M-B5 Nota de honorarios por propiedad intelectual (23/10)",
+        "540": "M-B4 Entrega protegida documentada (23/10)",
+        "539": "M-B3 Flujo Rhino + ComfyUI con estilo propio (22/10)",
+        "538": "M-B2 Bases -> checklist de entregables (20/10)",
+        "537": "M-B1 Inscripcion pagada y registrada (19/10)"
+      },
+      "cards": 13,
+      "subtasks": 33,
+      "planHours": 29.59
+    }
+  },
+  "miembros": {
+    "proyecto_6": [
+      "arq.emiliapimentalombardi@gmail.com",
+      "pitau.tech@gmail.com"
+    ]
+  },
+  "cards": {
+    "585": {
+      "headline": "Jornada de trabajo del concurso los domingos",
+      "projectId": 6,
+      "milestone": 539,
+      "sprint": 28,
+      "planHours": 1.68,
+      "status": 3,
+      "editorId": "1",
+      "dateToFinish": "2026-10-22 19:00:00",
+      "subtasks": 3
+    },
+    "582": {
+      "headline": "Repasar las bases y fijar la lista de entregables",
+      "projectId": 6,
+      "milestone": 538,
+      "sprint": 28,
+      "planHours": 0.84,
+      "status": 3,
+      "editorId": "1",
+      "dateToFinish": "2026-10-20 19:00:00",
+      "subtasks": 2
+    },
+    "579": {
+      "headline": "Definir los 2 problemas que la propuesta debe resolver",
+      "projectId": 6,
+      "milestone": 538,
+      "sprint": 28,
+      "planHours": 0.84,
+      "status": 3,
+      "editorId": "1",
+      "dateToFinish": "2026-10-20 19:00:00",
+      "subtasks": 2
+    },
+    "576": {
+      "headline": "Dejar el flujo documentado para el que venga despues",
+      "projectId": 6,
+      "milestone": 539,
+      "sprint": 28,
+      "planHours": 0.84,
+      "status": 3,
+      "editorId": "1",
+      "dateToFinish": "2026-10-22 19:00:00",
+      "subtasks": 2
+    },
+    "571": {
+      "headline": "Flujo Rhino + ComfyUI con estilo propio",
+      "projectId": 6,
+      "milestone": 539,
+      "sprint": 28,
+      "planHours": 1.68,
+      "status": 3,
+      "editorId": "1",
+      "dateToFinish": "2026-10-22 19:00:00",
+      "subtasks": 4
+    },
+    "565": {
+      "headline": "Nota de honorarios por PI + tokenizacion de disenos",
+      "projectId": 6,
+      "milestone": 541,
+      "sprint": 28,
+      "planHours": 2.1,
+      "status": 3,
+      "editorId": "1",
+      "dateToFinish": "2026-10-23 19:00:00",
+      "subtasks": 5
+    },
+    "560": {
+      "headline": "Procedimiento de entrega protegida (PDF -> imagen)",
+      "projectId": 6,
+      "milestone": 540,
+      "sprint": 28,
+      "planHours": 1.68,
+      "status": 3,
+      "editorId": "1",
+      "dateToFinish": "2026-10-23 19:00:00",
+      "subtasks": 4
+    },
+    "557": {
+      "headline": "Traducir las bases a una lista de tareas para Emilia",
+      "projectId": 6,
+      "milestone": 538,
+      "sprint": 28,
+      "planHours": 0.84,
+      "status": 3,
+      "editorId": "1",
+      "dateToFinish": "2026-10-20 19:00:00",
+      "subtasks": 2
+    },
+    "554": {
+      "headline": "Pagar la inscripcion y pasar links de la convocatoria",
+      "projectId": 6,
+      "milestone": 537,
+      "sprint": 28,
+      "planHours": 0.84,
+      "status": 3,
+      "editorId": "1",
+      "dateToFinish": "2026-10-19 19:00:00",
+      "subtasks": 2
+    },
+    "552": {
+      "headline": "Fijar el criterio de estilo de la entrega",
+      "projectId": 6,
+      "milestone": 539,
+      "sprint": 28,
+      "planHours": 0.42,
+      "status": 3,
+      "editorId": "1",
+      "dateToFinish": "2026-10-22 19:00:00",
+      "subtasks": 1
+    },
+    "549": {
+      "headline": "Conversar con Kiki sobre reparto de honorarios por etapas",
+      "projectId": 6,
+      "milestone": 541,
+      "sprint": 28,
+      "planHours": 0.84,
+      "status": 3,
+      "editorId": "5",
+      "dateToFinish": "2026-10-23 19:00:00",
+      "subtasks": 2
+    },
+    "547": {
+      "headline": "Enviar el TCC a Sol para lectura",
+      "projectId": 6,
+      "milestone": 537,
+      "sprint": 28,
+      "planHours": 0.42,
+      "status": 3,
+      "editorId": "5",
+      "dateToFinish": "2026-10-19 19:00:00",
+      "subtasks": 1
+    },
+    "543": {
+      "headline": "Inscribirse en el concurso con los datos de los dos",
+      "projectId": 6,
+      "milestone": 537,
+      "sprint": 28,
+      "planHours": 1.26,
+      "status": 3,
+      "editorId": "5",
+      "dateToFinish": "2026-10-19 19:00:00",
+      "subtasks": 3
+    },
+    "533": {
+      "headline": "Cita presencial miercoles 21/10 13:00",
+      "projectId": 4,
+      "milestone": 462,
+      "sprint": 27,
+      "planHours": 1.26,
+      "status": 3,
+      "editorId": "1",
+      "dateToFinish": "2026-10-21 19:00:00",
+      "subtasks": 3
+    },
+    "531": {
+      "headline": "Llamada corta lunes 19/10",
+      "projectId": 4,
+      "milestone": 461,
+      "sprint": 27,
+      "planHours": 0.42,
+      "status": 3,
+      "editorId": "1",
+      "dateToFinish": "2026-10-20 19:00:00",
+      "subtasks": 1
+    },
+    "527": {
+      "headline": "Cerrar el agente semanal de arquitectura",
+      "projectId": 4,
+      "milestone": 464,
+      "sprint": 27,
+      "planHours": 1.26,
+      "status": 3,
+      "editorId": "1",
+      "dateToFinish": "2026-10-23 19:00:00",
+      "subtasks": 3
+    },
+    "525": {
+      "headline": "Canal de avisos al cliente (decision)",
+      "projectId": 4,
+      "milestone": 463,
+      "sprint": 27,
+      "planHours": 0.42,
+      "status": 3,
+      "editorId": "1",
+      "dateToFinish": "2026-10-22 19:00:00",
+      "subtasks": 1
+    },
+    "522": {
+      "headline": "Prueba con textos sin imagenes",
+      "projectId": 4,
+      "milestone": 463,
+      "sprint": 27,
+      "planHours": 0.84,
+      "status": 3,
+      "editorId": "1",
+      "dateToFinish": "2026-10-22 19:00:00",
+      "subtasks": 2
+    },
+    "517": {
+      "headline": "Sistema de procesamiento de libros",
+      "projectId": 4,
+      "milestone": 463,
+      "sprint": 27,
+      "planHours": 1.68,
+      "status": 3,
+      "editorId": "1",
+      "dateToFinish": "2026-10-22 19:00:00",
+      "subtasks": 4
+    },
+    "515": {
+      "headline": "Compartir Sheet + mover a OS-Emilia/",
+      "projectId": 4,
+      "milestone": 463,
+      "sprint": 27,
+      "planHours": 0.42,
+      "status": 3,
+      "editorId": "1",
+      "dateToFinish": "2026-10-22 19:00:00",
+      "subtasks": 1
+    },
+    "511": {
+      "headline": "Calendario que lee el agente + evento 60 min",
+      "projectId": 4,
+      "milestone": 462,
+      "sprint": 27,
+      "planHours": 1.26,
+      "status": 3,
+      "editorId": "1",
+      "dateToFinish": "2026-10-21 19:00:00",
+      "subtasks": 3
+    },
+    "509": {
+      "headline": "Cargar chat_id de Emilia en el Router",
+      "projectId": 4,
+      "milestone": 462,
+      "sprint": 27,
+      "planHours": 0.42,
+      "status": 3,
+      "editorId": "1",
+      "dateToFinish": "2026-10-21 19:00:00",
+      "subtasks": 1
+    },
+    "504": {
+      "headline": "Clonar agente + subflujo de agenda con perfil Emilia",
+      "projectId": 4,
+      "milestone": 462,
+      "sprint": 27,
+      "planHours": 2.1,
+      "status": 3,
+      "editorId": "1",
+      "dateToFinish": "2026-10-21 19:00:00",
+      "subtasks": 4
+    },
+    "500": {
+      "headline": "Conectar cal.com de Emilia",
+      "projectId": 4,
+      "milestone": 462,
+      "sprint": 27,
+      "planHours": 1.26,
+      "status": 3,
+      "editorId": "1",
+      "dateToFinish": "2026-10-21 19:00:00",
+      "subtasks": 3
+    },
+    "495": {
+      "headline": "Stack de trabajo en el PC de Emilia",
+      "projectId": 4,
+      "milestone": 462,
+      "sprint": 27,
+      "planHours": 1.68,
+      "status": 3,
+      "editorId": "1",
+      "dateToFinish": "2026-10-21 19:00:00",
+      "subtasks": 4
+    },
+    "491": {
+      "headline": "Metodo de catalogacion acordado",
+      "projectId": 4,
+      "milestone": 463,
+      "sprint": 27,
+      "planHours": 0.84,
+      "status": 3,
+      "editorId": "1",
+      "dateToFinish": "2026-10-22 19:00:00",
+      "subtasks": 3
+    },
+    "486": {
+      "headline": "3 modelos Comfy con luz calida",
+      "projectId": 4,
+      "milestone": 464,
+      "sprint": 27,
+      "planHours": 1.68,
+      "status": 3,
+      "editorId": "1",
+      "dateToFinish": "2026-10-23 19:00:00",
+      "subtasks": 4
+    },
+    "481": {
+      "headline": "Catalogo + publicacion de fotos de obras",
+      "projectId": 4,
+      "milestone": 463,
+      "sprint": 27,
+      "planHours": 1.68,
+      "status": 3,
+      "editorId": "5",
+      "dateToFinish": "2026-10-22 19:00:00",
+      "subtasks": 4
+    },
+    "479": {
+      "headline": "Copia de biblioteca de revistas en su Drive",
+      "projectId": 4,
+      "milestone": 463,
+      "sprint": 27,
+      "planHours": 0.42,
+      "status": 3,
+      "editorId": "5",
+      "dateToFinish": "2026-10-22 19:00:00",
+      "subtasks": 1
+    },
+    "476": {
+      "headline": "Credencial de Google Calendar de Emilia",
+      "projectId": 4,
+      "milestone": 462,
+      "sprint": 27,
+      "planHours": 0.42,
+      "status": 3,
+      "editorId": "1",
+      "dateToFinish": "2026-10-21 19:00:00",
+      "subtasks": 2
+    },
+    "474": {
+      "headline": "Activar bot OS.emi-pi con mensaje",
+      "projectId": 4,
+      "milestone": 462,
+      "sprint": 27,
+      "planHours": 0.42,
+      "status": 3,
+      "editorId": "5",
+      "dateToFinish": "2026-10-21 19:00:00",
+      "subtasks": 1
+    },
+    "471": {
+      "headline": "Listado de referencias consolidado",
+      "projectId": 4,
+      "milestone": 461,
+      "sprint": 27,
+      "planHours": 0.84,
+      "status": 3,
+      "editorId": "5",
+      "dateToFinish": "2026-10-20 19:00:00",
+      "subtasks": 2
+    },
+    "465": {
+      "headline": "Entregar trabajo del curso + compartir chat",
+      "projectId": 4,
+      "milestone": 461,
+      "sprint": 27,
+      "planHours": 2.1,
+      "status": 3,
+      "editorId": "5",
+      "dateToFinish": "2026-10-20 19:00:00",
+      "subtasks": 5
+    }
+  },
+  "resumen": {
+    "milestones": 10,
+    "cards": 33,
+    "subtasks": 85,
+    "planHours_total": 75.11
+  }
+}

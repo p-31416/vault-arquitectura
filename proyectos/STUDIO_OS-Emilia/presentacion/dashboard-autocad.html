@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Reporte AutoCAD — REP-ARAOZ + SET_01 + ventana dinámica</title>
+<style>:root{--bg:#11120f;--surface:#1a1c17;--surface2:#22251f;--ink:#f2efe9;--muted:#a8aca3;--line:#33362f;--clay:#c9a98a;--sage:#9ab0a2;--green:#7fd08a;--orange:#ffb454}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}.wrap{max-width:1000px;margin:0 auto;padding:0 24px}header.top{position:sticky;top:0;z-index:20;background:#161713;border-bottom:3px solid var(--clay);box-shadow:0 2px 10px rgba(0,0,0,.4)}.bar{display:flex;justify-content:space-between;align-items:center;padding:12px 0;gap:12px;flex-wrap:wrap}.brand{font-weight:800;font-size:22px;color:var(--ink);letter-spacing:.02em}.brand i{font-weight:600;color:var(--clay);font-size:14px;font-style:normal}nav.tabs{display:flex;gap:8px;flex-wrap:wrap;padding:12px 0 16px}nav.tabs a{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:10px 16px;font-weight:600;font-size:13px;cursor:pointer;color:var(--ink);text-decoration:none}nav.tabs a:hover{border-color:var(--clay)}.hero{padding:28px 0 8px}.eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}h1{font-size:40px;line-height:1;margin:8px 0;font-weight:700;letter-spacing:-.02em}h1 em{color:var(--clay);font-style:normal}h2{font-size:24px;letter-spacing:-.01em;margin:30px 0 10px}h2 em{color:var(--clay);font-style:normal}.lead{color:var(--muted);font-size:15px;max-width:760px}.lead b{color:var(--ink)}.grid{display:grid;gap:14px}.g5{grid-template-columns:repeat(5,1fr)}.g4{grid-template-columns:repeat(4,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g2{grid-template-columns:1fr 1fr}.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px}.card h3{margin:4px 0 6px;font-size:15px}.card p{margin:0;font-size:13px;color:var(--muted)}a.card{text-decoration:none;color:var(--ink);display:block}a.card:hover{border-color:var(--clay)}.k{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700}.bignum{font-size:44px;font-weight:800;letter-spacing:-.03em;line-height:1;color:var(--ink)}.bignum small{font-size:13px;font-weight:500;color:var(--muted);letter-spacing:0}.med{color:var(--green)}.est{color:var(--orange)}table{width:100%;border-collapse:collapse;background:var(--surface);border-radius:14px;overflow:hidden;border:1px solid var(--line);font-size:13px}th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);padding:10px 12px;background:#161713;border-bottom:1px solid var(--line)}td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}tr:last-child td{border:none}tfoot td{background:var(--clay);color:#11120f;font-weight:800;border:none}.toplinks{font-size:13px;margin:14px 0 0}.toplinks a{color:var(--clay);font-weight:700}.badge{display:inline-block;font-size:11px;padding:2px 8px;border-radius:6px;border:1px solid var(--clay);color:var(--clay);margin-top:6px}.badge.grey{border-color:var(--muted);color:var(--muted)}.badge.green{border-color:var(--green);color:var(--green)}.badge.orange{border-color:var(--orange);color:var(--orange)}.small{font-size:12px;color:var(--muted)}.small b{color:var(--ink)}details{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px;margin-top:14px}summary{cursor:pointer;font-size:15px;font-weight:800}summary::marker{color:var(--clay)}.pie-wrap{display:flex;gap:20px;flex-wrap:wrap;align-items:center;margin:12px 0}.pie{width:180px;height:180px;border-radius:50%;flex-shrink:0;background:conic-gradient(#6aa8ff 0 11.1%,#7fd08a 11.1% 30.5%,#c792ea 30.5% 33.3%,#ffb454 33.3% 50%,#ff6b6b 50% 61.1%,#4ecdc4 61.1% 66.7%,#ffe66d 66.7% 72.2%,#888 72.2% 100%)}.leyenda{font-size:13px;line-height:1.9}.leyenda a{color:var(--clay)}.dot{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:middle}.bar-row{display:flex;align-items:center;gap:10px;margin:6px 0;font-size:13px}.bar-label{min-width:200px}.bar-track{flex:1;background:#2a2d26;border-radius:999px;height:12px;overflow:hidden}.bar-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--clay),#e8c8a8)}.bar-fill.orange{background:linear-gradient(90deg,#ffb454,#ff6b6b)}.bar-val{min-width:130px;text-align:right;font-size:12px}.tbtn{margin:2px;padding:10px 16px;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:999px;cursor:pointer;font-weight:600;font-size:13px}.tbtn.on{background:var(--clay);color:#11120f;border-color:var(--clay)}p a,li a,td a{color:var(--clay);font-weight:700}code{background:var(--surface2);padding:1px 5px;border-radius:4px}.sema-top{border-top:6px solid var(--clay)}.sema-mid{border-top:6px solid var(--sage)}.sema-dark{border-top:6px solid var(--muted)}.foot{text-align:center;padding:20px 0}.foot b{font-size:20px}.foot span{color:var(--muted);font-size:12px}@media(max-width:860px){.g5,.g4,.g3,.g2{grid-template-columns:1fr}h1{font-size:30px}}@media print{header.top,nav.tabs{display:none}body{background:#fff;color:#111}.card,table,details{background:#fff;color:#111}}
+.stepper{display:flex;align-items:center;gap:0;margin:18px 0;flex-wrap:wrap}
+.step{text-align:center;min-width:110px}
+.step .dot{width:38px;height:38px;border-radius:50%;margin:0 auto;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;background:#2a2a2e;border:2px solid #555;color:#aaa}
+.step.done .dot{background:#1d3a24;border-color:#7fd08a;color:#7fd08a}
+.step.now .dot{background:#3a2f14;border-color:#ffb454;color:#ffb454}
+.step small{color:var(--muted);font-size:11px}
+.card{border-left:4px solid #6aa8ff}
+.card.g{border-left-color:#7fd08a}.card.y{border-left-color:#ffb454}
+.flow{display:flex;gap:0;align-items:stretch;flex-wrap:wrap;margin:14px 0}
+.fnode{background:var(--surface);border:1px solid #6aa8ff;border-radius:10px;padding:10px 14px;font-size:13px;max-width:190px}
+.farr{align-self:center;color:#ffb454;font-weight:800;padding:0 8px;font-size:18px}
+ol li,ul li{margin:6px 0;font-size:14px}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+<div class="bar"><div class="brand">Studio OS <i>· AutoCAD</i></div>
+<div class="small">Estado real <b>21/10/2026</b> · <a href="dashboard-mes1-emilia.html">Mes 1</a> · <a href="dashboard-comfy.html">Comfy</a> · <a href="dashboard-estudio-os.html">Estudio OS</a> · <a href="dashboard-vault.html">Vault</a></div>
+</div>
+<nav class="tabs">
+<a href="#objetivo">0 · Objetivo</a>
+<a href="#entorno">0b · Entorno LT</a>
+<a href="#medido">1 · Medido</a>
+<a href="#locales">2 · Bloque locales</a>
+<a href="#extraccion">3 · Extracción en DWG</a>
+<a href="#playbooks">4 · Playbooks</a>
+<a href="#bloques">5 · Bloques que faltan</a>
+<a href="#herramientas">6 · LSP + scripts</a>
+<a href="#dws">7 · DWS en vivo</a>
+<a href="#ventana">8 · Ventana dinámica</a>
+<a href="#minutos">9 · Minutos</a>
+<a href="#mes2">10 · Mes 2 (propuesta)</a>
+<a href="#pendientes">11 · Pendientes</a>
+</nav>
+</div></header>
+<main class="wrap">
+
+<div class="hero">
+<div class="eyebrow">Reporte AutoCAD · REP-ARAOZ + SET_01 · v2 (21/10/2026)</div>
+<h1>Plano, SET y <em>ventana dinámica.</em></h1>
+<p class="lead">Todo lo que cerró con <b>REP-ARAOZ</b>: el entorno real (<b>AutoCAD LT 2027</b>), la horizontalización del plano, el bloque nuevo de locales, la extracción que vive <b>dentro del DWG</b>, el estado real de los playbooks y <b>los bloques que faltan crear</b>.</p>
+<span class="badge green">DWG intacto</span> <span class="badge">Medido, no estimado</span> <span class="badge orange">AutoCAD LT 2027 (no COM)</span>
+</div>
+<p class="toplinks">Fuente viva: <code>G:\Mi unidad\OS-Emilia\W03-CAD\REP-ARAOZ.dwg</code> (medido por <b>ODA File Converter → DXF → ezdxf</b>, sin tocar el DWG) · <a href="07-revision-autocad-2026-10-22.md"><b>Documento de revisión 22/10</b></a> · <a href="obsidian://open?vault=vault-arquitectura&file=proyectos/MVP_02-autocad-standards/03-log-mvp_02.md">bitácora MVP_02</a> · <a href="obsidian://open?vault=vault-arquitectura&file=wiki/glosario/interno/pbooks/pbk-set01-rep.md">pbk-set01-rep</a> · <a href="obsidian://open?vault=vault-arquitectura&file=proyectos/MVP_02-autocad-standards/SET_01-REP_Replanteo/SET_01-REP_completo.md">SET_01-REP_completo</a></p>
+
+<h2 id="objetivo">0. Objetivo Emilia OS — hipótesis, experimento y conclusión</h2>
+<p><b>Hipótesis:</b> *"El objetivo no es digitalizar al arquitecto. Es <b>aumentar su capacidad sin quitarle el control</b> sobre la arquitectura."* Resultado esperado: menos tiempo + menos pérdida de intención + mayor control + mayor capacidad de iteración.</p>
+<p><b>Mes 1 como experimento:</b> observación (auditoría REP-ARAOZ) → pregunta (¿dónde se va el tiempo?) → hipótesis (bloques con medida + extracción) → experimento (SET_01 sobre plano real) → resultado (cuadro en 1 min, 208 INSERTs bajo norma) → evaluación (esta página) → protocolo (DWS que se hace cumplir solo) → implementación (kit en su PC) → aprendizaje (Mes 2).</p>
+<p><b>Conclusión:</b> mover muros y que los cómputos salgan solos, con o sin BIM. El SET deja el plano a un paso de BIM trabajando 100% en AutoCAD.</p>
+
+<div class="stepper">
+<div class="step done"><div class="dot">1</div><small>W1 Relevamiento<br>49 capas, 13 bloques</small></div><div class="bar"></div>
+<div class="step done"><div class="dot">2</div><small>W2 SET_01 + bloques<br>DWT/DWS + kit</small></div><div class="bar"></div>
+<div class="step done"><div class="dot">3</div><small>W3 SET_02 + norma<br>DGIUR real</small></div><div class="bar"></div>
+<div class="step now"><div class="dot">4</div><small>W4 Extracción dentro del DWG<br>locales + niveles</small></div>
+</div>
+
+<div class="flow">
+<div class="fnode"><b>Hipótesis</b><br><span class="small">capacidad sin quitar control</span></div><div class="farr">→</div>
+<div class="fnode"><b>Experimento</b><br><span class="small">SET_01 sobre plano real</span></div><div class="farr">→</div>
+<div class="fnode"><b>Resultado</b><br><span class="small">cuadro en 1 min</span></div><div class="farr">→</div>
+<div class="fnode"><b>Protocolo</b><br><span class="small">DWS que se cumple solo</span></div><div class="farr">→</div>
+<div class="fnode"><b>Mes 2</b><br><span class="small">un tipo de plano</span></div>
+</div>
+
+<h2 id="entorno">0b. El entorno real: AutoCAD LT 2027 (esto cambió todo el método)</h2>
+<p>La instalación viva es <b>AutoCAD LT 2027</b> (<code>C:\Program Files\Autodesk\AutoCAD LT 2027</code>, 26.0.118.0). El AutoCAD 2027 full (licencia "LMS Tech", usado en la auditoría del 29/09) ya no está instalado; el instalador queda en <code>P:\autocad\AutoCAD.2027_English_64bit</code>. Todo lo que sigue se verificó contra la ayuda oficial (ACD / ACDLT 2027).</p>
+
+<table>
+<tr><th>Capacidad</th><th>Full 2027</th><th>LT 2027 (vigente)</th><th>Qué usamos hoy</th></tr>
+<tr><td>COM / ActiveX externo</td><td class="med">sí</td><td class="est">no</td><td>El MCP <code>autocad</code> del vault queda inutilizable con LT: *"AutoCAD LT can internally utilize the AutoCAD ActiveX type library with AutoLISP, but itself cannot be accessed or manipulated by external applications"*. Automatización = <b>AutoLISP</b>.</td></tr>
+<tr><td><code>DATAEXTRACTION</code> / <code>ATTIN</code> / <code>ATTOUT</code></td><td class="med">sí</td><td class="est">no</td><td>En LT dan <i>Unknown command</i> (*"AutoCAD LT doesn't support data extraction commands"*). Alternativa oficial en LT: <code>ATTEXT</code> + <code>LIST</code>; nuestro camino: <b>LISP que dibuja la tabla dentro del DWG</b>.</td></tr>
+<tr><td><code>APPLOAD</code> (AutoLISP)</td><td class="med">sí</td><td class="med">sí (desde 2024, Windows)</td><td>Los 4 LSP del SET_01 se cargan así. En LT 2023- o LT Mac: <i>Unknown Command</i> → el DWT ya trae el setup hecho.</td></tr>
+<tr><td><code>TABLA</code> + vínculo de datos</td><td class="med">sí</td><td class="med">sí</td><td>Pero <b>exige Excel instalado</b> (*"Microsoft Excel must be installed to use Microsoft Excel data links"*). Sin Excel y sin proveedor ACE/OLE DB → <code>DATALINK</code> acepta el CSV pero el preview queda vacío. Solución: el LSP lee el CSV y dibuja la tabla.</td></tr>
+<tr><td>MCP oficial de Autodesk 2027</td><td class="med">sí</td><td class="med">sí</td><td>Bundle <code>AutoCAD-MCP-Server-2027.bundle</code> instalado (soporta <code>ACADLT</code>): <code>NETLOAD acmcp.dll</code> + <code>MCPCONFIG</code> + <code>MCPHTTPSTART</code> → <code>http://localhost:5001/mcp</code>. <b>Pendiente de probar en LT</b>.</td></tr>
+<tr><td><code>SECURELOAD</code></td><td>—</td><td class="est">= 1</td><td>Con <code>TRUSTEDPATHS</code> vacío, cargar un <code>.lsp</code> desde <code>P:\</code> pide confirmar la ruta. Workaround: agregar la carpeta a <i>Ubicaciones de confianza</i>.</td></tr>
+<tr><td>Palettes / DesignCenter / Blocks</td><td class="med">sí</td><td class="med">sí</td><td><code>TOOLPALETTES</code> + <code>ADCENTER</code> + Blocks palette disponibles en LT 2027 → el <code>.xtp</code> de SET_01 es viable.</td></tr>
+</table>
+
+<div class="grid g3">
+<div class="card y"><div class="k">Lo que cambia el método</div><h3>La automatización vive en el LSP</h3><p>Sin COM, todo control del CAD es AutoLISP: crear, verificar, numerar y tabular. Cada LSP se valida con <code>scripts/chequea-lisp.py</code> y se prueba en sesión.</p></div>
+<div class="card g"><div class="k">Lo que no cambia</div><h3>El DWG sigue siendo la fuente</h3><p>Decisión 20/10: la extracción se hace <b>dentro del mismo DWG</b>. Sin Google Sheets ni n8n en el medio: el cuadro se dibuja en la lámina y el CSV es respaldo.</p></div>
+<div class="card"><div class="k">Cómo se mide sin AutoCAD abierto</div><h3>ODA → DXF → ezdxf</h3><p>ODA File Converter 25.12 convierte el DWG a DXF y <code>ezdxf</code> 1.4.4 lee capas, bloques, atributos y viewports. El DWG queda intacto. <b>Intérprete:</b> Python 3.12 del sistema (donde vive <code>ezdxf</code>), no <code>comfyenv</code>.</p></div>
+</div>
+
+<h2 id="medido">1. REP-ARAOZ v2 — medición real del archivo (20/10)</h2>
+<div class="grid g4">
+<div class="card g"><div class="bignum">50</div><span class="small">capas (29 propias + 21 del fondo)</span></div>
+<div class="card"><div class="bignum">14</div><span class="small">bloques nombrados (+312 anónimos)</span></div>
+<div class="card"><div class="bignum">203</div><span class="small">INSERTs en model</span></div>
+<div class="card y"><div class="bignum">273</div><span class="small">cotas (304 en la v1 del 13/10)</span></div>
+</div>
+
+<table>
+<tr><th>Elemento</th><th>13/10 (v1)</th><th>20/10 (v2)</th><th>Lectura</th></tr>
+<tr><td>Layouts</td><td>3</td><td class="med">2</td><td>Se eliminó <code>REP-PTipo-A1</code>; quedan <code>REP-PTipo-A1-H</code> (horizontal) y el de replanteo.</td></tr>
+<tr><td>Viewport <code>1EC35</code></td><td>twist <b>270°</b></td><td class="med">twist <b>360°</b></td><td>El twist 270° imprimía el model girado 90° y los rótulos verticales. <b>Regla: compensación = (−twist) mod 360.</b></td></tr>
+<tr><td>Rótulos de locales</td><td>29</td><td class="med">29 (28 numerados + <code>N=00 AMBIENTE</code>)</td><td>Se movieron a mano: hoy agrupan en <b>14 filas</b> (antes 16).</td></tr>
+<tr><td>Tags <code>SIMB-MURO</code></td><td>89</td><td class="med">95</td><td>79 rotados → el estudio los movió a mano; <code>SET-01-NORM-TEXTOS.lsp</code> queda como herramienta para los próximos planos.</td></tr>
+<tr><td>Vanos</td><td>42 (20 ventanas + 22 puertas)</td><td class="med">41 (33 rotados)</td><td>Bloques <code>VENTANA BAJA SIMPLE</code> + <code>PUERTA BATIENTE</code> con atributos.</td></tr>
+<tr><td>Columnas <code>C40.20</code></td><td>26</td><td class="med">17 rotadas</td><td>Rotación corregida a mano.</td></tr>
+<tr><td>Cotas</td><td>304 (152 arq + 152 replanteo)</td><td class="med">273</td><td>Las 152 de replanteo viven en <code>REP-COTAS</code>; las 152 arquitectónicas en <code>A-COTA-1-50</code> en la v1.</td></tr>
+<tr><td>Numeración de locales</td><td>—</td><td class="med">28 de 28 <b>fuera</b> del orden de lectura</td><td>La numeración a mano <b>no</b> sigue el orden de lectura (X+ / Y−) → queda como dato informativo, no se corrige.</td></tr>
+</table>
+<p class="small">INSUNITS 6 (metros) · xref <code>ARQ-ARAOZ</code> de fondo (no se cuenta) · los anónimos <code>*D</code>/<code>*U</code> (variantes de estiramiento y combos de cotas/textos) quedan fuera del conteo: solo bloques generados.</p>
+
+<h2 id="locales">2. El bloque nuevo de locales — <code>SIMB-LOC_ID</code></h2>
+<p>El rótulo viejo (bloque <code>*U482</code>) traía <code>DESCRIPCION</code> visible y <code>Nº</code>. El bloque nuevo separa la información: <b>lo que se lee en el dibujo</b> de <b>lo que se computa</b>.</p>
+<table>
+<tr><th>Elemento</th><th>Definición</th><th>Uso</th></tr>
+<tr><td>Geometría</td><td>rectángulo <b>0.30 × 0.30 m</b> (cuadrado: con 2 cifras a alto 0.12 m el texto no holgaba en el 0.30 × 0.20 de la v1)</td><td>Recuadro del rótulo, centrado en el local</td></tr>
+<tr><td><code>N_LOC</code></td><td>atributo <b>visible</b>, número <code>01</code>…<code>28</code></td><td>Lo que se lee en la lámina</td></tr>
+<tr><td><code>TXT_LOC</code></td><td>atributo <b>invisible</b> (flag 70 = 1), nombre del local</td><td>Solo cómputo y planilla</td></tr>
+<tr><td>Capa</td><td>Definición en <b>capa 0</b> → el ejemplar toma la capa de inserción <code>A-SIMBOLO-NPT-PLANTA</code></td><td>Criterio del estudio</td></tr>
+</table>
+
+<h3>Cómo se usa (lo corre el estudio en AutoCAD LT)</h3>
+<table>
+<tr><th>Paso</th><th>Comando</th><th>Qué hace</th></tr>
+<tr><td>1</td><td><code>APPLOAD</code> → <code>SET-01-SIMB-LOC-ID.lsp</code></td><td>carga el LSP (LT 2024+ Win lo soporta)</td></tr>
+<tr><td>2</td><td><code>SIMB-LOC_ID</code></td><td>pide punto → número → nombre, inserta y <b>se reactiva solo</b> para el local siguiente. <b>Enter</b> en el nombre = repite el anterior; <b>Enter</b> en el número = usa el automático</td></tr>
+<tr><td>3</td><td>Enter (salir)</td><td>dispara el control: lista de locales + orden de lectura</td></tr>
+<tr><td>4</td><td><code>LOC-ID-CHECK</code></td><td>control manual: definición del bloque, ejemplares, numeración (faltantes/repetidos) y <b>orden de lectura</b></td></tr>
+<tr><td>5</td><td><code>LOC-ID-DIAG</code></td><td>vuelca el estado real del dibujo (bloques, ejemplares, atributos) + log de la sesión</td></tr>
+</table>
+
+<div class="grid g3">
+<div class="card y"><div class="k">Aprendizaje 1 (v2.1 → v2.2)</div><h3>LT no acepta el <code>entmake</code> del bloque</h3><p>El <code>entmake</code> de un <code>BLOCK</code> no lo acepta AutoCAD LT (o no lo registra en la tabla de bloques). <b>Plan B que funciona:</b> comando <code>-BLOCK</code> — geometría de trabajo en (1000,1000) + ventana de selección. Además <code>exit</code> dentro de un <code>defun</code> <b>no corta</b> la ejecución: el comando seguía pidiendo puntos con el bloque inexistente (por eso "insertaba" y no se veía nada) → ahora corta con flag.</p></div>
+<div class="card y"><div class="k">Aprendizaje 2</div><h3>El nombre del bloque queda ocupado</h3><p><code>entdel</code> sobre el registro de un bloque <b>no libera el nombre</b>: la definición queda marcada y el nombre sigue tomado hasta el <code>PURGE</code>. Por eso <code>AseguraBloque</code> <b>jamás</b> borra la definición. Cada <code>entmake</code> se verifica y el registro se confirma con <code>tblobjname</code>.</p></div>
+<div class="card g"><div class="k">Aprendizaje 3</div><h3>Atributos: WCS y grupo 66</h3><p>El código 10 del <code>ATTRIB</code> es <b>absoluto en WCS</b> (no relativo al origen del bloque). El grupo <b>66</b> de <code>INSERT</code> se honra solo para inserts ("attributes follow") y el <code>66 = 0</code> del último atributo cierra la serie. En <code>entget</code>, los <code>ATTRIB</code> vienen embebidos después del grupo 66 → se leen con <code>assoc 0</code> = <code>"ATTRIB"</code>.</p></div>
+</div>
+
+<details open>
+<summary><b>Estado de SIMB-LOC_ID hoy (21/10)</b> — bloque creado y probado, <span class="est">28 ejemplares pendientes de insertar</span></summary>
+<table>
+<tr><th>Comprobación</th><th>Resultado</th></tr>
+<tr><td>Bloque definido en el LSP</td><td class="med">sí (v2.2, con plan B <code>-BLOCK</code>)</td></tr>
+<tr><td>Ejemplares de <code>SIMB-LOC_ID</code> en el DWG</td><td class="est">0 — los 28 locales numerados hoy son los rótulos legacy <code>*U482</code></td></tr>
+<tr><td>Numeración a mano en el DWG</td><td class="med">28 (<code>01</code>…<code>28</code>), sin repetidos ni faltantes</td></tr>
+<tr><td>Fuera de la planilla</td><td><code>N=00 AMBIENTE</code> (planta baja, no es local numerado)</td></tr>
+<tr><td>Totales</td><td>DORMITORIO ×6 · BAÑO ×4 · BALCON ×4 · COC.-LAV. ×4 · ESTAR-COM. ×4 · TOILETTE ×2 · PALIER · ESCALERA · ASCENSOR I · ASCENSOR II</td></tr>
+<tr><td>Control de orden de lectura</td><td>informativo: la numeración a mano <b>no</b> sigue el orden de lectura</td></tr>
+</table>
+<p class="small">Siguiente paso: insertar los 28 ejemplares de <code>SIMB-LOC_ID</code> en AutoCAD LT (orden de lectura de <code>docs/orden-locales.md</code>) y verificarlos fuera del CAD con <code>scripts/ordena-locales.py --check</code>.</p>
+</details>
+
+<h2 id="extraccion">3. Extracción dentro del DWG (decisión 20/10)</h2>
+<p>Decisión del estudio (20/10): <b>nada de Google Sheets ni n8n</b> — el cuadro de niveles se genera <b>desde el DWG</b> y queda en el DWG. El cuadro de locales se trabaja como <b>CSV en el vault</b> (la idea de dibujarlo con un LSP quedó descartada el 21/10). Motivo técnico: <code>DATAEXTRACTION</code> no existe en LT, y el vínculo de datos (<code>DATALINK</code>) exige Excel instalado, que en esta máquina no está.</p>
+
+<div class="grid g2">
+<div class="card g"><div class="k">Niveles — listo</div><h3><code>CUADRO-NIVELES</code></h3><p>El LSP <code>SET-01-CUADRO-NIVELES.lsp</code> (v4) <b>lee el CSV</b> (<code>docs/planilla-niveles.csv</code>, 14 filas × 3 columnas) y dibuja la tabla con MTEXT + LINE en la capa <code>A-CUADRO-NIVELES</code> (alto de fila 7 mm en paper / 0.70 m en modelo, automático según <code>CVPORT</code>). Comandos: <code>CUADRO-NIVELES</code> (dibuja o actualiza), <code>CUADRO-NIVELES-ACT</code> (actualiza en el sitio, borra solo lo dentro de la caja), <code>CUADRO-NIVELES-NUEVO</code> (la redibuja en otro punto), <code>CUADRO-NIVELES-VAL</code> (muestra el CSV sin dibujar).</p></div>
+<div class="card y"><div class="k">Locales — vía descartada (21/10)</div><h3>El cuadro de locales no va por LSP</h3><p>La idea de dibujar el cuadro de locales con un LISP queda <b>descartada</b> (21/10): no era la vía. La planilla de locales vive como <b>CSV en el vault</b> (<code>docs/planilla-locales.csv</code> + <code>.md</code>, 28 locales) y la fuente en el DWG son los <b>28 rótulos numerados a mano</b>. Para el cómputo: <code>scripts/extrae-atributos-dwg.py</code> (ODA → DXF → ezdxf), sin tocar el DWG.</p></div>
+</div>
+
+<table>
+<tr><th>PISO</th><th>INTERIOR (NPT terminado)</th><th>EXTERIOR (BALCÓN)</th></tr>
+<tr><td>PLANTA BAJA</td><td>0.00</td><td>–</td></tr>
+<tr><td>1 PISO</td><td>3.92</td><td>3.87</td></tr>
+<tr><td>2 PISO</td><td>6.75</td><td>6.70</td></tr>
+<tr><td>3 PISO</td><td>9.58</td><td>9.53</td></tr>
+<tr><td>4 PISO</td><td>12.41</td><td>12.36</td></tr>
+<tr><td>5 PISO</td><td>15.24</td><td>15.19</td></tr>
+<tr><td>6 PISO</td><td>18.07</td><td>18.02</td></tr>
+<tr><td>7 PISO</td><td>20.90</td><td>20.85</td></tr>
+<tr><td>8 PISO</td><td>23.73</td><td>23.68</td></tr>
+<tr><td>9 PISO (técnica)</td><td>26.56 / 28.26 / 30.66</td><td>–</td></tr>
+<tr><td>9 PISO (tanque)</td><td class="med">32.06 (altura máxima)</td><td>–</td></tr>
+</table>
+<p class="small"><b>Regla confirmada por el estudio:</b> exterior y balcón son <b>el mismo valor</b> = interior − 0.05 m. <b>A confirmar:</b> (1) planta baja, ¿exterior y balcón en 0.00?; (2) el balcón del 1 PISO quedó en 3.88 contra 3.87 del exterior — ¿medida propia o va 3.87?; (3) los 4 valores del 9 PISO — ¿32.06 es el tanque y los otros tres son niveles de la misma planta técnica?</p>
+
+<h2 id="playbooks">4. Playbooks: estado real y qué hay que actualizar</h2>
+<table>
+<tr><th>Documento</th><th>Rol</th><th>Estado</th></tr>
+<tr><td><a href="obsidian://open?vault=vault-arquitectura&file=proyectos/MVP_02-autocad-standards/SET_01-REP_Replanteo/SET_01-REP_completo.md"><code>SET_01-REP_completo</code></a> · v2.2</td><td>Puerta única: qué es, capas, bloques, estilos, kit, instructivo PC 15', horas</td><td class="med">vigente</td></tr>
+<tr><td><a href="obsidian://open?vault=vault-arquitectura&file=proyectos/MVP_02-autocad-standards/SET_01-REP_Replanteo/playbooks/PB-01-SET-informe.md"><code>PB-01-SET-informe</code></a></td><td>Qué recibe Emilia: kit Drive, DoD, horas/payback, mapa anti-duplicados</td><td class="est">borrador-para-lectura · <b>PDFs en pausa</b></td></tr>
+<tr><td><a href="obsidian://open?vault=vault-arquitectura&file=proyectos/MVP_02-autocad-standards/SET_01-REP_Replanteo/playbooks/PB-02-replanteo-desde-0.md"><code>PB-02-replanteo-desde-0</code></a></td><td>Operativa diaria: setup 15', dibujo en 12 pasos, tabla EN/ES con refs oficiales</td><td class="est">borrador-para-lectura · <b>PDFs en pausa</b></td></tr>
+<tr><td><a href="obsidian://open?vault=vault-arquitectura&file=wiki/glosario/interno/pbooks/pbk-set01-rep.md"><code>pbk-set01-rep</code></a></td><td>Versión wiki del SET_01 (puerta única elevada)</td><td class="med">vigente (16/10) → <b>desactualizado</b></td></tr>
+<tr><td><a href="obsidian://open?vault=vault-arquitectura&file=proyectos/MVP_02-autocad-standards/03-adr-SET_01.md"><code>03-adr-SET_01</code></a></td><td>Registro único de decisiones (unidades/escala, capas/rótulo, bloques/cómputos, entorno)</td><td class="med">vigente</td></tr>
+<tr><td><a href="obsidian://open?vault=vault-arquitectura&file=proyectos/MVP_02-autocad-standards/SET_02-GEST_DGIUR_USO/01-spec-SET_02.md"><code>SET_02-GEST_DGIUR_USO</code></a> spec v0.2</td><td>Plano de uso para trámite municipal (Anexo III DGHP)</td><td class="est">spec escrito · resto pendiente</td></tr>
+<tr><td><a href="obsidian://open?vault=vault-arquitectura&file=proyectos/MVP_02-autocad-standards/SET_03-ARQ-COC/01-spec-SET_03.md"><code>SET_03-ARQ-COC</code></a> spec v0.1</td><td>Cocina de interiorismo 1:50 + 1:20 (base DXF real)</td><td class="est">spec escrito · DWT/DWS/DST pendientes</td></tr>
+<tr><td><a href="obsidian://open?vault=vault-arquitectura&file=wiki/estudio/instructivo-cocina-tagle.md"><code>instructivo-cocina-tagle</code></a></td><td>Instructivo legible de la cocina Tagle (wiki/estudio)</td><td class="med">vigente</td></tr>
+</table>
+
+<h3>DoD de SET_01 — auditoría real (PB-01 §3)</h3>
+<div class="grid g5">
+<div class="card g"><div class="bignum">7</div><span class="small">ítems cumple</span></div>
+<div class="card y"><div class="bignum">2</div><span class="small">ítems parciales</span></div>
+<div class="card"><div class="bignum">1</div><span class="small">ítem diferido</span></div>
+<div class="card"><div class="bignum">14 h</div><span class="small">invertidas</span></div>
+<div class="card g"><div class="bignum">1er</div><span class="small">plano = payback</span></div>
+</div>
+<table>
+<tr><th>#</th><th>Ítem</th><th>Estado</th><th>Detalle</th></tr>
+<tr><td>1</td><td>SETEO</td><td class="med">cumple</td><td>metros <code>INSUNITS 6</code> + escala custom <code>1:50 (m)</code></td></tr>
+<tr><td>2</td><td>LAYERS 29 + 20</td><td class="med">cumple</td><td>29 propias + xref</td></tr>
+<tr><td>3</td><td>CTB</td><td class="med">cumple</td><td><code>monochrome.ctb</code> vigente (preinstalado, grafica todo negro). <code>EP-ISO.ctb</code> con grosores → backlog multi-escala</td></tr>
+<tr><td>4</td><td>TEXTSTYLES 9</td><td class="med">cumple</td><td>destino <code>EP-2.5 / EP-3.5</code> (anotativos) en backlog</td></tr>
+<tr><td>5</td><td>DIMSTYLES 3</td><td class="med">cumple</td><td>destino <code>EP-ARQ</code> en backlog</td></tr>
+<tr><td>6</td><td>BLOQUES 13</td><td class="med">cumple</td><td>13 en el DWT; <code>SIMB-LOC_ID</code> es el #14 (pendiente de insertar)</td></tr>
+<tr><td>7</td><td>DINÁMICOS / ATTRIB → cómputos</td><td class="med">cumple</td><td>42/42 ejemplares con atributos (fuera: <code>DATAEXTRACTION</code> no existe en LT → la extracción es por LSP)</td></tr>
+<tr><td>8</td><td>TEMPLATE</td><td class="est">parcial</td><td><code>SET_01-REP.dwt</code> generado y verificado ida/vuelta; falta el documento de ruta y la regeneración con los bloques nuevos</td></tr>
+<tr><td>9</td><td>AUTOLISP</td><td class="est">parcial</td><td>Hoy hay <b>4 LSP</b> (más que lo previsto) + 4 scripts Python; falta el <code>SET-REPLANTEO</code> que crea las 29 capas</td></tr>
+<tr><td>10</td><td>GLOSARIO</td><td>—</td><td>diferido hasta evaluar el SET_01</td></tr>
+</table>
+<p class="small">Conteo de la tabla DoD de PB-01 §3 (7 cumple · 2 parcial · 1 diferido). La auditoría de sesión del 16/10 lo anotó como <b>6 cumple · 3 parcial · 1 diferido</b>, contando el CTB como parcial (multi-escala <code>EP-ISO</code> todavía en backlog). Las dos lecturas difieren solo en el ítem 3.</p>
+
+<details>
+<summary><b>Deriva detectada entre los playbooks y la máquina real</b> — a corregir en el próximo ciclo</summary>
+<ul>
+<li><b>PB-02 abre con "Base: AutoCAD Full inglés 2024-2027"</b> → la máquina tiene <b>LT 2027</b>. La variante LT está documentada, pero el flujo principal sigue describiendo Full.</li>
+<li><b>PB-02 §3 (Cómputos) usa <code>DATAEXTRACTION</code></b> → en LT es <i>Unknown command</i>. El flujo real es <code>ATTEXT</code> / LSP.</li>
+<li><b>PB-01 §2 y el doc único §6 (instructivo 15')</b> prometen el pipe a Google Sheet por n8n → desde el 20/10 la extracción vive <b>dentro del DWG</b>.</li>
+<li><b>pbk-set01-rep</b> dice "Lisp SET_01 pendiente" y "cuadro → Sheet" → ya hay 4 LSP y la ruta de cómputos cambió.</li>
+<li><b>PB-01/PB-02 siguen en estado <code>borrador-para-lectura</code></b> (PDFs en pausa a la espera del <code>s</code> del estudio).</li>
+<li><b>La wiki de software</b> (<code>wiki/glosario/software/autocad.md</code>) describe el MCP por COM como vigente → con LT ese camino queda en pausa.</li>
+</ul>
+</details>
+
+<h2 id="bloques">5. Bloques: catálogo vivo y <em>los que faltan crear</em></h2>
+<h3>5.1 Los 13 que ya viven en el DWT <code>SET_01-REP.dwt</code></h3>
+<table>
+<tr><th>Bloque</th><th>Capa de inserción</th><th>Atributos</th><th>Ejemplares</th><th>Tipo</th></tr>
+<tr><td><code>VENTANA BAJA SIMPLE</code></td><td><code>A-CARP-02</code></td><td><code>TIPO</code>, <code>ANCHO</code> (+ ocultos <code>H_ALFEIZAR</code>, <code>H_COLOCACION</code>, <code>H_VENTANA</code>)</td><td class="med">20</td><td>dinámico + WIPEOUT</td></tr>
+<tr><td><code>PUERTA BATIENTE</code></td><td><code>A-CARP-02</code></td><td><code>ANCHO</code>, <code>PUERTA</code>, <code>ALFEIZAR</code>, <code>ALTURA</code>, <code>DESCRIPCION</code></td><td class="med">22</td><td>dinámico + WIPEOUT</td></tr>
+<tr><td><code>SIMB-MURO</code></td><td><code>SIMB-MURO</code></td><td><code>MURO</code> (h 0.10)</td><td class="med">95</td><td>tag (atributo bloqueado → siempre horizontal)</td></tr>
+<tr><td><code>SIMBOLO DE EJE</code></td><td><code>E-EJES</code></td><td><code>EJE</code> (h 0.25)</td><td class="med">20</td><td>tag</td></tr>
+<tr><td><code>SIMBOLO NIVEL PISO CORTE</code></td><td><code>A-SIMBOLO-NPT-PLANTA</code></td><td><code>NPT</code>, <code>DESCRIPCION</code>, <code>Nº</code></td><td class="med">29</td><td>tag</td></tr>
+<tr><td><code>C40.20</code></td><td><code>E-COL</code> / <code>A-COTA-1-50</code></td><td>—</td><td class="med">17</td><td>columna</td></tr>
+<tr><td><code>Tabela_Esquadrias</code></td><td>paper</td><td>via MTEXT</td><td class="med">1</td><td>tabla</td></tr>
+<tr><td><code>G-CART-MEPA</code></td><td><code>ROT-*</code> (paper)</td><td>7 + <code>ESCALA</code> con <code>CAMPO</code> al viewport</td><td class="med">1 por lámina</td><td>carátula IRAM 4508</td></tr>
+<tr><td>+ 4 puntas de cota</td><td><code>A-COTA-1-50</code> / <code>REP-COTAS</code></td><td>—</td><td class="med">—</td><td>punta</td></tr>
+</table>
+<p class="small">Regla madre: <b>los bloques no se explotan</b> (se pierden atributos, parámetros dinámicos y WIPEOUT). Edición siempre por <code>EDITARBLOQUE</code> + <code>ADMINATRIB</code> → <code>SINCRATR</code> + <code>REGENERAR</code>.</p>
+
+<h3>5.2 Los que faltan crear</h3>
+<table>
+<tr><th>#</th><th>Bloque</th><th>SET</th><th>Qué tiene que hacer</th><th>Estado</th></tr>
+<tr><td>1</td><td><code>SIMB-LOC_ID</code></td><td>SET_01</td><td>rect 0.30 × 0.30 m + <code>N_LOC</code> visible + <code>TXT_LOC</code> invisible; se inserta por comando (28 ejemplares)</td><td class="med">creado (v2.2) — falta insertar los 28</td></tr>
+<tr><td>2</td><td><code>GEN-NIVEL</code></td><td>SET_01</td><td>un solo bloque de nivel con visibilidades <b>Corte / Vista / Planta</b> + <code>Block Table</code> que alinea el atributo <code>NPT</code> con la visibilidad, + grip lineal de altura gráfica. Evita anidar visibilidades</td><td class="est">propuesta · no creado</td></tr>
+<tr><td>3</td><td><code>A-CARP-PU-088</code> · <code>SIMB-NIV-NPT</code> · <code>SIMB-LOC-01</code> · <code>SIMB-CORTE-01</code></td><td>SET_02</td><td>los 4 bloques dinámicos del plano de uso municipal (documentados en el spec §6)</td><td class="est">especificados, no implementados</td></tr>
+<tr><td>4</td><td><code>GCBA-CRTL-PLANO_USO</code> · <code>GCBA-CRTL-PLANO_UNICO</code></td><td>SET_02</td><td>carátulas del plano de uso (hoja de carátula separada)</td><td class="est">especificados, no implementados</td></tr>
+<tr><td>5</td><td><code>COC-BM-600</code></td><td>SET_03</td><td>bajo mesada con stretch 450–1200 + visibilidad con/sin pileta + flip</td><td class="est">especificado, no implementado</td></tr>
+<tr><td>6</td><td><code>COC-PU-BAT</code></td><td>SET_03</td><td>puerta con lookup 0/45/90, capa <code>0</code> → explota a <code>A-CARPINTERIA</code></td><td class="est">especificado, no implementado</td></tr>
+<tr><td>7</td><td>11 bloques de equipo de cocina</td><td>SET_03</td><td>un bloque por equipo: <code>MICRO FR</code>, <code>Microondas-02</code>, <code>cocina-domec-55-58</code>, <code>HO-ELEC</code>, <code>licuadora</code>, <code>tostador</code>, <code>411-87 VF</code>, <code>mesa120x70</code>, <code>LUXOR MINI SI55A</code>… + <code>_ArchTick</code> (78)</td><td class="est">medidos, sin convertir</td></tr>
+<tr><td>8</td><td>visibilidades por escala</td><td>SET_01</td><td><code>SIMB-REP</code> (símbolo mínimo) → <code>50</code> (detalle medio + cota) → <code>100+DETALLE</code> (atributos ocultos visibles). Cada estado amplía información sin cambiar el bloque</td><td class="est">backlog</td></tr>
+<tr><td>9</td><td><code>SET_01-REP_bloques.dwg</code> + paleta <code>.xtp</code></td><td>SET_01</td><td>biblioteca madre editable de los 13 bloques (fuente de <code>WBLOCK</code>, DesignCenter y Tool Palettes) + paleta compartida por Drive</td><td class="est">parcial: existe la madre; falta la paleta</td></tr>
+<tr><td>10</td><td>bloques de disciplina <code>SAN-</code> / <code>ELE-</code></td><td>genéricos</td><td>artefactos, bocas y tableros en bibliotecas propias por disciplina (fuera de la memoria del DWT)</td><td class="est">backlog</td></tr>
+<tr><td>11</td><td>agrupar y purgar anónimos</td><td>SET_01 / SET_03</td><td>312 anónimos <code>*D</code>/<code>*U</code> (variantes de estiramiento + combos de cotas/textos) → agrupar en bloques con nombre o purgar, con criterio de conservación</td><td class="est">backlog</td></tr>
+</table>
+
+<h2 id="herramientas">6. Herramientas del SET_01: 4 LSP + 4 scripts</h2>
+<div class="grid g2">
+<div class="card">
+<div class="k">AutoLISP (5 archivos)</div>
+<table>
+<tr><th>Archivo</th><th>Comandos</th></tr>
+<tr><td><code>SET-01-HORIZ.lsp</code></td><td>analiza / compensa / restaura el twist del viewport y deja el viewport en 0</td></tr>
+<tr><td><code>SET-01-SIMB-LOC-ID.lsp</code> (v2.2)</td><td><code>SIMB-LOC_ID</code> · <code>LOC-ID-CHECK</code> · <code>LOC-ID-DIAG</code></td></tr>
+<tr><td><code>SET-01-NORM-TEXTOS.lsp</code></td><td>normaliza giros de atributos (esta ronda no hizo falta: el estudio los movió a mano)</td></tr>
+<tr><td><code>SET-01-CUADRO-NIVELES.lsp</code> (v4)</td><td><code>CUADRO-NIVELES</code> · <code>-ACT</code> · <code>-NUEVO</code> · <code>-VAL</code></td></tr>
+</table>
+<p class="small">Cada LSP tiene su <code>_notas.md</code> con flujo, troubleshooting y refs oficiales verificadas. El cargador <code>%APPDATA%\Autodesk\AutoCAD LT 2027\R33\enu\Support\SET-01-LOAD.lsp</code> los carga + <code>AseguraBloque</code> + <code>LOC-ID-DIAG</code> al iniciar.</p>
+</div>
+<div class="card">
+<div class="k">Python (4 scripts)</div>
+<table>
+<tr><th>Script</th><th>Qué hace</th></tr>
+<tr><td><code>ordena-locales.py</code></td><td>orden de lectura (filas ΔY &lt; 0.30 m, izq→der) + planilla de locales; modo <code>--check</code> que verifica la numeración <b>fuera</b> del CAD</td></tr>
+<tr><td><code>extrae-atributos-dwg.py</code></td><td>atributos → CSV / MD / JSON por capa (vanos, muros, locales, ejes, columnas); push opcional a n8n</td></tr>
+<tr><td><code>analiza-rotacion-textos.py</code></td><td>viewports con su twist + giros de textos y bloques por capa</td></tr>
+<tr><td><code>chequea-lisp.py</code></td><td>valida paréntesis y estructura de los <code>.lsp</code> antes de cargarlos</td></tr>
+</table>
+<p class="small">Intérprete: <b>Python 3.12 del sistema</b> (<code>…\Programs\Python\Python312\python.exe</code>), donde vive <code>ezdxf</code> 1.4.4 → <code>comfyenv</code> queda para ComfyUI. Ningún script abre el AutoCAD: el DWG se lee como DXF.</p>
+</div>
+</div>
+
+<h2 id="dws">7. Recurso operativo y prueba DWS en vivo</h2>
+<table>
+<tr><th>Recurso</th><th>Dónde está</th></tr>
+<tr><td><code>SET_01-REP.dwt</code> + <code>SET-REP.dws</code></td><td class="small"><code>activos/proyectos/mvp_02-autocad-standards/SET_01-REP/</code> (+ Drive OS-Emilia/W03-CAD). 29 capas + 8 estilos + 3 cotas, verificado ida/vuelta ODA+ezdxf</td></tr>
+<tr><td>PB-01 (informe Emilia) + PB-02 (paso a paso) + guía JR</td><td class="small">vault: <code>MVP_02/SET_01-REP_Replanteo/playbooks/</code> y <code>docs/</code></td></tr>
+<tr><td>4 LSP + 4 scripts + sus notas</td><td class="small">vault: <code>SET_01-REP_Replanteo/lisp/</code> y <code>scripts/</code></td></tr>
+<tr><td>Cuadros (carpinterías, locales, atributos, niveles)</td><td class="small"><code>SET_01-REP_Replanteo/docs/*.csv</code> + <code>.md</code></td></tr>
+</table>
+<h3>Prueba DWS en vivo (5 min)</h3>
+<ol>
+<li>Abrir REP-ARAOZ (o cualquier plano) + comando <code>STANDARDS</code> (LT no lo trae: se muestra en el Full).</li>
+<li>Asociar <code>SET-REP.dws</code> (<code>activos/.../SET_01-REP/</code> o Drive <code>W03-CAD</code>).</li>
+<li><code>CHECKSTANDARDS</code> → muestra las capas fuera de norma una por una.</li>
+<li>Corregir 1 capa en vivo → re-chequear → queda en norma.</li>
+</ol>
+
+<h2 id="ventana">8. Ventana dinámica paso a paso (12 entidades, 0 líneas sueltas)</h2>
+<ol>
+<li><b>Geometría mínima:</b> dos líneas de vano + antepecho bajo en metros, inserción en <code>A-CARP-02</code>.</li>
+<li><b>WIPEOUT rectangular</b> debajo del vano: limpia hatch y muro (<code>A-MURO-MAMP</code>), sin superpuestas que en plot salen gruesas.</li>
+<li><b>Parámetros dinámicos:</b> lineal X = largo (STRETCH a jambas + WIPEOUT) · lineal Y = espesor (mismo bloque en muro 15/20/30). Las 16 variantes del plano son estiramientos aplicados en obra.</li>
+<li><b>Inserción al centro del vano:</b> acota desde ejes (vanos a ejes, mampostería a filos) en todas las escalas.</li>
+<li><b>Atributos:</b> <code>TIPO</code> + <code>ANCHO</code> visibles (van al cuadro); <code>H_ALFEIZAR</code> / <code>H_COLOCACION</code> / <code>H_VENTANA</code> ocultos para obra. Estados: <code>SIMB-REP</code> → 50 → 100+DETALLE.</li>
+<li><b>Regla madre:</b> no se explota nunca (se pierden atributos, dinámicos y WIPEOUT). <code>SINCRATR</code> + <code>REGENERAR</code>.</li>
+</ol>
+
+<h3>Cuadro de carpinterías (salida real del 13/10, 42/42 con atributos)</h3>
+<table>
+<tr><th>TIPO</th><th>ANCHO (m)</th><th>Cantidad</th></tr>
+<tr><td>V01</td><td>2.30</td><td class="med">6</td></tr>
+<tr><td>V02</td><td>1.10</td><td class="med">10</td></tr>
+<tr><td>PV01</td><td>1.75</td><td class="med">4</td></tr>
+</table>
+<table>
+<tr><th>Puerta</th><th>Ancho × Alto</th><th>Cantidad</th></tr>
+<tr><td>P-1 madera</td><td>0.90 × 2.10</td><td class="med">5</td></tr>
+<tr><td>P-2 madera</td><td>0.80 × 2.10</td><td class="med">16</td></tr>
+<tr><td>P-3 madera</td><td>1.00 × 2.10</td><td class="med">1</td></tr>
+</table>
+<p class="small">Si editás atributos, se re-extrae en 1 minuto. Base del cómputo de obra. <span class="est">Nota:</span> el pipe a Google Sheet por n8n (<code>POST /webhook/set01-carpinterias</code>, 12 nodos) quedó <b>en pausa</b> desde el 20/10: la extracción vive en el DWG.</p>
+
+<h2 id="minutos">9. Eficiencia: una vez hecho, cada dibujo tarda menos</h2>
+<p class="small">Barras en minutos por plano. ~~ = estimado a medir con 1 real. Máximo AutoCAD posible vía MCP + Autodesk Help.</p>
+<svg width="100%" height="190" style="background:#1e1e1e;border-radius:10px">
+<text x="10" y="25" fill="#aaa" font-size="12">Manual 1ra vez (450)</text><rect x="230" y="10" width="450" height="18" rx="4" fill="#c25b5b"/>
+<text x="10" y="55" fill="#aaa" font-size="12">Aceitado (300)</text><rect x="230" y="40" width="300" height="18" rx="4" fill="#ffb454"/>
+<text x="10" y="85" fill="#aaa" font-size="12">Con SET (~~90)</text><rect x="230" y="70" width="90" height="18" rx="4" fill="#6aa8ff"/>
+<text x="10" y="115" fill="#aaa" font-size="12">SET + auto (~~30)</text><rect x="230" y="100" width="30" height="18" rx="4" fill="#7fd08a"/>
+<text x="10" y="150" fill="#aaa" font-size="12">Croquis: 180 → 120 → 60 → LoRA 1</text><rect x="230" y="135" width="180" height="12" rx="4" fill="#555"/><rect x="230" y="135" width="60" height="12" rx="4" fill="#ffb454"/><rect x="230" y="135" width="4" height="12" rx="2" fill="#7fd08a"/>
+<text x="240" y="180" fill="#7fd08a" font-size="12">60X: de 60 min a ~1 min de proceso</text>
+</svg>
+<p><b>Total manual: ~7.5hs (5hs aceitado) por plano → mover muros y que los cómputos salgan solos.</b> Eso es lo que hace BIM; el SET lo deja a un paso, y si no, avanza con lo que sale de AutoCAD. Más rápido con o sin cómputo. <span class="small">(Detalle por operación: desglose-configuraciones + pbk-set01-rep.)</span></p>
+<p><b>Eficiencia = mitad de tiempo = doble.</b> Cada vano que entra como bloque con medida (no como líneas) ahorra dibujo + cambios + planilla + errores a obra. Ahorro logueado: <b>12–15 hs por plano</b>, payback en el primer plano. 14 h invertidas en construir el SET.</p>
+
+<h2 id="mes2">10. Mes 2 — la propuesta: del replanteo a la <em>escala urbana</em></h2>
+<p>SET_01 demostró que el sistema funciona a escala de replanteo. El Mes 2 propone <b>una sola arista</b>: llevar la misma lógica (capas, DWT/DWS, LISP, bloques con atributos, cómputos) a la <b>escala urbana</b>, trabajando sobre el <b>plano 2D de Barcelona</b> del concurso — y encadenarlo con <b>Rhino</b> (MCP ya instalado) y <b>ComfyUI</b> (LoRA ya analizado).
+Propuesta completa: <a href="08-propuesta-mes2-cad-urbano.md"><b>08-propuesta-mes2-cad-urbano.md</b></a>.</p>
+
+<div class="grid g4">
+<div class="card g"><div class="bignum">96</div><span class="small">capas en el 2D de Barcelona</span></div>
+<div class="card y"><div class="bignum">162k</div><span class="small">entidades (120× el replanteo)</span></div>
+<div class="card"><div class="bignum">40 km</div><span class="small">de extensión: toda la ciudad</span></div>
+<div class="card"><div class="bignum">38</div><span class="small">bloques heredados por renombrar</span></div>
+</div>
+<p class="small">Medido hoy con el método del estudio: ODA File Converter → DXF → ezdxf 1.4.4, <b>DWG intacto</b> → <code>raw/reports/barcelona-2d.audit.md</code>.</p>
+
+<div class="flow">
+<div class="fnode"><b>CAD</b><br><span class="small">SET_04-URB: plano urbano de trabajo</span></div><div class="farr">→</div>
+<div class="fnode"><b>Rhino</b><br><span class="small">volumetría + MCP (ya instalado)</span></div><div class="farr">→</div>
+<div class="fnode"><b>ComfyUI</b><br><span class="small">FLUX.2 klein 9B + LoRA rhino-to-image</span></div><div class="farr">→</div>
+<div class="fnode"><b>Lámina A1</b><br><span class="small">entrega del concurso · 16/12</span></div>
+</div>
+
+<div class="grid g2">
+<div class="card">
+<div class="k">Lo que cambia a escala urbana</div>
+<ul>
+<li><b>Taxonomía:</b> el 2D es temático y funcional (manzanas, parterres, equipamientos, red viaria, en catalán, por distrito) → el juego propio propone <code>URB-</code> (base) + <code>PRO-</code> (propuesta) + <code>REF-</code> (fondo, no se imprime).</li>
+<li><b>Escala:</b> 1:500 plaza · 1:1000 barrio · 1:5000 ciudad, con escalas custom en el DWT.</li>
+<li><b>Composición:</b> la cartografía entra como <b>xref de fondo</b>; el DWG de trabajo se arma encima (las 96 capas no se renombran a mano).</li>
+<li><b>Densidad:</b> 162.396 entidades → el cuadro urbano se calcula por capa, no a ojo.</li>
+</ul>
+</div>
+<div class="card g">
+<div class="k">Lo que se replica tal cual</div>
+<ul>
+<li><b>DWT/DWS:</b> mismo generador ya automatizado (<code>scripts/genera-template-set01.py</code>) → <code>SET_04-URB.dwt</code> + <code>SET-URB.dws</code>.</li>
+<li><b>LISP:</b> 4 nuevos, derivados de los que ya funcionan — <code>SET-URB</code> (capas) · <code>RESUMEN-URB</code> (el cuadro urbano) · <code>VISTAS-URB</code> (ventanas por escala) · <code>PLAZA-PLACA</code> (recorte de la plaza).</li>
+<li><b>Bloques:</b> los 38 heredados renombrados con prefijo + 6 de la propuesta.</li>
+<li><b>Cómputo:</b> atributos → tabla dentro del DWG + CSV, igual que los niveles.</li>
+</ul>
+</div>
+</div>
+
+<h3>El bloque que sirve al concurso y al sistema a la vez</h3>
+<p>El concurso premia el <b>mobiliario u objeto arquitectónico</b>. El bloque <code>PRO-MOBILIARIO</code> (con atributos <code>MATERIAL</code> / <code>CANT</code> / <code>COSTO</code>) es a la vez el objeto premiable y la pieza que entra al cuadro urbano: la idea del premio y la del estándar son la misma cosa.</p>
+
+<h3>Cómo visualizar la escala urbana con ComfyUI</h3>
+<table>
+<tr><th>Qué se quiere</th><th>Herramienta correcta</th><th>Por qué</th><th>Estado en el vault</th></tr>
+<tr><td><b>Plano ilustrado</b> de la plaza</td><td class="med">SDXL + ControlNet (canny/depth/scribble) sobre el DXF exportado a PNG</td><td>la fidelidad del trazo la da el ControlNet; el LoRA no controla líneas</td><td>controlnet + Juggernaut-XL v9 instalados; dual canny 0.3 + depth 1.0 validado</td></tr>
+<tr><td><b>Axonométrica / vista aérea</b> de la propuesta</td><td class="med">FLUX.2 klein 9B + LoRA <code>rhino-to-image</code> (capturar → arcilla → hiperreal)</td><td>el LoRA da materialidad y sello propio; la geometría entra por <code>ReferenceLatent</code></td><td>workflow JSON validado; falta stack (18,3 GB) + LoRA + capturas</td></tr>
+<tr><td><b>Croquis → render</b> (forma, rápido)</td><td>SD1.5 img2img (denoise 0,6-0,75, ImageScale 512)</td><td>minutos en la RX 570 (77-221 s)</td><td>probado: 23 imágenes en <code>n_02</code> y <code>n_06</code></td></tr>
+</table>
+<p class="small"><b>Frontera técnica:</b> FLUX.2 <b>klein</b> 9B no tiene ControlNet nativo (solo <code>ReferenceLatent</code>) → para planos con fidelidad de trazo el modelo es <b>SDXL + ControlNet</b>; el LoRA del curso entra donde aporta, que es materialidad y estilo. La vista aérea no se genera "directo": sale de la geometría en Rhino con cámara alta + el LoRA de materialidad — generarla solo desde texto es lo que produce el look "IA notoria" que el concurso descarta.</p>
+
+<div class="grid g3">
+<div class="card"><div class="k">Paso 1</div><h3>Decidir el recorte</h3><p>¿Plaza (1:500), barrio (1:1000) o ciudad (1:5000)? Es la primera decisión del Mes 2 en CAD y define el resto.</p></div>
+<div class="card"><div class="k">Paso 2</div><h3>Levantar el SET_04</h3><p>Mapeo de las 96 capas → <code>URB-*</code> · DWT + DWS · <code>SET-URB</code> · 6 bloques de la propuesta · <code>RESUMEN-URB</code>.</p></div>
+<div class="card"><div class="k">Paso 3</div><h3>Encadenar con Rhino</h3><p>Export DXF → Rhino 8 + <code>MCPConnect</code> → 3 capturas desde la misma cámara → pod con klein 9B + LoRA → vista aérea.</p></div>
+</div>
+
+<h2 id="pendientes">11. Lo que falta (orden de ejecución)</h2>
+<div class="grid g2">
+<div class="card y">
+<div class="k">En el CAD (lo corre el estudio)</div>
+<ul>
+<li>Insertar los <b>28 ejemplares</b> de <code>SIMB-LOC_ID</code> (orden de lectura de <code>docs/orden-locales.md</code>) → <code>SIMB-LOC_ID</code> + <code>LOC-ID-CHECK</code>.</li>
+<li>Probar el LSP en AutoCAD LT con 2 locales de prueba y <b>deshacer</b> (LT no se puede automatizar).</li>
+<li>Decidir qué se hace con el local de prueba que quedó de la primera corrida (borrar con <code>U</code>).</li>
+<li>Rotar los rótulos legacy <code>*U323</code>/<code>*U324</code>: hoy <b>no se tocan</b>, conviven con los nuevos en la misma capa.</li>
+<li>Probar el MCP oficial de Autodesk en LT (<code>MCPHTTPSTART</code> → <code>localhost:5001/mcp</code>).</li>
+</ul>
+</div>
+<div class="card">
+<div class="k">En el vault (con <code>s</code>)</div>
+<ul>
+<li>Regenerar <code>cuadro-locales.*</code> y <code>orden-locales.*</code> conservando los números a mano (flag <code>--conservar-numeros</code>).</li>
+<li>Actualizar <b>PB-01 / PB-02</b> (LT 2027 vigente, sin <code>DATAEXTRACTION</code>, sin pipe a Sheet) y <b>pbk-set01-rep</b>.</li>
+<li>Actualizar <code>wiki/glosario/software/autocad.md</code> (COM en pausa con LT) y <code>wiki/glosario/software/mcp-autocad.md</code>.</li>
+<li>Pasar PB-01 + PB-02 a PDF para Drive <code>W03-CAD/SET_01-REP/</code>.</li>
+<li>Crear <code>GEN-NIVEL</code> y regenerar el DWT con los bloques nuevos (13 + <code>SIMB-LOC_ID</code>).</li>
+<li><b>Mes 2:</b> crear la carpeta <code>SET_04-URB_Urbano/</code> en MVP_02 con el spec del SET urbano (capas, DWT/DWS, LISP, bloques) a partir de la propuesta del 21/10.</li>
+</ul>
+</div>
+</div>
+<p class="small">3 puntos a confirmar por el estudio: (1) balcón del 1 PISO, 3.88 vs 3.87; (2) planta baja — ¿exterior y balcón en 0.00?; (3) los 4 valores del 9 PISO — ¿32.06 es el tanque y los otros tres niveles de la misma planta técnica?</p>
+
+<p class="small">Studio OS × Emilia Pimenta — Reporte AutoCAD · estado al 21/10/2026 · método I+D.</p>
+</main>
+<div class="wrap foot"><b>AutoCAD</b><br><span>REP-ARAOZ + SET_01 · LT 2027 · DWG intacto</span></div>
+</body>
+</html>

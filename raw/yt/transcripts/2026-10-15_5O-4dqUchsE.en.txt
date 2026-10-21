@@ -1,0 +1,36 @@
+[00:00:00] This is ComfyUI for animation, concept
+[00:00:02] exploration.
+[00:00:04] This workflow takes a concept art
+[00:00:06] illustration, generates a 3D proxy of
+[00:00:08] the subject, and lets you rotate and
+[00:00:10] pose it freely before generating a
+[00:00:12] polished still frame or video from any
+[00:00:15] angle. Start by loading your concept art
+[00:00:17] of a prop into the load image node.
+[00:00:20] Trypo generates a 3D model from it and
+[00:00:22] saves it as a GLB file.
+[00:00:25] Once that's done, bypass the previous
+[00:00:27] step and drag the 3D model into the load
+[00:00:29] 3D node and set the material mode to
+[00:00:32] normal in the viewports top left panel.
+[00:00:36] From here, the workflow splits into two
+[00:00:38] methods.
+[00:00:40] For still frame exploration, pan and
+[00:00:42] rotate the viewport to the angle you
+[00:00:44] want. The load 3D node outputs the
+[00:00:46] current view as an image automatically.
+[00:00:49] That image, combined with your original
+[00:00:51] concept art and an optional background,
+[00:00:53] goes into GPT image 2 to generate a
+[00:00:56] polished on-style illustration at the
+[00:00:58] new angle. For camera movement
+[00:01:00] exploration, click start recording in
+[00:01:03] the load 3D node, move through your
+[00:01:05] camera path, then click stop recording.
+[00:01:08] The recorded video becomes the motion
+[00:01:10] reference for SeeDance 2.0, which
+[00:01:12] generates a fluid camera move through
+[00:01:14] the stylized scene using the subject and
+[00:01:16] background as references. Bypass the
+[00:01:19] method you're not using and the workflow
+[00:01:21] runs cleanly through the one you need.

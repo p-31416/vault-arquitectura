@@ -1,0 +1,1815 @@
+1
+00:00:00,920 --> 00:00:03,471
+Hello and welcome everybody to module seven.
+
+2
+00:00:03,471 --> 00:00:09,254
+This is the final module of this course and it will be about Gaudí.
+
+3
+00:00:09,254 --> 00:00:11,855
+Now, as you saw the previous module,
+
+4
+00:00:11,855 --> 00:00:17,057
+the panel discussion, we already had like a contextualization about Gaudí,
+
+5
+00:00:17,057 --> 00:00:20,199
+but this one is going to be more in depth.
+
+6
+00:00:20,199 --> 00:00:24,362
+We have developed a workflow that we call the Gaudí workflow.
+
+7
+00:00:25,484 --> 00:00:29,546
+Before actually diving into the topics of this course,
+
+8
+00:00:29,546 --> 00:00:32,118
+as you can see here, of this module,
+
+9
+00:00:32,118 --> 00:00:36,280
+I will give the word to Cas.
+
+10
+00:00:36,280 --> 00:00:42,344
+Cas Esbach is an architect from the Netherlands.
+
+11
+00:00:42,344 --> 00:00:45,676
+Make sure to check him out because he's very,
+
+12
+00:00:45,676 --> 00:00:51,949
+very talented. He's inspiring to me in a lot of ways.
+
+13
+00:00:51,949 --> 00:00:53,170
+I think...
+
+14
+00:00:53,664 --> 00:00:56,315
+It's definitely one to check out.
+
+15
+00:00:56,315 --> 00:01:02,269
+Cas is currently a professor at SCAD before
+
+16
+00:01:02,269 --> 00:01:05,260
+he was an architect at BIG and MVRDV.
+
+17
+00:01:05,260 --> 00:01:09,463
+So he has a real foundation of architectural experience,
+
+18
+00:01:09,463 --> 00:01:11,784
+let's say in the traditional way,
+
+19
+00:01:11,784 --> 00:01:15,896
+but in the later phases of his time at MVRDV,
+
+20
+00:01:15,896 --> 00:01:22,690
+he really got into generative AI and he gave a lot of courses himself.
+
+21
+00:01:23,136 --> 00:01:28,377
+and I actually partnered with him to create this course for you guys.
+
+22
+00:01:28,377 --> 00:01:32,526
+So now I'm going to give the word to Cas.
+
+23
+00:01:35,502 --> 00:01:38,122
+Yes, thanks Thomas for that introduction.
+
+24
+00:01:38,122 --> 00:01:43,482
+I'm Cas Esbach. I'm also a jury member on this competition.
+
+25
+00:01:43,482 --> 00:01:49,302
+I thought it would be good that, before
+
+26
+00:01:49,302 --> 00:01:51,162
+we really touch on the workflow,
+
+27
+00:01:51,162 --> 00:01:55,922
+I want to take you guys a step back and really talk about Gaudí himself,
+
+28
+00:01:55,922 --> 00:01:57,602
+right? The reason we're all here.
+
+29
+00:01:57,602 --> 00:02:00,922
+Antoni Gaudí was a Catalan architect who worked in Barcelona around
+
+30
+00:02:00,922 --> 00:02:04,242
+the turn of 20th century from the 1880s up until his death.
+
+31
+00:02:05,474 --> 00:02:08,076
+in 1926. You probably know his work,
+
+32
+00:02:08,076 --> 00:02:10,609
+you know, the buildings like the Sagrada Família,
+
+33
+00:02:10,609 --> 00:02:14,792
+Casa Batlló, Casa Milà, and Park Güell are some of
+
+34
+00:02:14,792 --> 00:02:17,514
+the most recognizable architectural pieces in the world.
+
+35
+00:02:17,514 --> 00:02:20,447
+Here the Sagrada Família, here Batlló,
+
+36
+00:02:20,447 --> 00:02:23,749
+Milà, and Güell.
+
+37
+00:02:23,749 --> 00:02:28,693
+He took over the Sagrada Família in 1883 and ended up devoting the rest
+
+38
+00:02:28,693 --> 00:02:33,294
+of his life to it, working on it right until he died.
+
+39
+00:02:34,518 --> 00:02:38,130
+What I think his buildings are known for are his organic forms,
+
+40
+00:02:38,130 --> 00:02:44,383
+the flowing, the shapes, these things that architects aren't easily able
+
+41
+00:02:44,383 --> 00:02:47,925
+to draw and let alone that it's really hard to build these things.
+
+42
+00:02:47,925 --> 00:02:50,657
+But I think it's good that when we talk about Gaudí,
+
+43
+00:02:50,657 --> 00:02:52,708
+we don't really talk about how his buildings look,
+
+44
+00:02:52,708 --> 00:02:58,431
+but we focus on the way the buildings work and specifically about
+
+45
+00:02:58,431 --> 00:03:02,073
+how he integrated tools into his design process to create these buildings.
+
+46
+00:03:04,374 --> 00:03:09,896
+Church of Colònia Güell Gaudí built a hanging chain model and he spent close
+
+47
+00:03:09,896 --> 00:03:14,947
+to a decade refining it. Important thing is to understand this is it's
+
+48
+00:03:14,947 --> 00:03:18,878
+not a sketch or drawing in a way,
+
+49
+00:03:18,878 --> 00:03:22,379
+it's a physical calculator that helped him build the building.
+
+50
+00:03:22,379 --> 00:03:24,339
+Because when you hang a chain,
+
+51
+00:03:24,339 --> 00:03:27,840
+you can imagine with multiple weights at certain points,
+
+52
+00:03:27,840 --> 00:03:31,862
+you craft a shape that's able to carry itself on,
+
+53
+00:03:31,862 --> 00:03:33,292
+to carry its own.
+
+54
+00:03:33,504 --> 00:03:36,695
+It's built on pure tension so that when you reverse it,
+
+55
+00:03:36,695 --> 00:03:41,658
+you flip it upside down, you get one form that stands in pure compression,
+
+56
+00:03:41,658 --> 00:03:45,980
+which is exactly what masonry and stone are great
+
+57
+00:03:46,260 --> 00:03:51,262
+at dealing with compression. So in a real sense,
+
+58
+00:03:51,262 --> 00:03:55,764
+Gaudí was using gravity to resolve a structural problem for him,
+
+59
+00:03:55,764 --> 00:03:59,746
+a structural problem he probably wasn't able to solve.
+
+60
+00:04:00,086 --> 00:04:02,587
+or to calculate in a way, but he was able to,
+
+61
+00:04:02,587 --> 00:04:08,260
+let's say, simplify it, translate it as abstracted in a way through,
+
+62
+00:04:08,260 --> 00:04:14,492
+say, using a model. And that's also how we should really think about Gaudí.
+
+63
+00:04:14,492 --> 00:04:19,043
+He's not really somebody that trusted or used drawings or abstraction,
+
+64
+00:04:19,043 --> 00:04:22,806
+though he preferred to work through physical models because they
+
+65
+00:04:22,806 --> 00:04:27,538
+let him understand space directly rather than
+
+66
+00:04:27,694 --> 00:04:29,894
+Let's say creating an abstract representation,
+
+67
+00:04:29,894 --> 00:04:33,337
+a drawing, which then would have you interpret space through that,
+
+68
+00:04:33,337 --> 00:04:38,280
+a rendering, right? His entire design process ran through the tools he used,
+
+69
+00:04:38,280 --> 00:04:40,981
+not through the drawings of the final result.
+
+70
+00:04:40,981 --> 00:04:47,505
+In other words, Gaudí wasn't just producing a building,
+
+71
+00:04:47,505 --> 00:04:51,647
+was producing a tool that would help him shape a building.
+
+72
+00:04:51,647 --> 00:04:56,790
+And I think that's the part that really matters for what we're doing.
+
+73
+00:04:57,102 --> 00:04:59,982
+Now these curves aren't a stylistic decision.
+
+74
+00:04:59,982 --> 00:05:06,102
+Well, they are, but they're a result of a design process where
+
+75
+00:05:06,102 --> 00:05:11,302
+the direct output of a structural system results in its efficiency,
+
+76
+00:05:11,302 --> 00:05:17,202
+right? The efficiency results in the shape and that shape is a,
+
+77
+00:05:17,202 --> 00:05:19,142
+is an answer to a physical problem.
+
+78
+00:05:19,142 --> 00:05:24,942
+So when, when Thomas is going to be explaining that Gaudí workflow,
+
+79
+00:05:24,942 --> 00:05:26,862
+when you're looking
+
+80
+00:05:28,938 --> 00:05:33,319
+To train an AI model, let's say more traditionally with images,
+
+81
+00:05:33,319 --> 00:05:38,581
+you will get things like curves and undulating surfaces and texture in material.
+
+82
+00:05:38,581 --> 00:05:41,972
+But what you won't get is the conceptual transfer.
+
+83
+00:05:41,972 --> 00:05:43,282
+So you'll get a stylistic transfer.
+
+84
+00:05:43,282 --> 00:05:46,213
+You won't get a conceptual transfer,
+
+85
+00:05:46,213 --> 00:05:51,595
+right? And between the copying of the appearance and understanding
+
+86
+00:05:51,595 --> 00:05:54,205
+the underlying logic, there will be a gap.
+
+87
+00:05:54,205 --> 00:05:56,216
+And that's the one we need to close.
+
+88
+00:05:57,382 --> 00:05:59,863
+And that's the whole point of this module.
+
+89
+00:05:59,863 --> 00:06:04,196
+So none of the work that you are going to be doing should be about copying Gaudí's
+
+90
+00:06:04,196 --> 00:06:08,989
+aesthetic, or making something that just looks like Gaudí. It should not be that.
+
+91
+00:06:08,989 --> 00:06:15,872
+It's about using AI as a tool to let us understand structural logic
+
+92
+00:06:15,973 --> 00:06:19,915
+and form instead of drawing a shape and hoping it stands the test of time.
+
+93
+00:06:19,915 --> 00:06:25,638
+And that's why I will pass it back to
+
+94
+00:06:25,838 --> 00:06:27,936
+Thomas right now. Thank you.
+
+95
+00:06:30,712 --> 00:06:35,403
+Thank you, Cas, for the interesting introduction about Gaudí.
+
+96
+00:06:35,403 --> 00:06:39,225
+Right now, we're going to continue with the demonstration.
+
+97
+00:06:39,225 --> 00:06:43,786
+But first, I'm going to give you my take on what we're about to do.
+
+98
+00:06:43,786 --> 00:06:47,647
+My take on this is the following.
+
+99
+00:06:47,647 --> 00:06:52,789
+The role of the architect is shifting from production to judgment.
+
+100
+00:06:52,789 --> 00:06:56,780
+Production architects will become judgment architects.
+
+101
+00:06:57,086 --> 00:06:59,947
+But what I mean by production architects is architects who
+
+102
+00:06:59,947 --> 00:07:01,988
+are constantly producing things.
+
+103
+00:07:01,988 --> 00:07:07,349
+I think the production part will be more and more assisted
+
+104
+00:07:07,349 --> 00:07:12,631
+by AI and therefore the real job of the architects will be judging,
+
+105
+00:07:12,631 --> 00:07:17,112
+judging the output of AI generated content.
+
+106
+00:07:17,112 --> 00:07:22,604
+You can see AI today as the hanging model of Gaudí.
+
+107
+00:07:22,986 --> 00:07:27,087
+a system more capable than us at generating possibilities.
+
+108
+00:07:27,087 --> 00:07:33,709
+Gaudí kept human judgment while letting a bigger system do the computing.
+
+109
+00:07:33,709 --> 00:07:39,580
+And I know this is probably a hot take and a lot of you might not fully agree with
+
+110
+00:07:39,580 --> 00:07:44,112
+me on this, but this is my take on this.
+
+111
+00:07:44,112 --> 00:07:47,593
+it's an introduction to the workflow that follows.
+
+112
+00:07:47,593 --> 00:07:52,654
+Often people reduce Gaudí's work to aesthetics.
+
+113
+00:07:52,846 --> 00:07:55,087
+For example, his mosaic and bright colors.
+
+114
+00:07:55,087 --> 00:08:01,301
+But this misses the point. His real oeuvre was more about spatial thinking
+
+115
+00:08:01,301 --> 00:08:05,713
+and architectural relations, the biomimicry we talked about.
+
+116
+00:08:05,713 --> 00:08:11,357
+The power of Gaudí's approach was in his biomimicry rather than
+
+117
+00:08:11,357 --> 00:08:16,539
+his recognizable aesthetics. So by now you might be thinking,
+
+118
+00:08:16,539 --> 00:08:19,161
+okay, so what are we actually going to do?
+
+119
+00:08:19,161 --> 00:08:20,682
+We won't
+
+120
+00:08:21,198 --> 00:08:25,408
+try to reduce the essence of Gaudí to for example a LoRA.
+
+121
+00:08:27,618 --> 00:08:32,342
+We will try to find the essence of Gaudí in the following workflow.
+
+122
+00:08:32,342 --> 00:08:35,443
+I call it the Rhino to Gaudí workflow.
+
+123
+00:08:35,443 --> 00:08:40,048
+And the way we will experiment with this,
+
+124
+00:08:40,048 --> 00:08:43,010
+it's always going to start from a 3D model.
+
+125
+00:08:43,010 --> 00:08:45,693
+So we take a screenshot of a 3D model.
+
+126
+00:08:45,693 --> 00:08:48,335
+This means that when you're doing the competition,
+
+127
+00:08:48,335 --> 00:08:54,520
+the initial phase and the initial ideation must come from you.
+
+128
+00:08:54,520 --> 00:08:56,812
+So you must build a 3D model.
+
+129
+00:08:57,324 --> 00:08:58,440
+which can be very...
+
+130
+00:09:01,290 --> 00:09:05,331
+very vague or very abstract like this one here.
+
+131
+00:09:05,331 --> 00:09:08,012
+But we need that as a starting point.
+
+132
+00:09:08,012 --> 00:09:12,833
+As we saw before with the custom LoRA I made,
+
+133
+00:09:12,833 --> 00:09:17,054
+we can take a material and we can apply it on this geometry.
+
+134
+00:09:17,054 --> 00:09:21,385
+Of course, we also have to provide a prompt where we say in this case,
+
+135
+00:09:21,385 --> 00:09:27,237
+for example, this is a multi-story open-air outdoor climate museum
+
+136
+00:09:28,177 --> 00:09:30,868
+and the structure is made of this natural stone.
+
+137
+00:09:31,416 --> 00:09:34,189
+So how are we actually going to do this?
+
+138
+00:09:34,189 --> 00:09:39,253
+This is on Miro, so you will just find everything you need on there.
+
+139
+00:09:39,253 --> 00:09:42,797
+The first step will be to set up a Gaudí assistant.
+
+140
+00:09:42,797 --> 00:09:46,340
+Then we have some examples of the workflow.
+
+141
+00:09:46,340 --> 00:09:52,256
+And here we're going to put all the live demo.
+
+142
+00:09:54,731 --> 00:09:55,731
+results.
+
+143
+00:09:58,052 --> 00:10:02,554
+The first thing we will have to do is go to the Gaudí assistant.
+
+144
+00:10:02,554 --> 00:10:09,336
+So this assistant is essentially a set of project instructions that fully understands
+
+145
+00:10:09,577 --> 00:10:15,299
+how to transform our model into a more Gaudí-like 3D model.
+
+146
+00:10:15,299 --> 00:10:18,940
+So we just select everything here.
+
+147
+00:10:18,940 --> 00:10:24,662
+We copy it. We go to our favorite LLM and we make a new project called Rhino
+
+148
+00:10:24,662 --> 00:10:26,103
+to Image Gaudí.
+
+149
+00:10:26,937 --> 00:10:33,235
+Then we go to instructions. We click here and we provide this whole instruction.
+
+150
+00:10:33,235 --> 00:10:40,013
+Now I think it didn't select the actual JSON.
+
+151
+00:10:43,407 --> 00:10:49,693
+So how we can do this better is we click here
+
+152
+00:10:49,693 --> 00:10:53,216
+and we click on export as markdown.
+
+153
+00:10:53,216 --> 00:10:56,539
+Then we will download it.
+
+154
+00:10:58,839 --> 00:11:00,985
+It will be in your downloads folder.
+
+155
+00:11:07,405 --> 00:11:10,525
+As you can see here, you right click on it,
+
+156
+00:11:10,525 --> 00:11:13,304
+open with Notepad.
+
+157
+00:11:17,711 --> 00:11:22,037
+Okay, so it opens like this. I'll do it one more time.
+
+158
+00:11:22,037 --> 00:11:26,604
+So we right click it, open with Notepad.
+
+159
+00:11:26,604 --> 00:11:31,031
+And then you select all the text.
+
+160
+00:11:33,591 --> 00:11:34,899
+and you provide it.
+
+161
+00:11:37,365 --> 00:11:42,284
+in here. You will see that it keeps the structure better.
+
+162
+00:11:42,284 --> 00:11:44,708
+We click on save instructions.
+
+163
+00:11:44,708 --> 00:11:50,509
+Then we need a screenshot of our 3D model.
+
+164
+00:11:52,671 --> 00:11:55,957
+In my case I will be using this one,
+
+165
+00:11:55,957 --> 00:12:01,857
+just a very basic 3D model of a massing.
+
+166
+00:12:04,751 --> 00:12:05,947
+I will type start.
+
+167
+00:12:09,047 --> 00:12:10,093
+and see what happens.
+
+168
+00:12:19,683 --> 00:12:24,236
+Now the model asked me what program fills the revealed interior.
+
+169
+00:12:24,236 --> 00:12:27,088
+So it just asked what the use case is here.
+
+170
+00:12:27,088 --> 00:12:30,249
+And here you just have to answer the questions.
+
+171
+00:12:30,249 --> 00:12:34,492
+So in your case, it might be an exposition or a museum.
+
+172
+00:12:34,492 --> 00:12:38,955
+In my case, it's a residential.
+
+173
+00:12:42,431 --> 00:12:44,478
+And mixed use building.
+
+174
+00:12:47,971 --> 00:12:50,353
+How much do we want it to be like Gaudí?
+
+175
+00:12:50,353 --> 00:12:52,875
+So moderate, full structural Gaudí,
+
+176
+00:12:52,875 --> 00:12:55,517
+near maximal or hold nothing back.
+
+177
+00:12:55,517 --> 00:13:01,341
+I will take seven for now just to show
+
+178
+00:13:01,421 --> 00:13:04,243
+it, but not too extreme. You can play around with this.
+
+179
+00:13:04,243 --> 00:13:07,365
+Lead moves: keep my three proposals.
+
+180
+00:13:07,365 --> 00:13:09,187
+So.
+
+181
+00:13:11,745 --> 00:13:16,829
+Each bay becomes a tall parabolic void framed by catenary
+
+182
+00:13:16,829 --> 00:13:20,242
+rib or ribs following the... yeah,
+
+183
+00:13:20,242 --> 00:13:25,467
+wow, this is very specific. Let's say all three.
+
+184
+00:13:28,045 --> 00:13:32,038
+So provide a lot of information about what your vision is
+
+185
+00:13:32,919 --> 00:13:38,222
+for making this more Gaudí. So I would really advise you to make it
+
+186
+00:13:38,222 --> 00:13:41,494
+as specific as possible. Add a lot of information here.
+
+187
+00:13:41,494 --> 00:13:46,748
+So right, for example, the walls become like this,
+
+188
+00:13:46,748 --> 00:13:51,491
+or you provide another reference image and you really give a lot of information.
+
+189
+00:13:51,491 --> 00:13:56,165
+Unlike me,
+
+190
+00:13:56,165 --> 00:13:57,165
+I just.
+
+191
+00:13:57,153 --> 00:14:01,495
+selected yes or no and I didn't provide a lot of information.
+
+192
+00:14:04,023 --> 00:14:10,358
+So you copy this and now we go into Comfy and we quickly make a new workflow.
+
+193
+00:14:10,358 --> 00:14:12,079
+We do that by double clicking,
+
+194
+00:14:12,079 --> 00:14:13,691
+clicking load image.
+
+195
+00:14:15,929 --> 00:14:19,000
+Here, of course, we load the same image as before.
+
+196
+00:14:19,000 --> 00:14:24,323
+We zoom in. Then we double click again.
+
+197
+00:14:24,323 --> 00:14:30,965
+We type Nano Banana 2. Since this is a model that we will be using for this step,
+
+198
+00:14:30,965 --> 00:14:34,207
+we connect image like this.
+
+199
+00:14:37,059 --> 00:14:40,341
+We take this node and we release it.
+
+200
+00:14:40,341 --> 00:14:44,693
+Here we click on Save Image or you type it up here
+
+201
+00:14:44,693 --> 00:14:48,005
+and it's automatically connected.
+
+202
+00:14:48,005 --> 00:14:52,347
+We double click and we type compare images.
+
+203
+00:14:54,915 --> 00:14:56,125
+This one by Comfy.
+
+204
+00:14:58,529 --> 00:15:05,044
+Image A we connect here, image B we connect here and that's it.
+
+205
+00:15:05,044 --> 00:15:09,037
+Okay. Now if this is a bit too quick,
+
+206
+00:15:09,037 --> 00:15:12,169
+don't worry because the images,
+
+207
+00:15:12,169 --> 00:15:16,272
+this one, this image and this one,
+
+208
+00:15:16,272 --> 00:15:19,114
+they have the workflow embedded in them.
+
+209
+00:15:19,114 --> 00:15:22,916
+So you can just download them and drag and drop them in Comfy and you will have
+
+210
+00:15:23,157 --> 00:15:26,509
+the same workflow. So you don't have to build it yourself.
+
+211
+00:15:27,897 --> 00:15:30,988
+The settings resolution we put at 2K.
+
+212
+00:15:30,988 --> 00:15:36,951
+Thinking level we put at high and the rest we can keep.
+
+213
+00:15:36,951 --> 00:15:40,733
+You can put a aspect ratio but it's not necessary.
+
+214
+00:15:40,733 --> 00:15:46,265
+And here we put the prompt that the agent gave us.
+
+215
+00:15:49,743 --> 00:15:50,743
+Then we click on Run.
+
+216
+00:15:54,783 --> 00:15:57,865
+And this is the result. if we zoom in here,
+
+217
+00:15:57,865 --> 00:16:01,748
+we just hover over the image.
+
+218
+00:16:01,748 --> 00:16:08,732
+We can see that our 3D model gets transformed into something that
+
+219
+00:16:08,833 --> 00:16:13,736
+Nano Banana thinks is more Gaudí-esque according to our agent.
+
+220
+00:16:13,736 --> 00:16:19,219
+So if we zoom in, it's interesting that the main geometry gets followed almost
+
+221
+00:16:19,219 --> 00:16:23,983
+exactly. And all the infill of the planes,
+
+222
+00:16:24,589 --> 00:16:27,161
+This is where it gets interesting.
+
+223
+00:16:27,161 --> 00:16:32,456
+Now, of course, if you go back here and you really look at the prompt
+
+224
+00:16:32,456 --> 00:16:35,289
+and you customize this prompt to your liking,
+
+225
+00:16:35,289 --> 00:16:39,173
+or here you provide way more information,
+
+226
+00:16:39,173 --> 00:16:41,985
+it will become better and better.
+
+227
+00:16:41,985 --> 00:16:46,640
+I'm just showing the workflow since I am 100 % sure that it works.
+
+228
+00:16:46,640 --> 00:16:49,022
+It's the same workflow I used here.
+
+229
+00:16:52,239 --> 00:16:58,313
+to this image. I answered some questions about what I thought that could
+
+230
+00:16:58,313 --> 00:17:04,147
+be cool to get these kind of tree-trunk features on the columns.
+
+231
+00:17:04,147 --> 00:17:09,491
+And then in the next step, we turned it into a realistic image.
+
+232
+00:17:09,491 --> 00:17:11,542
+But as you can see for the geometry,
+
+233
+00:17:11,542 --> 00:17:14,135
+that is super important that we lock it in here.
+
+234
+00:17:14,135 --> 00:17:18,058
+So what we're actually doing is we're taking two steps.
+
+235
+00:17:20,213 --> 00:17:23,646
+And in the first step, so from here to here,
+
+236
+00:17:23,646 --> 00:17:27,670
+we're locking down the geometry and from here to here,
+
+237
+00:17:27,670 --> 00:17:32,214
+we're applying aesthetics. taking this
+
+238
+00:17:34,616 --> 00:17:39,681
+thing of generating an image and we split it into geometry and aesthetics.
+
+239
+00:17:39,681 --> 00:17:44,625
+And the geometry is then based on Gaudí and the aesthetics is based
+
+240
+00:17:44,625 --> 00:17:46,187
+on whatever input we provide.
+
+241
+00:17:50,863 --> 00:17:53,545
+So here we can see if we like it or not.
+
+242
+00:17:53,545 --> 00:17:59,940
+I would always recommend to do another run to see the difference.
+
+243
+00:17:59,940 --> 00:18:05,454
+Actually, I like this one a lot because I like the shapes of the facade like that.
+
+244
+00:18:05,454 --> 00:18:09,498
+So I would download it already.
+
+245
+00:18:09,498 --> 00:18:12,630
+And while this one is generating,
+
+246
+00:18:12,630 --> 00:18:16,263
+I will provide it here on Miro.
+
+247
+00:18:26,883 --> 00:18:29,244
+and let's see when this one is ready.
+
+248
+00:18:29,244 --> 00:18:32,506
+So this one is ready.
+
+249
+00:18:32,506 --> 00:18:37,149
+It's a bit crazy. So as you can see,
+
+250
+00:18:37,149 --> 00:18:40,231
+it followed the geometry, but added like a different,
+
+251
+00:18:40,231 --> 00:18:42,192
+like an extra floor on the ground.
+
+252
+00:18:42,192 --> 00:18:46,695
+So I'm going to stick with the first version,
+
+253
+00:18:46,695 --> 00:18:47,695
+this one.
+
+254
+00:18:49,517 --> 00:18:52,770
+You must remember that in the project instructions,
+
+255
+00:18:52,770 --> 00:18:56,152
+I put seven, so I could have put more or less,
+
+256
+00:18:56,152 --> 00:19:01,997
+or you could change the instructions to make it more Gaudí-esque or apply your idea
+
+257
+00:19:02,318 --> 00:19:05,280
+about what Gaudí is. This is just an example.
+
+258
+00:19:05,280 --> 00:19:08,933
+Okay, for the next step to make it realistic,
+
+259
+00:19:08,933 --> 00:19:11,886
+it's essentially just the Rhino to Image workflow.
+
+260
+00:19:11,886 --> 00:19:17,470
+So we go to our Rhino to Image project we made before.
+
+261
+00:19:18,735 --> 00:19:20,432
+provide our.
+
+262
+00:19:22,605 --> 00:19:26,213
+massing we just generated then
+
+263
+00:19:26,213 --> 00:19:32,729
+we provide a material for me I'm going to choose
+
+264
+00:19:38,412 --> 00:19:43,485
+this red marble since we use it in our previous example as well.
+
+265
+00:19:43,485 --> 00:19:50,128
+I'm going to give a bit of context, saying residential building
+
+266
+00:19:50,128 --> 00:19:52,099
+in Barcelona.
+
+267
+00:19:57,353 --> 00:19:59,470
+and see what happens.
+
+268
+00:20:01,977 --> 00:20:05,450
+Now, while this one is generating,
+
+269
+00:20:05,450 --> 00:20:11,966
+we can go back to Comfy and remember that when
+
+270
+00:20:11,966 --> 00:20:16,539
+you download this one, you will have another Rhino to Image workflow.
+
+271
+00:20:16,539 --> 00:20:21,314
+So we download this one.
+
+272
+00:20:21,314 --> 00:20:27,069
+We go and we drag and drop it in here,
+
+273
+00:20:27,069 --> 00:20:29,671
+which opens up
+
+274
+00:20:30,345 --> 00:20:33,380
+workflow that I used to generate this one as you can see.
+
+275
+00:20:33,380 --> 00:20:37,508
+So this materiality is prompt.
+
+276
+00:20:37,508 --> 00:20:41,455
+Of course we're going to change it using this one.
+
+277
+00:20:44,959 --> 00:20:50,761
+and this one. Since those two were also the input of the agent,
+
+278
+00:20:50,761 --> 00:20:54,323
+the prompt is ready. So we copy it.
+
+279
+00:20:54,323 --> 00:20:57,744
+We replace it here.
+
+280
+00:20:57,744 --> 00:21:01,726
+We make sure that everything is set into place.
+
+281
+00:21:01,726 --> 00:21:06,048
+Again, here you can choose which LoRA you use,
+
+282
+00:21:06,048 --> 00:21:08,209
+either the premium or the basic one.
+
+283
+00:21:08,209 --> 00:21:12,911
+Of course, I'm going to do it with the premium one to see what the result is.
+
+284
+00:21:16,863 --> 00:21:19,845
+And this is what the workflow did.
+
+285
+00:21:19,845 --> 00:21:23,747
+So it applied the material exactly over the geometry.
+
+286
+00:21:23,747 --> 00:21:27,089
+so again, in this step the geometry doesn't get changed,
+
+287
+00:21:27,089 --> 00:21:29,430
+just the material application.
+
+288
+00:21:29,430 --> 00:21:34,533
+Now this is of course a view,
+
+289
+00:21:34,533 --> 00:21:37,595
+which is more from a distance.
+
+290
+00:21:37,595 --> 00:21:42,297
+I feel like the LoRA and the workflow works better when you do a zoom
+
+291
+00:21:42,437 --> 00:21:45,239
+or like close up of a facade detail.
+
+292
+00:21:45,539 --> 00:21:49,903
+So I will redo the whole workflow to show you again how it works.
+
+293
+00:21:49,903 --> 00:21:55,988
+And I really advise you to think about what Gaudí means to you,
+
+294
+00:21:55,988 --> 00:22:01,592
+how you could interpret his biomimetic approach
+
+295
+00:22:02,313 --> 00:22:05,376
+and really apply it on your project.
+
+296
+00:22:05,376 --> 00:22:08,919
+Probably a view like this.
+
+297
+00:22:08,919 --> 00:22:14,093
+I mean, from a distance, showing the whole building is not the best approach.
+
+298
+00:22:14,711 --> 00:22:20,510
+I feel like a facade detail like this or close
+
+299
+00:22:20,510 --> 00:22:24,477
+up works better because you can see that
+
+300
+00:22:24,477 --> 00:22:29,325
+it focuses on small details better.
+
+301
+00:22:32,015 --> 00:22:35,354
+So I'll provide this image here and then.
+
+302
+00:22:37,995 --> 00:22:40,973
+I will do another example.
+
+303
+00:22:56,975 --> 00:22:59,480
+For the second example, we're going to use-
+
+304
+00:23:07,663 --> 00:23:08,663
+The following.
+
+305
+00:23:11,129 --> 00:23:18,071
+So this massing, it's a massing we have already seen before as well.
+
+306
+00:23:18,071 --> 00:23:24,403
+And another example was this facade structure that is kind of waved.
+
+307
+00:23:24,403 --> 00:23:27,403
+So same steps,
+
+308
+00:23:27,403 --> 00:23:30,524
+we go to Comfy, we go back to
+
+309
+00:23:30,524 --> 00:23:36,166
+our previous workflow provided in here.
+
+310
+00:23:36,166 --> 00:23:40,267
+We need the prompt, so we go to our...
+
+311
+00:23:41,504 --> 00:23:46,774
+Gaudí workflow or Gaudí agent which
+
+312
+00:23:46,774 --> 00:23:50,582
+is this one you provide it here
+
+313
+00:24:00,076 --> 00:24:03,678
+So with this one I'm going to provide a bit more information.
+
+314
+00:24:03,678 --> 00:24:09,501
+So I'm going to say the gray is the main structure.
+
+315
+00:24:09,501 --> 00:24:12,082
+Facade
+
+316
+00:24:12,282 --> 00:24:14,483
+of a
+
+317
+00:24:14,483 --> 00:24:18,845
+residential building
+
+318
+00:24:20,606 --> 00:24:21,606
+in Barcelona.
+
+319
+00:24:30,168 --> 00:24:31,168
+...
+
+320
+00:24:38,452 --> 00:24:40,425
+are railings
+
+321
+00:24:43,139 --> 00:24:45,606
+of the balconies.
+
+322
+00:24:48,323 --> 00:24:49,323
+Not just.
+
+323
+00:25:01,347 --> 00:25:05,898
+The cyan part, I accidentally clicked on regenerate,
+
+324
+00:25:05,898 --> 00:25:08,709
+but it's not a problem because it will do exactly the same.
+
+325
+00:25:08,709 --> 00:25:14,811
+So I will say that the cyan part are windows.
+
+326
+00:25:14,811 --> 00:25:18,832
+So when it regenerates,
+
+327
+00:25:18,832 --> 00:25:25,334
+it will ask me the same. So I don't have to worry about me clicking the wrong thing.
+
+328
+00:25:25,334 --> 00:25:27,175
+Then I would also say,
+
+329
+00:25:27,753 --> 00:25:32,424
+the program: it's a residential building, I already said that. Sacred elements:
+
+330
+00:25:32,724 --> 00:25:37,066
+the rhythm of the facade
+
+331
+00:25:37,686 --> 00:25:42,827
+and the dimensions is sacred
+
+332
+00:25:43,427 --> 00:25:49,176
+what also helps here is to give the dimensions so for example here
+
+333
+00:25:49,176 --> 00:25:54,940
+i know that i modeled it that the distance between the floor and
+
+334
+00:25:54,940 --> 00:25:56,691
+the ceiling is three meters so
+
+335
+00:25:58,315 --> 00:26:01,979
+ceiling height is three meters.
+
+336
+00:26:01,979 --> 00:26:08,606
+This helps the model understand the scale because
+
+337
+00:26:08,606 --> 00:26:12,550
+if we say it's six meters then the scale is completely different of course.
+
+338
+00:26:16,191 --> 00:26:21,550
+Gaudí scale. Let's put it at eight for now.
+
+339
+00:26:24,943 --> 00:26:28,422
+So just follow the questions. It will ask as much questions as
+
+340
+00:26:28,422 --> 00:26:32,153
+it needs to understand your goal.
+
+341
+00:26:41,753 --> 00:26:43,744
+So it's generating another prompt.
+
+342
+00:26:43,744 --> 00:26:47,946
+For this tutorial, I'm not actually reading the prompt,
+
+343
+00:26:47,946 --> 00:26:53,099
+but I really recommend doing so because sometimes the LLM hallucinates
+
+344
+00:26:53,099 --> 00:26:54,750
+and it writes super weird stuff.
+
+345
+00:26:54,750 --> 00:26:58,752
+And then you're troubleshooting when it's just the prompt.
+
+346
+00:26:58,752 --> 00:27:01,934
+So we keep the same settings.
+
+347
+00:27:01,934 --> 00:27:03,835
+We click on run.
+
+348
+00:27:07,403 --> 00:27:11,148
+while this one is running because it always takes like 30 seconds we can
+
+349
+00:27:11,148 --> 00:27:16,655
+go back to this workflow and update our image
+
+350
+00:27:19,651 --> 00:27:23,338
+And we can choose a new reference.
+
+351
+00:27:23,338 --> 00:27:25,662
+Let's say you have...
+
+352
+00:27:29,677 --> 00:27:33,863
+instead of a material, more like a facade that you would like to
+
+353
+00:27:33,863 --> 00:27:36,918
+try of another architect,
+
+354
+00:27:36,918 --> 00:27:37,918
+for example.
+
+355
+00:27:40,173 --> 00:27:43,327
+Let's actually try this one. It's
+
+356
+00:27:43,327 --> 00:27:48,724
+a very expressionist facade and also maybe the blue
+
+357
+00:27:48,724 --> 00:27:52,909
+and the color will relate a bit more to Gaudí as well.
+
+358
+00:27:59,951 --> 00:28:03,389
+Okay, we can go back to.
+
+359
+00:28:08,301 --> 00:28:11,069
+This one is not generated or it is generated.
+
+360
+00:28:14,823 --> 00:28:19,480
+For some reason this node didn't get triggered but that's why we have this safe
+
+361
+00:28:19,480 --> 00:28:23,156
+image node because we can still see that it really did a very interesting
+
+362
+00:28:23,156 --> 00:28:28,243
+job actually. It really made it very biomorphic.
+
+363
+00:28:28,243 --> 00:28:30,747
+So let's download it.
+
+364
+00:28:33,091 --> 00:28:36,247
+And we go back to the Rhino to Image workflow.
+
+365
+00:28:39,503 --> 00:28:40,978
+provide this image.
+
+366
+00:28:43,843 --> 00:28:46,710
+with this reference, we say again,
+
+367
+00:28:46,710 --> 00:28:50,538
+like residential, the side.
+
+368
+00:28:54,501 --> 00:28:56,511
+And whatever you want to say.
+
+369
+00:29:02,313 --> 00:29:06,549
+loggias, I don't know, whatever you want to prompt.
+
+370
+00:29:06,549 --> 00:29:08,162
+The more information you give,
+
+371
+00:29:08,162 --> 00:29:10,575
+the better. I'm just going to keep it like this,
+
+372
+00:29:10,575 --> 00:29:15,402
+which is probably not enough, but it will work anyway,
+
+373
+00:29:15,402 --> 00:29:16,402
+I believe.
+
+374
+00:29:20,259 --> 00:29:25,702
+We go back to our Rhino to Image workflow and here you can see we're going
+
+375
+00:29:25,702 --> 00:29:28,884
+a lot of back and forth. So you have to be very organized.
+
+376
+00:29:28,884 --> 00:29:33,707
+Otherwise it gets too much. Since we have two workflows in Comfy and
+
+377
+00:29:33,707 --> 00:29:37,069
+we also have two projects in Claude or in your LLM.
+
+378
+00:29:37,069 --> 00:29:41,312
+Make sure to have like your own system of organizing everything.
+
+379
+00:29:41,312 --> 00:29:43,473
+So where is the building located?
+
+380
+00:29:43,473 --> 00:29:45,154
+Let's say Barcelona.
+
+381
+00:29:47,861 --> 00:29:49,833
+scale of the residential project.
+
+382
+00:29:49,833 --> 00:29:53,999
+Every floor is three meters.
+
+383
+00:29:57,901 --> 00:29:59,926
+I know this is not really the same question,
+
+384
+00:29:59,926 --> 00:30:01,459
+but I think you get the point.
+
+385
+00:30:01,459 --> 00:30:05,328
+The better your input, the more input,
+
+386
+00:30:05,328 --> 00:30:08,134
+the better the output will be.
+
+387
+00:30:12,633 --> 00:30:15,106
+So before we can actually generate an image,
+
+388
+00:30:15,106 --> 00:30:18,970
+we also have to provide the correct input image,
+
+389
+00:30:18,970 --> 00:30:19,970
+of course.
+
+390
+00:30:24,897 --> 00:30:25,897
+then
+
+391
+00:30:29,411 --> 00:30:30,921
+we click on run
+
+392
+00:30:36,621 --> 00:30:41,862
+and see what happens. So here we can see what is being generated.
+
+393
+00:30:44,303 --> 00:30:46,410
+It's always nice to see this little preview.
+
+394
+00:31:01,943 --> 00:31:06,399
+And here you can see that it actually translated it perfectly,
+
+395
+00:31:06,399 --> 00:31:08,702
+I would say, because it understood that this,
+
+396
+00:31:08,702 --> 00:31:11,643
+for example, is a chair and this is a,
+
+397
+00:31:11,643 --> 00:31:15,641
+yeah, this is good. I would be happy with this result.
+
+398
+00:31:15,641 --> 00:31:17,133
+Yeah.
+
+399
+00:31:21,839 --> 00:31:25,099
+It's so satisfying to see the before and the after because the LoRA
+
+400
+00:31:25,099 --> 00:31:29,482
+is trained so well that it actually follows geometry exactly.
+
+401
+00:31:31,735 --> 00:31:35,046
+Okay, so this one I will provide here.
+
+402
+00:31:41,369 --> 00:31:45,163
+together with the reference image,
+
+403
+00:31:45,163 --> 00:31:47,747
+which was this one.
+
+404
+00:31:54,093 --> 00:31:55,745
+And by the time that you're watching this,
+
+405
+00:31:55,745 --> 00:32:01,353
+there will be more examples since these are just a few examples.
+
+406
+00:32:01,353 --> 00:32:02,515
+...
+
+407
+00:32:04,813 --> 00:32:06,054
+And then you could try them out.
+
+408
+00:32:06,054 --> 00:32:09,128
+You can always download them like this.
+
+409
+00:32:09,128 --> 00:32:16,065
+And it's this workflow for Gaudí is mostly in this first step.
+
+410
+00:32:16,065 --> 00:32:19,179
+So make sure that you actually read.
+
+411
+00:32:21,833 --> 00:32:26,535
+these instructions and make your own version of this because this is what
+
+412
+00:32:26,535 --> 00:32:31,807
+I think is good and what I think is Gaudí's constructive logic and this
+
+413
+00:32:31,807 --> 00:32:38,270
+is your start point but don't just copy this one and use it change this
+
+414
+00:32:38,270 --> 00:32:43,592
+one if you for example say no for me Gaudí is more like this then put
+
+415
+00:32:43,592 --> 00:32:47,934
+it in this instruction because then the output will be more personalized
+
+416
+00:32:47,974 --> 00:32:50,995
+to you so the way you
+
+417
+00:32:51,255 --> 00:32:56,898
+or the amount of customization you apply to this prompt,
+
+418
+00:32:56,898 --> 00:33:02,941
+the better it will be. And the better it will make whatever
+
+419
+00:33:02,941 --> 00:33:05,773
+you think of as Gaudí.
+
+420
+00:33:08,153 --> 00:33:13,485
+So by now I hope the workflow is somewhat clear and that you can start
+
+421
+00:33:13,485 --> 00:33:17,347
+to experiment with it. To make it a bit more clear,
+
+422
+00:33:17,347 --> 00:33:23,569
+I changed the Miro board and I added some annotations to clarify my goal.
+
+423
+00:33:23,569 --> 00:33:26,581
+As we saw before,
+
+424
+00:33:26,581 --> 00:33:29,952
+so it's two image-to-image steps.
+
+425
+00:33:29,952 --> 00:33:36,294
+The first step is really to lock down the geometry, to impose some extra
+
+426
+00:33:36,294 --> 00:33:37,415
+spatial qualities.
+
+427
+00:33:37,825 --> 00:33:41,436
+related to Gaudí. And then in the second step,
+
+428
+00:33:41,436 --> 00:33:45,117
+we add texture, aesthetics and realism.
+
+429
+00:33:45,117 --> 00:33:50,499
+Let's say it like that. When we have this stone reference on top,
+
+430
+00:33:50,499 --> 00:33:55,720
+you can see it gets applied well when we take the same geometry as here on top.
+
+431
+00:33:55,720 --> 00:33:59,831
+But we apply a different one. Of course,
+
+432
+00:33:59,831 --> 00:34:05,133
+this becomes a different space while following the exact same geometry.
+
+433
+00:34:06,777 --> 00:34:09,629
+Here's another example. And then of course,
+
+434
+00:34:09,629 --> 00:34:12,190
+these ones are the ones we just made.
+
+435
+00:34:12,190 --> 00:34:17,885
+Now I want to repeat this one for the second step.
+
+436
+00:34:17,885 --> 00:34:23,739
+to make it more realistic, you need the LoRA and included in the course
+
+437
+00:34:23,739 --> 00:34:27,471
+is the basic one that you will find in the folder and the premium one,
+
+438
+00:34:27,471 --> 00:34:29,873
+the one that I have been using.
+
+439
+00:34:29,873 --> 00:34:35,617
+yes, this one, the bottom one is available on my website.
+
+440
+00:34:36,054 --> 00:34:38,696
+So make sure to check that one out.
+
+441
+00:34:38,696 --> 00:34:45,458
+There's a lot of different tests that could be interesting to do,
+
+442
+00:34:45,458 --> 00:34:51,630
+but the thing that I believe works the best is this more zoomed
+
+443
+00:34:51,630 --> 00:34:56,382
+in version on a facade or a detail or let's say an entrance
+
+444
+00:34:56,382 --> 00:35:00,665
+to the building or something like that.
+
+445
+00:35:00,665 --> 00:35:04,697
+Try to always make it from eye height because the LoRA is
+
+446
+00:35:04,857 --> 00:35:07,168
+pretty much trained on all images
+
+447
+00:35:07,168 --> 00:35:13,110
+and photography that
+
+448
+00:35:13,590 --> 00:35:17,102
+are taken from eye height. So don't try to make a drone shot,
+
+449
+00:35:17,102 --> 00:35:19,732
+for example, with this because it's probably not going to work.
+
+450
+00:35:19,732 --> 00:35:26,425
+try to keep it like this.
+
+451
+00:35:28,625 --> 00:35:32,767
+So that being said, we're gonna end module seven about Gaudí here.
+
+452
+00:35:32,767 --> 00:35:34,717
+And since this is the last module,
+
+453
+00:35:34,717 --> 00:35:37,168
+we're also ending the course here.
+
+454
+00:35:37,168 --> 00:35:42,130
+Thank you for watching and good luck with the competition.

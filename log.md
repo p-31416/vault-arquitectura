@@ -9,6 +9,201 @@ tags: [log, historico]
 
 Más nuevo → más arriba
 
+## 2026-10-21 (madrugada) — Las fuentes del concurso como contexto de ChatGPT para Emilia (item `589` en Leantime)
+
+- **Pedido de Sol:** que el análisis de fuentes se pueda replicar sobre el corpus del concurso (carpeta `AIxGaudi/Bibliography`, 31 PDF) y **compartirlo con el ChatGPT de Emilia sin romperle las sesiones que usa desde el celular**.
+- **Hallazgo que define la vía (doc de OpenAI, oct/2026):** los **custom GPT están en retirada** — las cuentas personales (Free/Go/Plus/Pro) **ya no pueden crear ni publicar GPTs**; el retiro es el 11/12/2026 en Enterprise y la migración a *Plugins* apunta al 17/09/2026. La alternativa oficial y la adecuada para un equipo es el **proyecto compartido**: **se comparte por link o invitación, en web y en la app móvil**, y usa **memoria solo-del-proyecto** (no lee sus memorias personales ni conversaciones de afuera) → **sus chats quedan intactos y el corpus no se le mezcla**.
+- **La vía concreta:** proyecto "AI×Gaudí" + **app de Google Drive conectada** (en un proyecto se puede pegar el link de una **carpeta** como fuente: *Add source → Google Drive*; la app **no pre-indexa** dentro del proyecto → consulta en vivo, siempre fresca). Límites: 5 archivos (Free) / 25 (Go, Plus) / 40 (Edu, Pro, Business, Enterprise) por proyecto, 10 por tanda.
+- **Fuente única:** el vault sigue siendo el original (32 fichas + 31 transcripciones en `raw/pdf/`); el Drive es la copia compartida. **La API es para el lado vault** (n8n), no para la app del celular.
+- **Leantime:** card `589` "Fuentes del concurso: corpus AIxGaudi como contexto para el ChatGPT de Emilia" (proyecto 4, milestone `463` M-A3, sprint 27, 5,04 h) + 8 subtareas `590`-`597` (decidir el material · exportar las fichas al Drive en 6 lotes · compartir la carpeta · conectar la app de Drive · crear el Project · probar desde el celular · escribir las instrucciones del contexto · documentar).
+- **Documento nuevo:** `proyectos/STUDIO_OS-Emilia/documentacion/fuentes-contexto-chatgpt-emilia.md` — la decisión de fondo, la vía, la respuesta a la coexistencia, **las 4 pestañas para abrir mañana**, los 5 pasos con pomodoros, la estructura de la exportación y las instrucciones del contexto.
+- **Spec actualizado:** `specs/261020-plan-procesado-fuentes-pdf-gaudi.md` §7 (pregunta 6 para Emilia) y §9 (registro de cambios).
+
+## 2026-10-21 (madrugada) — El dashboard general pasa a ser la puerta (y todo a GitHub)
+
+- **Pedido de Sol:** el "documento que engloba todo" debe ser **el dashboard** (`proyectos/STUDIO_OS-Emilia/presentacion/dashboard-mes1-emilia.html`), que ya es la entrada al resto; los `.md` **no hace falta que sean links** (se ve en otra computadora → importa la ruta del vault) y después hay que **subir todo a GitHub**.
+- **Nuevo** `scripts/inyectar-puerta-temas-dashboard.py` + `_notas.md` → inyecta en el dashboard general la sección **"la puerta"**: los **6 temas** (fuentes · agentes Telegram · CAD/SET · Comfy · Leantime · estudio) con el estado en 1 línea + las **rutas del vault como texto** + el link a su dashboard; y abajo la franja con los **3 pendientes** de la reunión con Emilia. Además agrega la pestaña **"Temas"** al nav y la ruta del doc de la reunión a los `toplinks`.
+- **Por qué un script y no editar el HTML:** el dashboard se regenera con `scripts/build-dashboard-semanas.py`, así que la puerta tiene que poder reinyectarse sola. Es **idempotente** (marcadores `<!-- PUERTA-TEMAS -->`; verificado 36541 → 36541 → 36541 bytes) y tiene `--dry`.
+- **Verificado:** `check-dashboard-css.py` → 0 clases sin estilo; captura con Chrome headless → la sección se ve bien y el resto del dashboard quedó intacto; los 4 dashboards hermanos **ya** enlazaban al mes1 (no hizo falta retrofit).
+- **Índice:** `proyectos/STUDIO_OS-Emilia/00-index.md` → la sección "Documentación vigente" arranca ahora con el **dashboard general** como puerta.
+- **GitHub:** subidos los 300+ cambios acumulados de las sesiones (n8n de Emilia, corpus AI×Gaudí, CAD/SET, Comfy, dashboards, scripts, wiki, specs) a `master` → `origin`, para poder revisar el trabajo desde otra computadora.
+
+## 2026-10-21 (madrugada) — Índice de la reunión: un solo documento con los temas a ver
+
+- **Pedido de Sol:** "genera los documentos que registren esta forma de trabajo" + "**un SOLO DOCUMENTO APARTE** con el ítem de los temas que tenemos que ver en la reunión (sesiones trabajadas, .md creados y dashboards) sobre fuentes, agentes Telegram, CAD/SET, Comfy, etc".
+- **Nuevo** `proyectos/STUDIO_OS-Emilia/presentacion/09-agenda-reunion-2026-10-21.md` → el documento único, con **6 temas** (fuentes · agentes Telegram · CAD/SET · Comfy · Leantime · estudio) y, por cada uno, tres bloques: **sesiones trabajadas** (con link a `raw/sessions/`), **.md creados** (con link a `specs/`, `proyectos/`, `raw/`) y **dashboards** (con link al HTML). Cierra con los 3 pendientes de Emilia y un **orden sugerido de 60 min** para la reunión.
+- **Documentos actualizados con la forma de trabajo de hoy:**
+  - `proyectos/STUDIO_OS-Emilia/documentacion/fuentes-contexto-chatgpt-emilia.md` → nueva §2.b **"la forma más simple: un documento compartido en el Drive"** (un solo `.md` con índice + extractos por fuente; ella lo abre o adjunta en ChatGPT, desde el celular; el vault sigue siendo el original; sus ediciones vuelven por la sincronización y las baja el importador). El proyecto de ChatGPT queda como envoltorio opcional, no requisito.
+  - `proyectos/STUDIO_OS-Emilia/documentacion/arquitectura-n8n-os-emilia.md` → **v2.1**: mapa de 9 workflows con los 3 nuevos (`Fa2AlIDqUntSWMrw` voz de Emilia · `2JogeOoT3Wjq2ncH` agenda de Emilia · `Msh31moofBKBwZId` despachador), el diagrama con las dos ramas y la nueva **§5.b** con el detalle de los flujos de Emilia (allowlist, Redis, memoria, credenciales, tools, eventos de Cal.com y las pruebas end-to-end).
+  - `proyectos/STUDIO_OS-Emilia/00-index.md` → sección **"Documentación vigente (21/10)"** con los 8 documentos de trabajo (así se llega a todo desde la puerta del proyecto).
+- **Inventario real (medido, no supuesto):** 88 sesiones en `raw/sessions/`, 10 specs, 5 dashboards HTML en `proyectos/STUDIO_OS-Emilia/presentacion/`, 2 grafos VR en `scripts/`.
+
+## 2026-10-21 (madrugada) — Emilia con su propio flujo: agente de voz + subagente de agendamiento propios
+
+- **Decisión de Sol:** Emilia deja de compartir el flujo de voz y **tiene el suyo completo** (Redis, memoria Postgres, prompt, credencial de Cal.com y subagente de agendamiento propios). La arquitectura pasa de "1 agente + dispatcher de Cal.com" a **"1 flujo por persona + un despachador de flujos"**.
+- **Nuevo** `OS-Studio — Agent Voz Emilia` (`Fa2AlIDqUntSWMrw`, 23 nodos): Telegram (voz con Gemini + texto), debounce Redis `studio_os_emilia_<chat_id>`, memoria `studio_os_emilia`, `Tool Agenda Emilia` → su Agenda Sub, tool de Fathom con `source: telegram-voz-emilia`.
+- **Nuevo** `OS-Studio — Voz Dispatcher` (`Msh31moofBKBwZId`): extrae el `chat_id` y manda el mensaje al flujo de Sol (`8459099332`) o al de Emilia.
+- **Router** (`YWpuV5p0vCDTbIHz`): su nodo `Run Voz Agent` ahora apunta al Voz Dispatcher. **Tu flujo de voz** (`Gpd6NHB4HQdU7ary`) volvió a su forma final: `Tool Agenda` directo a tu Agenda Sub (sin dispatcher ni marcador `[chat:ID]`), allowlist solo tuya y claves Redis `studio_os_test_8459099332` (así `Limpiar Memoria TEST` sigue funcionando). **Archivado** el `OS-Studio — Agenda Dispatcher` intermedio.
+- **Pruebas:** el Dispatcher enrutó el chat de Emilia a su flujo (respondió con **su** Cal.com) y el tuyo a tu flujo (**Telegram real entregado**, `message_id 277` desde `@emiliaospi_bot`).
+- **Documento nuevo:** `proyectos/STUDIO_OS-Emilia/documentacion/que-le-pedimos-a-emilia-2026-10-21.md` — los 3 datos a pedirle mañana, 7 preguntas de confirmación, guion de prueba en vivo (8 pasos) y qué NO hay que decidir.
+- **Lecciones:** (1) el SDK de n8n es la única vía fiel para clonar (el MCP stringifica booleanos y aplana colecciones) pero **agota el tiempo del MCP con payloads de ~16 KB** → hay que recortar; (2) los `subnodes` van **dentro** de `config`; (3) los `id` de las asignaciones de un Set son obligatorios; (4) el SDK tolera un nodo destino de varias ramas; (5) un Code node debe **conservar el item de entrada** (si no, el flujo destino falla con "Key parameter is empty"); (6) un `executeWorkflow` necesita `workflowInputs.schema`, que solo se puede crear por SDK; (7) `restore_workflow_version` puede fallar por purga de historial.
+
+## 2026-10-21 (tarde) — Mes 2 CAD: propuesta de la escala urbana sobre el 2D de Barcelona (CAD → Rhino → ComfyUI)
+
+- **La propuesta:** el sistema de SET_01 (capas, DWT/DWS, LISP, bloques con atributos, cómputos) llevado a la **escala urbana**, sobre el `Barcelona-2D.dwg` del concurso (27,9 MB, en `G:\Mi unidad\OS-Emilia\AIxGaudi\Materials\`), encadenado con **Rhino** (MCP ya instalado) y **ComfyUI** (LoRA `rhino-to-image` ya analizado) → **CAD → Rhino → ComfyUI → lámina A1 del Gaudí Nexus** (entrega 16/12).
+- **Medición del 2D (ODA File Converter → DXF → ezdxf 1.4.4, DWG intacto):** **96 capas · 162.396 entidades · 46 bloques (38 con nombre) · 1.344 INSERTs · 34.574 TEXT · 43.032 HATCH · 40,4 × 38,7 km de extensión** (X 409.693→450.137 m, Y 4.560.549→4.599.261 m) · `$INSUNITS` 6 (m) con `$MEASUREMENT` 0 (imperial) · 1 layout (`Layout1`) · **0 de las 22 capas del SET_01** → la taxonomía es temática y funcional (catalán, por Districte 1-10: manzanas, parterres, equipamientos, red viaria, metro con 492 inserts), no de dibujo. **120× más denso** que el replanteo. Reporte en `raw/reports/barcelona-2d.audit.md`.
+- **`SET_04-URB` (propuesta):** ~26 capas propias (`URB-` base heredada · `PRO-` propuesta · `REF-` fondo no imprimible; la cartografía entra como xref y no se renombra a mano) · `SET_04-URB.dwt` + `SET-URB.dws` reutilizando `scripts/genera-template-set01.py` · 4 LISP derivados de los que ya funcionan: `SET-URB` (crea capas), `RESUMEN-URB` (el cuadro urbano: m², equipamientos, cobertura verde), `VISTAS-URB` (ventanas 1:500 / 1:1000 / 1:5000), `PLAZA-PLACA` (recorte interactivo de la plaza) · 38 bloques heredados renombrados con prefijo + 6 nuevos, con **`PRO-MOBILIARIO`** (atributos MATERIAL/CANT/COSTO) que es a la vez el objeto del **premio especial** del concurso y la pieza que entra al cuadro urbano.
+- **Análisis de visualización urbana con ComfyUI:** la escala urbana es un problema de **control de líneas**, no de LoRA → **planos ilustrados con SDXL + ControlNet** (canny/depth/scribble sobre el DXF exportado a PNG; dual canny 0,3 + depth 1,0 ya validado) y **volumetrías y vistas aéreas con FLUX.2 klein 9B + LoRA `rhino-to-image`** (capturar → arcilla monocolor → hiperreal). **FLUX.2 klein no tiene ControlNet nativo** (solo `ReferenceLatent`): el LoRA aporta materialidad y sello propio, nunca fidelidad de trazo. La vista aérea sale de la geometría en Rhino con cámara alta, no de un texto.
+- **Documentos:** `proyectos/STUDIO_OS-Emilia/presentacion/08-propuesta-mes2-cad-urbano.md` (propuesta completa) · **§10 del dashboard AutoCAD** (versión ejecutiva) · §9 del documento de revisión del 22/10.
+- **Bug corregido:** `scripts/audita-dwg.py` usaba `doc.blocks.names()`, que ya no existe en ezdxf 1.4.4 → `doc.blocks.block_names()` con fallback. El script no corría desde la actualización de ezdxf.
+
+## 2026-10-21 — Dashboard AutoCAD v2 + playbooks actualizados al entorno LT 2027
+
+- **Dashboard AutoCAD reescrito** (`proyectos/STUDIO_OS-Emilia/presentacion/dashboard-autocad.html`): el del 16/10 estaba congelado antes de las sesiones del 20/10. Ahora tiene 12 secciones: entorno LT 2027 · medición v2 de REP-ARAOZ · bloque `SIMB-LOC_ID` · extracción dentro del DWG · estado real de los playbooks · **bloques que faltan crear** · 4 LSP + 4 scripts · pendientes. HTML validado (0 desbalances).
+- **Hallazgo de entorno que manda sobre el método:** la instalación viva es **AutoCAD LT 2027** (`C:\Program Files\Autodesk\AutoCAD LT 2027`); el Full 2027 fue desinstalado (instalador en `P:\autocad\AutoCAD.2027_English_64bit`). En LT **no hay COM externo** (el MCP `autocad` del vault queda en pausa), **no existen `DATAEXTRACTION`/`ATTIN`/`ATTOUT`**, y el **vínculo de datos exige Excel instalado** (no está) → la automatización y el cómputo pasan por **AutoLISP** (`APPLOAD` sí existe en LT 2024+ Win) y por LSP que dibuja la tabla dentro del DWG.
+- **Vía descartada (21/10):** el LSP de cuadro de locales (`CUADRO-LOCALES`) no era el camino → la planilla de locales vive como CSV en el vault (`docs/planilla-locales.*`) y la fuente en el DWG son los 28 rótulos numerados a mano.
+- **Playbooks actualizados:** PB-01 y PB-02 pasan a `vigente-lt-2027` (PB-02 §3 documenta las 4 vías de cómputo reales en LT; PB-01 §2 lista los 4 LSP y §3 el DoD con el ítem 8/9 al día). `wiki/glosario/interno/pbooks/pbk-set01-rep.md` reescrito con las secciones *entorno LT 2027* y *dónde viven los cómputos*. `wiki/glosario/software/autocad.md` gana la sección **AutoCAD LT 2027 — qué cambia**; `wiki/glosario/software/mcp-autocad.md` queda marcado en pausa con la vía sustituta (MCP oficial de Autodesk 2027, `MCPHTTPSTART` → `localhost:5001/mcp`, pendiente de prueba).
+- **Documento de revisión para el 22/10:** `proyectos/STUDIO_OS-Emilia/presentacion/07-revision-autocad-2026-10-22.md` (revisión del trabajo CAD + checklist de revisión del dashboard + 3 puntos a confirmar + bloques pendientes).
+- **Sesión:** `raw/sessions/2026-10-21-sesion-dashboard-autocad-v2.md`.
+
+## 2026-10-20 (tarde) → 21/10 — El VPS `pitau.tech` se cayó y volvió: n8n + Leantime + panel EasyPanel
+
+- **Síntoma:** `n8n.pitau.tech` (89.117.73.109) dejó de responder en TCP 443 y 22; lo mismo `panel.pitau.tech` y `pitautech-leantime.3nq4ow.easypanel.host` — **los tres servicios viven en la misma IP del VPS**, así que se cayó el host completo. Desde el estudio internet anda (GitHub 200) → no es la conexión local.
+- **Alcance:** el bot de Telegram (n8n) y Leantime quedaron offline. **Sin pérdidas**: las 15 h recién cargadas en Leantime ya estaban confirmadas en la base; los 3 event types de Emilia viven en Cal.com (externo); los documentos del vault están escritos.
+- **Última operación antes de la caída:** `move_workflows_to_folder` (mover los 2 workflows nuevos a la carpeta `OS-Emilia / MVP06-Agente_Voz_telegram`) → la llamada cortó con *"socket connection closed unexpectedly"*.
+- **No se puede recuperar desde el estudio**: no hay SSH al host y el panel de EasyPanel está en la misma IP caída → el reinicio hay que hacerlo desde el panel del proveedor.
+- **21/10: el VPS volvió.** Verificado: los 4 workflows **activos** y con la versión activa = la del borrador (`1c745d12` el Router, `fae63d66` el agente de voz), **movimiento de carpeta completado** (los 2 nuevos están en `OS-Emilia / MVP06-Agente_Voz_telegram`), **cadena de Emilia probada** (agente → Dispatcher → Agenda Sub Emilia → respuesta correcta) y **cadena de Sol sin regresión** (`leer_calendario` sigue trayendo su Google Calendar → la credencial sobrevivió al reinicio). **Leantime volvió con las 15 h** ✓.
+- **Aprendizaje:** el `description` de un workflow se actualiza en el sitio (no crea versión nueva) → los pendientes quedaron anotados en la descripción de los 4, visibles en la lista de n8n.
+- **Checklist de arranque tras una caída:** (1) ¿n8n responde? (2) ¿los 4 workflows están activos y con `versionId == activeVersionId`? (3) mensaje de prueba al bot — si no responde, desactivar y **volver a publicar** el Router (re-registra el webhook de Telegram); (4) las credenciales OAuth no se ven afectadas si la `encryptionKey` del VPS no cambió.
+
+## 2026-10-20 — LoRA «Rhino-to-Image» (FLUX.2 klein 9B): análisis, research y fichas
+
+- **Analizado** el LoRA del curso AI×Gaudí (`G:\Mi unidad\OS-Emilia\AIxGaudi\Materials\rhino-to-image-lora.basic.safetensors`, 120,8 MB): **FLUX.2 [klein] 9B**, rank 16, F32, 176 tensores, 31,66 M params, sin metadata embebida. Matrices B no nulas (σ ≈ 1,3e-3) → delta entrenado y sano; strength de trabajo 0,6-1,0. Identificación verificada por shapes contra `black-forest-labs/flux2` y `comfy/model_detection.py`.
+- **Research `@sherlock`** (54 fuentes verificadas): `raw/research/2026-10-20-flux2-klein-lora-rhino-to-image.md` + `-crudo.md` + cache. Hallazgos: el LoRA es "el modelo de IA exclusivo" del curso; el bloqueo de geometría es **nativo** (`ReferenceLatent` ×2, método `index`), sin ControlNet oficial para klein; el instructor es **Thomas Nelissen** (Cas Esbach, co-autor del módulo 7); 9B no entra en la RX 570 de 8 GB → RunPod 3090 ($0,22/h), $2-5 por el concurso; `--lowvram` no hace nada con DirectML (`model_management.py:121`).
+- **Workflow nuevo** `proyectos/MVP_04-comfyui-arquitectura/n_05-rhino-mcp/WF-rhino-to-image/` (5 fichas + `workflow_rhino_to_image.json` + `salidas/`). Grafo validado contra el código de ComfyUI local (`b08e6cf3`): `UNETLoader` usa `weight_dtype` (no `weight_name`) y `SamplerCustomAdvanced` usa el esquema nuevo `noise`/`guider`/`sampler`/`sigmas`/`latent_image`.
+- **Fichas**: `wiki/glosario/software/lora-rhino-to-image-gaudi.md` (nueva) · `wiki/glosario/software/flux2-klein-9b.md` (nueva) · `wiki/glosario/software/comfyui.md` (2 secciones + catálogo) · `wiki/glosario/software/00-index.md` · `wiki/glosario/interno/pbooks/pbk-comfyui.md` (flujo + troubleshooting).
+- **Script**: `scripts/analizar-lora-safetensors.py` + `_notas.md` — auditoría de `.safetensors` sin PyTorch (deduce el modelo base y revisa la salud de los pesos). Probado sobre el LoRA del curso.
+- **Riesgo de licencia abierto**: klein 9B es FLUX Non-Commercial y el LoRA es derivative → admisible en concurso; para cliente, klein 4B (Apache 2.0) reentrenando (el portado de LoRA entre 9B y 4B es imposible por arquitectura).
+- **Pendiente**: copiar el LoRA a `models/loras/`, descargar el stack FLUX.2 en el pod, exportar las 3 capturas desde Rhino, y pedir a Emilia/instructor el trigger word, el modelo base exacto, la variante `.advanced` y el workflow JSON del módulo 3.
+- **Dashboard del concurso**: `proyectos/STUDIO_OS-Emilia/presentacion/dashboard-comfy.html` (el del cierre de Mes 1 del 16/10) pasó de 4 a 5 tabs con el **tab 4 · Concurso**: motor FLUX.2 klein 9B + LoRA del curso, stack a descargar (18,3 GB), flujo WF-rhino-to-image, cómo se entrenó el LoRA, riesgo de licencia (Non-Commercial vs Apache 2.0), plan en 3 etapas ($0 / ~$1 / $2-5) y entrega 16/12. Además: filas nuevas en la tabla de modelos, tarjeta "Ingeniería inversa" actualizada y el tab Mes 2 con el pipeline del concurso.
+- **Extracción del material del curso** (Miro + Archademy, ambos login-gated — verificado): scripts nuevos `scripts/miro_board_inventory.py` y `scripts/archademy_curso_inventory.py` (+ notas), probados con archivos de laboratorio. Inventarían videos (con id de YouTube listo para `scripts/transcribir_youtube.py`), workflows de ComfyUI, tableros y PDFs. Guía del circuito completo en `proyectos/MVP_04-comfyui-arquitectura/extraccion-material-curso-ai-gaudi.md`.
+- **Formato de export de Miro corregido**: hoy el backup es `.rtb` (solo owner/co-owner) y el export para participantes es **CSV** — el script ya parsea CSV, backup (ZIP y binario) y PDF. **Los videos del curso traen subtítulos** ("siete módulos en inglés con subtítulos"), así que la transcripción va por `scripts/transcribir_youtube.py` sin descargar video. Datos del concurso verificados: entrega **16/12/2026 23:59 GMT-7**, lámina A1 ≤15 MB JPEG (+A4 opcional), premios 6.000/2.000/1.000 USD + Premio de Diseño de la Fundació 1.000.
+- **Tablero del curso recibido y procesado** (`AI-course.csv`, 219 filas → 72 secciones): es el índice de recursos y prompts del curso, no un tablero de workflows. Hallazgos: (a) existe la **variante `.premium`** del LoRA (`rhino-to-image-lora-premium.safetensors`, descarga vía `thomasnelissen.ai`); (b) **no hay trigger word**: la activación es un **prompt JSON estructurado** con *STRICT CAMERA LOCK*; (c) el curso compara con **LoRA al 50 % y al 100 %**; (d) el pipeline real tiene **3 pasos** (captura en color → **pase de arcilla** con la lógica constructiva de Gaudí → pase hiperreal con LoRA). Extraídos al vault los dos INSTRUCTION.md (módulo 3 y módulo 7) y el esqueleto JSON.
+- **Método de guardado del HTML simplificado**: `Ctrl+A` → `Ctrl+C` → pegar en Bloc de notas → guardar como `curso.txt` (UTF-8). El script acepta texto plano.
+- **Página del curso es dinámica** (WooCommerce: `/my-account/my-competitions/214/` = pedido nº 214, la pestaña `course` se arma por sesión vía XHR) → `Ctrl+S` no sirve. Se agrego al script el **modo JSON** (recorre en profundidad la respuesta de un XHR o la salida del colector de consola) y a la guía el **colector de consola** de una línea, que copia al portapapeles todos los iframes/videos/links de la página.
+- **El LoRA premium todavía no está en** `G:\Mi unidad\OS-Emilia\AIxGaudi\Materials\` (solo `basic`, `AI-course.csv` y los 2 DWG): falta confirmar dónde quedó.
+- **Transcripciones del curso listas**: el HTML guardado de `G:\Mi unidad\OS-Emilia\AIxGaudi\My account - Archademy.ai.html` resultó suficiente — los videos están embebidos con **Mux** y cada módulo expone sus subtítulos `.vtt` (EN y ES) en el CDN de Bunny/Mux **sin token** (200 directo). Nuevo script `scripts/mux_lecciones_curso.py` (+ notas): baja los subtítulos y los escribe en `raw/yt/transcripts/` con la convención del vault (md + srt + txt). Resultado: **6 de 7 módulos transcritos** (Introduction 1268 cues · Text-to-Image 659 · Image-to-Image 1047 · Image-to-Video 333 · Image-to-3D 249 · Gaudí Workflow 454); el *Round Table* no tiene subtítulos (404). Bonus: la página trae la **contraseña del tablero Miro** (`Gaudi2026`).
+- **Decisión de infraestructura documentada** (`wiki/glosario/software/comfy-cloud-vs-runpod.md`): **Comfy Cloud Standard ($20) no alcanza para el concurso** — no deja importar modelos propios (solo Creator $35+) y el upload directo de archivos grandes no existe todavía; **en Comfy Cloud no se entrena** en ningún plan (no hay nodos de entrenamiento en la lista aprobada). Verificado contra la documentación oficial (precios, retención, Partner Nodes, telemetría de Desktop) y RunPod (precios, borrado del disco al terminar el pod). Veredicto: **híbrido** — local 8 GB para iterar, Comfy Cloud **Free** (400 cr = ~25 min de GPU) para probar los workflows oficiales, **RunPod 3090 $0,22/h** para producción 9B y entrenamiento → **$1-2 por mes**.
+- **Dashboard de ComfyUI ampliado a 6 tabs** (galería intacta y mandando): tab 4 · Concurso, tab 5 · Mes 2 (el cuadro dónde renderizar, las 5 pruebas del mes, la pregunta de fondo y las decisiones) y tab 6 · **Método** (las 5 capas hacia un asistente que ejecuta, la impronta del estudio y Hermes vs OpenClaw).
+- **Recolector de renders** (`scripts/indice-renders-comfy.py` + notas): lee la metadata que ComfyUI graba dentro de cada PNG (bloques `tEXt` `prompt` y `workflow`) y arma `INDICE-RENDERS.md/.json` con modelo, LoRA y strength, seed, sampler, steps, cfg, resolución y prompt. **80 renders, 100% con metadata.** Sin base de datos: la trazabilidad vive en la imagen.
+- **Diseño de la evolución a asistente** (`proyectos/MVP_04-comfyui-arquitectura/evolucion-asistente-estudio.md`): 5 capas (ejecución local + MCP · contrato JSON · índice · interfaz Gradio · agente), el paralelo con el tablero del curso, la impronta como tres artefactos (schema + LoRA propio + índice) y hoja de ruta en 5 etapas con criterio de cierre.
+
+## 2026-10-20 — Horas trabajadas registradas en Leantime (15 h) + cliente de time tracking
+
+- **Registrado en Leantime**: 4 h del lunes 19/10 + 4 h del martes 20/10 repartidas en **cad, fuentes, rhino y n8n-leantime-fathom-agentes** (1 h por área por día + 1 h extra de reparto el lunes → **3 h por tema**), más la reunión de **3 h** del miércoles 21/10 con Emilia. Total **15 h**, `kind: GENERAL`, en las tarjetas `452` (cad), `517` (fuentes), `571` (rhino, p6), `448` y `504` (agentes), `533` (reunión).
+- **Descubierto el time tracking de Leantime**: el servicio no se llama `TimeTracking` sino **`Timesheets`** → `leantime.rpc.Timesheets.Timesheets.logTime(ticketId, {dateString,hours,kind,description})`, con rollback en `deleteTime(id)` y lectura en `getAll`.
+- **Dos trampas medidas**: (1) la **fecha se desplaza 7 h por RPC** (la instancia está en UTC+7 y el RPC no convierte como la UI) → para que una entrada se lea `19:00:00` hay que mandar `12:00:00`; (2) `logTime` **suma** en vez de crear: mismo ticket+fecha+tipo → incrementa la fila y concatena las descripciones con `--`.
+- **Primer intento con fechas corridas (+7 h)**: 9 entradas borradas con `deleteTime` y recargadas con las fechas correctas (ids 51-63). Verificado por relectura: 8 h el lunes, 4 h el martes, 3 h el miércoles.
+- **Pendiente de rotular**: las 4 h extra del lunes quedaron como "Extra lunes 19/10 - 1 h por tema" porque el rótulo original ("mtb") no se pudo identificar (ni está en el vault ni en Leantime, y Sol tampoco lo reconoce). Se renombra en la UI cuando se sepa qué era.
+- **Archivos**: `scripts/leantime_registrar_horas.py` + `_notas.md` (nuevos, con `--dry` / `--verificar` / `--borrar`), `raw/sessions/2026-10-20-sesion-registro-horas-leantime.md` (nuevo), `wiki/glosario/software/leantime.md` (sección "Horas — time tracking" + tabla de métodos), `log.md`.
+
+## 2026-10-20 — Cal.com de Emilia configurada + bot de agenda armado (4 workflows, probado end-to-end)
+
+- **Cal.com de Emilia** (operado desde n8n; la API responde **403 Cloudflare 1010** desde la PC): creados los event types **7563141** presencial, **7563142** online (Meet) y **7563143** libre (oculto), más el schedule "Disponibilidad 24/7" **2527411**. `GET /v2/slots` verificado: 8 slots/día (09-16) en ET-A y ET-B.
+- **Hallazgo que cancela el paso más frágil del plan:** el Google Calendar de Emilia **ya estaba conectado** en Cal.com (`arq.emiliapimentalombardi@gmail.com`, `credentialId 2605522`) y es el destination calendar → las reservas ya caen en su calendario y Cal.com ya le resta los ocupados. **No hay OAuth que hacer mañana.**
+- **n8n:** nuevo `OS-Studio — Agenda Sub Emilia` (`2JogeOoT3Wjq2ncH`, agente con las 7 tools sobre sus event types) y nuevo `OS-Studio — Agenda Dispatcher` (`CVvxZgn0AipO6dV0`, enruta por `chat_id`); parcheados `Agent Voz TEST` (`Gpd6NHB4HQdU7ary`: allowlist por `String()`, Redis por chat, respuesta al chat de origen, Tool Agenda → Dispatcher) y `Telegram Router` (`YWpuV5p0vCDTbIHz`: la regla 2 del switch pasa de `/help` a identidad de Emilia). **Publicados** (los subflujos de Execute Workflow exigen estar publicados).
+- **Arquitectura:** 1 flujo de voz compartido + 1 Dispatcher, en vez de 2 clones de voz + 2 de agenda. Evita el swap del webhook de Telegram (1 por bot) y el riesgo de cortar el bot de Sol; **el aislamiento se mantiene** porque la credencial de Cal.com vive dentro de cada subflujo de agenda.
+- **Pruebas:** el agente llamó `obtener_reuniones` con los 3 ET IDs correctos; el Dispatcher enrutó a `Run Agenda Emilia`; el flujo de voz completo respondió bien para Emilia y **sin regresión para Sol** (respondió con su agenda real).
+- **Pendiente 21/10:** `chat_id` real de Emilia (2 reemplazos: Router `rightValue` + `permitidos` en el `jsCode`), dirección del estudio en ET 7563141, y compartir su calendario con `proyectopi.31416@gmail.com`. Opcional en la UI de Cal.com: duraciones 120/180 y el schedule 24/7 del ET libre.
+- **Lecciones (para wiki, pendiente de `s`):** (1) `/v2/event-types` de Cal.com solo existe con `cal-api-version: 2024-06-11` y su body usa `length`; (2) la API responde `success` pero **no aplica** `metadata.multipleDuration` ni `scheduleId`; (3) el MCP de n8n **stringifica** los parámetros (`addNode`/`updateNodeParameters`) y con `sendBody: "true"` el body no viaja → usar `create_workflow_from_code` (SDK) o `setNodeParameter` sobre hojas de string; (4) editar un workflow no cambia lo que se ejecuta: hay que **publicar**; (5) el `pinData` del MCP stringifica → allowlists con `String(...)`.
+- **Archivos:** `proyectos/STUDIO_OS-Emilia/documentacion/plan-minimo-sesion-2026-10-21.md`, `raw/sessions/2026-10-20-sesion-agenda-emilia-cal-com-n8n.md`.
+
+## 2026-10-19 — Carga a Leantime de los 2 planes del 16/10 (33 cards + 85 subtasks)
+
+- **Hallazgo:** el MCP de Leantime (`/mcp`) responde `initialize` pero **`tools/list` devuelve `tools: []`** — el plugin MCP Server no publica ninguna tool aunque `opencode mcp list` lo muestre conectado. La vía que funciona es la **API JSON-RPC** `POST /api/jsonrpc` (`leantime.rpc.*`), la misma del 13/10.
+- **Cargado:** proyecto 4 `O.S_ARQ-Emi` → sprint 27 `S1 Agentes + agenda Emilia (19/10-23/10)`, milestones 461-464 (M-A1..M-A4), **20 cards + 52 subtasks**, 45,52 h · proyecto 6 **nuevo** `Proyecto Pi - Concurso Gaudi Nexus` → sprint 28, milestones 537-542 (M-B1..M-B6, entrega 16/12), **13 cards + 33 subtasks**, 29,59 h. Miembros: Emilia + Pitau Tech en ambos. 0 cards sin subtasks, 0 subtasks huérfanos.
+- **Nuevo:** `scripts/leantime_rpc.py` (+ `_notas.md`) · `scripts/carga_leantime_planes_261019.py` (+ `_notas.md`) · estado final en `raw/reuniones/leantime-carga-261019-estado.json`.
+- **Aprendizajes API (documentados en `wiki/glosario/software/leantime`):** el id creado vuelve como array `[458]` · `updateTicket` exige `values.id` y siempre `type` + `projectId` · los subtasks se crean con `addTicket` + `type: 'subtask'` + `dependingTicketId` (`upsertSubtask` no anda por RPC) · `quickAddMilestone` nace sin sprint y se linkea después · la membresía se carga con `Projects.editUserProjectRelations` (lista completa, reemplaza) · 429 por minuto → 1,6 s entre llamadas · **Goals no expuestos**: se crean a mano en la UI.
+- **Sesión:** `raw/sessions/2026-10-19-sesion-guion-agente-agenda-emilia.md`.
+
+## 2026-10-19 — Guion del miércoles: agente de agenda de Emilia (Cal.com + Calendar)
+
+- **Nuevo:** `proyectos/STUDIO_OS-Emilia/documentacion/config-agente-agenda-emilia.md` — documento operativo de la cita presencial del mié 21/10 13:00: arquitectura objetivo (agente + subagente-subflujo, clon del perfil de Sol), **3 claves a pedirle a Emilia** (API key de Cal.com v2, autorización OAuth de Google Calendar, definición de sus calendarios + evento de 60 min con Meet), tabla de **cambios nodo a nodo** en los 3 workflows (7 tools de agenda + 26 del agente + 1 rama del Router), guion de 8 bloques (2 h), 10 pruebas de aceptación, riesgos y rollback en 1 minuto.
+- **Decisiones de Sol:** concurso **ya inscripto** (Sol + Emilia) con **entrega 16/12/2026** · carril del concurso en **proyecto Leantime propio** `Proyecto Pi — Concurso Gaudí Nexus`, separado del contrato Studio OS × Emilia · foco de la semana en dejar configurado el agente de agenda de Emilia.
+- **Actualizado:** `specs/261019-plan-concurso-gaudi-nexus-ia.md` (M-B1 cerrado, M-B6 = 16/12, tablero y preguntas 1/2/3/5 resueltas) · `specs/261019-plan-agentes-telegram-agenda-emilia.md` (nueva task C1b "clonar agente + subflujo con perfil Emilia" = 5 pom, D2 pasa a 3 pom, 20 cards, M-A2 y preguntas 3/7 con guion).
+- **Base técnica verificada por MCP n8n** (workflows, 26+12+17 nodos, 28 credenciales con sus IDs): `OS-Studio — Agent Voz TEST` `Gpd6NHB4HQdU7ary` · `OS-Studio — Agenda Sub TEST` `ygdjqRfXpxKMFWEN` · `OS-Emilia — Telegram Router` `YWpuV5p0vCDTbIHz` · credencial Emilia Cal.com `ppi-EmiliaOS_Cal.com` (`3MvZXPNH8LrDYPZS`) ya existente.
+- **Sesión:** `raw/sessions/2026-10-19-sesion-guion-agente-agenda-emilia.md`.
+
+## 2026-10-19 — @fathom-pm: tareas de las 2 últimas reuniones del 16/10 (agentes Telegram + concurso Gaudí Nexus)
+
+- **Analizado:** reunión 20:33 "OS Emilia: agentes de Telegram + ComfyUI" (720 turnos) y reunión 19:31 "Concurso Gaudí Nexus" (592 turnos), importadas el 19/10 desde la cuenta Fathom Proyecto Pi (ver entrada de import abajo). `action_items` viene vacío en ambas: las tareas se derivaron del `## Resumen` (Próximos pasos) y de la `## Transcripcion` completa, cada una con su timestamp de origen.
+- **Creado:** `specs/261019-plan-agentes-telegram-agenda-emilia.md` (19 tareas · M-A1…M-A4 · 19 cards Leantime en el proyecto 4) + `specs/261019-plan-concurso-gaudi-nexus-ia.md` (13 tareas · M-B1…M-B6 · 13 cards, tablero propio del estudio).
+- **Carga pomodoro:** subtasks ≤25 min, tope 16/día por persona (Emilia 42 pom · Sol 56 pom en la semana 19→25/10), WIP ≤2, cada task cita milestone + OKR o `sin-alineacion`.
+- **Leantime:** plan de carga listo (sprint `S1` + milestones + cards con `planHours` 0,42 h por pomodoro); **a la espera del "s" de Sol** — no se ejecutó ninguna carga.
+- **Dashboard:** 23 → 26 reuniones transcriptas + links a los 2 specs nuevos en `proyectos/STUDIO_OS-Emilia/presentacion/06-dashboard-cierre-mes1.md`.
+- **Sesión:** `raw/sessions/2026-10-19-sesion-fathom-pm-tareas-emilia-16oct.md`.
+- **AFECTA:** `specs/261019-plan-agentes-telegram-agenda-emilia.md`, `specs/261019-plan-concurso-gaudi-nexus-ia.md`, `proyectos/STUDIO_OS-Emilia/presentacion/06-dashboard-cierre-mes1.md`, `raw/sessions/2026-10-19-sesion-fathom-pm-tareas-emilia-16oct.md`, `log.md`.
+
+## 2026-10-19 — 3 reuniones con Emilia (16/10) importadas de Fathom Proyecto Pi
+
+- **API:** `api.fathom.ai/external/v1/meetings` con `FATHOM_API_KEY_PROYECTOPI`, `created_after=2026-10-09` → 8 reuniones; filtro por hablante deja 3 con Emilia Pimenta Lombardi (16/10) y descarta 2 de Delfina (19/10).
+- **Import:** `scripts/import_fathom_ppi_manual.py` sobre JSON filtrado → `raw/reuniones/2026-10-16_emilia-proyectopi_193621124.md` (529 turnos), `_193639289.md` (592), `_193660891.md` (720) + copia Drive `Reuniones-Internas` + 3 claves en `.import-state.json`.
+- **Contenido:** obra/iluminación+flujo CAD (18:34), concurso "Gaudí Nexus" + tokenización de diseños (19:31), agentes OS/Telegram + ComfyUI con LoRA propio (20:33).
+- **Dual de cuentas:** 2 de las 3 ya existían en Drive desde el n8n Core con `recording_id` propio (193639372, 193661028); la de 18:34 faltaba. Queda pendiente criterio de dedup entre cuentas.
+- **Sesión:** `raw/sessions/2026-10-19-sesion-import-fathom-emilia-16oct.md`.
+- **AFECTA:** `raw/reuniones/2026-10-16_emilia-proyectopi_*.md`, `raw/reuniones/.import-state.json`, Drive `Reuniones-Internas`, `raw/sessions/2026-10-19-sesion-import-fathom-emilia-16oct.md`, `log.md`.
+
+## 2026-10-16 — Dashboard Vault fuentes→wiki (cierra serie Mes 1)
+
+- **Nuevo:** `proyectos/STUDIO_OS-Emilia/presentacion/dashboard-vault.html` estilo propuesta-embebido en modo oscuro (6 tabs: Flujo / Agentes / Carpetas / Mes 1 / Mes 2 auto / Demo). Gráfico captura→sherlock→contenidos→gate-s→vaultworm→wiki, tabla tareas+carpetas `raw/`→`wiki/fuentes/`, agente Telegram en grupo Fuentes (“Anotado ✓”→Sheet) + propuesta Mes 2: link→Sheet→worker 07:30→raw→solo recibir para leer.
+- **Linkeado:** `dashboard-mes1-emilia.html` (toplinks + card Vault ya con dashboard propio) + `dashboard-estudio-os.html` (→ Vault).
+- **Sesión:** `raw/sessions/2026-10-16-sesion-dashboard-vault-fuentes.md`.
+- **AFECTA:** `presentacion/dashboard-vault.html`, `dashboard-mes1-emilia.html`, `dashboard-estudio-os.html`, `log.md`.
+
+## 2026-10-16 — 3 Google Docs listos + cron dual diseñado
+
+- **Backfill:** WF `ChXP1UpOM8U9ImSJ` (SDK clon cadena Docs, exec 3782 6/6) → 3 Docs con formato en Internas, 9 parciales limpiados, WF archivado. Dashboard a 23 reuniones.
+- **Cron dual (§9 arquitectura):** un cron, rama PPI (Fetch + Split clonados) hacia Build intacto; pre-requisito UI: credencial `ppi-PPI_Fathom` Header X-Api-Key; dedup fecha/título fase 2.
+- **Sesión:** `raw/sessions/2026-10-16-sesion-gdoc-backfill-cron-dual.md`.
+- **AFECTA:** Drive Internas (3 Docs), `proyectos/STUDIO_OS-Emilia/documentacion/arquitectura-n8n-os-emilia.md`, `06-dashboard-cierre-mes1.md`, `scripts/gen_backfill_gdoc_09oct.py`, `log.md`.
+
+## 2026-10-16 — Rescate 3 reuniones 09/10 Fathom Proyecto Pi
+
+- **Hallazgo:** Drive llegaba al 26-9; en tu Fathom Pi había 3 reuniones con Emilia del 09/10
+  (Emi OS 16:15 + conocimiento 17:47 + automatización/Comfy 18:48, ~1h c/u, 557-801 turnos).
+- **Import manual:** `2026-10-09_emilia-proyectopi_191472132/191509492/191524949.md`
+  en `raw/reuniones/` + Drive Internas + state, formato Core. Script reutilizable
+  `scripts/import_fathom_ppi_manual.py` (+ `_notas.md`).
+- **Contenido clave Mes 1:** Emi OS + DWF iPad + baño PB · vault/agentes/Leantime + cita 14/10 ·
+  agente IA /agendar + LoRA firma + collage + RAM.
+- **Queda:** Google Doc ×3, tasks a Leantime (fathom-pm), dashboard a 23 reuniones, Fathom Pi al Core.
+- **Sesión:** `raw/sessions/2026-10-16-sesion-rescate-fathom-09oct.md`.
+- **AFECTA:** `raw/reuniones/` (3 nuevos + state), Drive Internas (3 copias), `scripts/import_fathom_ppi_manual.py`, `log.md`.
+
+## 2026-10-16 — Mes 1 listo para presentar (81hs + 13.5hs/mes)
+
+- **Dashboard:** 81hs (65+16) · 63 sesiones · 20+1 reuniones · SET_01 objeto real · tabla ahorro 13.5hs/mes · capacidad 0.22 · payback mes 7.
+- **Cierre:** C1-C3 tildados 16/10. **Trimestral §4:** nota Nayara→replanteo. **Fathom Sol:** patrón Emilia dado por hecho.
+- **Sesión:** `raw/sessions/2026-10-16-sesion-mes1-presentacion-emilia.md`.
+- **AFECTA:** `proyectos/STUDIO_OS-Emilia/presentacion/06-dashboard-cierre-mes1.md`, `specs/261013-plan-cierre-mes1-calculadora-emilia.md`, `specs/260910-plan-trimestral-unificado-studio-os-emilia.md`, `log.md`.
+
+## 2026-10-16 — Auditoría 24 specs: reducción a 8 vivos + mapa
+
+- **Vivos (8 en `specs/`):** trimestral 260910, n8n 260924, ingesta 261009, inbox 261013 (§10-11), worker 261016, cierre 261013, backlog Mes 2 261013, unificado 261016.
+- **Archivados (16 en `specs/archived/` con `git mv`):** telegram-vault, ghl x2, vault_cerebro, fathom-specs, esquema-60hs, github-actions, moodboard, plan-accion-web, threads, nextcloud, alta-leantime, vista-yt, voz-telegram, reporte-horas, inventario. Mapa en `specs/archived/README.md`.
+- **Completo:** Router 17 nodos, Agenda/Cancel/Modif real, Fathom Core 07:00, Sheet header, Leantime Emilia, calculadora, reporte evidencia, Thread 1 Sherlock.
+- **Lo ve Sol:** QW1-QW8 (grupo+chat_id, share GPT, rama IDEA, horas Leantime + factura 600, evento Meet, worker dispatch, presencial Codex, dedup) + probar ffmpeg e2e + grafo YT + croquis 60X.
+- **Sesión:** `raw/sessions/2026-10-16-sesion-auditoria-reduccion-specs.md`.
+- **AFECTA:** `specs/archived/` (16 movidos + README), `specs/261016-plan-unificado-studio-os-quickwins.md`, `log.md`.
+
+## 2026-10-16 — Unificación 23 specs hacia 4 vivos + 8 quick wins
+
+- **Análisis:** worker nube (Actions) + Router n8n 17 nodos conviven: captura instantánea en VPS, enriquecimiento programado en nube, PC apagada incluida.
+- **Editado:** `specs/261013-plan-fuentes-emilia-inbox.md` §10 rama IDEA + PDF-link (sin URL entra como IDEA, PDF va a worker) + §11 Plus no-técnica (celu + presencial Codex Sign in Plus + 1 share prueba).
+- **Creado:** `specs/261016-plan-unificado-studio-os-quickwins.md` (4 vivos A-D, hoja manual vs sistema vs capacidad nueva, QW1-QW8, Mes 2 S1-S4, 7 MCPs).
+- **Sesión:** `raw/sessions/2026-10-16-sesion-unificacion-planes-quickwins.md`.
+- **AFECTA:** `specs/261013-plan-fuentes-emilia-inbox.md`, `specs/261016-plan-unificado-studio-os-quickwins.md`, `log.md`.
+
 ## 2026-10-09 — s #2 cumplido: @contenidos fichó video 1 (formato spec v3 §13)
 
 - **Regenerado:** `raw/contenidos/2026-10-09-comfyui-for-architects-architutors.md` (177 líneas: resumen 5 bullets + ficha colegio + índice verbatim con timestamps + glosario 19 términos + gate). Estado `fichado`, nada en `wiki/`.

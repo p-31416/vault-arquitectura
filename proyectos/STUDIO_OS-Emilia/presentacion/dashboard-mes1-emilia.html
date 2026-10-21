@@ -2,135 +2,236 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dashboard Mes 1 — Studio OS × Emilia</title>
-<style>
-body{background:#141414;color:#eee;font-family:system-ui,sans-serif;margin:0;padding:24px}
-h1{font-size:22px}h2{font-size:16px;color:#ffb454;margin-top:28px}
-.hero{display:flex;gap:12px;flex-wrap:wrap}
-.card{background:#1e1e1e;border:1px solid #333;border-radius:10px;padding:14px 18px;min-width:130px}
-.card b{font-size:24px;color:#7fd08a}.card span{font-size:12px;color:#aaa}
-table{border-collapse:collapse;width:100%;font-size:13px}
-th,td{border:1px solid #333;padding:6px 8px;text-align:left;vertical-align:top}
-th{background:#222}.est{color:#ffb454}.med{color:#7fd08a}
-.sema{display:flex;gap:10px;flex-wrap:wrap}.pill{border-radius:8px;padding:10px 14px;background:#1e1e1e;border:1px solid #333}
-.ok{border-color:#7fd08a}.warn{border-color:#ffb454}.prog{border-color:#6aa8ff}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
-.mvp{background:#1e1e1e;border:1px solid #333;border-radius:8px;padding:10px 12px;font-size:13px}
-.small{font-size:12px;color:#aaa}
-</style>
+<style>:root{--bg:#11120f;--surface:#1a1c17;--surface2:#22251f;--ink:#f2efe9;--muted:#a8aca3;--line:#33362f;--clay:#c9a98a;--sage:#9ab0a2;--green:#7fd08a;--orange:#ffb454}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}.wrap{max-width:1000px;margin:0 auto;padding:0 24px}header.top{position:sticky;top:0;z-index:20;background:#161713;border-bottom:3px solid var(--clay);box-shadow:0 2px 10px rgba(0,0,0,.4)}.bar{display:flex;justify-content:space-between;align-items:center;padding:12px 0;gap:12px;flex-wrap:wrap}.brand{font-weight:800;font-size:22px;color:var(--ink);letter-spacing:.02em}.brand i{font-weight:600;color:var(--clay);font-size:14px;font-style:normal}nav.tabs{display:flex;gap:8px;flex-wrap:wrap;padding:12px 0 16px}nav.tabs a{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:10px 16px;font-weight:600;font-size:13px;cursor:pointer;color:var(--ink);text-decoration:none}nav.tabs a:hover{border-color:var(--clay)}.hero{padding:28px 0 8px}.eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}h1{font-size:40px;line-height:1;margin:8px 0;font-weight:700;letter-spacing:-.02em}h1 em{color:var(--clay);font-style:normal}h2{font-size:24px;letter-spacing:-.01em;margin:30px 0 10px}h2 em{color:var(--clay);font-style:normal}.lead{color:var(--muted);font-size:15px;max-width:760px}.lead b{color:var(--ink)}.grid{display:grid;gap:14px}.g5{grid-template-columns:repeat(5,1fr)}.g4{grid-template-columns:repeat(4,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g2{grid-template-columns:1fr 1fr}.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px}.card h3{margin:4px 0 6px;font-size:15px}.card p{margin:0;font-size:13px;color:var(--muted)}a.card{text-decoration:none;color:var(--ink);display:block}a.card:hover{border-color:var(--clay)}.k{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--clay);font-weight:700}.bignum{font-size:44px;font-weight:800;letter-spacing:-.03em;line-height:1;color:var(--ink)}.bignum small{font-size:13px;font-weight:500;color:var(--muted);letter-spacing:0}.med{color:var(--green)}.est{color:var(--orange)}table{width:100%;border-collapse:collapse;background:var(--surface);border-radius:14px;overflow:hidden;border:1px solid var(--line);font-size:13px}th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);padding:10px 12px;background:#161713;border-bottom:1px solid var(--line)}td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}tr:last-child td{border:none}tfoot td{background:var(--clay);color:#11120f;font-weight:800;border:none}.toplinks{font-size:13px;margin:14px 0 0}.toplinks a{color:var(--clay);font-weight:700}.badge{display:inline-block;font-size:11px;padding:2px 8px;border-radius:6px;border:1px solid var(--clay);color:var(--clay);margin-top:6px}.badge.grey{border-color:var(--muted);color:var(--muted)}.badge.green{border-color:var(--green);color:var(--green)}.badge.orange{border-color:var(--orange);color:var(--orange)}.small{font-size:12px;color:var(--muted)}.small b{color:var(--ink)}details{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px;margin-top:14px}summary{cursor:pointer;font-size:15px;font-weight:800}summary::marker{color:var(--clay)}.pie-wrap{display:flex;gap:20px;flex-wrap:wrap;align-items:center;margin:12px 0}.pie{width:180px;height:180px;border-radius:50%;flex-shrink:0;background:conic-gradient(#6aa8ff 0 11.1%,#7fd08a 11.1% 30.5%,#c792ea 30.5% 33.3%,#ffb454 33.3% 50%,#ff6b6b 50% 61.1%,#4ecdc4 61.1% 66.7%,#ffe66d 66.7% 72.2%,#888 72.2% 100%)}.leyenda{font-size:13px;line-height:1.9}.leyenda a{color:var(--clay)}.dot{display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:6px;vertical-align:middle}.bar-row{display:flex;align-items:center;gap:10px;margin:6px 0;font-size:13px}.bar-label{min-width:200px}.bar-track{flex:1;background:#2a2d26;border-radius:999px;height:12px;overflow:hidden}.bar-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,var(--clay),#e8c8a8)}.bar-fill.orange{background:linear-gradient(90deg,#ffb454,#ff6b6b)}.bar-val{min-width:130px;text-align:right;font-size:12px}.tbtn{margin:2px;padding:10px 16px;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:999px;cursor:pointer;font-weight:600;font-size:13px}.tbtn.on{background:var(--clay);color:#11120f;border-color:var(--clay)}p a,li a,td a{color:var(--clay);font-weight:700}code{background:var(--surface2);padding:1px 5px;border-radius:4px}.sema-top{border-top:6px solid var(--clay)}.sema-mid{border-top:6px solid var(--sage)}.sema-dark{border-top:6px solid var(--muted)}.foot{text-align:center;padding:20px 0}.foot b{font-size:20px}.foot span{color:var(--muted);font-size:12px}@media(max-width:860px){.g5,.g4,.g3,.g2{grid-template-columns:1fr}h1{font-size:30px}}@media print{header.top,nav.tabs{display:none}body{background:#fff;color:#111}.card,table,details{background:#fff;color:#111}}</style>
 </head>
 <body>
-<h1>Dashboard Mes 1 — Studio OS × Emilia (16/09 → 16/10)</h1>
+<header class="top"><div class="wrap">
+<div class="bar"><div class="brand">Studio OS <i>× Emilia — Mes 1</i></div></div>
+<nav class="tabs">
+<a href="#temas">Temas</a>
+<a href="#sesiones">Sesiones</a>
+<a href="#semanas">Semanas</a>
+<a href="#despliegue">Despliegue</a>
+<a href="#fichas">Grupos</a>
+<a href="#reuniones">Reuniones</a>
+<a href="#autos">Automatizaciones</a>
+</nav>
+</div></header>
+<main class="wrap">
+<p class="toplinks"><a href="dashboard-autocad.html">→ Dashboard AutoCAD (MVP_02)</a> · <a href="dashboard-comfy.html">→ Dashboard ComfyUI (MVP_04)</a> · <a href="dashboard-estudio-os.html">→ Dashboard Estudio OS · n8n</a> · <a href="dashboard-vault.html">→ Dashboard Vault · fuentes→wiki</a> · <code>09-agenda-reunion-2026-10-21.md</code></p>
+
 <div class="hero">
-<div class="card"><b>65hs+</b><br><span>trabajadas (base + 14h SET_01 de hoy)</span></div>
-<div class="card"><b>35</b><br><span>sesiones en raw/sessions</span></div>
-<div class="card"><b>11+1</b><br><span>transcripts + reporte Fathom</span></div>
-<div class="card"><b>4</b><br><span>flujos corriendo solos 07:00</span></div>
-<div class="card"><b>8</b><br><span>MVPs tocados</span></div>
+<div class="eyebrow">Dashboard Mes 1 · 16/09 → 16/10</div>
+<h1>Studio OS × Emilia, <em>el mes en números.</em></h1>
+<p class="lead">Cómo leer los números: <b class="med">verde = medido o declarado por Sol</b> (timestamp Fathom, log con hora, jornada declarada) · <b class="est">naranja ~ = estimado, a confirmar</b>. SET_01 fueron <b>10h lun 12/10 + 4h mar 13/10</b> (ver desglose-configuraciones v0.1: 10h+4h=14h), datados cuando se trabajaron. El total sale de las semanas fijadas por Sol (10.5+20+12+22 = 64.5h ventana + 2h pre = 66.5h ≈ 65h).</p>
 </div>
 
-<h2>Semáforo M1 · O1 · O2 · O3</h2>
-<div class="sema">
-<div class="pill ok"><b>M1 Vault vivo ✅</b><br><span class="small">Vault + 11 transcripts + Router/Agenda</span></div>
-<div class="pill warn"><b>O1 Adopción ⚠️ 50%</b><br><span class="small">8/8 transcripts sí · rituales parciales · presenciales 2×3hs</span></div>
-<div class="pill ok"><b>O2 Números ✅</b><br><span class="small">65hs medidos · roadmap en borrador</span></div>
-<div class="pill prog"><b>O3 Herramientas 🔄</b><br><span class="small">Flujos ✅ · fichas/refs/CAD en curso</span></div>
+<div class="grid g5">
+<a class="card" href="#semanas"><div class="k">Trabajo</div><div class="bignum">~65<small>hs</small></div><p>promedio general de la ventana (ver semanas)</p></a>
+<a class="card" href="#sesiones"><div class="k">Sesiones</div><div class="bignum">36</div><p>filas de trabajo en la ventana (ver listado)</p></a>
+<a class="card" href="#reuniones"><div class="k">Fathom</div><div class="bignum">11+1</div><p>transcripts + reporte (ver reuniones)</p></a>
+<a class="card" href="#despliegue"><div class="k">Flujos solos</div><div class="bignum">4</div><p>corriendo solos 07:00 (ver despliegue)</p></a>
+<a class="card" href="#mvps"><div class="k">Grupos</div><div class="bignum">8</div><p>7 MVPs + general (ver fichas)</p></a>
 </div>
 
-<h2>MVPs del mes</h2>
-<div class="grid">
-<div class="mvp"><b>MVP_01 dibujo IA</b><br>Bloques por lenguaje natural (7 pasos)<br><span class="small">30/09 · log n_02</span></div>
-<div class="mvp"><b>MVP_02 estándares CAD</b><br>SET_01 + SET_02 + auditoría REP-ARAOZ · <b class="med">14h hoy en log</b><br><span class="small">27-28/09 · 30/09 · 05/10 · 13/10</span></div>
-<div class="mvp"><b>MVP_03b presupuestos</b><br>Presupuesto 02/10<br><span class="small">sin sesión del mes</span></div>
-<div class="mvp"><b>MVP_04 ComfyUI</b><br>Research 949 líneas + plan 24h + moodboard v5<br><span class="small">19/09 · 30/09 · 08/10</span></div>
-<div class="mvp"><b>MVP_04.02</b><br>WF-01 F-01..F-05 + IP-Adapter + WF-03<br><span class="small">08-09/10 · ~16 min máquina</span></div>
-<div class="mvp"><b>MVP_06 voz</b><br>Handy + Parakeet ES + 2 workflows TEST<br><span class="small">08/10 · 13/10</span></div>
-<div class="mvp"><b>Emilia OS (nuevo)</b><br>Bot + Cal.com + Fathom→Drive, cron 07:00<br><span class="small">24/09 · 08/10 · 13/10</span></div>
-<div class="mvp"><b>Ingesta/agentes</b><br>YT 709 videos + Sherlock/Contenidos + PDFs + Leantime<br><span class="small">28/09 · 08-09/10 · 13/10</span></div>
+<!-- PUERTA-TEMAS -->
+<div class="k" style="margin-top:26px">La puerta: 6 temas, donde esta cada cosa</div>
+<h2 id="temas">Todo el estudio <em>desde un solo archivo.</em></h2>
+<p class="lead">Las rutas de abajo son del <b>vault</b> (se abren en Obsidian, no aqui). Los dashboards son HTML autocontenidos y viajan con el repo. El detalle por tema (sesiones trabajadas, .md creados y dashboards) esta en <code>proyectos/STUDIO_OS-Emilia/presentacion/09-agenda-reunion-2026-10-21.md</code>.</p>
+<div class="grid g3" style="margin-top:12px"><a class="card" href="dashboard-vault.html"><div class="k">Fuentes · AIxGaudi</div><h3>31 PDF -> 32 fichas + 31 transcripciones. Gate 0 listo; faltan los gates 1-3 (sherlock, contenidos, wiki).</h3><p><code>raw/pdf/00-index.md</code><br><code>specs/261020-plan-procesado-fuentes-pdf-gaudi.md</code><br><code>proyectos/STUDIO_OS-Emilia/documentacion/fuentes-contexto-chatgpt-emilia.md</code></p><p style="margin-top:8px"><b>&rarr; abrir el dashboard de fuentes</b></p></a><a class="card" href="dashboard-estudio-os.html"><div class="k">Agentes Telegram</div><h3>El bot con dos flujos (Sol y Emilia) + despachador por chat_id. Probado end-to-end.</h3><p><code>specs/261019-plan-agentes-telegram-agenda-emilia.md</code><br><code>proyectos/STUDIO_OS-Emilia/documentacion/plan-minimo-sesion-2026-10-21.md</code><br><code>proyectos/STUDIO_OS-Emilia/documentacion/que-le-pedimos-a-emilia-2026-10-21.md</code><br><code>proyectos/STUDIO_OS-Emilia/documentacion/arquitectura-n8n-os-emilia.md</code></p><p style="margin-top:8px"><b>&rarr; abrir el dashboard de agentes</b></p></a><a class="card" href="dashboard-autocad.html"><div class="k">CAD / SET</div><h3>SET_01 replanteado con 2 playbooks, SET_02 y SET_03 especificados, dashboard v2 al dia.</h3><p><code>proyectos/MVP_02-autocad-standards/03-log-mvp_02.md</code><br><code>proyectos/MVP_02-autocad-standards/SET_01-REP_Replanteo/playbooks/PB-01-SET-informe.md</code><br><code>proyectos/STUDIO_OS-Emilia/presentacion/07-revision-autocad-2026-10-22.md</code></p><p style="margin-top:8px"><b>&rarr; abrir el dashboard de cad</b></p></a><a class="card" href="dashboard-comfy.html"><div class="k">Comfy</div><h3>6 workflows (F-01..F-06) + LoRA rhino-to-image (FLUX.2 klein 9B) + 3 modelos con luz calida.</h3><p><code>proyectos/MVP_04-comfyui-arquitectura/INDICE-RENDERS.md</code><br><code>proyectos/MVP_04-comfyui-arquitectura/n_05-rhino-mcp/WF-rhino-to-image/03-nodos-WFrhino_to_image.md</code><br><code>proyectos/MVP_04.02-comfyui-arquitectura/PLANS/PLAN-F1-F8-lora-inpaint-outpaint.md</code></p><p style="margin-top:8px"><b>&rarr; abrir el dashboard de comfy</b></p></a><div class="card"><div class="k">Leantime</div><h3>2 planes cargados (33 cards, 85 subtasks) + 15 h registradas. Item 589: corpus -> ChatGPT.</h3><p><code>wiki/glosario/software/leantime.md</code><br><code>scripts/leantime_registrar_horas.py</code><br><code>raw/reuniones/leantime-carga-261019-estado.json</code></p></div><div class="card"><div class="k">Estudio · comercial</div><h3>1.800 por trimestre, 60 h por mes. Propuesta del viernes y propuesta del mes 2 (CAD urbano).</h3><p><code>proyectos/STUDIO_OS-Emilia/presentacion/05-propuesta-comercial-viernes.md</code><br><code>proyectos/STUDIO_OS-Emilia/presentacion/08-propuesta-mes2-cad-urbano.md</code><br><code>proyectos/STUDIO_OS-Emilia/00-index.md</code></p></div></div>
+<div class="k" style="margin-top:26px">Antes de la reunion (13:00) — 3 pendientes</div>
+<div class="grid g3" style="margin-top:8px"><div class="card"><div class="k">1. chat_id de Emilia</div><p>placeholder 999999999 en 2 lugares: Router (regla 2, rightValue) y Detectar Entrada Emilia (PERMITIDO). Se lee de la ejecucion cuando ella mande un mensaje. Despues: publicar.</p></div><div class="card"><div class="k">2. Direccion del estudio</div><p>Cal.com, event type 7563141 (presencial) -> Location -> Address. El bot la hereda del evento: se actualiza en un solo lugar.</p></div><div class="card"><div class="k">3. Calendario de Emilia</div><p>que lo comparta con proyectopi.31416@gmail.com -> leer_calendario deja de dar error.</p></div></div>
+<!-- /PUERTA-TEMAS -->
+<div class="k" style="margin-top:26px">Eficiencia = Resultados / Recursos</div>
+<h2>Si tardás la mitad documentando, <em>ganaste el doble: 2X.</em></h2>
+<div class="grid g3" style="margin-top:12px">
+<div class="card sema-top"><div class="k">Errores que no llegan a obra</div><p>Ventana que no coincide, corte sin mover: se atajan con proficiency + sistema (bloques con medida, máscara, extracción). En obra cada uno cuesta horas.</p></div>
+<div class="card sema-mid"><div class="k">Método quick wins</div><p>Todo procesado por escrito y claro → ítems e ideas → catalogados por impacto × esfuerzo → en orden. Con registro de tareas, entregables y tiempos.</p></div>
+<div class="card sema-dark"><div class="k">Semáforo M1 · O1 · O2 · O3</div><p>M1 Vault vivo ✅ · O1 Adopción ⚠️ 50% · O2 Números ✅ ~65hs · O3 Herramientas 🔄 en curso.</p></div>
 </div>
 
-<h2> Sesiones (35) — tema · duración · registro</h2>
-<table><tr><th>Fecha</th><th>Tema (1 línea)</th><th>Duración</th><th>Registrado</th></tr>
-<tr><td>16/09</td><td>Visita + playbook portable + inventario + stack</td><td class="med">4h medida</td><td>02:10</td></tr>
-<tr><td>19/09</td><td>Contrato: revisión punto por punto, PDF 5 págs</td><td class="est">~3h</td><td>20:18</td></tr>
-<tr><td>19/09</td><td>Metodología + repo curado + moodboard + quartz</td><td class="est">~2h</td><td>18:43</td></tr>
-<tr><td>19/09</td><td>Fathom dual + ingest jueves 17/09</td><td class="est">~1h</td><td>19:35</td></tr>
-<tr><td>24/09</td><td>Cierre contrato + PDF final</td><td class="est">~1.5h</td><td>16:23</td></tr>
-<tr><td>24/09</td><td>n8n MCP install + playbook</td><td class="est">~1h</td><td>12:01</td></tr>
-<tr><td>24/09</td><td>Plan n8n: 4 workflows + OAuth + Drive + tests</td><td class="est">~6h</td><td>12:07</td></tr>
-<tr><td>27/09</td><td>MVP_02 fuentes Perplexity CAD</td><td class="est">~1h</td><td>18:48</td></tr>
-<tr><td>27/09</td><td>Autodesk Help MCP + auditoría REP-ARAOZ</td><td class="est">~1.5h</td><td>19:49</td></tr>
-<tr><td>27/09</td><td>Fix índices wiki</td><td class="est">~1h</td><td>18:11</td></tr>
-<tr><td>28/09</td><td>Alta Leantime: spec + diagnóstico</td><td class="est">~1h</td><td>23:23</td></tr>
-<tr><td>28/09</td><td>Fuentes con wikilinks</td><td class="est">~1h</td><td>22:37</td></tr>
-<tr><td>28/09</td><td>Revisión 14 specs</td><td class="est">~1h</td><td>00:12</td></tr>
-<tr><td>30/09</td><td>Bloques NL 7 pasos AutoCAD</td><td class="est">~1.5h</td><td>00:44</td></tr>
-<tr><td>30/09</td><td>Moodboard v5 fachada hormigón+madera</td><td class="est">~1.5h</td><td>01:07</td></tr>
-<tr><td>05/10</td><td>Fix MCPs (7 servers) + wiki</td><td class="est">~1.5h</td><td>20:16</td></tr>
-<tr><td>05/10</td><td>Remotion: 2 episodios video</td><td class="est">~2h</td><td>01:16</td></tr>
-<tr><td>05/10</td><td>SET_02 DGIUR spec</td><td class="est">~1.5h</td><td>01:16</td></tr>
-<tr><td>08/10</td><td>Comfy: research + plan 24h + fix .bat</td><td class="est">~2h</td><td>18:17</td></tr>
-<tr><td>08/10</td><td>Curación YT: 709 videos (la más larga)</td><td class="est">~3h</td><td>17:34</td></tr>
-<tr><td>08/10</td><td>Handy dictado ES + Parakeet</td><td class="est">~1h</td><td>20:33</td></tr>
-<tr><td>08/10</td><td>n8n: loop Fathom + agenda real verificada</td><td class="est">~3h</td><td>22:41</td></tr>
-<tr><td>08/10</td><td>WF-01 F-01..F-05 + IP-Adapter</td><td class="est">~2h + <span class="med">7 min máq.</span></td><td>23:22</td></tr>
-<tr><td>09/10</td><td>Alta Leantime: proyecto 4 + invite</td><td class="est">~1h</td><td>13:03</td></tr>
-<tr><td>09/10</td><td>Agentes + piloto video 1</td><td class="est">~1h</td><td>14:32</td></tr>
-<tr><td>09/10</td><td>Reporte semanal 08-09</td><td class="est">~1h</td><td>16:38</td></tr>
-<tr><td>09/10</td><td>Sherlock: Chipperfield + Ching</td><td class="est">~1h</td><td>18:36</td></tr>
-<tr><td>09/10</td><td>Vista YT: mock 3D + VR Quest</td><td class="est">~1h</td><td>13:05</td></tr>
-<tr><td>09/10</td><td>WF-03 serie controles</td><td class="est">~1h + <span class="med">9 min máq.</span></td><td>18:35</td></tr>
-<tr><td>13/10</td><td>Baudrillard PDF pipeline</td><td class="est">~1h</td><td>23:10*</td></tr>
-<tr><td>13/10</td><td>Cierre Mes 1 (plan + calculadora)</td><td class="est">~2h</td><td>18:58</td></tr>
-<tr><td>13/10</td><td>Codex transcript + inbox Emilia</td><td class="est">~1h</td><td>23:10</td></tr>
-<tr><td>13/10</td><td>Comfy demo mañana (3 actos) + LoRAs</td><td class="est">~1h</td><td>23:10</td></tr>
-<tr><td>13/10</td><td>MVP_06 voz: proyecto + 2 workflows TEST</td><td class="est">~1h</td><td>19:00</td></tr>
-<tr><td>13/10</td><td>SET_01 kit instalable + DWT/DWS</td><td class="med">14h en log MVP_02</td><td>23:09</td></tr>
-</table>
-<p class="small">*23:10 del 12/10. Duraciones ~ = estimadas a confirmar por Sol; máquina = tiempo medido de agentes en paralelo (no suma al humano).</p>
-
-<h2>Semanas (4 + pre) — sesiones y reuniones unificadas</h2>
-<p class='small'>Totales fijados por Sol 13/10. Reparto por sesion proporcional al tamano del archivo (orientativo). Reuniones = subconjunto medido (no se suma). Mes 2 se mide exacto.</p>
-<table><tr><th>Semana</th><th>#Ses</th><th>Hs trabajo</th><th>#Fathom</th><th>Hs reuniones</th></tr>
-<tr><td>S0<br><span class='small'>pre 11/09 (propuesta, fuera de vigencia)</span></td><td>0</td><td class='est'><b>2.0h</b></td><td>4</td><td class='med'>0.0h</td></tr>
-<tr><td>S1<br><span class='small'>16-22/09 · M1 Vault vivo</span></td><td>1</td><td class='est'><b>10.5h</b></td><td>4</td><td class='med'>6.4h</td></tr>
-<tr><td>S2<br><span class='small'>23-29/09 · M2 (topada a 20 por Sol)</span></td><td>9</td><td class='est'><b>20.0h</b></td><td>6</td><td class='med'>5.2h</td></tr>
-<tr><td>S3<br><span class='small'>30/09-06/10 · M3 (fijada 12 por Sol)</span></td><td>5</td><td class='est'><b>12.0h</b></td><td>2</td><td class='med'>4.9h</td></tr>
-<tr><td>S4<br><span class='small'>07-16/10 · M4+cierre (22hs: 08-09/10 11hs + hoy 8hs + reunion manana 3hs)</span></td><td>17</td><td class='est'><b>22.0h</b></td><td>3</td><td class='med'>3.0h</td></tr>
-</table>
-<div style='margin:4px 0'><span class='small'>S1</span> <div style='display:inline-block;background:#6aa8ff;height:14px;width:48%;border-radius:4px;vertical-align:middle'></div> <span class='small'>10.5h</span></div><div style='margin:4px 0'><span class='small'>S2</span> <div style='display:inline-block;background:#6aa8ff;height:14px;width:91%;border-radius:4px;vertical-align:middle'></div> <span class='small'>20.0h</span></div><div style='margin:4px 0'><span class='small'>S3</span> <div style='display:inline-block;background:#6aa8ff;height:14px;width:55%;border-radius:4px;vertical-align:middle'></div> <span class='small'>12.0h</span></div><div style='margin:4px 0'><span class='small'>S4</span> <div style='display:inline-block;background:#6aa8ff;height:14px;width:100%;border-radius:4px;vertical-align:middle'></div> <span class='small'>22.0h</span></div><p><b>Total ventana: 10.5+20+12+22 = 64.5h + 2h pre = 66.5h (O2: 65).</b></p>
-<h2>Despliegue IA (maquina en paralelo al humano)</h2>
-<table><tr><th>Que corre solo</th><th>Tiempo maquina</th><th>Evidencia</th></tr>
-<tr><td>Fathom grabando en las 13 reuniones</td><td class='med'>13.5h maquina en paralelo al humano</td><td class='small'>API + transcripts</td></tr><tr><td>n8n cron 07:00 diario + 20 execs</td><td class='med'>corre dormido, filtro 26h sin duplicados</td><td class='small'>execs 3489-3525</td></tr><tr><td>Comfy renderizando mientras trabajas (08-09/10)</td><td class='med'>~25 min (F-01..F-05 + WF-03) en paralelo a YT/n8n</td><td class='small'>sesiones 08/10</td></tr><tr><td>Descargas desatendidas</td><td class='med'>IP-Adapter + CLIP + Parakeet (~30-60 min red, 0 humano)</td><td class='small'>08/10</td></tr><tr><td>YouTube API + registro nocturno</td><td class='med'>709 videos en segundos · notas 00:12/01:16 = sistema 24h</td><td class='small'>08/10</td></tr>
-</table>
-<h2>Reuniones con Emilia (13 Fathom + 2 presenciales)</h2>
-<table><tr><th>Fecha</th><th>Tema tratado</th><th>Duración</th></tr>
-<tr><td>11/09 ×4</td><td>Propuesta automatización + ROI 12h/mes · Vault second brain · TP3/TP4 experimentos IA · Curso Marcela + plataforma</td><td class="est">s/d (abrir links del reporte)</td></tr>
-<tr><td>16/09 presencial</td><td>Primer día presencial: playbook + inventario + stack mínimo</td><td class="med">3h</td></tr>
-<tr><td>17/09 I</td><td>Estándares CAD (DWS/Lisp) + código gráfico + entorno</td><td class="med">59.9 min (API)</td></tr>
-<tr><td>17/09 II</td><td>Fathom + Cal.com + limpieza disco 20 GB</td><td class="med">59.9 min (API)</td></tr>
-<tr><td>17/09 III</td><td>PC optimizada + Magenta + terreno polilíneas</td><td class="med">42 min (API)</td></tr>
-<tr><td>17/09 IV</td><td>PC Emilia + flujo proyecto Brasil</td><td class="med">42 min</td></tr>
-<tr><td>26/09 ×3</td><td>Corrección planos estudiante · Replanteo académico · Estándares + entrega</td><td class="est">~60 + ~60 + ~58 min</td></tr>
-<tr><td>30/09 presencial</td><td>Sesión presencial semana anterior</td><td class="med">3h</td></tr>
-<tr><td>03/10 ×2</td><td>Vinícola con Leticia + Vanessa (propuesta + concepto)</td><td class="est">~59 + ~57 min</td></tr>
-<tr><td>09/10 15:14</td><td>Emi OS: IA para estandarizar documentación + prompt ChatGPT evalúa planos</td><td class="med">60 min (API)</td></tr>
-<tr><td>09/10 16:47</td><td>Seguimiento Emi OS (sin summary Fathom)</td><td class="med">60 min (API)</td></tr>
-<tr><td>09/10 17:48</td><td>Seguimiento Emi OS (sin summary Fathom)</td><td class="med">59.6 min (API)</td></tr>
-<tr><td>14/10 (manana)</td><td>Presentacion cierre Mes 1 (planificada)</td><td class="est">3h planificadas (no suma a medido)</td></tr>
-</table>
-<p><b>Total medido: ~13.5hs en 13 Fathom + 6hs en 2 presenciales = ~19.5hs en reuniones.</b> (11/09 s/d, no suma.) Lección: los "segs" del summary Fathom no son la duración — valen transcript + control de Sol. Excluidas (no Emilia): 19/09 y 24/09 Patri + 06/10 ×2 Patricia Fernández y 07/10 ×2 Priscila (no son Emilia). Dump completo 22 reuniones API: <span class="small">raw/reuniones/2026-10-13-fathom-mes-dump.json</span></p>
-
-<h2>Calculadora réplica (verificada)</h2>
-<div class="hero">
-<div class="card"><b>USD 128</b><br><span>réplica 11.25hs (una vez)</span></div>
-<div class="card"><b>USD 39</b><br><span>operativo/mes (tokens 0.36)</span></div>
-<div class="card"><b>USD 180</b><br><span>valor liberado/mes</span></div>
-<div class="card"><b>0.7 mes</b><br><span>payback de la réplica</span></div>
+<div class="k" style="margin-top:26px">Clic en cada título abre su dashboard</div>
+<h2 id="mvps">MVPs <em>del mes.</em></h2>
+<div class="grid g2" style="margin-top:12px">
+<div class="card"><div class="k">MVP_01 dibujo IA → <a href="dashboard-autocad.html">ver dashboard AutoCAD</a></div><h3>Bloques por lenguaje natural (7 pasos)</h3><p>30/09 · 1 fila (2.8%)</p><span class="badge grey">comparte dashboard con MVP_02</span></div>
+<div class="card"><div class="k">MVP_02 estándares CAD → <a href="dashboard-autocad.html">ver dashboard AutoCAD</a></div><h3>SET_01 + SET_02 + auditoría REP-ARAOZ · <b class="med">10h 12/10 + 4h 13/10 declaradas por Sol</b></h3><p>27-28/09 · 30/09 · 05/10 · 12-13/10 · 6 filas (16.7%)</p><span class="badge green">dashboard propio</span></div>
+<div class="card"><div class="k">MVP_04 ComfyUI → <a href="dashboard-comfy.html">ver dashboard Comfy</a></div><h3>Research 949 líneas + plan 24h + moodboard v5</h3><p>19/09 · 30/09 · 08/10 · 13/10 · 4 filas (11.1%)</p><span class="badge green">dashboard propio</span></div>
+<div class="card"><div class="k">MVP_04.02 workflows → <a href="dashboard-comfy.html">ver dashboard Comfy</a></div><h3>WF-01 F-01..F-05 + IP-Adapter + WF-03</h3><p>08-09/10 · 2 filas (5.6%)</p><span class="badge grey">comparte dashboard con MVP_04</span></div>
+<div class="card"><div class="k">MVP_06 voz</div><h3>Handy + Parakeet ES + 2 workflows TEST</h3><p>08/10 · 13/10 · 2 filas (5.6%)</p><span class="badge grey">sin dashboard propio todavía</span></div>
+<div class="card"><div class="k">Emilia OS · n8n → <a href="dashboard-estudio-os.html">ver dashboard Estudio OS</a></div><h3>Bot + Cal.com + Fathom→Drive, cron 07:00</h3><p>19/09 · 24/09 · 08/10 · 4 filas (11.1%)</p><span class="badge green">dashboard propio</span></div>
+<div class="card"><div class="k">Vault interno · agentes + fuentes + wiki → <a href="dashboard-vault.html">ver dashboard Vault</a></div><h3>YT 709 videos + Sherlock/Contenidos + PDFs + Leantime</h3><p>27/09 · 08-09/10 · 13/10 · 7 filas (19.4%)</p><span class="badge green">dashboard propio</span></div>
+<div class="card"><div class="k">General · sin MVP asignado</div><h3>Contrato, specs, fix MCPs, Remotion, reportes, cierre Mes 1</h3><p>10 filas (27.8%) — ver ficha en <a href="#fichas">Fichas por grupo</a></p><span class="badge orange">no pertenece a ningún MVP</span></div>
 </div>
 
-<h2>Mes 2 (técnico)</h2>
+<details open id="sesiones"><summary>Sesiones en ventana (36 filas) — fecha · tema · duración · grupo</summary>
+<p class="small">Fuente: archivos en <code>raw/sessions/</code> con fecha entre 16/09 y 16/10. <b class="med">verde = medido o declarado por Sol</b> · <b class="est">naranja ~ = estimado, a confirmar en Mes 2</b>. Los tiempos máquina viven en <a href="#despliegue">Despliegue</a>, no acá.</p>
+<table><tr><th>Fecha</th><th>Tema</th><th>Duración</th><th>Grupo</th></tr>
+<tr><td>16/09</td><td>Visita + playbook portable + inventario + stack</td><td class="med">4h medida</td><td>General</td></tr>
+<tr><td>19/09</td><td>Contrato: revisión punto por punto, PDF 5 págs</td><td class="est">~3h</td><td>General</td></tr>
+<tr><td>19/09</td><td>Metodología + repo curado + moodboard + quartz</td><td class="est">~2h</td><td>MVP_04</td></tr>
+<tr><td>19/09</td><td>Fathom dual + ingest jueves 17/09</td><td class="est">~1h</td><td>n8n</td></tr>
+<tr><td>24/09</td><td>Cierre contrato + PDF final</td><td class="est">~1.5h</td><td>General</td></tr>
+<tr><td>24/09</td><td>n8n MCP install + playbook</td><td class="est">~1h</td><td>n8n</td></tr>
+<tr><td>24/09</td><td>Plan n8n: 4 workflows + OAuth + Drive + tests</td><td class="est">~6h</td><td>n8n</td></tr>
+<tr><td>27/09</td><td>MVP_02 fuentes Perplexity CAD</td><td class="est">~1h</td><td>MVP_02</td></tr>
+<tr><td>27/09</td><td>Autodesk Help MCP + auditoría REP-ARAOZ</td><td class="est">~1.5h</td><td>MVP_02</td></tr>
+<tr><td>27/09</td><td>Fix índices wiki</td><td class="est">~1h</td><td>Vault</td></tr>
+<tr><td>28/09</td><td>Alta Leantime: spec + diagnóstico</td><td class="est">~1h</td><td>General</td></tr>
+<tr><td>28/09</td><td>Fuentes con wikilinks (base SET_01/SET_02)</td><td class="est">~1h</td><td>MVP_02</td></tr>
+<tr><td>28/09</td><td>Revisión 14 specs</td><td class="est">~1h</td><td>General</td></tr>
+<tr><td>30/09</td><td>Bloques NL 7 pasos AutoCAD</td><td class="est">~1.5h</td><td>MVP_01</td></tr>
+<tr><td>30/09</td><td>Moodboard v5 fachada hormigón+madera</td><td class="est">~1.5h</td><td>MVP_04</td></tr>
+<tr><td>05/10</td><td>Fix MCPs (7 servers) + wiki</td><td class="est">~1.5h</td><td>General</td></tr>
+<tr><td>05/10</td><td>Remotion: 2 episodios video</td><td class="est">~2h</td><td>General</td></tr>
+<tr><td>05/10</td><td>SET_02 DGIUR spec</td><td class="est">~1.5h</td><td>MVP_02</td></tr>
+<tr><td>08/10</td><td>Comfy: research + plan 24h + fix .bat</td><td class="est">~2h</td><td>MVP_04</td></tr>
+<tr><td>08/10</td><td>Curación YT: 709 videos (la más larga)</td><td class="est">~3h</td><td>Vault</td></tr>
+<tr><td>08/10</td><td>Handy dictado ES + Parakeet</td><td class="est">~1h</td><td>MVP_06</td></tr>
+<tr><td>08/10</td><td>n8n: loop Fathom + agenda real verificada</td><td class="est">~3h</td><td>n8n</td></tr>
+<tr><td>08/10</td><td>WF-01 F-01..F-05 + IP-Adapter</td><td class="est">~2h</td><td>MVP_04.02</td></tr>
+<tr><td>09/10</td><td>Alta Leantime: proyecto 4 + invite</td><td class="est">~1h</td><td>General</td></tr>
+<tr><td>09/10</td><td>Agentes + piloto video 1</td><td class="est">~1h</td><td>Vault</td></tr>
+<tr><td>09/10</td><td>Reporte semanal 08-09</td><td class="est">~1h</td><td>General</td></tr>
+<tr><td>09/10</td><td>Sherlock: Chipperfield + Ching</td><td class="est">~1h</td><td>Vault</td></tr>
+<tr><td>09/10</td><td>Vista YT: mock 3D + VR Quest</td><td class="est">~1h</td><td>Vault</td></tr>
+<tr><td>09/10</td><td>WF-03 serie controles</td><td class="est">~1h</td><td>MVP_04.02</td></tr>
+<tr><td>12/10</td><td>SET_01 construcción manual del sistema (24 pomodoros)</td><td class="med">10h declaradas por Sol</td><td>MVP_02</td></tr>
+<tr><td>13/10</td><td>SET_01 medición + docs + kit instalable DWT/DWS</td><td class="med">4h declaradas por Sol</td><td>MVP_02</td></tr>
+<tr><td>13/10</td><td>Baudrillard PDF pipeline</td><td class="est">~1h</td><td>Vault</td></tr>
+<tr><td>13/10</td><td>Cierre Mes 1 (plan + calculadora)</td><td class="est">~2h</td><td>General</td></tr>
+<tr><td>13/10</td><td>Codex transcript + inbox Emilia</td><td class="est">~1h</td><td>Vault</td></tr>
+<tr><td>13/10</td><td>Comfy demo mañana (3 actos) + LoRAs</td><td class="est">~1h</td><td>MVP_04</td></tr>
+<tr><td>13/10</td><td>MVP_06 voz: proyecto + 2 workflows TEST</td><td class="est">~1h</td><td>MVP_06</td></tr>
+<tfoot><tr><td colspan="2">TOTAL 36 filas</td><td colspan="2">≈70h sumando filas (mandan las 65h fijadas por Sol en Semanas: las ~ son techo)</td></tr></tfoot>
+</table>
+<p class="small">La suma de filas (~70h) supera las 65h fijadas porque varias ~ son estimaciones altas; valen los totales semanales fijados por Sol. Generado 16/10.</p>
+</details>
+
+<details id="semanas"><summary>Semanas (4 + pre) — de dónde salen las horas</summary>
+<p class="small">Metodología: los <b>totales por semana los fijó Sol</b> mirando calendario real. <b>Reuniones = subconjunto medido con Fathom</b> (está dentro de las hs trabajo, no se suma aparte). Mes 2 se mide exacto.</p>
+<table><tr><th>Semana</th><th>Hs trabajo (fijadas por Sol)</th><th>#Fathom</th><th>Hs reuniones (medidas, incluidas arriba)</th></tr>
+<tr><td>S0<br><span class='small'>pre 11/09 (propuesta, fuera de vigencia)</span></td><td class='est'><b>2.0h</b></td><td class='med'>—</td><td class='med'>s/d</td></tr>
+<tr><td>S1<br><span class='small'>16-22/09 · M1 Vault vivo</span></td><td class='est'><b>10.5h</b></td><td>4</td><td class='med'>6.4h</td></tr>
+<tr><td>S2<br><span class='small'>23-29/09 · M2 (topada a 20 por Sol)</span></td><td class='est'><b>20.0h</b></td><td>6</td><td class='med'>5.2h</td></tr>
+<tr><td>S3<br><span class='small'>30/09-06/10 · M3 (fijada 12 por Sol)</span></td><td class='est'><b>12.0h</b></td><td>2</td><td class='med'>4.9h</td></tr>
+<tr><td>S4<br><span class='small'>07-16/10 · M4+cierre — 16h esta semana (8h princ. + 4h 15/10 + 4h 16/10) + 6h resto (08-09/10 + reunión 14/10 plan.)</span></td><td class='est'><b>22.0h</b></td><td>3</td><td class='med'>3.0h</td></tr>
+</table>
+<div style='margin:8px 0'>
+<div class="bar-row"><span class="bar-label">S1 · 10.5h trabajo</span><div class="bar-track"><div class="bar-fill" style="width:48%"></div></div><span class="bar-val">6.4h reunión</span></div>
+<div class="bar-row"><span class="bar-label">S2 · 20.0h trabajo</span><div class="bar-track"><div class="bar-fill" style="width:91%"></div></div><span class="bar-val">5.2h reunión</span></div>
+<div class="bar-row"><span class="bar-label">S3 · 12.0h trabajo</span><div class="bar-track"><div class="bar-fill" style="width:55%"></div></div><span class="bar-val">4.9h reunión</span></div>
+<div class="bar-row"><span class="bar-label">S4 · 22.0h trabajo</span><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><span class="bar-val">3.0h reunión</span></div>
+</div>
+<p><b>Total ventana: 10.5+20+12+22 = 64.5h + 2h pre = 66.5h ≈ 65h (O2).</b> SET_01 (10h 12/10 + 4h 13/10) está dentro de las 22h de S4. <b>Total reuniones: ~13.5h en 13 Fathom + 6h en 2 presenciales = ~19.5h.</b></p>
+</details>
+
+<details id="despliegue"><summary>Despliegue IA (máquina en paralelo al humano)</summary>
+<p class="small">Estado del cómputo: <b>solo Comfy tiene tiempo máquina medido</b> (~25 min + descargas). El resto corre solo (cron 07:00, Fathom grabando, YT API) sin cómputo hora-por-hora todavía: <b>no calculado a nivel general</b>. El ahorro por flujo se calcula en cada dashboard (<a href="dashboard-estudio-os.html">Estudio OS · n8n</a> y <a href="dashboard-comfy.html">Comfy</a>) a medida que se prueban flujos reales.</p>
+<div style='margin:8px 0'>
+<div class="bar-row"><span class="bar-label">Fathom grabando 13 reuniones</span><div class="bar-track"><div class="bar-fill" style="width:90%"></div></div><span class="bar-val med">13.5h máq. · medido</span></div>
+<div class="bar-row"><span class="bar-label">n8n cron 07:00 + 20 execs</span><div class="bar-track"><div class="bar-fill orange" style="width:35%"></div></div><span class="bar-val est">corre dormido · no calculado</span></div>
+<div class="bar-row"><span class="bar-label">Comfy render 08-09/10</span><div class="bar-track"><div class="bar-fill" style="width:20%"></div></div><span class="bar-val med">~25 min · medido</span></div>
+<div class="bar-row"><span class="bar-label">Descargas (IP-Adapter, CLIP, Parakeet)</span><div class="bar-track"><div class="bar-fill" style="width:30%"></div></div><span class="bar-val med">~30-60 min red · 0 humano</span></div>
+<div class="bar-row"><span class="bar-label">YouTube API 709 videos</span><div class="bar-track"><div class="bar-fill" style="width:15%"></div></div><span class="bar-val med">segundos · medido</span></div>
+</div>
+<table><tr><th>Qué corre solo</th><th>Tiempo máquina</th><th>Estado cómputo</th><th>Evidencia</th></tr>
+<tr><td>Fathom grabando en las 13 reuniones</td><td class='med'>13.5h en paralelo al humano</td><td class='med'>medido</td><td class='small'>API + transcripts</td></tr>
+<tr><td>n8n cron 07:00 diario + 20 execs</td><td class='med'>corre dormido, filtro 26h sin duplicados</td><td class='est'>no calculado (va al dashboard n8n)</td><td class='small'>execs 3489-3525</td></tr>
+<tr><td>Comfy renderizando mientras trabajás (08-09/10)</td><td class='med'>~25 min (F-01..F-05 + WF-03) en paralelo a YT/n8n</td><td class='med'>medido</td><td class='small'>sesiones 08/10</td></tr>
+<tr><td>Descargas desatendidas</td><td class='med'>IP-Adapter + CLIP + Parakeet (~30-60 min red, 0 humano)</td><td class='med'>medido</td><td class='small'>08/10</td></tr>
+<tr><td>YouTube API + registro nocturno</td><td class='med'>709 videos en segundos · notas 00:12/01:16 = sistema 24h</td><td class='med'>medido</td><td class='small'>08/10</td></tr>
+</table>
+</details>
+
+<details id="fichas"><summary>Fichas por grupo (% sobre 36 filas)</summary>
+<div class="pie-wrap">
+<div class="pie" title="Distribución de filas por grupo"></div>
+<div class="leyenda">
+<div><span class="dot" style="background:#6aa8ff"></span>n8n — 4/36 (11.1%)</div>
+<div><span class="dot" style="background:#7fd08a"></span>Vault interno — 7/36 (19.4%)</div>
+<div><span class="dot" style="background:#c792ea"></span>MVP_01 — 1/36 (2.8%)</div>
+<div><span class="dot" style="background:#ffb454"></span>MVP_02 — 6/36 (16.7%) → <a href="dashboard-autocad.html">ver dashboard</a></div>
+<div><span class="dot" style="background:#ff6b6b"></span>MVP_04 — 4/36 (11.1%) → <a href="dashboard-comfy.html">ver dashboard</a></div>
+<div><span class="dot" style="background:#4ecdc4"></span>MVP_04.02 — 2/36 (5.6%) → <a href="dashboard-comfy.html">ver dashboard</a></div>
+<div><span class="dot" style="background:#ffe66d"></span>MVP_06 — 2/36 (5.6%)</div>
+<div><span class="dot" style="background:#888"></span>General sin MVP — 10/36 (27.8%)</div>
+</div>
+</div>
+<p class="small">Porcentajes = filas del grupo ÷ 36 de la ventana. Suma 100%. Detalle por ficha abajo.</p>
+<div><button class='tbtn on' onclick="tabmvp(0)">n8n (11.1%)</button><button class='tbtn' onclick="tabmvp(1)">Vault (19.4%)</button><button class='tbtn' onclick="tabmvp(2)">MVP_01 (2.8%)</button><button class='tbtn' onclick="tabmvp(3)">MVP_02 (16.7%)</button><button class='tbtn' onclick="tabmvp(4)">MVP_04 (11.1%)</button><button class='tbtn' onclick="tabmvp(5)">MVP_04.02 (5.6%)</button><button class='tbtn' onclick="tabmvp(6)">MVP_06 (5.6%)</button><button class='tbtn' onclick="tabmvp(7)">General (27.8%)</button></div>
+<div id='tm0'><p><b>11.1% del mes</b> = 4/36 filas. <a href="dashboard-estudio-os.html">→ Dashboard Estudio OS</a><br>Fathom dual + ingest jueves + MCP n8n + 4 workflows OS-Emilia (Router/Agenda/Cancel/Modif + Fathom Core cron 07:00).</p><ul><li>09-19-sesion-fathom-dual-emilia-jueves</li><li>09-24-sesion-n8n-mcp-instalacion</li><li>09-24-sesion-plan-os-emilia-n8n</li><li>10-08-sesion-n8n-fathom-agenda</li></ul></div>
+<div id='tm1' style='display:none'><p><b>19.4% del mes</b> = 7/36 filas.<br>Subagentes (sherlock/contenidos/vaultworm/brainstormy/fathom-pm) + pipeline YT 709 videos + PDF pipeline + índices y wikilinks wiki.</p><ul><li>09-27-sesion-fix-indices-wiki</li><li>10-08-sesion-curacion-youtube</li><li>10-09-sesion-fuentes-agentes-grafo</li><li>10-09-sesion-sherlock-chipperfield-ching-canvas</li><li>10-09-sesion-vista-grafica-yt</li><li>10-13-sesion-baudrillard-pdf-pipeline</li><li>10-13-sesion-codex-transcript-inbox (por confirmar)</li></ul></div>
+<div id='tm2' style='display:none'><p><b>2.8% del mes</b> = 1/36 filas. <a href="dashboard-autocad.html">→ Dashboard AutoCAD</a><br>Bloques por lenguaje natural (7 pasos: vano 98, puerta batiente, ventanas). Log 30/09.</p><ul><li>09-30-sesion-mcp-7pasos-bloques-nl</li></ul></div>
+<div id='tm3' style='display:none'><p><b>16.7% del mes</b> = 6/36 filas. <a href="dashboard-autocad.html">→ Dashboard AutoCAD</a><br>SET_01 replanteo (29 capas, DWT/DWS, kit instalable: <b>10h 12/10 + 4h 13/10 declaradas por Sol</b>) + SET_02 DGIUR (25 capas, Anexo III) + fuentes Perplexity + Autodesk Help MCP + auditoría REP-ARAOZ.</p><ul><li>09-27-mvp_02-fuentes</li><li>09-27-sesion-autodesk-help-mcp</li><li>09-28-sesion-fuentes-wikilinks</li><li>10-05-sesion-set02-gest-dgiur-uso</li><li>10-12-sesion-set01-construccion (10h declaradas)</li><li>10-13-sesion-set01-replanteo (4h declaradas)</li></ul></div>
+<div id='tm4' style='display:none'><p><b>11.1% del mes</b> = 4/36 filas. <a href="dashboard-comfy.html">→ Dashboard Comfy</a><br>Research 949 líneas/38 URLs + plan 24h + moodboard v5 + fix .bat + demo 3 actos + LoRAs a P:.</p><ul><li>09-19-sesion-emilia-os-metodologia-repo-moodboard</li><li>09-30-sesion-moodboard-hormigon-madera-v5</li><li>10-08-sesion-comfyui-plan-tests-bat-fix</li><li>10-13-sesion-comfyui-demo-manana</li></ul></div>
+<div id='tm5' style='display:none'><p><b>5.6% del mes</b> = 2/36 filas. <a href="dashboard-comfy.html">→ Dashboard Comfy</a><br>WF-01 F-01..F-05 + IP-Adapter + WF-03 serie controles.</p><ul><li>10-08-sesion-wf01-corridas-ipadapter</li><li>10-09-sesion-wf03-serie-controles</li></ul></div>
+<div id='tm6' style='display:none'><p><b>5.6% del mes</b> = 2/36 filas.<br>Handy dictado ES + Parakeet + 2 workflows TEST de voz.</p><ul><li>10-08-sesion-handy-dictado</li><li>10-13-sesion-mvp06-voz (proyecto + 2 workflows TEST)</li></ul></div>
+<div id='tm7' style='display:none'><p><b>27.8% del mes</b> = 10/36 filas · <b>General, sin MVP asignado</b>.<br>Contrato, Leantime, specs, fix MCPs, Remotion, reportes, cierre Mes 1.</p><ul><li>09-16-sesion-emilia-playbook-portable</li><li>09-19-sesion-contrato-emilia</li><li>09-24-sesion-cierre-contrato-emilia</li><li>09-28-sesion-alta-emilia-leantime</li><li>09-28-sesion-revision-specs-pendientes</li><li>10-05-sesion-fix-mcp-leantime</li><li>10-05-sesion-remotion-videos</li><li>10-09-sesion-alta-emilia-leantime</li><li>10-09-sesion-reporte-semanal-08-09</li><li>10-13-sesion-cierre-mes1</li></ul></div>
+<script>function tabmvp(i){var d=document.querySelectorAll('[id^=tm]');var b=document.querySelectorAll('.tbtn');for(var k=0;k<d.length;k++){d[k].style.display=(k===i?'block':'none');b[k].className=(k===i?'tbtn on':'tbtn');}}</script>
+</details>
+
+<details id="reuniones"><summary>Reuniones con Emilia (13 Fathom + 2 presenciales)</summary>
+<p class="small">Fuente: transcripts Fathom (actualizados) + 2 presenciales de 3h. <b class="med">verde = medido</b> (duración del transcript) · <b class="est">naranja ~ = estimado</b> · s/d = sin dato. Son subconjunto de las hs trabajo (no se suman).</p>
+<table>
+<tr><th>Fecha</th><th>Tema tratado</th><th>Duración</th></tr>
+<tr><td rowspan='4'>11/09 ×4</td><td>Propuesta automatización + ROI 12h/mes</td><td class='med'>s/d</td></tr>
+<tr><td>Vault second brain + partnership</td><td class='med'>s/d</td></tr>
+<tr><td>TP3/TP4 experimentos IA</td><td class='med'>s/d</td></tr>
+<tr><td>Curso Marcela + plataforma</td><td class='med'>s/d</td></tr>
+<tr><td>16/09 presencial</td><td>Primer día presencial: playbook + inventario + stack</td><td class='med'>3h</td></tr>
+<tr><td>I · 17/09</td><td>Estándares CAD + código gráfico</td><td class='med'>59.9 min</td></tr>
+<tr><td>II · 17/09</td><td>Fathom + Cal.com + disco</td><td class='med'>59.9 min</td></tr>
+<tr><td>III · 17/09</td><td>PC + Magenta + terreno</td><td class='med'>42 min</td></tr>
+<tr><td>IV · 17/09</td><td>PC Emilia + Brasil</td><td class='med'>42 min</td></tr>
+<tr><td>24/09</td><td>Emi.ArqOS#01</td><td class='med'>60.1 min</td></tr>
+<tr><td>24/09</td><td>Flujo IA + bodega</td><td class='med'>59.4 min</td></tr>
+<tr><td>24/09</td><td>Impromptu (más 1 Patri excluida)</td><td class='med'>12.8 min</td></tr>
+<tr><td>26/09</td><td>Corrección planos estudiante</td><td class='med'>~60 min</td></tr>
+<tr><td>26/09</td><td>Replanteo académico</td><td class='med'>~60 min</td></tr>
+<tr><td>26/09</td><td>Estándares + entrega</td><td class='med'>~58 min</td></tr>
+<tr><td>30/09 presencial</td><td>Sesión presencial semana anterior</td><td class='med'>3h</td></tr>
+<tr><td>03/10</td><td>Vinícola propuesta (Leticia+Vanessa)</td><td class='med'>~59 min</td></tr>
+<tr><td>03/10</td><td>Vinícola concepto</td><td class='med'>~57 min</td></tr>
+<tr><td>09/10</td><td>Emi OS: estándares + prompt ChatGPT</td><td class='med'>60 min</td></tr>
+<tr><td>09/10</td><td>Seguimiento Emi OS</td><td class='med'>60 min</td></tr>
+<tr><td>09/10</td><td>Seguimiento Emi OS</td><td class='med'>59.6 min</td></tr>
+<tr><td>14/10 (mañana)</td><td>Presentación cierre Mes 1 (planificada)</td><td class='med'>3h plan.</td></tr>
+</table>
+<p><b>Total medido: ~13.5hs en 13 Fathom + 6hs en 2 presenciales = ~19.5hs en reuniones.</b> (11/09 s/d, 14/10 planificada, no suman.)</p>
+</details>
+
+<details id="autos"><summary>Automatizaciones Mes 1</summary>
+<p class="small">Cada flujo redirige a su dashboard: n8n → <a href="dashboard-estudio-os.html">Estudio OS</a> · Comfy → <a href="dashboard-comfy.html">Comfy</a> · CAD → <a href="dashboard-autocad.html">AutoCAD</a>.</p>
+<table><tr><th>Flujo</th><th>Estado</th><th>Ahorro medido</th><th>Falta / quick win</th></tr>
+<tr><td><a href="dashboard-estudio-os.html">Router Telegram</a> (17 = 13 + 4 notas: Identidad→Voz/Fuentes/Jina + Fathom + Help)</td><td class='med'>verificado hoy vía MCP</td><td class='med'>base de todo</td><td>Agregar a Emilia al grupo</td></tr>
+<tr><td><a href="dashboard-estudio-os.html">Agente Voz</a> (26 = 24 + 2 notas: Gemini + Redis lote + Postgres + OpenRouter)</td><td class='med'>activo</td><td class='med'>voz/texto + contactos por voz</td><td>Medir 1 real</td></tr>
+<tr><td><a href="dashboard-estudio-os.html">Agente Agenda</a> (12 = 11 + 1 nota: 6 tools Cal.com + Calendar)</td><td class='med'>activo</td><td class='med'>online/presencial, actualiza, cancela</td><td>Evento 60 min Meet</td></tr>
+<tr><td><a href="dashboard-estudio-os.html">Bot personal</a> (voz/texto → Cal.com Pi)</td><td>funcionando</td><td class='med'>~14 min × 5/sem ≈ 5hs/mes</td><td>Medir 1 real esta semana</td></tr>
+<tr><td><a href="dashboard-estudio-os.html">Agente Emilia</a> (texto/voz)</td><td class='est'>pendiente Mes 2</td><td>—</td><td>Cal.com suya + Meet 60 min + chat_id + prueba</td></tr>
+<tr><td><a href="dashboard-estudio-os.html">Voz + memoria</a> (Redis/Postgres + Sheet)</td><td>funcionando</td><td class='med'>buscar/agregar contacto por voz</td><td>Diagrama nodo por nodo</td></tr>
+<tr><td><a href="dashboard-estudio-os.html">Fathom sync 07:00</a> (cuenta Emilia)</td><td class='med'>automático</td><td class='med'>~45 min × 11/mes ≈ 8hs/mes</td><td>Crudo+cron, agente, Leantime 30min, mail propio, Fathom Pi + dedup</td></tr>
+<tr><td><a href="dashboard-estudio-os.html">Inbox Fuentes</a> (25 links/sem)</td><td class='med'>cola viva</td><td class='med'>~10 min × 25/sem ≈ 18hs/mes</td><td>Emilia al grupo + SHARE con 1 link</td></tr>
+<tr><td><a href="dashboard-estudio-os.html">Voz</a> (5 notas/sem)</td><td class='med'>activo</td><td class='med'>~8 min × 5/sem ≈ 3hs/mes</td><td>Medir 1 real</td></tr>
+<tr><td><a href="dashboard-autocad.html">SET_01 cuadro → planilla viva</a> (webhook CAD→Sheets 12 nodos)</td><td class='med'>activo</td><td class='med'>cuadro en 1 min</td><td>Cotizar con SET_01 CAD</td></tr>
+<tr><td>Mantenimiento + worker fuentes→crudo</td><td class='est'>en preparativo</td><td>—</td><td>Definir alcance, destino, frecuencia, gate</td></tr>
+<tr><td><a href="dashboard-comfy.html">Croquis Comfy/LoRA</a> (a validar)</td><td class='est'>pruebas</td><td class='med'>60 min → ~1 min = 60X</td><td>Validar con 1 croquis real</td></tr>
+</table>
+<p class='small'>Detalle: spec inventario-automatizaciones-mes1. Total: ~34hs/mes (5+3+18+8) + fuentes imposibles sin sistema. Eficiencia = resultados / recursos. El cómputo fino por flujo vive en <a href="dashboard-estudio-os.html">dashboard n8n</a> y <a href="dashboard-comfy.html">dashboard Comfy</a>.</p>
+</details>
+
+<details><summary>Calculadora réplica (pendiente Mes 2)</summary>
+<p>Los factores USD 128 / 39 / 180 / 0.7 mes quedaron sin respaldo: la comparación que vale es <b>cuánto sale la hora de un programador haciendo cada flujo</b>, y eso se calcula flujo por flujo en Mes 2. Hasta tenerlo, esta sección queda pendiente y no se muestra como verificada.</p>
+<p class="small">Pendiente Mes 2: costo hora programador × horas por flujo (n8n, Comfy, CAD) → réplica, operativo/mes, valor liberado y payback con fuente.</p>
+</details>
+
+<details><summary>Mes 2 (técnico)</summary>
 <p>Un tipo de plano bien usado en CAD · Codex desktop en PC Emilia (PC vs celular) · Modelos croquis Comfy · Evento 60 min con Meet · Cierre real vie 16.</p>
 <p class="small">Fuentes: plan cierre + reporte horas + logs MVP. Generado 13/10. Sin cobro por pedido.</p>
+</details>
+
+<div class="foot"><div><b>Más arquitectura. Menos fricción.</b></div><span>Studio OS × Emilia — Dashboard Mes 1 · 16/10</span></div>
+</main>
 </body>
 </html>

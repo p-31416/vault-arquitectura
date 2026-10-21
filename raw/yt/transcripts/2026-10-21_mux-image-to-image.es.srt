@@ -1,0 +1,4187 @@
+1
+00:00:01,250 --> 00:00:03,790
+Hola a todos y bienvenidos al módulo 3.
+
+2
+00:00:03,790 --> 00:00:08,493
+Ahora vamos a meternos en image to image.
+
+3
+00:00:08,493 --> 00:00:11,935
+Como vimos antes con text to image,
+
+4
+00:00:11,935 --> 00:00:18,237
+tenemos el proceso creativo, las fases del proceso creativo.
+
+5
+00:00:18,237 --> 00:00:23,480
+Y mientras que text to image era más aplicable en la fase de ideación
+
+6
+00:00:23,480 --> 00:00:28,282
+y en las fases iniciales de diseño, cuando solo quieres explorar muy rápido,
+
+7
+00:00:29,248 --> 00:00:34,492
+image to image se vuelve más interesante un poco más adelante en el proceso.
+
+8
+00:00:34,492 --> 00:00:36,403
+Cuando hablamos de fabricación,
+
+9
+00:00:36,403 --> 00:00:41,476
+hablamos de tareas de diseño iterativas y, en realidad, de la fase del diseño en la que
+
+10
+00:00:41,476 --> 00:00:47,550
+quieres mantener el control pero también experimentar con ideas nuevas.
+
+11
+00:00:47,550 --> 00:00:52,094
+Image to image también puede ser interesante en la visualización.
+
+12
+00:00:52,094 --> 00:00:58,348
+O sea, en las últimas partes del proceso creativo.
+
+13
+00:00:58,638 --> 00:01:04,278
+Y ahí hablamos de upscaling y de renders finales.
+
+14
+00:01:04,278 --> 00:01:06,698
+Un poco de contexto. En text to image,
+
+15
+00:01:06,698 --> 00:01:10,418
+la idea es que partes de noise puro, como vimos antes.
+
+16
+00:01:10,418 --> 00:01:12,998
+Vamos de la nada a algo.
+
+17
+00:01:12,998 --> 00:01:16,638
+Creamos algo nuevo a partir de texto.
+
+18
+00:01:16,638 --> 00:01:18,938
+Image to image, en cambio,
+
+19
+00:01:18,938 --> 00:01:22,978
+parte de algo y llega a otra cosa.
+
+20
+00:01:22,978 --> 00:01:26,962
+Esa es la idea de fondo.
+
+21
+00:01:28,430 --> 00:01:35,416
+Vamos a empezar con el caso de uso más sencillo antes de meternos en
+
+22
+00:01:35,697 --> 00:01:40,721
+el diseño: el upscaling. Lo que es el upscaling, en realidad,
+
+23
+00:01:40,721 --> 00:01:46,866
+es crear la misma imagen de entrada pero con más resolución.
+
+24
+00:01:46,866 --> 00:01:49,979
+Y este esquema lo ilustra bastante bien.
+
+25
+00:01:49,979 --> 00:01:52,331
+Lo voy a anotar para que lo veas.
+
+26
+00:01:52,331 --> 00:01:55,354
+Digamos que tienes una imagen.
+
+27
+00:01:56,398 --> 00:01:58,598
+En este caso un video, pero da igual.
+
+28
+00:01:58,598 --> 00:02:03,338
+Es la misma habitación y mide 1280
+
+29
+00:02:03,338 --> 00:02:07,398
+por 720 píxeles. Esa es la dimensión
+
+30
+00:02:07,398 --> 00:02:10,538
+de esta imagen.
+
+31
+00:02:10,538 --> 00:02:14,198
+Si la divides en píxeles,
+
+32
+00:02:14,198 --> 00:02:17,538
+verás que tiene X cantidad de píxeles.
+
+33
+00:02:17,538 --> 00:02:23,098
+Si esto es un píxel, lo que hace el upscaling
+
+34
+00:02:23,098 --> 00:02:25,178
+es que, por cada
+
+35
+00:02:25,178 --> 00:02:26,178
+píxel,
+
+36
+00:02:25,922 --> 00:02:30,645
+lo parte en trozos. En este caso, en nueve trozos,
+
+37
+00:02:30,645 --> 00:02:34,668
+porque tenemos tres por tres,
+
+38
+00:02:34,668 --> 00:02:40,132
+lo que significa que la resolución será tres veces mayor.
+
+39
+00:02:40,132 --> 00:02:44,775
+¿Por qué pasa esto? Porque, por cada imagen,
+
+40
+00:02:44,775 --> 00:02:50,799
+crea nueve imágenes nuevas, lo que genera muchísimo más detalle.
+
+41
+00:02:50,799 --> 00:02:55,342
+Lo hace partiéndola en trozos, como vimos aquí.
+
+42
+00:02:55,694 --> 00:03:01,857
+3 por 3, que da 9 píxeles, y cada píxel se hace más grande.
+
+43
+00:03:01,857 --> 00:03:07,479
+Por eso, en la imagen de salida
+
+44
+00:03:07,739 --> 00:03:13,702
+tenemos 3840. De aquí a aquí lo multiplicamos
+
+45
+00:03:13,702 --> 00:03:16,863
+por 3, porque cada píxel se vuelve 3 píxeles.
+
+46
+00:03:16,863 --> 00:03:23,116
+Digamos que es solo azul: pues esto se convierte en 9 tonos de azul distintos.
+
+47
+00:03:24,664 --> 00:03:28,694
+Con la altura pasa lo mismo: es por 3 también.
+
+48
+00:03:28,694 --> 00:03:31,919
+¿Y por qué es relevante? ¿Cómo funciona?
+
+49
+00:03:31,919 --> 00:03:37,443
+Te lo voy a mostrar usando
+
+50
+00:03:38,043 --> 00:03:42,627
+el tablero de Miro, donde puse algunos workflows de upscaling.
+
+51
+00:03:42,627 --> 00:03:48,331
+Lo hice así: esta es la imagen del workflow final,
+
+52
+00:03:48,731 --> 00:03:52,934
+así que puedes descargarla, y abajo siempre pongo las
+
+53
+00:03:53,858 --> 00:03:58,339
+imágenes del proceso. Hace un tiempo estaba buscando
+
+54
+00:03:58,339 --> 00:04:04,761
+una textura de este azulejo estilo terrazo
+
+55
+00:04:05,141 --> 00:04:11,043
+y encontré esta imagen. Si haces zoom, ves que está borrosísima.
+
+56
+00:04:11,043 --> 00:04:16,634
+Los detalles no son buenos, aunque transmite la idea.
+
+57
+00:04:16,634 --> 00:04:21,786
+Yo quiero más resolución. Con este método de upscaling
+
+58
+00:04:22,200 --> 00:04:26,934
+podemos llegar a esta calidad. Espero que veáis lo nítido que queda,
+
+59
+00:04:26,934 --> 00:04:29,315
+sobre todo cuando lo ponemos junto.
+
+60
+00:04:29,315 --> 00:04:33,919
+Ves que pasa de esta resolución a esta.
+
+61
+00:04:33,919 --> 00:04:38,783
+Y eso es gracias al workflow de upscaling.
+
+62
+00:04:38,783 --> 00:04:41,525
+¿Y qué hacemos? Como hicimos antes,
+
+63
+00:04:41,525 --> 00:04:42,796
+hacemos clic en descargar.
+
+64
+00:04:46,894 --> 00:04:49,287
+En mi caso tengo que descargarla otra vez,
+
+65
+00:04:49,287 --> 00:04:51,167
+pero a ti se te descargará automáticamente.
+
+66
+00:04:53,368 --> 00:04:55,140
+Vamos a la carpeta de Descargas,
+
+67
+00:04:55,140 --> 00:04:59,184
+la arrastramos y la soltamos en...
+
+68
+00:04:59,184 --> 00:05:02,823
+Vale,
+
+69
+00:05:02,823 --> 00:05:05,080
+hubo un error ahí. Lo intento otra vez.
+
+70
+00:05:07,458 --> 00:05:09,499
+La arrastramos y la soltamos en Comfy.
+
+71
+00:05:09,499 --> 00:05:13,800
+Y ves que nos dio el workflow automáticamente.
+
+72
+00:05:13,800 --> 00:05:19,173
+Ahora, como ComfyUI no siempre recuerda
+
+73
+00:05:19,173 --> 00:05:24,105
+la imagen subida, voy a venir aquí
+
+74
+00:05:24,105 --> 00:05:27,576
+y descargar también la imagen de baja resolución.
+
+75
+00:05:37,208 --> 00:05:41,273
+Esta. Después la arrastro y la suelto aquí.
+
+76
+00:05:44,834 --> 00:05:48,986
+También podría haber hecho clic aquí y seleccionarla.
+
+77
+00:05:48,986 --> 00:05:51,268
+Es lo mismo. Da igual.
+
+78
+00:05:51,268 --> 00:05:57,761
+Y cómo funciona el workflow es supersimple.
+
+79
+00:05:57,761 --> 00:06:02,324
+Podrías entrar en el subgraph y mirar todos estos nodos complicados,
+
+80
+00:06:02,324 --> 00:06:07,666
+pero no queremos hacer eso, porque no es el foco de este tutorial.
+
+81
+00:06:07,666 --> 00:06:12,549
+Queremos enseñarte cómo usarlo de verdad. Toda esta parte
+
+82
+00:06:12,549 --> 00:06:14,050
+técnica de fondo
+
+83
+00:06:14,592 --> 00:06:18,664
+es para quien tenga interés, pero por ahora lo vamos a dejar tal cual.
+
+84
+00:06:18,664 --> 00:06:22,888
+El único parámetro realmente relevante es el "upscale by".
+
+85
+00:06:22,888 --> 00:06:27,871
+En el ejemplo que acabamos de ver,
+
+86
+00:06:27,871 --> 00:06:31,282
+aquí hicimos un upscaling por 3.
+
+87
+00:06:31,282 --> 00:06:37,147
+¿Cómo lo sabemos? Porque pasamos de esto a esto, y eso
+
+88
+00:06:37,147 --> 00:06:44,012
+es por 3. Cada píxel se multiplicó por 3, lo que lo convierte
+
+89
+00:06:44,263 --> 00:06:49,065
+en nueve píxeles, recuerda. Así que ese es
+
+90
+00:06:51,246 --> 00:06:54,306
+el factor. Digamos que queremos hacer un upscale por 4:
+
+91
+00:06:54,306 --> 00:06:58,686
+eso significa que cada píxel se vuelve 16 píxeles.
+
+92
+00:06:58,686 --> 00:07:02,426
+También podemos trabajar con una seed. Por ahora
+
+93
+00:07:02,426 --> 00:07:08,906
+está en aleatorio, solo para poder explicarlo.
+
+94
+00:07:08,906 --> 00:07:12,566
+Si hacemos clic en "run", tomará esta imagen
+
+95
+00:07:12,566 --> 00:07:17,306
+y el workflow creará píxeles extra.
+
+96
+00:07:17,306 --> 00:07:21,042
+Ahora mismo ves que la resolución es
+
+97
+00:07:21,262 --> 00:07:25,262
+1K por 1K... ah, eso fue un fallo.
+
+98
+00:07:32,024 --> 00:07:37,582
+Cuando algo se pone azul, sabemos que ese nodo está trabajando.
+
+99
+00:07:37,582 --> 00:07:41,027
+Si entras, ves que es este en concreto.
+
+100
+00:07:41,027 --> 00:07:43,941
+O sea, el upscaler en sí está trabajando.
+
+101
+00:07:43,941 --> 00:07:48,618
+Los otros nodos ya pasaron. Ves que está cargando aquí.
+
+102
+00:07:53,280 --> 00:07:57,905
+Bien, cuando hacemos zoom vemos que pasó de 1K
+
+103
+00:07:57,905 --> 00:08:04,022
+a casi 4K, y ves que la resolución es muchísimo mayor.
+
+104
+00:08:07,758 --> 00:08:10,189
+De baja a alta resolución;
+
+105
+00:08:10,189 --> 00:08:14,342
+es supersimple. Ese es el primer workflow de aquí.
+
+106
+00:08:14,342 --> 00:08:20,886
+En el segundo no vamos a usar un azulejo ni un patrón.
+
+107
+00:08:20,886 --> 00:08:22,777
+También puedes hacer lo mismo con imágenes.
+
+108
+00:08:22,777 --> 00:08:24,548
+Es esencialmente el mismo workflow.
+
+109
+00:08:24,548 --> 00:08:27,850
+Tomamos esta que generamos antes.
+
+110
+00:08:27,850 --> 00:08:30,071
+Como ves, cuando haces zoom,
+
+111
+00:08:30,071 --> 00:08:34,183
+la resolución es bajísima. Y con este
+
+112
+00:08:34,183 --> 00:08:35,183
+workflow
+
+113
+00:08:34,933 --> 00:08:37,236
+crea muchísimos detalles extra.
+
+114
+00:08:37,236 --> 00:08:41,118
+Todas las rocas y todos los detalles quedan ahora finísimos.
+
+115
+00:08:41,118 --> 00:08:43,679
+Lo verás cuando las descargues.
+
+116
+00:08:43,679 --> 00:08:49,404
+Por ejemplo, la que no está escalada,
+
+117
+00:08:49,404 --> 00:08:52,306
+la imagen original, pesa 1,8 megabytes.
+
+118
+00:08:52,306 --> 00:08:55,248
+Esta pesa casi 25 megabytes.
+
+119
+00:08:55,248 --> 00:08:58,070
+Así que hay que tener cuidado, o al menos tenerlo en cuenta:
+
+120
+00:08:58,070 --> 00:09:03,384
+el tamaño del archivo aumenta tantísimo
+
+121
+00:09:03,736 --> 00:09:05,849
+que a veces se vuelve
+
+122
+00:09:05,849 --> 00:09:07,311
+demasiado grande para manejarlo.
+
+123
+00:09:07,311 --> 00:09:11,768
+Este es otro ejemplo del mismo workflow.
+
+124
+00:09:14,542 --> 00:09:18,222
+Ahora, la cosa es que, como vimos antes,
+
+125
+00:09:18,222 --> 00:09:21,642
+también puedes usar las plantillas de Comfy.
+
+126
+00:09:21,642 --> 00:09:26,082
+Entras en Templates, vas a
+
+127
+00:09:26,082 --> 00:09:29,642
+"use cases" y haces scroll aquí
+
+128
+00:09:31,950 --> 00:09:33,993
+hasta que encuentres algo que te guste,
+
+129
+00:09:33,993 --> 00:09:35,756
+quizá un workflow de upscaling.
+
+130
+00:09:35,756 --> 00:09:41,516
+Si volvemos a todas las plantillas y escribimos "upscale"...
+
+131
+00:09:44,246 --> 00:09:47,407
+Todo lo que ves aquí son workflows de upscaling.
+
+132
+00:09:47,407 --> 00:09:50,758
+El que acabamos de usar era este.
+
+133
+00:09:50,758 --> 00:09:53,529
+Es solo una plantilla. Así que ves,
+
+134
+00:09:53,529 --> 00:09:57,900
+reconoces... este.
+
+135
+00:09:57,900 --> 00:10:00,301
+Es esencialmente este mismo,
+
+136
+00:10:00,301 --> 00:10:03,712
+pero con cambios menores, poco apreciables.
+
+137
+00:10:03,712 --> 00:10:07,843
+Así que yo no inventé este workflow.
+
+138
+00:10:07,843 --> 00:10:11,084
+Lo tomé y lo fui ajustando hasta que me gustó.
+
+139
+00:10:13,154 --> 00:10:19,984
+Otra cosa que puedes hacer es ir a todas las plantillas y hacer clic en "tasks".
+
+140
+00:10:19,984 --> 00:10:23,980
+Si vas a "tasks", puedes escribir "upscale",
+
+141
+00:10:29,312 --> 00:10:35,805
+"image upscale", y filtrará automáticamente todos los workflows que
+
+142
+00:10:35,805 --> 00:10:42,487
+hacen lo mismo. Así que si con tu imagen este no funciona, o no funciona
+
+143
+00:10:42,487 --> 00:10:46,069
+bien, prueba con otro.
+
+144
+00:10:46,069 --> 00:10:50,861
+La diferencia aquí, y esta es importante, es que si miras
+
+145
+00:10:50,861 --> 00:10:57,384
+uno como este, sin un símbolo como este, significa que
+
+146
+00:10:57,384 --> 00:10:58,384
+se ejecuta
+
+147
+00:10:58,624 --> 00:11:02,796
+en local. O sea, se ejecuta en Comfy Cloud.
+
+148
+00:11:02,796 --> 00:11:06,298
+Si ves Grok,
+
+149
+00:11:06,559 --> 00:11:10,181
+o Magnific, o Google,
+
+150
+00:11:10,181 --> 00:11:16,094
+se ejecuta por API. Significa que no es Comfy Cloud
+
+151
+00:11:16,094 --> 00:11:19,726
+quien está escalando la imagen, sino que se envía a Google.
+
+152
+00:11:19,726 --> 00:11:24,589
+Google hace lo suyo con la imagen, la devuelve y tú la recibes.
+
+153
+00:11:24,589 --> 00:11:26,690
+Como estamos usando Comfy Cloud,
+
+154
+00:11:27,052 --> 00:11:28,723
+no vas a notar la diferencia.
+
+155
+00:11:28,723 --> 00:11:33,968
+¿Por qué? Porque si generas algo y haces clic en "run",
+
+156
+00:11:33,968 --> 00:11:36,530
+claro, estás usando créditos,
+
+157
+00:11:36,530 --> 00:11:39,932
+¿sí? Cuanto más generas,
+
+158
+00:11:39,932 --> 00:11:43,996
+más créditos usas. Es un modelo de suscripción.
+
+159
+00:11:43,996 --> 00:11:48,139
+Con el plan normal tienes 7.000 créditos al mes.
+
+160
+00:11:48,139 --> 00:11:52,643
+Si generas algo, los créditos bajan.
+
+161
+00:11:52,643 --> 00:11:56,026
+Lo mismo pasa con las API.
+
+162
+00:11:56,026 --> 00:11:57,026
+...
+
+163
+00:11:56,462 --> 00:12:02,342
+Digamos que usas Google. Aquí te dirá cuántos créditos va a costar.
+
+164
+00:12:02,342 --> 00:12:07,242
+Si tienes 7.000 y una imagen cuesta 50,
+
+165
+00:12:07,242 --> 00:12:11,502
+puedes calcular más o menos cuántas imágenes puedes hacer.
+
+166
+00:12:11,502 --> 00:12:15,302
+Ojo: si lo pones en 2K,
+
+167
+00:12:15,302 --> 00:12:20,922
+baja bastante. 4K cuesta 50,
+
+168
+00:12:20,922 --> 00:12:25,042
+2K cuesta 28, y 1K cuesta lo mismo,
+
+169
+00:12:25,836 --> 00:12:30,918
+pero nadie usa eso, así que 2K es el mínimo que vas a usar en la práctica.
+
+170
+00:12:30,918 --> 00:12:33,966
+Vamos a cerrar este.
+
+171
+00:12:37,526 --> 00:12:41,325
+Ahora vamos a usar este workflow de aquí.
+
+172
+00:12:43,998 --> 00:12:45,392
+Lo descargamos.
+
+173
+00:12:53,326 --> 00:12:54,326
+Arrastrar y soltar.
+
+174
+00:12:56,608 --> 00:13:02,083
+Da error porque la imagen de entrada no funciona o no está.
+
+175
+00:13:02,083 --> 00:13:04,565
+Como ves, este es un workflow distinto.
+
+176
+00:13:04,565 --> 00:13:10,670
+Funciona con una empresa que se llama Topaz y que tiene un motor muy bueno.
+
+177
+00:13:10,670 --> 00:13:15,314
+Te preguntarás cuál es la diferencia real entre todos estos.
+
+178
+00:13:15,314 --> 00:13:18,537
+Pues que su modelo funciona de otra manera.
+
+179
+00:13:18,537 --> 00:13:21,240
+A algunos les gusta mucho WaveSpeed.
+
+180
+00:13:21,240 --> 00:13:23,740
+A otros, Topaz o Google.
+
+181
+00:13:24,694 --> 00:13:26,835
+En esencia todos hacen lo mismo,
+
+182
+00:13:26,835 --> 00:13:31,297
+pero algunos son mejores para fotos
+
+183
+00:13:31,297 --> 00:13:34,018
+y otros para renders de arquitectura.
+
+184
+00:13:34,018 --> 00:13:36,519
+Tienes que experimentar un poco,
+
+185
+00:13:36,519 --> 00:13:39,191
+lo que más te guste. A mí me gusta este.
+
+186
+00:13:39,191 --> 00:13:42,562
+Es bastante simple. Sé que Google también funciona,
+
+187
+00:13:42,562 --> 00:13:45,624
+pero en esencia todos hacen lo mismo.
+
+188
+00:13:45,624 --> 00:13:49,105
+Este de Topaz lo vamos a hacer juntos.
+
+189
+00:13:49,105 --> 00:13:50,766
+Hago clic aquí.
+
+190
+00:13:55,550 --> 00:13:57,264
+Y tomemos...
+
+191
+00:14:00,750 --> 00:14:02,691
+Tomemos esta, la que hicimos antes.
+
+192
+00:14:06,798 --> 00:14:11,458
+Vemos que la imagen que acabamos de subir es de 1024 por 1024.
+
+193
+00:14:11,458 --> 00:14:16,685
+Aquí podemos introducir las medidas exactas que
+
+194
+00:14:16,685 --> 00:14:19,687
+queremos obtener.
+
+195
+00:14:19,687 --> 00:14:21,828
+Esto es distinto del otro workflow.
+
+196
+00:14:21,828 --> 00:14:26,812
+Si volvemos aquí, decimos que lo quiero por cuatro,
+
+197
+00:14:26,812 --> 00:14:32,135
+lo que significa que calculará automáticamente cuántos píxeles serán.
+
+198
+00:14:32,135 --> 00:14:34,807
+En este, lo que tengo que hacer
+
+199
+00:14:34,807 --> 00:14:35,918
+es poner los píxeles
+
+200
+00:14:36,418 --> 00:14:39,738
+de salida. Si lo quiero por 2,
+
+201
+00:14:39,738 --> 00:14:42,998
+pongo 2048 por 2048.
+
+202
+00:14:42,998 --> 00:14:45,944
+Creo que se entiende la idea. Aquí es manual.
+
+203
+00:14:45,944 --> 00:14:48,286
+Cada vez que veas un workflow,
+
+204
+00:14:48,286 --> 00:14:50,788
+intenta entender cómo funciona.
+
+205
+00:14:50,788 --> 00:14:52,909
+En general, no es nada del otro mundo.
+
+206
+00:14:52,909 --> 00:14:56,091
+Este viene con un prompt.
+
+207
+00:14:56,091 --> 00:15:00,914
+Podemos decir: mejora esta fotografía de una casa de hormigón en un desierto con un
+
+208
+00:15:00,914 --> 00:15:02,856
+paisaje rocoso. Lo de "la imagen entera"
+
+209
+00:15:02,856 --> 00:15:06,028
+no aplica ahora. Así que lo quitamos.
+
+210
+00:15:06,476 --> 00:15:08,814
+Haz todos los detalles hiperrealistas.
+
+211
+00:15:08,814 --> 00:15:10,681
+Bien, probemos.
+
+212
+00:15:13,036 --> 00:15:16,768
+Antes de hacerlo, vemos que hay un parámetro llamado "creativity",
+
+213
+00:15:17,329 --> 00:15:20,991
+y esta escala de creatividad la vamos a poner en uno.
+
+214
+00:15:20,991 --> 00:15:26,515
+Es una forma de indicarle al modelo cómo tiene que pensar.
+
+215
+00:15:26,515 --> 00:15:28,797
+Cuando hacemos zoom en la imagen,
+
+216
+00:15:28,797 --> 00:15:33,720
+vemos que la resolución es bastante baja.
+
+217
+00:15:33,720 --> 00:15:37,693
+En el proceso de upscaling, el modelo va a tener
+
+218
+00:15:37,693 --> 00:15:42,226
+que pensar qué píxeles
+
+219
+00:15:42,226 --> 00:15:43,226
+está
+
+220
+00:15:42,708 --> 00:15:46,945
+añadiendo, y en ese proceso de añadir píxeles
+
+221
+00:15:47,466 --> 00:15:53,526
+puedes decidir si quieres que sea muy creativo o no.
+
+222
+00:15:53,526 --> 00:15:54,898
+Yo lo pongo en uno.
+
+223
+00:15:57,486 --> 00:15:59,287
+Aquí, escala de creatividad en uno.
+
+224
+00:15:59,287 --> 00:16:02,970
+Así lo va a hacer de forma muy literal.
+
+225
+00:16:02,970 --> 00:16:07,173
+Lo hará al pie de la letra. En la siguiente generación,
+
+226
+00:16:07,173 --> 00:16:13,177
+cuando termine esta, lo pondré en nueve y verás la diferencia.
+
+227
+00:16:13,177 --> 00:16:16,920
+Verás que interpreta muchísimo más.
+
+228
+00:16:16,920 --> 00:16:20,523
+Añade detalles que en realidad no estaban en esta imagen,
+
+229
+00:16:20,523 --> 00:16:24,105
+pero sugiere muchísimo más.
+
+230
+00:16:24,105 --> 00:16:25,105
+Así que...
+
+231
+00:16:26,030 --> 00:16:31,294
+Esta ya se generó, y ves que los detalles de esta roca,
+
+232
+00:16:31,294 --> 00:16:37,639
+por ejemplo, todo está ya muchísimo mejor que en la imagen de entrada.
+
+233
+00:16:37,639 --> 00:16:43,624
+Ahora te voy a enseñar algo que da mucha satisfacción y que
+
+234
+00:16:43,624 --> 00:16:45,816
+te recomiendo mucho usar.
+
+235
+00:16:48,246 --> 00:16:50,807
+Si haces doble clic y añades un nodo,
+
+236
+00:16:50,807 --> 00:16:54,830
+el nodo se llama "compare images".
+
+237
+00:16:54,830 --> 00:16:58,111
+Es este, "compare images",
+
+238
+00:16:58,111 --> 00:17:04,935
+el de Comfy. Aquí ves quién lo creó: ComfyUI tools.
+
+239
+00:17:04,935 --> 00:17:07,916
+Es alguien que hizo sus propios nodos,
+
+240
+00:17:07,916 --> 00:17:11,539
+pero te recomiendo quedarte con el de Comfy.
+
+241
+00:17:11,539 --> 00:17:13,839
+Haces clic en "compare images".
+
+242
+00:17:13,839 --> 00:17:17,152
+Y después
+
+243
+00:17:17,262 --> 00:17:21,554
+lo pones detrás del último, y ahora esto se pone interesante.
+
+244
+00:17:21,554 --> 00:17:27,107
+Lo que hacemos es tomar la imagen de salida de nuestro enhancer,
+
+245
+00:17:27,107 --> 00:17:32,902
+lo hacemos aquí, y la enlazamos a "image A".
+
+246
+00:17:36,066 --> 00:17:41,831
+Después tomamos la imagen original y la enlazamos a "image B".
+
+247
+00:17:41,831 --> 00:17:46,075
+¿Sí? Haz exactamente lo mismo que yo.
+
+248
+00:17:46,075 --> 00:17:50,398
+Ahora, dicho esto,
+
+249
+00:17:50,398 --> 00:17:55,222
+vamos a cambiar la creatividad a nueve.
+
+250
+00:17:55,222 --> 00:18:00,207
+Recuerda: esta es la salida cuando pusimos la creatividad en uno.
+
+251
+00:18:00,207 --> 00:18:03,960
+Hace literalmente lo que muestra la imagen de entrada.
+
+252
+00:18:06,114 --> 00:18:11,116
+Cuando hacemos clic en "run", escalará de otra manera.
+
+253
+00:18:11,116 --> 00:18:13,898
+Así que el upscaling no es siempre el mismo.
+
+254
+00:18:13,898 --> 00:18:20,541
+Puedes llevarlo un poco hacia más creatividad o hacia menos.
+
+255
+00:18:20,541 --> 00:18:25,944
+Lo que hace este nodo es comparar las dos imágenes
+
+256
+00:18:25,944 --> 00:18:30,646
+de forma muy clara. Así ves la diferencia entre el antes y el después.
+
+257
+00:18:35,072 --> 00:18:39,555
+Bien, avanzamos hasta que la imagen se genera,
+
+258
+00:18:39,555 --> 00:18:45,690
+la miramos y ves que ahora añadió muchas rocas extra
+
+259
+00:18:45,830 --> 00:18:52,555
+y que la imagen tiene muchos más detalles que en realidad
+
+260
+00:18:52,555 --> 00:18:55,096
+no estaban en la original, ¿ves?
+
+261
+00:18:55,096 --> 00:18:58,919
+Eso se debe al factor de creatividad.
+
+262
+00:18:58,919 --> 00:19:02,552
+Lo subimos, lo que significa que el modelo
+
+263
+00:19:03,166 --> 00:19:08,890
+tiene más libertad para inventar los píxeles nuevos.
+
+264
+00:19:08,890 --> 00:19:13,023
+Ahora, el nodo "compare images":
+
+265
+00:19:13,023 --> 00:19:14,934
+podemos agrandarlo para ver la diferencia.
+
+266
+00:19:14,934 --> 00:19:19,417
+Aquí es donde se pone interesante, porque basta con pasar el cursor por encima
+
+267
+00:19:19,737 --> 00:19:22,479
+y vemos la diferencia entre el antes y el después.
+
+268
+00:19:22,479 --> 00:19:29,474
+Y es mucho más fácil hacerlo así que mirando aquí, porque
+
+269
+00:19:29,474 --> 00:19:32,576
+entonces me parecen idénticas, o casi.
+
+270
+00:19:33,282 --> 00:19:36,164
+Aquí sí se ve bien la diferencia.
+
+271
+00:19:36,164 --> 00:19:40,856
+Ahora ves claramente que esto es antes y esto es después.
+
+272
+00:19:40,856 --> 00:19:45,228
+Y también ves exactamente qué añadió el modelo.
+
+273
+00:19:45,228 --> 00:19:47,450
+Así que esto te da control de verdad,
+
+274
+00:19:47,450 --> 00:19:50,341
+control mental sobre el antes y el después.
+
+275
+00:19:50,341 --> 00:19:51,912
+Empiezas a entender:
+
+276
+00:19:51,912 --> 00:19:57,615
+vale, esto es lo que el modelo cambió de la imagen de entrada a la de salida.
+
+277
+00:19:57,615 --> 00:20:02,798
+Y soy muy fan de este nodo, "compare images".
+
+278
+00:20:04,210 --> 00:20:07,613
+El orden también lo puedes cambiar.
+
+279
+00:20:07,613 --> 00:20:13,298
+Puedes enlazar "image A" a la imagen de entrada e "image
+
+280
+00:20:13,298 --> 00:20:20,023
+B" a la de salida. Solo cambia cuál se muestra primero.
+
+281
+00:20:20,023 --> 00:20:25,608
+Eso ahora da igual. Así que esta
+
+282
+00:20:25,608 --> 00:20:27,970
+la voy a añadir aquí, porque
+
+283
+00:20:30,176 --> 00:20:31,820
+está desactualizada.
+
+284
+00:20:38,178 --> 00:20:40,380
+Ves que es una imagen grande.
+
+285
+00:20:40,380 --> 00:20:45,046
+Tengo que reducirla un poco para que quepa en el tablero de Miro.
+
+286
+00:20:48,053 --> 00:20:51,173
+Esta también, o la actualizo.
+
+287
+00:20:51,173 --> 00:20:55,378
+¿Y cómo voy a la imagen anterior que generé?
+
+288
+00:20:55,378 --> 00:21:00,162
+Está aquí. Puedo hacer clic en ella.
+
+289
+00:21:04,174 --> 00:21:08,704
+"Save image as". Y otra cosa que podemos hacer aquí
+
+290
+00:21:08,704 --> 00:21:13,477
+es ir a "open as workflow in new tab".
+
+291
+00:21:13,477 --> 00:21:18,218
+Si hago clic en esto, hará lo que dijimos:
+
+292
+00:21:18,218 --> 00:21:22,640
+lo volverá a importar, como hicimos antes.
+
+293
+00:21:22,640 --> 00:21:25,441
+Bien. Ahora quiero guardarla como imagen.
+
+294
+00:21:25,441 --> 00:21:28,842
+Así que la guardo como imagen.
+
+295
+00:21:32,034 --> 00:21:33,681
+Después voy a mi carpeta.
+
+296
+00:21:36,694 --> 00:21:42,396
+Es esta. Y la voy a poner en Miro para que la descargues.
+
+297
+00:21:42,396 --> 00:21:48,799
+Así tienes el workflow exacto y no tienes que hacer tus propios workflows.
+
+298
+00:21:48,799 --> 00:21:53,741
+Pero, como dije, la mayoría de mis workflows están basados en
+
+299
+00:21:53,741 --> 00:21:56,822
+las plantillas que ofrece Comfy.
+
+300
+00:21:56,822 --> 00:22:00,224
+Estos dos son, yo diría,
+
+301
+00:22:00,224 --> 00:22:05,626
+los más accesibles. Antes de pasar a la siguiente parte,
+
+302
+00:22:06,370 --> 00:22:11,671
+no dejes de mirar el archivo que hay al fondo
+
+303
+00:22:11,671 --> 00:22:15,432
+del tablero de Miro, porque ahí hay otro workflow que usé
+
+304
+00:22:15,833 --> 00:22:17,133
+para transformar
+
+305
+00:22:17,133 --> 00:22:23,075
+esta imagen, que, como
+
+306
+00:22:23,075 --> 00:22:25,725
+ves, es de muy
+
+307
+00:22:25,725 --> 00:22:30,337
+baja calidad, en esta.
+
+308
+00:22:30,337 --> 00:22:34,598
+Con muchísimo detalle. Es simplemente otro workflow.
+
+309
+00:22:34,598 --> 00:22:35,854
+Usa FLUX.1.
+
+310
+00:22:36,194 --> 00:22:37,918
+No voy a profundizar mucho,
+
+311
+00:22:37,918 --> 00:22:41,296
+pero hay mil formas de hacer upscaling.
+
+312
+00:22:41,296 --> 00:22:44,564
+Descárgate este si quieres probarlo tú mismo.
+
+313
+00:22:49,102 --> 00:22:51,740
+Bien, volvemos a la...
+
+314
+00:22:54,882 --> 00:22:55,882
+presentación.
+
+315
+00:23:02,572 --> 00:23:06,045
+Este es el que vimos, hicimos una demo en directo.
+
+316
+00:23:06,045 --> 00:23:09,258
+Esta es la web de Topaz.
+
+317
+00:23:09,258 --> 00:23:13,191
+También puedes entrar en su web y probarlo ahí.
+
+318
+00:23:13,191 --> 00:23:20,177
+Krea es otro distinto. Hay formas casi ilimitadas de hacerlo.
+
+319
+00:23:20,177 --> 00:23:25,632
+Este no lo vemos porque es otro más de los mismos.
+
+320
+00:23:28,450 --> 00:23:31,073
+Antes de entrar en image edit,
+
+321
+00:23:33,582 --> 00:23:38,456
+vamos a pasar a Rhino to image.
+
+322
+00:23:38,456 --> 00:23:44,432
+Este es el workflow principal del curso, y funciona así.
+
+323
+00:23:44,432 --> 00:23:51,188
+Está entrenado para transformar modelos 3D en imágenes
+
+324
+00:23:51,188 --> 00:23:56,132
+hiperrealistas. Este es un modelo 3D genérico
+
+325
+00:23:56,132 --> 00:24:00,236
+de un edificio que hice para probar.
+
+326
+00:24:00,608 --> 00:24:03,940
+Le añadí algunos árboles, algunas figuras,
+
+327
+00:24:03,940 --> 00:24:07,582
+etc. Y después di una imagen de referencia.
+
+328
+00:24:07,582 --> 00:24:14,265
+Es una foto de detalle de una fachada del arquitecto David Chipperfield.
+
+329
+00:24:14,265 --> 00:24:18,928
+Y entonces aplicó esa arquitectura sobre la imagen.
+
+330
+00:24:18,928 --> 00:24:22,190
+Ahora bien, lo que ves aquí no es un buen ejemplo.
+
+331
+00:24:22,190 --> 00:24:27,953
+Esto fue durante las pruebas. Tengo toda una evolución
+
+332
+00:24:28,093 --> 00:24:29,874
+de
+
+333
+00:24:30,080 --> 00:24:35,335
+renders; cada vez es una imagen de referencia distinta, claro,
+
+334
+00:24:36,196 --> 00:24:38,378
+y vamos a ver algunos buenos ejemplos.
+
+335
+00:24:41,966 --> 00:24:45,886
+En el módulo 3,
+
+336
+00:24:45,886 --> 00:24:51,454
+image to image. Esta es la parte de Rhino to image.
+
+337
+00:24:51,454 --> 00:24:56,358
+Es un nombre que me inventé. Y este sí es un buen ejemplo.
+
+338
+00:24:56,358 --> 00:25:01,502
+Partimos de esta imagen de la fachada de cerca.
+
+339
+00:25:01,502 --> 00:25:06,486
+Damos una imagen de referencia. Y creamos esta,
+
+340
+00:25:06,486 --> 00:25:10,880
+donde siguió la geometría exactamente.
+
+341
+00:25:11,086 --> 00:25:15,909
+Este es un buen ejemplo. Aquí mi modelo ya estaba más optimizado.
+
+342
+00:25:15,909 --> 00:25:19,051
+Vamos a ello.
+
+343
+00:25:19,051 --> 00:25:21,943
+Lo primero que tenemos que hacer
+
+344
+00:25:21,943 --> 00:25:28,858
+es configurar un agente que escriba los prompts por nosotros.
+
+345
+00:25:31,308 --> 00:25:35,460
+Como ya vimos en los módulos anteriores,
+
+346
+00:25:35,460 --> 00:25:41,882
+podemos crear un proyecto en nuestro LLM favorito.
+
+347
+00:25:41,882 --> 00:25:44,443
+A este lo vamos a llamar Rhino to image.
+
+348
+00:25:44,443 --> 00:25:51,286
+Vamos a instrucciones y aquí solo tienes que pegar todo este
+
+349
+00:25:51,286 --> 00:25:53,207
+documento. Puedes entrar ahí,
+
+350
+00:25:53,207 --> 00:25:58,569
+poner el modo de enfoque. Si pulsas Ctrl+A,
+
+351
+00:25:58,569 --> 00:26:00,690
+seleccionará todo el
+
+352
+00:26:01,666 --> 00:26:02,666
+texto de aquí.
+
+353
+00:26:04,674 --> 00:26:09,202
+Lo copias, vienes aquí y lo pegas.
+
+354
+00:26:12,939 --> 00:26:16,109
+Creo que no copió la...
+
+355
+00:26:20,790 --> 00:26:26,312
+parte. Bien, voy a arreglarlo rápido.
+
+356
+00:26:26,312 --> 00:26:32,193
+Listo, lo arreglé rápidamente: por culpa
+
+357
+00:26:32,193 --> 00:26:35,834
+del formato no lo copiaba. Ahora aquí es solo texto.
+
+358
+00:26:35,834 --> 00:26:40,616
+Seleccionamos todo,
+
+359
+00:26:40,616 --> 00:26:47,497
+vamos a las instrucciones del proyecto y hacemos clic en pegar.
+
+360
+00:26:47,497 --> 00:26:49,338
+Lo hará así.
+
+361
+00:26:49,580 --> 00:26:52,193
+La estructura se pierde un poco, pero no es problema.
+
+362
+00:26:52,193 --> 00:26:58,501
+Bien, lo que vamos a hacer ahora: tomemos este ejemplo.
+
+363
+00:26:58,501 --> 00:27:02,766
+Solo como ejemplo, voy a descargar esta
+
+364
+00:27:06,094 --> 00:27:11,528
+captura de un archivo de Rhino, y después necesitarías una imagen de referencia.
+
+365
+00:27:11,528 --> 00:27:16,641
+Una imagen que muestre un material,
+
+366
+00:27:16,801 --> 00:27:22,925
+una atmósfera o algo que quieras tomar como referencia
+
+367
+00:27:22,925 --> 00:27:28,719
+para aplicar sobre esta fachada. ¿Cómo pasamos de esto
+
+368
+00:27:28,719 --> 00:27:33,632
+y de esto a aquí? Primero, la preparación.
+
+369
+00:27:33,632 --> 00:27:35,674
+Descargamos las dos. Vamos
+
+370
+00:27:35,914 --> 00:27:38,123
+al workflow.
+
+371
+00:27:41,230 --> 00:27:46,583
+Solo escribí "start", es lo único que hice dentro de este proyecto.
+
+372
+00:27:51,022 --> 00:27:54,285
+Se pondrá a pensar, leerá las instrucciones del proyecto.
+
+373
+00:27:57,294 --> 00:28:01,554
+Avanzamos hasta la respuesta. Me dice
+
+374
+00:28:01,554 --> 00:28:05,214
+que suba dos cosas.
+
+375
+00:28:05,214 --> 00:28:09,914
+La primera es la captura del viewport de Rhino o de cualquier 3D.
+
+376
+00:28:09,914 --> 00:28:15,194
+Eso haremos. Y la segunda es una fotografía de referencia estética.
+
+377
+00:28:15,194 --> 00:28:18,834
+Así que voy aquí.
+
+378
+00:28:18,834 --> 00:28:22,814
+Primero tengo que subir la imagen uno,
+
+379
+00:28:22,814 --> 00:28:24,394
+las capturas del 3D.
+
+380
+00:28:25,730 --> 00:28:29,518
+Después subo mi imagen de referencia.
+
+381
+00:28:34,168 --> 00:28:39,387
+Y, para ahorrar idas y venidas, puedes responder las dos preguntas de contexto.
+
+382
+00:28:39,387 --> 00:28:41,501
+¿Qué tipo de edificio es?
+
+383
+00:28:41,501 --> 00:28:44,957
+Yo diría: edificio residencial.
+
+384
+00:28:49,962 --> 00:28:55,516
+Da igual lo que pongas aquí, pero cuanto más contexto
+
+385
+00:28:55,516 --> 00:28:59,459
+des, mejor. Si tienes una idea concreta sobre esto,
+
+386
+00:28:59,459 --> 00:29:04,453
+por ejemplo que sean loggias, cualquier cosa así.
+
+387
+00:29:04,453 --> 00:29:08,315
+Y después, dónde está ubicado. Yo
+
+388
+00:29:08,315 --> 00:29:11,818
+diría: el sur de Europa.
+
+389
+00:29:13,848 --> 00:29:20,658
+Clima cálido, iluminación neutra, algo así.
+
+390
+00:29:20,658 --> 00:29:26,836
+Da igual. Si lo envías, analizará
+
+391
+00:29:27,017 --> 00:29:28,017
+las imágenes.
+
+392
+00:29:30,434 --> 00:29:33,246
+Mientras tanto, mientras carga, podemos volver
+
+393
+00:29:33,246 --> 00:29:39,520
+al PowerPoint y mirar cuál va a ser el resultado.
+
+394
+00:29:39,520 --> 00:29:45,944
+Partimos de esto, añadimos la imagen de referencia y lo que hará
+
+395
+00:29:45,944 --> 00:29:50,967
+es aplicarla sobre la geometría y dejar la geometría exactamente en su sitio.
+
+396
+00:29:50,967 --> 00:29:52,828
+Está entrenado para hacerlo exacto.
+
+397
+00:29:52,828 --> 00:29:55,750
+Aquí hay otro ejemplo.
+
+398
+00:29:57,304 --> 00:30:00,586
+Voy a ir alternando para que veas las dos.
+
+399
+00:30:04,814 --> 00:30:10,479
+Ves esta geometría y después aplicas una imagen de referencia que
+
+400
+00:30:10,479 --> 00:30:15,823
+tiene este ladrillo suave, o este ladrillo azul brillante.
+
+401
+00:30:15,823 --> 00:30:19,807
+Y en el prompt cambié cosas. Aquí
+
+402
+00:30:19,827 --> 00:30:23,590
+era arquitectura mediterránea contemporánea biofílica.
+
+403
+00:30:23,590 --> 00:30:28,634
+Aquí todo era igual, solo cambié el prompt a Tokio.
+
+404
+00:30:28,634 --> 00:30:33,058
+Aquí puse arquitectura tropical, Kinsasa, nevando.
+
+405
+00:30:33,432 --> 00:30:38,944
+Ves que la geometría se mantiene casi perfectamente,
+
+406
+00:30:38,944 --> 00:30:43,316
+pero el contexto y los detalles cambian.
+
+407
+00:30:43,316 --> 00:30:45,307
+Ves que los azulejos cambian,
+
+408
+00:30:45,307 --> 00:30:50,349
+por ejemplo, pero normalmente todo se
+
+409
+00:30:52,350 --> 00:30:53,350
+mantiene.
+
+410
+00:30:57,422 --> 00:31:01,899
+Veamos; hoy va un poco lento, así que vuelvo cuando esté todo
+
+411
+00:31:01,899 --> 00:31:02,899
+generado.
+
+412
+00:31:06,592 --> 00:31:10,496
+Bien, me hizo una pregunta más:
+
+413
+00:31:10,496 --> 00:31:13,819
+¿a qué parte del sur de Europa anclo la luz y el contexto?
+
+414
+00:31:13,819 --> 00:31:16,671
+Esto es muy específico. Quizá a ti no te lo pregunte,
+
+415
+00:31:16,671 --> 00:31:18,853
+pero tampoco importa tanto.
+
+416
+00:31:18,853 --> 00:31:21,375
+Y la salida es un prompt JSON.
+
+417
+00:31:21,375 --> 00:31:22,977
+Como vimos en la introducción,
+
+418
+00:31:22,977 --> 00:31:25,939
+FLUX.2 entiende este prompt JSON.
+
+419
+00:31:25,939 --> 00:31:30,213
+Lo que hace es incluir toda la información
+
+420
+00:31:30,213 --> 00:31:33,176
+de esta geometría
+
+421
+00:31:34,302 --> 00:31:40,284
+y todos los detalles de esta referencia estética, y lo combina
+
+422
+00:31:40,284 --> 00:31:45,836
+en un solo prompt, así. Solo tienes que copiar este prompt.
+
+423
+00:31:49,068 --> 00:31:55,703
+Vas a Miro, puedes descargar este workflow desde aquí, como hicimos muchas veces.
+
+424
+00:31:55,703 --> 00:31:57,825
+Y cuando vas a Comfy,
+
+425
+00:31:57,825 --> 00:31:59,557
+se verá así. Otra vez,
+
+426
+00:31:59,557 --> 00:32:04,271
+verás un error,
+
+427
+00:32:04,271 --> 00:32:05,852
+que en realidad no es un problema.
+
+428
+00:32:05,852 --> 00:32:09,075
+El nombre del LoRA,
+
+429
+00:32:09,075 --> 00:32:13,038
+otra vez, como vimos antes,
+
+430
+00:32:13,038 --> 00:32:16,641
+da problema porque el LoRA no es el correcto.
+
+431
+00:32:16,641 --> 00:32:17,742
+Hacemos clic aquí.
+
+432
+00:32:18,616 --> 00:32:21,588
+Como ya instalamos el LoRA nosotros,
+
+433
+00:32:21,588 --> 00:32:27,573
+selecciona el que quieras usar.
+
+434
+00:32:27,573 --> 00:32:30,856
+En mi caso se llama así;
+
+435
+00:32:30,856 --> 00:32:33,258
+en el tuyo se llamará un poco distinto.
+
+436
+00:32:33,258 --> 00:32:39,023
+Lo seleccionas aquí y ves que ese error queda resuelto.
+
+437
+00:32:39,023 --> 00:32:42,045
+Ahora, el nombre del UNET también está mal.
+
+438
+00:32:42,045 --> 00:32:47,270
+Es simplemente porque Comfy a veces cambia el nombre de FLUX.
+
+439
+00:32:47,662 --> 00:32:50,284
+No es problema. Haz clic,
+
+440
+00:32:50,284 --> 00:32:55,337
+escribe FLUX.2 y busca
+
+441
+00:32:55,337 --> 00:32:59,801
+FLUX.2 klein, 9.000 millones de parámetros,
+
+442
+00:32:59,801 --> 00:33:05,445
+o sea 9B. Ya está. También hay un base 9B FP8,
+
+443
+00:33:05,445 --> 00:33:09,678
+pero elige este. Si no es exactamente así,
+
+444
+00:33:09,678 --> 00:33:15,842
+cuando lo mires, busca el que más se parezca a FLUX.2 klein 9B.
+
+445
+00:33:16,418 --> 00:33:19,400
+Haces clic y ya está todo listo.
+
+446
+00:33:19,400 --> 00:33:22,702
+Asegúrate de que la primera imagen,
+
+447
+00:33:22,702 --> 00:33:25,744
+la que está conectada a "image",
+
+448
+00:33:25,744 --> 00:33:31,322
+sea tu geometría. La misma geometría que le dimos
+
+449
+00:33:31,322 --> 00:33:34,529
+al agente, ¿sí? Esta,
+
+450
+00:33:34,529 --> 00:33:35,529
+exactamente esta imagen.
+
+451
+00:33:38,088 --> 00:33:42,601
+Y la segunda imagen tiene que ser exactamente la misma también.
+
+452
+00:33:42,601 --> 00:33:46,203
+Después, en los ajustes, en el texto,
+
+453
+00:33:46,203 --> 00:33:52,628
+pega el prompt que recibiste
+
+454
+00:33:52,628 --> 00:33:55,960
+del agente. Copiar y pegar, nada más.
+
+455
+00:33:58,818 --> 00:34:00,859
+Y después miramos los ajustes.
+
+456
+00:34:00,859 --> 00:34:04,641
+El UNET ya está bien.
+
+457
+00:34:04,641 --> 00:34:10,654
+La fuerza del modelo. Si
+
+458
+00:34:10,654 --> 00:34:15,467
+entramos en el subgraph, verás algo raro.
+
+459
+00:34:15,467 --> 00:34:21,690
+Verás que tenemos un nodo Load LoRA,
+
+460
+00:34:21,690 --> 00:34:23,531
+pero que también hay otro.
+
+461
+00:34:23,531 --> 00:34:28,504
+Quiero enseñarte que puedes enlazar varios LoRA,
+
+462
+00:34:28,886 --> 00:34:30,967
+uno detrás de otro, y combinarlos.
+
+463
+00:34:30,967 --> 00:34:36,150
+Como ves aquí, este está morado y transparente,
+
+464
+00:34:36,150 --> 00:34:39,042
+lo que significa que está en bypass. Está desactivado.
+
+465
+00:34:39,042 --> 00:34:41,882
+No funciona. Y por ahora,
+
+466
+00:34:41,882 --> 00:34:45,614
+para simplificar, lo voy a borrar.
+
+467
+00:34:45,614 --> 00:34:50,338
+Ves que el workflow se ajusta solo.
+
+468
+00:34:52,429 --> 00:34:56,031
+Y todo funciona.
+
+469
+00:34:56,031 --> 00:34:59,073
+Aquí no puedo hacer clic.
+
+470
+00:34:59,073 --> 00:35:01,194
+No te preocupes si a ti te pasa igual.
+
+471
+00:35:01,194 --> 00:35:05,576
+El motivo es que ya está aquí dentro.
+
+472
+00:35:05,576 --> 00:35:08,757
+Tienes que hacer clic aquí si quieres cambiar el LoRA.
+
+473
+00:35:08,757 --> 00:35:12,558
+La fuerza del modelo, como vimos, si la ponemos en uno,
+
+474
+00:35:13,219 --> 00:35:19,221
+será el 100 %. Megapixels: esta es la calidad de la imagen de salida.
+
+475
+00:35:19,221 --> 00:35:20,722
+Por ahora dejémoslo donde está.
+
+476
+00:35:21,095 --> 00:35:24,019
+Para empezar, no cambies nada.
+
+477
+00:35:24,019 --> 00:35:28,026
+Antes de hacer clic en "run", vamos a añadir
+
+478
+00:35:28,046 --> 00:35:31,192
+el nodo "compare images",
+
+479
+00:35:31,192 --> 00:35:34,828
+como hicimos antes, nada nuevo: doble clic.
+
+480
+00:35:37,186 --> 00:35:39,083
+Escribimos "compare images".
+
+481
+00:35:41,922 --> 00:35:43,663
+Lo ponemos detrás del workflow.
+
+482
+00:35:43,663 --> 00:35:47,405
+"Image A" es la primera que veremos.
+
+483
+00:35:47,405 --> 00:35:51,747
+Pongámosla en la salida. Queremos ver primero lo que generamos.
+
+484
+00:35:51,747 --> 00:35:56,459
+Y después queremos comparar "image B" con la volumetría original.
+
+485
+00:35:56,459 --> 00:35:59,871
+Así vemos lo bien que siguió la geometría.
+
+486
+00:35:59,871 --> 00:36:06,394
+Hacemos clic en "run" y vemos qué pasa.
+
+487
+00:36:11,430 --> 00:36:15,694
+Avanzamos hasta el resultado. Lo notarás tú mismo:
+
+488
+00:36:15,694 --> 00:36:19,237
+este workflow tarda un poco más.
+
+489
+00:36:19,237 --> 00:36:24,165
+¿Por qué? Porque estamos usando FLUX.2.
+
+490
+00:36:24,165 --> 00:36:27,603
+Es un modelo muy grande. Como ves aquí,
+
+491
+00:36:27,603 --> 00:36:34,540
+tomó la geometría y le aplicó el material exactamente encima, con bastante
+
+492
+00:36:34,540 --> 00:36:38,734
+calidad. Claro, si subimos los megapixels a...
+
+493
+00:36:39,564 --> 00:36:41,315
+no sé, 16 o algo así,
+
+494
+00:36:41,315 --> 00:36:43,916
+la resolución será todavía mejor.
+
+495
+00:36:43,916 --> 00:36:49,248
+Pero, en general, no hace falta y lleva muchísimo tiempo
+
+496
+00:36:49,248 --> 00:36:52,760
+y muchísimos créditos. Así que ojo.
+
+497
+00:36:52,760 --> 00:36:58,682
+Cuanta más resolución, más exigencia le pones al modelo
+
+498
+00:36:58,682 --> 00:37:01,363
+y más créditos consume.
+
+499
+00:37:01,363 --> 00:37:05,845
+Por ahora, ves que funcionó.
+
+500
+00:37:05,845 --> 00:37:07,326
+Vamos a
+
+501
+00:37:07,756 --> 00:37:11,717
+venir aquí, y si pasas el cursor por encima ves que
+
+502
+00:37:11,717 --> 00:37:15,458
+está siguiendo la geometría exactamente, y aquí, claro, es donde
+
+503
+00:37:15,458 --> 00:37:19,589
+se pone superinteresante para los arquitectos, porque mantenemos el control.
+
+504
+00:37:19,969 --> 00:37:26,321
+Solo necesitamos hacer un modelo volumétrico muy básico que
+
+505
+00:37:26,321 --> 00:37:32,563
+tenga la expresión arquitectónica con las dimensiones correctas, le explicamos
+
+506
+00:37:32,563 --> 00:37:36,654
+al agente muy brevemente lo que queremos,
+
+507
+00:37:37,954 --> 00:37:42,316
+le damos una imagen de referencia y este es el resultado.
+
+508
+00:37:42,316 --> 00:37:47,278
+Y si hacemos zoom, ves de verdad que lo sigue todo.
+
+509
+00:37:47,278 --> 00:37:53,320
+Incluso las líneas de Rhino, como estas,
+
+510
+00:37:53,320 --> 00:37:58,752
+que se traducen también a la imagen.
+
+511
+00:37:58,752 --> 00:38:04,445
+Así que cuida lo que le das de entrada, porque el modelo es tan bueno siguiendo
+
+512
+00:38:04,545 --> 00:38:07,486
+la geometría exacta que también
+
+513
+00:38:07,934 --> 00:38:11,256
+va a hacer estas líneas de aquí.
+
+514
+00:38:11,256 --> 00:38:14,819
+Es interesante, porque quizá así es como se construiría, con un
+
+515
+00:38:14,819 --> 00:38:17,121
+despiece de paneles en vez de una sola superficie.
+
+516
+00:38:17,121 --> 00:38:19,482
+Se divide en cuatro superficies.
+
+517
+00:38:19,482 --> 00:38:24,276
+Ahí ves que puede volverse interesante.
+
+518
+00:38:24,276 --> 00:38:28,409
+Pero piensa bien en la entrada, porque si tu entrada no es buena,
+
+519
+00:38:28,409 --> 00:38:30,731
+la salida tampoco lo será.
+
+520
+00:38:30,731 --> 00:38:35,064
+Voy a descargar esta.
+
+521
+00:38:41,291 --> 00:38:42,291
+Aquí.
+
+522
+00:38:50,146 --> 00:38:52,947
+Y tendrás acceso a este workflow exacto.
+
+523
+00:38:52,947 --> 00:38:56,188
+Un consejo:
+
+524
+00:38:56,188 --> 00:39:01,669
+intenta hacer exactamente lo mismo que hice yo y trata
+
+525
+00:39:01,669 --> 00:39:05,750
+de rehacerlo tú solo; es la mejor forma de aprenderlo.
+
+526
+00:39:05,750 --> 00:39:11,232
+Bien, hice un corte hacia la siguiente parte.
+
+527
+00:39:11,232 --> 00:39:13,632
+Acabamos de ver cómo hicimos esta.
+
+528
+00:39:13,632 --> 00:39:17,313
+Y la siguiente parte va a ser interesante.
+
+529
+00:39:17,313 --> 00:39:19,724
+Voy a usar...
+
+530
+00:39:20,172 --> 00:39:21,172
+esta imagen.
+
+531
+00:39:29,078 --> 00:39:33,559
+En el PowerPoint te mostré cómo podemos tomar esta volumetría,
+
+532
+00:39:34,060 --> 00:39:38,041
+dar una imagen de referencia, y sigue exactamente
+
+533
+00:39:38,041 --> 00:39:42,002
+la geometría mientras aplica
+
+534
+00:39:42,002 --> 00:39:45,342
+la materialidad.
+
+535
+00:39:45,342 --> 00:39:48,704
+Como ves aquí, todos estos planos,
+
+536
+00:39:48,704 --> 00:39:53,585
+todas estas superficies tienen el mismo acabado, pero algunas se vuelven ventanas,
+
+537
+00:39:53,585 --> 00:39:55,366
+otras se vuelven
+
+538
+00:39:56,678 --> 00:40:00,060
+fachada, el ladrillo brillante.
+
+539
+00:40:00,060 --> 00:40:03,922
+Y aunque esto es rapidísimo para decir algo,
+
+540
+00:40:03,922 --> 00:40:08,005
+para demostrar que puede funcionar en este edificio,
+
+541
+00:40:08,005 --> 00:40:11,907
+por ejemplo, quizá necesites un poco más de control.
+
+542
+00:40:11,907 --> 00:40:18,750
+Preparé un ejemplo en directo en el que me fui a Photoshop
+
+543
+00:40:18,991 --> 00:40:25,074
+y seleccioné unos cuantos planos que quiero convertir en
+
+544
+00:40:25,622 --> 00:40:32,259
+ventanas o loggias. Elijo los que se van a convertir en plano.
+
+545
+00:40:32,259 --> 00:40:34,240
+Aquí sigue más una retícula,
+
+546
+00:40:34,240 --> 00:40:38,975
+aquí es más aleatorio. Los pinté de negro.
+
+547
+00:40:38,975 --> 00:40:41,638
+Tienes que probar un poco con los colores.
+
+548
+00:40:41,638 --> 00:40:45,912
+Algunos funcionan mejor que otros, pero en general el negro funciona bien.
+
+549
+00:40:48,226 --> 00:40:53,421
+Después lo metí en el workflow con la misma imagen de referencia.
+
+550
+00:40:56,360 --> 00:40:59,351
+Hice el mismo workflow que antes.
+
+551
+00:40:59,351 --> 00:41:02,712
+Escribí "start",
+
+552
+00:41:02,712 --> 00:41:06,153
+le di esta junto con la otra.
+
+553
+00:41:06,153 --> 00:41:08,934
+Y después le dije: la geometría viene de Rhino,
+
+554
+00:41:08,934 --> 00:41:13,015
+las superficies negras son ventanas o loggias, y los planos
+
+555
+00:41:13,015 --> 00:41:15,572
+gris claro son paneles cerrados.
+
+556
+00:41:15,572 --> 00:41:18,296
+En este caso, los ladrillos azules de la imagen de referencia.
+
+557
+00:41:18,296 --> 00:41:21,437
+Y después dije: torre residencial en España,
+
+558
+00:41:21,437 --> 00:41:24,858
+luz de día soleada. Le expliqué a mi agente
+
+559
+00:41:25,736 --> 00:41:28,647
+muy rápido qué significa ese negro.
+
+560
+00:41:28,647 --> 00:41:32,548
+Pregunta en qué parte de España;
+
+561
+00:41:32,548 --> 00:41:35,649
+da igual, puse Madrid.
+
+562
+00:41:35,649 --> 00:41:40,650
+Y después tomé el prompt JSON,
+
+563
+00:41:40,650 --> 00:41:45,151
+lo pegué aquí y este es el resultado.
+
+564
+00:41:45,151 --> 00:41:50,783
+A mí no me gusta mucho la estética de este ladrillo comparada
+
+565
+00:41:50,783 --> 00:41:53,966
+con la del otro, pero para eso basta con volver a generar.
+
+566
+00:41:53,966 --> 00:41:55,444
+Lo que quiero
+
+567
+00:41:55,534 --> 00:42:01,218
+demostrar aquí es que de verdad lo siguió: convirtió la parte negra de aquí
+
+568
+00:42:02,138 --> 00:42:09,073
+en loggias o ventanas, y las otras partes
+
+569
+00:42:09,073 --> 00:42:14,456
+en fachadas cerradas. Así tienes control, porque puedes decir: este plano
+
+570
+00:42:14,456 --> 00:42:20,160
+quiero que sea esto, este otro que sea aquello, y hacerlo muy específico.
+
+571
+00:42:21,750 --> 00:42:23,723
+Como ves aquí, por ejemplo,
+
+572
+00:42:23,723 --> 00:42:26,737
+este plano no lo puse negro y se volvió una ventana.
+
+573
+00:42:26,737 --> 00:42:32,615
+Así que puedes volver a intentarlo o probar otro color.
+
+574
+00:42:32,615 --> 00:42:37,652
+Pero, en general, sigue las instrucciones muy,
+
+575
+00:42:37,652 --> 00:42:38,924
+muy bien.
+
+576
+00:42:40,984 --> 00:42:45,986
+Ahora podemos volver a ejecutarlo y ver cómo se comporta
+
+577
+00:42:45,986 --> 00:42:51,062
+con otra seed.
+
+578
+00:42:51,062 --> 00:42:57,808
+Quizá te estés preguntando: aquí no veo cuál es la seed.
+
+579
+00:42:57,808 --> 00:43:01,311
+No sé dónde tengo el control sobre la seed.
+
+580
+00:43:01,311 --> 00:43:05,334
+Y eso nos lleva al siguiente punto, mientras esta se genera.
+
+581
+00:43:08,030 --> 00:43:12,834
+El subgraph tiene una función avanzada que mucha gente no conoce,
+
+582
+00:43:12,834 --> 00:43:17,778
+ni siquiera gente con experiencia. Si haces clic derecho
+
+583
+00:43:18,499 --> 00:43:24,184
+en algún punto de aquí, puedes hacer clic en "edit subgraph widgets".
+
+584
+00:43:24,184 --> 00:43:29,448
+Si haces clic ahí, se abre este panel en el lado derecho.
+
+585
+00:43:29,448 --> 00:43:36,034
+Y lo que hace es mostrarte los parámetros marcados como
+
+586
+00:43:36,174 --> 00:43:38,265
+"shown on node", o sea, todo esto de aquí.
+
+587
+00:43:38,265 --> 00:43:41,617
+Aquí está el nombre del UNET, el del clip,
+
+588
+00:43:41,617 --> 00:43:44,558
+el del VAE, el del LoRA, etcétera.
+
+589
+00:43:44,558 --> 00:43:50,582
+Y además hay un montón que están ocultos en el subgraph y que no
+
+590
+00:43:50,582 --> 00:43:51,702
+ves desde aquí.
+
+591
+00:43:52,403 --> 00:43:58,606
+Por ejemplo, el "noise seed".
+
+592
+00:43:58,606 --> 00:44:02,188
+Ves que está oculto.
+
+593
+00:44:02,188 --> 00:44:05,560
+Si hacemos clic aquí, aparece.
+
+594
+00:44:06,094 --> 00:44:08,768
+También podemos cambiar su
+
+595
+00:44:11,092 --> 00:44:17,287
+ubicación. Ahora está ahí y, si lo miramos y cerramos esta ventana, de pronto
+
+596
+00:44:17,287 --> 00:44:23,532
+tenemos un parámetro extra. Ahora vemos que, si hacemos clic aquí, cada vez
+
+597
+00:44:23,682 --> 00:44:30,278
+se genera una seed nueva; también podemos ponerlo en "fixed value", como
+
+598
+00:44:30,278 --> 00:44:36,833
+vimos antes. Dejémoslo en aleatorio. Así, si haces clic derecho
+
+599
+00:44:36,833 --> 00:44:40,246
+aquí y vas a "edit subgraph widgets", puedes
+
+600
+00:44:40,842 --> 00:44:46,650
+controlar qué ves dentro del panel.
+
+601
+00:44:46,650 --> 00:44:48,822
+También puedes entrar siempre
+
+602
+00:44:48,822 --> 00:44:55,371
+en el subgraph y buscar el noise; déjame mirar, no sé dónde
+
+603
+00:44:55,371 --> 00:44:56,371
+está, la verdad.
+
+604
+00:45:04,692 --> 00:45:08,069
+Está un poco desordenado, pero por aquí tiene que estar.
+
+605
+00:45:17,902 --> 00:45:22,822
+Ah, aquí está. Ves que no es nada fácil tener una visión de conjunto.
+
+606
+00:45:22,822 --> 00:45:26,562
+Es bastante caótico. Hasta yo tuve que buscarlo.
+
+607
+00:45:26,562 --> 00:45:31,262
+Pero el "random noise" está aquí, lo puedes cambiar aquí.
+
+608
+00:45:31,262 --> 00:45:33,362
+Puedes escribir el número que quieras.
+
+609
+00:45:33,362 --> 00:45:39,062
+O, ahora que lo activamos, también lo puedes ver desde aquí.
+
+610
+00:45:41,230 --> 00:45:45,473
+Como viste antes, lo regeneramos y
+
+611
+00:45:45,473 --> 00:45:50,056
+ahora la estética entre estas dos...
+
+612
+00:45:50,056 --> 00:45:52,738
+Esta fue la primera iteración que hicimos.
+
+613
+00:45:56,952 --> 00:45:59,874
+Y esta es la segunda. Ves que es una interpretación distinta
+
+614
+00:45:59,874 --> 00:46:04,608
+de la misma imagen. Y esto también tiene que ver con la seed.
+
+615
+00:46:04,608 --> 00:46:10,653
+Si, por ejemplo, bloqueáramos la seed,
+
+616
+00:46:10,653 --> 00:46:15,057
+si la fijamos, volveríamos a generar exactamente la misma imagen.
+
+617
+00:46:15,057 --> 00:46:17,499
+Dicho esto, creo,
+
+618
+00:46:17,499 --> 00:46:20,021
+o espero, que haya quedado un poco más claro.
+
+619
+00:46:20,021 --> 00:46:25,976
+Experimenta con ello. Voy a poner
+
+620
+00:46:26,252 --> 00:46:32,410
+esta imagen exacta aquí para que puedas jugar con
+
+621
+00:46:32,410 --> 00:46:35,094
+ella y probarlo tú mismo.
+
+622
+00:46:47,736 --> 00:46:54,342
+Algo así. Verás que, si la descargas, te va a salir
+
+623
+00:46:54,342 --> 00:46:58,015
+un poco distinta, pero espero que se entienda la idea.
+
+624
+00:46:58,015 --> 00:47:01,878
+Aquí también: toma esta captura,
+
+625
+00:47:01,878 --> 00:47:04,160
+busca el material que te guste,
+
+626
+00:47:04,160 --> 00:47:08,133
+pásaselo al agente y experimenta.
+
+627
+00:47:08,133 --> 00:47:12,627
+Es la mejor forma de aprender esto de verdad.
+
+628
+00:47:12,627 --> 00:47:16,250
+¿Qué es lo siguiente?
+
+629
+00:47:16,856 --> 00:47:21,796
+Nos saltamos el image edit.
+
+630
+00:47:21,796 --> 00:47:24,001
+Así que volvemos a...
+
+631
+00:47:28,588 --> 00:47:31,098
+volvemos a Miro. Digamos que tenemos esta imagen.
+
+632
+00:47:31,098 --> 00:47:33,577
+Esta va a ser nuestra imagen de partida.
+
+633
+00:47:33,577 --> 00:47:34,582
+La descargamos.
+
+634
+00:47:36,942 --> 00:47:41,064
+Siempre es la misma rutina. Y voy saltando entre un montón de pestañas,
+
+635
+00:47:41,064 --> 00:47:45,486
+pero esa es un poco la realidad cuando trabajas con Comfy.
+
+636
+00:47:45,486 --> 00:47:48,267
+Tomamos la imagen que acabamos de descargar,
+
+637
+00:47:48,267 --> 00:47:53,220
+la arrastramos y soltamos, y vemos el workflow entero que
+
+638
+00:47:53,220 --> 00:47:56,951
+se creó, o que vamos a usar ahora.
+
+639
+00:47:56,951 --> 00:48:02,304
+Digamos que generamos una imagen y es esta.
+
+640
+00:48:04,940 --> 00:48:10,554
+Ahora quiero cambiar cosas concretas manteniendo el conjunto bajo
+
+641
+00:48:10,554 --> 00:48:13,877
+control. Como ves, esta persona de aquí
+
+642
+00:48:13,877 --> 00:48:20,081
+no está bien. Ha perdido buena parte de las piernas.
+
+643
+00:48:20,081 --> 00:48:23,944
+Quiero quitarlo. Podría ir a Photoshop
+
+644
+00:48:24,765 --> 00:48:28,388
+y usar el relleno generativo;
+
+645
+00:48:28,388 --> 00:48:31,430
+para esto funcionaría, pero para otras
+
+646
+00:48:31,786 --> 00:48:37,120
+ediciones no va a quedar bien. Así que te voy a mostrar qué hacer.
+
+647
+00:48:41,738 --> 00:48:48,405
+En este workflow, que descargas al descargar la imagen, es muy simple.
+
+648
+00:48:48,405 --> 00:48:51,047
+Cuando solo tienes una imagen de partida,
+
+649
+00:48:51,047 --> 00:48:56,253
+como ahora, la subes aquí arriba.
+
+650
+00:48:56,253 --> 00:49:01,368
+Image Edit con FLUX.2 klein, y decimos: quita al hombre de la imagen.
+
+651
+00:49:03,768 --> 00:49:06,904
+Esta parte está rosa y ves que está en bypass.
+
+652
+00:49:06,904 --> 00:49:10,711
+No te preocupes, no se va a activar cuando hagas clic en "run".
+
+653
+00:49:10,711 --> 00:49:12,174
+Si hacemos clic en "run"...
+
+654
+00:49:15,244 --> 00:49:16,631
+Se activará.
+
+655
+00:49:20,650 --> 00:49:27,122
+Bien, aquí vemos que partimos de este tipo y ahora ya no está.
+
+656
+00:49:27,122 --> 00:49:33,153
+Ves que esta parte cambió porque reconoció que esto
+
+657
+00:49:34,174 --> 00:49:37,495
+es el hombre de la imagen, ¿no?
+
+658
+00:49:37,495 --> 00:49:43,976
+Le estamos diciendo: quita al hombre.
+
+659
+00:49:43,976 --> 00:49:48,277
+Así que funciona cuando algo está muy claramente mal.
+
+660
+00:49:48,277 --> 00:49:49,978
+Digámoslo así.
+
+661
+00:49:50,338 --> 00:49:52,169
+¿Y dónde se pone interesante?
+
+662
+00:49:52,169 --> 00:49:56,703
+Déjame arrastrar y comparar.
+
+663
+00:49:56,703 --> 00:50:01,807
+El modelo es tan listo que vio a esta persona,
+
+664
+00:50:01,807 --> 00:50:05,550
+pero también vio el reflejo.
+
+665
+00:50:05,550 --> 00:50:08,813
+Así que quitó también el reflejo.
+
+666
+00:50:08,813 --> 00:50:13,216
+Como ves, se nota un poco porque hizo inpainting.
+
+667
+00:50:13,216 --> 00:50:17,030
+No está perfecto, pero en general
+
+668
+00:50:17,030 --> 00:50:19,852
+está bastante bien hecho, yo diría.
+
+669
+00:50:20,962 --> 00:50:25,704
+También puedes hacer lo siguiente.
+
+670
+00:50:25,704 --> 00:50:31,167
+Digamos que queremos dos o más imágenes de referencia.
+
+671
+00:50:31,167 --> 00:50:34,869
+Entonces este workflow no va a servir.
+
+672
+00:50:34,869 --> 00:50:41,392
+Lo que hacemos es clic aquí y clic en "Bypass".
+
+673
+00:50:41,392 --> 00:50:44,984
+Aquí igual: clic derecho, "Bypass".
+
+674
+00:50:47,190 --> 00:50:52,154
+O puedes seleccionar los nodos y pulsar Ctrl+B.
+
+675
+00:50:52,154 --> 00:50:54,856
+Este también lo vamos a necesitar.
+
+676
+00:50:54,856 --> 00:50:59,840
+Así cambiamos el workflow de este a este otro.
+
+677
+00:50:59,840 --> 00:51:02,902
+Lo voy a preparar y vuelvo luego.
+
+678
+00:51:05,588 --> 00:51:09,937
+Bien, avanzamos. Lo que hice fue
+
+679
+00:51:12,694 --> 00:51:17,408
+activar esta imagen otra vez. Seguimos viendo que esto está en bypass,
+
+680
+00:51:17,408 --> 00:51:22,321
+estos dos están en bypass. En la segunda imagen subí
+
+681
+00:51:22,321 --> 00:51:28,006
+la imagen de estilo de referencia, la del azulejo azul
+
+682
+00:51:28,206 --> 00:51:33,650
+de antes. Y aquí escribí
+
+683
+00:51:33,650 --> 00:51:38,994
+un prompt muy simple: aplica el material de fachada de la imagen de referencia...
+
+684
+00:51:40,098 --> 00:51:43,339
+¿Por qué lo pongo así? Porque ves que esta imagen
+
+685
+00:51:43,339 --> 00:51:49,862
+está enlazada aquí. Esta se convierte en la imagen de referencia
+
+686
+00:51:49,862 --> 00:51:55,158
+2, y esta está enlazada a la imagen de referencia 1.
+
+687
+00:51:55,158 --> 00:52:00,406
+Así que, si quiero hablar de esta imagen, tengo que usar ese nombre.
+
+688
+00:52:00,406 --> 00:52:04,428
+O sea: aplica el material de fachada de la imagen de referencia 2,
+
+689
+00:52:04,428 --> 00:52:09,510
+esta, sobre la geometría de la imagen de referencia
+
+690
+00:52:10,294 --> 00:52:14,665
+uno. Muy simple. El prompt no es ni siquiera tan bueno y ves que
+
+691
+00:52:14,665 --> 00:52:17,676
+lo hizo muy bien, yo diría.
+
+692
+00:52:17,676 --> 00:52:23,418
+Los azulejos son un poco distintos: aquí quedan más mates comparados
+
+693
+00:52:23,418 --> 00:52:29,809
+con estos, que son más brillantes, pero eso lo podríamos resolver cambiando el prompt.
+
+694
+00:52:29,809 --> 00:52:34,721
+Puedes decir: asegúrate de que los azulejos
+
+695
+00:52:34,801 --> 00:52:39,672
+sigan siendo brillantes. Y también puedes decir que los azulejos son
+
+696
+00:52:41,058 --> 00:52:43,514
+muy pequeños. De hecho, lo voy a probar aquí.
+
+697
+00:52:43,514 --> 00:52:46,002
+Avanzo rápido para no perder mucho tiempo.
+
+698
+00:52:48,078 --> 00:52:52,140
+Añadí esta parte: los azulejos azules son brillantes
+
+699
+00:52:52,520 --> 00:52:57,003
+y miden 3 por 12 centímetros.
+
+700
+00:52:57,003 --> 00:53:00,885
+Haz que la escala coincida.
+
+701
+00:53:00,885 --> 00:53:03,666
+Antes de generar, ya que no lo hice,
+
+702
+00:53:03,666 --> 00:53:07,739
+miremos el anterior, donde esta es la imagen de entrada y
+
+703
+00:53:07,739 --> 00:53:10,330
+ves que aplicó el material muy bien.
+
+704
+00:53:10,330 --> 00:53:14,312
+Hay un pequeño desplazamiento aquí arriba.
+
+705
+00:53:14,312 --> 00:53:17,154
+Se ve en los píxeles.
+
+706
+00:53:17,782 --> 00:53:22,119
+Pero a veces es simplemente así.
+
+707
+00:53:22,119 --> 00:53:25,174
+A veces cuesta un poco; este es un poco difícil.
+
+708
+00:53:25,174 --> 00:53:30,803
+Pero probemos añadiendo: sigue
+
+709
+00:53:31,224 --> 00:53:32,546
+la geometría
+
+710
+00:53:35,598 --> 00:53:39,998
+exactamente. Y quizá incluso algo así.
+
+711
+00:53:39,998 --> 00:53:46,178
+Puede que ayude. Y lo que quiero hacer otra vez es clic derecho aquí
+
+712
+00:53:46,178 --> 00:53:48,558
+y "edit subgraph widgets".
+
+713
+00:53:52,151 --> 00:53:53,151
+Y quiero...
+
+714
+00:53:58,507 --> 00:54:02,059
+Quiero poder controlar los megapixels.
+
+715
+00:54:02,059 --> 00:54:07,733
+No los veo por ningún lado aquí, pero sé que en el subgraph hay
+
+716
+00:54:07,733 --> 00:54:11,516
+un nodo que me dice cuántos megapixels son.
+
+717
+00:54:11,516 --> 00:54:16,619
+Así que lo hago visible. Los muevo un poco.
+
+718
+00:54:16,619 --> 00:54:23,544
+Ves que ahora es solo un megapixel, y eso explica también
+
+719
+00:54:23,584 --> 00:54:26,336
+por qué, si haces zoom aquí, la calidad no es buena.
+
+720
+00:54:26,766 --> 00:54:29,449
+Es porque el ajuste estaba demasiado bajo.
+
+721
+00:54:29,449 --> 00:54:34,434
+Pongámoslo en 2, que tampoco es perfecto.
+
+722
+00:54:34,434 --> 00:54:39,440
+Pero veamos si queda mejor cuando
+
+723
+00:54:39,440 --> 00:54:44,626
+subimos los megapixels y escribimos un prompt mejor.
+
+724
+00:54:44,626 --> 00:54:48,460
+Aquí lo vemos generándose.
+
+725
+00:54:51,288 --> 00:54:57,044
+Ten en cuenta que mi imagen de entrada todavía tiene a este hombre.
+
+726
+00:54:57,044 --> 00:55:00,547
+Si quieres al hombre fuera de la imagen,
+
+727
+00:55:00,547 --> 00:55:04,732
+descarga esta y vuelve a meterla como entrada.
+
+728
+00:55:04,732 --> 00:55:06,774
+¿Sí? Espero que se entienda.
+
+729
+00:55:10,378 --> 00:55:16,122
+Bien, se generó, y ves que los azulejos
+
+730
+00:55:16,122 --> 00:55:23,107
+ahora son más brillantes, así que ya está mejor, yo diría.
+
+731
+00:55:23,107 --> 00:55:29,471
+El tamaño creo que también está bastante bien, parece que ronda los 3x12.
+
+732
+00:55:29,672 --> 00:55:35,546
+La verdad, sorprendentemente bien. Y siguió bien la geometría,
+
+733
+00:55:35,546 --> 00:55:38,488
+pero hay un desplazamiento. Si eso te molesta,
+
+734
+00:55:38,702 --> 00:55:44,210
+puedes importarla a Photoshop o similar y bajarla unos píxeles.
+
+735
+00:55:44,210 --> 00:55:46,654
+No es la forma perfecta de hacerlo,
+
+736
+00:55:46,654 --> 00:55:50,801
+pero, como está desplazada un poco hacia arriba en todas partes,
+
+737
+00:55:50,801 --> 00:55:54,176
+basta con bajar la imagen y listo.
+
+738
+00:55:59,330 --> 00:56:05,133
+¿Y dónde se pone esto interesante otra vez, o incluso más interesante?
+
+739
+00:56:05,133 --> 00:56:11,297
+Y este es también un buen argumento de por qué deberíamos usar modelos open source, porque
+
+740
+00:56:11,297 --> 00:56:15,099
+podrías preguntar: ¿no puedo hacer esto con ChatGPT?
+
+741
+00:56:15,099 --> 00:56:21,242
+Y claro que puedes. Pero lo que vamos a hacer ahora es muy interesante.
+
+742
+00:56:21,242 --> 00:56:28,066
+Entramos en el subgraph y ves que es un workflow bastante extenso.
+
+743
+00:56:28,490 --> 00:56:32,274
+Vamos a hacer lo mismo que antes.
+
+744
+00:56:32,274 --> 00:56:35,718
+Vamos a añadir un LoRA.
+
+745
+00:56:35,718 --> 00:56:38,841
+Doble clic, escribimos "LoRA".
+
+746
+00:56:41,816 --> 00:56:45,589
+Este, el de Comfy. Clic aquí.
+
+747
+00:56:45,589 --> 00:56:51,795
+Y ahora voy a ir un poco más rápido, porque antes lo hicimos muy despacio.
+
+748
+00:56:51,795 --> 00:56:55,608
+Lo conectamos al CFG Guider.
+
+749
+00:56:55,608 --> 00:57:00,122
+Que es, por cierto, lo único a lo que lo puedes conectar.
+
+750
+00:57:00,122 --> 00:57:05,527
+Así que no te puedes equivocar. No hay ningún otro nodo al que
+
+751
+00:57:05,627 --> 00:57:08,820
+puedas conectar este. No te puedes equivocar.
+
+752
+00:57:11,096 --> 00:57:13,901
+Aquí hacemos clic en "My Models".
+
+753
+00:57:16,352 --> 00:57:19,577
+Image edit.
+
+754
+00:57:21,932 --> 00:57:26,395
+Y lo que va a hacer ahora es añadir otra vez el LoRA,
+
+755
+00:57:26,395 --> 00:57:29,347
+porque, como ves aquí, está bastante saturada.
+
+756
+00:57:29,347 --> 00:57:32,099
+Los colores... quizá sea cosa mía,
+
+757
+00:57:32,099 --> 00:57:33,490
+pero no me gustan estos colores.
+
+758
+00:57:33,490 --> 00:57:37,292
+Está demasiado saturada, demasiado plástica.
+
+759
+00:57:37,292 --> 00:57:42,396
+Parece superfalsa. Así que, si lo generamos otra vez,
+
+760
+00:57:42,396 --> 00:57:46,068
+veamos si hay
+
+761
+00:57:46,068 --> 00:57:51,522
+diferencia entre la actual y la nueva.
+
+762
+00:57:51,724 --> 00:57:54,465
+O sea, antes del LoRA y después del LoRA.
+
+763
+00:57:57,258 --> 00:58:00,919
+Bien, si lo miramos, creo que esto ya está mejor.
+
+764
+00:58:00,919 --> 00:58:06,361
+Se siente más natural. Es menos duro.
+
+765
+00:58:06,361 --> 00:58:12,632
+No diría que es perfecto todavía, pero probablemente
+
+766
+00:58:12,632 --> 00:58:18,504
+tenga que ver, si entramos aquí, con que la fuerza está en 1; la puedes
+
+767
+00:58:18,504 --> 00:58:22,125
+poner en 1,5. Hacemos clic en "run".
+
+768
+00:58:22,125 --> 00:58:24,786
+Puedes ponerla en 0,5
+
+769
+00:58:25,902 --> 00:58:28,142
+y ejecutar otra vez; simplemente se pone en cola.
+
+770
+00:58:28,142 --> 00:58:34,822
+Puedes lanzar muchas imágenes y se irán encolando.
+
+771
+00:58:34,822 --> 00:58:38,862
+Otra cosa que puedes hacer es subir el batch count.
+
+772
+00:58:38,862 --> 00:58:41,742
+Así, al hacer clic en "run", se ejecutará dos veces.
+
+773
+00:58:41,742 --> 00:58:47,162
+Puedes ponerlo en 20 si quieres y generará 20 imágenes,
+
+774
+00:58:47,162 --> 00:58:50,762
+pero, por si acaso, déjalo en uno.
+
+775
+00:58:54,414 --> 00:58:59,055
+Este es el resultado con el LoRA en 1,5.
+
+776
+00:58:59,055 --> 00:59:01,366
+Ves que rompe la imagen por completo.
+
+777
+00:59:01,366 --> 00:59:07,401
+Queda supercrujiente, demasiado de todo.
+
+778
+00:59:07,401 --> 00:59:14,025
+Eso también te enseña que el impacto del LoRA es bastante grande.
+
+779
+00:59:14,025 --> 00:59:20,538
+Si lo pones demasiado alto, va a sobreeditar y va a
+
+780
+00:59:20,538 --> 00:59:23,800
+romper los píxeles en pedazos.
+
+781
+00:59:25,324 --> 00:59:30,727
+La que está ahora en la cola es la que acabamos de hacer con una fuerza menor,
+
+782
+00:59:30,727 --> 00:59:34,864
+0,5. Veamos si queda mejor.
+
+783
+00:59:34,864 --> 00:59:40,410
+Y esto también es lo que quiero mostrarte: que forma parte del proceso
+
+784
+00:59:40,410 --> 00:59:44,694
+probar mucho y ver qué funciona y qué no.
+
+785
+00:59:46,860 --> 00:59:49,813
+Subir los megapixels también tendría mucho impacto aquí.
+
+786
+00:59:52,462 --> 00:59:58,822
+Esta está mejor, está un poco saturada, pero sí, yo diría que esta
+
+787
+00:59:58,822 --> 01:00:02,802
+es una buena edición. Bien,
+
+788
+01:00:02,802 --> 01:00:07,902
+muy bien. Voy a tomar esta imagen
+
+789
+01:00:07,902 --> 01:00:10,702
+y también la anterior.
+
+790
+01:00:13,486 --> 01:00:14,486
+Creo que era...
+
+791
+01:00:30,626 --> 01:00:32,419
+Y las voy a subir para ti.
+
+792
+01:00:46,862 --> 01:00:49,131
+Las pongo aquí para que las encuentres.
+
+793
+01:00:56,450 --> 01:00:57,525
+Un montón de imágenes, pero
+
+794
+01:01:01,358 --> 01:01:06,762
+experimenta. Esto fue edición de imagen con FLUX.2 klein 9B.
+
+795
+01:01:06,762 --> 01:01:12,636
+Aquí hay otros ejemplos. Lo que hice antes fue
+
+796
+01:01:12,636 --> 01:01:16,849
+tomar la imagen y decir algo como: añade muchas personas mayores
+
+797
+01:01:16,849 --> 01:01:21,272
+en sus balcones, y algunas tendiendo la ropa o algo así.
+
+798
+01:01:21,272 --> 01:01:28,176
+Y lo que puedes hacer, te lo muestro rápido, es esto.
+
+799
+01:01:28,176 --> 01:01:30,158
+Si tomas la imagen base,
+
+800
+01:01:30,732 --> 01:01:31,732
+la que quieres editar...
+
+801
+01:01:36,236 --> 01:01:42,222
+Tomas esta y digamos que la editas y esta es la salida.
+
+802
+01:01:47,152 --> 01:01:48,737
+Lo que yo haría es lo siguiente.
+
+803
+01:01:52,408 --> 01:01:53,959
+Iría a Photoshop
+
+804
+01:01:54,740 --> 01:02:00,023
+y tomaría
+
+805
+01:02:00,964 --> 01:02:05,087
+la capa de fondo, o sea, la imagen base es la imagen de partida.
+
+806
+01:02:05,087 --> 01:02:10,710
+Después pondría esta encima y, como
+
+807
+01:02:10,710 --> 01:02:15,073
+la geometría coincide casi exactamente,
+
+808
+01:02:15,073 --> 01:02:21,708
+podrías crear una máscara y
+
+809
+01:02:22,262 --> 01:02:24,563
+quitar las que no te gusten.
+
+810
+01:02:24,563 --> 01:02:31,376
+Ves que, como la capa de atrás es casi perfecta —hay
+
+811
+01:02:31,376 --> 01:02:35,307
+un pequeño desplazamiento aquí, pero lo puedes corregir si quieres—,
+
+812
+01:02:35,307 --> 01:02:42,010
+dices: esta no la quiero, la quitas, y así
+
+813
+01:02:42,010 --> 01:02:47,422
+tienes mucho control sobre exactamente qué estás mostrando.
+
+814
+01:02:47,422 --> 01:02:50,914
+Si dices: esta no me gusta, la quitas.
+
+815
+01:02:52,098 --> 01:02:56,119
+Y ni siquiera se nota que no está del todo alineado.
+
+816
+01:02:56,119 --> 01:03:02,562
+No es la mejor forma de tener control,
+
+817
+01:03:02,562 --> 01:03:06,043
+pero es algo que en la realidad uso mucho.
+
+818
+01:03:06,043 --> 01:03:10,084
+O sea: tomar la imagen base, poner las
+
+819
+01:03:14,550 --> 01:03:20,957
+imágenes editadas encima e ir haciendo un collage.
+
+820
+01:03:20,957 --> 01:03:23,900
+Por cierto, si no tienes acceso a Photoshop,
+
+821
+01:03:23,900 --> 01:03:26,062
+dejé
+
+822
+01:03:28,694 --> 01:03:32,970
+en "resources" Photopea.
+
+823
+01:03:32,970 --> 01:03:39,529
+No sé si conoces Photopea, pero es básicamente
+
+824
+01:03:39,529 --> 01:03:45,817
+un editor de fotos online. Es totalmente gratis y funciona igual
+
+825
+01:03:51,358 --> 01:03:55,242
+que Photoshop. Es, de hecho, un Photoshop gratuito.
+
+826
+01:03:55,242 --> 01:04:00,649
+Si no quieres pagar por Photoshop, funciona exactamente igual.
+
+827
+01:04:00,649 --> 01:04:04,713
+Es un poco más difícil de usar, pero en general es lo mismo.
+
+828
+01:04:04,713 --> 01:04:08,358
+Así que Photopea; dejaré el enlace aquí.
+
+829
+01:04:11,402 --> 01:04:13,199
+Que quede a la misma altura.
+
+830
+01:04:15,950 --> 01:04:19,997
+Échale un vistazo, así no tienes excusa si no tienes Photoshop.
+
+831
+01:04:22,478 --> 01:04:26,658
+Y, por último,
+
+832
+01:04:29,720 --> 01:04:34,972
+el último workflow que vamos a ver es este.
+
+833
+01:04:34,972 --> 01:04:39,684
+Lo que hace es inpainting muy preciso.
+
+834
+01:04:39,684 --> 01:04:44,577
+Lo voy a ejecutar, así que en un minuto tendremos un ejemplo.
+
+835
+01:04:44,577 --> 01:04:50,379
+Si hablamos de modelos open source como FLUX,
+
+836
+01:04:50,379 --> 01:04:55,622
+es bastante obvio por qué Comfy Cloud, en este caso,
+
+837
+01:04:56,750 --> 01:05:00,550
+es la plataforma ideal: si no, ¿cómo lo ejecutarías?
+
+838
+01:05:00,550 --> 01:05:03,530
+Ahora, si hablamos de Nano Banana, por ejemplo,
+
+839
+01:05:03,530 --> 01:05:09,070
+mucha gente diría: ¿por qué no
+
+840
+01:05:09,070 --> 01:05:13,290
+usas Nano Banana para esto? Y yo diría: úsalo.
+
+841
+01:05:13,290 --> 01:05:17,490
+Yo también lo uso mucho, pero lo uso dentro de ComfyUI, y por eso
+
+842
+01:05:17,490 --> 01:05:20,410
+creo de verdad que ComfyUI llegó para quedarse.
+
+843
+01:05:20,410 --> 01:05:23,290
+¿Qué hacen ellos? Integran
+
+844
+01:05:23,666 --> 01:05:26,431
+todos los modelos en su plataforma.
+
+845
+01:05:26,431 --> 01:05:31,822
+Así que también puedes hacer doble clic aquí y escribir "nano banana".
+
+846
+01:05:34,424 --> 01:05:38,845
+Por ejemplo, Nano Banana 2. Y puedes usar Nano Banana dentro de Comfy.
+
+847
+01:05:38,845 --> 01:05:40,652
+Si quieres usar ChatGPT...
+
+848
+01:05:45,144 --> 01:05:50,474
+Este quizá, ChatGPT, y veamos.
+
+849
+01:05:55,224 --> 01:05:58,677
+Puedes usarlo directamente, o vas a las plantillas,
+
+850
+01:05:58,677 --> 01:06:03,202
+quitas ese y escribes "ChatGPT".
+
+851
+01:06:07,874 --> 01:06:09,721
+Pues así no, por lo visto.
+
+852
+01:06:13,326 --> 01:06:17,406
+Hay que escribirlo con precisión,
+
+853
+01:06:17,406 --> 01:06:18,406
+creo.
+
+854
+01:06:22,296 --> 01:06:23,920
+Creo que se llama Image 2.
+
+855
+01:06:32,824 --> 01:06:36,807
+Aquí: GPT Image, ese es el nombre exacto.
+
+856
+01:06:36,807 --> 01:06:40,887
+Sí, ves que está aquí;
+
+857
+01:06:40,887 --> 01:06:43,644
+solo hay que escribir GPT en vez de ChatGPT.
+
+858
+01:06:43,644 --> 01:06:46,987
+Y entonces puedes usar su workflow.
+
+859
+01:06:46,987 --> 01:06:52,271
+Haces clic y ya puedes usar su
+
+860
+01:06:52,271 --> 01:06:55,194
+ChatGPT por API. Está
+
+861
+01:06:57,638 --> 01:07:03,530
+un poco raro ahora, pero suele pasar; por ejemplo, si
+
+862
+01:07:03,530 --> 01:07:09,282
+refrescas, funcionará mejor. Así que ya puedes usar ChatGPT.
+
+863
+01:07:11,874 --> 01:07:16,419
+Veamos cómo usar Nano Banana para hacer algo interesante de verdad.
+
+864
+01:07:16,419 --> 01:07:20,244
+Lo que hice aquí fue tomar la misma imagen que antes.
+
+865
+01:07:20,244 --> 01:07:21,946
+Hice clic derecho sobre ella.
+
+866
+01:07:25,230 --> 01:07:29,052
+Tengo que refrescar, pero déjame mostrarte cómo lo hice.
+
+867
+01:07:29,052 --> 01:07:33,058
+Hice inpainting en esta parte. Ahora te muestro cómo lo hice.
+
+868
+01:07:33,058 --> 01:07:38,944
+Le di un prompt y entonces editó esa imagen,
+
+869
+01:07:39,344 --> 01:07:41,246
+o mejor dicho, esa parte en concreto.
+
+870
+01:07:41,246 --> 01:07:45,290
+Ves que también añadió una barandilla aquí y otra aquí.
+
+871
+01:07:45,290 --> 01:07:47,953
+Eso no es exactamente lo que quería,
+
+872
+01:07:47,953 --> 01:07:48,974
+pero, en general,
+
+873
+01:07:49,570 --> 01:07:51,121
+tienes mucho más control.
+
+874
+01:07:51,121 --> 01:07:56,135
+Solo tienes que volver a ejecutarlo y quizá tengas una iteración mejor.
+
+875
+01:07:56,135 --> 01:07:59,358
+Déjame recargar.
+
+876
+01:08:03,446 --> 01:08:06,039
+No siempre funciona perfecto.
+
+877
+01:08:13,002 --> 01:08:16,109
+Bien, ahora vuelve a funcionar.
+
+878
+01:08:20,002 --> 01:08:26,350
+Este prompt es largo. Lo hice con el prompt coach.
+
+879
+01:08:33,685 --> 01:08:36,653
+Y cómo hice inpainting solo en esta parte
+
+880
+01:08:38,906 --> 01:08:43,029
+es lo siguiente. Vas a la parte de "load image".
+
+881
+01:08:43,029 --> 01:08:46,520
+Esto lo puedes hacer con cualquier workflow, pero este en concreto lo
+
+882
+01:08:46,520 --> 01:08:49,872
+usaría con Nano Banana, porque Nano Banana es buenísimo en esto.
+
+883
+01:08:49,872 --> 01:08:54,836
+Si haces clic derecho, puedes hacer clic en "open
+
+884
+01:08:54,836 --> 01:09:00,761
+in mask editor" y se abre esta ventana. Lo que hace es darte
+
+885
+01:09:00,761 --> 01:09:06,024
+la posibilidad de pintar una zona, y solo esa zona se va a cambiar.
+
+886
+01:09:06,024 --> 01:09:08,145
+Por ahora voy a
+
+887
+01:09:08,238 --> 01:09:12,578
+hacer clic en "clear" y dejar los ajustes básicos.
+
+888
+01:09:12,578 --> 01:09:15,497
+Aquí puedes experimentar un poco.
+
+889
+01:09:15,497 --> 01:09:22,058
+Pinta más o menos la zona que quieras usar.
+
+890
+01:09:22,058 --> 01:09:25,518
+Hazla siempre un poco más grande, así.
+
+891
+01:09:25,518 --> 01:09:30,738
+Puedes ajustar la opacidad. La puedes poner al 100 %.
+
+892
+01:09:30,738 --> 01:09:36,698
+Yo no lo haría. Vuelve a dejarla en torno al 75 %.
+
+893
+01:09:37,930 --> 01:09:41,505
+Guardando. Tarda un rato en guardar.
+
+894
+01:09:47,416 --> 01:09:52,069
+Una vez guardado, ves que esta zona se actualiza.
+
+895
+01:09:52,069 --> 01:09:56,945
+Y el prompt sería algo así.
+
+896
+01:09:56,945 --> 01:09:59,737
+Por ejemplo: añade una loggia en esta parte,
+
+897
+01:09:59,737 --> 01:10:05,423
+solo en esta parte. Añade una barandilla metálica vertical fina.
+
+898
+01:10:05,423 --> 01:10:10,107
+El prompt coach me preguntó para qué modelo.
+
+899
+01:10:10,107 --> 01:10:13,330
+Yo diría: Nano Banana 2.
+
+900
+01:10:18,702 --> 01:10:23,576
+Y después, dos máscaras separadas,
+
+901
+01:10:23,576 --> 01:10:24,576
+una loggia.
+
+902
+01:10:28,212 --> 01:10:29,636
+No, es solo una
+
+903
+01:10:32,300 --> 01:10:36,582
+máscara; me preguntó si tenía dos máscaras, pero es solo una.
+
+904
+01:10:43,416 --> 01:10:49,624
+Entonces te devuelve un prompt que describe
+
+905
+01:10:49,624 --> 01:10:55,061
+tu inpainting.
+
+906
+01:10:55,061 --> 01:10:58,966
+Solo tienes que copiarlo y pegarlo aquí.
+
+907
+01:11:01,302 --> 01:11:07,145
+Bien, si haces eso, este fue el resultado que obtuve la vez pasada, al primer intento.
+
+908
+01:11:07,145 --> 01:11:09,786
+Ves que hizo perfectamente lo que pedí.
+
+909
+01:11:09,786 --> 01:11:13,107
+Hizo una loggia y una barandilla vertical aquí.
+
+910
+01:11:13,107 --> 01:11:17,789
+Digamos que tienes una salida que no es perfecta.
+
+911
+01:11:17,789 --> 01:11:19,490
+Digamos que tienes...
+
+912
+01:11:27,242 --> 01:11:31,365
+O hizo exactamente lo que querías, pero no te gusta que
+
+913
+01:11:31,365 --> 01:11:34,227
+haya puesto una barandilla aquí también, o esta parte.
+
+914
+01:11:34,227 --> 01:11:39,310
+Yo la descargaría. Otra vez, me voy a Photoshop.
+
+915
+01:11:41,358 --> 01:11:44,044
+Abriría la imagen base.
+
+916
+01:11:44,044 --> 01:11:50,368
+Déjame descargarla primero.
+
+917
+01:11:56,846 --> 01:11:58,423
+Tomemos esta.
+
+918
+01:12:01,230 --> 01:12:02,230
+...
+
+919
+01:12:04,974 --> 01:12:09,716
+Sí, bien. Abrir con Photoshop.
+
+920
+01:12:09,716 --> 01:12:14,199
+Después aplicaría
+
+921
+01:12:14,199 --> 01:12:19,241
+la que tiene una parte buena.
+
+922
+01:12:19,241 --> 01:12:22,353
+Pero no quiero esa parte.
+
+923
+01:12:22,353 --> 01:12:28,236
+Así que, otra vez, hago una máscara y quito esa parte.
+
+924
+01:12:30,828 --> 01:12:33,820
+Mira, y aquí ves que no encaja del todo;
+
+925
+01:12:33,820 --> 01:12:37,903
+esta no es, insisto, la forma perfecta de hacerlo.
+
+926
+01:12:37,903 --> 01:12:40,624
+No quiero enseñarte a hacerlo mal,
+
+927
+01:12:40,624 --> 01:12:46,208
+pero en la realidad así es como usas esto como una herramienta que funciona.
+
+928
+01:12:46,208 --> 01:12:49,400
+Y podrías decir, por ejemplo,
+
+929
+01:12:49,400 --> 01:12:51,071
+si comparas la imagen base,
+
+930
+01:12:51,071 --> 01:12:54,924
+esta, con la recién generada,
+
+931
+01:12:56,440 --> 01:13:00,896
+podrías decir que la calidad es mejor o peor, pero también puedes quitar esta parte
+
+932
+01:13:01,957 --> 01:13:08,666
+o aquella. Solo vas añadiendo cosas a la máscara; creo que queda claro.
+
+933
+01:13:08,666 --> 01:13:13,362
+Así tienes control sobre qué conservas de la imagen base y qué
+
+934
+01:13:13,362 --> 01:13:14,774
+no quieres conservar.
+
+935
+01:13:17,430 --> 01:13:18,430
+Bien.
+
+936
+01:13:20,450 --> 01:13:22,051
+Ahora vamos a probar otra cosa.
+
+937
+01:13:22,051 --> 01:13:26,945
+El inpainting era una opción, y lo hicimos abriendo el Mask Editor o,
+
+938
+01:13:26,945 --> 01:13:31,139
+si bajas, "open Mask Editor / Image Canvas".
+
+939
+01:13:31,139 --> 01:13:35,362
+Otra cosa que puedes hacer es, en la imagen base,
+
+940
+01:13:35,362 --> 01:13:39,085
+dibujar directamente con un color que contraste
+
+941
+01:13:39,926 --> 01:13:43,268
+y después tomar este prompt,
+
+942
+01:13:43,268 --> 01:13:45,170
+ir a
+
+943
+01:13:49,186 --> 01:13:53,549
+este de aquí y decir, por ejemplo, en vez
+
+944
+01:13:53,769 --> 01:13:55,751
+de hacer inpainting:
+
+945
+01:13:57,632 --> 01:14:03,016
+"te doy esta imagen de entrada".
+
+946
+01:14:04,898 --> 01:14:05,898
+Así que
+
+947
+01:14:12,963 --> 01:14:15,673
+puedo descargarla otra vez desde aquí.
+
+948
+01:14:20,110 --> 01:14:24,235
+Se la paso a mi agente y le digo: te doy esta imagen de entrada.
+
+949
+01:14:24,235 --> 01:14:29,242
+El círculo rojo es solo una indicación,
+
+950
+01:14:31,982 --> 01:14:36,313
+así que quítalo de la imagen de salida.
+
+951
+01:14:39,979 --> 01:14:40,979
+Está
+
+952
+01:14:42,702 --> 01:14:49,042
+para señalar la zona que quiero cambiar.
+
+953
+01:14:55,527 --> 01:15:02,473
+Eso es lo que le di. El agente está escribiendo un prompt completo.
+
+954
+01:15:02,473 --> 01:15:03,794
+...
+
+955
+01:15:06,328 --> 01:15:11,793
+Lo pego aquí. Ten en cuenta que la resolución
+
+956
+01:15:11,793 --> 01:15:17,107
+estará bien, pero si de verdad quieres alta resolución, ponlo en 4K;
+
+957
+01:15:17,307 --> 01:15:20,730
+eso sí, ten en cuenta que consumirá más créditos.
+
+958
+01:15:20,730 --> 01:15:26,725
+Así que normalmente hago 2K y, cuando es la imagen final,
+
+959
+01:15:26,725 --> 01:15:30,038
+hago 4K. Haría clic en "run".
+
+960
+01:15:35,873 --> 01:15:36,873
+Depende.
+
+961
+01:15:38,798 --> 01:15:42,881
+Ya volvimos, y ahora ves lo bien que funciona esto.
+
+962
+01:15:42,881 --> 01:15:46,494
+Es una locura. La parte de inpainting,
+
+963
+01:15:46,494 --> 01:15:49,526
+la anterior, normalmente también funciona,
+
+964
+01:15:49,526 --> 01:15:52,368
+pero simplemente dibujando sobre la imagen de entrada
+
+965
+01:15:52,368 --> 01:15:57,011
+le dices: vale, esta parte y solo esta
+
+966
+01:15:57,011 --> 01:16:01,715
+es la que quiero que edites. Y además quita el trazo rojo.
+
+967
+01:16:01,715 --> 01:16:06,158
+Y ves que aquí no hay apenas desfase en la altura.
+
+968
+01:16:06,668 --> 01:16:10,929
+Así que depende. Normalmente funciona muy bien con los ejemplos anteriores.
+
+969
+01:16:10,929 --> 01:16:15,911
+Ahí hubo un poco de desplazamiento, pero creo que, si este es el nivel de control
+
+970
+01:16:15,911 --> 01:16:19,161
+que podemos tener hoy, es increíble,
+
+971
+01:16:19,161 --> 01:16:22,280
+diría yo. Así que sí,
+
+972
+01:16:22,280 --> 01:16:24,963
+podría estar jugando con esto muchísimo tiempo.
+
+973
+01:16:24,963 --> 01:16:29,624
+Un pequeño detalle que te quiero contar:
+
+974
+01:16:29,624 --> 01:16:33,495
+no sé si lo vas a notar a través de mi pantalla,
+
+975
+01:16:33,495 --> 01:16:35,566
+pero este es el antes y este el después.
+
+976
+01:16:36,162 --> 01:16:40,125
+Hay un cambio muy ligero de temperatura.
+
+977
+01:16:40,125 --> 01:16:44,508
+El después, la imagen que genera
+
+978
+01:16:44,508 --> 01:16:51,063
+Nano Banana, tiene como un filtro rosa muy suave encima.
+
+979
+01:16:51,063 --> 01:16:58,038
+Ten cuidado: si te gusta esta imagen de salida porque hizo exactamente lo que queríamos
+
+980
+01:16:58,038 --> 01:17:01,320
+—añadió una loggia con la barandilla—,
+
+981
+01:17:01,320 --> 01:17:03,512
+si descargas esta
+
+982
+01:17:04,108 --> 01:17:08,071
+y la vuelves a meter aquí y sigues iterando,
+
+983
+01:17:08,071 --> 01:17:11,944
+o sea, añades una persona o cambias el material de la fachada,
+
+984
+01:17:11,944 --> 01:17:17,128
+cada vez va a añadir un poco más de rosa.
+
+985
+01:17:17,128 --> 01:17:20,531
+Así que, al cabo de un rato, lo vas a notar mucho.
+
+986
+01:17:20,531 --> 01:17:25,876
+Por eso, cuando sea solo esta parte la que quieres conservar,
+
+987
+01:17:25,876 --> 01:17:28,808
+métela en Photoshop y borra el resto.
+
+988
+01:17:28,808 --> 01:17:31,360
+O sea, conserva el resto de la imagen base original.
+
+989
+01:17:31,360 --> 01:17:33,382
+Si no, vas apilando
+
+990
+01:17:34,104 --> 01:17:39,523
+generada sobre generada, y cada vez los píxeles quedan
+
+991
+01:17:39,523 --> 01:17:43,228
+un poco más lavados. Pero eso es solo un detalle.
+
+992
+01:17:43,228 --> 01:17:44,228
+Así que...
+
+993
+01:17:56,556 --> 01:17:59,807
+Y también está bueno que, incluso en este workflow de Nano Banana,
+
+994
+01:17:59,807 --> 01:18:05,168
+si lo descargas, vas a poder ver exactamente mi prompt,
+
+995
+01:18:05,168 --> 01:18:09,550
+etcétera. Y esa es una gran diferencia entre
+
+996
+01:18:09,550 --> 01:18:15,431
+usar ComfyUI o Google AI Studio,
+
+997
+01:18:15,431 --> 01:18:17,772
+porque si allí solo descargas la imagen,
+
+998
+01:18:17,772 --> 01:18:19,962
+nunca sabrás qué prompt usaste.
+
+999
+01:18:19,962 --> 01:18:25,894
+Aquí el prompt queda incrustado en los metadatos de la imagen.
+
+1000
+01:18:29,602 --> 01:18:34,045
+Así que de este modo tienes mucho control sobre todo.
+
+1001
+01:18:34,045 --> 01:18:38,387
+Otra cosa que puedes probar, solo como sugerencia:
+
+1002
+01:18:38,387 --> 01:18:40,408
+si no quieres añadir la fachada,
+
+1003
+01:18:40,408 --> 01:18:45,431
+puedes hacer una X o dibujar un círculo y
+
+1004
+01:18:45,431 --> 01:18:51,975
+decir: en este círculo azul añade una persona; en la anotación del rectángulo rojo,
+
+1005
+01:18:51,975 --> 01:18:57,430
+añade un árbol. Así puedes hacerlo de forma muy quirúrgica.
+
+1006
+01:18:59,726 --> 01:19:04,809
+También añadí algunas referencias de materiales
+
+1007
+01:19:05,950 --> 01:19:09,152
+para el LoRA. Si te interesa este,
+
+1008
+01:19:09,152 --> 01:19:11,454
+descárgalo y mira el prompt.
+
+1009
+01:19:11,454 --> 01:19:14,576
+Se hizo con este bloque de mármol.
+
+1010
+01:19:14,576 --> 01:19:18,178
+También puedes usar granito. Puedes hacer lo que quieras.
+
+1011
+01:19:22,958 --> 01:19:28,139
+Vamos cerrando. Hay una cosa más que quiero enseñarte.
+
+1012
+01:19:28,139 --> 01:19:31,860
+Se llama Spectrum, mi app Spectrum.
+
+1013
+01:19:31,860 --> 01:19:38,682
+Es una app que hice y que transforma
+
+1014
+01:19:38,981 --> 01:19:43,454
+una imagen en todo un espectro de imágenes.
+
+1015
+01:19:43,454 --> 01:19:49,995
+Es un pequeño proyecto paralelo que hice junto con otro experto en IA,
+
+1016
+01:19:49,995 --> 01:19:52,076
+Cas Esberg. Un saludo enorme para Cas.
+
+1017
+01:19:53,326 --> 01:20:00,274
+Me mandó esta imagen de un edificio vacío en algún lugar de las afueras.
+
+1018
+01:20:00,274 --> 01:20:04,389
+Le hicimos unos bocetos y un prompt muy simple.
+
+1019
+01:20:04,389 --> 01:20:09,996
+Y pudimos generar esta imagen usando Nano Banana dentro de Comfy.
+
+1020
+01:20:13,098 --> 01:20:16,761
+Y con Spectrum hicimos todas estas imágenes.
+
+1021
+01:20:16,761 --> 01:20:20,765
+Una toma nocturna, un primer plano de la fachada,
+
+1022
+01:20:20,765 --> 01:20:23,638
+una planta —la planta no está muy bien,
+
+1023
+01:20:23,638 --> 01:20:25,609
+pero sigue siendo un buen intento—,
+
+1024
+01:20:25,609 --> 01:20:30,744
+una toma interior de la zona de la cafetería con los bloques de vidrio.
+
+1025
+01:20:33,350 --> 01:20:38,291
+Y podemos seguir: como si hubiéramos hecho una maqueta de madera,
+
+1026
+01:20:38,291 --> 01:20:41,452
+un boceto de alzado frontal,
+
+1027
+01:20:41,452 --> 01:20:44,973
+un boceto en acuarela. Sigue:
+
+1028
+01:20:44,973 --> 01:20:46,874
+mapa de normales, lo que quieras.
+
+1029
+01:20:46,874 --> 01:20:52,815
+También publicaron un artículo en Archinect sobre lo que hicimos.
+
+1030
+01:20:52,815 --> 01:20:57,757
+Si te interesa la app Spectrum,
+
+1031
+01:20:57,757 --> 01:21:02,648
+también la dejé en mi web;
+
+1032
+01:21:02,818 --> 01:21:07,968
+puedes descargarla. Es muy interesante ver que bastantes
+
+1033
+01:21:08,890 --> 01:21:12,256
+de estos estilos de imagen...
+
+1034
+01:21:12,256 --> 01:21:13,679
+Por ejemplo,
+
+1035
+01:21:16,942 --> 01:21:20,384
+este o este.
+
+1036
+01:21:20,384 --> 01:21:26,819
+De hecho trabajo con algunos estudios de Alemania que están usando este
+
+1037
+01:21:26,819 --> 01:21:31,552
+estilo concreto para presentar sus diseños a los clientes.
+
+1038
+01:21:31,552 --> 01:21:34,514
+Y antes lo ofrecía como servicio;
+
+1039
+01:21:34,514 --> 01:21:38,817
+ahora lo cambié para que puedas comprarlo una sola vez y tener
+
+1040
+01:21:38,817 --> 01:21:43,700
+todos los prompts y la app. Así que, si te interesa,
+
+1041
+01:21:43,700 --> 01:21:46,042
+es totalmente gratis
+
+1042
+01:21:46,700 --> 01:21:50,025
+echarle un vistazo. Lo vendo en
+
+1043
+01:21:50,025 --> 01:21:55,906
+mi web, thomasnelissen.ai, y además tengo
+
+1044
+01:21:55,906 --> 01:21:59,227
+un descuento muy grande ahora mismo.
+
+1045
+01:21:59,227 --> 01:22:04,014
+Así que échale un vistazo si te interesa.
+
+1046
+01:22:07,114 --> 01:22:13,439
+Y dicho esto, cerramos este módulo y pasaremos a image
+
+1047
+01:22:13,439 --> 01:22:14,580
+to video en el siguiente.

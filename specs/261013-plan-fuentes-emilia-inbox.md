@@ -22,7 +22,7 @@ Vive en Drive `OS-Emilia/` → `Fuentes-Inbox` (Google Sheets). Emilia la abre d
 | Col | Campo | Quién | Contenido |
 |---|---|---|---|
 | A | Fecha ingesta | auto (rutina) | YYYY-MM-DD HH:mm AR (entra de la conversación) |
-| B | De | auto | Emilia / Sol |
+| B | De | auto | `sol` si id `8459099332`, `emi` si id Emilia (pendiente: agregarla al grupo en reunión y leer su `chat_id`), si no nombre Telegram |
 | C | Link | Emilia o Sol | URL pegada |
 | D | Tipo | auto (clasificador §4) | YT / IG / WEB / PDF / SHARE / IDEA |
 | E | Tema | ✏️ Emilia | 1 línea, vocabulario controlado |
@@ -37,14 +37,14 @@ Regla de oro: Emilia edita SOLO columnas E y F. Todo lo demás lo mueve la autom
 
 Vive en el Router Telegram (extensión) o script chico. Regex sobre la URL, primer match gana:
 
-| Patrón | Tipo | Ruta extractora |
-|---|---|---|
-| `youtube.com` `youtu.be` `shorts/` | YT | `scripts/transcribir_youtube.py` → `raw/yt/transcripts/` |
-| `instagram.com` | IG | links curados → webfetch → ficha (spec ingesta §3.3 opción 1, caption = epígrafe) → `raw/research/` + stub |
-| `chatgpt.com/share` | SHARE | `chatgpt_share_fetch` (verificado 2026-10-13 con share "Evaluación gráfica") → `raw/entradas-emilia/` |
-| `*.pdf` | LIBRO | pipeline PDF (caso Baudrillard 2026-10-13) / OCR Tesseract pendiente → `raw/pdf/` + Drive |
-| otro `http` | WEB | webfetch + verificación 200 → `raw/research/` |
-| sin URL / inclasificable | IDEA | stub directo `raw/entradas-emilia/` o lo decide @sherlock |
+| Patrón                             | Tipo  | Ruta extractora                                                                                            |
+| ---------------------------------- | ----- | ---------------------------------------------------------------------------------------------------------- |
+| `youtube.com` `youtu.be` `shorts/` | YT    | `scripts/transcribir_youtube.py` → `raw/yt/transcripts/`                                                   |
+| `instagram.com`                    | IG    | links curados → webfetch → ficha (spec ingesta §3.3 opción 1, caption = epígrafe) → `raw/research/` + stub |
+| `chatgpt.com/share`                | SHARE | `chatgpt_share_fetch` (verificado 2026-10-13 con share "Evaluación gráfica") → `raw/entradas-emilia/`      |
+| `*.pdf`                            | LIBRO | pipeline PDF (caso Baudrillard 2026-10-13) / OCR Tesseract pendiente → `raw/pdf/` + Drive                  |
+| otro `http`                        | WEB   | webfetch + verificación 200 → `raw/research/`                                                              |
+| sin URL / inclasificable           | IDEA  | stub directo `raw/entradas-emilia/` o lo decide @sherlock                                                  |
 
 Cada tipo conserva su camino delineado en el spec de ingesta (revistas §3.1, YT §3.2, IG §3.3, resto §3.4); el clasificador solo elige carril.
 
@@ -90,3 +90,23 @@ Mismo bot `emiliaospi_bot`, grupo nuevo "Fuentes". Sin nodos de IA: dos Switch v
 - `Ack Fuente Guardada`: "Guardado ✓ en la cola de fuentes. Estado: pendiente."
 
 Pendientes de cableado (test card): ~~crear Sheet con fila de encabezado A1:I1~~ HECHO 2026-10-14 (ID `18iDrvNUOApNFsEDDQ4rMMo40cw4t0hn3CApLK9iLpvI`, `https://docs.google.com/spreadsheets/d/18iDrvNUOApNFsEDDQ4rMMo40cw4t0hn3CApLK9iLpvI/edit`, cableado en `Append Fuentes Sheet`; falta mover a carpeta Drive `OS-Emilia/` + compartir con Emilia) · crear grupo "Fuentes" + agregar bot y Emilia · mandar un link y leer `chat_id` de la ejecución · pegar `FUENTES_CHAT_ID` real (actual: `0`, rama inalcanzable).
+
+## 10. Rama IDEA + PDF-link (actualización 2026-10-16, aprobada por SOL)
+
+Avance sobre §9: lo que llega al grupo avanza hacia la cola, con carril propio.
+
+- `Has Link` con `text contains "http"` avanza hacia `Append Fuentes Sheet` (carriles YT/IG/SHARE/LIBRO/WEB ya verificados).
+- Fallback con texto avanza hacia `Append Idea Sheet`: Tipo `IDEA`, columna C con `(sin URL)`, columna E Tema con texto verbatim primeros 140 caracteres, Estado `pendiente`, Prioridad vacía para curaduría Emilia. Ack: "Guardado como idea para investigar."
+- `*.pdf` en URL avanza hacia Tipo `LIBRO`: Sheet + cola descarga en worker nube (`r.jina.ai` texto, `yt-dlp` queda para YT). Nada se descarga desde el teléfono.
+- Mini-agente IA solo para IDEA: 1 Code en worker que propone título + 3 keywords lente IA+arquitectura. Resto del Router avanza determinista con Switch v3.4, patrón `Prepara Fila` con `indexOf` + ternarios.
+
+Criterio de done: mensaje "investigar sobre Comfy" genera fila IDEA `pendiente` + stub `raw/research/` vía worker, visible en digest.
+
+## 11. Integración ChatGPT Plus Emilia no-técnica (presencial semana que viene)
+
+Principio vigente: Emilia aporta desde celu, cura con ✅/✏️/❌, vault queda del lado SOL.
+
+1. **Celu (fricción cero):** grupo Fuentes + digest 07:30 en lenguaje cotidiano + respuesta 1/2/3 para priorizar. App Drive en su ChatGPT Plus lee Sheet y digest en vivo. Proyecto "Studio OS" en su ChatGPT con rúbrica 6 atributos aporta criterio estable.
+2. **Presencial (1h, PC Emilia):** actualizar Obsidian (versión de hace 15 días) + `git pull` vault + Codex `Sign in with ChatGPT` usa su Plus, clave API queda fuera + `codex mcp list` muestra fathom conectado + 1 ficha alimentada por ella en vivo con verificación SOL. Base en `proyectos/STUDIO_OS-Emilia/documentacion/playbook-instalacion-codex-replica-vault.md`.
+3. **Prueba de esta semana:** 1 share `chatgpt.com/share` de Emilia entra por grupo Fuentes → carril SHARE → `raw/entradas-emilia/` → reporte contenidos. Valida el puente GPT↔vault antes del presencial.
+4. **Codex en su PC como segunda vía:** con vault sincronizado ella conversa sobre digest y propone temas, todo aporte avanza hacia la cola y curaduría SOL. Rutina 07:00 avanza en nube n8n/Actions, PC apagada incluida.

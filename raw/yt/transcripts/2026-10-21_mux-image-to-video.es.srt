@@ -1,0 +1,1331 @@
+1
+00:00:04,590 --> 00:00:07,019
+Bienvenidos a la parte cuatro, image to video.
+
+2
+00:00:12,280 --> 00:00:18,282
+Lo que vemos aquí es un pequeño repaso del capítulo anterior,
+
+3
+00:00:18,282 --> 00:00:21,733
+que era image to image, donde tomamos una imagen y la transformamos
+
+4
+00:00:21,733 --> 00:00:27,354
+en otra imagen. El último paso de una presentación suele ser
+
+5
+00:00:27,354 --> 00:00:32,655
+hacer un video con esto. Probablemente no sea nuevo para todos,
+
+6
+00:00:32,655 --> 00:00:37,957
+pero quizá te sigas preguntando: ¿cómo se hace exactamente?
+
+7
+00:00:37,957 --> 00:00:42,018
+¿Cómo lo hacemos bien, y qué técnicas hay para hacerlo bien?
+
+8
+00:00:43,042 --> 00:00:49,074
+Un ejemplo muy básico es hacer una transición entre la primera imagen
+
+9
+00:00:49,074 --> 00:00:53,495
+y la última, y que se fundan.
+
+10
+00:00:53,495 --> 00:00:58,677
+Esto ya tiene un poco de sensación de "AI slop",
+
+11
+00:00:58,677 --> 00:01:00,747
+así que no es un gran ejemplo,
+
+12
+00:01:00,747 --> 00:01:05,309
+pero es lo más fácil para empezar.
+
+13
+00:01:05,309 --> 00:01:09,580
+Y esto es lo que llamamos image to video.
+
+14
+00:01:11,886 --> 00:01:14,628
+Cuando abrimos la plantilla, vemos lo siguiente.
+
+15
+00:01:14,628 --> 00:01:20,713
+Es un dibujo de una mujer, tres conjuntos de ropa y el prompt.
+
+16
+00:01:20,713 --> 00:01:24,716
+Si lo reordenamos para poder leerlo,
+
+17
+00:01:24,716 --> 00:01:29,630
+es un prompt muy detallado sobre cómo
+
+18
+00:01:29,630 --> 00:01:33,573
+el modelo debe ponerle esa ropa.
+
+19
+00:01:33,573 --> 00:01:39,748
+Para nosotros no es muy interesante, porque vamos a usar solo una imagen.
+
+20
+00:01:39,748 --> 00:01:41,550
+Así que lo que haremos...
+
+21
+00:01:42,008 --> 00:01:45,159
+Podemos arrastrarlas. Esta,
+
+22
+00:01:45,159 --> 00:01:50,301
+la que está conectada a "image four" y a "image three",
+
+23
+00:01:50,301 --> 00:01:56,924
+le damos a Ctrl+B, o clic derecho y clic en "bypass".
+
+24
+00:01:56,924 --> 00:02:01,656
+Porque no la vamos a usar en este tutorial.
+
+25
+00:02:04,598 --> 00:02:08,229
+En esta simplemente arrastramos y soltamos una imagen.
+
+26
+00:02:08,229 --> 00:02:13,581
+Por ahora te voy a mostrar un ejemplo con una imagen que generamos
+
+27
+00:02:13,581 --> 00:02:19,103
+en el módulo anterior, que era esta fachada con la barandilla
+
+28
+00:02:19,103 --> 00:02:23,004
+que editamos. Y, de hecho,
+
+29
+00:02:23,004 --> 00:02:26,325
+vamos a poner en bypass también la tercera.
+
+30
+00:02:26,325 --> 00:02:28,706
+Clic en "bypass".
+
+31
+00:02:33,218 --> 00:02:36,059
+Esto funciona por API.
+
+32
+00:02:36,059 --> 00:02:41,261
+Así que podemos ver la cantidad de créditos que va a costar.
+
+33
+00:02:41,261 --> 00:02:47,224
+Es mucho. 320 créditos por ejecución es muchísimo.
+
+34
+00:02:47,224 --> 00:02:49,645
+Tiene que ver con la resolución.
+
+35
+00:02:49,645 --> 00:02:53,927
+Si quisiéramos baja resolución, son solo 148.
+
+36
+00:02:53,927 --> 00:02:57,488
+Si lo subimos a 4K,
+
+37
+00:02:57,488 --> 00:03:01,630
+un video en 4K a partir de esta imagen va a costar
+
+38
+00:03:02,410 --> 00:03:04,471
+1.600 créditos.
+
+39
+00:03:04,471 --> 00:03:09,955
+Eso es muchísimo. Si calculo rápido,
+
+40
+00:03:09,955 --> 00:03:14,889
+depende un poco de tu plan,
+
+41
+00:03:14,889 --> 00:03:19,822
+pero son al menos cinco o diez euros solo por
+
+42
+00:03:19,822 --> 00:03:25,556
+un video. Así que, por ahora, lo vamos a mantener bastante
+
+43
+00:03:25,556 --> 00:03:30,860
+bajo, como ejemplo. Si lo tienes claro y quieres
+
+44
+00:03:31,020 --> 00:03:34,032
+hacer un video de verdad para un cliente o para el concurso,
+
+45
+00:03:34,032 --> 00:03:38,584
+prueba primero a 480 y siempre puedes volver
+
+46
+00:03:38,584 --> 00:03:44,938
+a 1080 después. Este prompt hay que quitarlo, porque no nos sirve.
+
+47
+00:03:44,938 --> 00:03:51,062
+La proporción la pondría en "adaptive", porque no sé cuál es exactamente.
+
+48
+00:03:51,062 --> 00:03:57,986
+Si tú sabes qué proporción es, puedes hacer clic en la que corresponda.
+
+49
+00:03:58,786 --> 00:04:03,627
+Otra cosa que impacta mucho en los créditos es cuánto quieres que dure el video.
+
+50
+00:04:03,627 --> 00:04:06,688
+Si pones siete u ocho segundos,
+
+51
+00:04:06,688 --> 00:04:10,469
+son unos 170 créditos.
+
+52
+00:04:10,469 --> 00:04:13,180
+Si lo subimos a 15, claro,
+
+53
+00:04:13,180 --> 00:04:19,812
+será el doble. El video más caro que podrías hacer sería en 4K.
+
+54
+00:04:19,812 --> 00:04:26,704
+Eso son unos 3.400 o 3.500 créditos,
+
+55
+00:04:26,704 --> 00:04:27,704
+que es muchísimo.
+
+56
+00:04:28,427 --> 00:04:32,217
+Así que no hagamos eso y dejémoslo en
+
+57
+00:04:34,478 --> 00:04:35,478
+algo así.
+
+58
+00:04:37,806 --> 00:04:41,898
+Para probar. Y lo más importante es el prompt.
+
+59
+00:04:41,898 --> 00:04:46,791
+¿Cómo lo escribimos? Vamos a nuestro prompt coach.
+
+60
+00:04:46,791 --> 00:04:50,934
+Escribí "start" y ahora voy a
+
+61
+00:04:53,836 --> 00:04:56,017
+subir esta imagen y
+
+62
+00:04:56,017 --> 00:04:59,008
+decir Seedance
+
+63
+00:04:59,769 --> 00:05:06,001
+2.0, porque al configurar este prompt coach dijimos que, con solo
+
+64
+00:05:06,001 --> 00:05:09,793
+decir Seedance 2.0, el modelo ya sabe cómo escribir
+
+65
+00:05:10,093 --> 00:05:15,595
+el prompt específicamente para ese modelo, así que no nos tenemos que preocupar
+
+66
+00:05:15,595 --> 00:05:18,016
+de cómo redactarlo. Quiero
+
+67
+00:05:18,276 --> 00:05:22,598
+hacer un zoom cinematográfico
+
+68
+00:05:24,414 --> 00:05:30,157
+sobre la barandilla de la loggia.
+
+69
+00:05:30,157 --> 00:05:35,890
+Digamos que es un detalle importante que quiero mostrar en mi presentación,
+
+70
+00:05:35,890 --> 00:05:38,932
+por el motivo que sea. Lo escribo aquí.
+
+71
+00:05:38,932 --> 00:05:44,755
+Ahora el agente ya sabe cuál es la imagen de partida y sabe
+
+72
+00:05:44,755 --> 00:05:50,468
+cómo indicarle a Seedance que haga esa acción.
+
+73
+00:05:50,468 --> 00:05:53,890
+Así que venimos aquí y
+
+74
+00:05:54,872 --> 00:05:57,131
+pegamos el prompt cuando lo tengamos.
+
+75
+00:05:59,342 --> 00:06:03,585
+Bien, el modelo terminó y dio este prompt JSON larguísimo.
+
+76
+00:06:03,585 --> 00:06:09,270
+No lo he leído, así que hago clic en copiar.
+
+77
+00:06:09,270 --> 00:06:13,013
+Vengo aquí y lo pego.
+
+78
+00:06:13,013 --> 00:06:17,517
+Te recomiendo mucho leerlo entero, porque a veces
+
+79
+00:06:17,517 --> 00:06:19,288
+dice cosas que no son ciertas.
+
+80
+00:06:19,288 --> 00:06:24,282
+Por ahora voy a dejar la parte en chino que hay aquí,
+
+81
+00:06:24,282 --> 00:06:27,365
+pero la puedes borrar si quieres.
+
+82
+00:06:27,365 --> 00:06:28,786
+Hacemos clic en "run".
+
+83
+00:06:29,644 --> 00:06:33,061
+Y el modelo empieza a generar;
+
+84
+00:06:33,061 --> 00:06:34,725
+como vemos, se pone azul,
+
+85
+00:06:34,725 --> 00:06:38,814
+y el video de salida aparecerá aquí.
+
+86
+00:06:41,614 --> 00:06:44,936
+El workflow que vamos a usar:
+
+87
+00:06:44,936 --> 00:06:48,958
+si vas a las plantillas y filtras por
+
+88
+00:06:48,958 --> 00:06:53,200
+Seedance 2.0, es este último.
+
+89
+00:06:53,200 --> 00:06:56,222
+Todas indican lo que hacen.
+
+90
+00:06:56,222 --> 00:07:02,405
+Si tienes varias imágenes de referencia y quieres enlazarlas,
+
+91
+00:07:02,405 --> 00:07:06,247
+usa esta. Si tienes un primer y un último fotograma,
+
+92
+00:07:06,247 --> 00:07:08,729
+como vimos en el PowerPoint,
+
+93
+00:07:08,729 --> 00:07:11,050
+usa esta.
+
+94
+00:07:11,604 --> 00:07:14,329
+La más simple es esta.
+
+95
+00:07:14,329 --> 00:07:18,466
+Hacemos clic aquí y lo que vemos es una imagen base,
+
+96
+00:07:18,466 --> 00:07:20,290
+este nodo.
+
+97
+00:07:22,370 --> 00:07:24,553
+El prompt lo vamos a borrar.
+
+98
+00:07:24,553 --> 00:07:27,890
+Voy a poner la
+
+99
+00:07:31,150 --> 00:07:37,472
+imagen de partida. Esta es la que generamos en el módulo tres con
+
+100
+00:07:37,472 --> 00:07:44,334
+image to image, donde editamos la barandilla e hicimos esta loggia.
+
+101
+00:07:44,334 --> 00:07:47,555
+Ahora, lo que tendríamos que hacer
+
+102
+00:07:47,895 --> 00:07:52,636
+es ir a nuestro prompt coach.
+
+103
+00:07:52,636 --> 00:07:56,837
+Recuerda el módulo uno: esto lo configuramos juntos,
+
+104
+00:07:56,837 --> 00:07:58,978
+y en las instrucciones pusimos...
+
+105
+00:07:59,436 --> 00:08:04,630
+Bueno, dimos toda la información, que también incluía las instrucciones
+
+106
+00:08:04,630 --> 00:08:11,235
+sobre cómo escribir prompts para Seedance 2.0.
+
+107
+00:08:11,235 --> 00:08:15,718
+Bien, yo diría algo así.
+
+108
+00:08:19,342 --> 00:08:24,307
+Seedance 2.0: quiero un zoom cinematográfico sobre la barandilla
+
+109
+00:08:24,347 --> 00:08:31,324
+de la loggia. Aunque esto no está muy bien redactado,
+
+110
+00:08:31,324 --> 00:08:33,166
+porque, claro, solo hay una loggia,
+
+111
+00:08:33,166 --> 00:08:35,998
+así que es un poco confuso, pero se entiende la idea.
+
+112
+00:08:35,998 --> 00:08:38,541
+Me dio este prompt larguísimo,
+
+113
+00:08:38,541 --> 00:08:39,541
+lo copio.
+
+114
+00:08:41,611 --> 00:08:47,476
+Después venimos aquí, y yo ya lo hice, porque,
+
+115
+00:08:47,476 --> 00:08:51,728
+como ves, ¿está aquí la información?
+
+116
+00:08:51,728 --> 00:08:57,272
+No. Esto tardaba unos dos minutos en generarse, para no perder tiempo,
+
+117
+00:08:57,272 --> 00:09:00,654
+pero simplemente tomé este prompt
+
+118
+00:09:02,772 --> 00:09:05,684
+y lo puse en esta parte de texto.
+
+119
+00:09:05,684 --> 00:09:09,067
+Los ajustes que usé fueron Seedance 2.0.
+
+120
+00:09:09,067 --> 00:09:14,912
+El prompt está aquí. La resolución la puse en 720 píxeles.
+
+121
+00:09:14,912 --> 00:09:20,336
+La proporción, en "adaptive", porque no sé exactamente cuál es.
+
+122
+00:09:20,336 --> 00:09:26,061
+Es más seguro usar "adaptive". La duración son los segundos que durará el video.
+
+123
+00:09:26,061 --> 00:09:30,205
+Claro, cuanto más largo, más caro.
+
+124
+00:09:30,205 --> 00:09:31,726
+Dejo activado
+
+125
+00:09:32,184 --> 00:09:34,365
+"generate audio" porque, si lo desactivo,
+
+126
+00:09:34,365 --> 00:09:38,117
+no sale más barato. Así que lo dejo encendido.
+
+127
+00:09:38,117 --> 00:09:43,280
+La seed es algo que en este workflow no me importa mucho,
+
+128
+00:09:43,280 --> 00:09:45,121
+así que la dejo como está.
+
+129
+00:09:45,121 --> 00:09:48,973
+Si queremos alta resolución,
+
+130
+00:09:48,973 --> 00:09:54,226
+por ejemplo 4K, ves que los créditos se disparan.
+
+131
+00:09:54,346 --> 00:09:58,088
+Si lo ponemos en 15 segundos,
+
+132
+00:09:58,088 --> 00:10:01,730
+en 4K son casi 30 euros por un video.
+
+133
+00:10:02,254 --> 00:10:08,218
+Es mucho; o unos veinte euros, creo, por un video si lo generamos
+
+134
+00:10:08,218 --> 00:10:14,660
+así. Por eso lo dejo en siete segundos y 720 píxeles, porque
+
+135
+00:10:14,660 --> 00:10:17,684
+por ahora estamos probando y con eso basta.
+
+136
+00:10:20,076 --> 00:10:22,264
+Y este es el resultado.
+
+137
+00:10:30,798 --> 00:10:35,540
+Como ves, hace lo que se le pidió:
+
+138
+00:10:35,540 --> 00:10:42,054
+hace zoom sobre la imagen. Pero, como nuestro prompt no era muy interesante,
+
+139
+00:10:42,054 --> 00:10:46,016
+el resultado tampoco lo es.
+
+140
+00:10:49,178 --> 00:10:55,802
+La pregunta podría ser: ¿cómo consigo más control sobre lo que
+
+141
+00:10:55,802 --> 00:10:57,643
+el video está mostrando?
+
+142
+00:10:57,643 --> 00:11:02,866
+Porque en esta imagen de entrada es bastante obvio que la barandilla
+
+143
+00:11:02,866 --> 00:11:08,650
+que queremos mostrar está aquí. No es muy difícil hacerle zoom.
+
+144
+00:11:08,650 --> 00:11:14,073
+¿Y si queremos algo más específico que es difícil de explicar con palabras?
+
+145
+00:11:14,073 --> 00:11:15,874
+Por ejemplo...
+
+146
+00:11:17,602 --> 00:11:23,236
+Otro ejemplo, en el prompt coach que acabo de abrir,
+
+147
+00:11:23,236 --> 00:11:28,339
+fue que hice unas anotaciones sobre la imagen y dije:
+
+148
+00:11:28,339 --> 00:11:34,133
+este detalle rojo de aquí, cómo la barandilla se conecta a este muro,
+
+149
+00:11:34,834 --> 00:11:40,788
+y cómo el panel, o los montantes de la ventana,
+
+150
+00:11:40,788 --> 00:11:45,862
+se conectan a esta esquina,
+
+151
+00:11:45,862 --> 00:11:46,862
+diría
+
+152
+00:11:46,112 --> 00:11:47,112
+yo.
+
+153
+00:11:46,956 --> 00:11:52,668
+Le pongo dos colores y después digo Seedance 2.0, para que sepa para qué
+
+154
+00:11:52,668 --> 00:11:57,650
+modelo es. Primero haz que el video haga zoom en el detalle de la barandilla
+
+155
+00:11:57,991 --> 00:12:01,772
+marcada en rojo, y después que haga zoom en el círculo azul.
+
+156
+00:12:01,772 --> 00:12:03,493
+El video dura ocho segundos.
+
+157
+00:12:03,493 --> 00:12:09,205
+Esto también es importante, porque así el modelo puede escribir el prompt
+
+158
+00:12:09,205 --> 00:12:13,757
+de forma específica y decir algo como: del segundo uno al cuatro,
+
+159
+00:12:13,757 --> 00:12:16,458
+haz esto; del cuatro al ocho, haz aquello.
+
+160
+00:12:16,728 --> 00:12:21,044
+Así que tomé este prompt. Como ves aquí,
+
+161
+00:12:21,044 --> 00:12:25,260
+la nota, el comentario del prompt coach, era: sube
+
+162
+00:12:25,260 --> 00:12:28,514
+el render limpio, no el PNG anotado.
+
+163
+00:12:28,514 --> 00:12:30,797
+Yo no le hice caso a ese consejo,
+
+164
+00:12:30,797 --> 00:12:31,797
+así que
+
+165
+00:12:34,508 --> 00:12:40,788
+si venimos aquí, le di la misma imagen.
+
+166
+00:12:40,788 --> 00:12:45,536
+Tomé este prompt,
+
+167
+00:12:45,536 --> 00:12:46,536
+le di a copiar,
+
+168
+00:12:48,886 --> 00:12:51,054
+lo pegué aquí, los ajustes eran los mismos,
+
+169
+00:12:51,054 --> 00:12:54,486
+lo puse en ocho segundos, y este es el resultado.
+
+170
+00:12:59,448 --> 00:13:04,132
+Hace muy bien el zoom exactamente sobre ese punto y, después,
+
+171
+00:13:04,132 --> 00:13:07,033
+hace zoom sobre el montante de la ventana.
+
+172
+00:13:07,033 --> 00:13:11,642
+Estoy muy contento con la primera parte, donde va exactamente ahí.
+
+173
+00:13:14,242 --> 00:13:17,165
+Esta me la imaginaba más como la esquina,
+
+174
+00:13:17,165 --> 00:13:22,150
+pero es mi primer intento. Entonces volvería a Claude,
+
+175
+00:13:22,150 --> 00:13:28,976
+a mi prompt coach, y le diría: hazlo más específico.
+
+176
+00:13:28,976 --> 00:13:30,327
+...
+
+177
+00:13:33,265 --> 00:13:36,365
+Y asegúrate de que hace zoom
+
+178
+00:13:40,636 --> 00:13:45,541
+en la esquina marcada con el círculo azul.
+
+179
+00:13:45,541 --> 00:13:49,826
+Por ejemplo, algo que yo esperaba que hiciera,
+
+180
+00:13:49,826 --> 00:13:55,794
+sinceramente, en vez de hacer zoom primero
+
+181
+00:13:59,010 --> 00:14:01,531
+y después cortar de golpe a la siguiente escena,
+
+182
+00:14:01,531 --> 00:14:03,472
+pensaba que haría una transición extra,
+
+183
+00:14:03,472 --> 00:14:08,675
+pero no lo especifiqué. Así que diría: asegúrate
+
+184
+00:14:08,715 --> 00:14:14,398
+de que haga una transición suave
+
+185
+00:14:18,392 --> 00:14:24,154
+entre el primer plano, el zoom sobre el
+
+186
+00:14:31,148 --> 00:14:32,939
+detalle rojo,
+
+187
+00:14:37,534 --> 00:14:40,656
+y el segundo plano,
+
+188
+00:14:43,594 --> 00:14:45,772
+el detalle de la esquina azul.
+
+189
+00:14:48,002 --> 00:14:49,505
+Asegúrate de que sea
+
+190
+00:14:50,708 --> 00:14:55,978
+todo un plano continuo
+
+191
+00:14:56,800 --> 00:14:58,001
+y sin
+
+192
+00:15:04,846 --> 00:15:05,846
+cortes.
+
+193
+00:15:08,664 --> 00:15:14,239
+Algo así. Puede que, otra vez, no sea la mejor forma de decirlo,
+
+194
+00:15:14,239 --> 00:15:18,213
+pero mi prompt coach me puede dar
+
+195
+00:15:18,213 --> 00:15:23,068
+un nuevo prompt y lo vuelvo a intentar.
+
+196
+00:15:23,068 --> 00:15:29,614
+Otra cosa que podrías hacer es descargar este video y meterlo aquí.
+
+197
+00:15:29,614 --> 00:15:33,238
+No lo voy a hacer, pero es una opción si quieres.
+
+198
+00:15:37,262 --> 00:15:41,410
+No voy a ejecutar este video, pero se entiende la idea.
+
+199
+00:15:41,410 --> 00:15:45,277
+Voy a dejar todos los videos
+
+200
+00:15:48,182 --> 00:15:51,944
+que generamos aquí; los descargo.
+
+201
+00:15:55,648 --> 00:15:57,920
+Y así tú también tienes acceso.
+
+202
+00:15:57,920 --> 00:16:00,822
+Con estos videos pasa lo mismo.
+
+203
+00:16:00,822 --> 00:16:05,947
+Si los descargas y los arrastras a Comfy, también puedes
+
+204
+00:16:05,947 --> 00:16:09,130
+ver el prompt. Así que tranquilo.
+
+205
+00:16:09,130 --> 00:16:14,454
+El ejemplo que vimos aquí era, primero, describir dónde quieres hacer zoom.
+
+206
+00:16:14,454 --> 00:16:21,120
+El segundo era anotar directamente: quiero que haga zoom exactamente en esta parte.
+
+207
+00:16:21,120 --> 00:16:23,322
+Y después este.
+
+208
+00:16:24,250 --> 00:16:27,331
+También podemos añadir una flecha aquí y decir:
+
+209
+00:16:27,331 --> 00:16:31,352
+después del primer zoom, sigue la flecha verde hasta este detalle, y
+
+210
+00:16:31,352 --> 00:16:36,994
+probablemente lo hará. También podríamos, para hacerlo más simple,
+
+211
+00:16:36,994 --> 00:16:41,535
+hacer un plano de unos cuatro segundos con zoom sobre el detalle rojo,
+
+212
+00:16:41,535 --> 00:16:44,516
+y después otro con zoom sobre el azul,
+
+213
+00:16:44,516 --> 00:16:47,717
+el círculo azul, y montarlos juntos.
+
+214
+00:16:47,717 --> 00:16:49,568
+Hay infinitas formas de hacerlo.
+
+215
+00:16:49,568 --> 00:16:50,568
+...
+
+216
+00:16:51,448 --> 00:16:56,270
+Pero la idea para tener control es hacer anotaciones sobre la imagen de entrada.
+
+217
+00:17:03,534 --> 00:17:07,377
+Bien, espero que esto haya quedado un poco más claro.
+
+218
+00:17:07,377 --> 00:17:11,740
+Partimos de una sola imagen y llegamos a un video.
+
+219
+00:17:11,740 --> 00:17:18,067
+La siguiente plantilla que vamos a usar ya está preparada,
+
+220
+00:17:18,067 --> 00:17:20,249
+así que descargamos el video.
+
+221
+00:17:24,714 --> 00:17:27,507
+Y lo arrastramos a Comfy.
+
+222
+00:17:27,507 --> 00:17:31,690
+Y ves el workflow.
+
+223
+00:17:31,690 --> 00:17:34,973
+No hagas caso de estos errores:
+
+224
+00:17:34,973 --> 00:17:39,947
+es porque las imágenes de entrada que le di ya
+
+225
+00:17:39,947 --> 00:17:45,731
+no están ahí, porque a veces no las recuerda
+
+226
+00:17:45,731 --> 00:17:49,614
+en los metadatos,
+
+227
+00:17:49,614 --> 00:17:51,906
+pero da igual, porque es solo un ejemplo.
+
+228
+00:17:53,218 --> 00:17:59,521
+Este workflow toma más de una imagen y la convierte en una secuencia de planos.
+
+229
+00:17:59,521 --> 00:18:04,664
+En esencia, este es el resultado.
+
+230
+00:18:04,664 --> 00:18:08,746
+Esto es un solo video de siete segundos.
+
+231
+00:18:08,746 --> 00:18:15,730
+Toma varios planos y hace algo así
+
+232
+00:18:15,730 --> 00:18:22,514
+como esto. Lo hice yendo a las plantillas; es esta plantilla.
+
+233
+00:18:22,902 --> 00:18:28,229
+Ves que esta es casi igual que esta otra.
+
+234
+00:18:28,229 --> 00:18:33,816
+El prompt, otra vez. Fui a mi prompt coach.
+
+235
+00:18:33,816 --> 00:18:38,262
+Subí varias tomas del edificio.
+
+236
+00:18:44,054 --> 00:18:47,635
+Las añadí aquí abajo para que las veas.
+
+237
+00:18:47,635 --> 00:18:49,726
+Puedes probarlo tú mismo:
+
+238
+00:18:49,726 --> 00:18:55,497
+descarga estas y ponlas en estos espacios.
+
+239
+00:18:55,497 --> 00:19:01,019
+Puedes arrastrarlas ahí o hacer clic en este botón para añadirlas.
+
+240
+00:19:01,019 --> 00:19:06,060
+Toma las mismas imágenes que le diste al prompt coach,
+
+241
+00:19:06,060 --> 00:19:11,422
+dile lo que quieras, escribirá el prompt y lo pegas en Comfy.
+
+242
+00:19:12,224 --> 00:19:17,439
+Y obtendrás el resultado que se ve aquí.
+
+243
+00:19:17,439 --> 00:19:23,375
+Eso por un lado. Hay otro workflow que
+
+244
+00:19:23,375 --> 00:19:27,409
+vamos a probar nosotros, que otra vez es con una sola
+
+245
+00:19:30,838 --> 00:19:31,838
+imagen de entrada.
+
+246
+00:19:34,562 --> 00:19:37,175
+Y es este prompt: trípode
+
+247
+00:19:39,246 --> 00:19:46,071
+fijo, time lapse, el edificio permanece completamente estático, las nubes
+
+248
+00:19:46,432 --> 00:19:50,855
+se desplazan lentamente por el cielo, etc. Así que lo voy
+
+249
+00:19:50,855 --> 00:19:56,680
+a preparar. Bien, avanzamos: cambié un poco el prompt
+
+250
+00:19:57,201 --> 00:20:03,506
+y lo que quiero mostrarte aquí es que primero probé
+
+251
+00:20:03,506 --> 00:20:08,470
+a meterlo en el prompt coach: trípode fijo, time lapse.
+
+252
+00:20:09,064 --> 00:20:12,098
+Y el resultado no estuvo nada mal.
+
+253
+00:20:12,098 --> 00:20:14,360
+Voy a quitar la música.
+
+254
+00:20:18,604 --> 00:20:22,076
+No estuvo mal, porque es un time lapse y ves que las cosas se mueven.
+
+255
+00:20:22,076 --> 00:20:28,079
+Esto se
+
+256
+00:20:28,079 --> 00:20:32,341
+hizo con un prompt muy largo,
+
+257
+00:20:32,341 --> 00:20:33,341
+creo.
+
+258
+00:20:38,882 --> 00:20:42,123
+Este no. Si te lo muestro aquí,
+
+259
+00:20:42,123 --> 00:20:47,004
+"open as workflow in a new tab", puedo volver al prompt.
+
+260
+00:20:47,004 --> 00:20:49,566
+Ves que, otra vez, era un prompt larguísimo.
+
+261
+00:20:49,566 --> 00:20:52,788
+Esa era la salida del prompt coach.
+
+262
+00:20:52,788 --> 00:20:57,060
+No era nada del otro mundo, así que probé otra cosa.
+
+263
+00:20:57,060 --> 00:21:00,711
+Quizá debería usar esto como prompt,
+
+264
+00:21:00,711 --> 00:21:05,093
+sin complicarlo tanto, y ver cuál es el resultado.
+
+265
+00:21:05,093 --> 00:21:07,154
+...
+
+266
+00:21:15,822 --> 00:21:19,964
+Y esto se parecía mucho más a lo que yo esperaba.
+
+267
+00:21:19,964 --> 00:21:25,786
+Así que a veces el prompt coach no es siempre la mejor forma de mejorar
+
+268
+00:21:25,786 --> 00:21:29,688
+un prompt. Prueba de otra manera.
+
+269
+00:21:29,688 --> 00:21:33,169
+Y este, en mi opinión, es un buen resultado.
+
+270
+00:21:33,169 --> 00:21:35,350
+Aquí vimos tres workflows.
+
+271
+00:21:35,350 --> 00:21:38,611
+En el lado derecho de Miro, otra vez,
+
+272
+00:21:38,611 --> 00:21:42,903
+puse un montón de recursos distintos.
+
+273
+00:21:43,341 --> 00:21:46,042
+Por ejemplo, aquí: video to video.
+
+274
+00:21:46,042 --> 00:21:50,253
+Lo que hace es tomar un video;
+
+275
+00:21:50,253 --> 00:21:56,865
+el workflow convierte un video de siete segundos en uno de 14,
+
+276
+00:21:56,865 --> 00:21:59,406
+lo que puede ser interesante al editar videos.
+
+277
+00:21:59,406 --> 00:22:04,247
+Puede que para mucha gente no sea aplicable,
+
+278
+00:22:04,247 --> 00:22:08,148
+pero muchas veces, cuando editas algo y quieres ralentizar un video,
+
+279
+00:22:08,789 --> 00:22:09,789
+y lo haces
+
+280
+00:22:10,237 --> 00:22:13,420
+en Adobe After Effects o Adobe Premiere Pro o similar,
+
+281
+00:22:13,420 --> 00:22:19,947
+empieza a verse muy entrecortado, porque los fotogramas se estiran.
+
+282
+00:22:19,947 --> 00:22:22,149
+Se nota que está ralentizado.
+
+283
+00:22:22,149 --> 00:22:28,156
+Con este workflow, si descargas este video y lo importas en Comfy...
+
+284
+00:22:28,156 --> 00:22:29,357
+Hagámoslo.
+
+285
+00:22:31,661 --> 00:22:36,729
+Descargamos este y entramos en Comfy.
+
+286
+00:22:41,003 --> 00:22:45,587
+Lo arrastramos aquí. Ves que este es mi workflow
+
+287
+00:22:45,587 --> 00:22:50,201
+de interpolación de fotogramas, y los resultados.
+
+288
+00:22:53,897 --> 00:22:56,789
+Es el mismo video;
+
+289
+00:22:56,789 --> 00:22:59,100
+bueno, esta es otra prueba que hice.
+
+290
+00:22:59,100 --> 00:23:04,543
+Pero dura el doble, porque por cada fotograma del video
+
+291
+00:23:04,543 --> 00:23:08,135
+el modelo genera otro fotograma.
+
+292
+00:23:08,135 --> 00:23:10,106
+Simplemente duplica la cantidad de fotogramas,
+
+293
+00:23:10,106 --> 00:23:16,510
+lo cual está muy bien para editar. Échale un vistazo si te parece interesante.
+
+294
+00:23:16,510 --> 00:23:21,402
+Y aquí hay más videos, como este,
+
+295
+00:23:21,402 --> 00:23:22,402
+por ejemplo.
+
+296
+00:23:27,083 --> 00:23:31,277
+También con Seedance. Este es otro modelo, llamado LTX.
+
+297
+00:23:31,277 --> 00:23:35,141
+No te voy a mostrar el workflow entero,
+
+298
+00:23:38,421 --> 00:23:41,975
+pero puedes mirarlo. Estos ejemplos también son interesantes.
+
+299
+00:23:45,367 --> 00:23:49,124
+Descárgalos y mira si puedes hacer algo con ellos.
+
+300
+00:23:49,124 --> 00:23:52,271
+Puedo borrar este.
+
+301
+00:23:52,271 --> 00:23:55,176
+Aquí había otro proyecto que hicimos.
+
+302
+00:24:01,587 --> 00:24:04,839
+Un poco raro, pero puede ser interesante.
+
+303
+00:24:04,839 --> 00:24:10,852
+Y una cosa extra: si trabajas con Claude y tienes
+
+304
+00:24:10,852 --> 00:24:13,564
+algo más de experiencia, conocerás las skills.
+
+305
+00:24:13,564 --> 00:24:15,325
+Si no sabes qué es una skill,
+
+306
+00:24:15,325 --> 00:24:17,885
+tranquilo, lo puedes buscar en internet.
+
+307
+00:24:17,885 --> 00:24:24,030
+Pero hay una skill específica hecha para Seedance.
+
+308
+00:24:24,030 --> 00:24:28,372
+Si quieres, puedes hacer clic aquí, en "more".
+
+309
+00:24:36,543 --> 00:24:41,114
+Exportar como markdown y después importarlo en Claude como skill,
+
+310
+00:24:41,114 --> 00:24:43,515
+y así hará prompts
+
+311
+00:24:43,515 --> 00:24:49,467
+específicamente para Seedance 2.0.
+
+312
+00:24:49,467 --> 00:24:52,477
+Pero no es necesario; es un poco como las instrucciones del proyecto,
+
+313
+00:24:52,477 --> 00:24:55,758
+como el prompt coach que hicimos,
+
+314
+00:24:55,758 --> 00:24:59,379
+pero de otra manera. Échale un vistazo.
+
+315
+00:24:59,379 --> 00:25:05,221
+Después tienes Google Omni, que es el modelo de video más avanzado de
+
+316
+00:25:05,729 --> 00:25:10,668
+Google, donde probé este prompt para conseguir las cuatro estaciones.
+
+317
+00:25:12,957 --> 00:25:13,957
+Sí.
+
+318
+00:25:15,853 --> 00:25:18,075
+Y, como ves, es bastante capaz.
+
+319
+00:25:18,075 --> 00:25:21,418
+Por si te interesa.
+
+320
+00:25:21,418 --> 00:25:26,042
+También puedes entrar en estos enlaces y mirar estos ejemplos.
+
+321
+00:25:26,042 --> 00:25:29,375
+Pero muchas veces es lo mismo:
+
+322
+00:25:29,375 --> 00:25:34,129
+simplemente hacer un video a partir de una imagen.
+
+323
+00:25:39,091 --> 00:25:44,084
+Una última cosa que quiero añadir: en "resources" encontrarás los enlaces
+
+324
+00:25:44,545 --> 00:25:48,427
+de los modelos. Y esta web es bastante interesante, si la abres.
+
+325
+00:25:48,427 --> 00:25:52,140
+Hay un montón de prompts para Seedance 2.0.
+
+326
+00:25:52,140 --> 00:25:54,792
+Puedes ver los prompts en tendencia,
+
+327
+00:25:54,792 --> 00:25:56,093
+y aquí puedes
+
+328
+00:25:58,321 --> 00:26:02,243
+ordenar o filtrar, quizá por algo como arquitectura
+
+329
+00:26:02,343 --> 00:26:06,545
+o animación.
+
+330
+00:26:06,545 --> 00:26:08,846
+No sé cuál sea tu objetivo,
+
+331
+00:26:08,846 --> 00:26:15,408
+pero es una web muy buena para inspirarte y ver un montón de cosas
+
+332
+00:26:15,429 --> 00:26:16,489
+que son posibles.
+
+333
+00:26:18,946 --> 00:26:22,222
+Dicho esto, cierro aquí el módulo cuatro.

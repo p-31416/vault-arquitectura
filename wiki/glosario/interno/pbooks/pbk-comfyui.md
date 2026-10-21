@@ -2,8 +2,8 @@
 tipo: playbook
 codigo: pbk-comfyui
 fecha_creacion: 2026-07-19
-ultima_actualizacion: 2026-09-09
-tags: [pbook, comfyui, txt2img, img2img, controlnet, canny, depth, video, runpod, arquitectura]
+ultima_actualizacion: 2026-10-20
+tags: [pbook, comfyui, txt2img, img2img, controlnet, canny, depth, video, runpod, arquitectura, flux2, klein, lora, rhino-to-image]
 ---
 
 # pbk-comfyui — ComfyUI para el estudio
@@ -15,6 +15,7 @@ tags: [pbook, comfyui, txt2img, img2img, controlnet, canny, depth, video, runpod
 - [[Base local: RX 570 8GB DirectML]])
 - [[txt2img (concepto)]])
 - [[img2img (variaciones sobre base)]])
+- [[#Rhino-to-Image (FLUX.2 klein 9B + LoRA)]])
 - [[Pipeline ControlNet (diagrama)]])
 - [[ControlNet: Canny]])
 - [[ControlNet: Depth]])
@@ -38,6 +39,7 @@ tags: [pbook, comfyui, txt2img, img2img, controlnet, canny, depth, video, runpod
 | txt2img (concepto) | [§ txt2img](#txt2img-concepto) | CheckpointLoader → CLIPTextEncode → KSampler → VAEDecode |
 | img2img (variaciones) | [§ img2img](#img2img-variaciones-sobre-base) | LoadImage → VAEEncode → KSampler (denoise<1) → VAEDecode |
 | ControlNet (Canny/Depth/otros) | [§ diagrama](#pipeline-controlnet-diagrama) | LoadImage → preprocesador → ControlNetApply → KSampler |
+| Rhino-to-Image (volumetría → foto) | [§ rhino-to-image](#rhino-to-image-flux2-klein-9b--lora) | LoadImage ×2 → ImageScaleToTotalPixels → VAEEncode → ReferenceLatent ×2 → CFGGuider → SamplerCustomAdvanced |
 | Upscale / Hires Fix | [§ upscale](#upscale--hires-fix-entrega) | 2º KSampler denoise bajo → ImageUpscaleWithModel |
 | Video img2video | [§ video](#video-imagenvideo-y-recorridos) | Render → stage → LTX i2v (RunPod) |
 
@@ -54,6 +56,7 @@ tags: [pbook, comfyui, txt2img, img2img, controlnet, canny, depth, video, runpod
 | Render final entrega A3/A2 | txt2img/CN + Hires + upscaler 4x | Juggernaut XL (justo) | **RunPod** (recomendado) |
 | Recorrido / video masa | img2video (LTX/AnimateDiff) | no local | **RunPod** |
 | Iteración ultra-rápida | GGUF turbo (Z-Image/Flux schnell) | pendiente instalar | RunPod Flux |
+| **Volumetría de Rhino → render fotorrealista** | **Rhino-to-Image (FLUX.2 klein 9B)** | **no local (8 GB)** | **RunPod 24 GB ($0,22/h)** |
 
 ## Base local: RX 570 8GB DirectML
 
@@ -79,6 +82,27 @@ Negativo base: `blurry, low quality, distorted, watermark, text, signature, cart
 ## img2img (variaciones sobre base)
 
 Pipeline: `LoadImage → VAEEncode → KSampler (denoise < 1) → VAEDecode`. El **denoise** es el mando: `0.3` = retoque leve · `0.6–0.8` = re-estilo manteniendo composición · `1.0` = txt2img (ignora input). Caso estudio: foto de maqueta / render viejo denoise 0.6 + prompt de materialidad nueva.
+
+## Rhino-to-Image (FLUX.2 klein 9B + LoRA)
+
+Flujo del módulo 3 del curso "AI×Gaudí": una volumetría de Rhino + una foto de material real entran como **latentes de referencia** y salen como render fotorrealista con la geometría en su sitio.
+
+| Pieza | Detalle |
+|-------|---------|
+| Modelo | FLUX.2 [klein] 9B (9,4 GB fp8) + text encoder Qwen3-8B (8,7 GB) + VAE Flux2 (238 MB) |
+| LoRA | `rhino-to-image-lora.basic.safetensors` (rank 16, F32) — strength 0,6–1,0 |
+| Control geométrico | **nativo**: `ReferenceLatent` ×2 con método `index` (sin ControlNet: klein no tiene ControlNet oficial de BFL) |
+| Sampling | `Flux2Scheduler` (4 steps destilado / 20 base) + `CFGGuider` (cfg 1 / 5) + `SamplerCustomAdvanced` (esquema nuevo: noise/guider/sampler/sigmas/latent_image) |
+| Dónde corre | **RunPod 24 GB** (3090 $0,22/h · 4090 $0,34/h). Local solo con offload del text encoder a RAM |
+| Costo del concurso | $2–5 por las 20–40 imágenes finales |
+
+Fichas: [[wiki/glosario/software/flux2-klein-9b|flux2-klein-9b]] · [[wiki/glosario/software/lora-rhino-to-image-gaudi|lora-rhino-to-image-gaudi]] · workflow [[proyectos/MVP_04-comfyui-arquitectura/n_05-rhino-mcp/WF-rhino-to-image/00-README|WF-rhino-to-image]].
+
+**Preprocesado desde Rhino** (3 pasadas, misma cámara): `geo_shaded.png` (volumetría), `geo_lines.png` (líneas, 3ª referencia opcional), `material.jpg` (foto de material real). La coincidencia de cámara entre geometría y material es lo que hace coherente el resultado.
+
+**Calibración:** 4 corridas con el mismo seed — strength 0,0 / 0,6 / 0,8 / 1,0 — para separar el aporte del LoRA del aporte de la referencia. Luego repetir con la variante base (20 steps, cfg 5) para confirmar en qué variante se entrenó.
+
+**Licencia:** klein 9B es FLUX Non-Commercial → admisible en concurso, y para cliente la vía es klein 4B (Apache 2.0) con LoRA reentrenado.
 
 ## Pipeline ControlNet (diagrama)
 
@@ -189,31 +213,4 @@ Toda salida que entre al proyecto: nombre `n_XX-{A–F}-{NN}.png` (A baseline ·
 - [[proyectos/MVP_04-comfyui-arquitectura/n_03-controlnet/00-index|n_03 — ControlNet]]
 - [[proyectos/MVP_04-comfyui-arquitectura/n_03-controlnet/n_03-WF01-croquis-estadio/index-n_03_WF01|n_03-WF01-croquis-estadio]]
 - [[proyectos/MVP_04-comfyui-arquitectura/n_03-controlnet/n_03-WF01-croquis-estadio/adr/00-index|ADRs]]
-
-## Troubleshooting exprés
-
-| Síntoma | Causa probable | Fix |
-|---|---|---|
-| OOM en SDXL | res/batch/CN de más | `--lowvram --cpu-vae`, res ≤1216×832, 1 CN, batch 1 |
-| Negro / artefactos | scheduler/cfg de DiT mal | GGUF: cfg 1.0, steps 4–8, scheduler simple |
-| Canny no guía | strength/end bajos o res ≠512 | strength ≥0.8, end 0.8, ImageScale lanczos 512 |
-| Modelo no aparece | carpeta equivocada | `models/checkpoints|controlnet|upscale_models`, Refresh, reiniciar |
-| Cola atascada / VRAM full | modelo anterior en memoria | `Free VRAM` / reiniciar; detalle en [[wiki/glosario/interno/pbooks/pbk-troubleshooting-reconexion|pbk-troubleshooting-reconexion]] |
-
-## Conceptos relacionados
-
-- [[wiki/glosario/software/comfyui|comfyui]]
-- [[wiki/glosario/interno/pbooks/pbk-troubleshooting-reconexion|pbk-troubleshooting-reconexion]]
-- [[wiki/glosario/conceptos/lean|lean]]
-
-## Referencias
-
-- ComfyUI Docs — ControlNet guide: https://docs.comfy.org/controlnet-guide (verificado 2026-09-09 — 200)
-- ComfyUI Docs — Flux.1 ControlNet (Canny/Depth): https://docs.comfy.org/tutorials/flux/flux-1-controlnet (verificado 2026-09-09 — 200)
-- ComfyUI ControlNet integration (tipos Union 0–7): https://deepwiki.com/comfyanonymous/ComfyUI/7.1-controlnet-integration (verificado 2026-09-09 — 200)
-- comfyui_controlnet_aux (preprocesadores): https://github.com/Fannovel16/comfyui_controlnet_aux (verificado 2026-09-09 — 200)
-- RunPod — ComfyUI + Flux guide (template, costos, txt2img/img2img/video): https://www.runpod.io/articles/guides/comfy-ui-flux (verificado 2026-09-09 — 200)
-- LTX-2 ControlNet depth video workflow: https://www.runcomfy.com/comfyui-workflows/ltx-2-controlnet-in-comfyui-depth-controlled-video-workflow (verificado 2026-09-09 — 200)
-- Zhang et al. — ControlNet paper: https://arxiv.org/abs/2302.05543 (verificado 2026-09-09 — 200)
-- MiDaS paper: https://arxiv.org/abs/1907.01341 (verificado 2026-09-09 — 200)
-- ComfyUI repo: https://github.com/comfyanonymous/ComfyUI (verificado 2026-09-09 — 200)
+- [[proyectos/MVP_04-comfyui-arquitectura/n_05-rhino-mcp/WF-rhino-to-image/00-README|WF-rhino-to-image]] — Rhino-to-Image con FLUX.2 klein 9B + LoRA del curso AI×Gaudí

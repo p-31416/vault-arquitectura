@@ -5,10 +5,10 @@
 | Campo | Valor |
 |---|---|
 | Carpeta indexada | `P:\00-repos\ComfyUI\output` |
-| Renders totales | 80 |
-| Con metadata | 80 |
+| Renders totales | 94 |
+| Con metadata | 94 |
 | Sin metadata | 0 |
-| Fecha del índice | 2026-10-21 |
+| Fecha del índice | 2026-10-29 |
 
 ## Renders con metadata
 
@@ -94,6 +94,20 @@
 | 2026-10-16 10:32 | `WF08-F8` | architecturerealmix_v11.safetensors | markerhandsketch-V1.safetensors 0.8 | 30/7.0 | euler | 42 | — |
 | 2026-10-16 11:20 | `WF02-inpaint` | sd-v1-5-inpainting-fp16.safetensors | — | 30/7.0 | euler | 42 | — |
 | 2026-10-16 12:00 | `WF02-inpaint-muro` | sd-v1-5-inpainting-fp16.safetensors | — | 30/7.0 | euler | 42 | — |
+| 2026-10-29 13:47 | `matriz/sd15/M01` | architecturerealmix_v11.safetensors | — | 30/7.0 | euler_ancestral | 42 | 768x512 |
+| 2026-10-29 13:49 | `matriz/sd15/M03` | architecturerealmix_v11.safetensors | JJ_Archvizcg_v2.safetensors 0.8 | 30/7.0 | euler_ancestral | 42 | 768x512 |
+| 2026-10-29 13:52 | `matriz/sd15/M04` | architecturerealmix_v11.safetensors | sandiese.safetensors 0.8 | 30/7.0 | euler_ancestral | 42 | 768x512 |
+| 2026-10-29 13:55 | `matriz/sd15/M05` | architecturerealmix_v11.safetensors | BrutalistTech-20.safetensors 0.8 | 30/7.0 | euler_ancestral | 42 | 768x512 |
+| 2026-10-29 13:58 | `matriz/sd15/M06` | architecturerealmix_v11.safetensors | Le Corbusier 2.2.7.2_sd1.5-000016.safetensors 0.8 | 30/7.0 | euler_ancestral | 42 | 768x512 |
+| 2026-10-29 14:01 | `matriz/sd15/M07` | architecturerealmix_v11.safetensors | room.safetensors 0.8 | 30/7.0 | euler_ancestral | 42 | 768x512 |
+| 2026-10-29 14:03 | `matriz/sd15/M08` | architecturerealmix_v11.safetensors | xsarchitectural-10superhighrisebuilding.safetensors 0.8 | 30/7.0 | euler_ancestral | 42 | 768x512 |
+| 2026-10-29 14:04 | `matriz/sd15/M14` | architecturerealmix_v11.safetensors | — | 10/7.0 | euler_ancestral | 42 | 768x512 |
+| 2026-10-29 14:08 | `matriz/sd15/M15` | architecturerealmix_v11.safetensors | — | 50/7.0 | euler_ancestral | 42 | 768x512 |
+| 2026-10-29 14:10 | `matriz/sd15/M16` | architecturerealmix_v11.safetensors | — | 30/3.0 | euler_ancestral | 42 | 768x512 |
+| 2026-10-29 14:12 | `matriz/sd15/M17` | architecturerealmix_v11.safetensors | — | 30/12.0 | euler_ancestral | 42 | 768x512 |
+| 2026-10-29 14:15 | `matriz/sd15/M18` | architecturerealmix_v11.safetensors | — | 30/7.0 | dpmpp_2m | 42 | 768x512 |
+| 2026-10-29 14:17 | `matriz/sd15/M19` | architecturerealmix_v11.safetensors | — | 30/7.0 | euler_ancestral | 42 | 512x512 |
+| 2026-10-29 14:20 | `matriz/sd15/M20` | architecturerealmix_v11.safetensors | — | 30/7.0 | euler_ancestral | 42 | 768x768 |
 
 ## Prompts (para reusar)
 
@@ -177,3 +191,17 @@
 - **WF08-F8** — `marker painting, handsketch, same modern concrete house, minimalist facade, architectural sketch on white paper | blurry, low quality, distorted, watermark, text, cartoon, deformed, photorealistic, photo`
 - **WF02-inpaint** — `modern glass windows with black aluminum frames set in concrete wall, photorealistic, matching modern minimalist house facade, at night | blurry, low quality, distorted, cartoon, illustration, ugly, deformed, brick wall,`
 - **WF02-inpaint-muro** — `solid board-formed concrete wall, raw concrete texture, monolithic parapet closing the balcony, photorealistic, matching modern minimalist house facade, same daylight | blurry, low quality, glass, windows, railing, balus`
+- **matriz/sd15/M01** — `a contemporary market and digital culture centre in Barcelona beside the Sagrada Familia, board-formed concrete and glass facade, colonnade of inclined columns, deep loggias, warm stone paving with market stalls, people `
+- **matriz/sd15/M03** — `archviz, a contemporary market and digital culture centre in Barcelona beside the Sagrada Familia, board-formed concrete and glass facade, colonnade of inclined columns, deep loggias, warm stone paving with market stalls`
+- **matriz/sd15/M04** — `architecture, building, grey_background, a contemporary market and digital culture centre in Barcelona beside the Sagrada Familia, board-formed concrete and glass facade, colonnade of inclined columns, deep loggias, warm`
+- **matriz/sd15/M05** — `brutaltech, cement, a contemporary market and digital culture centre in Barcelona beside the Sagrada Familia, board-formed concrete and glass facade, colonnade of inclined columns, deep loggias, warm stone paving with ma`
+- **matriz/sd15/M06** — `zhuai_pb, brutalism, a contemporary market and digital culture centre in Barcelona beside the Sagrada Familia, board-formed concrete and glass facade, colonnade of inclined columns, deep loggias, warm stone paving with m`
+- **matriz/sd15/M07** — `room, a contemporary market and digital culture centre in Barcelona beside the Sagrada Familia, board-formed concrete and glass facade, colonnade of inclined columns, deep loggias, warm stone paving with market stalls, p`
+- **matriz/sd15/M08** — `architectural renderings, bird's-eye view, a contemporary market and digital culture centre in Barcelona beside the Sagrada Familia, board-formed concrete and glass facade, colonnade of inclined columns, deep loggias, wa`
+- **matriz/sd15/M14** — `a contemporary market and digital culture centre in Barcelona beside the Sagrada Familia, board-formed concrete and glass facade, colonnade of inclined columns, deep loggias, warm stone paving with market stalls, people `
+- **matriz/sd15/M15** — `a contemporary market and digital culture centre in Barcelona beside the Sagrada Familia, board-formed concrete and glass facade, colonnade of inclined columns, deep loggias, warm stone paving with market stalls, people `
+- **matriz/sd15/M16** — `a contemporary market and digital culture centre in Barcelona beside the Sagrada Familia, board-formed concrete and glass facade, colonnade of inclined columns, deep loggias, warm stone paving with market stalls, people `
+- **matriz/sd15/M17** — `a contemporary market and digital culture centre in Barcelona beside the Sagrada Familia, board-formed concrete and glass facade, colonnade of inclined columns, deep loggias, warm stone paving with market stalls, people `
+- **matriz/sd15/M18** — `a contemporary market and digital culture centre in Barcelona beside the Sagrada Familia, board-formed concrete and glass facade, colonnade of inclined columns, deep loggias, warm stone paving with market stalls, people `
+- **matriz/sd15/M19** — `a contemporary market and digital culture centre in Barcelona beside the Sagrada Familia, board-formed concrete and glass facade, colonnade of inclined columns, deep loggias, warm stone paving with market stalls, people `
+- **matriz/sd15/M20** — `a contemporary market and digital culture centre in Barcelona beside the Sagrada Familia, board-formed concrete and glass facade, colonnade of inclined columns, deep loggias, warm stone paving with market stalls, people `

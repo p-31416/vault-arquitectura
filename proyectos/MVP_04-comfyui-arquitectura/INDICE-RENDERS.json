@@ -1332,5 +1332,259 @@
     "resolucion": null,
     "prompt": "solid board-formed concrete wall, raw concrete texture, monolithic parapet closing the balcony, photorealistic, matching modern minimalist house facade, same daylight | blurry, low quality, glass, windows, railing, balustrade, openings, people, cartoon",
     "tiene_metadata": true
+  },
+  {
+    "archivo": "matriz/sd15/M01_00001_.png",
+    "fecha": "2026-10-29 13:47",
+    "workflow": "matriz/sd15/M01",
+    "modelo": "architecturerealmix_v11.safetensors",
+    "loras": [],
+    "sampler": "euler_ancestral",
+    "scheduler": "karras",
+    "steps": 30,
+    "cfg": 7.0,
+    "seed": 42,
+    "denoise": 1.0,
+    "resolucion": "768x512",
+    "prompt": "a contemporary market and digital culture centre in Barcelona beside the Sagrada Familia, board-formed concrete and glass facade, colonnade of inclined columns, deep loggias, warm stone paving with market stalls, people for scale, photorealistic, architectural photography, morning light, sharp focus, highly detailed, 8k | low quality, blurry, distorted, deformed, bad architecture, cartoon, sketch,",
+    "tiene_metadata": true
+  },
+  {
+    "archivo": "matriz/sd15/M03_00001_.png",
+    "fecha": "2026-10-29 13:49",
+    "workflow": "matriz/sd15/M03",
+    "modelo": "architecturerealmix_v11.safetensors",
+    "loras": [
+      {
+        "nombre": "JJ_Archvizcg_v2.safetensors",
+        "strength": 0.8
+      }
+    ],
+    "sampler": "euler_ancestral",
+    "scheduler": "karras",
+    "steps": 30,
+    "cfg": 7.0,
+    "seed": 42,
+    "denoise": 1.0,
+    "resolucion": "768x512",
+    "prompt": "archviz, a contemporary market and digital culture centre in Barcelona beside the Sagrada Familia, board-formed concrete and glass facade, colonnade of inclined columns, deep loggias, warm stone paving with market stalls, people for scale, photorealistic, architectural photography, morning light, sharp focus, highly detailed, 8k | low quality, blurry, distorted, deformed, bad architecture, cartoon",
+    "tiene_metadata": true
+  },
+  {
+    "archivo": "matriz/sd15/M04_00001_.png",
+    "fecha": "2026-10-29 13:52",
+    "workflow": "matriz/sd15/M04",
+    "modelo": "architecturerealmix_v11.safetensors",
+    "loras": [
+      {
+        "nombre": "sandiese.safetensors",
+        "strength": 0.8
+      }
+    ],
+    "sampler": "euler_ancestral",
+    "scheduler": "karras",
+    "steps": 30,
+    "cfg": 7.0,
+    "seed": 42,
+    "denoise": 1.0,
+    "resolucion": "768x512",
+    "prompt": "architecture, building, grey_background, a contemporary market and digital culture centre in Barcelona beside the Sagrada Familia, board-formed concrete and glass facade, colonnade of inclined columns, deep loggias, warm stone paving with market stalls, people for scale, photorealistic, architectural photography, morning light, sharp focus, highly detailed, 8k | low quality, blurry, distorted, def",
+    "tiene_metadata": true
+  },
+  {
+    "archivo": "matriz/sd15/M05_00001_.png",
+    "fecha": "2026-10-29 13:55",
+    "workflow": "matriz/sd15/M05",
+    "modelo": "architecturerealmix_v11.safetensors",
+    "loras": [
+      {
+        "nombre": "BrutalistTech-20.safetensors",
+        "strength": 0.8
+      }
+    ],
+    "sampler": "euler_ancestral",
+    "scheduler": "karras",
+    "steps": 30,
+    "cfg": 7.0,
+    "seed": 42,
+    "denoise": 1.0,
+    "resolucion": "768x512",
+    "prompt": "brutaltech, cement, a contemporary market and digital culture centre in Barcelona beside the Sagrada Familia, board-formed concrete and glass facade, colonnade of inclined columns, deep loggias, warm stone paving with market stalls, people for scale, photorealistic, architectural photography, morning light, sharp focus, highly detailed, 8k | low quality, blurry, distorted, deformed, bad architectu",
+    "tiene_metadata": true
+  },
+  {
+    "archivo": "matriz/sd15/M06_00001_.png",
+    "fecha": "2026-10-29 13:58",
+    "workflow": "matriz/sd15/M06",
+    "modelo": "architecturerealmix_v11.safetensors",
+    "loras": [
+      {
+        "nombre": "Le Corbusier 2.2.7.2_sd1.5-000016.safetensors",
+        "strength": 0.8
+      }
+    ],
+    "sampler": "euler_ancestral",
+    "scheduler": "karras",
+    "steps": 30,
+    "cfg": 7.0,
+    "seed": 42,
+    "denoise": 1.0,
+    "resolucion": "768x512",
+    "prompt": "zhuai_pb, brutalism, a contemporary market and digital culture centre in Barcelona beside the Sagrada Familia, board-formed concrete and glass facade, colonnade of inclined columns, deep loggias, warm stone paving with market stalls, people for scale, photorealistic, architectural photography, morning light, sharp focus, highly detailed, 8k | low quality, blurry, distorted, deformed, bad architect",
+    "tiene_metadata": true
+  },
+  {
+    "archivo": "matriz/sd15/M07_00001_.png",
+    "fecha": "2026-10-29 14:01",
+    "workflow": "matriz/sd15/M07",
+    "modelo": "architecturerealmix_v11.safetensors",
+    "loras": [
+      {
+        "nombre": "room.safetensors",
+        "strength": 0.8
+      }
+    ],
+    "sampler": "euler_ancestral",
+    "scheduler": "karras",
+    "steps": 30,
+    "cfg": 7.0,
+    "seed": 42,
+    "denoise": 1.0,
+    "resolucion": "768x512",
+    "prompt": "room, a contemporary market and digital culture centre in Barcelona beside the Sagrada Familia, board-formed concrete and glass facade, colonnade of inclined columns, deep loggias, warm stone paving with market stalls, people for scale, photorealistic, architectural photography, morning light, sharp focus, highly detailed, 8k | low quality, blurry, distorted, deformed, bad architecture, cartoon, s",
+    "tiene_metadata": true
+  },
+  {
+    "archivo": "matriz/sd15/M08_00001_.png",
+    "fecha": "2026-10-29 14:03",
+    "workflow": "matriz/sd15/M08",
+    "modelo": "architecturerealmix_v11.safetensors",
+    "loras": [
+      {
+        "nombre": "xsarchitectural-10superhighrisebuilding.safetensors",
+        "strength": 0.8
+      }
+    ],
+    "sampler": "euler_ancestral",
+    "scheduler": "karras",
+    "steps": 30,
+    "cfg": 7.0,
+    "seed": 42,
+    "denoise": 1.0,
+    "resolucion": "768x512",
+    "prompt": "architectural renderings, bird's-eye view, a contemporary market and digital culture centre in Barcelona beside the Sagrada Familia, board-formed concrete and glass facade, colonnade of inclined columns, deep loggias, warm stone paving with market stalls, people for scale, photorealistic, architectural photography, morning light, sharp focus, highly detailed, 8k | low quality, blurry, distorted, d",
+    "tiene_metadata": true
+  },
+  {
+    "archivo": "matriz/sd15/M14_00001_.png",
+    "fecha": "2026-10-29 14:04",
+    "workflow": "matriz/sd15/M14",
+    "modelo": "architecturerealmix_v11.safetensors",
+    "loras": [],
+    "sampler": "euler_ancestral",
+    "scheduler": "karras",
+    "steps": 10,
+    "cfg": 7.0,
+    "seed": 42,
+    "denoise": 1.0,
+    "resolucion": "768x512",
+    "prompt": "a contemporary market and digital culture centre in Barcelona beside the Sagrada Familia, board-formed concrete and glass facade, colonnade of inclined columns, deep loggias, warm stone paving with market stalls, people for scale, photorealistic, architectural photography, morning light, sharp focus, highly detailed, 8k | low quality, blurry, distorted, deformed, bad architecture, cartoon, sketch,",
+    "tiene_metadata": true
+  },
+  {
+    "archivo": "matriz/sd15/M15_00001_.png",
+    "fecha": "2026-10-29 14:08",
+    "workflow": "matriz/sd15/M15",
+    "modelo": "architecturerealmix_v11.safetensors",
+    "loras": [],
+    "sampler": "euler_ancestral",
+    "scheduler": "karras",
+    "steps": 50,
+    "cfg": 7.0,
+    "seed": 42,
+    "denoise": 1.0,
+    "resolucion": "768x512",
+    "prompt": "a contemporary market and digital culture centre in Barcelona beside the Sagrada Familia, board-formed concrete and glass facade, colonnade of inclined columns, deep loggias, warm stone paving with market stalls, people for scale, photorealistic, architectural photography, morning light, sharp focus, highly detailed, 8k | low quality, blurry, distorted, deformed, bad architecture, cartoon, sketch,",
+    "tiene_metadata": true
+  },
+  {
+    "archivo": "matriz/sd15/M16_00001_.png",
+    "fecha": "2026-10-29 14:10",
+    "workflow": "matriz/sd15/M16",
+    "modelo": "architecturerealmix_v11.safetensors",
+    "loras": [],
+    "sampler": "euler_ancestral",
+    "scheduler": "karras",
+    "steps": 30,
+    "cfg": 3.0,
+    "seed": 42,
+    "denoise": 1.0,
+    "resolucion": "768x512",
+    "prompt": "a contemporary market and digital culture centre in Barcelona beside the Sagrada Familia, board-formed concrete and glass facade, colonnade of inclined columns, deep loggias, warm stone paving with market stalls, people for scale, photorealistic, architectural photography, morning light, sharp focus, highly detailed, 8k | low quality, blurry, distorted, deformed, bad architecture, cartoon, sketch,",
+    "tiene_metadata": true
+  },
+  {
+    "archivo": "matriz/sd15/M17_00001_.png",
+    "fecha": "2026-10-29 14:12",
+    "workflow": "matriz/sd15/M17",
+    "modelo": "architecturerealmix_v11.safetensors",
+    "loras": [],
+    "sampler": "euler_ancestral",
+    "scheduler": "karras",
+    "steps": 30,
+    "cfg": 12.0,
+    "seed": 42,
+    "denoise": 1.0,
+    "resolucion": "768x512",
+    "prompt": "a contemporary market and digital culture centre in Barcelona beside the Sagrada Familia, board-formed concrete and glass facade, colonnade of inclined columns, deep loggias, warm stone paving with market stalls, people for scale, photorealistic, architectural photography, morning light, sharp focus, highly detailed, 8k | low quality, blurry, distorted, deformed, bad architecture, cartoon, sketch,",
+    "tiene_metadata": true
+  },
+  {
+    "archivo": "matriz/sd15/M18_00001_.png",
+    "fecha": "2026-10-29 14:15",
+    "workflow": "matriz/sd15/M18",
+    "modelo": "architecturerealmix_v11.safetensors",
+    "loras": [],
+    "sampler": "dpmpp_2m",
+    "scheduler": "karras",
+    "steps": 30,
+    "cfg": 7.0,
+    "seed": 42,
+    "denoise": 1.0,
+    "resolucion": "768x512",
+    "prompt": "a contemporary market and digital culture centre in Barcelona beside the Sagrada Familia, board-formed concrete and glass facade, colonnade of inclined columns, deep loggias, warm stone paving with market stalls, people for scale, photorealistic, architectural photography, morning light, sharp focus, highly detailed, 8k | low quality, blurry, distorted, deformed, bad architecture, cartoon, sketch,",
+    "tiene_metadata": true
+  },
+  {
+    "archivo": "matriz/sd15/M19_00001_.png",
+    "fecha": "2026-10-29 14:17",
+    "workflow": "matriz/sd15/M19",
+    "modelo": "architecturerealmix_v11.safetensors",
+    "loras": [],
+    "sampler": "euler_ancestral",
+    "scheduler": "karras",
+    "steps": 30,
+    "cfg": 7.0,
+    "seed": 42,
+    "denoise": 1.0,
+    "resolucion": "512x512",
+    "prompt": "a contemporary market and digital culture centre in Barcelona beside the Sagrada Familia, board-formed concrete and glass facade, colonnade of inclined columns, deep loggias, warm stone paving with market stalls, people for scale, photorealistic, architectural photography, morning light, sharp focus, highly detailed, 8k | low quality, blurry, distorted, deformed, bad architecture, cartoon, sketch,",
+    "tiene_metadata": true
+  },
+  {
+    "archivo": "matriz/sd15/M20_00001_.png",
+    "fecha": "2026-10-29 14:20",
+    "workflow": "matriz/sd15/M20",
+    "modelo": "architecturerealmix_v11.safetensors",
+    "loras": [],
+    "sampler": "euler_ancestral",
+    "scheduler": "karras",
+    "steps": 30,
+    "cfg": 7.0,
+    "seed": 42,
+    "denoise": 1.0,
+    "resolucion": "768x768",
+    "prompt": "a contemporary market and digital culture centre in Barcelona beside the Sagrada Familia, board-formed concrete and glass facade, colonnade of inclined columns, deep loggias, warm stone paving with market stalls, people for scale, photorealistic, architectural photography, morning light, sharp focus, highly detailed, 8k | low quality, blurry, distorted, deformed, bad architecture, cartoon, sketch,",
+    "tiene_metadata": true
   }
 ]

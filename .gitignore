@@ -41,6 +41,10 @@ proyectos/MVP_04-comfyui-arquitectura/**/inputs-croquis/
 proyectos/MVP_04.02-comfyui-arquitectura/**/salidas/
 proyectos/MVP_04.02-comfyui-arquitectura/**/inputs/
 proyectos/MVP_04.02-comfyui-arquitectura/**/ref/
+proyectos/concurso-gaudi-nexus/**/salidas/
+proyectos/concurso-gaudi-nexus/**/inputs/
+proyectos/concurso-gaudi-nexus/**/ref/
+proyectos/concurso-gaudi-nexus/**/workflows/**/assets/
 
 # Diagramas exportados + presupuestos PDF — binarios fuera de git
 diagramas/*.png
@@ -51,3 +55,14 @@ raw/research-cache/
 **/dist/
 **/build/
 **/coverage/
+
+# Claves SSH y secretos — NUNCA a git
+*.pem
+*.ppk
+*.key
+*.pub
+id_rsa*
+id_ed25519*
+id_ecdsa*
+known_hosts
+ssh-key*

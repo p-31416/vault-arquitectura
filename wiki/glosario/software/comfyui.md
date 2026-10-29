@@ -93,14 +93,22 @@ Ficha completa: [[wiki/glosario/software/flux2-klein-9b|flux2-klein-9b]].
 
 ### LoRAs arquitectura (en investigación)
 
+> Actualizado 2026-10-28: el catálogo real (17 LoRAs instaladas y verificadas) vive en [[wiki/glosario/software/lora-locales-comfyui|lora-locales-comfyui]]. Esta tabla queda como resumen.
+
 | LoRA | Base | Tamaño | Estado | Descripción | Fuente |
 |------|------|--------|--------|-------------|--------|
-| Architecture Interior SDXL | SDXL | ~100 MB | ⬜ Pendiente | Estilos interiores, muebles, materiales | CivitAI |
-| Architectural Visualization | SD 1.5 | ~100 MB | ⬜ Pendiente | Renders visualización arquitectónica | CivitAI |
-| Modern Architecture | SDXL | ~100 MB | ⬜ Pendiente | Arquitectura moderna minimalista | CivitAI |
-| **rhino-to-image (curso AI×Gaudí)** | **FLUX.2 klein 9B** | **120,8 MB** | **⬜ En Drive de Emilia** | Volumetría Rhino → render fotorrealista con material de referencia; rank 16, F32, sin metadata | Curso AI×Gaudí (Archademy) |
+| JJ's Archviz architectural perspective | SD 1.5 | 144 MB | ✅ Instalado | Render clásico de visualización arquitectónica · trigger `archviz` | [CivitAI #191596](https://civitai.com/models/191596) |
+| Architectural Concepts | SD 1.5 | 36 MB | ✅ Instalado | Conceptos de arquitectura · trigger `architecture, building, grey_background` | [CivitAI #134165](https://civitai.com/models/134165) |
+| XSarchitectural-10 superhighrise | SD 1.5 | 36 MB | ✅ Instalado | Torres en vista aérea | [CivitAI #25509](https://civitai.com/models/25509) |
+| Architecture_Le Corbusier | SD 1.5 | 36 MB | ✅ Instalado | Brutalismo público · trigger `zhuai_pb, brutalism` | [CivitAI #67585](https://civitai.com/models/67585) |
+| BrutalistTech-20 | SD 1.5 | 144 MB | ✅ Instalado | Sustituye al brutalista de JJ (este pide login) | [CivitAI #85252](https://civitai.com/models/85252) |
+| Interior Design (`room`) | SD 1.5 | 72 MB | ✅ Instalado | Interiores · trigger `room` | [CivitAI #37483](https://civitai.com/models/37483) |
+| landscape architecture design_sketch | SD 1.5 | 36 MB | ✅ Instalado | Croquis de paisaje | [CivitAI #45218](https://civitai.com/models/45218) |
+| ArchViz / Architectural Massing / Architecture_Building | SDXL | 218–870 MB | ✅ Instalado | Archviz SDXL, masa y volumetría, edificio como sujeto | [CivitAI #549260](https://civitai.com/models/549260) · [#724833](https://civitai.com/models/724833) · [#731161](https://civitai.com/models/731161) |
+| Isometric Style XL | SDXL | 109 MB | ✅ Instalado | Axonometría · trigger `isometric style` | [CivitAI #151008](https://civitai.com/models/151008) |
+| **rhino-to-image (curso AI×Gaudí)** | **FLUX.2 klein 9B** | **120,8 MB** | ⬜ En Drive de Emilia | Volumetría Rhino → render fotorrealista con material de referencia; rank 16, F32, sin metadata | Curso AI×Gaudí (Archademy) |
 
-Ficha completa: [[wiki/glosario/software/lora-rhino-to-image-gaudi|lora-rhino-to-image-gaudi]].
+Ficha completa: [[wiki/glosario/software/lora-rhino-to-image-gaudi|lora-rhino-to-image-gaudi]] · [[wiki/glosario/software/lora-locales-comfyui|lora-locales-comfyui]] (catálogo local verificado).
 
 ---
 
@@ -170,14 +178,18 @@ Negative: `blurry, low quality, distorted, deformed, ugly, bad anatomy, extra li
 
 ### LoRAs recomendadas (SD 1.5)
 
-| LoRA | Descripción | CivitAI |
-|------|-------------|---------|
-| Architectural Visualization | Estilo render clásica | [#119936](https://civitai.com/models/119936) |
-| Modern Architecture | Minimalista, high-tech | Buscar "modern architecture" |
-| Brutalist Architecture | Hormigón visto, rough | Buscar "brutalist" |
-| Interior Design | Mobiliario, materiales | Buscar "interior design" |
+> Corrección 2026-10-28: la fila "Architectural Visualization → [#119936]" estaba **equivocada**: el CivitAI #119936 es *"Action - Eating Watermelon"* (LoCon SD 1.5, trigger `EatingWM`). La referencia correcta para render de visualización arquitectónica es el **[#191596](https://civitai.com/models/191596)** (`JJ_Archvizcg_v2`, trigger `archviz`), ya instalado.
 
-Strength 0.6-0.8 en `LoraLoader` antes de `KSampler`.
+| LoRA | Descripción | CivitAI | Estado |
+|------|-------------|---------|--------|
+| JJ's Archviz architectural perspective | Render clásico de visualización arquitectónica | [#191596](https://civitai.com/models/191596) | ✅ Instalado (`JJ_Archvizcg_v2.safetensors`) |
+| Architectural Concepts | Conceptos de arquitectura sobre fondo gris | [#134165](https://civitai.com/models/134165) | ✅ Instalado (`sandiese.safetensors`) |
+| Brutalist Architecture | Hormigón visto, rough | [#85252](https://civitai.com/models/85252) | ✅ Instalado (`BrutalistTech-20.safetensors`) |
+| Interior Design | Mobiliario, materiales | [#37483](https://civitai.com/models/37483) | ✅ Instalado (`room.safetensors`) |
+| Architecture_Le Corbusier | Brutalismo público | [#67585](https://civitai.com/models/67585) | ✅ Instalado |
+| ~~Architectural Visualization~~ | ~~#119936~~ | — | ⬜ Enlace corregido: ese id no es un LoRA de arquitectura |
+
+Strength 0.6-0.8 en `LoraLoader` antes de `KSampler`. Catálogo completo y verificado: [[wiki/glosario/software/lora-locales-comfyui|lora-locales-comfyui]].
 
 ### Workflows de referencia
 
@@ -718,6 +730,7 @@ ultima_actualizacion: YYYY-MM-DD
 - [[wiki/glosario/conceptos/cerebro-digital-karpathy]]
 - [[wiki/glosario/software/flux2-klein-9b|flux2-klein-9b]] — base FLUX.2 del motor de render
 - [[wiki/glosario/software/lora-rhino-to-image-gaudi|lora-rhino-to-image-gaudi]] — LoRA del curso AI×Gaudí
+- [[wiki/glosario/software/lora-locales-comfyui|lora-locales-comfyui]] — catálogo de los LoRAs que corren en el RX 570 (17 instalados, base/rank/trigger verificados)
 - [[proyectos/MVP_04.02-comfyui-arquitectura/WF-03-serie-controles/WF-03-serie-controles|WF-03 serie controles]] — primera aplicación de IC-Light en el estudio (sol a la derecha)
 - [[wiki/glosario/interno/pbooks/pbk-comfyui]]
 

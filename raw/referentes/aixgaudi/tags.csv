@@ -1,0 +1,26 @@
+archivo;obra;autor;anio;ciudad;tema;estrategia;material;representacion;estado;nota;fuente_original
+ref-01.jpg;Red tensada entre árboles;;; ;biomimetica|estructura;forma-organica|tension;textil|madera;foto-obra;shortlist;Red tensada entre troncos: superficie orgánica de mínima energía, mobiliario habitable.;
+ref-02.jpg;;; ; ;fachada|biomimetica;reticula|piel-filtrada;ladrillo;foto-obra;shortlist;Ladrillo paramétrico con vanos que filtran luz y ventilan (patrón Fakhro-o-Madin).;
+ref-03.jpg;Colina habitable;;; ;cubierta|paisaje;topografia;vegetal;corte|foto-obra;shortlist;Colina habitable: la cubierta verde se vuelve programa y el corte explica el espesor.;
+ref-04.jpg;;; ; ;cubierta|interior;reticula|piel-filtrada;vegetal;foto-obra;shortlist;Túnel de tejido vegetal con óculos: patrón repetido que resuelve estructura, sombra y vista.;
+ref-05.jpg;;; ; ;fachada|detalle;paneles|reticula;madera;maqueta;shortlist;Panel facetado tipo Voronoi: prefabricación de piezas irregulares encastradas.;
+ref-06.jpg;;; ; ;cubierta|estructura;ramificacion|forma-organica;mixto;planta|corte|render;shortlist;Pabellón con columnas arbóreas: planta, corte y vista muestran cómo ramifica la estructura.;
+ref-07.jpg;;; ; ;estructura|cubierta;ramificacion|reticula;hormigon;foto-obra;shortlist;Pabellón urbano: hormigón con vanos orgánicos, el árbol como modelo estructural y de sombra.;
+ref-08.jpg;;; ; ;paisaje|cubierta;topografia;vegetal;render;shortlist;Topografía blanda con túneles: el paisaje contiene el programa infantil.;
+ref-09.jpg;;; ; ;interior|estructura;ramificacion|forma-organica;mixto;render;shortlist;Interior continuo: columnas que se abren en ramas y techo fluido sin juntas.;
+ref-10.jpg;;; ; ;interior|cubierta;ramificacion|reticula;hormigon;ia;shortlist;Arcos ramificados con celosía de luz: imagen conceptual de atmósfera submarina.;
+ref-11.jpg;;; ; ;paisaje|cubierta;topografia|forma-organica;arena;ia;shortlist;Arquitectura excavada en dunas: masa, sombra y recorrido como espacio público.;
+ref-12.jpg;;; ; ;paisaje|cubierta;topografia;vegetal;render;shortlist;Canchas cubiertas por colinas: la cubierta verde es parque y techo a la vez.;
+ref-13.jpg;Maqueta de columnas ramificadas;Antoni Gaudí; ; ;estructura|biomimetica;ramificacion;yeso;foto-obra;shortlist;Gaudí con maqueta de columnas ramificadas: el precedente directo de la línea de trabajo.;
+ref-14.jpg;;; ; ;paisaje|estructura;monumental|ramificacion;piedra;dibujo;shortlist;Ilustración de ciudad vertical: escala monumental y arcos que enmarcan el vacío.;
+ref-15.jpg;Play space / communal space;;; ;paisaje|mobiliario;topografia|forma-organica;mixto;dibujo;shortlist;Dibujos de superficie-topografía: juego y estar resueltos con una sola malla.;
+ref-16.jpg;;; ; ;fachada|detalle;paneles|reticula;metal;collage;shortlist;Familia de piezas triangulares caladas: sistema modular de paneles.;
+ref-17.jpg;Lámina de radiolarios;Ernst Haeckel;1872; ;biomimetica;reticula;mixto;dibujo;shortlist;Lámina de Haeckel: catálogo de formas naturales para derivar patrones.;
+ref-18.jpg;The Continuum;;; ;estructura|biomimetica;reticula|forma-organica;mixto;maqueta;shortlist;Estructura continua tipo Voronoi impresa en 3D.;
+ref-19.jpg;;; ; ;estructura|biomimetica;reticula|minimo;mixto;render;shortlist;Superficie mínima con malla: columnas embudo y cubierta en una sola familia de curvas.;
+ref-20.jpg;;; ; ;estructura|fachada;reticula|celulas;hormigon;foto-obra;shortlist;Estructura tubular con vacuolos: células abiertas como sistema de soporte.;
+ref-21.jpg;;; ; ;interior|paisaje;topografia|forma-organica;vegetal;render;shortlist;Topografía interior: el verde entra como suelo habitable y organiza el espacio.;
+ref-22.jpg;;; ; ;cubierta|biomimetica;forma-organica|reticula;mixto;foto-obra;shortlist;Pabellones blancos perforados: envolvente orgánica apoyada en pocos puntos.;
+ref-23.jpg;;; ; ;paisaje|cubierta;topografia|forma-organica;arena;ia;shortlist;Dunas habitadas: formas blandas con aberturas que encienden el interior.;
+ref-24.jpg;Superficies mínimas;;; ;estructura|biomimetica;reticula|minimo;mixto;lamina;shortlist;Catálogo de superficies mínimas (Schwarz, Schoen): vocabulario geométrico de partida.;
+ref-25.jpg;;; ; ;estructura|detalle;ramificacion|forma-organica;hormigon;foto-obra;shortlist;Columnas arbóreas de hormigón impreso: detalle de ramificación bajo losa.;

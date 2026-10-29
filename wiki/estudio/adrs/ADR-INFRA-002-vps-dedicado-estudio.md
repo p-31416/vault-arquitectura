@@ -1,9 +1,9 @@
 ---
 tipo: adr
 fecha_creacion: 2026-07-24
-ultima_actualizacion: 2026-07-24
-tags: [adr, infra, vps, dedicated, isolation, studio, leantime, mkdocs, nginx]
-estado: aceptado
+ultima_actualizacion: 2026-10-22
+tags: [adr, infra, vps, dedicated, isolation, studio, leantime, mkdocs, nginx, contabo, easypanel]
+estado: aceptado (con desviación implementada)
 categoria: infra
 numero: 002
 ---
@@ -351,6 +351,61 @@ chmod 600 leantime_app_key.txt
 - [ ] Configurar GitHub Projects ↔ Leantime sync (issues ↔ work items) via webhook/Action
 - [ ] Documentar runbook en `wiki/estudio/it/runbook-vps-estudio.md`
 - [ ] Programar test de restore mensual en calendario del equipo
+
+---
+
+## Estado de Implementación (2026-10-22)
+
+> **Desviación registrada:** la decisión original apuntaba a Hetzner CX22 con Docker Compose propio. **La implementación real usa Contabo VPS + EasyPanel** (orquestador Docker Swarm). Esta sección documenta la realidad operativa.
+
+### Implementación real
+
+| Aspecto | Decisión original | Implementación real |
+|---------|------------------|---------------------|
+| Proveedor | Hetzner CX22 | **Contabo VPS S** (4vCPU/8GB) |
+| Orquestación | Docker Compose propio | **EasyPanel** (Docker Swarm) |
+| IP | — | **89.117.73.109** |
+| Reverse proxy | Caddy | **Traefik 3.6.7** (gestionado por EasyPanel) |
+| Dominio | `*.estudio.ar` | **`*.pitau.tech`** + `*.easypanel.host` |
+| Base datos Leantime | SQLite | **MySQL 9** |
+| SSH | Clave Hetzner | **`P:\.ssh\id_ed25519`** (alias `contabo` en `~/.ssh/config`) |
+
+### Servicios desplegados (12 servicios Swarm, verificado 2026-10-22)
+
+| Servicio | Imagen | Propósito |
+|----------|--------|-----------|
+| `pitautech_n8n` | `n8nio/n8n:latest` | Automatizaciones (10 workflows) |
+| `pitautech_leantime` | `leantime/leantime:3.12.0` | PM/Agile (PHP 8.3.36 desde 22/10) |
+| `pitautech_leantime-db` | `mysql:9` | BD de Leantime |
+| `pitautech_postgres` | `postgres:17` | Memoria agentes n8n |
+| `pitautech_redis` | `redis:7` | Cola mensajes n8n |
+| `pitautech_chatwoot` | `chatwoot/chatwoot:v4.12.1` | Soporte cliente ⚠️ |
+| `pitautech_chatwoot-sidekiq` | `chatwoot/chatwoot:v4.9.1` | Jobs Cola Chatwoot ⚠️ desincronizado |
+| `pitautech_chatwoot-db` | `pgvector/pgvector:pg17` | BD Chatwoot |
+| `pitautech_chatwoot-redis` | `redis:7` | Cache Chatwoot |
+| `pitautech_qdrant` | `qdrant/qdrant:v1.16` | Vector DB |
+| `easypanel` | `easypanel/easypanel:latest` | Panel de gestión |
+| `easypanel-traefik` | `traefik:3.6.7` | Reverse proxy + TLS |
+
+### Qué se cumplió y qué no del diseño original
+
+| Objetivo del ADR | Estado |
+|------------------|--------|
+| VPS dedicado para el estudio | ✅ Contabo (no Hetzner) |
+| Aislamiento de datos | ✅ |
+| Leantime self-hosted | ✅ MySQL (no SQLite) |
+| TLS automático | ✅ Traefik + Let's Encrypt (no Caddy) |
+| Backups automatizados rclone → Wasabi | ❌ **Pendiente** (ver [[wiki/estudio/backups]]) |
+| Monitoring (Netdata/Uptime Kuma) | ⚠️ Parcial: UptimeRobot externo + n8n workflow |
+| Runbook documentado | ✅ [[wiki/estudio/it/runbook-vps-estudio]] (creado 2026-10-22) |
+| MkDocs mirror interno | ❌ No implementado |
+
+### Deuda técnica conocida
+
+- Chatwoot sidekiq desincronizado (v4.9.1 vs v4.12.1)
+- Backups del VPS sin implementar
+- 50 paquetes apt pendientes (2 de seguridad)
+- ADR original no refleja proveedor real → corregido con esta sección
 
 ---
 

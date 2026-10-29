@@ -218,6 +218,9 @@ Se bajan los `.json` y se archivan en `proyectos/MVP_04-comfyui-arquitectura/` s
 | Índice del área de participantes (videos) | ⬜ requiere el texto de la página con la sesión abierta |
 | LoRA de la Fundació Antoni Gaudí | ⬜ el tablero lo lista en el módulo 7 (sección `RHINO-TO-GAUDI`) |
 | Token de la API de Miro | ⬜ opcional (solo para automatizar) |
+| **Fichas de flujo de los 7 módulos** | ✅ 6 de 7 → [[proyectos/concurso-gaudi-nexus/flujos/00-index\|flujos]] (el 6 pendiente de transcripción local) |
+| **Los 7 workflows adaptados, uno por módulo** | 🔄 en curso → [[specs/261028-plan-workflows-adaptados-curso-ai-gaudi\|plan maestro]] · [[proyectos/concurso-gaudi-nexus/workflows/00-index\|workflows]] |
+| **Módulo 6 (Round Table) transcrito** | 🔄 script listo (`scripts/transcribir-leccion-bunny.py`), falta la corrida |
 
 ## 4.1 Qué contiene el tablero del curso (hallazgo del 20/10)
 

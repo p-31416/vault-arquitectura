@@ -1,0 +1,939 @@
+{
+  "titulo": "AIxGAUDI",
+  "board": "https://ar.pinterest.com/proyectopi31416/aixgaudi",
+  "ejes": [
+    "tema",
+    "estrategia",
+    "material",
+    "representacion",
+    "uso",
+    "estado"
+  ],
+  "items": [
+    {
+      "pin_id": "e1_AfqPShwbronCCTZDsOwdXIjyQpZnxrMkJudRzk4K8wib3u0zJgf7",
+      "imagen_hash": "b79443fe84fad925fc8e78de4cc62f1a",
+      "archivo": "ref-01.jpg",
+      "origen": "pinterest",
+      "url": "https://ar.pinterest.com/pin/e1_AfqPShwbronCCTZDsOwdXIjyQpZnxrMkJudRzk4K8wib3u0zJgf7/",
+      "titulo": "",
+      "descripcion": "",
+      "autor": "",
+      "obra": "Red tensada entre árboles",
+      "fuente_original": "",
+      "fecha_alta": "2026-10-23",
+      "fecha_pin": "Thu, 22 Oct 2026 21:40:17 GMT",
+      "nota": "Red tensada entre troncos: superficie orgánica de mínima energía, mobiliario habitable.",
+      "tags": {
+        "tema": [
+          "biomimetica",
+          "estructura"
+        ],
+        "estrategia": [
+          "forma-organica",
+          "tension"
+        ],
+        "material": [
+          "textil",
+          "madera"
+        ],
+        "representacion": [
+          "foto-obra"
+        ],
+        "uso": [
+          "aixgaudi"
+        ],
+        "estado": [
+          "shortlist"
+        ]
+      }
+    },
+    {
+      "pin_id": "e1_AfqPShyo9D_WMEb_KaGeBkQDDWJ1EprZxRDvn4RZtvuGSB9SysjJ",
+      "imagen_hash": "531beebbfc745a2c325ce11d546a122e",
+      "archivo": "ref-02.jpg",
+      "origen": "pinterest",
+      "url": "https://ar.pinterest.com/pin/e1_AfqPShyo9D_WMEb_KaGeBkQDDWJ1EprZxRDvn4RZtvuGSB9SysjJ/",
+      "titulo": "",
+      "descripcion": "",
+      "autor": "",
+      "obra": "",
+      "fuente_original": "",
+      "fecha_alta": "2026-10-23",
+      "fecha_pin": "Thu, 22 Oct 2026 21:41:33 GMT",
+      "nota": "Ladrillo paramétrico con vanos que filtran luz y ventilan (patrón Fakhro-o-Madin).",
+      "tags": {
+        "tema": [
+          "fachada",
+          "biomimetica"
+        ],
+        "estrategia": [
+          "reticula",
+          "piel-filtrada"
+        ],
+        "material": [
+          "ladrillo"
+        ],
+        "representacion": [
+          "foto-obra"
+        ],
+        "uso": [
+          "aixgaudi"
+        ],
+        "estado": [
+          "shortlist"
+        ]
+      }
+    },
+    {
+      "pin_id": "e1_AfqPShxqYpoJ-cmx5lFjY-zPBGfDljNXsbKXB6mw1ZMu_YLc9hZH",
+      "imagen_hash": "608b55cc557e2d5594211f9ab6c27c77",
+      "archivo": "ref-03.jpg",
+      "origen": "pinterest",
+      "url": "https://ar.pinterest.com/pin/e1_AfqPShxqYpoJ-cmx5lFjY-zPBGfDljNXsbKXB6mw1ZMu_YLc9hZH/",
+      "titulo": "",
+      "descripcion": "",
+      "autor": "",
+      "obra": "Colina habitable",
+      "fuente_original": "",
+      "fecha_alta": "2026-10-23",
+      "fecha_pin": "Thu, 22 Oct 2026 21:39:37 GMT",
+      "nota": "Colina habitable: la cubierta verde se vuelve programa y el corte explica el espesor.",
+      "tags": {
+        "tema": [
+          "cubierta",
+          "paisaje"
+        ],
+        "estrategia": [
+          "topografia"
+        ],
+        "material": [
+          "vegetal"
+        ],
+        "representacion": [
+          "corte",
+          "foto-obra"
+        ],
+        "uso": [
+          "aixgaudi"
+        ],
+        "estado": [
+          "shortlist"
+        ]
+      }
+    },
+    {
+      "pin_id": "e1_AfqPShxEm519lnTKpX6MCweTK4KuoUjROgyyUzaZlDwNURTCFE5D",
+      "imagen_hash": "c2ea3abef628588ec3551d97f1d2aa98",
+      "archivo": "ref-04.jpg",
+      "origen": "pinterest",
+      "url": "https://ar.pinterest.com/pin/e1_AfqPShxEm519lnTKpX6MCweTK4KuoUjROgyyUzaZlDwNURTCFE5D/",
+      "titulo": "",
+      "descripcion": "",
+      "autor": "",
+      "obra": "",
+      "fuente_original": "",
+      "fecha_alta": "2026-10-23",
+      "fecha_pin": "Thu, 22 Oct 2026 21:44:06 GMT",
+      "nota": "Túnel de tejido vegetal con óculos: patrón repetido que resuelve estructura, sombra y vista.",
+      "tags": {
+        "tema": [
+          "cubierta",
+          "interior"
+        ],
+        "estrategia": [
+          "reticula",
+          "piel-filtrada"
+        ],
+        "material": [
+          "vegetal"
+        ],
+        "representacion": [
+          "foto-obra"
+        ],
+        "uso": [
+          "aixgaudi"
+        ],
+        "estado": [
+          "shortlist"
+        ]
+      }
+    },
+    {
+      "pin_id": "e1_AfqPShyF47OXV5SlTFAbXwERXxb5pf2bBFYSqqq88GGnWvN_bMTP",
+      "imagen_hash": "7f13dff0ae9eb4d67c3396d43b71361d",
+      "archivo": "ref-05.jpg",
+      "origen": "pinterest",
+      "url": "https://ar.pinterest.com/pin/e1_AfqPShyF47OXV5SlTFAbXwERXxb5pf2bBFYSqqq88GGnWvN_bMTP/",
+      "titulo": "",
+      "descripcion": "",
+      "autor": "",
+      "obra": "",
+      "fuente_original": "",
+      "fecha_alta": "2026-10-23",
+      "fecha_pin": "Thu, 22 Oct 2026 21:46:37 GMT",
+      "nota": "Panel facetado tipo Voronoi: prefabricación de piezas irregulares encastradas.",
+      "tags": {
+        "tema": [
+          "fachada",
+          "detalle"
+        ],
+        "estrategia": [
+          "paneles",
+          "reticula"
+        ],
+        "material": [
+          "madera"
+        ],
+        "representacion": [
+          "maqueta"
+        ],
+        "uso": [
+          "aixgaudi"
+        ],
+        "estado": [
+          "shortlist"
+        ]
+      }
+    },
+    {
+      "pin_id": "e1_AfqPShzoRhfZ2bX2yz722TUjRMEL-XqG85YlQziygWqBblh7EIvh",
+      "imagen_hash": "6143fe0f90a70c9922d7c361780ec31b",
+      "archivo": "ref-06.jpg",
+      "origen": "pinterest",
+      "url": "https://ar.pinterest.com/pin/e1_AfqPShzoRhfZ2bX2yz722TUjRMEL-XqG85YlQziygWqBblh7EIvh/",
+      "titulo": "#pavilion #biomimetic #biomimicry #biomimeticdesign #biomimicryarchitecture #biophilicdesign #playground #urbanfurniture #goldenratio #landscapedesign",
+      "descripcion": "#pavilion #biomimetic #biomimicry #biomimeticdesign #biomimicryarchitecture #biophilicdesign #playground",
+      "autor": "",
+      "obra": "",
+      "fuente_original": "",
+      "fecha_alta": "2026-10-23",
+      "fecha_pin": "Thu, 22 Oct 2026 21:45:07 GMT",
+      "nota": "Pabellón con columnas arbóreas: planta, corte y vista muestran cómo ramifica la estructura.",
+      "tags": {
+        "tema": [
+          "cubierta",
+          "estructura"
+        ],
+        "estrategia": [
+          "ramificacion",
+          "forma-organica"
+        ],
+        "material": [
+          "mixto"
+        ],
+        "representacion": [
+          "planta",
+          "corte",
+          "render"
+        ],
+        "uso": [
+          "aixgaudi"
+        ],
+        "estado": [
+          "shortlist"
+        ]
+      }
+    },
+    {
+      "pin_id": "e1_AfqPShxXj14ndl8bvFZvrK9PLUIHLnzlVkVZA9zlwIoitqiBaRXF",
+      "imagen_hash": "9d5c9f3bf6b0310132fa5f6a9baad598",
+      "archivo": "ref-07.jpg",
+      "origen": "pinterest",
+      "url": "https://ar.pinterest.com/pin/e1_AfqPShxXj14ndl8bvFZvrK9PLUIHLnzlVkVZA9zlwIoitqiBaRXF/",
+      "titulo": "",
+      "descripcion": "",
+      "autor": "",
+      "obra": "",
+      "fuente_original": "",
+      "fecha_alta": "2026-10-23",
+      "fecha_pin": "Thu, 22 Oct 2026 21:43:11 GMT",
+      "nota": "Pabellón urbano: hormigón con vanos orgánicos, el árbol como modelo estructural y de sombra.",
+      "tags": {
+        "tema": [
+          "estructura",
+          "cubierta"
+        ],
+        "estrategia": [
+          "ramificacion",
+          "reticula"
+        ],
+        "material": [
+          "hormigon"
+        ],
+        "representacion": [
+          "foto-obra"
+        ],
+        "uso": [
+          "aixgaudi"
+        ],
+        "estado": [
+          "shortlist"
+        ]
+      }
+    },
+    {
+      "pin_id": "e1_AfqPShxuxLNIlcPmoZhTdAzGOHGGchNwwMwqXBQwbA11uRY6f0he",
+      "imagen_hash": "9ccf29788d3538d96b82dba3672eb0ad",
+      "archivo": "ref-08.jpg",
+      "origen": "pinterest",
+      "url": "https://ar.pinterest.com/pin/e1_AfqPShxuxLNIlcPmoZhTdAzGOHGGchNwwMwqXBQwbA11uRY6f0he/",
+      "titulo": "",
+      "descripcion": "",
+      "autor": "",
+      "obra": "",
+      "fuente_original": "",
+      "fecha_alta": "2026-10-23",
+      "fecha_pin": "Thu, 22 Oct 2026 21:38:16 GMT",
+      "nota": "Topografía blanda con túneles: el paisaje contiene el programa infantil.",
+      "tags": {
+        "tema": [
+          "paisaje",
+          "cubierta"
+        ],
+        "estrategia": [
+          "topografia"
+        ],
+        "material": [
+          "vegetal"
+        ],
+        "representacion": [
+          "render"
+        ],
+        "uso": [
+          "aixgaudi"
+        ],
+        "estado": [
+          "shortlist"
+        ]
+      }
+    },
+    {
+      "pin_id": "e1_AfqPShxLjP3jY-hlNUISty2Gdj6J2o5jM9M0akzMWNIOlmQ8Apqx",
+      "imagen_hash": "2c6a34bb1a6d1d7e547ced9f85f449c3",
+      "archivo": "ref-09.jpg",
+      "origen": "pinterest",
+      "url": "https://ar.pinterest.com/pin/e1_AfqPShxLjP3jY-hlNUISty2Gdj6J2o5jM9M0akzMWNIOlmQ8Apqx/",
+      "titulo": "",
+      "descripcion": "",
+      "autor": "",
+      "obra": "",
+      "fuente_original": "",
+      "fecha_alta": "2026-10-23",
+      "fecha_pin": "Thu, 22 Oct 2026 21:43:24 GMT",
+      "nota": "Interior continuo: columnas que se abren en ramas y techo fluido sin juntas.",
+      "tags": {
+        "tema": [
+          "interior",
+          "estructura"
+        ],
+        "estrategia": [
+          "ramificacion",
+          "forma-organica"
+        ],
+        "material": [
+          "mixto"
+        ],
+        "representacion": [
+          "render"
+        ],
+        "uso": [
+          "aixgaudi"
+        ],
+        "estado": [
+          "shortlist"
+        ]
+      }
+    },
+    {
+      "pin_id": "e1_AfqPShxcMIqp2jQyKvSNB2a1sPmeptzdOXzl27G7tCbQ9jOUFEPz",
+      "imagen_hash": "ecf02c69ceae4f1555e262cabe9c345b",
+      "archivo": "ref-10.jpg",
+      "origen": "pinterest",
+      "url": "https://ar.pinterest.com/pin/e1_AfqPShxcMIqp2jQyKvSNB2a1sPmeptzdOXzl27G7tCbQ9jOUFEPz/",
+      "titulo": "",
+      "descripcion": "",
+      "autor": "",
+      "obra": "",
+      "fuente_original": "",
+      "fecha_alta": "2026-10-23",
+      "fecha_pin": "Thu, 22 Oct 2026 21:53:58 GMT",
+      "nota": "Arcos ramificados con celosía de luz: imagen conceptual de atmósfera submarina.",
+      "tags": {
+        "tema": [
+          "interior",
+          "cubierta"
+        ],
+        "estrategia": [
+          "ramificacion",
+          "reticula"
+        ],
+        "material": [
+          "hormigon"
+        ],
+        "representacion": [
+          "ia"
+        ],
+        "uso": [
+          "aixgaudi"
+        ],
+        "estado": [
+          "shortlist"
+        ]
+      }
+    },
+    {
+      "pin_id": "e1_AfqPShxIEYUTpSPIArhWiRgK0U64EqN5JlkN9Pqf7ohcCU5iRrUC",
+      "imagen_hash": "609f602bc446c39a133cb49681b3159e",
+      "archivo": "ref-11.jpg",
+      "origen": "pinterest",
+      "url": "https://ar.pinterest.com/pin/e1_AfqPShxIEYUTpSPIArhWiRgK0U64EqN5JlkN9Pqf7ohcCU5iRrUC/",
+      "titulo": "",
+      "descripcion": "",
+      "autor": "",
+      "obra": "",
+      "fuente_original": "",
+      "fecha_alta": "2026-10-23",
+      "fecha_pin": "Thu, 22 Oct 2026 21:36:27 GMT",
+      "nota": "Arquitectura excavada en dunas: masa, sombra y recorrido como espacio público.",
+      "tags": {
+        "tema": [
+          "paisaje",
+          "cubierta"
+        ],
+        "estrategia": [
+          "topografia",
+          "forma-organica"
+        ],
+        "material": [
+          "arena"
+        ],
+        "representacion": [
+          "ia"
+        ],
+        "uso": [
+          "aixgaudi"
+        ],
+        "estado": [
+          "shortlist"
+        ]
+      }
+    },
+    {
+      "pin_id": "e1_AfqPShyiUSCQbD6QDEM8PYbmbyrIk1MldP1l_qpM-s9TewMberbQ",
+      "imagen_hash": "2d598d78bc53275d6fbef3cb4f07f652",
+      "archivo": "ref-12.jpg",
+      "origen": "pinterest",
+      "url": "https://ar.pinterest.com/pin/e1_AfqPShyiUSCQbD6QDEM8PYbmbyrIk1MldP1l_qpM-s9TewMberbQ/",
+      "titulo": "(6) Instagram",
+      "descripcion": "(6) Instagram",
+      "autor": "",
+      "obra": "",
+      "fuente_original": "",
+      "fecha_alta": "2026-10-23",
+      "fecha_pin": "Thu, 22 Oct 2026 21:38:10 GMT",
+      "nota": "Canchas cubiertas por colinas: la cubierta verde es parque y techo a la vez.",
+      "tags": {
+        "tema": [
+          "paisaje",
+          "cubierta"
+        ],
+        "estrategia": [
+          "topografia"
+        ],
+        "material": [
+          "vegetal"
+        ],
+        "representacion": [
+          "render"
+        ],
+        "uso": [
+          "aixgaudi"
+        ],
+        "estado": [
+          "shortlist"
+        ]
+      }
+    },
+    {
+      "pin_id": "e1_AfqPShx8qqs-rPF23XbetW7Tt5GfgkMggbLs-G-Kt-ZOfBOqXZNy",
+      "imagen_hash": "10ec8f5c165de913f2510054389b3bdb",
+      "archivo": "ref-13.jpg",
+      "origen": "pinterest",
+      "url": "https://ar.pinterest.com/pin/e1_AfqPShx8qqs-rPF23XbetW7Tt5GfgkMggbLs-G-Kt-ZOfBOqXZNy/",
+      "titulo": "",
+      "descripcion": "",
+      "autor": "Antoni Gaudí",
+      "obra": "Maqueta de columnas ramificadas",
+      "fuente_original": "",
+      "fecha_alta": "2026-10-23",
+      "fecha_pin": "Thu, 22 Oct 2026 21:48:37 GMT",
+      "nota": "Gaudí con maqueta de columnas ramificadas: el precedente directo de la línea de trabajo.",
+      "tags": {
+        "tema": [
+          "estructura",
+          "biomimetica"
+        ],
+        "estrategia": [
+          "ramificacion"
+        ],
+        "material": [
+          "yeso"
+        ],
+        "representacion": [
+          "foto-obra"
+        ],
+        "uso": [
+          "aixgaudi"
+        ],
+        "estado": [
+          "shortlist"
+        ]
+      }
+    },
+    {
+      "pin_id": "e1_AfqPShz_NHNHGCq_2uLIZNc1cNy6dPJQTQ6Fbywam_ivQ3Xt8u4x",
+      "imagen_hash": "2e004928d9f3a54540de654c9d17d655",
+      "archivo": "ref-14.jpg",
+      "origen": "pinterest",
+      "url": "https://ar.pinterest.com/pin/e1_AfqPShz_NHNHGCq_2uLIZNc1cNy6dPJQTQ6Fbywam_ivQ3Xt8u4x/",
+      "titulo": "Generated in midjourney 6.1",
+      "descripcion": "Generated in midjourney 6.1",
+      "autor": "",
+      "obra": "",
+      "fuente_original": "",
+      "fecha_alta": "2026-10-23",
+      "fecha_pin": "Thu, 22 Oct 2026 21:50:30 GMT",
+      "nota": "Ilustración de ciudad vertical: escala monumental y arcos que enmarcan el vacío.",
+      "tags": {
+        "tema": [
+          "paisaje",
+          "estructura"
+        ],
+        "estrategia": [
+          "monumental",
+          "ramificacion"
+        ],
+        "material": [
+          "piedra"
+        ],
+        "representacion": [
+          "dibujo"
+        ],
+        "uso": [
+          "aixgaudi"
+        ],
+        "estado": [
+          "shortlist"
+        ]
+      }
+    },
+    {
+      "pin_id": "e1_AfqPShzvYedlSjvB6oIdWGt_G0x7SgFVYGw4vSU9SOjlK8oZX_Oi",
+      "imagen_hash": "43af6bff20be9f59d42acf9baa32fd1b",
+      "archivo": "ref-15.jpg",
+      "origen": "pinterest",
+      "url": "https://ar.pinterest.com/pin/e1_AfqPShzvYedlSjvB6oIdWGt_G0x7SgFVYGw4vSU9SOjlK8oZX_Oi/",
+      "titulo": "WoW",
+      "descripcion": "WoW",
+      "autor": "",
+      "obra": "Play space / communal space",
+      "fuente_original": "",
+      "fecha_alta": "2026-10-23",
+      "fecha_pin": "Thu, 22 Oct 2026 21:39:50 GMT",
+      "nota": "Dibujos de superficie-topografía: juego y estar resueltos con una sola malla.",
+      "tags": {
+        "tema": [
+          "paisaje",
+          "mobiliario"
+        ],
+        "estrategia": [
+          "topografia",
+          "forma-organica"
+        ],
+        "material": [
+          "mixto"
+        ],
+        "representacion": [
+          "dibujo"
+        ],
+        "uso": [
+          "aixgaudi"
+        ],
+        "estado": [
+          "shortlist"
+        ]
+      }
+    },
+    {
+      "pin_id": "e1_AfqPShxuOaazmqqgampk4A7aF_Tt-BP_VkxrnRhX4VgYQqyQPoc2",
+      "imagen_hash": "13078b02cdb4f48f05ece42eb8e3bd72",
+      "archivo": "ref-16.jpg",
+      "origen": "pinterest",
+      "url": "https://ar.pinterest.com/pin/e1_AfqPShxuOaazmqqgampk4A7aF_Tt-BP_VkxrnRhX4VgYQqyQPoc2/",
+      "titulo": "The Sound That Light Makes by Alexander Knox and #Grasshopper3D #Parametric_facade #ParametricFacade #FacadeArchitecture #parametric_architecture #Alexander_Knox_facde #RhinoForArchitecture #Sub_D #Rhino 7",
+      "descripcion": "The Sound That Light Makes by Alexander Knox and #Grasshopper3D #Parametric_facade #ParametricFacade #FacadeArchitecture #parametric_architecture #Alexander_Knox_facde",
+      "autor": "",
+      "obra": "",
+      "fuente_original": "",
+      "fecha_alta": "2026-10-23",
+      "fecha_pin": "Thu, 22 Oct 2026 21:46:13 GMT",
+      "nota": "Familia de piezas triangulares caladas: sistema modular de paneles.",
+      "tags": {
+        "tema": [
+          "fachada",
+          "detalle"
+        ],
+        "estrategia": [
+          "paneles",
+          "reticula"
+        ],
+        "material": [
+          "metal"
+        ],
+        "representacion": [
+          "collage"
+        ],
+        "uso": [
+          "aixgaudi"
+        ],
+        "estado": [
+          "shortlist"
+        ]
+      }
+    },
+    {
+      "pin_id": "e1_AfqPShyUEkkxtDlFO22YVd9f1OI-omsSV0jxqTtxEgxQpkDoh1yT",
+      "imagen_hash": "899f4bc4883187944bf8619b65600eba",
+      "archivo": "ref-17.jpg",
+      "origen": "pinterest",
+      "url": "https://ar.pinterest.com/pin/e1_AfqPShyUEkkxtDlFO22YVd9f1OI-omsSV0jxqTtxEgxQpkDoh1yT/",
+      "titulo": "Ascetta coriacea Die Kalkschwämme. Eine Monographie … von Ernst Haeckel Berlin,G. Reimer,1872.",
+      "descripcion": "Ascetta coriacea Die Kalkschwämme. Eine Monographie … von Ernst Haeckel Berlin,G. Reimer,1872.",
+      "autor": "Ernst Haeckel",
+      "obra": "Lámina de radiolarios",
+      "fuente_original": "",
+      "fecha_alta": "2026-10-23",
+      "fecha_pin": "Thu, 22 Oct 2026 21:44:13 GMT",
+      "nota": "Lámina de Haeckel: catálogo de formas naturales para derivar patrones.",
+      "tags": {
+        "tema": [
+          "biomimetica"
+        ],
+        "estrategia": [
+          "reticula"
+        ],
+        "material": [
+          "mixto"
+        ],
+        "representacion": [
+          "dibujo"
+        ],
+        "uso": [
+          "aixgaudi"
+        ],
+        "estado": [
+          "shortlist"
+        ]
+      },
+      "anio": "1872"
+    },
+    {
+      "pin_id": "e1_AfqPShwVehxEENuQQvWpro2g-eyVnpiyKKx5QSmg2lWJAiAMWny3",
+      "imagen_hash": "5b7a4a320f1b91e623507730a27df6c6",
+      "archivo": "ref-18.jpg",
+      "origen": "pinterest",
+      "url": "https://ar.pinterest.com/pin/e1_AfqPShwVehxEENuQQvWpro2g-eyVnpiyKKx5QSmg2lWJAiAMWny3/",
+      "titulo": "",
+      "descripcion": "",
+      "autor": "",
+      "obra": "The Continuum",
+      "fuente_original": "",
+      "fecha_alta": "2026-10-23",
+      "fecha_pin": "Thu, 22 Oct 2026 21:52:58 GMT",
+      "nota": "Estructura continua tipo Voronoi impresa en 3D.",
+      "tags": {
+        "tema": [
+          "estructura",
+          "biomimetica"
+        ],
+        "estrategia": [
+          "reticula",
+          "forma-organica"
+        ],
+        "material": [
+          "mixto"
+        ],
+        "representacion": [
+          "maqueta"
+        ],
+        "uso": [
+          "aixgaudi"
+        ],
+        "estado": [
+          "shortlist"
+        ]
+      }
+    },
+    {
+      "pin_id": "e1_AfqPShzUo84pwWbX3C4zMFTHaZ4hSp2MdzvGPvmgYxgDBZiOeQXl",
+      "imagen_hash": "5215795b273a8b41662d27dcef0f4510",
+      "archivo": "ref-19.jpg",
+      "origen": "pinterest",
+      "url": "https://ar.pinterest.com/pin/e1_AfqPShzUo84pwWbX3C4zMFTHaZ4hSp2MdzvGPvmgYxgDBZiOeQXl/",
+      "titulo": ".",
+      "descripcion": ".",
+      "autor": "",
+      "obra": "",
+      "fuente_original": "",
+      "fecha_alta": "2026-10-23",
+      "fecha_pin": "Thu, 22 Oct 2026 21:41:25 GMT",
+      "nota": "Superficie mínima con malla: columnas embudo y cubierta en una sola familia de curvas.",
+      "tags": {
+        "tema": [
+          "estructura",
+          "biomimetica"
+        ],
+        "estrategia": [
+          "reticula",
+          "minimo"
+        ],
+        "material": [
+          "mixto"
+        ],
+        "representacion": [
+          "render"
+        ],
+        "uso": [
+          "aixgaudi"
+        ],
+        "estado": [
+          "shortlist"
+        ]
+      }
+    },
+    {
+      "pin_id": "e1_AfqPShxHdzq-6p3oZfdJb2gG7zEGdsCk9LJWn1JTWSuUuHEUIMcN",
+      "imagen_hash": "4af6ca1196e35d755657edb57dd3d9d0",
+      "archivo": "ref-20.jpg",
+      "origen": "pinterest",
+      "url": "https://ar.pinterest.com/pin/e1_AfqPShxHdzq-6p3oZfdJb2gG7zEGdsCk9LJWn1JTWSuUuHEUIMcN/",
+      "titulo": "",
+      "descripcion": "",
+      "autor": "",
+      "obra": "",
+      "fuente_original": "",
+      "fecha_alta": "2026-10-23",
+      "fecha_pin": "Thu, 22 Oct 2026 21:48:45 GMT",
+      "nota": "Estructura tubular con vacuolos: células abiertas como sistema de soporte.",
+      "tags": {
+        "tema": [
+          "estructura",
+          "fachada"
+        ],
+        "estrategia": [
+          "reticula",
+          "celulas"
+        ],
+        "material": [
+          "hormigon"
+        ],
+        "representacion": [
+          "foto-obra"
+        ],
+        "uso": [
+          "aixgaudi"
+        ],
+        "estado": [
+          "shortlist"
+        ]
+      }
+    },
+    {
+      "pin_id": "e1_AfqPShxZocFHZUrYS_jUjU7ejyNkq4Fcc0owBkSRSn_VLgX5DgNF",
+      "imagen_hash": "60d6ceb306e8249c9416c0824f145959",
+      "archivo": "ref-21.jpg",
+      "origen": "pinterest",
+      "url": "https://ar.pinterest.com/pin/e1_AfqPShxZocFHZUrYS_jUjU7ejyNkq4Fcc0owBkSRSn_VLgX5DgNF/",
+      "titulo": "Urban Earthscape . . A hotel like no other—where nature doesn’t stop at the door. This urban oasis seamlessly weaves organic topography into every aspect of its design—from the lush mounds rising inside the lobby to intimate dining nooks nestled in sculpted greenery. #urbanretreat #natureinthecity #greendesign #architecturemeetsnature #organicinteriors #interiör #hospitality #biophilicdesign #hotelarchitecture #greeninterior #designexperience #fluidspaces #NatureInDesign #naturaldesign #ecoa...",
+      "descripcion": "Urban Earthscape . . A hotel like no other—where nature doesn’t stop at the door. This urban oasis seamlessly weaves organic topography into every aspect of its design—from the lush mounds rising inside the lobby to intimate dining nooks nestled in sculpted greenery. #urbanretreat #natureinthecity #greendesign #architecturemeetsnature #organicinteriors",
+      "autor": "",
+      "obra": "",
+      "fuente_original": "",
+      "fecha_alta": "2026-10-23",
+      "fecha_pin": "Thu, 22 Oct 2026 21:51:14 GMT",
+      "nota": "Topografía interior: el verde entra como suelo habitable y organiza el espacio.",
+      "tags": {
+        "tema": [
+          "interior",
+          "paisaje"
+        ],
+        "estrategia": [
+          "topografia",
+          "forma-organica"
+        ],
+        "material": [
+          "vegetal"
+        ],
+        "representacion": [
+          "render"
+        ],
+        "uso": [
+          "aixgaudi"
+        ],
+        "estado": [
+          "shortlist"
+        ]
+      }
+    },
+    {
+      "pin_id": "e1_AfqPShyfya642SVvNQ50U-tZbI84NfJpQGW4LEySUWy6grj19uzG",
+      "imagen_hash": "c440e41e2dd6441f6856bbc5ce67e59f",
+      "archivo": "ref-22.jpg",
+      "origen": "pinterest",
+      "url": "https://ar.pinterest.com/pin/e1_AfqPShyfya642SVvNQ50U-tZbI84NfJpQGW4LEySUWy6grj19uzG/",
+      "titulo": "",
+      "descripcion": "",
+      "autor": "",
+      "obra": "",
+      "fuente_original": "",
+      "fecha_alta": "2026-10-23",
+      "fecha_pin": "Thu, 22 Oct 2026 21:43:37 GMT",
+      "nota": "Pabellones blancos perforados: envolvente orgánica apoyada en pocos puntos.",
+      "tags": {
+        "tema": [
+          "cubierta",
+          "biomimetica"
+        ],
+        "estrategia": [
+          "forma-organica",
+          "reticula"
+        ],
+        "material": [
+          "mixto"
+        ],
+        "representacion": [
+          "foto-obra"
+        ],
+        "uso": [
+          "aixgaudi"
+        ],
+        "estado": [
+          "shortlist"
+        ]
+      }
+    },
+    {
+      "pin_id": "e1_AfqPShztEZ7nMADdsdDTFSBXK0CbwSxntwzeOrxtde8fu9DT-6Zq",
+      "imagen_hash": "248d945f3dab118af9b96719a4fc65a2",
+      "archivo": "ref-23.jpg",
+      "origen": "pinterest",
+      "url": "https://ar.pinterest.com/pin/e1_AfqPShztEZ7nMADdsdDTFSBXK0CbwSxntwzeOrxtde8fu9DT-6Zq/",
+      "titulo": "",
+      "descripcion": "",
+      "autor": "",
+      "obra": "",
+      "fuente_original": "",
+      "fecha_alta": "2026-10-23",
+      "fecha_pin": "Thu, 22 Oct 2026 21:36:41 GMT",
+      "nota": "Dunas habitadas: formas blandas con aberturas que encienden el interior.",
+      "tags": {
+        "tema": [
+          "paisaje",
+          "cubierta"
+        ],
+        "estrategia": [
+          "topografia",
+          "forma-organica"
+        ],
+        "material": [
+          "arena"
+        ],
+        "representacion": [
+          "ia"
+        ],
+        "uso": [
+          "aixgaudi"
+        ],
+        "estado": [
+          "shortlist"
+        ]
+      }
+    },
+    {
+      "pin_id": "e1_AfqPShw-cXtknhU1A8nl3TCPNeussGC-9A64by_nm9rlO6OLVL2I",
+      "imagen_hash": "b61aed53d9b054d2e36f807d16010200",
+      "archivo": "ref-24.jpg",
+      "origen": "pinterest",
+      "url": "https://ar.pinterest.com/pin/e1_AfqPShw-cXtknhU1A8nl3TCPNeussGC-9A64by_nm9rlO6OLVL2I/",
+      "titulo": "minimal surface superficial quote - Recherche Google",
+      "descripcion": "minimal surface superficial quote - Recherche Google",
+      "autor": "",
+      "obra": "Superficies mínimas",
+      "fuente_original": "",
+      "fecha_alta": "2026-10-23",
+      "fecha_pin": "Thu, 22 Oct 2026 21:48:23 GMT",
+      "nota": "Catálogo de superficies mínimas (Schwarz, Schoen): vocabulario geométrico de partida.",
+      "tags": {
+        "tema": [
+          "estructura",
+          "biomimetica"
+        ],
+        "estrategia": [
+          "reticula",
+          "minimo"
+        ],
+        "material": [
+          "mixto"
+        ],
+        "representacion": [
+          "lamina"
+        ],
+        "uso": [
+          "aixgaudi"
+        ],
+        "estado": [
+          "shortlist"
+        ]
+      }
+    },
+    {
+      "pin_id": "e1_AfqPShyWILYpJwlzaUlJRLVzS_yfSd8xMRD5S1xyVPAEZ2VPu-Ta",
+      "imagen_hash": "d9cc71557974bfe487cfb8915ac67186",
+      "archivo": "ref-25.jpg",
+      "origen": "pinterest",
+      "url": "https://ar.pinterest.com/pin/e1_AfqPShyWILYpJwlzaUlJRLVzS_yfSd8xMRD5S1xyVPAEZ2VPu-Ta/",
+      "titulo": "3D-printed artificial reefs to restore coral ecosystems",
+      "descripcion": "3D-printed artificial reefs to restore coral ecosystems",
+      "autor": "",
+      "obra": "",
+      "fuente_original": "",
+      "fecha_alta": "2026-10-23",
+      "fecha_pin": "Thu, 22 Oct 2026 21:51:10 GMT",
+      "nota": "Columnas arbóreas de hormigón impreso: detalle de ramificación bajo losa.",
+      "tags": {
+        "tema": [
+          "estructura",
+          "detalle"
+        ],
+        "estrategia": [
+          "ramificacion",
+          "forma-organica"
+        ],
+        "material": [
+          "hormigon"
+        ],
+        "representacion": [
+          "foto-obra"
+        ],
+        "uso": [
+          "aixgaudi"
+        ],
+        "estado": [
+          "shortlist"
+        ]
+      }
+    }
+  ],
+  "actualizado": "2026-10-23"
+}

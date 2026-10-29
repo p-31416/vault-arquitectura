@@ -2,16 +2,18 @@
 tipo: indice
 seccion: playbooks-internos
 fecha_creacion: 2026-07-24
-ultima_actualizacion: 2026-09-08
-tags: [playbooks, infra, comfyui, git, github, opencode, setup]
+ultima_actualizacion: 2026-10-22
+tags: [playbooks, infra, comfyui, git, github, opencode, setup, vps, ssh, monitoreo, contabo]
 ---
 
 # Playbooks Internos del Estudio
 
 Colección de guías operativas y procedimientos técnicos para el día a día del estudio.
 
-## Infraestructura, Cuentas y Entorno
+## Infraestructura, VPS y Cuentas
 
+- [[pbk-vps-acceso-monitoreo|Acceso SSH y monitoreo del VPS]] — **Canónico**: SSH `contabo`, 3 capas de monitoreo (UptimeRobot + n8n + manual), portabilidad a otros VPS/usuarios.
+- [[pbk-alertas-contabo|Alertas de seguridad de Contabo]] — **Canónico**: flujo de respuesta a mails de Contabo (kernel CVE, PHP RCE, outage), verificación y registro.
 - [[pbk-config_ctas_git_github_opencode|Gestión y Separación de Cuentas (Git, GitHub, OpenCode)]] — Matriz de identidades, rutas de credenciales, archivos de configuración, verificación en 30 seg y conexión/desconexión de proveedores IA.
 - [[pbk-instalacion-codex|Réplica vault con Codex (Windows)]] — **Canónico**: CLI+Desktop, sandbox elevated/unelevated, MCPs espejo (Fathom/Leantime/Autodesk/AutoCAD), rutina sin PC (n8n vs Actions). Ref Brais Codex 101.
 

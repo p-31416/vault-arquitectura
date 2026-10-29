@@ -20,6 +20,7 @@ Catálogo de comandos, funciones y variables de todos los softwares del estudio.
 | Comfy Cloud vs RunPod | [[wiki/glosario/software/comfy-cloud-vs-runpod|comfy-cloud-vs-runpod]] — dónde renderizar: límites, privacidad, costos y qué sirve para el concurso |
 | FLUX.2 [klein] 9B | [[wiki/glosario/software/flux2-klein-9b|flux2-klein-9b]] — DiT 9B, edición multi-referencia, stack de instalación y grafo |
 | LoRA rhino-to-image | [[wiki/glosario/software/lora-rhino-to-image-gaudi|lora-rhino-to-image-gaudi]] — LoRA rank 16 sobre FLUX.2 klein 9B (curso AI×Gaudí) |
+| LoRAs locales | [[wiki/glosario/software/lora-locales-comfyui|lora-locales-comfyui]] — 17 LoRAs que corren en el RX 570: base, rank, trigger, VRAM y los que piden login |
 | Unreal Engine | [[wiki/glosario/software/unreal-engine|unreal-engine]] |
 | Impresión 3D | [[wiki/glosario/software/impresion-3d|impresion-3d]] |
 | FFmpeg | [[wiki/glosario/software/ffmpeg|ffmpeg]] |
@@ -32,7 +33,7 @@ Catálogo de comandos, funciones y variables de todos los softwares del estudio.
 | **Opencode** | [[wiki/glosario/software/opencode|opencode]] — OPENCODE_API_KEY, zen |
 | **pandoc** | [[wiki/glosario/software/pandoc|pandoc]] — md→pdf, digest→Telegram |
 | **Telegram** | [[wiki/glosario/software/telegram|telegram]] — bot, sendDocument, vaultworm_arqbot |
-| **n8n** | [[wiki/glosario/software/n8n|n8n]] — webhook, Telegram Trigger (futuro) |
+| **n8n** | [[wiki/glosario/software/n8n|n8n]] — **activo**, 10 workflows en VPS, alertas monitoreo |
 | **MCP autodesk-help** | [[wiki/glosario/software/mcp-autodesk-help|mcp-autodesk-help]] — ayuda oficial Autodesk, solo lectura |
 | **MCP autocad** | [[wiki/glosario/software/mcp-autocad|mcp-autocad]] — control AutoCAD 2027 vía COM |
 | **Leantime** | [[wiki/glosario/software/leantime|leantime]] — tablero PM/agile self-hosted + MCP `x-api-key` |

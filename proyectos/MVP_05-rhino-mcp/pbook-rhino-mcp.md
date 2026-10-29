@@ -29,12 +29,15 @@ No reemplaza al arquitecto. Reemplaza los clics repetitivos.
 
 ## 2. Conexión rápida (si ya instalaste)
 
-Solo dos pasos:
+Dos pasos, **al abrir Rhino**:
 
-1. En Rhino 8, ejecutá el comando `MCPConnect`
-2. Copiá el prompt que aparece y pegalo en tu asistente IA
+1. En la línea de comandos de Rhino 8: `_RunPythonScript "P:\00-repos\proyecto-pi\vault-arquitectura\scripts\rhino-mcp-server-rhino.py"`
+   (también disponible en `Tools` → `Script` → `Run...`)
+2. Esperar el mensaje `RhinoMCP script loaded. Server started automatically.` en la línea de comandos.
 
-Listo. Ya podés hablarle a Rhino.
+> **El puente vive dentro del proceso de Rhino.** Si cerrás y reabrís Rhino, hay que volver a ejecutar el script: el puerto 9876 queda sin servidor y el asistente recibe `WinError 10061` (conexión denegada).
+>
+> Este playbook es el complemento operativo de [[proyectos/MVP_05-rhino-mcp/01-AIZ/01-playbook-cortes-rhino-8|01-playbook-cortes-rhino-8]], que tiene el detalle de cortes, hatch y hoja A3 a 1:50.
 
 ---
 
@@ -216,12 +219,13 @@ Flujo completo:
 
 | Síntoma | Causa probable | Solución |
 |---------|---------------|----------|
-| "No veo Rhino" | Plugin no instalado o MCP desconectado | Ejecutá `MCPConnect` de nuevo |
+| "No veo Rhino" / `WinError 10061` | El script del puente no corrió en esta sesión de Rhino | Ejecutar `_RunPythonScript "…\scripts\rhino-mcp-server-rhino.py"` en la línea de comandos de Rhino |
 | "Hizo algo pero no lo veo" | Geometría lejos del origen | `Zoom → Extents` en Rhino |
 | "Dice que hizo pero no pasó nada" | Capa oculta o freeze | Revisá el panel de capas |
 | Rhino crashea | Prompt muy complejo o bug | Reiniciá Rhino y simplificá el prompt |
 | Grasshopper no funciona | GH2 requiere Rhino 9 | Usá `gh_` tools en vez de `gh2_` |
 | El asistente no encuentra objetos | No se los mostraste | Primero pedí `get_scene_summary` |
+| `Save` no escribe el archivo | El documento quedó bloqueado (`IsLocked`) tras un `Open` interrumpido | Guardá con `SaveAs` a otra ruta y copiá el archivo |
 
 ---
 
@@ -237,7 +241,7 @@ Flujo completo:
 ## 10. Checklist de uso diario
 
 - [ ] Rhino 8 abierto con el modelo cargado
-- [ ] `MCPConnect` ejecutado al inicio de la sesión
+- [ ] `_RunPythonScript "…\scripts\rhino-mcp-server-rhino.py"` ejecutado al inicio de la sesión
 - [ ] Asistente conectado (verificá con "qué ves en el archivo?")
 - [ ] Trabajás por pasos: leer → modificar → verificar
 - [ ] Cambios importantes guardados en .3dm antes de cada prompt complejo

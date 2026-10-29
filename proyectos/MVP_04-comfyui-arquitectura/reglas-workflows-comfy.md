@@ -56,6 +56,61 @@ ControlNet  KSampler
 
 ---
 
+## R2: Escalar según el modelo, no según la época
+
+**Regla:** El escalado de la imagen de entrada depende del modelo del sampler. En **SD1.5** manda R1 (`ImageScale` a 512×512). En **FLUX.2** el escalado es a megapíxeles con `ImageScaleToTotalPixels` y el upscale final es `ImageUpscaleWithModel` + Hires fix.
+
+**Por qué:**
+- FLUX.2 está entrenado con imágenes de más resolución: a 512×512 rinde por debajo de lo que puede.
+- En los workflows de referencia (Rhino-to-Image) la geometría se escala a **1,0 MP** y la referencia de material a **0,5 MP**, con `lanczos`: la relación de escala entre ambas es la que hace que el material caiga en la escala correcta de la geometría.
+
+**Nodo a usar (FLUX.2):**
+```
+ImageScaleToTotalPixels
+├── upscale_method: "lanczos"
+├── megapixels: 1.0   (geometría)  ·  0.5 (referencia de material)
+├── resolution_steps: 1
+```
+
+**Upscale de salida (cualquier modelo):**
+```
+ImageUpscaleWithModel (RealESRGAN_x4plus)  →  2.º KSampler denoise 0,15-0,35  →  VAEDecode
+```
+
+**Excepciones:**
+- `txt2img` puro (no hay input de imagen).
+- La imagen final puede ser mayor que la del sampler: el upscale va después.
+
+**Workflows que la aplican:** `proyectos/concurso-gaudi-nexus/workflows/WF-02-texto-a-imagen/` · `WF-03-rhino-a-imagen/` · `WF-05-imagen-a-3d/` · `n_05-rhino-mcp/WF-rhino-to-image/`.
+
+---
+
+## R3: Nomenclatura de salidas del concurso
+
+**Regla:** En la carpeta del concurso (`proyectos/concurso-gaudi-nexus/`), las corridas se nombran `gx-{LETRA}-{NN}.png`, con `gx` por el proyecto (Gaudí Nexus) y la letra con el mismo significado de la tabla de arriba (A baseline · B prompt · C parámetros · D modelo · E resolución · F ControlNet/img2img).
+
+**Por qué:** la convención `n_XX-` identifica el proyecto **MVP**, y estos workflows son del concurso: el prefijo propio evita que se confundan con las corridas de MVP_04.
+
+**Dónde va:** `proyectos/concurso-gaudi-nexus/workflows/WF-<nn>/salidas/` (carpeta fuera de git).
+
+---
+
+## R4: Validación estática antes de la corrida
+
+**Regla:** Todo workflow se valida contra el servidor destino y contra el disco antes de encolar la primera corrida: cada `class_type` y cada widget contra `/object_info`, y cada modelo referenciado contra la carpeta `models/` del servidor. El resultado de la validación queda anotado en el `02-WF-log`.
+
+**Por qué:** un `class_type` inexistente o un nombre de modelo que no está en la carpeta del servidor aparecen recién al encolar, cuando el grafo ya está cargado.
+
+**Cómo:**
+```
+GET /object_info                    → class_type y widgets disponibles
+GET /models  (o /models/<tipo>)     → modelos instalados en el servidor
+```
+
+**Excepciones:** los workflows que se ejecutan contra un servicio externo (nodos partner de Comfy Cloud) se validan contra el `object_info` de esa plataforma.
+
+---
+
 ## Convenciones para workflows (agregar reglas aquí)
 
 Las reglas se acumulan a medida que se descubren durante el desarrollo. Formato:
@@ -99,6 +154,7 @@ proyectos/<MVP>/<nivel>/WF-<nombre>/
 | **D** | Migración de **modelo** (ej. SD 1.5 → SDXL) |
 | **E** | Variación de **resolución / aspect ratio** |
 | **F** | Test de **ControlNet / img2img** |
+| **G** | Test de **LoRA** (fuerza, trigger, base) — añadido 2026-10-28 |
 
 **Archivos obligatorios y su orden:**
 1. `00-README.md` — Navegación y uso del flujo

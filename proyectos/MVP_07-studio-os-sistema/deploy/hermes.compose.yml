@@ -1,0 +1,91 @@
+# Studio OS · servicio Hermes en el VPS (EasyPanel → Add Service → Compose)
+
+> Este es el bloque de compose para el servicio del agente. Pegalo en **EasyPanel → Add Service → Compose** (no en un `docker run` suelto: el VPS es Docker Swarm y todo lo demás vive como servicio de EasyPanel).
+> Decisiones que lo acompañan: [[specs/ADR-2026-10-28-agente-hermes-en-vps|ADR Hermes en el VPS]] · [[proyectos/MVP_07-studio-os-sistema/02-ft-mvp_07|02-ft]] §F0.5.
+
+```yaml
+services:
+  hermes:
+    image: nousresearch/hermes-agent:stable
+    container_name: hermes
+    restart: unless-stopped
+    command: gateway run
+    volumes:
+      # /opt/data = TODO el estado del agente (config, .env, sesiones, memoria, skills, cron, state.db).
+      # Tiene que ser un VOLUMEN NOMBRADO, no una carpeta del host: la base state.db usa WAL
+      # y un bind mount sobre 9p/virtiofs se corrompe (documentado por Hermes).
+      - hermes-data:/opt/data
+      # El clon del vault, de SOLO LECTURA: el agente lee; las escrituras pasan por el
+      # MCP del vault con aprobación, no por el contenedor.
+      - /srv/vault/work:/vault:ro
+    environment:
+      - HERMES_TIMEZONE=America/Argentina/Buenos_Aires
+      # El dashboard y la API se activan SOLO cuando haga falta (y por la red privada).
+      - HERMES_DASHBOARD=0
+      - API_SERVER_ENABLED=false
+    deploy:
+      resources:
+        limits:
+          # 3 GB es el techo que armamos con la RAM medida del VPS (4,8 GB disponibles).
+          # Sin este límite, el contenedor puede quedarse con toda la RAM y tumbar n8n.
+          memory: 3G
+          cpus: "2.0"
+
+volumes:
+  hermes-data:
+```
+
+## Por qué no hay `ports`
+
+**Decisión: en F0 el servicio no publica ningún puerto.**
+
+- El gateway de Telegram hace *long polling*: sale hacia internet y no necesita que le abran nada.
+- La API 8642 y el dashboard 9119 quedan apagados (`API_SERVER_ENABLED=false`, `HERMES_DASHBOARD=0`) hasta que algo externo los necesite.
+- La documentación de Hermes es explícita sobre el riesgo: en junio 2026 escáneres entraron por dashboards expuestos y plantaron una backdoor SSH. Con cero puertos publicados, ese vector no existe.
+
+Cuando haga falta exponer la API (por ejemplo para que `opencode` en la PC de desarrollo la consulte), el camino es **por la red privada**: se agrega el puerto con `host_ip` de la IP de Tailscale (100.x) o se usa `tailscale serve` sobre un puerto local. Nunca `0.0.0.0` sin firewall.
+
+## Cuando agregues la API
+
+```yaml
+    environment:
+      - API_SERVER_ENABLED=true
+      - API_SERVER_HOST=0.0.0.0
+      - API_SERVER_KEY=<32 bytes hex>   # openssl rand -hex 32
+    ports:
+      - target: 8642
+        published: 8642
+        protocol: tcp
+        mode: host
+```
+
+Y en el host, `tailscale serve --bg 8642` para que quede accesible solo desde el tailnet.
+
+## Fijar la versión (reproducibilidad)
+
+`stable` es el canal que pasa el gate de_release. Para que el despliegue sea **reproducible**, fijá el digest:
+
+```
+docker manifest inspect nousresearch/hermes-agent:stable --verbose | grep digest
+```
+
+y poné `image: nousresearch/hermes-agent@sha256:<digest>`. Con eso, un `docker pull` futuro trae exactamente la misma versión.
+
+## Secretos
+
+- La clave de la API va en `environment` **desde el panel de EasyPanel** (que la guarda como secreto del servicio), o directamente en `/opt/data/.env` (permisos 600) — nunca en este archivo, nunca en el vault, nunca en un commit.
+- El token de Telegram (cuando llegue F3) va al `.env` del volumen.
+
+## Verificación
+
+```
+docker service ls | grep hermes
+docker exec hermes hermes status
+docker exec hermes hermes doctor
+```
+
+Y para ver que el límite de memoria está aplicado:
+
+```
+docker service inspect <servicio> --format '{{json .Spec.TaskTemplate.ContainerSpec.Resources}}'
+```

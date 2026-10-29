@@ -19,6 +19,7 @@ _Índice de todos los proyectos del estudio._
 | [[proyectos/MVP_03b-calhon-pdo/readme-mvp_03b|MVP_03b-calhon-pdo]] | Estudio (interno) | — | R&D (CalHon PyDO — Proyecto y Dirección de Obra, CPAU + monto) | activo |
 | [[proyectos/MVP_04-comfyui-arquitectura/readme-mvp_04|MVP_04-comfyui-arquitectura]] | Estudio (interno) | — | R&D (ComfyUI MCP) — [[proyectos/MVP_04-comfyui-arquitectura/01-spec-mvp_04|spec]], [[proyectos/MVP_04-comfyui-arquitectura/02-ft-mvp_04|plan]], [[proyectos/MVP_04-comfyui-arquitectura/modelos-recomendados|modelos]] | activo |
 | [[proyectos/MVP_06-agente-voz/readme-mvp_06|MVP_06-agente-voz]] | Estudio (interno) | — | R&D (Agente voz Telegram + n8n, lenguaje natural, Cal.com + Fathom) — [[proyectos/MVP_06-agente-voz/01-spec-mvp_06|spec canónica]] | activo |
+| [[proyectos/MVP_07-studio-os-sistema/readme-mvp_07|MVP_07-studio-os-sistema]] | Estudio (interno) | — | R&D (Studio OS — sistema operativo del estudio: Hermes, MCP, trazabilidad) — [[proyectos/MVP_07-studio-os-sistema/00-filo-mvp_07|documento maestro]] | activo |
 | [[proyectos/STUDIO_OS-Emilia/00-index|STUDIO_OS-Emilia]] | Emilia Pimenta | Argentina | briefing → sprint 30 días (USD 600) — [[proyectos/STUDIO_OS-Emilia/presentacion/00-presentacion-studio-os|deck 16 slides]] | activo |
 | [[proyectos/260907-brain_emilia/00-index|260907-brain_emilia]] | Emilia | Argentina-remoto | concepto → Vault Cerebro + Brain — [[specs/260907-vault_cerebro|spec]] | activo |
 

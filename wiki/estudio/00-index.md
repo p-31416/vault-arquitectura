@@ -1,7 +1,7 @@
 ---
 tipo: indice
 fecha_creacion: 2026-06-28
-ultima_actualizacion: 2026-06-28
+ultima_actualizacion: 2026-10-22
 tags: [estudio, indice]
 ---
 
@@ -45,6 +45,7 @@ Estudio de arquitectura **argentino**. Sol (SOL) es arquitecta y consultora de I
 - [[decision-arquitectura-ia-privacidad|Decisiones: arquitectura, IA y privacidad de datos]]
 - [[backups|Política de backups]]
 - [[sync|Sincronización entre equipos]]
+- [[wiki/estudio/it/runbook-vps-estudio|Runbook del VPS]] — acceso SSH, servicios, checklist post-caída, mantenimiento
 
 ## Arquitectura de Decisiones (ADRs)
 - [[wiki/estudio/adrs/00-index|Índice de ADRs]] — Decisiones técnicas formales (infra, tools, proc, data, sec)

@@ -140,7 +140,9 @@ Nodo Canny usa thresholds normalizados 0–0.99 (dividir por 255). Default produ
 
 **Qué es:** preserva **estructura espacial** (masas, profundidad, interior-exterior) vía mapa de profundidad MiDaS/DPT. Archivo: `control_v11f1p_sd15_depth_fp16.safetensors` (689 MB FP16, +~1.2 GB VRAM).
 
-Preprocesadores: `dpt_hybrid` (calidad general) · `midas_v21_small` (rápido) · DepthAnything V2 (mejor detalle, requiere pack `comfyui_controlnet_aux`).
+Preprocesadores: `dpt_hybrid` (calidad general) · `midas_v21_small` (rápido) · **Depth Anything V3** (mejor detalle).
+
+> Corrección 2026-10-28: el pack `comfyui_controlnet_aux` **no está instalado** en esta máquina (los únicos custom_nodes son `ComfyUI_IPAdapter_plus` y `ComfyUI-IC-Light`). Por eso `dpt_hybrid` y `midas_v21_small` hoy no están disponibles: **Depth Anything V3 viene nativo en el core de ComfyUI 0.28** (`comfy_extras/nodes_depth_anything_3.py`), igual que el detector de pose (`comfy_extras/nodes_sdpose.py`). Para MiDaS/DPT hace falta instalar `comfyui_controlnet_aux`.
 
 | Caso | strength | end% | preprocessor |
 |---|---|---|---|
@@ -202,7 +204,23 @@ Caso estudio: render final (este pbook) → `stage` como input → LTX i2v 4 s �
 
 ## Prompt-packs de arquitectura
 
-Exterior: `architecturerealmix style, modern architecture, concrete and glass facade, minimalist design, photorealistic, architectural photography, natural lighting, 8K` · Interior: `modern living room, floor-to-ceiling windows, warm wood accents, minimalist furniture, natural light, photorealistic` · SDXL: prefijar `photorealistic, raw photo, 8k uhd, highly detailed, masterpiece, canon r5, 24mm tilt-shift` + tipología. Nocturno: `night, illuminated windows, floodlights`. LoRA SD1.5 (Architectural Visualization / Brutalist / Interior) a strength 0.6–0.8 **antes** del KSampler.
+Exterior: `architecturerealmix style, modern architecture, concrete and glass facade, minimalist design, photorealistic, architectural photography, natural lighting, 8K` · Interior: `modern living room, floor-to-ceiling windows, warm wood accents, minimalist furniture, natural light, photorealistic` · SDXL: prefijar `photorealistic, raw photo, 8k uhd, highly detailed, masterpiece, canon r5, 24mm tilt-shift` + tipología. Nocturno: `night, illuminated windows, floodlights`. LoRA SD1.5 (`JJ_Archvizcg_v2` / `sandiese` / `BrutalistTech-20` / `room` / `Le Corbusier`) a strength 0.6–0.8 **antes** del KSampler, con su **trigger** en el prompt (`archviz`, `architecture, building, grey_background`, `brutaltech, cement`, `room`, `zhuai_pb, brutalism`).
+
+## LoRAs locales (RX 570 8 GB)
+
+Catálogo completo y verificado: [[wiki/glosario/software/lora-locales-comfyui|lora-locales-comfyui]].
+
+| Base | Techo local | Con ControlNet | Notas |
+|---|---|---|---|
+| SD 1.5 | ≤250 MB | ✅ (hasta 2 CN) | 9 LoRAs instalados; rank 8–128 |
+| SDXL | ≤900 MB | ❌ (Union SDXL no entra) | 7 LoRAs instalados; los de 870 MB (rank 128) son los que miden el techo |
+| FLUX.1 / FLUX.2 | — | — | Sin text encoder local → **RunPod 24 GB** |
+
+> El trigger va **en el prompt**, nunca el nombre del `.safetensors`. Y el LoRA se carga con `LoraLoader` entre `CheckpointLoaderSimple` y `KSampler` (su salida 0 = MODEL, salida 1 = CLIP: los `CLIPTextEncode` deben colgar de la salida 1 del LoRA para que el texto también reciba el LoRA).
+
+### Aceleración (documentada, pendiente de instalar)
+
+LCM-LoRA (SD1.5 y SDXL) e Hyper-SD: con sampler `lcm` (nativo en ComfyUI 0.28) + scheduler `sgm_uniform` + 4–6 steps + cfg 1–2 + strength 0,5–1,0, el render local baja de ~132 s a ~25–30 s. Fuentes y configuración: [[wiki/glosario/software/lora-locales-comfyui#Aceleración: candidatos para instalar|lora-locales-comfyui § Aceleración]].
 
 ## DoD y archivo en el vault
 

@@ -1,7 +1,7 @@
 ---
 tipo: indice
 fecha_creacion: 2026-06-28
-ultima_actualizacion: 2026-06-30
+ultima_actualizacion: 2026-10-28
 tags: [indice, maestro]
 ---
 
@@ -28,6 +28,7 @@ Vault de conocimiento para estudio de arquitectura argentino.
 - [[proyectos/MVP_03-calhon-gest/readme-mvp_03|MVP_03 — Calculadora Honorarios]] — gestión municipal, React + TypeScript
 - [[proyectos/MVP_04-comfyui-arquitectura/readme-mvp_04|MVP_04 — ComfyUI Arquitectura]] — generación IA local (SD/Flux/LTX), ControlNet, video
 - [[proyectos/MVP_05-rhino-mcp/pbook-rhino-mcp|MVP_05 — Rhino MCP]] — automatización Rhino/Grasshopper vía MCP
+- [[proyectos/concurso-gaudi-nexus/index|Concurso AI×Gaudí — The Gaudí Nexus]] — los 7 workflows del curso adapted a la pila del estudio, con el plan maestro en [[specs/261028-plan-workflows-adaptados-curso-ai-gaudi|specs/261028]]
 - [[wiki/glosario/00-index|Glosario]] — conocimiento permanente (software, conceptos, referentes, entidades, interno)
 
 Usar `proyectos/template/` para nuevos proyectos.

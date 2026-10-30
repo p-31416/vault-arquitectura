@@ -1,0 +1,67 @@
+flowchart TB
+    FUE["🗂 FUENTES<br/>se abre en tipos, sin intermedios"]
+    FUE --> VID["📽 VIDEO"]
+    FUE --> IMG["📷 IMAGEN"]
+    FUE --> TEX["⌨️ TEXTO"]
+    FUE --> REU["REUNION"]
+    FUE --> AUD["⭐🎙 AUDIO (propuesto)"]
+    FUE --> CRO["⭐✏️ CROQUIS (propuesto)"]
+    FUE --> CAD["⭐📐 CAD (propuesto)"]
+    VID --> VYT["▶ YouTube"]
+    VID --> VMK["🎞 MKV / grabación"]
+    VID --> VPO["🎓 Portales (Pinbo, Gaudí)"]
+    VYT --> PYT["⚙ transcribir_youtube.py → transcript → ficha"]
+    VMK --> PBU["⚙ transcribir-leccion-bunny.py → ficha"]
+    VPO --> PMX["⚙ mux_lecciones_curso.py → transcript → ficha"]
+    IMG --> IJP["JPG"]
+    IMG --> IPN["PNG"]
+    IMG --> ICA["Captura de pantalla"]
+    IMG --> IIG["Instagram"]
+    IJP --> PIM["⚙ referentes_tags.py → ficha visual"]
+    IPN --> PIM
+    ICA --> PIM
+    IIG --> PIM
+    TEX --> TRE["Revista arquitectura"]
+    TEX --> TAR["Artículo"]
+    TEX --> TLI["Libro"]
+    TEX --> TPA["Paper científico"]
+    TEX --> TMO["Monografía"]
+    TEX --> TTE["Tesis"]
+    TLI --> TES["Libro escaneado → OCR"]
+    TLI --> TDI["Libro PDF / digital"]
+    TRE --> PPDF["⚙ pdf_scan_bibliografia.py → ficha"]
+    TAR --> PPDF
+    TES --> PPDF
+    TDI --> PPDF
+    TPA --> PPDF
+    TMO --> PPDF
+    TTE --> PPDF
+    REU --> RFA["Fathom / Meet"]
+    RFA --> PRE["⚙ minuta → compromisos + fecha"]
+    AUD --> APO["Podcast"]
+    AUD --> AVO["Nota de voz"]
+    APO --> PAU["⚙ faster-whisper → transcript"]
+    AVO --> PAU
+    CRO --> CSC["Cuaderno escaneado"]
+    CSC --> PCR["⚙ curar-cuaderno → índice visual"]
+    CAD --> CDW["DWG / DXF base"]
+    CDW --> PCA["⚙ audita-dwg.py → informe"]
+    PYT --> W["🧠 CEREBRO / WIKI"]
+    PMX --> W
+    PBU --> W
+    PIM --> W
+    PPDF --> W
+    PRE --> W
+    PAU --> W
+    PCR --> W
+    PCA --> W
+    PMX -.->|rizoma| PPDF
+    PIM -.->|rizoma| PYT
+    PRE -.->|rizoma| PIM
+    PCR -.->|rizoma| PIM
+    W --> LEE["HERMES LEE · vault-mcp"]
+    LEE --> MEM["MEMORIA: cuaderno real + scratch"]
+    MEM --> MCP["MCPs: CAD · Rhino · ComfyUI · n8n"]
+    MCP --> MAN["MANTIENE: digest · lint"]
+    MAN --> MEJ["MEJORA con s"]
+    MEJ -.->|s aprueba| W

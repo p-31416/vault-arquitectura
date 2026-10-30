@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="620" viewBox="0 0 1160 620" font-family="Inter, Segoe UI, sans-serif">
+  <rect x="0" y="0" width="1160" height="620" fill="#ffffff"/>
+  <text x="20" y="24" font-size="15" font-weight="700">Flujo fuentes → scripts → raw → agentes → wiki → Hermes (lee + mantiene + mejora)</text>
+  <g font-size="11" text-anchor="middle">
+    <rect x="20" y="36" width="250" height="564" rx="8" fill="#fff9db" stroke="#1e1e1e" stroke-width="2"/>
+    <text x="145" y="56" font-weight="700">CARRIL 1 · FUENTE + SCRIPT</text>
+    <rect x="35" y="66" width="220" height="56" rx="8" fill="#fff" stroke="#1e1e1e" stroke-width="2"/><text x="145" y="88">YouTube suelto</text><text x="145" y="104">transcribir_youtube.py</text>
+    <rect x="35" y="132" width="220" height="72" rx="8" fill="#fff" stroke="#1e1e1e" stroke-width="2"/><text x="145" y="154">Takeout YT/Chrome</text><text x="145" y="170">yt_titles + yt_takeout_parser</text><text x="145" y="186">yt_revision + yt_creadores</text>
+    <rect x="35" y="214" width="220" height="72" rx="8" fill="#fff" stroke="#1e1e1e" stroke-width="2"/><text x="145" y="236">Curso Mux / Bunny</text><text x="145" y="252">mux_lecciones_curso.py</text><text x="145" y="268">transcribir-leccion-bunny.py</text>
+    <rect x="35" y="296" width="220" height="56" rx="8" fill="#fff" stroke="#1e1e1e" stroke-width="2"/><text x="145" y="318">PDF / biblio</text><text x="145" y="334">pdf_scan_bibliografia.py</text>
+    <rect x="35" y="362" width="220" height="72" rx="8" fill="#fff" stroke="#1e1e1e" stroke-width="2"/><text x="145" y="384">Reunion Fathom</text><text x="145" y="400">n8n Fathom Core (cron)</text><text x="145" y="416">import_fathom_ppi_manual.py</text>
+    <rect x="35" y="444" width="220" height="72" rx="8" fill="#fff" stroke="#1e1e1e" stroke-width="2"/><text x="145" y="466">IG / Pinterest / obra</text><text x="145" y="482">referentes_pinterest.py</text><text x="145" y="498">referentes_tags.py</text>
+    <rect x="290" y="36" width="210" height="564" rx="8" fill="#e7f5ff" stroke="#1e1e1e" stroke-width="2"/>
+    <text x="395" y="56" font-weight="700">CARRIL 2 · RAW</text>
+    <rect x="305" y="80" width="180" height="46" rx="8" fill="#fff" stroke="#1e1e1e" stroke-width="2"/><text x="395" y="108">raw/yt/transcripts/</text>
+    <rect x="305" y="200" width="180" height="46" rx="8" fill="#fff" stroke="#1e1e1e" stroke-width="2"/><text x="395" y="228">raw/research/ + cache</text>
+    <rect x="305" y="320" width="180" height="46" rx="8" fill="#fff" stroke="#1e1e1e" stroke-width="2"/><text x="395" y="348">raw/pdf/ + ficha</text>
+    <rect x="305" y="430" width="180" height="46" rx="8" fill="#fff" stroke="#1e1e1e" stroke-width="2"/><text x="395" y="458">raw/reuniones/</text>
+    <rect x="305" y="520" width="180" height="46" rx="8" fill="#fff" stroke="#1e1e1e" stroke-width="2"/><text x="395" y="548">activos/referentes/</text>
+    <rect x="520" y="36" width="260" height="564" rx="8" fill="#ebfbee" stroke="#1e1e1e" stroke-width="2"/>
+    <text x="650" y="56" font-weight="700">CARRIL 3 · AGENTES + WIKI (s)</text>
+    <rect x="540" y="80" width="220" height="64" rx="8" fill="#fff" stroke="#1e1e1e" stroke-width="2"/><text x="650" y="102">Sherlock: busca+ficha</text><text x="650" y="118">stub raw/contenidos/</text>
+    <rect x="540" y="190" width="220" height="64" rx="8" fill="#fff" stroke="#1e1e1e" stroke-width="2"/><text x="650" y="212">Contenidos: formatea</text><text x="650" y="228">raw/contenidos → wiki/fuentes</text>
+    <rect x="540" y="300" width="220" height="64" rx="8" fill="#fff" stroke="#1e1e1e" stroke-width="2"/><text x="650" y="322">Vaultworm 1x/sem: digest</text><text x="650" y="338">glosario + estudio</text>
+    <rect x="540" y="430" width="220" height="76" rx="8" fill="#d3f9d8" stroke="#1e1e1e" stroke-width="3"/><text x="650" y="456" font-weight="700">WIKI COMUN</text><text x="650" y="474">fractal · iterable · rizomatica</text>
+    <rect x="800" y="36" width="340" height="564" rx="8" fill="#f3e8ff" stroke="#1e1e1e" stroke-width="2"/>
+    <text x="970" y="56" font-weight="700">CARRIL 4 · HERMES (Karpathy: el harness)</text>
+    <rect x="820" y="70" width="300" height="110" rx="8" fill="#fff" stroke="#1e1e1e" stroke-width="2"/><text x="970" y="92" font-weight="700">COMPUESTO</text><text x="970" y="108">LLM intercambiable (Go→Ollama→OpenRouter)</text><text x="970" y="124">HARNESS: Docker+MCPs+cron+Telegram</text><text x="970" y="140">+Postgres · SKILLS escritas</text>
+    <rect x="820" y="210" width="300" height="64" rx="8" fill="#fff" stroke="#1e1e1e" stroke-width="2"/><text x="970" y="232" font-weight="700">LEE: vault-mcp</text><text x="970" y="248">cuaderno = memoria real</text>
+    <rect x="820" y="310" width="300" height="64" rx="8" fill="#fff" stroke="#1e1e1e" stroke-width="2"/><text x="970" y="332" font-weight="700">MANTIENE: curar-cuaderno</text><text x="970" y="348">digest 07:00 · lint trimestral</text>
+    <rect x="820" y="410" width="300" height="96" rx="8" fill="#fff" stroke="#1e1e1e" stroke-width="2"/><text x="970" y="432" font-weight="700">MEJORA con s humano</text><text x="970" y="448">propone entradas y refunds</text><text x="970" y="464">por eso no se abandona (Karpathy)</text>
+  </g>
+  <g stroke="#1e1e1e" stroke-width="2" fill="none">
+    <defs><marker id="ah" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#1e1e1e"/></marker></defs>
+    <line x1="255" y1="94" x2="303" y2="103" marker-end="url(#ah)"/>
+    <line x1="255" y1="168" x2="303" y2="103" marker-end="url(#ah)"/>
+    <line x1="255" y1="250" x2="303" y2="103" marker-end="url(#ah)"/>
+    <line x1="255" y1="324" x2="303" y2="343" marker-end="url(#ah)"/>
+    <line x1="255" y1="398" x2="303" y2="453" marker-end="url(#ah)"/>
+    <line x1="255" y1="480" x2="303" y2="543" marker-end="url(#ah)"/>
+    <line x1="485" y1="103" x2="538" y2="112" marker-end="url(#ah)"/>
+    <line x1="650" y1="144" x2="650" y2="188" marker-end="url(#ah)"/>
+    <line x1="650" y1="254" x2="650" y2="298" marker-end="url(#ah)"/>
+    <line x1="650" y1="364" x2="650" y2="428" marker-end="url(#ah)"/>
+    <line x1="760" y1="468" x2="818" y2="242" marker-end="url(#ah)"/>
+    <line x1="970" y1="180" x2="970" y2="208" marker-end="url(#ah)"/>
+    <line x1="970" y1="274" x2="970" y2="308" marker-end="url(#ah)"/>
+    <line x1="970" y1="374" x2="970" y2="408" marker-end="url(#ah)"/>
+    <line x1="820" y1="458" x2="762" y2="222" stroke-dasharray="6 4" marker-end="url(#ah)"/>
+  </g>
+</svg>

@@ -18,7 +18,7 @@ Este documento detalla cómo levantar y orquestar el servidor MCP para ComfyUI d
 
 ## Instalación del Servidor MCP
 
-Se utiliza el paquete oficial de MCP de ComfyUI que permita la ejecución e interrogación de flujos de trabajo localmente.
+Se utiliza el paquete `comfyui-mcp` (npm, autor artokun), que expone ejecución, validación e interrogación de flujos de trabajo de un ComfyUI local. Requiere Node >= 22. El paquete `@comfyorg/comfyui-mcp` que circula en notas antiguas devuelve 404: el nombre correcto es `comfyui-mcp`.
 
 ### Paso 1: Configurar el archivo MCP de Opencode
 
@@ -32,7 +32,7 @@ El comando principal a usar a través de `npx` (ejemplo oficial):
   "mcpServers": {
     "comfyui-mcp": {
       "command": "npx",
-      "args": ["-y", "@comfyorg/comfyui-mcp"],
+      "args": ["-y", "comfyui-mcp"],
       "env": {
         "COMFYUI_URL": "http://127.0.0.1:8188"
       }
@@ -45,8 +45,8 @@ El comando principal a usar a través de `npx` (ejemplo oficial):
 
 1. Con ComfyUI corriendo localmente en el puerto 8188.
 2. Iniciar la sesión de Opencode. El agente detectará el MCP de ComfyUI disponible.
-3. El agente podrá listar herramientas como `run_workflow` conectándose a tu máquina.
+3. El agente podrá listar herramientas como `comfyui_generate_image`, `comfyui_execute_workflow`, `comfyui_validate_workflow`, `comfyui_get_history`, `comfyui_list_local_models`, `comfyui_search_models` y `comfyui_get_system_stats`, conectándose a tu máquina.
 
 ## Principio AMV aplicado
 
-No hay scripts sueltos ni diagramas. La validación de que esta integración funciona es ejecutar el MCP y lograr un `run_workflow` exitoso inyectando un `.json` local.
+No hay scripts sueltos ni diagramas. La validación de que esta integración funciona es ejecutar el MCP y lograr un `comfyui_execute_workflow` exitoso inyectando un `.json` local.

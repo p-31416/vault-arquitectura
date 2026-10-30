@@ -61,7 +61,7 @@ Ya están: anillo trimestral, ROI, flujo vault, ROI payback. Faltan:
 
 | Archivo | Destino | Nota de baja (1 línea) |
 |---|---|---|
-| `[[specs/260907-ghl-ingest-6-etapas]]` | → `specs/archived/2026-09-pre-firma/` | "Superado comercialmente por la propuesta firmada el 24/09; entra a Mes 3 si复活" |
+| `[[specs/260907-ghl-ingest-6-etapas]]` | → `specs/archived/2026-09-pre-firma/` | "Superado comercialmente por la propuesta firmada el 24/09; entra a Mes 3 si revive" |
 | `[[specs/260907-telegram-vault]]` | → `specs/archived/2026-09-pre-firma/` | "Reemplazado por n8n (`[[specs/260924-plan-os-emilia-n8n]]`)" |
 | `proyectos/MVP_01-dibujo_ia/`, `proyectos/MVP_04-comfyui-arquitectura/` | → `proyectos/archived/2026-08-pre-studio-os/` | "Sprints internos pre-contrato Emilia; conservan valor histórico, no protagonismo en Mes 1" |
 
@@ -81,7 +81,7 @@ Ya están: anillo trimestral, ROI, flujo vault, ROI payback. Faltan:
 | 11 | `[[specs/260910-plan-trimestral-unificado-studio-os-emilia]]` | **Crítico 16/10** | Día 2 (09/10) | El norte del trimestre. Imprimir el diagrama de anillo Excalidraw para llevar a la mesa. |
 | 14 | `[[specs/260929-alta-emilia-leantime]]` | **Crítico 16/10** | Día 3-4 (10-11/10) | MCP Leantime recién reparado (05/10): mostrar panel cargado con tareas reales es wow-factor accesible hoy. |
 | 5 | `[[specs/260909-agente-reuniones-fathom-specs]]` | **Crítico 16/10** | Día 4 (11/10) | Prueba formal en vivo: 1 reunión de las 11 → SPEC → push a Leantime. Demuestra el loop completo, no un agente aislado. |
-| 4 | `[[specs/260907-vault_cerebro]]` | **Crítico 16/10** | Día 5 (12/10) | Visión Mes 1 vigente. Verificar que las 4 semanas tengan estado real (no愿景) en `00-handover-mes1.md`. |
+| 4 | `[[specs/260907-vault_cerebro]]` | **Crítico 16/10** | Día 5 (12/10) | Visión Mes 1 vigente. Verificar que las 4 semanas tengan estado real (no visión) en `00-handover-mes1.md`. |
 | 13 | `[[specs/260924-plan-os-emilia-n8n]]` | Diferible Mes 2 | Sprint 16/10–16/11 | §16.4-16.5 pendientes, pero la demo del 16/10 cierra con "esto entra Mes 2". No bloquea. |
 | 1 | `[[specs/260907-ghl-extraccion-automatica]]` | Diferible Mes 2 | Sprint 16/10–16/11 | `transcribir_ghl.py` ya existe; solo falta E2E con ffmpeg + whisper. Backlog Mes 2. |
 | 7 | `[[specs/260909-github-actions-agentes-online]]` | Diferible Mes 2 | Sprint 16/10–16/11 | Backlog intacto, no impacta demo. |

@@ -1,0 +1,47 @@
+flowchart TB
+    subgraph L1 ["CARRIL 1 · FUENTE + SCRIPT (determinista, replicable)"]
+        direction LR
+        YT["YouTube suelto<br/>transcribir_youtube.py"]
+        TK["Takeout YT/Chrome<br/>yt_titles.py - yt_takeout_parser.py<br/>yt_revision.py - yt_creadores.py"]
+        MX["Curso Mux / Bunny<br/>mux_lecciones_curso.py<br/>transcribir-leccion-bunny.py"]
+        PDF["PDF / biblio<br/>pdf_scan_bibliografia.py"]
+        REU["Reunion Fathom<br/>n8n Fathom Core (cron)<br/>import_fathom_ppi_manual.py"]
+        IMG["IG / Pinterest / obra<br/>referentes_pinterest.py<br/>referentes_tags.py"]
+    end
+    subgraph L2 ["CARRIL 2 · RAW (inbox, append-only)"]
+        direction LR
+        R1["raw/yt/transcripts/"]
+        R2["raw/research/ + cache"]
+        R3["raw/pdf/ + ficha"]
+        R4["raw/reuniones/"]
+        R5["activos/referentes/"]
+    end
+    subgraph L3 ["CARRIL 3 · AGENTES + WIKI (criterio, siempre con s)"]
+        direction TB
+        SH["Sherlock: busca + transcript + ficha<br/>stub raw/contenidos/sherlock-slug"]
+        CO["Contenidos: formatea + template<br/>raw/contenidos - wiki/fuentes"]
+        VW["Vaultworm 1x/sem: digest<br/>glosario + estudio"]
+        SH --> CO --> VW
+    end
+    subgraph L4 ["CARRIL 4 · HERMES lee + MANTIENE + MEJORA (Karpathy: el trabajo esta en el harness)"]
+        direction TB
+        COMP["HERMES = LLM intercambiable + HARNESS + SKILLS<br/>LLM: OpenCode Go - Ollama - OpenRouter<br/>Harness: Docker + MCPs-brazos + cron + Telegram + registro Postgres<br/>Skills: curar-cuaderno · auditar-doc-cad · experto-comfyui"]
+        LEE["LEE: vault-mcp (leer/buscar/indice)<br/>cuaderno digital = memoria real"]
+        MAN["MANTIENE: curar-cuaderno (indexar/etiquetar/conectar)<br/>cron digest 07:00 · lint trimestral"]
+        MEJ["MEJORA: propone entradas/refunds<br/>con s humano antes de escribir"]
+        COMP --> LEE --> MAN --> MEJ
+        MEJ -.->|s aprueba| CO
+    end
+    YT --> R1
+    TK --> R1
+    MX --> R1
+    PDF --> R3
+    REU --> R4
+    IMG --> R5
+    R1 --> SH
+    R2 --> SH
+    R3 --> SH
+    R4 --> CO
+    R5 --> CO
+    VW --> LEE
+    VW -.->|alimenta| COMP

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" font-family="Inter, Segoe UI, sans-serif">
+  <rect x="0" y="0" width="1200" height="680" fill="#ffffff"/>
+  <text x="20" y="24" font-size="15" font-weight="700">Cerebro fractal y rizomático: fuentes → wiki → Hermes (lee + mantiene + mejora)</text>
+  <g font-size="11" text-anchor="middle">
+    <rect x="20" y="36" width="270" height="210" rx="8" fill="#fff9db" stroke="#1e1e1e" stroke-width="2"/>
+    <text x="155" y="56" font-weight="700">VIDEO</text>
+    <rect x="35" y="64" width="240" height="44" rx="8" fill="#fff" stroke="#1e1e1e"/><text x="155" y="91">YouTube / Grabado / OBS</text>
+    <rect x="35" y="116" width="240" height="36" rx="8" fill="#fff" stroke="#1e1e1e"/><text x="155" y="139">transcript</text>
+    <rect x="35" y="160" width="240" height="36" rx="8" fill="#fff" stroke="#1e1e1e"/><text x="155" y="183">ficha</text>
+    <text x="155" y="232" font-size="10" fill="#666">misma forma a menor escala</text>
+    <rect x="310" y="36" width="270" height="210" rx="8" fill="#e7f5ff" stroke="#1e1e1e" stroke-width="2"/>
+    <text x="445" y="56" font-weight="700">IMAGEN</text>
+    <rect x="325" y="64" width="240" height="44" rx="8" fill="#fff" stroke="#1e1e1e"/><text x="445" y="91">Instagram / captura / JPG</text>
+    <rect x="325" y="116" width="240" height="36" rx="8" fill="#fff" stroke="#1e1e1e"/><text x="445" y="139">Foto de obra</text>
+    <rect x="325" y="160" width="240" height="36" rx="8" fill="#fff" stroke="#1e1e1e"/><text x="445" y="183">ficha visual</text>
+    <text x="445" y="232" font-size="10" fill="#666">misma forma a menor escala</text>
+    <rect x="600" y="36" width="270" height="210" rx="8" fill="#ebfbee" stroke="#1e1e1e" stroke-width="2"/>
+    <text x="735" y="56" font-weight="700">TEXTO</text>
+    <rect x="615" y="64" width="240" height="44" rx="8" fill="#fff" stroke="#1e1e1e"/><text x="735" y="91">Revista / paper / libro</text>
+    <rect x="615" y="116" width="240" height="36" rx="8" fill="#fff" stroke="#1e1e1e"/><text x="735" y="139">cita + ficha</text>
+    <rect x="615" y="160" width="240" height="36" rx="8" fill="#fff" stroke="#1e1e1e"/><text x="735" y="183">glosario</text>
+    <text x="735" y="232" font-size="10" fill="#666">misma forma a menor escala</text>
+    <rect x="890" y="36" width="290" height="210" rx="8" fill="#fff0f0" stroke="#1e1e1e" stroke-width="2"/>
+    <text x="1035" y="56" font-weight="700">REUNION</text>
+    <rect x="905" y="64" width="260" height="44" rx="8" fill="#fff" stroke="#1e1e1e"/><text x="1035" y="91">Fathom / Meet</text>
+    <rect x="905" y="116" width="260" height="36" rx="8" fill="#fff" stroke="#1e1e1e"/><text x="1035" y="139">minuta</text>
+    <rect x="905" y="160" width="260" height="36" rx="8" fill="#fff" stroke="#1e1e1e"/><text x="1035" y="183">compromisos + fecha</text>
+    <text x="1035" y="232" font-size="10" fill="#666">misma forma a menor escala</text>
+    <rect x="420" y="280" width="360" height="104" rx="12" fill="#d3f9d8" stroke="#1e1e1e" stroke-width="3"/>
+    <text x="600" y="306" font-size="14" font-weight="700">CEREBRO / WIKI COMUN</text>
+    <text x="600" y="326">fractal · iterable · rizomatica</text>
+    <text x="600" y="344">Front Matter ubicable · siempre con s</text>
+    <rect x="20" y="420" width="420" height="76" rx="8" fill="#f3e8ff" stroke="#1e1e1e" stroke-width="2"/>
+    <text x="230" y="442" font-weight="700">HERMES = LLM + HARNESS + SKILLS</text>
+    <text x="230" y="460">Harness: Docker + cron + Telegram + Postgres</text>
+    <text x="230" y="478">Skills: recetas escritas del estudio</text>
+    <rect x="460" y="420" width="360" height="76" rx="8" fill="#fff" stroke="#1e1e1e" stroke-width="2"/>
+    <text x="640" y="442" font-weight="700">MEMORIA</text>
+    <text x="640" y="460">real: cuaderno digital, queda</text>
+    <text x="640" y="478">scratch: sesion Hermes, se borra</text>
+    <rect x="840" y="420" width="340" height="76" rx="8" fill="#fff" stroke="#1e1e1e" stroke-width="2"/>
+    <text x="1010" y="442" font-weight="700">MCPs-brazos</text>
+    <text x="1010" y="460">AutoCAD · Rhino · ComfyUI</text>
+    <text x="1010" y="478">n8n · Vault · Registro</text>
+    <rect x="20" y="520" width="560" height="56" rx="8" fill="#fff" stroke="#1e1e1e" stroke-width="2"/>
+    <text x="300" y="544" font-weight="700">MANTIENE: curar-cuaderno · digest 07:00 · lint</text>
+    <rect x="600" y="520" width="580" height="56" rx="8" fill="#fff" stroke="#1e1e1e" stroke-width="2"/>
+    <text x="890" y="544" font-weight="700">MEJORA con s: entradas y refunds (Karpathy: no se abandona)</text>
+    <text x="20" y="620" font-size="11" fill="#666" text-anchor="start">— flecha sólida: alimenta · - - - punteada gris: rizoma (conexión cruzada entre ramas)</text>
+    <text x="20" y="640" font-size="11" fill="#666" text-anchor="start">Cada rama se subdivide con la misma forma (fractal): fuente → captura → ficha → wiki.</text>
+  </g>
+  <g stroke="#1e1e1e" stroke-width="2" fill="none">
+    <defs><marker id="ah" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#1e1e1e"/></marker></defs>
+    <line x1="155" y1="196" x2="420" y2="320" marker-end="url(#ah)"/>
+    <line x1="445" y1="196" x2="500" y2="300" marker-end="url(#ah)"/>
+    <line x1="735" y1="196" x2="700" y2="300" marker-end="url(#ah)"/>
+    <line x1="1035" y1="196" x2="780" y2="320" marker-end="url(#ah)"/>
+    <line x1="600" y1="384" x2="640" y2="418" marker-end="url(#ah)"/>
+    <line x1="820" y1="458" x2="838" y2="458" marker-end="url(#ah)"/>
+    <line x1="1010" y1="496" x2="300" y2="518" marker-end="url(#ah)"/>
+    <line x1="580" y1="548" x2="598" y2="548" marker-end="url(#ah)"/>
+    <line x1="890" y1="576" x2="780" y2="386" stroke-dasharray="6 4" marker-end="url(#ah)"/>
+  </g>
+  <g stroke="#999" stroke-width="1.5" fill="none" stroke-dasharray="5 4">
+    <defs><marker id="ahg" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#999"/></marker></defs>
+    <path d="M275 134 C 400 134, 480 134, 613 134" marker-end="url(#ahg)"/>
+    <path d="M445 196 C 350 230, 250 220, 160 200" marker-end="url(#ahg)"/>
+    <path d="M445 152 C 650 200, 850 200, 1000 192" marker-end="url(#ahg)"/>
+  </g>
+</svg>

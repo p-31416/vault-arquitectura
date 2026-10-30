@@ -1,0 +1,1 @@
+[00:00:42] Before of starting the plugin remember that Google Chrome must be completely closed

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="850" height="320" viewBox="0 0 850 320" font-family="Inter, Segoe UI, sans-serif">
+  <rect x="0" y="0" width="850" height="320" fill="#ffffff"/>
+  <text x="20" y="28" font-size="15" font-weight="700">G1 — Fuentes → Wiki → Hermes (prueba draw.io / diagrams.net, export SVG acotado)</text>
+  <g font-size="12" text-anchor="middle">
+    <rect x="20" y="60" width="150" height="90" rx="8" fill="#fff9db" stroke="#1e1e1e" stroke-width="2"/>
+    <text x="95" y="85">FUENTES</text><text x="95" y="102">Video YT / OBS</text><text x="95" y="117">Imagen IG / JPG</text><text x="95" y="132">Texto revista / paper</text>
+    <rect x="200" y="60" width="150" height="90" rx="8" fill="#e7f5ff" stroke="#1e1e1e" stroke-width="2"/>
+    <text x="275" y="85">AGENTES</text><text x="275" y="102">Sherlock · Brainstormy</text><text x="275" y="117">Contenidos · Vaultworm</text>
+    <rect x="380" y="60" width="170" height="90" rx="8" fill="#ebfbee" stroke="#1e1e1e" stroke-width="2"/>
+    <text x="465" y="85">WIKI COMUN</text><text x="465" y="102">fractal · iterable · rizomatica</text><text x="465" y="117">Front Matter ubicable</text>
+    <rect x="200" y="200" width="150" height="80" rx="8" fill="#f3e8ff" stroke="#1e1e1e" stroke-width="2"/>
+    <text x="275" y="225">PI / HERMES</text><text x="275" y="242">LLM + MCPs-brazos</text>
+    <rect x="380" y="200" width="170" height="80" rx="8" fill="#fff0f0" stroke="#1e1e1e" stroke-width="2"/>
+    <text x="465" y="225">MANO + CRITERIO</text><text x="465" y="242">determinista / agente (s humano)</text>
+    <rect x="580" y="60" width="150" height="90" rx="8" fill="#f1f1f1" stroke="#999" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="655" y="85">Ventana ChatGPT</text><text x="655" y="102">flujo aislado</text><text x="655" y="117">vos ejecutas</text>
+  </g>
+  <g stroke="#1e1e1e" stroke-width="2" fill="none" marker-end="url(#ah)">
+    <defs><marker id="ah" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#1e1e1e"/></marker></defs>
+    <line x1="170" y1="105" x2="198" y2="105"/>
+    <line x1="350" y1="105" x2="378" y2="105"/>
+    <line x1="465" y1="150" x2="465" y2="198"/>
+    <line x1="350" y1="240" x2="378" y2="240"/>
+    <line x1="605" y1="150" x2="655" y2="152" stroke="#999" stroke-dasharray="6 4"/>
+  </g>
+</svg>

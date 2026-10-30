@@ -319,7 +319,7 @@ Cada sprint tiene su propio gate Go/No-Go: si un workflow no cierra en su sprint
 | 3 · 11-17/11 | WF-03: render desde Rhino, upscale y edición | M-C3 |
 | 4 · 18-24/11 | WF-04: video, timelapse e interpolación | M-C4 |
 | 5 · 25/11-01/12 | WF-05: 3D, multiview y retorno a Rhino | M-C5 |
-| 6 · 02-08/12 | WF-07: arcilla y estética;候选 lámina | M-C6 |
+| 6 · 02-08/12 | WF-07: arcilla y estética; lámina candidata | M-C6 |
 | 7 · 09-15/12 | Composición de la A1, dossier de método y entrega protegida | M-C7 |
 
 ---

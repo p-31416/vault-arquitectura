@@ -203,6 +203,7 @@ fecha_ingesta: {today}
 url: https://www.youtube.com/watch?v={vid}
 idioma: {lang}
 fuente_origen: {fuente}
+generado_por: scripts/transcribir_youtube.py
 tags: [youtube, transcripcion, raw]
 transcript_srt: raw/yt/transcripts/{stem}.{lang}.srt
 transcript_txt: raw/yt/transcripts/{stem}.{lang}.txt
@@ -211,6 +212,7 @@ transcript_txt: raw/yt/transcripts/{stem}.{lang}.txt
 # RAW — YouTube {vid} ({today}, verbatim)
 
 > Transcript verbatim vía {fuente}. Crudo append-only: no editar a mano.
+> Generado por `scripts/transcribir_youtube.py`.
 > Ver ficha en `raw/contenidos/` cuando @contenidos la genere.
 
 ## Transcript (con timestamps)
@@ -219,7 +221,8 @@ transcript_txt: raw/yt/transcripts/{stem}.{lang}.txt
 """, encoding="utf-8")
     (TRANSCRIPTS / f"{stem}.origen.json").write_text(
         json.dumps({"video_id": vid, "fuente": fuente, "idioma": lang,
-                    "fecha": today, "modelo_whisper": args.model if fuente == "whisper" else None},
+                    "fecha": today, "modelo_whisper": args.model if fuente == "whisper" else None,
+                    "generado_por": "scripts/transcribir_youtube.py"},
                    ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"[out] raw/yt/transcripts/{stem}.{lang}.md + .srt + .txt + .origen.json")
     print("SIGUIENTE: @contenidos ficha este transcript (formato spec v3 §13).")

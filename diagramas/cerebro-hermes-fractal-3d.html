@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Cerebro fractal 3D — filosofía Hermes</title>
+<script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+<script src="https://unpkg.com/3d-force-graph@1.73.0/dist/3d-force-graph.min.js"></script>
+<style>
+body { margin: 0; font-family: sans-serif; background: #000; color: #eee; }
+#bar { padding: 8px 12px; background: #111; font-size: 14px; }
+#bar code { background: #222; padding: 2px 6px; border-radius: 4px; color: #f1c40f; }
+#layout { display: flex; }
+#side { width: 310px; min-width: 310px; background: #141414; padding: 12px; height: 92vh; overflow-y: auto; border-right: 2px solid #2ecc71; }
+#side h3 { margin: 4px 0 8px; font-size: 16px; color: #2ecc71; }
+.tagbtn { display: block; width: 100%; text-align: left; margin: 5px 0; padding: 9px 10px; background: #222; color: #fff; border: 2px solid #444; border-radius: 8px; cursor: pointer; font-size: 15px; font-weight: bold; }
+.tagbtn small { color: #aaa; font-weight: normal; }
+.tagbtn.activo { border-color: #2ecc71; background: #0e2a1a; }
+#btn-todos { display: block; width: 100%; margin: 8px 0; padding: 9px; background: #2ecc71; color: #000; border: none; border-radius: 8px; cursor: pointer; font-size: 15px; font-weight: bold; }
+#detalle { font-size: 13px; color: #fff; margin-top: 10px; background: #000; padding: 8px; border-radius: 6px; }
+#main { flex: 1; }
+#graph { height: 92vh; }
+</style>
+</head>
+<body>
+<div id="bar">Lectura macro → micro, de arriba hacia abajo: 🗂 FUENTES → tipos → subtipos → <b>procesamiento</b> → 🧠 WIKI → Hermes · <b>rosa = rizoma</b> · gris ⭐ = propuesta · click = ruta vault</div>
+<div id="layout">
+<div id="side">
+<h3>Ramas (tocá para aislar)</h3>
+<div id="tags"></div>
+<button id="btn-todos">◎ ver todo</button>
+<div id="detalle">Elegí una rama para aislar su cúmulo, o tocá una esfera.</div>
+</div>
+<div id="main"><div id="graph"></div></div>
+</div>
+<script>
+// NOTA ES: jerarquia estricta desde UN nodo: FUENTES → tipos → subtipos → proceso → WIKI.
+// Sin intermedios entre FUENTES y tipos. Propuestos en gris (grupo 'nuevo'). Patron grafo-yt-mock.html.
+const gData = {
+  nodes: [
+    {id: 'cerebro', name: '🧠 CEREBRO / WIKI', group: 'hub', val: 36, rama: 'hub', vault: 'wiki/ (fractal · iterable · rizomatica)'},
+    {id: 'fuentes', name: '🗂 FUENTES', group: 'hub', val: 28, rama: 'hub', vault: 'raíz: se abre en tipos, sin intermedios'},
+    {id: 'r-video', name: '📽 VIDEO', group: 'video', val: 20, rama: 'video', vault: 'tipo: sale directo de FUENTES'},
+    {id: 'r-imagen', name: '📷 IMAGEN', group: 'imagen', val: 20, rama: 'imagen', vault: 'tipo: sale directo de FUENTES'},
+    {id: 'r-texto', name: '⌨️ TEXTO', group: 'texto', val: 20, rama: 'texto', vault: 'tipo: sale directo de FUENTES'},
+    {id: 'r-reunion', name: 'REUNION', group: 'reunion', val: 16, rama: 'reunion', vault: 'tipo: sale directo de FUENTES'},
+    {id: 'r-audio', name: '⭐🎙 AUDIO (propuesto)', group: 'nuevo', val: 16, rama: 'nuevo', vault: 'PROPUESTO: no se maneja aún'},
+    {id: 'r-croquis', name: '⭐✏️ CROQUIS (propuesto)', group: 'nuevo', val: 16, rama: 'nuevo', vault: 'PROPUESTO: cuaderno escaneado → curar-cuaderno'},
+    {id: 'r-cad', name: '⭐📐 CAD (propuesto)', group: 'nuevo', val: 16, rama: 'nuevo', vault: 'PROPUESTO: DWG base → audita-dwg.py'},
+    {id: 'v-yt', name: '▶ YouTube', group: 'video', val: 10, rama: 'video', vault: 'subtipo de VIDEO'},
+    {id: 'v-mkv', name: '🎞 MKV / grabación', group: 'video', val: 10, rama: 'video', vault: 'cualquier formato de grabación'},
+    {id: 'v-portal', name: '🎓 Portales (Pinbo, Gaudí)', group: 'video', val: 10, rama: 'video', vault: 'academias y cursos'},
+    {id: 'p-yt', name: '⚙ transcribir_youtube.py → transcript → ficha', group: 'video', val: 9, rama: 'video', vault: 'scripts/transcribir_youtube.py → raw/yt/transcripts/'},
+    {id: 'p-mux', name: '⚙ mux_lecciones_curso.py → transcript → ficha', group: 'video', val: 9, rama: 'video', vault: 'scripts/mux_lecciones_curso.py (Pinbo, Gaudí/Mux)'},
+    {id: 'p-bunny', name: '⚙ transcribir-leccion-bunny.py → ficha', group: 'video', val: 9, rama: 'video', vault: 'sin subtítulos: ffmpeg + faster-whisper → raw/yt/'},
+    {id: 'i-jpg', name: 'JPG', group: 'imagen', val: 10, rama: 'imagen', vault: 'subtipo de IMAGEN'},
+    {id: 'i-png', name: 'PNG', group: 'imagen', val: 10, rama: 'imagen', vault: 'subtipo de IMAGEN'},
+    {id: 'i-cap', name: 'Captura de pantalla', group: 'imagen', val: 10, rama: 'imagen', vault: 'screenshot → ficha visual'},
+    {id: 'i-ig', name: 'Instagram', group: 'imagen', val: 10, rama: 'imagen', vault: 'scripts/referentes_pinterest.py'},
+    {id: 'p-img', name: '⚙ referentes_tags.py → ficha visual', group: 'imagen', val: 9, rama: 'imagen', vault: 'JPG/PNG/captura/IG → activos/referentes/ + ficha'},
+    {id: 't-rev', name: 'Revista arquitectura', group: 'texto', val: 10, rama: 'texto', vault: 'subtipo de TEXTO'},
+    {id: 't-art', name: 'Artículo', group: 'texto', val: 10, rama: 'texto', vault: 'subtipo de TEXTO'},
+    {id: 't-lib', name: 'Libro', group: 'texto', val: 10, rama: 'texto', vault: 'escaneado o PDF/digital'},
+    {id: 't-paper', name: 'Paper científico', group: 'texto', val: 10, rama: 'texto', vault: 'scripts/pdf_scan_bibliografia.py'},
+    {id: 't-mono', name: 'Monografía', group: 'texto', val: 10, rama: 'texto', vault: 'subtipo de TEXTO'},
+    {id: 't-tesis', name: 'Tesis', group: 'texto', val: 10, rama: 'texto', vault: 'subtipo de TEXTO'},
+    {id: 't-esc', name: 'Libro escaneado → OCR', group: 'texto', val: 8, rama: 'texto', vault: 'scan → OCR → ficha'},
+    {id: 't-dig', name: 'Libro PDF / digital', group: 'texto', val: 8, rama: 'texto', vault: 'raw/pdf/ + ficha'},
+    {id: 'p-pdf', name: '⚙ pdf_scan_bibliografia.py → ficha', group: 'texto', val: 9, rama: 'texto', vault: 'revista/artículo/libro/paper/mono/tesis → raw/pdf/ + ficha'},
+    {id: 'u-fath', name: 'Fathom / Meet', group: 'reunion', val: 10, rama: 'reunion', vault: 'n8n Fathom Core (cron)'},
+    {id: 'p-reu', name: '⚙ minuta → compromisos + fecha', group: 'reunion', val: 9, rama: 'reunion', vault: 'raw/reuniones/ → Leantime + Telegram'},
+    {id: 'a-pod', name: 'Podcast', group: 'nuevo', val: 10, rama: 'nuevo', vault: 'PROPUESTO: subtipo de AUDIO'},
+    {id: 'a-voz', name: 'Nota de voz', group: 'nuevo', val: 10, rama: 'nuevo', vault: 'PROPUESTO: WhatsApp/Telegram → transcript'},
+    {id: 'p-aud', name: '⚙ faster-whisper → transcript', group: 'nuevo', val: 9, rama: 'nuevo', vault: 'PROPUESTO: mismo motor que transcribir-leccion-bunny.py'},
+    {id: 'c-scan', name: 'Cuaderno escaneado', group: 'nuevo', val: 10, rama: 'nuevo', vault: 'PROPUESTO: croquis, escalas, decisiones (VISION §3)'},
+    {id: 'p-cro', name: '⚙ curar-cuaderno → índice visual', group: 'nuevo', val: 9, rama: 'nuevo', vault: 'PROPUESTO: skill curar-cuaderno (VISION §6.3)'},
+    {id: 'c-dwg', name: 'DWG / DXF base', group: 'nuevo', val: 10, rama: 'nuevo', vault: 'PROPUESTO: plano base de obra'},
+    {id: 'p-cad', name: '⚙ audita-dwg.py → informe', group: 'nuevo', val: 9, rama: 'nuevo', vault: 'PROPUESTO: auditoría sin tocar el original'},
+    {id: 'h-comp', name: 'HERMES = LLM+HARNESS+SKILLS', group: 'hermes', val: 16, rama: 'hermes', vault: 'proyectos/MVP_07-studio-os-sistema/VISION.md §4'},
+    {id: 'h-lee', name: 'LEE: vault-mcp', group: 'hermes', val: 10, rama: 'hermes', vault: 'leer / buscar / indice'},
+    {id: 'h-mem', name: 'MEMORIA: cuaderno + scratch', group: 'hermes', val: 10, rama: 'hermes', vault: 'wiki/ (queda) · sesion (se borra)'},
+    {id: 'h-mcp', name: 'MCPs: CAD · Rhino · ComfyUI · n8n', group: 'hermes', val: 10, rama: 'hermes', vault: 'Guía de conexiones MCP'},
+    {id: 'h-man', name: 'MANTIENE: digest · lint', group: 'hermes', val: 10, rama: 'hermes', vault: 'curar-cuaderno · cron 07:00'},
+    {id: 'h-mej', name: 'MEJORA con s', group: 'hermes', val: 10, rama: 'hermes', vault: 'propuestas → s humano → wiki/'},
+  ],
+  links: [
+    {source: 'fuentes', target: 'r-video'}, {source: 'fuentes', target: 'r-imagen'},
+    {source: 'fuentes', target: 'r-texto'}, {source: 'fuentes', target: 'r-reunion'},
+    {source: 'fuentes', target: 'r-audio'}, {source: 'fuentes', target: 'r-croquis'}, {source: 'fuentes', target: 'r-cad'},
+    {source: 'r-video', target: 'v-yt'}, {source: 'r-video', target: 'v-mkv'}, {source: 'r-video', target: 'v-portal'},
+    {source: 'v-yt', target: 'p-yt'}, {source: 'v-mkv', target: 'p-bunny'}, {source: 'v-portal', target: 'p-mux'},
+    {source: 'r-imagen', target: 'i-jpg'}, {source: 'r-imagen', target: 'i-png'},
+    {source: 'r-imagen', target: 'i-cap'}, {source: 'r-imagen', target: 'i-ig'},
+    {source: 'i-jpg', target: 'p-img'}, {source: 'i-png', target: 'p-img'},
+    {source: 'i-cap', target: 'p-img'}, {source: 'i-ig', target: 'p-img'},
+    {source: 'r-texto', target: 't-rev'}, {source: 'r-texto', target: 't-art'}, {source: 'r-texto', target: 't-lib'},
+    {source: 'r-texto', target: 't-paper'}, {source: 'r-texto', target: 't-mono'}, {source: 'r-texto', target: 't-tesis'},
+    {source: 't-lib', target: 't-esc'}, {source: 't-lib', target: 't-dig'},
+    {source: 't-rev', target: 'p-pdf'}, {source: 't-art', target: 'p-pdf'},
+    {source: 't-esc', target: 'p-pdf'}, {source: 't-dig', target: 'p-pdf'},
+    {source: 't-paper', target: 'p-pdf'}, {source: 't-mono', target: 'p-pdf'}, {source: 't-tesis', target: 'p-pdf'},
+    {source: 'r-reunion', target: 'u-fath'}, {source: 'u-fath', target: 'p-reu'},
+    {source: 'r-audio', target: 'a-pod'}, {source: 'r-audio', target: 'a-voz'},
+    {source: 'a-pod', target: 'p-aud'}, {source: 'a-voz', target: 'p-aud'},
+    {source: 'r-croquis', target: 'c-scan'}, {source: 'c-scan', target: 'p-cro'},
+    {source: 'r-cad', target: 'c-dwg'}, {source: 'c-dwg', target: 'p-cad'},
+    {source: 'p-yt', target: 'cerebro'}, {source: 'p-mux', target: 'cerebro'}, {source: 'p-bunny', target: 'cerebro'},
+    {source: 'p-img', target: 'cerebro'}, {source: 'p-pdf', target: 'cerebro'}, {source: 'p-reu', target: 'cerebro'},
+    {source: 'p-aud', target: 'cerebro'}, {source: 'p-cro', target: 'cerebro'}, {source: 'p-cad', target: 'cerebro'},
+    {source: 'cerebro', target: 'h-lee'}, {source: 'h-comp', target: 'h-lee'},
+    {source: 'h-lee', target: 'h-mem'}, {source: 'h-mem', target: 'h-mcp'},
+    {source: 'h-mcp', target: 'h-man'}, {source: 'h-man', target: 'h-mej'},
+    {source: 'h-mej', target: 'cerebro', mejora: true},
+    {source: 'p-mux', target: 'p-pdf', rizoma: true},
+    {source: 'p-img', target: 'p-yt', rizoma: true},
+    {source: 'p-reu', target: 'p-img', rizoma: true},
+    {source: 'p-cro', target: 'p-img', rizoma: true},
+  ]
+};
+const colors = {hub: '#2ecc71', video: '#f39c12', imagen: '#3498db', texto: '#27ae60', reunion: '#e74c3c', nuevo: '#95a5a6', hermes: '#9b59b6'};
+const id = o => typeof o === 'object' ? o.id : o;
+let activo = null;
+function vecinos(rama) {
+  const keep = new Set(['cerebro', 'fuentes']);
+  gData.nodes.forEach(n => { if (n.rama === rama || n.rama === 'hub') keep.add(n.id); });
+  if (rama === 'hermes') gData.nodes.forEach(n => keep.add(n.id));
+  return keep;
+}
+function etiqueta(texto, color) {
+  const c = document.createElement('canvas'); c.width = 640; c.height = 96;
+  const x = c.getContext('2d');
+  x.font = 'bold 30px sans-serif'; x.textAlign = 'center';
+  x.lineWidth = 6; x.strokeStyle = 'rgba(0,0,0,0.9)'; x.strokeText(texto, 320, 60);
+  x.fillStyle = color || '#fff'; x.fillText(texto, 320, 60);
+  const tex = new THREE.CanvasTexture(c);
+  const sp = new THREE.Sprite(new THREE.SpriteMaterial({map: tex, transparent: true, depthWrite: false}));
+  sp.scale.set(40, 6, 1);
+  return sp;
+}
+const det = document.getElementById('detalle');
+// NOTA ES: capas fijas macro→micro. Cada nodo se pinea (fx/fy/fz) en su nivel:
+// FUENTES y=130 → tipos y=50 → subtipos y=-10 → proceso y=-70 → WIKI y=-150 → Hermes y=-215.
+// La física no los mueve: la jerarquía se lee siempre de arriba hacia abajo, pero se rota/zoom libre.
+(function capas() {
+  const porId = {}; gData.nodes.forEach(n => porId[n.id] = n);
+  const esJer = l => !l.rizoma && !l.mejora;
+  const hijos = {};
+  gData.links.filter(esJer).forEach(l => {
+    const s = id(l.source);
+    if (s === 'cerebro' || s === 'h-comp' || s === 'h-lee' || s === 'h-mem' || s === 'h-mcp' || s === 'h-man') return;
+    (hijos[s] = hijos[s] || []).push(id(l.target));
+  });
+  const P = (n, x, y, z) => { n.fx = x; n.fy = y; n.fz = z; };
+  P(porId['fuentes'], 0, 130, 0);
+  P(porId['cerebro'], 0, -150, 0);
+  const tipos = hijos['fuentes'] || [];
+  const R1 = 78, R2 = 142, R3 = 205;
+  tipos.forEach((t, i) => {
+    const a = (i / tipos.length) * Math.PI * 2 - Math.PI / 2;
+    P(porId[t], Math.cos(a) * R1, 50, Math.sin(a) * R1);
+    const subs = hijos[t] || [];
+    subs.forEach((s, j) => {
+      const sa = a + (j - (subs.length - 1) / 2) * 0.24;
+      porId[s]._a = sa;
+      P(porId[s], Math.cos(sa) * R2, -10, Math.sin(sa) * R2);
+      (hijos[s] || []).forEach((p, k) => {
+        if (porId[p]._fijo) return;
+        const pa = sa + (k - ((hijos[s] || []).length - 1) / 2) * 0.12;
+        P(porId[p], Math.cos(pa) * R3, -70, Math.sin(pa) * R3);
+        porId[p]._fijo = true;
+      });
+    });
+  });
+  // procesos con varios padres (p-img, p-pdf, p-aud): promedio de ángulos de sus padres
+  ['p-img', 'p-pdf', 'p-aud'].forEach(pid => {
+    const angs = gData.links.filter(l => esJer && id(l.target) === pid)
+      .map(l => porId[id(l.source)]._a).filter(a => a !== undefined);
+    if (angs.length) {
+      const m = angs.reduce((x, y) => x + y, 0) / angs.length;
+      P(porId[pid], Math.cos(m) * R3, -70, Math.sin(m) * R3);
+    }
+  });
+  ['h-comp', 'h-lee', 'h-mem', 'h-mcp', 'h-man', 'h-mej'].forEach((h, i) => P(porId[h], (i - 2.5) * 72, -215, 40));
+})();
+const Graph = ForceGraph3D()(document.getElementById('graph'))
+  .graphData(gData)
+  .nodeVal('val')
+  .nodeThreeObject(n => {
+    const g = new THREE.Group();
+    const r = Math.max(1.2, n.val * 0.45);
+    const esfera = new THREE.Mesh(
+      new THREE.SphereGeometry(r, 20, 20),
+      new THREE.MeshBasicMaterial({color: colors[n.rama] || '#fff', transparent: true, opacity: (!activo || vecinos(activo).has(n.id)) ? 1 : 0.15})
+    );
+    g.add(esfera);
+    const lab = etiqueta(n.name, n.rama === 'hub' ? '#2ecc71' : '#ffffff');
+    lab.position.y = r + 3.4;
+    g.add(lab);
+    return g;
+  })
+  .nodeLabel(n => n.name + '\n' + (n.vault || ''))
+  .linkColor(l => l.rizoma ? 'rgba(255,46,136,0.9)' : l.mejora ? 'rgba(155,89,182,0.9)' : 'rgba(255,255,255,0.9)')
+  .linkWidth(l => l.rizoma || l.mejora ? 1.2 : 1.8)
+  .linkDirectionalParticles(l => l.rizoma ? 2 : 3)
+  .linkLabel(l => id(l.source) + '  →  ' + id(l.target) + (l.rizoma ? ' (rizoma)' : ''))
+  .linkVisibility(l => !activo || (vecinos(activo).has(id(l.source)) && vecinos(activo).has(id(l.target))))
+  .onNodeClick(n => {
+    det.innerHTML = '<b>' + n.name + '</b><br>rama: ' + n.rama + '<br>vault: <code>' + (n.vault || '-') + '</code>';
+  });
+const ramas = [['video', '#f39c12', '📽 VIDEO — YT · MKV · portales → proceso'], ['imagen', '#3498db', '📷 IMAGEN — JPG · PNG · captura · IG → proceso'], ['texto', '#27ae60', '⌨️ TEXTO — revista · libro · paper · tesis → proceso'], ['reunion', '#e74c3c', 'REUNION — Fathom → minuta → compromisos'], ['nuevo', '#95a5a6', '⭐ PROPUESTAS — audio · croquis · CAD'], ['hermes', '#9b59b6', 'HERMES — lee + memoria + MCPs + mejora']];
+const box = document.getElementById('tags');
+ramas.forEach(([r, c, label]) => {
+  const n = gData.nodes.filter(x => x.rama === r).length;
+  const b = document.createElement('button');
+  b.className = 'tagbtn'; b.style.borderLeft = '8px solid ' + c;
+  b.innerHTML = label + ' <small>(' + n + ' nodos)</small>';
+  b.onclick = () => {
+    activo = (activo === r) ? null : r;
+    document.querySelectorAll('.tagbtn').forEach(x => x.classList.remove('activo'));
+    if (activo) b.classList.add('activo');
+    Graph.refresh();
+    det.innerHTML = activo ? '<b>' + label + '</b><br>cúmulo aislado · el resto al 15%.' : 'Elegí una rama para aislar su cúmulo, o tocá una esfera.';
+  };
+  box.appendChild(b);
+});
+document.getElementById('btn-todos').onclick = () => {
+  activo = null;
+  document.querySelectorAll('.tagbtn').forEach(x => x.classList.remove('activo'));
+  Graph.refresh();
+  det.innerHTML = 'Elegí una rama para aislar su cúmulo, o tocá una esfera.';
+};
+</script>
+</body>
+</html>

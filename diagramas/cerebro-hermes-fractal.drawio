@@ -1,0 +1,89 @@
+<mxfile host="app.diagrams.net" version="26.0.0" type="device">
+  <diagram id="cerebro-hermes-fractal" name="Cerebro-fractal-rizoma-Hermes">
+    <mxGraphModel dx="0" dy="0" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="780" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="cV" value="VIDEO" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff9db;strokeColor=#1e1e1e;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="20" y="20" width="270" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="cV1" value="YouTube / Grabado / OBS" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#1e1e1e;" vertex="1" parent="1">
+          <mxGeometry x="35" y="55" width="240" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="cV2" value="transcript" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#1e1e1e;" vertex="1" parent="1">
+          <mxGeometry x="35" y="120" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cV3" value="ficha" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#1e1e1e;" vertex="1" parent="1">
+          <mxGeometry x="35" y="175" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cI" value="IMAGEN" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e7f5ff;strokeColor=#1e1e1e;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="310" y="20" width="270" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="cI1" value="Instagram / captura / JPG" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#1e1e1e;" vertex="1" parent="1">
+          <mxGeometry x="325" y="55" width="240" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="cI2" value="Foto de obra" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#1e1e1e;" vertex="1" parent="1">
+          <mxGeometry x="325" y="120" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cI3" value="ficha visual" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#1e1e1e;" vertex="1" parent="1">
+          <mxGeometry x="325" y="175" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cT" value="TEXTO" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ebfbee;strokeColor=#1e1e1e;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="600" y="20" width="270" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="cT1" value="Revista / paper / libro" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#1e1e1e;" vertex="1" parent="1">
+          <mxGeometry x="615" y="55" width="240" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="cT2" value="cita + ficha" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#1e1e1e;" vertex="1" parent="1">
+          <mxGeometry x="615" y="120" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cT3" value="glosario" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#1e1e1e;" vertex="1" parent="1">
+          <mxGeometry x="615" y="175" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cR" value="REUNION" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff0f0;strokeColor=#1e1e1e;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="890" y="20" width="290" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="cR1" value="Fathom / Meet" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#1e1e1e;" vertex="1" parent="1">
+          <mxGeometry x="905" y="55" width="260" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="cR2" value="minuta" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#1e1e1e;" vertex="1" parent="1">
+          <mxGeometry x="905" y="120" width="260" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="cR3" value="compromisos + fecha" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#1e1e1e;" vertex="1" parent="1">
+          <mxGeometry x="905" y="175" width="260" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="W" value="CEREBRO / WIKI COMUN&#xa;fractal · iterable · rizomatica&#xa;Front Matter ubicable" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d3f9d8;strokeColor=#1e1e1e;strokeWidth=3;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="420" y="280" width="360" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="H" value="HERMES = LLM + HARNESS + SKILLS&#xa;Harness: Docker + cron + Telegram + Postgres · Skills: recetas escritas" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3e8ff;strokeColor=#1e1e1e;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="20" y="430" width="420" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="M" value="MEMORIA&#xa;real: cuaderno digital (wiki, queda)&#xa;scratch: sesion Hermes (se borra)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#1e1e1e;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="460" y="430" width="360" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="P" value="MCPs-brazos&#xa;AutoCAD · Rhino · ComfyUI&#xa;n8n · Vault · Registro" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#1e1e1e;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="840" y="430" width="340" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="MM" value="MANTIENE: curar-cuaderno · digest 07:00 · lint" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#1e1e1e;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="20" y="540" width="560" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="MJ" value="MEJORA con s humano: propone entradas y refunds (no se abandona — Karpathy)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#1e1e1e;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="600" y="540" width="580" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=2;endArrow=classic;" edge="1" parent="1" source="cV3" target="W" />
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=2;endArrow=classic;" edge="1" parent="1" source="cI3" target="W" />
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=2;endArrow=classic;" edge="1" parent="1" source="cT3" target="W" />
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=2;endArrow=classic;" edge="1" parent="1" source="cR3" target="W" />
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=2;endArrow=classic;" edge="1" parent="1" source="W" target="M" />
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=2;endArrow=classic;" edge="1" parent="1" source="M" target="P" />
+        <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=2;endArrow=classic;" edge="1" parent="1" source="P" target="MM" />
+        <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=2;endArrow=classic;" edge="1" parent="1" source="MM" target="MJ" />
+        <mxCell id="e9" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=2;endArrow=classic;dashed=1;" edge="1" parent="1" source="MJ" target="W" />
+        <mxCell id="e10" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1;endArrow=classic;dashed=1;strokeColor=#999999;" edge="1" parent="1" source="cV2" target="cT2" />
+        <mxCell id="e11" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1;endArrow=classic;dashed=1;strokeColor=#999999;" edge="1" parent="1" source="cI3" target="cV3" />
+        <mxCell id="e12" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1;endArrow=classic;dashed=1;strokeColor=#999999;" edge="1" parent="1" source="cI2" target="cR3" />
+        <mxCell id="e13" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeWidth=1;endArrow=classic;dashed=1;strokeColor=#999999;" edge="1" parent="1" source="H" target="M" />
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

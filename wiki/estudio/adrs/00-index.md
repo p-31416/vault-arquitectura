@@ -34,7 +34,7 @@ estado: activo
 
 | Nº | Título | Estado | Fecha | Resumen |
 |----|--------|--------|-------|---------|
-| — | *(pendiente)* | — | — | Flujos de trabajo, revisiones, entregas,命名 convenciones |
+| — | *(pendiente)* | — | — | Flujos de trabajo, revisiones, entregas, convenciones de nombrado |
 
 ---
 

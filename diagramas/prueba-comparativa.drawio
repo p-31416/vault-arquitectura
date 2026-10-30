@@ -1,0 +1,30 @@
+<mxfile host="app.diagrams.net" version="26.0.0" type="device">
+  <diagram id="prueba-comparativa" name="G1-fuentes-wiki-hermes">
+    <mxGraphModel dx="0" dy="0" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="F" value="FUENTES&#xa;Video YT / OBS&#xa;Imagen IG / JPG&#xa;Texto revista / paper" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff9db;strokeColor=#1e1e1e;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="20" y="60" width="150" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="A" value="AGENTES&#xa;Sherlock · Brainstormy&#xa;Contenidos · Vaultworm" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e7f5ff;strokeColor=#1e1e1e;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="200" y="60" width="150" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="W" value="WIKI COMUN&#xa;fractal · iterable · rizomatica&#xa;Front Matter" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ebfbee;strokeColor=#1e1e1e;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="380" y="60" width="150" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="P" value="PI / HERMES&#xa;LLM + MCPs-brazos" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f3e8ff;strokeColor=#1e1e1e;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="200" y="200" width="150" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="M" value="MANO + CRITERIO&#xa;determinista / agente (s humano)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff0f0;strokeColor=#1e1e1e;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="380" y="200" width="150" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=classic;" edge="1" parent="1" source="F" target="A" />
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=classic;" edge="1" parent="1" source="A" target="W" />
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=classic;" edge="1" parent="1" source="W" target="M" />
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=classic;dashed=1;" edge="1" parent="1" source="P" target="M" />
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;endArrow=classic;dashed=1;" edge="1" parent="1" source="W" target="P" />
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

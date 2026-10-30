@@ -305,7 +305,7 @@ Caso estudio (pbk ya cubierto): foto de maqueta o render viejo denoise 0.6 + pro
 
 ### 6.5 Licencia del input
 
-- Si el croquis es del estudio:没有问题, el output es del estudio.
+- Si el croquis es del estudio: no hay problema, el output es del estudio.
 - Si es croquis de un consultor externo o referencia de Pinterest: revisar que el modelo fine-tune/LoRA usado no esté entrenado con material con copyright explícito. SDXL, FLUX.1 dev, SD 1.5 (OpenRAIL++-M) son seguros en la mayoría de los casos. SD 3.5 tiene restricción de revenue ($1M threshold) pero el estudio cae debajo.
 
 ## 7. 3D model → render (CASO CRÍTICO: Rhino/Blender/SketchUp)

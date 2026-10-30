@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="320" viewBox="0 0 700 320" font-family="'Segoe Print','Comic Sans MS',cursive">
+  <rect x="0" y="0" width="700" height="320" fill="#ffffff"/>
+  <text x="20" y="26" font-size="14" font-weight="700" font-family="Inter, Segoe UI, sans-serif">G1 — vista previa estilo boceto (export estatico del .excalidraw)</text>
+  <g font-size="12" text-anchor="middle">
+    <rect x="20" y="40" width="200" height="110" rx="12" fill="#fff9db" stroke="#1e1e1e" stroke-width="2" stroke-linecap="round" stroke-dasharray="0" opacity="0.95" transform="rotate(-0.4 120 95)"/>
+    <text x="120" y="72" font-weight="700">FUENTES</text><text x="120" y="92">Video YT / OBS</text><text x="120" y="108">IG / JPG · revista / paper</text>
+    <rect x="250" y="40" width="200" height="110" rx="12" fill="#e7f5ff" stroke="#1e1e1e" stroke-width="2" transform="rotate(0.4 350 95)"/>
+    <text x="350" y="72" font-weight="700">AGENTES</text><text x="350" y="92">Sherlock · Brainstormy</text><text x="350" y="108">Contenidos · Vaultworm</text>
+    <rect x="480" y="40" width="200" height="110" rx="12" fill="#ebfbee" stroke="#1e1e1e" stroke-width="2" transform="rotate(-0.3 580 95)"/>
+    <text x="580" y="72" font-weight="700">WIKI COMUN</text><text x="580" y="92">fractal · iterable · rizomatica</text><text x="580" y="108">+ Front Matter</text>
+    <rect x="250" y="200" width="200" height="100" rx="12" fill="#f3e8ff" stroke="#1e1e1e" stroke-width="2" transform="rotate(0.3 350 250)"/>
+    <text x="350" y="232" font-weight="700">PI / HERMES</text><text x="350" y="252">LLM + MCPs-brazos</text>
+    <rect x="480" y="200" width="200" height="100" rx="12" fill="#fff0f0" stroke="#1e1e1e" stroke-width="2" transform="rotate(-0.4 580 250)"/>
+    <text x="580" y="232" font-weight="700">MANO + CRITERIO</text><text x="580" y="252">(s humano)</text>
+  </g>
+  <g stroke="#1e1e1e" stroke-width="2" fill="none">
+    <defs><marker id="ah2" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#1e1e1e"/></marker></defs>
+    <line x1="220" y1="95" x2="248" y2="95" marker-end="url(#ah2)"/>
+    <line x1="450" y1="95" x2="478" y2="95" marker-end="url(#ah2)"/>
+    <line x1="580" y1="150" x2="580" y2="198" marker-end="url(#ah2)"/>
+    <line x1="450" y1="250" x2="478" y2="250" marker-end="url(#ah2)"/>
+  </g>
+</svg>

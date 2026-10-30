@@ -141,7 +141,7 @@ desmarca explícitamente.
 ~~Contraseña de Google~~ · ~~API key de Google~~ · ~~Acceso a Drive/Docs/Sheets~~ (ya lo tenés) ·
 ~~Que separe una agenda interna~~ (el ET-C es el mecanismo).
 
-**Lo único puntual:** su primer mensaje al bot (para el `chat_id`) y el 1 clic del link de授权 de
+**Lo único puntual:** su primer mensaje al bot (para el `chat_id`) y el 1 clic del link de autorización de
 Google Calendar dentro de Cal.com.
 
 ---

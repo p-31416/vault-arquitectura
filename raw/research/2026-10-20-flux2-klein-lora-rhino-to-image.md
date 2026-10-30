@@ -117,7 +117,7 @@ Variantes documentadas en la misma pagina:
 
 **`guidance_embeds`: klein NO los tiene.** SimpleTuner lo dice explicitamente: "klein models: Use Qwen3 text encoder bundled in the model repo, **no guidance embeddings** (guidance training options are ignored)". Consistente con la ausencia de `guidance_in` en el safetensors de Emilia. En inferencia: **Base admite guidance > 1.0** (cfg 5 en el template oficial de 9B base); **Destilado usa guidance 1.0 / 4 pasos**.
 
-**Step-distillation y entrenamiento.** Destilados comprimidos en pasos: entrenarlos销毁 (destilados) no aporta señal completa. Regla operativa: **entrenar en Base (50 steps, guidance libre), inferir en Destilado (4 steps, guidance 1.0)**. Diferencia dechedule: `Flux2Scheduler` de ComfyUI no usa "shift" clasico; calcula un schedule empirico `get_schedule(steps, seq_len)` con `compute_empirical_mu` a partir de la longitud de secuencia (ver `comfy_extras/nodes_flux.py:184-211`).
+**Step-distillation y entrenamiento.** Destilados comprimidos en pasos: entrenarlos (destilados) no aporta señal completa. Regla operativa: **entrenar en Base (50 steps, guidance libre), inferir en Destilado (4 steps, guidance 1.0)**. Diferencia de schedule: `Flux2Scheduler` de ComfyUI no usa "shift" clasico; calcula un schedule empirico `get_schedule(steps, seq_len)` con `compute_empirical_mu` a partir de la longitud de secuencia (ver `comfy_extras/nodes_flux.py:184-211`).
 
 **Sin negative prompt.** mflux: "FLUX.2 does not support --negative-prompt". En los templates oficiales de ComfyUI el nodo `CLIP Text Encode (Negative Prompt)` queda **vacio** y su salida va al slot `negative` del `CFGGuider` (que en la practica no penaliza). No escribir negative prompts.
 
@@ -260,7 +260,7 @@ Referencia de costo: HF blog — "A LoRA run on the 4B model fits in 24 GB of VR
 
 | Variante | Steps | Guidance/cfg | Sampler | Notas |
 |---|---|---|---|---|
-| klein 9B **Base** (el del template) | **20** | **5** | euler | max calidad/flexibilidad; BFL usa 50 pasos para训练的, 20 es lo que trae Comfy |
+| klein 9B **Base** (el del template) | **20** | **5** | euler | max calidad/flexibilidad; BFL usa 50 pasos para entrenarlo, 20 es lo que trae Comfy |
 | klein 9B **Destilado** | **4** | **1.0** | euler | latencia sub-segundo en 5090 |
 | klein 4B Destilado | 4 | 1.0 | euler | ~1,2 s en 5090, 8,4 GB VRAM |
 | klein 4B Base | ~20-50 | >1 | euler | |
@@ -379,8 +379,8 @@ Ese workflow usa FLUX.1 dev/schnell + ControlNet Depth/Lineart + IP-Adapter, no 
 | Ruta | Setup | Costo | Tiempo por imagen | Quando |
 |---|---|---|---|---|
 | **(a) Todo local** | SD1.5/SDXL en la RX 570 | $0 | ~3-10 min (SDXL) / ~1 min (SD1.5) | Bocetos, pruebas de nodos, preprocesado Rhino, captions |
-| **(b) Local + RunPod (RECOMENDADA)** | Instalar FLUX.2 klein 9B en un pod RunPod 3090/4090 24 GB;数据集 y LoRA en el pod | **$0,22-0,74/h** segun GPU/tier | 9B distilled: ~1-3 s/imagen en 4090 (referencia "~1 s" en 5090); 9B base 20 pasos: ~10-20 s | Produccion del concurso y previsualizacion final |
-| **(c) Cloud completo (BFL API)** | Sin GPU; `finetune_id` + endpoint `flux-2-klein-9b-finetuned` | Por token/API (public beta, precios en dashboard) | Segun cola | Si hay que servir el LoRA entrenado sin|ComfyUI local |
+| **(b) Local + RunPod (RECOMENDADA)** | Instalar FLUX.2 klein 9B en un pod RunPod 3090/4090 24 GB; dataset y LoRA en el pod | **$0,22-0,74/h** segun GPU/tier | 9B distilled: ~1-3 s/imagen en 4090 (referencia "~1 s" en 5090); 9B base 20 pasos: ~10-20 s | Produccion del concurso y previsualizacion final |
+| **(c) Cloud completo (BFL API)** | Sin GPU; `finetune_id` + endpoint `flux-2-klein-9b-finetuned` | Por token/API (public beta, precios en dashboard) | Segun cola | Si hay que servir el LoRA entrenado sin ComfyUI local |
 
 **Presupuesto realista del concurso:** 1 pod 4090 Community de 6 h = ~$2,04; un 3090 Community de 10 h = ~$2,20. **Todo el render del concurso cabe en el precio de un cafe**. ElLoRA ya esta entrenado (lo entrega el curso), asi que no hay gasto de training salvo que se quiera reentrenar.
 
@@ -666,12 +666,12 @@ Y el curso promete: *"**Acceso exclusivo a un modelo de IA entrenado con los arc
 
 #### Etapa 2 — Produccion del concurso (dias 1-16 de diciembre)
 
-1. **Definir el flujo en dos pasos del Modulo 7** antes de renderizar nada: (i) reinterpretar la geometria con la logica estructural de Gaudi (catenarias, paraboloides hiperbolicos, triangulacion catenaria entre pilares,.loads inclinados, arcos parabolicos,新材料), (ii) aplicar materiales fotorrealistas. El LoRA ayuda en el paso (ii); el paso (i) es trabajo de arquitectura, no de prompt.
+1. **Definir el flujo en dos pasos del Modulo 7** antes de renderizar nada: (i) reinterpretar la geometria con la logica estructural de Gaudi (catenarias, paraboloides hiperbolicos, triangulacion catenaria entre pilares, apoyos inclinados, arcos parabolicos, materiales nuevos), (ii) aplicar materiales fotorrealistas. El LoRA ayuda en el paso (ii); el paso (i) es trabajo de arquitectura, no de prompt.
 2. Usar el **pod 24 GB** como "maquina de render" del concurso: producir 20-40 imagenes finales a 1024-2048 px.
 3. **Upscale** a A1 (la lamina final es A1): usar `UltimateSDUpscale`/`4x_NMKD-Superscale` en el pod, o el modelo de la lamina a 200 dpi con el raster final en Photoshop/Illustrator.
-4. **Componer la lamina A1** (max 15 MB, JPEG) con: axonométrica renderizada + fotos de material + planos del proyecto + el "before/after" del workflow Rhino-to-image (muy值为评委: demuestra el metodo).
+4. **Componer la lamina A1** (max 15 MB, JPEG) con: axonométrica renderizada + fotos de material + planos del proyecto + el "before/after" del workflow Rhino-to-image (muy valorado por el jurado: demuestra el metodo).
 5. **Lamina A4 opcional** para el Premio de Diseño de la Fundacio (mobiliario/objeto inspirado en los metodos de Gaudi).
-6. **Licencia del material**: verificar el regimen de uso del LoRA del curso (ver E.3) y标注 en la lamina que las imagenes son generadas con IA.
+6. **Licencia del material**: verificar el regimen de uso del LoRA del curso (ver E.3) y anotar en la lamina que las imagenes son generadas con IA.
 
 ### E.17 Que hay que pedirle al instructor del curso (ficha del LoRA)
 
@@ -770,7 +770,7 @@ Correo/mensaje a **Thomas Nelissen** (profesor del curso) y/o via el equipo de A
 | URL | Status | Que se extrajo |
 |---|---|---|
 | https://docs.bfl.ml/flux_2/flux2_klein_training | 200 | Requisitos HW, LR, steps, resolucion, uso en ComfyUI |
-| https://docs.bfl.ml/flux_2/flux2_klein_training_example | 200 | Config YAML oficial 9B, dataset 27 imgs, captions,采样 8 steps |
+| https://docs.bfl.ml/flux_2/flux2_klein_training_example | 200 | Config YAML oficial 9B, dataset 27 imgs, captions, sampling 8 steps |
 | https://docs.bfl.ml/flux_2/flux2_lora_inference | 200 (via busqueda) | Endpoints `-finetuned`, Dashboard |
 | https://docs.comfy.org/tutorials/flux/flux-2-klein | 200 | Grafo 4B/9B, rutas de modelos, 8,4 GB VRAM |
 | https://blog.comfy.org/p/flux2-state-of-the-art-visual-intelligence | 200 | FLUX.2 dev, multi-reference 10 imagenes, 4 MP, requisitos |

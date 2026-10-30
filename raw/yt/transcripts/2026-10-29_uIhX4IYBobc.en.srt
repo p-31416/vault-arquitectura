@@ -1,0 +1,4 @@
+1
+00:00:42,227 --> 00:00:49,867
+Before of starting the plugin remember that Google Chrome must be completely closed
+

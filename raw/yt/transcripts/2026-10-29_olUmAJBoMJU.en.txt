@@ -1,0 +1,80 @@
+[00:00:00] In about 1 minute, you can import any
+[00:00:02] location on Earth into Rhino. If you
+[00:00:04] follow this video step-by-step, you will
+[00:00:06] learn how to import in Google Maps 3D
+[00:00:07] models with textures directly into your
+[00:00:10] Rhino scene. So, no external software is
+[00:00:12] needed. Everything runs inside Rhino.
+[00:00:14] So, first we need to install the Heron
+[00:00:16] plugin. Open Rhino and type package
+[00:00:18] manager in the command line. A new
+[00:00:20] window will appear. In the search bar,
+[00:00:22] type Heron. Click on it and install the
+[00:00:25] latest version. At the time of recording
+[00:00:27] this video, the latest version is 0.5.0.
+[00:00:30] Click install. Once the installation is
+[00:00:32] complete, restart Rhino. Now, let's open
+[00:00:35] Grasshopper. Search for the Heron plugin
+[00:00:39] and add uh set anchor point component.
+[00:00:43] Set the toggle to true
+[00:00:45] to enable the Earth anchor point. Here,
+[00:00:48] we need to define the point of interest.
+[00:00:50] This can be a building name or specific
+[00:00:52] address. In some cases, addresses do not
+[00:00:55] work properly, so I recommend using
+[00:00:57] latitude and longitude instead. So, go
+[00:01:00] to Google Maps.
+[00:01:02] Right click on a location, copy the
+[00:01:05] coordinates,
+[00:01:06] and paste them into a panel in
+[00:01:08] Grasshopper. Then, use the text split
+[00:01:11] component. Use a comma as the separator.
+[00:01:16] Connect the first value to latitude
+[00:01:18] and the second value to longitude. Next,
+[00:01:22] we need a component that allow us to
+[00:01:24] import 3D model from Google Maps. So, go
+[00:01:26] to GIS API tab and find Google 3D Tiles
+[00:01:31] IOI, which stands for area of interest.
+[00:01:33] In the boundary input, define the size
+[00:01:36] of the area you want to import. Next
+[00:01:38] input is level of detail, which ranges
+[00:01:41] from 0 to 20. I recommend starting
+[00:01:43] around level 13 and increase it
+[00:01:46] gradually once you are happy with the
+[00:01:48] result. You can leave the cache folder
+[00:01:49] as default, and for the API key input,
+[00:01:52] you need a Google 3D Tiles API key. This
+[00:01:55] step is required to access data from the
+[00:01:57] Google Maps. To get the API key, go to
+[00:02:00] this link
+[00:02:01] and click start free. Choose your
+[00:02:03] country, fill in your information, and
+[00:02:06] start the free trial. You'll get free
+[00:02:07] access for 90 days. Then, click on
+[00:02:10] console.
+[00:02:11] In the search bar, type map tiles.
+[00:02:16] Open it and click enable.
+[00:02:20] If the key doesn't appear,
+[00:02:22] go to credentials and click show key.
+[00:02:26] Copy the key
+[00:02:27] and paste it into a panel in Grasshopper
+[00:02:30] and connect it to the API key input.
+[00:02:33] Finally, set run to true. If you want to
+[00:02:35] preview the model with textures, use
+[00:02:38] custom preview.
+[00:02:39] Once you're happy with the result, you
+[00:02:41] can slowly increase the level of detail.
+[00:02:44] Keep in mind that higher levels may take
+[00:02:47] more time to download and import. When
+[00:02:49] everything looks good, bake the custom
+[00:02:51] preview to bring the 3D model into
+[00:02:53] Rhino.
+[00:02:55] From here, you can render it and further
+[00:02:58] enhance the image using Gemini or
+[00:03:00] ChatGPT. Last but not least, big
+[00:03:02] shout-out to Brian Washburn, the author
+[00:03:04] of Heron plugin, for explaining this
+[00:03:06] workflow on McNeel Discourse forum. If
+[00:03:09] you want to learn more about the newest
+[00:03:11] Grasshopper features available only in
+[00:03:13] Rhino 8, check out this video.

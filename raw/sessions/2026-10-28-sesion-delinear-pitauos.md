@@ -224,3 +224,194 @@ Studio OS como producto · Hermes en el VPS desde el arranque · un agente del e
 `00-filo-mvp_07.md` §8 → paso 1: `P:\Anaconda\envs\comfyenv\python.exe scripts\studio_os_verificar_vps.py` (baseline, modo lectura). Antes del paso 5 hace falta decidir el **modelo del agente: OpenRouter (recomendado) u Ollama local**.
 
 **Regla de la sesión:** cada paso se ejecuta con un `s` explícito y con reversión definida antes de tocar nada.
+
+## Continuación 7 — Reset: el proyecto se documenta en VISION · ESTRUCTURA · REQUISITOS
+
+**Pedido del usuario:** "necesito que revises raw/docs/plan-hermes.md y vayamos delineandolo uno a uno... porque creaste muchos archivos y no entiendo nada. empecemos de cero y que en este proyecto los archivos se nomenclen VISION - ESTRUCTURA - REQUISITOS". Luego: "ve por partes", "máximo 25 líneas para leer en la terminal" y "el doc es un referente para que definamos y analicemos opciones, con el stack tiene que estar delineado completo primero vision... conceptualmente".
+
+**Decisiones tomadas en esta ronda**
+- El proyecto se documenta con **tres archivos**: `VISION.md` · `ESTRUCTURA.md` · `REQUISITOS.md`. Cero archivos extra.
+- **El stack va en tabla**, con las alternativas **libres y open source primero** en cada pieza, la elegida hoy, el costo y la licencia. Principio nuevo incorporado: *"libre y open source cuando se pueda"* (el costo se paga solo cuando no hay alternativa equivalente).
+- **GPU local primero**: la nube (Runpod Secure) queda como excepción para 9B, LoRA y video.
+- **n8n se mantiene**; las alternativas libres (Node-RED, Windmill) quedan anotadas como candidatas, no como reemplazo.
+- **Ollama local en vez de modelo en la nube** — con un dato nuevo: la PC de desarrollo tiene 32 GB de RAM, el VPS 8 GB. Queda como pregunta abierta §13.1 (dónde vive el modelo).
+- **Conectar opencode ↔ Hermes**: dos direcciones a evaluar en ESTRUCTURA (opencode usando la API OpenAI-compatible de Hermes · Hermes invocando opencode por MCP · Hermes operando la PC por SSH). Pregunta abierta §13.2.
+- **El orden de fases se rearma desde cero**, una vez escritas VISION y ESTRUCTURA (no se copia el doc §14).
+- REQUISITOS.md se escribe con estilo de desarrollo de software: alcance, actores, casos como historias, RF/RNF con trazabilidad, criterios de aceptación Given/When/Then, gobernanza por nivel de riesgo, métricas y plan por fases.
+
+**Escrito**
+- `proyectos/MVP_07-studio-os-sistema/VISION.md` — 14 secciones en 5 bloques: (1) qué es y por qué, el problema, el norte; (2) el recorrido del trabajo del estudio en 11 pasos con la columna "dónde entra el agente" y quién decide; (3) Hermes conceptualmente: qué es, qué hace, cómo se conecta, qué no hace, alternativas evaluadas; (4) el stack delineado en tabla de 22 piezas (agente, modelos, imágenes, GPU, orquestación, red, registro, memoria, búsqueda, CAD, 3D, BIM, visualización, reuniones, agenda, tablero, chat, soporte, secretos, backup, acceso remoto) con las tres notas honestas sobre licencias que el estudio ya paga, el costo real (GPU) y la pieza que falta y va a costar (licencia de Rhino en servidor); (5) los 9 principios, las 7 habilidades, los 5 modos de ejecución y los 3 perfiles, los niveles A-D, el camino en 3 tramos, las 8 decisiones tomadas y 5 preguntas abiertas con opciones.
+
+**Borrado (16 archivos, con la aprobación del plan)**
+`readme-mvp_07.md` · `01-spec-mvp_07.md` · `02-ft-mvp_07.md` · `deploy/00-f0-comandos.md` · `deploy/hermes.compose.yml` · `hermes/SOUL.md` · `hermes/skills/auditar-documentacion-cad/SKILL.md` · los 8 `specs/ADR-2026-10-28-*.md` · `scripts/studio_os_publicar_hermes.py` + notas.
+
+**Conservado**: `raw/research/2026-10-28-runpod-auditoria-pi.md` (evidencia) · `raw/sessions/2026-10-28-sesion-delinear-pitauos.md` (bitácora) · `scripts/studio_os_verificar_vps.py` + notas (el inventario del VPS) · `00-filo-mvp_07.md`, reetiquetado como **borrador técnico** que se borra cuando existan ESTRUCTURA y REQUISITOS (tiene el material ya desarrollado: contrato de tarea, DDL, API del runner, perfil de pod, plan de F0).
+
+**Punto de reanudación**: escribir `ESTRUCTURA.md` (9 secciones: vista general · dónde vive cada pieza · el agente y su vínculo con los usos · las integraciones una por una · el contrato común · registro y grafo · seguridad y despliegue · decisiones técnicas · qué no decide). Después `REQUISITOS.md`.
+
+**Topics:** reset de documentación · nomenclatura VISION-ESTRUCTURA-REQUISITOS · stack libre first · Ollama local · opencode ↔ Hermes · rearmado de fases.
+
+**Entidades:** Vision/Estr/Req como los tres documentos del proyecto · Ollama · Headscale · Netbird · Node-RED · Windmill · Mattermost · Radicale · Vikunja · SOPS · restic · MeshCentral · RustDesk · QCAD · LibreCAD · ezdxf · ODA File Converter · CadQuery · IfcMCP · Bonsai · FreeCAD · Jitsi · Quartz · Zettlr · Logseq · sqllite-vec · Meilisearch.
+
+**Hechos:** (1) el stack completo se puede ordenar en 22 piezas, y solo 3 tienen licencia paga del estudio (AutoCAD LT, Rhino 8, Twinmotion); (2) el costo real del sistema es la GPU, no el software: con GPU local el stack es enteramente libre; (3) el recorrido del trabajo muestra que el agente entra en 9 de los 11 pasos y en ninguno decide el criterio; (4) la documentación del proyecto se puede reducir a 3 archivos sin perder el trabajo, porque el detalle técnico se escribe el día que exista código.
+
+## Continuación 8 — VISION.md con el recorrido real del estudio
+
+**El usuario pasó su propio ciclo de trabajo** (nota: la idea del cuaderno viene del video *"El hábito de Leonardo da Vinci que me ha quitado el móvil de las manos | Commonplace book"*, Maialen Lleó, 12:35 — que el vault ya tenía anotado como idea de proyecto *"#14 davinci-notebook: cuaderno digital tipo Da Vinci con todo"*).
+
+**Cambios en `proyectos/MVP_07-studio-os-sistema/VISION.md`:**
+- **Nuevo §1.5 "El cuaderno digital"**: todo lo que el estudio piensa, dibuja, mide y genera termina en un cuaderno; la parte manual es del arquitecto (croquis, escalas investigadas, decisiones) y la automatizada es de Hermes (indexar, etiquetar, conectar, resumir). Tres efectos: se puede buscar, se puede reusar, el agente lo mejora.
+- **§2 recorrido reescrito con su versión (10 pasos)**: 1 cliente → 2 reunión → 3 compromisos → 4 cuaderno → 5 planos → 6 3D → 7 render → 8 obra → 9 entregas → 10 memoria.
+  - El **CRM no es un CRM**: una hoja con nombre, contacto, mail (Instagram a futuro).
+  - **Fathom a veces repite la misma reunión en varios "meetings"** → el agente los agrupa antes de resumir.
+  - Los **compromisos llevan qué entregar y qué fecha** → recordatorio por Telegram + mail al cliente con el formato del estudio (lo manda una persona).
+  - Un **agente experto en ComfyUI** con sus skills, y las iteraciones a un **portal** porque por mail pesan demasiado.
+  - **Obra**: fotos indexadas con tags; aparece la pregunta de **visión por computadora**.
+  - **Entregas**: el agente arma el paquete, la persona escribe el mail y adjunta, queda registro con fecha.
+  - **Memoria**: la del sistema, que Hermes mejora cada vez.
+- **Stack +6 filas** (siempre libres primero): Google Sheets/Baserow/NocoDB/Directus · Quartz/MkDocs/Obsidian Publish/Zettlr · PhotoPrism/Piwigo/Nextcloud+Memories · Nextcloud+Memories/Immich · Qwen-VL/CLIP/SigLIP/exiftool/OpenCV · plantillas+Gmail API. Y una cuarta nota: cuaderno, portal y fotos **salen gratis** con software libre.
+- **Habilidades**: reorganizadas en tres grupos (cliente y relación / diseño / obra y conocimiento) y ampliadas con `gestionar-clientes`, `preparar-compromisos`, `redactar-correo-cliente`, `experto-comfyui`, `publicar-iteraciones`, `curar-cuaderno`.
+- **Decisiones (+5)** y **preguntas abiertas (+2)**: visión por computadora en obra y dónde viven las fotos de obra.
+
+**Nota de método:** la visión se define a partir de **cómo trabaja el estudio**, no al revés. El stack y las habilidades son consecuencia: por eso el "CRM" terminó siendo una hoja y el render terminó siendo un portal.
+
+**Pendiente:** `ESTRUCTURA.md` (9 secciones) y después `REQUISITOS.md`. `00-filo-mvp_07.md` queda como borrador técnico y se borra cuando existan.
+
+**Topics:** commonplace book · cuaderno digital · mini CRM · compromisos con fecha · portal de iteraciones · agente experto en ComfyUI · visión por computadora · fotos de obra con tags.
+
+**Entidades:** Maialen Lleó · Qwen-VL · CLIP/SigLIP · exiftool · OpenCV · Nextcloud Memories · Immich · PhotoPrism · Baserow · NocoDB · Directus · Quartz · MkDocs.
+
+**Hechos:** (1) el "cuaderno digital" ya estaba registrado en el vault como idea (#14 davinci-notebook) y nunca se hizo — ahora es el eje conceptual del producto; (2) el ciclo real del estudio tiene 10 pasos y el agente entra en 8 de ellos, siempre preparando o registrando; (3) el CRM no se justifica: la solución es una hoja; (4) el portal de iteraciones es la pieza que evita enviar renders por mail, y sale gratis con Quartz; (5) todo lo nuevo que se incorporó al stack (cuaderno, portal, fotos, visión, clientes) tiene alternativa libre y self-hosted.
+
+## Continuación 10 — Separación de los tres documentos (VISIÓN · ESTRUCTURA · REQUISITOS)
+
+**Pedido del usuario:** "necesito que definamos qué va a contener la visión, la estructura y los requisitos, porque creo que se están mezclando".
+
+**Regla de reparto definida** (va al inicio de los tres archivos, y es el criterio para decidir dónde cae cualquier idea nueva):
+
+| | **VISION** | **ESTRUCTURA** | **REQUISITOS** |
+|---|---|---|---|
+| La pregunta | ¿qué es y para qué? | ¿dónde vive y cómo se conecta? | ¿qué tiene que cumplir y cómo se mide? |
+| Qué contiene | el problema · el recorrido · el cuaderno digital · Hermes en conceptual · el stack con sus alternativas · las decisiones de producto | los 4 nodos · dónde vive cada pieza · el agente y sus conexiones · cada integración con sus opciones · el contrato entre componentes · el modelo de datos · seguridad, secretos, backup y acceso remoto · puesta en marcha | alcance · actores · casos de uso · RF y RNF · criterios de aceptación · gobernanza A-D · regla automatizar/persona · métricas · plan de entrega · decisiones abiertas |
+
+**Idea → archivo (ejemplo de reparto):** el problema, el norte y la pregunta del junior → VISION. El recorrido del estudio y el cuaderno digital → VISION (qué se digitaliza) y ESTRUCTURA (cómo se escanea, publica y navega). La lista de habilidades → VISION (qué sabe hacer) y REQUISITOS (cómo se sabe que está). El stack con alternativas → VISION; dónde vive y cómo se conecta → ESTRUCTURA. Niveles A-D y quién aprueba → REQUISITOS. La regla automatizar/persona → VISION (la frase) y REQUISITOS (la matriz). El plan por fases, métricas y pruebas → REQUISITOS.
+
+**Movido desde VISION.md a los otros documentos:**
+- §"Cómo se conecta" del agente → ESTRUCTURA §3.2.
+- §"Qué modelo usa" (OpenCode Go → Ollama en el estudio → OpenRouter) → ESTRUCTURA §3.3.
+- §"Los modos de ejecución" (L, R1-R4 y los tres perfiles) → ESTRUCTURA §3.4.
+- §"Cuándo Telegram y cuándo Discord" (tabla completa) → VISION conserva la regla; el detalle → ESTRUCTURA.
+- §"Niveles de riesgo" (tabla A-D) → VISION conserva la regla en una línea; el detalle → REQUISITOS §7.
+- §"La regla de automatizar vs. persona" (matriz) → VISION conserva la frase; la matriz → REQUISITOS §8.
+- §"Camino en tres tramos" → VISION conserva el por qué; el plan con criterios de entrada y salida → REQUISITOS §11.
+- §"Preguntas abiertas" → VISION conserva las 3 de producto; las de construcción (modelo, n8n, red, Rhino 8/9, DPA) → REQUISITOS §10 con impacto y momento.
+- Secretos, backup y acceso remoto → ESTRUCTURA §4.9 y §7.
+
+**Archivos**
+- `proyectos/MVP_07-studio-os-sistema/VISION.md` — depurado (338 → ~300 líneas): ahora es solo visión.
+- `proyectos/MVP_07-studio-os-sistema/ESTRUCTURA.md` — nuevo, 11 secciones.
+- `proyectos/MVP_07-studio-os-sistema/REQUISITOS.md` — nuevo, 12 secciones, estilo software.
+- Borrado `00-filo-mvp_07.md` (el borrador técnico): su contenido quedó distribuido en ESTRUCTURA y REQUISITOS, y sigue en el historial de git y en el log de sesión.
+- `proyectos/00-index.md` apunta a los tres documentos.
+
+**Topics:** reparto de documentos · regla de pertenencia · dado/when/entonces · RF y RNF con trazabilidad · baseline · criterios de salida por tramo.
+
+**Hechos:** (1) el problema de la mezcla no era de contenido sino de **criterio**: sin una regla explícita, cualquier idea nueva cae en el archivo que uno tiene abierto; (2) VISION, ESTRUCTURA y REQUISITOS se distinguen por la pregunta que contestan, y eso alcanza como test para cualquier idea nueva; (3) el nivel de detalle técnico (SQL, JSON, comandos) no pertenece a ninguno de los tres: sale con el código; (4) con la separación hecha, VISION tiene ~300 líneas, ESTRUCTURA ~400 y REQUISITOS ~380: ningún documento exige leer los otros dos para entenderse.
+
+**Pendiente:** revisión conjunta de ESTRUCTURA y REQUISITOS (el usuario los tiene que leer y ajustar), y después arrancar la construcción por el tramo T0.
+
+## Cierre de sesión (2) — 28/10, ~5 h de trabajo
+
+**Estado del proyecto:** los tres documentos existen y están separados. `VISION.md` (~300 líneas) · `ESTRUCTURA.md` (~400) · `REQUISITOS.md` (~380). Nada más en la carpeta.
+
+**Lo hecho hoy, en orden**: lectura de `raw/docs/plan-hermes.md` (1013 líneas) → auditoría de Runpod con 29 fuentes oficiales → medición del VPS (4.858 MB de RAM disponibles) → verificación de la documentación de Hermes (Docker, MCP, configuración, backends de terminal) y de Tailscale → 8 decisiones en formato Nygard → el diseño del sistema con sus 3 perfiles de ejecución y el contrato de tarea → el reset a tres documentos (VISIÓN / ESTRUCTURA / REQUISITOS) con el cuaderno digital como eje → la separación por criterio de pertenencia.
+
+**Para retomar** (en este orden):
+1. Leer **ESTRUCTURA.md** y **REQUISITOS.md** y anotar qué hay que corregir (VISION ya está revisado por el usuario).
+2. Cerrar las 3 preguntas de producto de VISION §6.8: qué se automatiza primero · cómo se publica el cuaderno para Emilia · qué se hace con las fotos de obra.
+3. Cerrar las decisiones de construcción de REQUISITOS §10 antes del tramo correspondiente (la primera, "dónde vive el modelo del agente", bloquea T1).
+4. Arrancar el tramo **T0 · Inventario**: `P:\Anaconda\envs\comfyenv\python.exe scripts\studio_os_verificar_vps.py` (ya escrito, modo solo lectura) y el mismo relevamiento del equipo local.
+
+**Estado del vault**: `proyectos/MVP_07-studio-os-sistema/` con 3 archivos · `scripts/studio_os_verificar_vps.py` + notas (listo para correr) · research de Runpod y este log como evidencia · **pendientes de `s`**: curaduría en `wiki/` (fichas de `fathom`, `postgres`, `tailscale` · renombrar RunPod → Runpod · actualizar la decisión de PI · cerrar la pregunta de Tailscale vs Cloudflare).
+
+## Continuación 9 — VISION.md con el criterio del usuario (revisión conjunta)
+
+**Correcciones del usuario sobre el documento:**
+- **El problema**: *"las soluciones son de herramientas y no estamos hablando de sistemas"* (+ comunicación, auditabilidad y conocimiento accesible a un junior para que le cueste menos horas al senior). Se reescribió §1.3 y se agregó §1.5 con esa segunda pregunta como métrica.
+- **Cuaderno digital**: es un **desarrollo interno**; tiene que verse **tipo libro, a pantalla completa, en horizontal**, para recorrer cómo se fue hablando y planificando; con **croquis escaneados**; **ligado a las entradas de la wiki** (es la capa visual de la wiki) más una interfaz gráfica auxiliar. Pasó a ser sección propia (§3).
+- **Hermes**: se quería el **por qué no OpenClaw y por qué no Claude Code ni Codex** en la entrada de la decisión → §4.5. Aclaración de roles: **OpenCode + Antigravity** para el desarrollo propio, **Hermes de cara al cliente**.
+- **Modelos**: hoy **OpenCode Go** (suscripción USD 10) → después **segunda instancia de Hermes en el estudio con Ollama** → después **OpenRouter** con API y precio definidos.
+- **Stack**: **AutoCAD versión completa** (no LT) · **FreeCAD** como opción libre y siempre abierta (también BIM, corre en Linux en la otra PC de desarrollo) · **Rhino 8 vs Rhino 9 + Hops** · **Unreal** para lo custom y escalable a VR · Postgres + MySQL (Leantime) · Leantime como gestor de proyectos · alternativas libres para reuniones (Jitsi/LiveKit + faster-whisper ya instalado) y agenda self-hosted · Chatwoot, Instagram y WhatsApp **fuera por ahora** · imágenes: primero en la PC local (RX 570), después flujos en la infraestructura del estudio (cada 15 días) y cloud de Comfy o Runpod como excepción.
+- **No entendía "secretos" ni "backup"**: se sacaron del stack de visión (son de ESTRUCTURA) y se dijo por qué.
+- **Pidió diferenciar qué va en cada documento**: se agregó al inicio de los tres archivos la tabla de reparto (pregunta / qué contiene / qué no contiene) y en VISION §6.10 qué queda para ESTRUCTURA y REQUISITOS.
+- **Pidió saber cuándo automatizar y cuándo no**: nueva §6.2 con la tabla de reparto y la frase *"se automatiza el trabajo, no la responsabilidad"*.
+- **Telegram vs Discord**: nueva §6.5 con el criterio (Telegram = chat interno y avisos; Discord = material visual compartido) y la regla de no duplicar el mismo tema en las dos.
+
+**Preguntas abiertas que quedaron (9 en total, §6.8)**: las nuevas son visión por computadora en obra, dónde viven las fotos de obra, Rhino 8 vs Rhino 9, y cómo se publica el cuaderno digital para que lo use Emilia sin conocimientos técnicos.
+
+**Pendiente:** `ESTRUCTURA.md` (9 secciones, incluye ahora secretos, backup y acceso remoto) y después `REQUISITOS.md`. `00-filo-mvp_07.md` sigue como borrador técnico hasta que existan.
+
+**Topics:** herramientas vs sistemas · conocimiento accesible al junior · cuaderno digital como capa visual de la wiki · Hermes vs OpenClaw vs Claude Code · AutoCAD completo vs LT · FreeCAD como alternativa libre en Linux · Rhino 8 vs 9 · Hops · Unreal hacia VR · Jitsi/LiveKit/faster-whisper · regla automatizar vs persona · Telegram vs Discord.
+
+**Entidades:** Quartz · MkDocs · Nextcloud Pages · SilverBullet · Joplin · Jitsi · LiveKit · Radicale · Vikunja · Taiga · OpenProject · Directus · Baserow · NocoDB · Immich · exiftool · OpenCV · Qwen-VL · Anthropic Antigravity · Rhino 9.
+
+**Hechos:** (1) el problema del estudio no es la falta de herramientas sino la falta de sistema, y el síntoma caro es el tiempo del senior que se gasta en transferencia; (2) el cuaderno digital solo tiene valor si está atado a la wiki: si vive aparte, vuelve a ser un archivo más; (3) cambiar de AutoCAD LT a la versión completa habilita la vía cloud oficial para el trabajo desatendido; (4) el agente se paga (modelo + GPU + mantenimiento), así que la automatización tiene que filtrarse por repetición, no por moda; (5) Telegram y Discord tienen las dos cosas (canales y temas/hilos): lo que las diferencia no es la función, es el tipo de conversación y el material que se comparte.
+
+## Continuación 11 — IMPLEMENTACION-HERMES.md: la arquitectura traducida a piezas reales
+
+**Pedido:** verificar contra la documentación oficial de Hermes qué de lo que habíamos escrito era cierto, y escribir el cuarto documento que mapea cada pieza de `ESTRUCTURA.md` a algo que Hermes ya hace (sin escribir código propio).
+
+**Documento nuevo** `proyectos/MVP_07-studio-os-sistema/IMPLEMENTACION-HERMES.md` (569 líneas, 15 secciones):
+1. Qué resuelve Hermes sin código · 2. Las 5 piezas a configurar (`config.yaml`, `SOUL.md`, `AGENTS.md`, skills, cron + webhooks) · 3. Flujo A, fuentes de Drive (A1 MCP oficial, A2 skill `google-workspace`, A3 espejo con rclone) · 4. Flujo B, mantener la wiki en 4 capas · 5. Flujo C, seguridad y mapeo A-D · 6. Flujo D, registro · 7. Flujo E, cuaderno y croquis · 8. Flujo F, compromisos · 9. Flujo G, webhooks y Fathom · 10. Flujo H, entregas y aprobaciones · 11. Lo que Hermes no hace · 12. Los 10 hallazgos que cambian el diseño · 13. `config.yaml` completo propuesto · 14. Cinco decisiones que se abren · 15. Referencias.
+
+**Hallazgos que corrigen supuestos nuestros:**
+- Hermes guarda en **SQLite `state.db` + FTS5**, no en Postgres. El registro del estudio (Postgres) es una pieza aparte: conviven, no se reemplazan.
+- El backend **Docker saltea las aprobaciones de comandos peligrosos**: el gobierno A-D tiene que vivir en el toolset (qué herramientas existen) y no solo en `approvals`.
+- La memoria persistente es chica a propósito: **2.200 caracteres** en `MEMORY.md` y **1.375** en `USER.md`. No es un lugar para el conocimiento del estudio; eso va a la wiki.
+- **Un agente por `HERMES_HOME`**: el segundo perfil (Ollama en el estudio) necesita perfil propio, no un segundo proceso sobre el mismo home.
+- Los jobs de cron **no pueden preguntar** (`cron_mode: deny`), corren en sesión nueva y **no recuerdan la corrida anterior**; la memoria persistente sí se carga.
+- `read_file` convierte pdf/docx/xlsx/pptx/odt/epub y **avisa** cuando el PDF está escaneado, pero **no hace OCR**: el OCR sigue siendo un paso nuestro.
+- `AGENTS.md` se descubre por subdirectorio (progresivo) y pasa por un escáner de inyección; `HERMES_WRITE_SAFE_ROOT=/opt/data` en la imagen oficial.
+- Webhooks en el puerto **8644** con HMAC obligatorio, filtros, `coalesce`, `deliver_only` y toolset mínimo por ruta.
+- El curador corre cada 168 h, `stale_after_days 14`, `archive_after_days 30`, **nunca borra** (archiva), deja ledger en `.curator_ledger.jsonl` y no toca skills de proyecto ni escritas a mano.
+
+**Correcciones de configuración (claves inventadas → claves reales):** contra `/docs/reference/mcp-config-reference` se reemplazó `tools_allow` por `tools.include`, `auth: bearer` por `headers.Authorization: Bearer ${N8N_MCP_TOKEN}`, `trust: trusted` por `trust: untrusted` (valores válidos: `full` | `untrusted`), se agregó `auth: oauth` con PKCE para Drive y se quitó `soul:` (no existe: `SOUL.md` se carga si está en `HERMES_HOME`). Los secretos van por `${env:VAR}` desde `~/.hermes/.env`.
+
+**Riesgo con fecha:** el MCP oficial de Google Drive (`https://drivemcp.googleapis.com/mcp/v1`) está en *Developer Preview* y desde el **11/11/2026** Google rechaza clientes OAuth no marcados como *"AI-powered agent"*. Queda como A3 (rclone) para el archivo y A1 para lo nuevo.
+
+**Barrido de basura CJK en el vault** (pedido explícito): 20 caracteres sueltos en 8 archivos (`specs/`, `raw/`, `wiki/estudio/adrs/00-index.md`, `.opencode/plans/`), todos reemplazados por la palabra española que faltaba. Quedan solo dos usos legítimos: `改善` en [[wiki/glosario/conceptos/kaizen]] y la bibliografía en coreano de la transcripción del PDF de Gaudí (fidelidad de fuente, no se toca). También se corrigió un `sin|ComfyUI` que rompía una tabla en el research de FLUX.2.
+
+**Enlaces:** `ESTRUCTURA.md` (encabezado) y `proyectos/00-index.md` apuntan al cuarto documento.
+
+**Topics:** Hermes Agent como plataforma vs código propio · MCP oficial de Drive · OAuth 2.1 con PKCE · `AGENTS.md` progresivo · skills con `write_approval` · curador de memoria · webhooks con HMAC · aprobaciones por nivel de riesgo · SQLite vs Postgres · OCR como paso propio.
+
+**Entidades:** Hermes Agent · Nous Research · `state.db` · FTS5 · Google Drive MCP · rclone · n8n MCP · Traefik · Docker Swarm · EasyPanel · Ollama · OpenRouter · Fathom · Quartz · Tailscale.
+
+**Hechos:** (1) la arquitectura de `ESTRUCTURA.md` se sostiene, pero cambia de dueño: varias piezas que íbamos a construir ya existen como primitiva de Hermes y lo que falta es configuración; (2) el gobierno de riesgo no puede delegarse en `approvals` cuando el terminal corre en Docker, porque ese backend saltea la confirmación de comandos peligrosos; (3) la memoria del agente es deliberadamente corta, así que el conocimiento durable vive en la wiki y no en el prompt; (4) un cron que no puede preguntar obliga a que todo job termine en un mensaje o en un archivo, nunca en una espera; (5) la dependencia con fecha más urgente es el OAuth de Drive (11/11/2026), y por eso el espejo con rclone queda como base.
+
+**Pendiente:** revisión del cuarto documento por el usuario · decidir entre SQLite de Hermes y Postgres propio para el registro · confirmar la variante de Drive (A1/A2/A3) · enlazar el documento desde `wiki/` cuando se cure · y sigue abierto el tramo T0 (`scripts/studio_os_verificar_vps.py`).
+
+---
+
+## Continuación 12 — La guía de lectura para explicar el sistema, y el agente con nombre y dirección (2026-10-30, tarde)
+
+**Qué se hizo.** Cierre corto de la ronda: convertir los cuatro documentos en algo que se pueda **explicar** sin leerlos enteros, y dejar resuelto el nombre del agente.
+
+1. **`GUIA-LECTURA.md`** (nuevo, 82 líneas, en `proyectos/MVP_07-studio-os-sistema/`): los cuatro documentos en una línea cada uno · **12 recorridos por tema**, cada uno con la sección, el ancla y la línea exacta (el sistema en 10 minutos · qué cambia en el día a día · qué es Hermes y qué no hace · dónde vive cada cosa · cómo se conectan AutoCAD/Rhino/ComfyUI · el cuaderno digital · quién decide · qué se compromete y cómo se mide · plazos · qué se configura el día uno · trazabilidad y Ley 24.335 · costos de nube y GPU) · el orden mínimo para leerlo todo en una hora y qué se puede saltear · **7 preguntas que va a hacer Emilia** con la respuesta corta y el lugar donde está · lo que todavía no está escrito · y el contexto que vive fuera de la carpeta.
+2. **Nombre del agente:** se decidió usar **Hermes** como plataforma *y* como persona, con dirección **`hermes@agents.pitau.tech`**. Evita renombrar 122 menciones en los cuatro documentos y mantiene una sola palabra en la cabeza de la gente.
+3. **DNS verificado, solo lectura:** `pitau.tech` **no tiene registros MX**, así que sumar el del subdominio no toca el correo existente del estudio · A `pitau.tech` = `89.117.73.109` · **`agents.pitau.tech` ya resuelve** al VPS por el comodín `*.pitau.tech` · los NS están en **Donweb**, no en Cloudflare, así que el MX se agrega en el panel del registrador y no pasa por proxy.
+4. **Academia de Nico (pymbu), no extraíble:** `academy.pymbu.com` es un portal de membresía de **GoHighLevel** y responde un SPA. Se probaron cinco rutas de API (`/api/v1/posts/…`, `/api/posts/…`, `/membership/api/posts/…`, `/communities/…`, `/api/communities/posts/…`): todas caen en el catch-all que sirve el HTML. `?source=communities` es una pista que el cliente lee después de autenticar, no un permiso. No se intentó saltar el login. Queda que el usuario guarde la clase como PDF/HTML en `raw/pdf/` o la transcriba.
+
+**Decisiones.** El agente se llama **Hermes** y su dirección es `hermes@agents.pitau.tech` · el correo del agente va al VPS y el correo del estudio no se migra · la explicación del sistema se hace con la guía, no leyendo los cuatro documentos.
+
+**Correcciones.** Tres anclas de la guía usaban guion en lugar del **em dash (U+2014)** que realmente tienen los encabezados de `IMPLEMENTACION-HERMES` · el enlace a `specs/260909-esquema-mes1-60hs-studio-os-emilia` (que no existe) se reemplazó por `specs/261013-plan-cierre-mes1-calculadora-emilia` · `VISION.md` y `REQUISITOS.md` ahora nombran al cuarto documento, aunque la tabla de "tres documentos" queda igual · `proyectos/00-index.md` arranca la fila de MVP_07 con la guía.
+
+**Verificación.** Script de enlaces sobre la guía (62 wikilinks), `VISION.md` (21) y `REQUISITOS.md` (16): **0 rotos**, contando archivos y anclas contra los encabezados reales.
+
+**Topics:** explicar un sistema vs documentarlo · guía de lectura por audiencia · anclas de Obsidian y em dash · nombre de producto vs nombre de persona · correo self-hosted en subdominio · MX en el registrador · portales de membresía GoHighLevel · extracción de contenido detrás de login.
+
+**Entidades:** Studio OS · Hermes · Emilia Pimenta · PITAUTECH · `agents.pitau.tech` · Donweb · GoHighLevel · LeadConnector · Pymbú Academy · Nico Dubois · Stalwart · `himalaya`.
+
+**Hechos:** (1) el sistema ya está documentado; lo que faltaba era una ruta de lectura, y esa ruta es lo que convierte cuatro documentos en una explicación; (2) separar plataforma de persona no hizo falta: usar el mismo nombre evita 122 renombrados y no confunde a nadie; (3) `pitau.tech` sin MX significa que el correo del agente se puede montar sin riesgo para el correo del estudio; (4) el contenido de la academia no se puede leer desde afuera y no conviene intentarlo: el camino es que el alumno lo exporte; (5) los enlaces con ancla se rompen por un guion contra un em dash, y eso solo se detecta comparando contra los encabezados reales, no a ojo.
+
+**Pendiente:** que el usuario guarde la primera clase como PDF/HTML (o la transcriba) para extraer el método de Nico · redactar los flujos de ComfyUI y de correo propio en `IMPLEMENTACION-HERMES` · sumar la sección de skills opcionales · ADR del correo propio (requiere `s`) · tramo T0 (`scripts/studio_os_verificar_vps.py`).

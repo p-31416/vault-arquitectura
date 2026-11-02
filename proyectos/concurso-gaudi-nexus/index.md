@@ -21,7 +21,7 @@ tags: [concurso, gaudi-nexus, barcelona, comfyui, workflows, rhino, fundacio-gau
 
 | Carpeta | Contenido | Puerta de entrada |
 |---------|-----------|------------------|
-| `flujos/` | Una ficha por módulo del curso: la transcripción del video hecha flujo, con valor de tiempo, prompts literales y la lista de vacíos | [[proyectos/concurso-gaudi-nexus/flujos/00-index\|flujos/00-index]] |
+| `WF-curso/` | Un documento por flujo (curso + WF SDXL + JSON) + verbatim origen y detalle SDXL, mira Miro y videos | [[proyectos/concurso-gaudi-nexus/WF-curso/00-index\|WF-curso/00-index]] |
 | `workflows/` | Siete workflows ejecutables, uno por módulo, en orden de curso | [[proyectos/concurso-gaudi-nexus/workflows/00-index\|workflows/00-index]] |
 | `criterio/` | El checklist del jurado que cierra cada workflow | [[proyectos/concurso-gaudi-nexus/criterio/criterio-jurado\|criterio-jurado]] |
 | `reinterpretacion-programa-fractal.md` | Precepto rector: camino fractal, cáscara habitable y museo bajo plaza | [[proyectos/concurso-gaudi-nexus/reinterpretacion-programa-fractal\|reinterpretacion-programa-fractal]] |
@@ -29,6 +29,12 @@ tags: [concurso, gaudi-nexus, barcelona, comfyui, workflows, rhino, fundacio-gau
 ## El plan
 
 [[specs/261028-plan-workflows-adaptados-curso-ai-gaudi|specs/261028-plan-workflows-adaptados-curso-ai-gaudi]] — plan maestro: los siete workflows, la matriz de adaptación del curso a nuestra infraestructura, el método de construcción y revisión uno por uno, los milestones M-C1 a M-C7 y el sprint 1.
+
+## Tablero y matriz
+
+- **Tablero polaroid del concurso**: `activos/web/concurso/index.html` — las 4 corridas 01/11 (baseline + hires ×3) con modelo y segundos medidos, lista para revisión keeper/descartar de Sol.
+- [[proyectos/concurso-gaudi-nexus/workflows/00-matriz-pruebas-concurso|Matriz de pruebas]] — ~59 corridas previstas, 4 ejecutadas, con veredicto pendiente.
+- [[proyectos/concurso-gaudi-nexus/WF-curso/01-index-sdxl-vista|Set sdxl-vista]] — 7 WF listos para abrir en ComfyUI (R4 pendiente antes de la primera corrida).
 
 ## Cómo se trabaja
 

@@ -13,6 +13,8 @@ idioma: es
 > Total: **~59 corridas** en 5 WFs generativos + 2 WFs de protocolo/check (sin corridas). Convenciones: [[proyectos/concurso-gaudi-nexus/workflows/00-index|00-index]] · salidas `gx-{A..G}-{NN}.png` (R3) · reglas [[proyectos/MVP_04-comfyui-arquitectura/reglas-workflows-comfy|R1-R4]].
 > **Regla madre (@tim)**: una variable por corrida. El humano (Sol) revisa cada salida una a una → keeper/descartar antes de avanzar.
 > La pata txt2img local↔cloud↔API es la de [[proyectos/MVP_04-comfyui-arquitectura/A-txt2img/A-WF-paralelo-cloud-local/PLANS/matriz-pruebas-paralelo-txt2img|matriz paralelo MVP_04]] — esta matriz es la del concurso y sus WFs.
+>
+> **Tablero polaroid**: `activos/web/concurso/index.html` (4 corridas 01/11 con segundos de `/history`, resolución IHDR, mosaico + clic). Regenerar: `P:\Anaconda\envs\comfyenv\python.exe scripts/dashboard-concurso.py`. Cada corrida nueva suma una fila aquí + una entrada en `ITEMS` del script.
 
 ## Cuadro de lógica (ampliable en Obsidian)
 
@@ -53,6 +55,19 @@ Cuatro corridas locales, todas `success`, 0 USD de nube.
 
 **Veredicto**: pendiente revisión 1×1 de Sol (keeper / descartar).
 **Hallazgo**: las corridas 2 y 3 del baseline salieron cacheadas (0,02 s y 0,01 s) → gx-A-02/A-03 necesitan seeds 43/44 para ser renders reales.
+
+## Corridas ejecutadas — 2026-11-02 (WF-01 exploratorias, trabajo de la semana)
+
+Cuatro corridas locales 512² en el día, todas `success`, 0 USD de nube. Comparan checkpoint con prompt fijo (las dos primeras) y prueban prompting en español + receta del autor (las dos últimas). Tiempos vivos de `/history`, con respaldo en el script del tablero.
+
+| Test | WF | Modelo | Prompt | Resolución | Duración | Salida |
+|---|---|---|---|---|---:|---|
+| w01-juggernaut | WF-01 | Juggernaut-XL v9 | protocolo catenarias, seed 7 | 512×512 | 354 s | `sdxl-vista/w01-juggernaut-512.png` |
+| w01-realvisxl | WF-01 | RealVisXL v5.0 | mismo prompt, seed aleatoria | 512×512 | 390 s | `sdxl-vista/w01-realvisxl-512.png` |
+| w01-mosaicos | WF-01 | RealVisXL Lightning | mosaicos Escher + colores tierra Pasión (es) | 512×512 | 334 s | `sdxl-vista/w01-lightning-mosaicos-512.png` |
+| w01-pasion | WF-01 | RealVisXL Lightning | fachada Pasión + receta autor (dpmpp_sde, cfg 1.5) | 512×512 | 445 s | `sdxl-vista/w01-lightning-pasion-512.png` |
+
+> Tablero: `activos/web/concurso/index.html` (8 imágenes con las 4 de hoy). Binarios en `activos/proyectos/concurso-gaudi-nexus/sdxl-vista/` (fuera de git). prompt_id en `scripts/dashboard-concurso.py` (`ITEMS`).
 
 ---
 

@@ -13,7 +13,9 @@ idioma: es
 >
 > **Matriz de pruebas (organizada por flujos)**: [[proyectos/concurso-gaudi-nexus/workflows/00-matriz-pruebas-concurso|00-matriz-pruebas-concurso]] · **Cuadro ampliable** en `00-matriz-pruebas-concurso.excalidraw.md` (zoom/pan en Obsidian) + PNG en `activos/diagramas/matriz-pruebas-concurso.png`.
 >
-> **Set SDXL solo-vista**: [[proyectos/concurso-gaudi-nexus/workflows/sdxl-vista/01-index|sdxl-vista]] — un flujo por WF (01–07) para abrir en ComfyUI con drag-and-drop, sin ejecutar ni validar (R4 pendiente).
+> **Set SDXL solo-vista**: [[proyectos/concurso-gaudi-nexus/WF-curso/01-index-sdxl-vista|WF-curso]] — un flujo por WF (01–07) para abrir en ComfyUI con drag-and-drop, sin ejecutar ni validar (R4 pendiente).
+>
+> **Tablero del concurso (polaroid con segundos medidos)**: `activos/web/concurso/index.html` — mosaico + clic grande, 4 corridas 01/11 con resolución leída del PNG y tiempo de `/history`. Se regenera con `P:\Anaconda\envs\comfyenv\python.exe scripts/dashboard-concurso.py` (protocolo en `scripts/dashboard-concurso_notas.md`). Para sumar una corrida: entrada en `ITEMS` + PNG en `activos/proyectos/concurso-gaudi-nexus/fractal-hires/` + re-correr el script.
 
 ## Mapa
 
@@ -31,7 +33,7 @@ idioma: es
 
 | # | Paso | Herramienta | Gate |
 |---|------|-------------|------|
-| 1 | Ficha de flujo | `flujos/flujo-0X-*.md` | — |
+| 1 | Ficha de flujo | `WF-curso/WF-0X-*.md` (+ verbatim `WF-curso/flujo-0X-*.md`) | — |
 | 2 | Grafo + documentación de nodos | `workflow_<nombre>.json` · `03-nodos-<nombre>.md` | — |
 | 3 | Validación estática | `/object_info` del servidor destino + inventario de modelos | — |
 | 4 | Corridas | 3× A + 1× B, con `02-WF-log` | — |
@@ -64,4 +66,4 @@ idioma: es
 
 ## Conceptos relacionados
 
-- [[proyectos/concurso-gaudi-nexus/index|Índice del proyecto]] · [[proyectos/concurso-gaudi-nexus/flujos/00-index|Fichas de flujo]] · [[proyectos/concurso-gaudi-nexus/criterio/criterio-jurado|Criterio del jurado]] · [[proyectos/MVP_04-comfyui-arquitectura/n_05-rhino-mcp/WF-rhino-to-image|WF-rhino-to-image (existente)]] · [[proyectos/MVP_04-comfyui-arquitectura/n_04-video|n_04-video]] · [[wiki/glosario/software/comfy-cloud-vs-runpod|comfy-cloud-vs-runpod]] · [[wiki/glosario/interno/pbooks/pbk-comfyui|pbk-comfyui]]
+- [[proyectos/concurso-gaudi-nexus/index|Índice del proyecto]] · [[proyectos/concurso-gaudi-nexus/WF-curso/00-index|Fichas de flujo]] · [[proyectos/concurso-gaudi-nexus/criterio/criterio-jurado|Criterio del jurado]] · [[proyectos/MVP_04-comfyui-arquitectura/n_05-rhino-mcp/WF-rhino-to-image|WF-rhino-to-image (existente)]] · [[proyectos/MVP_04-comfyui-arquitectura/n_04-video|n_04-video]] · [[wiki/glosario/software/comfy-cloud-vs-runpod|comfy-cloud-vs-runpod]] · [[wiki/glosario/interno/pbooks/pbk-comfyui|pbk-comfyui]]

@@ -31,7 +31,7 @@ Es el flujo con más peso conceptual del set: convierte el modelo de Rhino en im
 | VAE | `flux2-vae.safetensors` | `models/vae/` |
 | LoRA | `rhino-to-image-lora.basic.safetensors` | `models/loras/` |
 
-Detalle: [[proyectos/concurso-gaudi-nexus/workflows/sdxl-vista/00-modelos-sdxl-a-probar|00-modelos-sdxl-a-probar]].
+Detalle: [[proyectos/concurso-gaudi-nexus/WF-curso/00-modelos-sdxl-a-probar|00-modelos-sdxl-a-probar]].
 
 ## 3. Cadena de nodos
 

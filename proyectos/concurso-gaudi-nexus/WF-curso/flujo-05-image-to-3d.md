@@ -232,7 +232,7 @@ ej.: diámetro 150 cm  →  escala hasta que "esto mide 1,5"
 | La variante **multiview** (**Tripo v1 multiview to model**) | La misma línea del pack, alimentada con las cuatro vistas | Es la economía de información del módulo: le da al modelo la parte de atrás y evita que la invente [00:13:15]-[00:13:29], [00:18:43]-[00:19:13] |
 | El **multiview en 4 tiles** generado con un único prompt | Las **cuatro perspectivas se generan con cuatro prompts de encuadre** a partir de la imagen ya preparada | Controlar el encuadre por prompt lleva el multiview al terreno del control de cámara y deja cada vista documentada por separado |
 | El export **OBJ o FBX** y la importación en **Rhino** con `zoom`, la escala a cota real y el modo sombreado | **Se conservan tal cual**: OBJ/FBX, Archivo → Importar, comando `zoom`, escalado contra la cota de la ficha y modo sombreado / Arctic | Es el tramo ya verificado del flujo: el formato único de intercambio y la cota real son la evidencia de escala del modelo |
-| El catálogo de **capturas y workflows** en el tablero del curso | Se documenta en el **tablero del curso** y en el **vault** (`proyectos/concurso-gaudi-nexus/flujos/`) | Cada módulo deja ficha en el vault: la trazabilidad del método es parte de lo que se presenta |
+| El catálogo de **capturas y workflows** en el tablero del curso | Se documenta en el **tablero del curso** y en el **vault** (`proyectos/concurso-gaudi-nexus/WF-curso/`) | Cada módulo deja ficha en el vault: la trazabilidad del método es parte de lo que se presenta |
 
 ## Checks contra el criterio del jurado
 

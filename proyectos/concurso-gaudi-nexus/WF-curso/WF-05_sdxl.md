@@ -22,7 +22,7 @@ El prompt evita deliberadamente el contexto urbano: fondo limpio y objeto centra
 
 `Juggernaut-XL_v9_RunDiffusionPhoto_v2.safetensors` — SDXL, VAE horneado, Open RAIL-M.
 
-Alternativa: **RealVisXL v5.0**, que resuelve mejor el fondo neutro y las sombras de estudio. Comparativa en [[proyectos/concurso-gaudi-nexus/workflows/sdxl-vista/00-modelos-sdxl-a-probar|00-modelos-sdxl-a-probar]].
+Alternativa: **RealVisXL v5.0**, que resuelve mejor el fondo neutro y las sombras de estudio. Comparativa en [[proyectos/concurso-gaudi-nexus/WF-curso/00-modelos-sdxl-a-probar|00-modelos-sdxl-a-probar]].
 
 ## 3. Cadena de nodos
 

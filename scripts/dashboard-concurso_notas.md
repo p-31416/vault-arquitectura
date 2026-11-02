@@ -54,5 +54,4 @@ degrade.
 
 ## Límite conocido
 
-`/history` se vacía al reiniciar ComfyUI. Si eso pasa, los tiempos quedan en
-"sin dato"; conviene volcarlos a `datos.json` o al log del workflow antes.
+`/history` se vacía al reiniciar ComfyUI. Por eso cada entrada de `ITEMS` trae `segundos_fijo` con el tiempo medido 2026-11-01 (609.26 / 1073.69 / 1165.06 / 409.36 s): cuando `/history` responde, manda el valor vivo; cuando devuelve vacío, el tablero usa el respaldo y lo avisa en consola. Así regenerar con el servidor apagado conserva los tiempos.

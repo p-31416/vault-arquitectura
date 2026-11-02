@@ -49,4 +49,4 @@ El módulo 7 ya deja expuesta la tesis central que Cas Esbach sostiene en la ape
 
 ## Conceptos relacionados
 
-- [[proyectos/concurso-gaudi-nexus/flujos/00-index|Fichas de flujo]] · [[proyectos/concurso-gaudi-nexus/criterio/criterio-jurado|Criterio del jurado]] · [[specs/261028-plan-workflows-adaptados-curso-ai-gaudi|Plan maestro de workflows]] · [[raw/yt/transcripts/indice-curso-ai-gaudi|Índice del curso]] · [[proyectos/MVP_04-comfyui-arquitectura/extraccion-material-curso-ai-gaudi|Extracción del material del curso]]
+- [[proyectos/concurso-gaudi-nexus/WF-curso/00-index-flujos-origen|Fichas de flujo]] · [[proyectos/concurso-gaudi-nexus/criterio/criterio-jurado|Criterio del jurado]] · [[specs/261028-plan-workflows-adaptados-curso-ai-gaudi|Plan maestro de workflows]] · [[raw/yt/transcripts/indice-curso-ai-gaudi|Índice del curso]] · [[proyectos/MVP_04-comfyui-arquitectura/extraccion-material-curso-ai-gaudi|Extracción del material del curso]]

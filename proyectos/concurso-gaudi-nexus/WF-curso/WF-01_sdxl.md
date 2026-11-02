@@ -25,7 +25,7 @@ Se usa como **protocolo**: mismo prompt, misma seed, mismo grafo; se cambia una 
 - Hugging Face: https://huggingface.co/RunDiffusion/Juggernaut-XL-v9
 - Civitai: https://civitai.com/models/133005/juggernaut-xl
 
-Modelos alternativos para este mismo WF: [[proyectos/concurso-gaudi-nexus/workflows/sdxl-vista/00-modelos-sdxl-a-probar|00-modelos-sdxl-a-probar]].
+Modelos alternativos para este mismo WF: [[proyectos/concurso-gaudi-nexus/WF-curso/00-modelos-sdxl-a-probar|00-modelos-sdxl-a-probar]].
 
 ## 3. Cadena de nodos
 
@@ -79,3 +79,27 @@ Catenarias que cierran, columnas ramificadas con lógica estructural, piedra y l
 
 - R4: verificar `ckpt_name` y los `class_type` contra `/object_info` antes de encolar.
 - Registrar la corrida en [[proyectos/concurso-gaudi-nexus/workflows/00-matriz-pruebas-concurso|la matriz]] con segundos medidos.
+
+## 8. Historial de corridas (van 3)
+
+Protocolo: una variable por corrida; el resto del grafo intacto.
+
+| # | Fecha | Checkpoint | Sampler | Steps | CFG | Negativo | Seed | Resolución | Segundos | Veredicto |
+|---|---|---|---|---|---|---|---|---|---|---|
+| R1 | 2026-11-02 | Juggernaut v9 | `dpmpp_2m` + `karras` | 30 | 4 | casa (7 términos) | 7 | 1024×1024 | pendiente | control del set |
+| R2 | 2026-11-02 | RealVisXL v5.0 | `dpmpp_2m` + `karras` | 30 | 4 | casa (7 términos) | 7 | 1024×1024 | pendiente | mide modelo bajo receta de la casa (el autor pide 50+ para 2M) |
+| R3 | 2026-11-02 | RealVisXL Lightning | `dpmpp_sde` + `karras` | 5 | 1,5 | autor (Civitai 139562) | 7 | 1024×1024 | pendiente | **descartado 2026-11-02: resultado pésimo, fuera del set** |
+
+### Prompt v2 — plaza + mosaico Escher (2026-11-02)
+
+Variante de escena: cambia prompt y encuadre a propósito (la comparación modelo vs modelo ya quedó fijada en R1–R3). Vista lejana desde la plaza de la Sagrada Familia, camino de mosaicos teselados triangulares tipo Escher con paleta tierra de la fachada de la Pasión, templo de fondo.
+
+Positivo:
+
+```
+Distant wide view across the plaza facing the Passion facade of the Sagrada Familia in Barcelona, rising in the background against a pale sky. Foreground dominated by a tessellated mosaic pathway of interlocking triangular tiles in Escher-like geometric patterns, varied ochre, sandstone, rust, umber and bone-white tones drawn from the facade's earthy palette. Shot on Canon EOS R5, 24mm tilt-shift lens, golden hour raking light, sharp focus throughout, Architecture Photography, Hyperdetailed Photography
+```
+
+Negativo: según checkpoint (tabla §6.7 de [[proyectos/concurso-gaudi-nexus/WF-curso/00-modelos-sdxl-a-probar|00-modelos-sdxl-a-probar]]; Lightning quedó fuera del set.
+
+Sampler/steps/CFG según checkpoint (tabla §6.7 de [[proyectos/concurso-gaudi-nexus/WF-curso/00-modelos-sdxl-a-probar|00-modelos-sdxl-a-probar]]). Encuadre sugerido 1216×832, prefijo `gx-WF01-plaza`. Estado: pendiente de corrida (R4).

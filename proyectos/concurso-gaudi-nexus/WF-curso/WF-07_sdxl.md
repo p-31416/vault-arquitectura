@@ -22,7 +22,7 @@ Es el flujo del "puente": el mismo dibujo que sirve de base pasa a ser imagen de
 
 `Juggernaut-XL_v9_RunDiffusionPhoto_v2.safetensors` — SDXL, VAE horneado, Open RAIL-M.
 
-Alternativas: **RealVisXL v5.0** para materialidad de piedra, **Flux.2 klein 9B** con el LoRA `rhino-to-image` como camino paralelo en RunPod, y **ControlNet Union SDXL** cuando la geometría tiene que quedar clavada al dibujo. Comparativa en [[proyectos/concurso-gaudi-nexus/workflows/sdxl-vista/00-modelos-sdxl-a-probar|00-modelos-sdxl-a-probar]].
+Alternativas: **RealVisXL v5.0** para materialidad de piedra, **Flux.2 klein 9B** con el LoRA `rhino-to-image` como camino paralelo en RunPod, y **ControlNet Union SDXL** cuando la geometría tiene que quedar clavada al dibujo. Comparativa en [[proyectos/concurso-gaudi-nexus/WF-curso/00-modelos-sdxl-a-probar|00-modelos-sdxl-a-probar]].
 
 ## 3. Cadena de nodos
 

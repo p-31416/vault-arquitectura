@@ -73,7 +73,7 @@ Generaci√≥n: motivo ramificado por IFS / L-System en 3 iteraciones, con dimensi√
 
 - [[proyectos/concurso-gaudi-nexus/index|concurso-gaudi-nexus]]
 - [[proyectos/concurso-gaudi-nexus/criterio/criterio-jurado|criterio-jurado]]
-- [[proyectos/concurso-gaudi-nexus/flujos/flujo-07-gaudi-workflow|flujo-07-gaudi-workflow]]
+- [[proyectos/concurso-gaudi-nexus/WF-curso/flujo-07-gaudi-workflow|flujo-07-gaudi-workflow]]
 - [[proyectos/concurso-gaudi-nexus/earth2rhino3d/doc-massing-03d-sagrada|doc-massing-03d-sagrada]]
 - [[raw/research/2026-11-01-sherlock-gaudi-fractales-biomimica-solado-sagrada-familia|sherlock-gaudi-fractales-biomimica-solado]]
 - [[raw/pdf/2026-10-20-tree_inspired_dendriforms_and_fractal_like-transcripcion|tree-inspired-dendriforms-transcripcion]]

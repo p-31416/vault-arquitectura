@@ -48,8 +48,9 @@ ITEMS = [
         "modelo": "Juggernaut-XL v9",
         "checkpoint": "Juggernaut-XL_v9_RunDiffusionPhoto_v2.safetensors",
         "prompt_id": "abafea6c-7941-44c0-b974-30e0657afe31",
-        "workflow": "WF-vivienda R-01",
-        "nota": "Baseline 1216x832. Se encolaron 3 seeds iguales: solo la primera renderizo, las otras dos salieron de cache.",
+            "workflow": "WF-vivienda R-01",
+            "nota": "Baseline 1216x832. Se encolaron 3 seeds iguales: solo la primera renderizo, las otras dos salieron de cache.",
+            "segundos_fijo": 609.26,
     },
     {
         "slug": "t-h1-juggernaut",
@@ -57,8 +58,9 @@ ITEMS = [
         "modelo": "Juggernaut-XL v9",
         "checkpoint": "Juggernaut-XL_v9_RunDiffusionPhoto_v2.safetensors",
         "prompt_id": "1d6703a6-1769-4895-ad39-063975585d8d",
-        "workflow": "fractal-hires T-H1",
-        "nota": "Hires 2016x1152: base 1344x768 + latent upscale x1.5 con denoise 0.35.",
+            "workflow": "fractal-hires T-H1",
+            "nota": "Hires 2016x1152: base 1344x768 + latent upscale x1.5 con denoise 0.35.",
+            "segundos_fijo": 1073.69,
     },
     {
         "slug": "t-h2-realvisxl",
@@ -66,8 +68,9 @@ ITEMS = [
         "modelo": "RealVisXL v5.0",
         "checkpoint": "realvisxlV50_v50Bakedvae.safetensors",
         "prompt_id": "3bed5556-3bd9-4cff-b3c6-c3a57392f1f2",
-        "workflow": "fractal-hires T-H2",
-        "nota": "Mismo grafo y mismo prompt que T-H1: cambia solo el checkpoint.",
+            "workflow": "fractal-hires T-H2",
+            "nota": "Mismo grafo y mismo prompt que T-H1: cambia solo el checkpoint.",
+            "segundos_fijo": 1165.06,
     },
     {
         "slug": "t-h3-lightning",
@@ -75,10 +78,51 @@ ITEMS = [
         "modelo": "RealVisXL v5.0 Lightning",
         "checkpoint": "realvisxlV50_v50LightningBakedvae.safetensors",
         "prompt_id": "710be756-1bec-4f3c-b8f7-1414c77c7261",
-        "workflow": "fractal-hires T-H3",
-        "nota": "Checkpoint Lightning (destilado): menos pasos, mas rapido, mas pictorico.",
-    },
-]
+            "workflow": "fractal-hires T-H3",
+            "nota": "Checkpoint Lightning (destilado): menos pasos, mas rapido, mas pictorico.",
+            "segundos_fijo": 409.36,
+        },
+        {
+            "slug": "w01-juggernaut-512",
+            "archivo": "activos/proyectos/concurso-gaudi-nexus/sdxl-vista/w01-juggernaut-512.png",
+            "modelo": "Juggernaut-XL v9",
+            "checkpoint": "Juggernaut-XL_v9_RunDiffusionPhoto_v2.safetensors",
+            "prompt_id": "ecd27a03-3115-4d6d-a660-63d1a3672b34",
+            "workflow": "WF-01 baseline 512",
+            "nota": "WF-01 2026-11-02: prompt protocolo catenarias, seed 7, 512², 30 steps cfg 4 dpmpp_2m. Prueba de receta de la casa.",
+            "segundos_fijo": 354.32,
+        },
+        {
+            "slug": "w01-realvisxl-512",
+            "archivo": "activos/proyectos/concurso-gaudi-nexus/sdxl-vista/w01-realvisxl-512.png",
+            "modelo": "RealVisXL v5.0",
+            "checkpoint": "realvisxlV50_v50Bakedvae.safetensors",
+            "prompt_id": "c918cf29-0896-4239-8555-eee9e2d2c3db",
+            "workflow": "WF-01 baseline 512",
+            "nota": "Mismo prompt y grafo que w01-juggernaut: cambia solo el checkpoint. Seed aleatoria.",
+            "segundos_fijo": 390.29,
+        },
+        {
+            "slug": "w01-lightning-mosaicos-512",
+            "archivo": "activos/proyectos/concurso-gaudi-nexus/sdxl-vista/w01-lightning-mosaicos-512.png",
+            "modelo": "RealVisXL v5.0 Lightning",
+            "checkpoint": "realvisxlV50_v50LightningBakedvae.safetensors",
+            "prompt_id": "51d4e33d-0d46-4298-ac18-a431a4fc9413",
+            "workflow": "WF-01 exploratoria 512",
+            "nota": "Prompt en español: camino de mosaicos teselados Escher, colores tierra fachada Pasión, Sagrada de fondo. 30 steps cfg 4.",
+            "segundos_fijo": 333.68,
+        },
+        {
+            "slug": "w01-lightning-pasion-512",
+            "archivo": "activos/proyectos/concurso-gaudi-nexus/sdxl-vista/w01-lightning-pasion-512.png",
+            "modelo": "RealVisXL v5.0 Lightning",
+            "checkpoint": "realvisxlV50_v50LightningBakedvae.safetensors",
+            "prompt_id": "1548b647-a686-4234-9584-9bba72b91286",
+            "workflow": "WF-01 exploratoria 512",
+            "nota": "Prompt corto fachada Pasión + receta del autor: dpmpp_sde, 30 steps, cfg 1.5.",
+            "segundos_fijo": 444.68,
+        },
+    ]
 
 
 def medir_png(ruta):
@@ -246,6 +290,10 @@ def generar(raiz, out, comfy):
         shutil.copy2(origen, os.path.join(img_dir, nombre))   # NOTA ES: copia byte a byte: NO se reescala.
         ancho, alto = medir_png(origen)
         seg = segundos_de_history(comfy, item["prompt_id"])
+        if seg is None:
+            seg = item.get("segundos_fijo")   # NOTA ES: respaldo medido 2026-11-01; /history se vacia al reiniciar ComfyUI.
+            if seg is not None:
+                print("  %s: tiempo de respaldo %ss" % (item["slug"], seg))
         print("  %-16s %sx%s  %ss" % (item["slug"], ancho, alto, seg))
         datos.append({
             "img": "img/" + nombre,

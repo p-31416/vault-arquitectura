@@ -24,7 +24,7 @@ Por eso el prompt insiste en "wide establishing shot", "fixed tripod view" y "ci
 
 Alternativa directa: **RealVisXL v5.0**, que da una piel de imagen más limpia para animar. Para la etapa de video el modelo cambia por completo: LTX 2.3 o WAN 2.2 I2V en RunPod.
 
-Detalle de modelos: [[proyectos/concurso-gaudi-nexus/workflows/sdxl-vista/00-modelos-sdxl-a-probar|00-modelos-sdxl-a-probar]].
+Detalle de modelos: [[proyectos/concurso-gaudi-nexus/WF-curso/00-modelos-sdxl-a-probar|00-modelos-sdxl-a-probar]].
 
 ## 3. Cadena de nodos
 

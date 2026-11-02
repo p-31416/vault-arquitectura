@@ -115,10 +115,10 @@ La única diferencia real entre los dos es de dónde sale el latente y el valor 
 
 ## Referencias
 
-- Índice del set: [[proyectos/concurso-gaudi-nexus/workflows/sdxl-vista/01-index|sdxl-vista]]
+- Índice del set: [[proyectos/concurso-gaudi-nexus/WF-curso/01-index-sdxl-vista|sdxl-vista]]
 - Matriz de pruebas: [[proyectos/concurso-gaudi-nexus/workflows/00-matriz-pruebas-concurso|matriz del concurso]]
 - Modelos recomendados: [[proyectos/MVP_04-comfyui-arquitectura/modelos-recomendados|v1.4.0]]
-- Otros SDXL a probar + LoRA del curso: [[proyectos/concurso-gaudi-nexus/workflows/sdxl-vista/00-modelos-sdxl-a-probar|00-modelos-sdxl-a-probar]]
+- Otros SDXL a probar + LoRA del curso: [[proyectos/concurso-gaudi-nexus/WF-curso/00-modelos-sdxl-a-probar|00-modelos-sdxl-a-probar]]
 - Análisis de alternativas: [[wiki/estudio/analisis/analisis-ia-generativa-comfyui-alternativas|análisis IA generativa]]
 - Proveedores y tiers gratis: [[wiki/glosario/software/proveedores-modelos-ia|proveedores-modelos-ia]]
 - Plan de pruebas: [[specs/261030-plan-continuacion-pruebas|plan de continuación de pruebas]]

@@ -20,7 +20,7 @@ idioma: es
 
 `Juggernaut-XL_v9_RunDiffusionPhoto_v2.safetensors` — SDXL, VAE horneado, Open RAIL-M.
 
-En este WF conviene además probar **RealVisXL v5.0**, que rinde mejor en interiores y materiales, y **RealArchmix XL v3.5** si se destraba la descarga. Ver [[proyectos/concurso-gaudi-nexus/workflows/sdxl-vista/00-modelos-sdxl-a-probar|00-modelos-sdxl-a-probar]].
+En este WF conviene además probar **RealVisXL v5.0**, que rinde mejor en interiores y materiales, y **RealArchmix XL v3.5** si se destraba la descarga. Ver [[proyectos/concurso-gaudi-nexus/WF-curso/00-modelos-sdxl-a-probar|00-modelos-sdxl-a-probar]].
 
 ## 3. Cadena de nodos
 

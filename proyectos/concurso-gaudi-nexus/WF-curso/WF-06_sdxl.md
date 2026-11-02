@@ -22,7 +22,7 @@ El encuadre se cierra sobre la junta, la junta se lee como material y la pieza d
 
 `Juggernaut-XL_v9_RunDiffusionPhoto_v2.safetensors` — SDXL, VAE horneado, Open RAIL-M.
 
-Alternativa: **RealVisXL v5.0**, más nítido en superficies de piedra y hormigón. Para forzar la geometría del detalle, **ControlNet Union SDXL** sobre el mismo WF. Comparativa en [[proyectos/concurso-gaudi-nexus/workflows/sdxl-vista/00-modelos-sdxl-a-probar|00-modelos-sdxl-a-probar]].
+Alternativa: **RealVisXL v5.0**, más nítido en superficies de piedra y hormigón. Para forzar la geometría del detalle, **ControlNet Union SDXL** sobre el mismo WF. Comparativa en [[proyectos/concurso-gaudi-nexus/WF-curso/00-modelos-sdxl-a-probar|00-modelos-sdxl-a-probar]].
 
 ## 3. Cadena de nodos
 

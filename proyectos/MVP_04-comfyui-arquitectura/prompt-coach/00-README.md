@@ -18,7 +18,7 @@ idioma: es
 | # | Archivo | Que hace | Largo del original |
 |---|---|---|---|
 | 01 | [[proyectos/MVP_04-comfyui-arquitectura/prompt-coach/01-prompt-coach-simple\|Prompt Coach simple]] | Pregunta modelo + largo y deriva a la guia de cada modelo | 854 caracteres, completo |
-| 02 | [[proyectos/MVP_04-comfyui-arquitectura/prompt-coach/02-prompt-coach-extendido\|Prompt Coach extendido]] | Dos modos (full-frame / inpaint) + playbooks por familia | 6.064 caracteres, **truncado por el export** |
+| 02 | [[proyectos/MVP_04-comfyui-arquitectura/prompt-coach/02-prompt-coach-extendido\|Prompt Coach extendido]] | Dos modos (full-frame / inpaint) + playbooks por familia | 6.064 + 6.002 + 3.068 chars; **Branch A y B completos** (corte en la 3ª regla de Hard-won) |
 | 03 | [[proyectos/MVP_04-comfyui-arquitectura/prompt-coach/03-flux2-prompt-refiner\|FLUX.2 Architectural Prompt Refiner]] | Tres concept cards con referente de autor + JSON de 10 claves | 6.859 caracteres, tablas vacias en el export |
 
 ## Como se relacionan con `@tim`
@@ -33,7 +33,7 @@ idioma: es
 ## Estado de las fuentes
 
 - **Coach simple:** completo. Sus links son la base del router del skill `comfy-prompting`.
-- **Coach extendido:** el export corta en "What to deliver (Branch A)". Falta el cierre de Branch A, el Branch B (inpaint region-only) completo y la nota final sobre web search. Se puede recuperar del tablero abierto o reconstruir desde el skill.
+- **Coach extendido:** ✅ completado (2026-10-30). Branch A y Branch B (inpaint region-only: mask checks, estructura de 6 pasos, skeleton, failure triage, nota de links) verbatim desde el export. Corte restante: 3ª regla de "Hard-won rules" (`- **M`) y el párrafo final de node settings para inpaint latente.
 - **Refiner:** las tablas "JSON Template" y "Lens Selection Logic" quedaron vacias en el export. El template se recupera del esqueleto JSON del modulo 3 y del esquema oficial de BFL; la logica de lentes quedo reconstruida en `references/flux2.md`.
 - **Link muerto:** el refiner apunta a `docs.bfl.ai/guides/prompting_guide_flux2_klein`, que hoy devuelve 404. La guia vigente es `https://docs.bfl.ai/guides/prompting_guide_flux2` y el overview `https://docs.bfl.ai/flux_2/flux2_overview`.
 

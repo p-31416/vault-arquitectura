@@ -1,0 +1,15 @@
+%% V2 — Mapa stakeholders PI (visión)
+%% Permisos A-D por actor. Base REQUISITOS §2.
+flowchart TB
+    classDef actor fill:#0f172a,stroke:#94a3b8,color:#e2e8f0
+    classDef sys fill:#111827,stroke:#38bdf8,color:#e0f2fe
+    T[Titular<br/>decide · aprueba C/D<br/>todo]:::actor
+    A2[Arq 2<br/>ejecuta A/B · pide C/D]:::actor
+    OP[Operador PITAUTECH<br/>instala · mantiene<br/>perfil aparte]:::actor
+    CL[Cliente<br/>solo entregables]:::actor
+    H[Hermes<br/>prepara · ejecuta A/B<br/>nunca decide]:::sys
+    T -->|aprueba| H
+    A2 -->|opera A/B| H
+    OP -->|administra| H
+    H -->|entregable| CL
+    T -.->|delega tareas| A2

@@ -1,13 +1,44 @@
 ---
 tipo: log
 fecha_creacion: 2026-06-28
-ultima_actualizacion: 2026-09-07
+ultima_actualizacion: 2026-11-01
 tags: [log, historico]
 ---
 
 # Log de operaciones
 
 Más nuevo → más arriba
+
+## 2026-11-02 — Plan maestro PI por temas: MCPs, modelos, licencias y lámina Gaudí + System Overview + set ingeniería punto por punto + guion alineado + índice maestro
+
+- **Índice** `00-index.md` con sección Specs y diagramas nov-2026 (5 specs + ingeniería C4 + mapa PI) y fecha al 2026-11-02. **GUIA-LECTURA** §6 con lo nuevo nov-2026. Html sin "provisional": holoarquitecto como rol que dirige.
+- **Cross-links**: plan maestro ↔ overview ↔ ingeniería ↔ guion, mismo sistema PI con holoarquitecto, un Hermes por estudio, A-D, L0-L4, C-01 a C-13.
+
+- **Guion** `specs/261101-guion-visual-pi-remotion.md` alineado: nombre PI vs Studio OS vs editorial aclarado, ramas Comfy con L0-L4 y controles F, costos 4+1 con VISION §5 y RNF-10, sección Alineación 2026-11-02 con trazabilidad a VISION/ESTRUCTURA/REQUISITOS + plan maestro + overview + ingeniería.
+
+- **V1** contexto validado en `arquitectura-pi-os.mmd`. **V2** `pi-stakeholders.mmd` titular/arq2/operador/cliente con A-D. **V3** `pi-bpmn-asis-tobe.mmd` 10 pasos hoy vs con PI. **V4** `pi-journeys.mmd` pedir→aprobar→recibir. **E4** `pi-er-registro.mmd` proyecto/archivo/tarea/artefacto/aprobación. **R1** `pi-casos-uso.mmd` C-01 a C-13. **R4** `pi-maquina-estados.mmd` pendiente→validando→espera→ejecutando→hecha/stale. Documento cerrado en `pi-system-ingenieria.md` con qué es cada documento y siglas.
+- **Rename 2026-11-02**: se adopta **holoarquitecto** y se retira `Meta²` provisional (omniArquitecto descartado). Propagado en guion, `arquitectura-pi-os.md/.mmd`, `prompt-coach-vs-agentico.html`, `pi_studio_remotion_notas.md` y anchors de `auditar_presentacion_pi.py`. Raw histórico conserva `Meta²` como testimonio.
+
+- **Spec nuevo** `specs/261102-system-overview-pi.md`: overview texto + Mermaid con entry points (Telegram/CLI/webhook/cron/API), Hermes con Prompt/Provider/Dispatch, storage SQLite+Postgres+vault+Qdrant y backends docker/ssh/MCP — mapeo directo de tu diagrama a N2 Windows, M20 y GPU nube.
+- **Ingeniería C4** `diagramas/pi-system-ingenieria.md` + `pi-system-ingenieria-c4.mmd` + `pi-system-ingenieria-componentes.mmd` + `pi-system-ingenieria-despliegue.mmd`: L2 contenedores con puertos y protocolos, L3 componentes que mapea tu ASCII a PI, despliegue N1-N4 por Tailscale y secuencia sobre-de-tarea con tabla de contratos.
+
+- **Spec nuevo** `specs/261102-plan-maestro-pi-por-temas.md`: T1 reunión→doc, T2 reparto agentes, T3 tabla MCP con docs verificadas, T4 matriz open/pago/cloud/local + T4.1 entradas L0-L4 con ControlNet/inpaint/outpaint versionados, T5 licencias por jurisdicción con matriz verificación + checklist CABA/conurbano/Europa + firma y tokenización, T6 gestión + obra, T7 firma local Llama, T8 loop moodboard→LoRA con dataset curado y strength calibrado, T9 evolución diaria + flujo lámina Gaudí con catenarias paramétricas.
+- **Responde**: multi-PC al mismo Hermes por Telegram + Tailscale + `vault://pruebas/`, Windows enchufada como N2 ejecución, M20 Linux como mini-cloud con límites (orquesta y valida, GPU avanza en nube).
+
+## 2026-11-01 (noche) — Tabula rasa Pi: transcripción primigenia + arquitectura PI OS para MVP 2 personas
+
+- **Tabula rasa** `raw/sessions/2026-11-01-sesion-tabula-rasa-pi.md`: voz literal de Sol (matrícula Pi 3.14.16, cuarta revolución, meta-arquitecto con 4-6 agentes Antigravity, estándares internos antes que BIM) + cita filosófica-humana + decisiones punto por punto.
+- **Diseño experto** `specs/261101-tabula-rasa-arquitecto-futuro-pi-os.md`: Hermes agente único, contrato con `file_ref` y gobernanza A-D, ComfyUI por API (concurso primero, custom después), Rhino puente+Hops con evaluación 9, BIM FreeCAD+IfcOpenShell, Unreal futuro, entradas croquis/volumetría/texto/voz/imagen, secretaría todo junto, MVP Sol técnica + 1 arq escalable a mediana + desarrollo inmobiliario.
+- **Trazabilidad**: VISION/ESTRUCTURA/REQUISITOS/IMPLEMENTACION-HERMES + meta-arquitecto + ptech-filosofia + transcript ChatGPT + MVP_02/04/05.
+
+## 2026-11-01 (tarde) — Router Emilia: extracción Jina reparada con API key, ack que avisa y canvas agrupado
+
+- **Diagnóstico exec 3960 del Router** (`YWpuV5p0vCDTbIHz`): la fila llegaba al Sheet con Título y Tags vacíos — **403 de `r.jina.ai`** (`AbuseAlleviationError 40305`, acceso anónimo a instagram.com bloqueado por abuso de terceros, 20 RPM por IP compartida) que pasaba silencioso por `onError: continueRegularOutput` y el ack igual mandaba "Anotado ✓".
+- **Dos fixes**: (1) el ack ahora suma **"⚠️ Jina no extrajo — completá título y tags a mano"** cuando el título queda vacío; (2) credencial nueva **`Jina Reader API Key`** (`httpHeaderAuth`, `Bearer jina_...`) del portal `jina.ai/api-dashboard/key-manager` conectada al nodo `Extrae Jina` — pasa de 20 RPM anónimas a **500 RPM por key** y sin bloqueos de dominio por IP.
+- **Canvas agrupado en 3 grupos** (13 → 8 cajas de 1.º nivel): **Identidad** · **Inbox Fuentes** (cadena Has Link → Ack) · **Agente Voz**. El grupo "Comandos legacy" lo rechazó el server (gate con 2 salidas externas); los 4 nodos sueltos no pueden agruparse por reglas de conectividad — queda tolerado a 1 del techo 7.
+- **Verificado con test real** (execs 3962/3963, links del estudio): título completo + 6 tags del link de discourse.mcneel.com — la extracción funciona con la key.
+- **Dos publicaciones al flujo activo**: `7f889b6d` (ack + key) → `e4a475f8` (agrupado). Deuda menor: completar filas antiguas del `Fuentes-Inbox` con Título vacío (a mano o re-mandando el link).
+- **Sesión:** `raw/sessions/2026-11-01-sesion-debug-extraccion-jina-router.md`.
 
 ## 2026-10-30 (tarde) — Studio OS: guía de lectura para explicar el sistema, y el agente ya tiene nombre y dirección
 

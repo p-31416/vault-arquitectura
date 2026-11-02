@@ -154,6 +154,7 @@ Si alguna línea falla, no pedís el `s`: corregís primero o declarás lo que f
 - `@tim flujo sdxl fachada nocturna` — cadena de nodos y parámetros, sin prompt de proyecto
 - `@tim flux2 rhino` — toma la vista de Rhino y la foto de material como referencias
 - `@tim video recorrido fachada` — LTX-2.3 o Seedance según duración y plataforma
+- `@tim seedance <escena>` — skill `seedance-director`: JSON array EN+ZH (action/general/dialogue, cap 15 s), fuente del curso AI x Gaudi
 - `@tim json` — fuerza la variante JSON estructurada (solo FLUX.2)
 
 ## Restricciones
@@ -166,6 +167,7 @@ Si alguna línea falla, no pedís el `s`: corregís primero o declarás lo que f
 ## Referencias internas
 
 - `.opencode/skills/comfy-prompting/SKILL.md` — router de playbooks por modelo
+- `.opencode/skills/seedance-director/SKILL.md` — director de prompts Seedance 2.0 (EN+ZH), fuente del curso AI x Gaudi
 - [[proyectos/MVP_04-comfyui-arquitectura/reglas-workflows-comfy|reglas-workflows-comfy]] — R1–R4, nomenclatura y estructura de carpetas
 - [[wiki/glosario/interno/pbooks/pbk-comfyui|pbk-comfyui]] — flujos, parámetros y base local RX 570
 - [[wiki/glosario/interno/pbooks/pbk-comfy-agent|pbk-comfy-agent]] — playbook de este agente

@@ -1,0 +1,72 @@
+%% C4 L2 — Contenedores PI (ingeniería)
+%% Tech + protocolo + puerto. Un agente por estudio, cero puertos públicos.
+flowchart TB
+    classDef person fill:#0f172a,stroke:#94a3b8,color:#e2e8f0
+    classDef container fill:#111827,stroke:#60a5fa,color:#e5e7eb
+    classDef data fill:#1c1917,stroke:#f59e0b,color:#fef3c7
+    classDef net fill:#052e16,stroke:#4ade80,color:#dcfce7
+
+    SOL([Persona: Arquitecta<br/>dirige · decide · aprueba]):::person
+    JUN([Persona: Arq 2<br/>ejecuta · revisa]):::person
+
+    subgraph EXT[Externo]
+        direction LR
+        FATHOM[[Fathom<br/>transcripción]]:::container
+        CAL[[Cal.com + Calendar<br/>agenda]]:::container
+        GH[[GitHub espejo<br/>emergencia]]:::container
+    end
+
+    subgraph N1[VPS N1 · siempre encendido]
+        direction TB
+        HERM[Hermes Agent<br/>nousresearch/hermes-agent<br/>gateway run · 3GB · sin puertos]:::container
+        N8N[n8n<br/>orquestación determinista<br/>:5678 solo tailnet]:::container
+        PG[(PostgreSQL<br/>registro vivo<br/>:5432 tailnet)]:::data
+        LEAN[Leantime<br/>tablero + MySQL]:::container
+        QDR[Qdrant<br/>búsqueda sentido<br/>:6333 tailnet]:::data
+        VAULT[(Vault canónico<br/>bare + work clone<br/>ssh tailnet)]:::data
+    end
+
+    subgraph N2[PC estudio N2 · enchufada]
+        direction TB
+        RUN[Runner P1+P3<br/>cola + validación A-D<br/>watchdog]:::container
+        ACAD[AutoCAD completo<br/>COM + Core Console]:::container
+        RHINO[Rhino 8 + Hops<br/>puente 127.0.0.1:9876]:::container
+        FCAD[FreeCAD + IfcOpenShell<br/>headless]:::container
+    end
+
+    subgraph N3[M20 Linux N3 · batería]
+        direction TB
+        WORK[Worker polling<br/>cero inbound]:::container
+        OLL[Ollama Qwen3/Llama<br/>privado local]:::container
+        MIRROR[(Espejo vault<br/>rclone + git)]:::data
+    end
+
+    subgraph N4[GPU nube N4 · excepción]
+        direction TB
+        COMFY[ComfyUI<br/>API + colas]:::container
+        POD[Runpod Secure<br/>0 puertos · cifrado]:::container
+    end
+
+    NET[[Red privada Tailscale<br/>WireGuard · MagicDNS · ACL<br/>VPS→PC:9876]]:::net
+
+    SOL -->|Telegram temas + botones| HERM
+    JUN -->|Telegram temas| HERM
+    FATHOM -->|webhook HMAC| N8N
+    N8N -->|MCP n8n-official| HERM
+    CAL -->|Cal.com API| N8N
+    HERM -->|sobre tarea file_ref| RUN
+    HERM -->|jobs| WORK
+    HERM -->|workflows API| COMFY
+    RUN -->|9876 localhost| RHINO
+    RUN -->|COM| ACAD
+    RUN -->|headless| FCAD
+    WORK -->|poll HTTPS| N8N
+    HERM -->|escritura única| PG
+    PG -->|vista grafo| HERM
+    HERM -->|búsqueda| QDR
+    HERM <-->|git ssh tailnet| VAULT
+    VAULT <-->|git| MIRROR
+    VAULT <-->|push espejo| GH
+    HERM -.->|tailnet| NET
+    RUN -.->|tailnet| NET
+    WORK -.->|tailnet| NET

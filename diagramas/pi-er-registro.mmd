@@ -1,0 +1,38 @@
+%% E4 — ER registro central (ESTRUCTURA §6)
+erDiagram
+    PROYECTO ||--o{ ARCHIVO : tiene
+    ARCHIVO ||--o{ VERSION : versiona
+    PROYECTO ||--o{ TAREA : pide
+    TAREA ||--o{ EJECUCION : corre
+    EJECUCION ||--o{ ARTEFACTO : produce
+    VERSION ||--o{ ARTEFACTO : origina
+    ARTEFACTO ||--o{ RELACION : conecta
+    TAREA ||--o{ APROBACION : requiere
+    APROBACION }o--|| PERSONA : aprueba
+    EJECUCION }o--|| PERFIL : corre-en
+    PROYECTO {
+        string id
+        string nombre
+        string jurisdiccion
+    }
+    ARCHIVO {
+        string file_ref
+        string clase
+        string hash
+    }
+    TAREA {
+        string task_id
+        string verbo
+        string riesgo
+        string idem_key
+    }
+    ARTEFACTO {
+        string ref
+        string hash
+        string provenance
+    }
+    APROBACION {
+        string persona
+        string hora
+        string hash_contenido
+    }

@@ -2,8 +2,8 @@
 tipo: indice
 seccion: playbooks-internos
 fecha_creacion: 2026-07-24
-ultima_actualizacion: 2026-10-22
-tags: [playbooks, infra, comfyui, git, github, opencode, setup, vps, ssh, monitoreo, contabo]
+ultima_actualizacion: 2026-10-30
+tags: [playbooks, infra, comfyui, tim, git, github, opencode, setup, vps, ssh, monitoreo, contabo]
 ---
 
 # Playbooks Internos del Estudio
@@ -29,8 +29,8 @@ Colección de guías operativas y procedimientos técnicos para el día a día d
 ## ComfyUI y Generación IA
 
 - [[pbk-comfyui|ComfyUI para el estudio]] — **Canónico UNICO**: mapa de flujos (txt2img/img2img/Canny/Depth/Upscale/Video/RunPod), RX 570 vs RunPod, prompt-packs, DoD.
+- [[pbk-comfy-agent|Playbook del agente @tim]] — **2026-10-30**: manual de invocación, checklist pre-`s` de 4 puntos, recetario por 6 tipologías, constantes de fotografía (Baan · IQ4 · 6 hex · stock) y ciclo con la bitácora `04-bitacora-corridas`.
 - [[pbk-troubleshooting-reconexion|Troubleshooting & Reconexión MCP]] — Checklist completa: ComfyUI caído, cola atascada, MCP desconectado, modelos no aparecen, VRAM full, reconexión paso a paso, escalación.
-- [[pbk-comfyui|ComfyUI para el estudio]] — **Canónico UNICO**: mapa de flujos, ControlNet, upscale, video, RunPod, DoD.
 
 ---
 

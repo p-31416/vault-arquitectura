@@ -1,0 +1,147 @@
+{
+  "1": {
+    "class_type": "CheckpointLoaderSimple",
+    "inputs": {
+      "ckpt_name": "realvisxlV50_v50LightningBakedvae.safetensors"
+    },
+    "_meta": {
+      "title": "Checkpoint SDXL Lightning (pocos steps)"
+    }
+  },
+  "2": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "Aerial mandala view of a fractal plaza path in front of Sagrada Familia Barcelona, sinuous walkable parabolic shell following Gaudi catenaries, branching IFS pattern in 3 scales, prefabricated fractal market modules clustered along the path, Voronoi phyllotaxis paving with recycled ceramic trencadis, green pockets with shrubs where the fractal opens, green roof over sunken reinterpretation museum below the shell with circular skylight oculi, people walking above looking down into museum, double circulation above and below, Eixample city blocks around, morning light, photorealistic urban render, highly detailed, architectural photography",
+      "clip": [
+        "1",
+        1
+      ]
+    },
+    "_meta": {
+      "title": "Positive — prompt fractal Gaudí (aéreo)"
+    }
+  },
+  "3": {
+    "class_type": "CLIPTextEncode",
+    "inputs": {
+      "text": "blurry, low quality, distorted, watermark, text, signature, cartoon, illustration, fantasy towers, deformed, cars, distorted faces, painting, drawing, overexposed, underexposed",
+      "clip": [
+        "1",
+        1
+      ]
+    },
+    "_meta": {
+      "title": "Negative"
+    }
+  },
+  "4": {
+    "class_type": "EmptyLatentImage",
+    "inputs": {
+      "width": 1344,
+      "height": 768,
+      "batch_size": 1
+    },
+    "_meta": {
+      "title": "Latente base 16:9 (múltiplo de 64)"
+    }
+  },
+  "5": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "positive": [
+        "2",
+        0
+      ],
+      "negative": [
+        "3",
+        0
+      ],
+      "latent_image": [
+        "4",
+        0
+      ],
+      "seed": 42,
+      "steps": 6,
+      "cfg": 1.5,
+      "sampler_name": "dpmpp_2m",
+      "scheduler": "karras",
+      "denoise": 1.0
+    },
+    "_meta": {
+      "title": "KSampler base Lightning (composición rápida)"
+    }
+  },
+  "6": {
+    "class_type": "LatentUpscale",
+    "inputs": {
+      "samples": [
+        "5",
+        0
+      ],
+      "upscale_method": "nearest-exact",
+      "width": 2016,
+      "height": 1152,
+      "crop": "center"
+    },
+    "_meta": {
+      "title": "Hires: x1.5 en latente"
+    }
+  },
+  "7": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "positive": [
+        "2",
+        0
+      ],
+      "negative": [
+        "3",
+        0
+      ],
+      "latent_image": [
+        "6",
+        0
+      ],
+      "seed": 43,
+      "steps": 4,
+      "cfg": 1.5,
+      "sampler_name": "dpmpp_2m",
+      "scheduler": "karras",
+      "denoise": 0.4
+    },
+    "_meta": {
+      "title": "KSampler detalle Lightning (segunda pasada)"
+    }
+  },
+  "8": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "7",
+        0
+      ],
+      "vae": [
+        "1",
+        2
+      ]
+    }
+  },
+  "9": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "filename_prefix": "fractal-hires/lightning",
+      "images": [
+        "8",
+        0
+      ]
+    }
+  }
+}

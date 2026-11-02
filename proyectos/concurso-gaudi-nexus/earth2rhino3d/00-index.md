@@ -18,6 +18,7 @@ idioma: es
 | Video 01 — Google Earth to Rhino Free Workflow 2026 | [[proyectos/concurso-gaudi-nexus/earth2rhino3d/ficha-video-01-earth-free-2026\|ficha-video-01]] | transcript 1 cue — demo visual, ver video a mano |
 | Video 02 — Google Maps to Rhino in 1 MINUTE (Heron) | [[proyectos/concurso-gaudi-nexus/earth2rhino3d/ficha-video-02-maps-1min-heron\|ficha-video-02]] | transcript 80 líneas completo |
 | Comparativa de métodos | [[proyectos/concurso-gaudi-nexus/earth2rhino3d/comparativa-metodos\|comparativa-metodos]] | pendiente validación en Rhino |
+| **Documento: cómo se hizo + fuentes** | [[proyectos/concurso-gaudi-nexus/earth2rhino3d/doc-massing-03d-sagrada\|doc-massing-03d-sagrada]] | **único y autocontenido** (proceso, datos, links verificados 2026-10-30) |
 | Plan de implementación Rhino | [[proyectos/concurso-gaudi-nexus/earth2rhino3d/plan-implementacion-rhino\|plan-implementacion-rhino]] | Fase C ejecutada 2026-10-29: massing en escena (ver salidas) |
 | Comandos copiar | `comandos-rhino-copiar.md` | puente + massing + verificación |
 
@@ -27,8 +28,9 @@ idioma: es
 - Escena: `SF-MASSING-OSM` 1045 sólidos (z 0→37,2) + `TESTIGO-SF` 172,5 m + `SF-ORIGEN`. Bbox x −457…443,6, y −369,7…437,2.
 - Salidas: `activos/.../earth2rhino3d/salidas/sf-massing-v01-top.png` (planta Eixample) + `sf-massing-v01-iso.png` (isométrica SE).
 - Script: `scripts/construir-massing-sagrada-rhino.py` (plano, sin `def`, extrusión +Z + `CapPlanarHoles`; corrección `System.Guid.Empty`).
-- Bitácora: [[proyectos/concurso-gaudi-nexus/earth2rhino3d/bitacora-massing-v01\|bitacora-massing-v01]] (fuentes, alturas, comandos, bugs, pendientes).
+- Bitácora: absorbida en el documento único [[proyectos/concurso-gaudi-nexus/earth2rhino3d/doc-massing-03d-sagrada\|doc-massing-03d-sagrada]] (2026-10-30).
 - Fotos Commons con thumbnails: [[proyectos/concurso-gaudi-nexus/earth2rhino3d/fotos-plaza-commons\|fotos-plaza-commons]] (10 fotos CC BY-SA verificadas + atribución para el rótulo).
+- Cortes: A-A (Back) + B-B (Right), láminas A1 `SF-CORTE-AA`/`SF-CORTE-BB`, detalles 1:2000 en Shaded — script `scripts/cortes-plaza-rhino.py`, capturas `salidas/sf-corte-aa-lamina.png` + `salidas/sf-corte-bb-lamina.png`.
 - Pendiente del arquitecto: guardar como `SF-sitio-massing-v01.3dm` + pasar links Commons para el fondo.
 
 ## Fuentes crudas

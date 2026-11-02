@@ -1,0 +1,49 @@
+%% C4 L3 — Componentes Hermes (mapea tu ASCII a PI)
+%% Prompt Builder · Provider Resolution · Tool Dispatch · Registry · Storage · Backends
+flowchart TB
+    classDef comp fill:#111827,stroke:#38bdf8,color:#e0f2fe
+    classDef store fill:#1c1917,stroke:#fbbf24,color:#fef3c7
+    classDef ext fill:#052e16,stroke:#4ade80,color:#dcfce7
+
+    subgraph EP[Entry Points]
+        direction LR
+        TG[Telegram<br/>allowlist + pairing]:::comp
+        CLI[CLI OpenCode<br/>desarrollo]:::comp
+        WH[Webhook Fathom<br/>HMAC + coalesce]:::comp
+        CRON[Cron<br/>digest · radar · backup]:::comp
+        API[API Registry<br/>sobre de tarea]:::comp
+    end
+
+    subgraph AG[AIAgent run_agent.py]
+        direction TB
+        PB[Prompt Builder<br/>SOUL + AGENTS + skill justa]:::comp
+        PR[Provider Resolution<br/>Go hoy · Ollama local · OpenRouter puntual]:::comp
+        TD[Tool Dispatch<br/>approvals manual · deny dura · A-D]:::comp
+        PB --> CC[Compression & Caching<br/>MEMORY 2.2k · session_search FTS5]:::comp
+        PR --> MODES[3 modos<br/>chat · cron · webhook<br/>cron no pregunta]:::comp
+        TD --> REG[Tool Registry<br/>Pipi CAD/Rhino/Visual/BIM/Docs/PM<br/>skills versionadas]:::comp
+    end
+
+    subgraph ST[Session Storage]
+        direction LR
+        SDB[(SQLite state.db<br/>hermes_state + gateway/session]:::store
+        CDB[(cron executions.db<br/>claimed/running/done)]:::store
+        LED[(curator ledger<br/>jsonl + rollback)]:::store
+        PDB[(PostgreSQL negocio<br/>proyecto/archivo/tarea/artefacto/aprobación)]:::store
+        VLT[(vault narrativo<br/>método + cuaderno)]:::store
+        QDR[(Qdrant<br/>vector sentido)]:::store
+    end
+
+    subgraph BE[Tool Backends]
+        direction LR
+        TERM[Terminal<br/>docker 3GB / ssh / local<br/>env filtrado + egress]:::ext
+        MCP[MCP dinámico<br/>n8n · vault · registry · runner<br/>Comfy · Drive]:::ext
+        FILE[File + Vision<br/>read_file + vision_analyze<br/>aviso OCR]:::ext
+        WEB[Web<br/>fetch + search<br/>fuente + fecha + link]:::ext
+    end
+
+    EP --> AG
+    AG --> ST
+    AG --> BE
+    REG --> BE
+    BE --> ST

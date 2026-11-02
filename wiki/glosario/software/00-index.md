@@ -37,6 +37,7 @@ Catálogo de comandos, funciones y variables de todos los softwares del estudio.
 | **MCP autodesk-help** | [[wiki/glosario/software/mcp-autodesk-help|mcp-autodesk-help]] — ayuda oficial Autodesk, solo lectura |
 | **MCP autocad** | [[wiki/glosario/software/mcp-autocad|mcp-autocad]] — control AutoCAD 2027 vía COM |
 | **Leantime** | [[wiki/glosario/software/leantime|leantime]] — tablero PM/agile self-hosted + MCP `x-api-key` |
+| **Proveedores de modelos IA** | [[wiki/glosario/software/proveedores-modelos-ia|proveedores-modelos-ia]] — HF vs Civitai vs espejos: límites gratis, seguridad, licencias, modelos de arquitectura |
 
 ## Crear una entrada nueva
 

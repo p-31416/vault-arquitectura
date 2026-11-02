@@ -1,7 +1,7 @@
 ---
 tipo: indice
 fecha_creacion: 2026-06-28
-ultima_actualizacion: 2026-10-28
+ultima_actualizacion: 2026-11-02
 tags: [indice, maestro]
 ---
 
@@ -32,6 +32,15 @@ Vault de conocimiento para estudio de arquitectura argentino.
 - [[wiki/glosario/00-index|Glosario]] — conocimiento permanente (software, conceptos, referentes, entidades, interno)
 
 Usar `proyectos/template/` para nuevos proyectos.
+
+## Specs y diagramas — nov-2026, mismo sistema PI
+
+- [[specs/261101-tabula-rasa-arquitecto-futuro-pi-os|Tabula rasa + PI OS]] — voz primigenia de Sol + arquitectura para MVP 2 personas
+- [[specs/261102-plan-maestro-pi-por-temas|Plan maestro por temas]] — T1-T9, MCPs, modelos, licencias, lámina Gaudí
+- [[specs/261102-system-overview-pi|System overview]] — entry points → Hermes → backends
+- [[specs/261101-guion-visual-pi-remotion|Guion visual + video]] — holoarquitecto, empresa sintética, storyboard 86 s
+- [[diagramas/pi-system-ingenieria|Ingeniería C4 + despliegue + secuencia]] — contenedores, componentes, ER, casos, estados, journeys
+- [[diagramas/arquitectura-pi-os|Mapa técnico PI]] — evolución operador → meta-arquitecto → holoarquitecto → empresa sintética
 
 ## Infraestructura del vault
 

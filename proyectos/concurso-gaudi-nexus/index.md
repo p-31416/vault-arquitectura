@@ -24,6 +24,7 @@ tags: [concurso, gaudi-nexus, barcelona, comfyui, workflows, rhino, fundacio-gau
 | `flujos/` | Una ficha por módulo del curso: la transcripción del video hecha flujo, con valor de tiempo, prompts literales y la lista de vacíos | [[proyectos/concurso-gaudi-nexus/flujos/00-index\|flujos/00-index]] |
 | `workflows/` | Siete workflows ejecutables, uno por módulo, en orden de curso | [[proyectos/concurso-gaudi-nexus/workflows/00-index\|workflows/00-index]] |
 | `criterio/` | El checklist del jurado que cierra cada workflow | [[proyectos/concurso-gaudi-nexus/criterio/criterio-jurado\|criterio-jurado]] |
+| `reinterpretacion-programa-fractal.md` | Precepto rector: camino fractal, cáscara habitable y museo bajo plaza | [[proyectos/concurso-gaudi-nexus/reinterpretacion-programa-fractal\|reinterpretacion-programa-fractal]] |
 
 ## El plan
 

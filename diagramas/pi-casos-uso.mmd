@@ -1,0 +1,21 @@
+%% R1 — Casos de uso C-01 a C-13 (REQUISITOS §3)
+flowchart TB
+    TIT([Titular])
+    ARQ([Arq 2])
+    HER([Hermes])
+    CLI(([Cliente]))
+    TIT --> C02[C-02 Reunión con compromisos]
+    TIT --> C04[C-04 Mail al cliente]
+    TIT --> C07[C-07 Entrega]
+    ARQ --> C05[C-05 Auditoría CAD]
+    ARQ --> C06[C-06 Comparar versiones]
+    ARQ --> C09[C-09 Variantes visuales]
+    ARQ --> C10[C-10 Modelo 3D + GH]
+    ARQ --> C11[C-11 Visita obra]
+    ARQ --> C12[C-12 Cuaderno digital]
+    ARQ --> C13[C-13 Qué sé del proyecto]
+    HER --> C01[C-01 Alta cliente]
+    HER --> C03[C-03 Recordatorio]
+    HER --> C08[C-08 Validar IFC]
+    C04 --> CLI
+    C07 --> CLI

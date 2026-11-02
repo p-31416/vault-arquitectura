@@ -1,0 +1,11 @@
+%% V3 — BPMN simplificado As-Is vs To-Be (visión §2, 10 pasos)
+flowchart LR
+    subgraph ASIS[As-Is · hoy manual]
+        direction TB
+        A1[Cliente por WA/IG] --> A2[Meet + Fathom suelto] --> A3[Compromisos en chat] --> A4[Carpetas + memoria] --> A5[CAD a mano] --> A6[Rhino a mano] --> A7[Render a mano] --> A8[Fotos sueltas] --> A9[PDF + mail manual] --> A10[Memoria en cabezas]
+    end
+    subgraph TOBE[To-Be · con PI]
+        direction TB
+        B1[Mini CRM] --> B2[Minuta + compromisos con fecha] --> B3[Aviso Telegram previo] --> B4[Cuaderno digital] --> B5[Auditoría CAD + registro] --> B6[Hops + export] --> B7[Portal con metadata] --> B8[Visita con tags] --> B9[Paquete + envío persona] --> B10[Memoria computable]
+    end
+    ASIS -.->|PI ejecuta · persona decide| TOBE

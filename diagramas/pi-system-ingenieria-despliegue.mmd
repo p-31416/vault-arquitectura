@@ -1,0 +1,27 @@
+%% Despliegue + secuencia tarea (ingeniería)
+%% N1-N4 por Tailscale. Tarea: Telegram → Manager → Dispatch → Approval → Runner → Registry
+flowchart TB
+    classDef node fill:#0f172a,stroke:#94a3b8,color:#e2e8f0
+    classDef seq fill:#111827,stroke:#f59e0b,color:#fef3c7
+
+    subgraph DEP[Despliegue físico-lógico]
+        direction LR
+        N1[N1 VPS<br/>Hermes+n8n+PG+Qdrant+vault<br/>vol nombrado /opt/data<br/>límite 3GB/2vCPU]:::node
+        N2[N2 Windows<br/>runner + ACAD + Rhino+Hops<br/>9876 localhost + Tailscale Serve]:::node
+        N3[N3 M20 Linux<br/>worker polling + Ollama + espejo]:::node
+        N4[N4 GPU<br/>Comfy API / Runpod Secure]:::node
+        N1 <-->|tailnet 100.x · ACL VPS→9876| N2
+        N1 <-->|tailnet https saliente| N3
+        N1 <-->|https + token por job| N4
+    end
+
+    subgraph SEQ[Secuencia sobre de tarea]
+        direction TB
+        S1[1 Telegram pide<br/>chat_id + file_ref + idem_key]:::seq
+        S2[2 Manager interpreta<br/>elige skill + perfil]:::seq
+        S3[3 Dispatch valida<br/>riesgo A-D + file_ref resoluble]:::seq
+        S4[4 Approval si C/D<br/>botón en canal origen]:::seq
+        S5[5 Ejecución<br/>runner local/cloud + provenance]:::seq
+        S6[6 Registro<br/>Postgres + vault + Qdrant<br/>stale si versión cambia]:::seq
+        S1 --> S2 --> S3 --> S4 --> S5 --> S6
+    end

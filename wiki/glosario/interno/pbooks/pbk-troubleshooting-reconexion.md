@@ -136,7 +136,7 @@ comfyui_clear_queue
 3. **Re-lanzar cliente MCP**
    - Opencode: `opencode` (lee config y levanta MCP)
    - Claude Desktop: auto al abrir
-   - Manual: `npx -y @comfyorg/comfyui-mcp` (variable `COMFYUI_URL=http://127.0.0.1:8188`)
+   - Manual: `npx -y comfyui-mcp` (variable `COMFYUI_URL=http://127.0.0.1:8188`) — el paquete es `comfyui-mcp` (artokun, Node ≥ 22); `@comfyorg/comfyui-mcp` devuelve 404 en npm
 4. **Verificar tools disponibles**
    - En chat: "lista herramientas ComfyUI" → deben aparecer 100+
 

@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0e1116">
+  <title>PI — De una conversación a un estudio aumentado</title>
+  <style>
+    :root{
+      --bg:#0e1116;--panel:#151b23;--panel2:#1c232e;--ink:#f5f3ef;--muted:#a4adb8;
+      --line:#303845;--orange:#e8a33d;--orange2:#f1c16c;--green:#80c6a4;--blue:#8ec2ea;
+      --rose:#e4a1a8;--paper:#efe5d1;--mono:"Cascadia Mono",Consolas,monospace;
+      --sans:"Segoe UI",Inter,system-ui,sans-serif;--serif:Georgia,"Times New Roman",serif;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55}
+    a{color:var(--blue);text-underline-offset:3px}
+    .page{max-width:1200px;margin:auto;padding:28px 26px 80px}
+    .topline{display:flex;justify-content:space-between;gap:20px;align-items:center;border-bottom:1px solid var(--line);padding:0 0 16px;color:var(--muted);font:12px var(--mono);letter-spacing:.08em;text-transform:uppercase}
+    .brand{display:flex;align-items:center;gap:10px;color:var(--ink);font-weight:700}
+    .pi-mark{display:grid;place-items:center;width:34px;height:34px;border:1px solid var(--orange);border-radius:50%;color:var(--orange);font:700 20px var(--serif);transform:rotate(-5deg)}
+    .hero{position:relative;overflow:hidden;display:grid;grid-template-columns:1.05fr .95fr;gap:32px;align-items:center;padding:62px 0 58px;min-height:520px}
+    .hero:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 75% 45%,rgba(232,163,61,.11),transparent 46%)}
+    .eyebrow,.section-kicker{color:var(--orange);font:12px var(--mono);letter-spacing:.16em;text-transform:uppercase}
+    h1{font-size:clamp(42px,6vw,76px);line-height:.98;letter-spacing:-.055em;margin:16px 0 22px;max-width:690px}
+    h1 em{font-family:var(--serif);font-weight:400;color:var(--orange2)}
+    .hero p{max-width:650px;color:#c6cbd0;font-size:18px}
+    .hero-note{display:inline-flex;align-items:center;gap:9px;margin-top:15px;padding:8px 12px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font:12px var(--mono)}
+    .spark{width:8px;height:8px;background:var(--green);border-radius:50%;box-shadow:0 0 14px rgba(128,198,164,.75)}
+    .hero-art{position:relative;min-height:330px;display:grid;place-items:center}
+    .hero-art svg{width:min(100%,520px);height:auto;overflow:visible}
+    .scribble{fill:none;stroke:var(--paper);stroke-width:3.3;stroke-linecap:round;stroke-linejoin:round}
+    .scribble-soft{fill:none;stroke:var(--orange);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+    .draw{stroke-dasharray:900;stroke-dashoffset:900;animation:draw 1.8s cubic-bezier(.2,.75,.25,1) forwards}
+    .draw.d2{animation-delay:.35s}.draw.d3{animation-delay:.7s}.draw.d4{animation-delay:1.05s}
+    @keyframes draw{to{stroke-dashoffset:0}}
+    .scribble-label{font:12px var(--mono);fill:var(--muted);letter-spacing:.08em}
+    .hand-label{font:italic 19px var(--serif);fill:var(--orange2)}
+    .scroll-cue{display:flex;align-items:center;gap:10px;color:var(--muted);font:11px var(--mono);letter-spacing:.12em;text-transform:uppercase}
+    .scroll-cue b{color:var(--orange);font-size:20px;font-weight:400}
+    .section{padding:54px 0;border-top:1px solid var(--line)}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:22px;margin-bottom:24px}
+    .section h2{font-size:clamp(28px,4vw,46px);line-height:1.05;letter-spacing:-.04em;margin:8px 0 0}
+    .section-intro{max-width:510px;color:var(--muted);margin:0;font-size:15px}
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;position:relative}
+    .stage{position:relative;min-height:290px;padding:18px 17px 20px;background:linear-gradient(145deg,var(--panel),#11161d);border:1px solid var(--line);border-radius:13px;overflow:hidden}
+    .stage:before{content:"";position:absolute;left:22px;top:0;height:4px;width:52px;background:var(--stage-color,var(--orange));border-radius:0 0 5px 5px}
+    .stage-num{font:12px var(--mono);color:var(--stage-color,var(--orange));letter-spacing:.12em}
+    .stage-art{height:100px;display:flex;align-items:center;justify-content:center;margin:4px 0 12px}
+    .stage-art svg{width:180px;height:94px;overflow:visible}
+    .stage h3{font-size:17px;margin:5px 0 8px;letter-spacing:-.02em}
+    .stage p{font-size:13px;color:var(--muted);margin:0}
+    .tagline{display:inline-block;margin-top:13px;padding:4px 8px;border:1px solid var(--line);border-radius:999px;color:var(--stage-color,var(--orange));font:10px var(--mono)}
+    .stage.operator{--stage-color:var(--rose)}.stage.meta{--stage-color:var(--orange2)}.stage.pi{--stage-color:var(--green)}.stage.future{--stage-color:var(--blue)}
+    .line-annotation{margin-top:15px;color:var(--muted);font:12px var(--mono)}
+    .line-annotation strong{color:var(--orange2);font-weight:500}
+    .fractal-wrap{position:relative;border:1px solid var(--line);border-radius:16px;background:linear-gradient(135deg,#141a22,#10151b);padding:26px;overflow:hidden}
+    .fractal-wrap:after{content:"";position:absolute;right:-130px;top:-150px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(232,163,61,.13),transparent 68%);pointer-events:none}
+    .fractal-heading{display:flex;align-items:center;gap:14px;position:relative;z-index:1;margin:0 auto 26px;width:max-content;max-width:100%;padding:12px 18px;border:1px solid var(--orange);border-radius:12px;color:var(--orange2);font:600 16px var(--mono)}
+    .fractal-heading .pi-mark{width:28px;height:28px;font-size:16px}
+    .root-lines{display:block;width:100%;height:80px;margin:-12px 0 -6px;position:relative;z-index:0}
+    .root-lines path{fill:none;stroke:var(--orange);stroke-width:1.6;stroke-dasharray:7 7;opacity:.75;animation:flow 8s linear infinite}
+    @keyframes flow{to{stroke-dashoffset:-112}}
+    .agent-grid{position:relative;z-index:1;display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+    .agent{border:1px solid #343d48;border-radius:12px;background:rgba(21,27,35,.94);padding:15px 13px;min-width:0;transition:transform .2s,border-color .2s,background .2s}
+    .agent:hover{transform:translateY(-4px);border-color:var(--orange);background:#1a222c}
+    .agent h3{margin:0 0 3px;font-size:15px}.agent .role{color:var(--muted);font-size:11px;min-height:30px}
+    .agent .branch{height:28px;border-left:1px dashed var(--orange);margin:10px 0 7px 8px}
+    .agent .mcp{color:var(--green);font:10px var(--mono);overflow-wrap:anywhere}
+    .agent .job{color:#c3c9d0;font-size:11px;margin-top:7px}
+    .shared-links{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin:23px 0 4px;position:relative;z-index:1}
+    .shared-links span{border:1px dashed #58616c;border-radius:999px;padding:6px 10px;color:var(--muted);font:10px var(--mono)}
+    .shared-links b{color:var(--orange2);font-weight:500}
+    .callout{display:grid;grid-template-columns:auto 1fr;gap:13px;align-items:start;margin-top:20px;padding:15px 17px;background:#1c232e;border-left:3px solid var(--orange);border-radius:4px 11px 11px 4px;color:#d4d7da;font-size:13px}
+    .callout .asterisk{color:var(--orange);font:20px var(--serif)}
+    .mcp-index{margin-top:18px;padding-top:14px;border-top:1px solid var(--line)}
+    .mcp-index summary{cursor:pointer;color:var(--blue);font:12px var(--mono);list-style:none}
+    .mcp-index summary::-webkit-details-marker{display:none}
+    .mcp-index summary:after{content:" +";color:var(--orange)}
+    .mcp-index[open] summary:after{content:" −"}
+    .mcp-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+    .mcp-pills span{padding:6px 9px;background:#202832;border:1px solid #3b4653;border-radius:7px;font:11px var(--mono);color:#d2d8dd}
+    .mcp-pills span:before{content:"↳ ";color:var(--orange)}
+    .execution-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+    .execution{position:relative;padding:20px 18px 19px;min-height:208px;border:1px solid var(--line);border-radius:14px;background:var(--panel)}
+    .execution .cap{color:var(--orange);font:10px var(--mono);letter-spacing:.12em;text-transform:uppercase}
+    .execution h3{font-size:19px;margin:11px 0 7px}
+    .execution p{color:var(--muted);font-size:13px;margin:0}
+    .execution ul{margin:13px 0 0;padding-left:17px;color:#d2d7dc;font-size:12px}
+    .execution li{margin:4px 0}
+    .exec-icon{float:right;width:46px;height:46px;color:var(--orange2)}
+    .comfy-tree{display:grid;grid-template-columns:1fr auto 1.3fr auto 1fr;align-items:center;gap:12px}
+    .modality-list{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+    .modality,.flow-card{display:flex;align-items:center;gap:9px;padding:11px 12px;border:1px solid var(--line);border-radius:10px;background:var(--panel);font-size:12px}
+    .modality .icon{font-size:20px;color:var(--orange2)}
+    .flow-card{display:block;text-align:center;padding:19px 15px}
+    .flow-card b{display:block;color:var(--orange2);font:600 15px var(--mono);margin-bottom:5px}
+    .flow-card span{color:var(--muted);font-size:11px}
+    .flow-arrow{color:var(--orange);font-size:26px;text-align:center}
+    .output-stack{display:grid;gap:9px}
+    .output-stack .modality{border-color:#405748}
+    .equation{display:grid;grid-template-columns:1.05fr .95fr;gap:20px;align-items:center}
+    .formula{padding:25px;border:1px solid #594c36;border-radius:14px;background:linear-gradient(140deg,#211d17,#171a1c);text-align:center}
+    .formula .math{font:clamp(27px,4vw,44px) var(--serif);color:var(--orange2);letter-spacing:.01em}
+    .formula .legend{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:14px;color:var(--muted);font:11px var(--mono)}
+    .formula .legend span{border-top:1px solid var(--line);padding-top:7px}
+    .measure-list{display:grid;gap:9px}
+    .measure{display:grid;grid-template-columns:27px 1fr;gap:11px;align-items:center;padding:10px 12px;border-bottom:1px solid var(--line);color:#d5d8dc;font-size:13px}
+    .measure i{font:normal 14px var(--mono);color:var(--orange)}
+    .future-band{position:relative;margin-top:28px;padding:26px 24px;border:1px solid #40566a;border-radius:14px;background:linear-gradient(100deg,#18232a,#151b23);overflow:hidden}
+    .future-band:after{content:"";position:absolute;right:4%;top:50%;width:180px;height:180px;border:1px dashed rgba(142,194,234,.4);border-radius:50%;transform:translateY(-50%);box-shadow:0 0 0 20px rgba(142,194,234,.025),0 0 0 42px rgba(142,194,234,.02)}
+    .future-band h3{margin:0 0 7px;color:var(--blue);font-size:20px}
+    .future-band p{max-width:760px;color:#c3cbd0;margin:0;font-size:13px}
+    .future-band b{color:var(--ink)}
+    .sources{display:grid;grid-template-columns:repeat(3,1fr);gap:11px}
+    .source{padding:15px;border:1px solid var(--line);border-radius:11px;background:var(--panel);font-size:12px}
+    .source .src-type{color:var(--orange);font:10px var(--mono);letter-spacing:.1em;text-transform:uppercase}
+    .source h3{font-size:14px;margin:8px 0 6px}.source p{color:var(--muted);margin:0 0 9px}
+    .source a{font:11px var(--mono)}
+    .fineprint{color:#929ba5;font-size:11px;margin-top:17px}
+    .flow-aug{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;counter-reset:step}
+    .flow-step{position:relative;min-height:146px;padding:16px 14px;background:var(--panel);border:1px solid var(--line);border-radius:12px;counter-increment:step}
+    .flow-step:before{content:"0" counter(step);display:block;margin-bottom:14px;color:var(--orange);font:12px var(--mono);letter-spacing:.12em}
+    .flow-step h3{font-size:14px;margin:0 0 7px}.flow-step p{font-size:12px;color:var(--muted);margin:0}
+    .flow-step .kind{display:inline-block;margin-top:10px;color:var(--green);font:10px var(--mono)}
+    .role-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:11px}
+    .role-card{padding:15px;background:linear-gradient(145deg,var(--panel),#11161d);border:1px solid var(--line);border-radius:12px}
+    .role-card .role-title{display:flex;justify-content:space-between;gap:10px;align-items:center;font-weight:700}
+    .role-card .lang{margin:10px 0 7px;color:var(--orange2);font:11px var(--mono)}
+    .role-card p{margin:0;color:var(--muted);font-size:12px}
+    .status{display:inline-flex;margin-top:10px;padding:4px 7px;border:1px solid #415748;border-radius:999px;color:var(--green);font:9px var(--mono);text-transform:uppercase}
+    .status.check{border-color:#625137;color:var(--orange2)}
+    .maturity{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:17px 0}
+    .maturity div{padding:14px;border:1px solid var(--line);border-radius:10px;background:#131920}
+    .maturity b{display:block;color:var(--orange2);font:12px var(--mono);margin-bottom:6px}
+    .maturity span{display:block;color:var(--muted);font-size:11px}
+    .maintenance-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:9px}
+    .maintenance-grid div{padding:13px 11px;border-top:2px solid var(--orange);background:var(--panel);min-height:95px}
+    .maintenance-grid b{display:block;font-size:12px;margin-bottom:6px}
+    .maintenance-grid span{color:var(--muted);font-size:11px}
+    .research-note{padding:13px 15px;border:1px dashed #58616c;border-radius:10px;color:var(--muted);font-size:12px;margin-top:15px}
+    .research-note strong{color:var(--orange2)}
+    .flow-chain{display:grid;grid-template-columns:repeat(8,1fr);gap:7px;margin:16px 0}
+    .flow-chain span{position:relative;padding:10px 8px;text-align:center;border:1px solid var(--line);border-radius:8px;background:var(--panel);font:10px var(--mono);color:#d7dce0}
+    .flow-chain span:not(:last-child):after{content:"→";position:absolute;right:-11px;top:8px;color:var(--orange);z-index:2;font:14px var(--mono)}
+    footer{margin-top:45px;border-top:1px solid var(--line);padding-top:18px;display:flex;justify-content:space-between;gap:20px;color:var(--muted);font:11px var(--mono)}
+    .pill{display:inline-block;padding:4px 8px;border:1px solid var(--line);border-radius:999px;color:var(--muted);font:10px var(--mono)}
+    @media(max-width:950px){.hero{grid-template-columns:1fr;gap:6px;padding:46px 0}.hero-art{min-height:260px}.steps{grid-template-columns:repeat(2,1fr)}.agent-grid{grid-template-columns:repeat(3,1fr)}.comfy-tree{grid-template-columns:1fr;max-width:640px;margin:auto}.flow-arrow{transform:rotate(90deg)}.equation{grid-template-columns:1fr}.sources{grid-template-columns:1fr 1fr}.flow-aug{grid-template-columns:repeat(2,1fr)}.role-grid{grid-template-columns:repeat(2,1fr)}.maintenance-grid{grid-template-columns:repeat(3,1fr)}.flow-chain{grid-template-columns:repeat(4,1fr)}}
+    @media(max-width:560px){.page{padding:18px 15px 50px}.topline{font-size:9px}.hero{min-height:0;padding:42px 0}.hero-art{min-height:215px}.hero p{font-size:16px}.section{padding:38px 0}.section-head{display:block}.section-intro{margin-top:12px}.steps,.execution-grid,.sources,.flow-aug,.role-grid{grid-template-columns:1fr}.stage{min-height:260px}.agent-grid{grid-template-columns:1fr 1fr}.fractal-wrap{padding:16px 12px}.root-lines{height:42px}.agent{padding:12px 10px}.agent .role{font-size:10px}.agent .job{font-size:10px}.future-band:after{opacity:.35;right:-80px}.maintenance-grid{grid-template-columns:1fr 1fr}.flow-chain{grid-template-columns:repeat(2,1fr)}.flow-chain span:after{display:none}footer{display:block}footer span{display:block;margin-top:7px}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+  </style>
+</head>
+<body>
+<main class="page">
+  <div class="topline">
+    <div class="brand"><span class="pi-mark">π</span><span>PI · Plataforma de Inteligencia</span></div>
+    <span>Arquitectura · sistema operativo · 2026</span>
+  </div>
+
+  <section class="hero" id="inicio">
+    <div>
+      <div class="eyebrow">Cuarta revolución industrial · el rol del arquitecto</div>
+      <h1>De cinco terminales<br>a una <em>empresa sintética</em></h1>
+      <p>La IA como campo tiene décadas; los LLM cambian el acceso a programar, integrar y operar herramientas. PI propone usar esa interfaz para transformar la deuda técnica repetida del estudio en capacidades persistentes, bajo dirección del arquitecto: define el norte, cuida el criterio y aprueba las decisiones que sostienen proyecto y práctica.</p>
+      <div class="hero-note"><span class="spark"></span> El Meta-arquitecto diseña, gobierna y evoluciona PI</div>
+      <div style="margin-top:26px"><a class="scroll-cue" href="#evolucion"><b>↓</b> seguir el hilo</a></div>
+    </div>
+    <div class="hero-art" aria-label="Dibujo esquemático de una persona conectada con una computadora y PI">
+      <svg viewBox="0 0 520 350" role="img" aria-hidden="true">
+        <path class="scribble draw" d="M54 193 C87 192 112 193 146 190 M54 201 C86 200 111 202 146 198"/>
+        <path class="scribble-soft draw d2" d="M146 190 l-14 -10 m14 10 l-13 10"/>
+        <circle class="scribble draw d2" cx="56" cy="119" r="18"/>
+        <path class="scribble draw d2" d="M56 138 C39 158 42 186 44 209 M57 144 C77 153 81 168 87 182 M46 162 L27 180 M45 208 L32 237 M46 207 L63 235"/>
+        <path class="scribble" d="M201 110 Q205 103 215 105 L329 105 Q339 107 339 117 L336 197 Q335 203 328 204 L210 202 Q201 201 201 193 Z"/>
+        <path class="scribble" d="M212 117 L328 117 L326 190 L212 190 Z M267 203 L265 218 M235 221 Q269 216 306 222"/>
+        <path class="scribble-soft draw d3" d="M340 151 C376 131 400 131 422 148 C445 166 440 194 423 210"/>
+        <path class="scribble-soft draw d3" d="M418 199 L424 211 L437 203"/>
+        <circle cx="429" cy="119" r="40" fill="#20251f" stroke="#e8a33d" stroke-width="2"/>
+        <text x="429" y="129" text-anchor="middle" fill="#f1c16c" font-size="35" font-family="Georgia,serif">PI</text>
+        <path class="scribble-soft draw d4" d="M371 271 C397 251 423 253 450 269 M381 282 C405 268 426 270 441 279"/>
+        <text class="scribble-label" x="33" y="270">ARQUITECTA</text>
+        <text class="scribble-label" x="211" y="247">COMPUTADORA</text>
+        <text class="hand-label" x="383" y="327">el sistema se abre →</text>
+      </svg>
+    </div>
+  </section>
+
+  <section class="section" id="evolucion">
+    <div class="section-head">
+      <div><div class="section-kicker">01 · EVOLUCIÓN DEL ROL</div><h2>Cuatro momentos, una evolución</h2></div>
+      <p class="section-intro">El salto no es simplemente sumar más agentes. Es cambiar quién mantiene el flujo, cuánto persisten las capacidades y dónde puede ejecutarse cada trabajo.</p>
+    </div>
+    <div class="steps">
+      <article class="stage operator">
+        <div class="stage-num">01 · OPERADOR</div>
+        <div class="stage-art">
+          <svg viewBox="0 0 180 94" aria-hidden="true"><g class="scribble"><circle cx="27" cy="26" r="12"/><path d="M27 39 L27 69 M27 47 L10 60 M27 47 L44 60 M27 69 L16 88 M27 69 L39 88 M62 45 Q62 40 68 40 L105 40 Q111 40 111 46 L110 68 L63 68 Z M72 69 L71 79 M64 81 L107 81"/><path class="scribble-soft" d="M44 51 C50 44 56 44 62 49 M56 43 L62 49 L54 53"/></g></svg>
+        </div>
+        <h3>Arquitecto operador</h3><p>Una persona y una computadora. Pide, espera, revisa, corrige y vuelve a empezar.</p><span class="tagline">ciclo 1:1</span>
+      </article>
+      <article class="stage meta">
+        <div class="stage-num">02 · META-ARQUITECTO</div>
+        <div class="stage-art">
+          <svg viewBox="0 0 180 94" aria-hidden="true"><g class="scribble"><circle cx="25" cy="45" r="13"/><path d="M25 58 L25 80 M25 64 L12 76 M25 64 L39 76 M61 23 Q61 19 66 19 L116 19 Q121 19 121 24 L121 70 L61 70 Z M70 30 L111 30 M70 39 L101 39 M70 48 L104 48 M137 25 L153 25 M137 42 L153 42 M137 59 L153 59"/><circle cx="145" cy="25" r="3" fill="#e8a33d"/><circle cx="145" cy="42" r="3" fill="#e8a33d"/><circle cx="145" cy="59" r="3" fill="#e8a33d"/></g><path class="scribble-soft" d="M39 46 C49 37 52 34 61 34 M39 54 C49 59 51 61 61 61"/></svg>
+        </div>
+        <h3>Meta-arquitecto</h3><p>Coordina 4–6 sesiones/terminales desde Antigravity u OpenCode, con MCP, Python, GitHub y n8n. Recibe reportes y mantiene la Wiki: sigue despachando cada ciclo.</p><span class="tagline">más concurrencia · operador presente</span>
+      </article>
+      <article class="stage pi">
+        <div class="stage-num">03 · PI / EMPRESA SINTÉTICA</div>
+        <div class="stage-art">
+          <svg viewBox="0 0 180 94" aria-hidden="true"><g class="scribble-soft"><path d="M90 44 L35 19 M90 44 L145 19 M90 44 L35 70 M90 44 L145 70"/><circle cx="90" cy="44" r="21" stroke="#e8a33d"/><circle cx="35" cy="19" r="8" stroke="#80c6a4"/><circle cx="145" cy="19" r="8" stroke="#80c6a4"/><circle cx="35" cy="70" r="8" stroke="#80c6a4"/><circle cx="145" cy="70" r="8" stroke="#80c6a4"/></g><text x="90" y="49" text-anchor="middle" fill="#f1c16c" font-size="16" font-family="Georgia">PI</text><text x="135" y="91" fill="#a4adb8" font-size="9" font-family="monospace">24/7*</text></svg>
+        </div>
+        <h3>PI · el sistema que se diseña</h3><p>Cerebro local/confidencial, Hermes, automatizaciones, roles, skills, conectores y permisos reunidos en un flujo de estudio.</p><span class="tagline">empresa sintética · infraestructura</span>
+      </article>
+      <article class="stage future">
+        <div class="stage-num">04 · META-ARQUITECTO</div>
+        <div class="stage-art">
+          <svg viewBox="0 0 180 94" aria-hidden="true"><g class="scribble"><circle cx="90" cy="45" r="17"/><circle cx="28" cy="22" r="10"/><circle cx="150" cy="18" r="10"/><circle cx="32" cy="73" r="10"/><circle cx="147" cy="72" r="10"/><circle cx="90" cy="10" r="7"/><path d="M80 35 L36 25 M100 34 L141 22 M78 55 L40 68 M101 55 L139 68 M90 28 L90 17 M39 22 L138 18 M41 74 L136 73"/></g><g class="scribble-soft"><path d="M27 22 Q14 45 32 73 M150 18 Q169 45 147 72"/></g></svg>
+        </div>
+        <h3>Meta-arquitecto sistémico</h3><p>Diseña, gobierna, mantiene y amplía la empresa sintética. Otros arquitectos usan sus capacidades; el Meta-arquitecto evoluciona el sistema que las sostiene.</p><span class="tagline">diseñador · director · mantenedor</span>
+      </article>
+    </div>
+    <div class="line-annotation"><strong>* 24/7:</strong> disponibilidad del gateway y los servicios con el host activo; cada tarea corre bajo demanda o agenda. <strong>El Meta-arquitecto diseña el sistema; no termina como usuario final de PI.</strong></div>
+    <div class="research-note"><strong>Traducción al MVP_07:</strong> el diseño vigente usa un núcleo Hermes por estudio. La experiencia puede ser personal por perfil, proyecto y permisos; crear una instancia Hermes separada por arquitecto queda como decisión de producto/arquitectura.</div>
+  </section>
+
+  <section class="section" id="flujo-aumentado">
+    <div class="section-head">
+      <div><div class="section-kicker">02 / 08 · El flujo aumentado</div><h2>De una instrucción a trabajo que aprende</h2></div>
+      <p class="section-intro">Una solicitud bien definida pone en marcha un proceso de roles. Cada ejecución deja evidencia; el método validado puede regresar como una capacidad versionada.</p>
+    </div>
+    <div class="flow-chain" aria-label="Flujo de tarea aumentado">
+      <span>Encargo<br>+ criterio</span>
+      <span>Perfil del<br>arquitecto</span>
+      <span>Contrato<br>de tarea</span>
+      <span>Roles<br>especialistas</span>
+      <span>Herramientas<br>+ recursos</span>
+      <span>QA<br>+ procedencia</span>
+      <span>Revisión<br>humana</span>
+      <span>Skill<br>versionada ↺</span>
+    </div>
+    <div class="role-grid">
+      <article class="role-card"><div class="role-title">Arquitecto de proyecto <span class="pill">diseño</span></div><div class="lang">INTENCIÓN · CALIDAD · RESPONSABILIDAD</div><p>Define programa, contexto, objetivos y qué significa “listo”. Resuelve ambigüedades de diseño y aprueba cambios contractuales o publicaciones.</p></article>
+      <article class="role-card"><div class="role-title">Meta-arquitecto <span class="pill">cierre del relato</span></div><div class="lang">DISEÑA · GOBIERNA · EVOLUCIONA PI</div><p>Define roles, lenguajes, skills, MCPs, estándares, permisos, pruebas y costos. Mantiene el mapa de capacidades alineado con la práctica del estudio.</p></article>
+      <article class="role-card"><div class="role-title">Hermes / PI <span class="pill">orquestación</span></div><div class="lang">PLAN · DELEGA · EJECUTA · REGISTRA</div><p>Parte el pedido en tareas, elige skills, activa subagentes y recursos. Devuelve alternativas, evidencia, alertas y decisiones pendientes.</p></article>
+      <article class="role-card"><div class="role-title">PITAUTECH / operación <span class="pill">mantenimiento técnico</span></div><div class="lang">VERSIONES · HEALTH · BACKUPS · SOPORTE</div><p>Implementa y opera la infraestructura según el diseño del Meta-arquitecto; mantiene conectores, monitoreo, recuperación y costo operativo.</p></article>
+    </div>
+    <div class="callout"><div class="asterisk">↺</div><div><b>La autonomía vive dentro de un contrato.</b> Tareas de lectura/generación aislada pueden correr en A/B; modificar archivos o emitir un entregable contractual exige los checkpoints C/D definidos en REQUISITOS.</div></div>
+  </section>
+
+  <section class="section" id="fractal">
+    <div class="section-head">
+      <div><div class="section-kicker">03 / 08 · SISTEMA VIVO</div><h2>Un árbol que se abre y se conecta</h2></div>
+      <p class="section-intro">Cada especialidad despliega sus herramientas, procesos y ambientes. Las líneas laterales son importantes: una capacidad de documentación puede servir a más de un agente.</p>
+    </div>
+    <div class="fractal-wrap">
+      <div class="fractal-heading"><span class="pi-mark">π</span> PI · Plataforma de Inteligencia</div>
+      <svg class="root-lines" viewBox="0 0 1000 95" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M500 0 C500 40 100 40 100 95 M500 0 C500 40 300 40 300 95 M500 0 L500 95 M500 0 C500 40 700 40 700 95 M500 0 C500 40 900 40 900 95"/>
+      </svg>
+      <div class="agent-grid">
+        <article class="agent"><h3>Pipi Rhino</h3><div class="role">geometría · vistas · cortes</div><div class="branch"></div><div class="mcp">rhino · Python · GH/Hops</div><div class="job">AIZ A3 1:50; dos cortes plaza A1 verificados.</div><span class="status">casos probados</span></article>
+        <article class="agent"><h3>Pipi CAD</h3><div class="role">documentación · estándares</div><div class="branch"></div><div class="mcp">AutoLISP · comandos · Python</div><div class="job">SET_01: rutinas y auditoría. Conector depende de edición CAD.</div><span class="status check">validar entorno</span></article>
+        <article class="agent"><h3>Pipi Visual</h3><div class="role">imagen · video · workflows</div><div class="branch"></div><div class="mcp">comfyui · API · workflow JSON</div><div class="job">WF-05: denoise 0.4/0.6/0.8, misma base y seed.</div><span class="status">corridas registradas</span></article>
+        <article class="agent"><h3>Pipi Docs</h3><div class="role">reuniones · fuentes · conocimiento</div><div class="branch"></div><div class="mcp">fathom ×2 · n8n · vault</div><div class="job">Transcripción → minuta → compromisos con fuente.</div><span class="status">flujo de estudio</span></article>
+        <article class="agent"><h3>Pipi PM</h3><div class="role">tareas · agenda · reportes</div><div class="branch"></div><div class="mcp">leantime · cron · telegram</div><div class="job">Vencimientos, reuniones, seguimiento de procesos.</div><span class="status">integración MCP</span></article>
+      </div>
+      <div class="shared-links"><span><b>↔ skill</b> capacidad reutilizable</span><span><b>↔ fuente</b> procedencia</span><span><b>↔ registro</b> ejecución + resultado</span><span><b>↔ aprobación</b> decisión humana</span></div>
+      <div class="callout"><div class="asterisk">✳</div><div><b>La unidad que crece es la capacidad verificada.</b> Un agente la descubre o la invoca; otros agentes pueden reutilizarla si comparten las dependencias, permisos y criterios de calidad.</div></div>
+      <details class="mcp-index">
+        <summary>Inventario real de los 8 MCPs habilitados en opencode.json</summary>
+        <div class="mcp-pills"><span>comfyui</span><span>n8n-mcp</span><span>fathom</span><span>fathom-proyectopi</span><span>leantime</span><span>autodesk-help</span><span>autocad</span><span>rhino</span></div>
+      </details>
+    </div>
+    <p class="fineprint">Los nombres Pipi son metáforas visuales para roles de trabajo, no necesariamente procesos Hermes ya desplegados. Las etiquetas de estado distinguen un caso probado de una integración que depende del entorno o necesita validación.</p>
+  </section>
+
+  <section class="section" id="pruebas-mvp">
+    <div class="section-head">
+      <div><div class="section-kicker">04 / 08 · Laboratorio ya construido</div><h2>Las ramas salen de pruebas reales</h2></div>
+      <p class="section-intro">La idea de la empresa sintética no parte de un organigrama imaginario: se ensambla con procedimientos, scripts y workflows que ya existen en los MVPs.</p>
+    </div>
+    <div class="flow-chain" aria-label="Ciclo completo de un proyecto arquitectónico">
+      <span>cliente<br>brief + agenda</span><span>reunión<br>decisiones</span><span>sitio<br>fuentes + contexto</span><span>CAD<br>estándar + planos</span><span>Rhino<br>modelo + cortes</span><span>Comfy<br>imagen + video</span><span>entrega<br>obra + tareas</span><span>vault<br>memoria + skill</span>
+    </div>
+    <div class="role-grid">
+      <article class="role-card"><div class="role-title">AutoCAD <span class="pill">MVP_02</span></div><div class="lang">ESTÁNDAR · AUTOLISP · AUDITORÍA PYTHON</div><p>SET_01-REP reúne normas de capas, plantillas y rutinas AutoLISP; `audita-dwg.py` inspecciona el DWG y genera reporte. El flujo de AutoCAD MCP COM depende de la edición instalada; LT 2027 requiere validar el conector alternativo.</p><span class="status check">rutinas reales · conector por validar</span></article>
+      <article class="role-card"><div class="role-title">Rhino <span class="pill">MVP_05</span></div><div class="lang">RHINO PYTHON · GRASSHOPPER · MCP</div><p>El flujo crea secciones, detalles y láminas. En AIZ se verificó una hoja A3 1:50; en la plaza, dos cortes A1 con sus vistas bloqueadas. Los scripts dejan anotadas las limitaciones de la API del puente.</p><span class="status">hojas/cortes probados</span></article>
+      <article class="role-card"><div class="role-title">ComfyUI <span class="pill">MVP_04.02</span></div><div class="lang">GRAFO JSON · API · MODELO/SEED</div><p>WF-05 compara img2img con la misma base y seed 42, cambiando denoise. El resultado conserva workflow, parámetros e imagen; el perfil local/directML y la GPU cloud son destinos distintos.</p><span class="status">experimento trazable</span></article>
+      <article class="role-card"><div class="role-title">Operación del estudio <span class="pill">MVP_07</span></div><div class="lang">FATHOM · N8N · LEANTIME · TELEGRAM</div><p>Reunión → transcripción → minuta/compromisos → tareas y recordatorios. Hermes puede interpretar/delegar; n8n resuelve los pasos deterministas; el vault conserva conocimiento y fuentes.</p><span class="status">flujo operativo</span></article>
+      <article class="role-card"><div class="role-title">Vault y estándares <span class="pill">memoria</span></div><div class="lang">MARKDOWN · WIKILINKS · GIT</div><p>Los seniors ya no repiten cada respuesta: estándares, decisiones y resultados quedan consultables. Cada respuesta conserva la referencia que permite verificarla.</p><span class="status">conocimiento acumulable</span></article>
+      <article class="role-card"><div class="role-title">QA y gobierno <span class="pill">A–D</span></div><div class="lang">CONTRATO · HASH · APROBACIÓN</div><p>Lectura y generación aislada pueden avanzar automáticamente. Modificación de archivos y publicación externa requieren checkpoints, registro y aprobación por persona.</p><span class="status">requisito MVP_07</span></article>
+    </div>
+    <div class="callout"><div class="asterisk">↗</div><div>El agente no es solo “experto en un programa”. Es un <b>rol de proceso</b> que usa el dialecto adecuado a cada tarea y puede reusarse entre proyectos. Las skills conectan estándares, scripts y workflows probados.</div></div>
+  </section>
+
+  <section class="section" id="ejecucion">
+    <div class="section-head">
+      <div><div class="section-kicker">05 / 08 · ENTORNOS</div><h2>Local, VPS y nube: un sistema, tres destinos</h2></div>
+      <p class="section-intro">El agente selecciona capacidades y comunica el sobre de tarea. El destino depende de la aplicación, el hardware disponible, el tipo de dato, el costo y la aprobación requerida.</p>
+    </div>
+    <div class="execution-grid">
+      <article class="execution">
+        <svg class="exec-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="5" y="7" width="38" height="27" rx="2"/><path d="M17 41h14M24 34v7M11 13h26M13 18h8M13 23h14"/></svg>
+        <div class="cap">Estación local</div><h3>Aplicaciones de arquitectura</h3><p>AutoCAD y Rhino permanecen en equipos autorizados, con sus licencias y acceso a archivos del proyecto.</p><ul><li>CAD, geometría y automatización</li><li>Scripts y MCP locales</li><li>Runner asistido o desatendido según la aplicación</li></ul>
+      </article>
+      <article class="execution">
+        <svg class="exec-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="9" y="5" width="30" height="10" rx="2"/><rect x="9" y="19" width="30" height="10" rx="2"/><rect x="9" y="33" width="30" height="10" rx="2"/><path d="M15 10h.1M15 24h.1M15 38h.1M23 10h10M23 24h10M23 38h10"/></svg>
+        <div class="cap">Servidor persistente</div><h3>VPS · el núcleo disponible</h3><p>Hermes, n8n, APIs y registros quedan disponibles mientras el VPS está encendido.</p><ul><li>Sesiones y memoria persistente</li><li>Tareas bajo demanda o programadas</li><li>GitHub, vault, registro y mensajería</li></ul>
+      </article>
+      <article class="execution">
+        <svg class="exec-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M13 34h22a8 8 0 0 0 0-16 12 12 0 0 0-23-2 9 9 0 0 0 1 18Z"/><path d="M24 22v14M19 27l5-5 5 5M19 38h10"/></svg>
+        <div class="cap">GPU remota</div><h3>Nube · potencia por demanda</h3><p>El trabajo visual pesado puede ir a una GPU remota con el perfil y los datos adecuados.</p><ul><li>ComfyUI cloud o GPU alquilada</li><li>Imágenes, video y modelos grandes</li><li>Se detalla costo y se revisan datos antes de enviar</li></ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="comfy">
+    <div class="section-head">
+      <div><div class="section-kicker">06 / 08 · RAMA VISUAL</div><h2>Comfy: cuatro entradas, workflows invocables</h2></div>
+      <p class="section-intro">El agente no «adivina» una imagen; selecciona un procedimiento documentado. El workflow conserva modelo, versión, parámetros, recurso y resultado.</p>
+    </div>
+    <div class="comfy-tree">
+      <div class="modality-list">
+        <div class="modality"><span class="icon">T</span>Texto / prompt</div>
+        <div class="modality"><span class="icon">▧</span>Imagen / croquis</div>
+        <div class="modality"><span class="icon">▶</span>Video / secuencia</div>
+        <div class="modality"><span class="icon">♫</span>Voz → texto</div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-card"><b>PI + Pipi Visual</b><span>interpreta la solicitud y llama al workflow versionado</span><br><span class="pill">entrada · parámetros · modelo · validación</span></div>
+      <div class="flow-arrow">→</div>
+      <div class="output-stack"><div class="modality">GPU local o cloud</div><div class="modality">Imagen / video / variantes</div><div class="modality">Registro + revisión humana</div></div>
+    </div>
+    <div class="callout"><div class="asterisk">↗</div><div>Un video puede partir de texto, imagen, video o voz transcripta. <b>La imagen generada y la geometría 3D editable son resultados distintos</b>; el mapa las mantiene como ramas relacionadas.</div></div>
+  </section>
+
+  <section class="section" id="mantenimiento">
+    <div class="section-head">
+      <div><div class="section-kicker">07 / 08 · DEUDA TÉCNICA Y MANTENIMIENTO</div><h2>PI convierte la repetición en sistema mantenible</h2></div>
+      <p class="section-intro">Los LLM bajan la barrera de entrada para leer y escribir código en lenguajes de dominio. La mejora aparece cuando scripts y flujos se prueban, documentan, versionan y tienen responsable de mantenimiento.</p>
+    </div>
+    <div class="maintenance-grid">
+      <div><b>MCP / conectores</b><span>permisos · disponibilidad · versiones</span></div>
+      <div><b>Scripts / skills</b><span>tests · revisión · releases</span></div>
+      <div><b>Modelos / workflows</b><span>licencias · VRAM · compatibilidad</span></div>
+      <div><b>Wiki / memoria</b><span>fuentes · enlaces · obsolescencia</span></div>
+      <div><b>Operación</b><span>backup · salud · costo · soporte</span></div>
+    </div>
+    <div class="flow-chain" aria-label="Ciclo de mantenimiento y aprendizaje">
+      <span>fricción<br>observada</span><span>procedimiento<br>capturado</span><span>skill/script<br>candidato</span><span>prueba<br>repetible</span><span>aprobación<br>humana</span><span>Git<br>versionado</span><span>métricas<br>por uso</span><span>ciclo<br>mejorado ↺</span>
+    </div>
+    <div class="shared-links"><span><b>Fijo</b> VPS · dominios · backups</span><span><b>Modelos</b> API · suscripción · local</span><span><b>GPU</b> por ejecución</span><span><b>Licencias</b> CAD · 3D · oficina</span><span><b>Soporte</b> horas de mantenimiento</span></div>
+    <div class="maturity">
+      <div><b>MEMORIA</b><span>Contexto y preferencias entre sesiones. No actualiza los pesos del modelo.</span></div>
+      <div><b>APRENDIZAJE PROCEDIMENTAL</b><span>Skills y workflows verificados, aprobados y versionados en el vault/repositorio.</span></div>
+      <div><b>ENTRENAMIENTO ML</b><span>Fine-tuning/LoRA como proyecto aparte, con datos autorizados, evaluación y control de versión.</span></div>
+    </div>
+    <div class="research-note"><strong>La tesis de PI:</strong> el LLM ayuda a pagar deuda técnica repetitiva; no elimina el mantenimiento. La integración, seguridad, permisos, compatibilidad y costo pasan a ser una capa explícita del sistema, operada por el rol de mantenimiento.</div>
+  </section>
+
+  <section class="section" id="productividad">
+    <div class="section-head">
+      <div><div class="section-kicker">08 / 08 · TESIS Y MEDICIÓN</div><h2>La persona sigue siendo el factor decisivo</h2></div>
+      <p class="section-intro">El humano define objetivos, criterios y aprobación. PI amplía el trabajo que puede avanzar entre intervenciones, pero la calidad se ve en resultados aceptados.</p>
+    </div>
+    <div class="equation">
+      <div class="formula"><div class="math">P = <span style="white-space:nowrap">W<sub>v</sub></span> / T<sub>h</sub></div><div class="legend"><span>W<sub>v</sub> · trabajo útil validado</span><span>T<sub>h</sub> · atención humana</span></div></div>
+      <div class="measure-list">
+        <div class="measure"><i>01</i><span>Atención humana, tiempo de ejecución y espera.</span></div>
+        <div class="measure"><i>02</i><span>Horas senior transferidas al junior que el vault resuelve sin preguntar.</span></div>
+        <div class="measure"><i>03</i><span>Entregables revisados, aprobados, corregidos y costo por tarea.</span></div>
+        <div class="measure"><i>04</i><span>Skills/workflows reutilizados y horas de mantenimiento del sistema.</span></div>
+      </div>
+    </div>
+    <div class="future-band"><h3>Meta-arquitecto · diseñador de la empresa sintética</h3><p>El conocimiento deja de depender de una persona o sesión. <b>El Meta-arquitecto diseña roles, permisos, skills, conectores y mantenimiento; otros arquitectos usan las capacidades del sistema</b>. La historia concluye con quien crea y evoluciona la infraestructura.</p></div>
+    <p class="fineprint">La animación mostrará el aumento de líneas de trabajo como potencial de paralelismo, no como productividad exponencial demostrada. El efecto se contrasta con tareas validadas y medición real.</p>
+  </section>
+
+  <section class="section" id="fuentes">
+    <div class="section-head"><div><div class="section-kicker">Lecturas de apoyo</div><h2>Qué respaldan las fuentes</h2></div><p class="section-intro">La IA como campo tiene décadas; los agentes/LLM amplían interfaz, programación y coordinación. Los estudios citados son casos específicos; PI es nuestra propuesta para el estudio.</p></div>
+    <div class="sources">
+      <article class="source"><div class="src-type">Perspectiva de experto · 2026</div><h3>Andrew Ng y Chuck Whitten · Bain</h3><p>Copilotos y agentes coordinados; reimaginar el flujo completo, mantener puntos de revisión humana y medir confiabilidad.</p><a href="https://www.bain.com/es-es/insights/winning-in-the-agentic-era-a-conversation-with-andrew-ng" target="_blank" rel="noopener">Leer entrevista ↗</a></article>
+      <article class="source"><div class="src-type">Ingeniería · Anthropic</div><h3>Building effective agents</h3><p>Distinción entre workflows y agentes; patrones de enrutamiento, paralelización y orquestador-trabajadores. Agregar complejidad cuando mejora el resultado.</p><a href="https://www.anthropic.com/engineering/building-effective-agents" target="_blank" rel="noopener">Leer artículo ↗</a></article>
+      <article class="source"><div class="src-type">Implementación · Hermes</div><h3>Memoria y tareas programadas</h3><p>La documentación de Hermes describe memoria persistente entre sesiones y un gateway que ejecuta tareas programadas.</p><a href="https://hermes-agent.nousresearch.com/docs/user-guide/features/memory" target="_blank" rel="noopener">Memoria ↗</a> · <a href="https://hermes-agent.nousresearch.com/docs/user-guide/features/cron" target="_blank" rel="noopener">Cron ↗</a></article>
+      <article class="source"><div class="src-type">Historia · Dartmouth</div><h3>IA como campo desde 1955–56</h3><p>La propuesta de investigación de Dartmouth antecede por décadas la ola actual de LLM. Los LLM cambian el acceso y la interfaz; no inauguran la IA.</p><a href="https://home.dartmouth.edu/about/artificial-intelligence-ai-coined-dartmouth" target="_blank" rel="noopener">Leer historia ↗</a></article>
+      <article class="source"><div class="src-type">Estudio · Foster + Partners</div><h3>Ask F+P y guías internas</h3><p>Entrevista a Martha Tsigkari: asistente de búsqueda semántica sobre guías de diseño internas, más SD alojado localmente para proponer sobre modelos ya diseñados.</p><a href="https://constructionmanagement.co.uk/foster-partners-rd-taking-ai-and-digital-twins-to-the-next-stage/" target="_blank" rel="noopener">Leer entrevista ↗</a></article>
+      <article class="source"><div class="src-type">Estudio · Zaha Hadid Architects</div><h3>Archivo propietario y AI local</h3><p>Caso NVIDIA: infraestructura local, reutilización de archivo, modelos/LoRAs personalizados y herramientas internas. Es un caso de cliente publicado por el proveedor.</p><a href="https://www.nvidia.com/en-us/case-studies/zaha-hadid-architects-with-omniverse-and-usd" target="_blank" rel="noopener">Leer caso ↗</a></article>
+      <article class="source"><div class="src-type">Marco interno · Studio OS</div><h3>VISION · ESTRUCTURA · REQUISITOS</h3><p>VISION define el ciclo del estudio y Hermes; ESTRUCTURA mantiene un núcleo Hermes por estudio y perfiles de ejecución; REQUISITOS fija trazabilidad, privacidad, costo y gobernanza A–D.</p><p><code>proyectos/MVP_07-studio-os-sistema/</code></p><a href="https://chatgpt.com/share/6ae73f14-62ac-83ea-89c9-0243b2ba5dc1" target="_blank" rel="noopener">Conversación de origen ↗</a></article>
+    </div>
+    <p class="fineprint">Fuentes consultadas y verificadas el 01-11-2026. La documentación técnica demuestra funciones de un producto; no prueba por sí sola una predicción sobre toda la industria.</p>
+  </section>
+
+  <footer><span>PI · Plataforma de Inteligencia para arquitectura</span><span><a href="https://chatgpt.com/share/6ae73f14-62ac-83ea-89c9-0243b2ba5dc1" target="_blank" rel="noopener">Conversación fuente ↗</a> · Guion visual: `specs/261101-guion-visual-pi-remotion.md`</span></footer>
+</main>
+</body>
+</html>

@@ -1,7 +1,7 @@
 ---
 tipo: indice
 fecha_creacion: 2026-07-24
-ultima_actualizacion: 2026-07-24
+ultima_actualizacion: 2026-11-01
 tags: [analisis, indice, estudios, evaluaciones]
 estado: activo
 ---
@@ -29,13 +29,21 @@ estado: activo
 
 ---
 
+## IA & Generación de Imágenes
+
+| Documento | Tema | Estado | Fecha |
+|-----------|------|--------|-------|
+| [analisis-ia-generativa-comfyui-alternativas.md](analisis-ia-generativa-comfyui-alternativas.md) | **ComfyUI vs A1111 vs Fooocus + alternativas** — Interfaces locales (ControlNet/LoRA/inpaint/upscaling), rutas de cómputo (RX 570 / RunPod / PC estudio / Comfy Cloud), consolas API pay-per-use (Open Higgsfield, fal, DeepInfra) y generación $0 (AI Horde) | Borrador | 2026-11-01 |
+
+---
+
 ## Pendientes / Próximos Análisis
 
 - [ ] **Leantime vs Plane vs GitHub Projects** — Comparativa detallada features/UX/mantenimiento
 - [ ] **Autenticación remota: Tailscale vs Cloudflare Tunnel vs VPN** — Para acceso a Leantime self-hosted
 - [ ] **Backup strategy: rclone + Google Drive/OneDrive/Wasabi** — Automatización, restore testing
 - [ ] **BIM workflow: Revit + Speckle/BCF + Vault** — Integración modelos con wiki y PM
-- [ ] **IA en arquitectura: ComfyUI + ControlNet + LoRA training** — Pipeline renders conceptuales
+- [ ] **IA en arquitectura: ComfyUI + ControlNet + LoRA training** — Pipeline renders conceptuales *(parcialmente cubierto por analisis-ia-generativa-comfyui-alternativas.md; falta pipeline técnico ControlNet + LoRA training)*
 
 ---
 
@@ -48,3 +56,4 @@ Cada análisis debe derivar en **0 o más ADRs** (decisiones formales). Ver [ADR
 | analisis-despliegue-wiki-quartz.md | *pendiente: ADR-TOOL-001 MkDocs + Netlify* |
 | analisis-integracion-dashboards-pm.md | [ADR-INFRA-001 Leantime Self-Hosted](../adrs/ADR-INFRA-001-leantime-selfhosted.md) |
 | analisis-dashboards-pm-gratis.md | *pendiente: ADR-INFRA-002 GitHub Projects / Leantime* |
+| analisis-ia-generativa-comfyui-alternativas.md | *pendiente: ADR stack IA generativa (mantener ComfyUI + RunPod + APIs por-uso)* |

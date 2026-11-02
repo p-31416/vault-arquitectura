@@ -1,0 +1,134 @@
+%% PI · evolución del rol, empresa sintética y arquitectura técnica
+%% Cruce con VISION, ESTRUCTURA y REQUISITOS de MVP_07 + guion visual PI
+%% Casos: MVP_02 AutoCAD · MVP_05 Rhino · MVP_04.02 ComfyUI · operación Fathom/n8n/Leantime
+flowchart TB
+    classDef human fill:#211b17,stroke:#e4a1a8,color:#f5f3ef
+    classDef core fill:#20242b,stroke:#d97706,color:#f5f0e6
+    classDef agent fill:#1e2b26,stroke:#3f9e7f,color:#e6f4ee
+    classDef tool fill:#1c232e,stroke:#5b7f9e,color:#e8eef4
+    classDef work fill:#241d2b,stroke:#9e5b7f,color:#f2e6ee
+    classDef memory fill:#2b241d,stroke:#b0885b,color:#f5eee4
+    classDef upkeep fill:#18232a,stroke:#8ec2ea,color:#e8eef4
+    classDef future fill:#111418,stroke:#6b7280,color:#cbd5e1
+
+    subgraph EVOL["EVOLUCIÓN · el relato culmina en quien diseña el sistema"]
+        direction LR
+        OP["01 · Arquitecto operador<br/>humano ↔ una computadora"]
+        META["02 · Meta-arquitecto artesanal<br/>4–6 sesiones · agentes · MCP · código"]
+        PISYS["03 · PI / empresa sintética<br/>cerebro local · Hermes · n8n · roles"]
+        META2["04 · Meta-arquitecto sistémico<br/>diseña · mantiene · evoluciona PI"]
+        OP --> META --> PISYS --> META2
+    end
+
+    ARQ(["ARQUITECTO<br/>intención · criterios · aprobación profesional"])
+
+    subgraph CANALES["EXPERIENCIA PERSONAL · MISMO NÚCLEO DE ESTUDIO"]
+        direction LR
+        PERFIL1["Asistente de trabajo<br/>perfil/contexto/proyecto A"]
+        PERFIL2["Asistente de trabajo<br/>perfil/contexto/proyecto B"]
+        TG["Telegram / voz"]
+        WEB["Web / portal<br/>equipo no técnico"]
+    end
+
+    subgraph CORE["NÚCLEO PERSISTENTE · 1 Hermes Gateway por estudio (MVP_07)"]
+        direction LR
+        HERM["Hermes<br/>memoria · perfiles · skills · cron"]
+        PI["PI Manager<br/>interpreta y descompone el encargo"]
+        PLAN["Sobre/plan de tarea<br/>objetivo · entradas · riesgo · costo · criterio de listo"]
+        HERM --> PI --> PLAN
+    end
+
+    subgraph ROLES["EMPRESA SINTÉTICA · ROLES TRANSVERSALES A LOS PROYECTOS"]
+        direction LR
+        CAD["Pipi CAD<br/>AutoLISP · comandos · Python/ezdxf"]
+        RHINO["Pipi Rhino<br/>Python · RhinoCommon · GH/Hops"]
+        VIS["Pipi Visual<br/>ComfyUI · workflow JSON/API"]
+        DOCS["Pipi Docs / Research<br/>Fathom · Markdown · fuentes"]
+        PM["Pipi PM / Oficina<br/>Leantime · n8n · cron"]
+        QA["QA / Gobernanza<br/>A–D · hash · procedencia"]
+    end
+
+    subgraph CAP["BIBLIOTECA DE CAPACIDADES · aprendizaje procedimental versionado"]
+        direction LR
+        SKILLS["Skills y workflows<br/>versión · entradas · dependencias"]
+        TESTS["Validación<br/>casos · hashes · calidad"]
+        SOURCES["Fuente de verdad<br/>vault/wiki + repos Git"]
+        SKILLS --> TESTS --> SOURCES
+    end
+
+    subgraph CONECT["CONECTORES Y LENGUAJES DE DOMINIO · inventario de opencode.json"]
+        direction LR
+        MCP_CAD["autocad · autodesk-help"]
+        MCP_RHINO["rhino"]
+        MCP_VIS["comfyui"]
+        MCP_OFF["fathom · fathom-proyectopi · n8n-mcp · leantime"]
+    end
+
+    subgraph TASKFLOW["FLUJO DE TRABAJO AUMENTADO"]
+        direction LR
+        INTENT["Encargo<br/>proyecto · criterio · límites"]
+        DECOMP["Plan/dispatch<br/>subtareas y responsables"]
+        RUN["Ejecución paralela<br/>sólo dentro del contrato"]
+        EVID["Salida<br/>artefactos + fuentes + estado"]
+        HUMAN_GATE["Revisión humana<br/>diseño · contrato · publicación"]
+        INTENT --> DECOMP --> RUN --> EVID --> HUMAN_GATE
+    end
+
+    subgraph EXEC["DESTINOS · MISMO CONTRATO, PERFILES DISTINTOS"]
+        direction LR
+        PC["Local / estaciones<br/>AutoCAD · Rhino · PC de estudio"]
+        VPS["VPS persistente<br/>Hermes · n8n · base · vault"]
+        GPU["GPU cloud bajo demanda<br/>Comfy/video/modelos grandes"]
+    end
+
+    subgraph MEMORY["REGISTRO Y MEMORIA INSTITUCIONAL"]
+        direction LR
+        DB["PostgreSQL / registry<br/>tarea · ejecución · artefacto · costo"]
+        VAULT["Wiki/cuaderno<br/>estándares · decisiones · fuentes"]
+        SESSION["Memoria Hermes<br/>curada/breve · perfil de trabajo"]
+    end
+
+    subgraph UPKEEP["OPERACIÓN Y MANTENIMIENTO · trabajo visible, no residuo"]
+        direction LR
+        OPS["PITAUTECH / operador<br/>actualiza · prueba · soporta"]
+        MON["Monitoreo<br/>MCP · versiones · errores · costos"]
+        BACK["Continuidad<br/>backup · restore · acceso · permisos"]
+        COST["Economía<br/>VPS · modelo · GPU · licencias · horas de soporte"]
+        OPS --> MON & BACK & COST
+    end
+
+    ARQ -->|"brief + criterio"| TG & WEB
+    TG & WEB --> PERFIL1 & PERFIL2
+    PERFIL1 & PERFIL2 --> HERM
+    PLAN --> INTENT
+    DECOMP --> CAD & RHINO & VIS & DOCS & PM & QA
+    CAD --> MCP_CAD
+    RHINO --> MCP_RHINO
+    VIS --> MCP_VIS
+    DOCS & PM --> MCP_OFF
+    ROLES <-->|"invoca y reutiliza"| SKILLS
+    ROLES --> CONECT
+    RUN --> PC & VPS & GPU
+    RUN --> DB
+    EVID --> DB & VAULT
+    DB & VAULT --> HUMAN_GATE
+    HUMAN_GATE -->|"feedback aprobado"| TESTS
+    TESTS -->|"publicar versión aprobada"| SKILLS
+    VAULT -->|"contexto/estándares con citas"| PI
+    SESSION <-->|"contexto curado, no wiki institucional"| HERM
+    OPS --> HERM
+    MON --> CORE & CONECT & EXEC
+    PISYS --> HERM
+    META2 -.->|"diseña roles, estándares y capacidades"| ROLES
+    META2 --> MAINT
+
+    METRIC["MÉTRICA CENTRAL · trabajo útil validado / tiempo de intervención humana<br/>más: ejecución · espera · correcciones · costo · tiempo senior transferido"]
+    DB -.-> METRIC
+    class ARQ,PERFIL1,PERFIL2,META2 human
+    class HERM,PI,PLAN,PISYS core
+    class CAD,RHINO,VIS,DOCS,PM,QA agent
+    class MCP_CAD,MCP_RHINO,MCP_VIS,MCP_OFF tool
+    class INTENT,DECOMP,RUN,EVID,HUMAN_GATE work
+    class SKILLS,TESTS,SOURCES,DB,VAULT,SESSION memory
+    class OPS,MON,BACK,COST upkeep
+    class METRIC future

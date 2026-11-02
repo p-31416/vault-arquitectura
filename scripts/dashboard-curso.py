@@ -176,6 +176,174 @@ LORAS = {
 }
 
 
+# --- Solapa Curso: tema + tarjetas de lo que arma el curso --------------------
+# NOTA ES: el tema es fijo (plaza Sagrada Familia) y las tarjetas salen del
+# CSV del curso (AI-course.csv) cruzado con el catálogo LORAS. Variaciones de
+# LoRA solo SD1.5 y SDXL: son las que corren en la máquina.
+TEMA = {
+    "titulo": "Plaça de la Sagrada Família — Barcelona",
+    "sujeto": "Todo lo del curso se trabaja en torno a la plaza: renders, img2img, video y 3D parten de este sujeto.",
+    "bases": ["SD 1.5 · architecturerealmix (local + ControlNet)",
+              "SDXL · Juggernaut XL (local*, sin ControlNet)"],
+}
+
+SD15_NOMBRES = {
+    "JJ_Archvizcg_v2.safetensors", "sandiese.safetensors",
+    "xsarchitectural-10superhighrisebuilding.safetensors", "room.safetensors",
+    "landscape_architecture_sketch.safetensors",
+    "Le Corbusier 2.2.7.2_sd1.5-000016.safetensors", "BrutalistTech-20.safetensors",
+    "archisketch-v1.safetensors", "markerhandsketch-V1.safetensors",
+}
+SDXL_NOMBRES = {
+    "isometric-v1.safetensors", "Architectural_Massing.safetensors",
+    "Architecture_Building.safetensors", "baroque_architecture-000006.safetensors",
+    "ArcvizXL_V01.safetensors", "bookstore-xl.safetensors",
+    "SLskyscraperrenderingXL_V1.0.safetensors",
+}
+
+
+def construir_curso():
+    """Tarjetas 1:1 del tablero Miro: qué es, a qué refiere, dónde corre.
+
+    NOTA ES: cada entrada del Miro tiene su tarjeta. Links SOLO verificados
+    con HTTP 200 (2026-10-30): los del CSV, los del inventario Miro del vault
+    y los 3 del curso (SDXL base, archmat, FLUX.2-4B). Lo no verificado
+    (Topaz 403 anti-bots, Seedance sin DNS, guía BFL movida) queda SIN link
+    con nota "ver Miro" — una tarjeta sin link es honesta, un link muerto no.
+    """
+    items = []
+
+    def add(cat, titulo, detalle, modulo, corre, links=None):
+        items.append({"cat": cat, "titulo": titulo, "detalle": detalle,
+                      "modulo": modulo, "corre": corre, "links": links or []})
+
+    U = lambda t, u: {"t": t, "u": u}
+    MIRO = "https://miro.com/app/board/uXjVHRM2XQU=/"
+
+    # --- Módulo 1 · base ---
+    add("Módulo 1 · base", "SD 1.5 live demo",
+        "Demo en vivo del flujo base de 7 nodos. Equivale a GX-01.", "Módulo 1 · base", "local")
+    add("Módulo 1 · base", "3 ways of prompting",
+        "Tres maneras de promptear del curso (tarjeta del tablero).", "Módulo 1 · base", "curso")
+    add("Módulo 1 · base", "Prompt Coach setup",
+        "Rol que interroga el prompt (modelo, conciso/largo) + guía de prompts.", "Módulo 1 · base", "curso",
+        [U("guía de prompts", "https://stable-diffusion-art.com/prompt-guide/")])
+    add("Módulo 1 · base", "Comfy Expert setup",
+        "Rol experto en Comfy Cloud para responder con docs.", "Módulo 1 · base", "curso",
+        [U("docs ComfyUI", "https://docs.comfy.org/"), U("wiki ComfyUI", "https://comfyui-wiki.com/en")])
+
+    # --- Módulo 2 · texto a imagen (comparativas + LoRAs + upscaling) ---
+    add("Módulo 2 · modelos", "SD 1.5",
+        "Comparativa base del curso. Local: architecturerealmix.", "Módulo 2", "local")
+    add("Módulo 2 · modelos", "SDXL base",
+        "El curso lo propone como salto de calidad sobre SD1.5.",
+        "Módulo 2", "local*", [U("stabilityai/sdxl-base-1.0", "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0")])
+    add("Módulo 2 · modelos", "archmat",
+        "LoRA/materialidad arquitectónica. El curso lo marca para SDXL.",
+        "Módulo 2", "local*", [U("civitai 656784", "https://civitai.com/models/656784/archmat")])
+    add("Módulo 2 · modelos", "FLUX.1 dev",
+        "Comparativa del curso; requiere text encoders (no local).",
+        "Módulo 2", "pod", [U("FLUX.1-dev", "https://huggingface.co/black-forest-labs/FLUX.1-dev")])
+    add("Módulo 2 · modelos", "FLUX.2 Klein 9B",
+        "Stack 18,3 GB. Comparativa + LoRA 50% y 100%.", "Módulo 2", "pod")
+    add("Módulo 2 · modelos", "FLUX.2 Klein 4B (adaptadores)",
+        "Adaptadores livianos 4B que propone el curso.",
+        "Módulo 2", "pod", [U("búsqueda HF", "https://huggingface.co/models?other=base_model:adapter:black-forest-labs/FLUX.2-klein-4B")])
+    for nombre, info in LORAS.items():
+        if nombre in SD15_NOMBRES:
+            base, corre, mod = "SD 1.5", "local", "Módulo 2"
+        elif nombre in SDXL_NOMBRES:
+            base, corre, mod = "SDXL", "local*", "Módulo 2"
+        else:
+            base, corre, mod = "FLUX.2", "pod", "Módulo 7"
+        trig = info["trigger"] or "sin trigger declarado"
+        add("Módulo 2 · LoRAs " + base, nombre.replace(".safetensors", ""),
+            info["observar"] + " Trigger: " + trig + ".", mod, corre,
+            [U("descarga", info["url"])] if info["url"] else [])
+    add("Módulo 2 · LoRAs", "rhino basic / premium",
+        "LoRAs del curso (FLUX): basic incluido, premium. Con/sin LoRA en el canvas.", "Módulo 2", "pod")
+    add("Módulo 2 · edición", "Nano Banana Pro",
+        "Edición con IA sin metadata. Skill nano-banana en el CSV.", "Módulo 2", "nube")
+    add("Módulo 2 · upscaling", "SeedVR2 (workflow 1)",
+        "Upscaling del curso, nube paga.", "Módulo 2", "nube")
+    add("Módulo 2 · upscaling", "Topaz (workflow 2)",
+        "Upscaling pago. Reemplazo local: RealESRGAN x4plus (en disco). Sitio con anti-bots: ver Miro.", "Módulo 2", "local")
+    add("Módulo 2 · upscaling", "FLUX.1 (workflow 3)",
+        "Upscaling del curso, nube/pod.", "Módulo 2", "pod")
+    add("Módulo 2 · upscaling", "Krea (workflow 4)",
+        "Upscaling del curso.",
+        "Módulo 2", "nube", [U("krea.ai", "https://www.krea.ai/")])
+    add("Módulo 2 · método", "Spectrum + Creativity 1/10–9/10",
+        "Ejes del canvas para comparar fidelidad vs creatividad.", "Módulo 2", "curso")
+
+    # --- Módulo 3 · imagen a imagen ---
+    add("Módulo 3 · método", "Imagen 1 — Massing",
+        "De la imagen de massing se extrae: geometría, stacking, cantilevers, setbacks, voids, proporciones, cámara.", "Módulo 3", "curso")
+    add("Módulo 3 · método", "Imagen 2 — Referencia estética",
+        "De la referencia: materialidad, temperatura de color, luz, atmósfera, superficies.", "Módulo 3", "curso")
+    add("Módulo 3 · método", "JSON camera-lock",
+        "Plantilla del curso: massing de imagen 1 + materialidad de imagen 2, MATCH CAMERA EXACTLY.", "Módulo 3", "curso")
+    add("Módulo 3 · video", "Kling website (alternativa)",
+        "El curso da la web de Kling como alternativa al workflow.",
+        "Módulo 3", "nube", [U("guía Kling", "https://kling.ai/quickstart/klingai-video-3-model-user-guide")])
+
+    # --- Módulo 4 · imagen a video ---
+    add("Módulo 4 · video", "Seedance 2.0 (single/multi/start)",
+        "El curso propone Seedance: 1 imagen, varias o frame inicial. Guía con DNS caído al 2026-10-30: ver Miro.", "Módulo 4", "nube")
+    add("Módulo 4 · video", "LTX (workflow 1)",
+        "Video local-en-pod. Modelos LTX faltan; probar en Cloud Free.",
+        "Módulo 4", "pod",
+        [U("guía LTX-2.3", "https://ltx.io/model/model-blog/ltx-2-3-prompt-guide"),
+         U("skill ltx-v2", "https://mcpmarket.com/tools/skills/ltx-v2-video-generation")])
+    add("Módulo 4 · video", "Kling (workflow 2)",
+        "Video en nube paga.",
+        "Módulo 4", "nube", [U("guía Kling", "https://kling.ai/quickstart/klingai-video-3-model-user-guide")])
+    add("Módulo 4 · video", "Interpolación 7s→14s",
+        "Nota del curso: estirar el clip en edición.", "Módulo 4", "pod")
+    add("Módulo 4 · video", "Timelapse trípode fijo",
+        "Edificio estático; nubes, sol/sombras, gente y plantas en movimiento. Sin cámara.", "Módulo 4", "pod")
+    add("Módulo 4 · video", "Preparation geométrica + Google Omni",
+        "Paso para que el modelo entienda la geometría + skill import.", "Módulo 4", "pod")
+
+    # --- Módulo 5 · imagen a 3D ---
+    for prep in ["Clay blanco axonométrico", "Backside imaginado", "4 vistas en mosaico",
+                 "Maqueta en concreto", "Normal map", "Hiperrealista→Rhino",
+                 "Sin textura limpio", "Ambient occlusion"]:
+        add("Módulo 5 · preparación", prep,
+            "Prompt del curso. Todo IMPORTABLE IN COMFY.", "Módulo 5", "pod")
+    add("Módulo 5 · workflow", "Workflow 2 + ComfyUI-3D-Pack",
+        "Custom node + modelos faltan → pod.", "Módulo 5", "pod")
+
+    # --- Módulo 6 · panel ---
+    add("Módulo 6 · criterio", "Panel discussion",
+        "Sin workflow: el jurado va por script + checklist.", "Módulo 6", "local")
+
+    # --- Módulo 7 · Gaudí ---
+    add("Módulo 7 · Gaudí", "VARIANT B (Gaudí nombrable)",
+        "Igual a INSTRUCTION.md var. A pero puede nombrar a Gaudí y sus obras. Morph 0–10 (default 7), ADN constructivo, prohibido decorativo.", "Módulo 7", "pod")
+    add("Módulo 7 · Gaudí", "CLAY STYLE fijo",
+        "Arcilla blanca mate, camera lock, sin color ni trencadís.", "Módulo 7", "pod")
+    add("Módulo 7 · Gaudí", "Rhino-to-Gaudí + live demo",
+        "Flujo massing→arcilla→hyperreal con la LoRA del curso + calidades espaciales y de textura.", "Módulo 7", "pod")
+    add("Módulo 7 · Gaudí", "LoRA rhino basic / premium",
+        "Basic incluido en el curso; premium. Ambas FLUX → pod.", "Módulo 7", "pod")
+    add("Módulo 7 · referente", "thomasnelissen.ai",
+        "Sitio del instructor.",
+        "Módulo 7", "curso", [U("thomasnelissen.ai", "https://thomasnelissen.ai")])
+
+    # --- Recursos del curso ---
+    add("Recursos", "Tablero Miro (login + Gaudi2026)",
+        "Canvas completo del curso: el origen de estas tarjetas.",
+        "Todos", "curso", [U("abrir Miro", MIRO)])
+    add("Recursos", "Área de participantes (login)",
+        "Videos, workflows y PDFs del curso.", "Todos", "curso", [U("archademy.ai", AREA_CURSO)])
+    add("Recursos", "Prompt Coach + Comfy Expert",
+        "Roles del curso (textos completos en el CSV).", "Módulo 1", "curso",
+        [U("guía de prompts", "https://stable-diffusion-art.com/prompt-guide/"),
+         U("docs ComfyUI", "https://docs.comfy.org/")])
+    return items
+
+
 # --- Cirugía de la plantilla (anclas exactas; falla fuerte si cambian) --------
 # NOTA ES: cada reemplazo exige encontrar el ancla UNA sola vez. Si la galería
 # cambia y el ancla desaparece o se duplica, el script grita en vez de generar
@@ -202,6 +370,33 @@ CSS_EXTRA = """
   #lora-titulo { margin:14px 0 6px; font-size:13px; text-transform:uppercase;
                  letter-spacing:.6px; color:#5a6070; }
   #lora-box a { color:#0b6e5f; }
+  #wf-titulo { margin:14px 0 6px; font-size:13px; text-transform:uppercase;
+               letter-spacing:.6px; color:#5a6070; }
+  #wf-box { background:#eef3ec; border:1px solid #cfdcc9; border-radius:4px;
+            padding:11px 13px; font-size:12.5px; color:#262a33; }
+  #wf-box a { color:#0b6e5f; }
+  /* ---------- solapa Matriz ---------- */
+  #matriz-panel { position:fixed; top:52px; left:0; right:0; bottom:0; overflow:auto;
+                  padding:14px; background:var(--fondo); z-index:30; }
+  #matriz-panel.oculto { display:none; }
+  .mnota { color:var(--tenue); font-size:11.5px; margin:2px 0 8px; }
+  .mbanda { position:relative; height:26px; background:var(--panel);
+            border:1px solid var(--linea); border-radius:6px; margin:4px 0 10px; }
+  .mbanda-work { position:absolute; top:0; bottom:0; background:rgba(127,209,193,.15);
+                 border-left:1px dashed var(--acento); border-right:1px dashed var(--acento); }
+  .mtick { position:absolute; top:4px; width:8px; height:18px; margin-left:-4px;
+           background:#8d95a3; border-radius:2px; }
+  .mtick.opt { background:var(--acento); }
+  .moptflag { position:absolute; top:-17px; transform:translateX(-50%); font-size:10.5px;
+              color:var(--acento); white-space:nowrap; }
+  .mcards { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:16px; }
+  .mcard { width:150px; border:1px solid var(--linea); border-radius:8px; overflow:hidden;
+           background:var(--panel); cursor:pointer; }
+  .mcard img { display:block; width:100%; height:auto; }
+  .mmeta { padding:5px 7px; font-size:11px; color:var(--tenue); display:flex; gap:6px;
+           align-items:center; flex-wrap:wrap; }
+  .mmeta b { color:var(--texto); }
+  .mopt { color:#0b2b26; background:var(--acento); border-radius:4px; padding:0 5px; font-size:10px; }
   #flujos { position:fixed; top:52px; right:0; bottom:0; width:340px; overflow:auto;
             border-left:1px solid var(--linea); background:var(--panel);
             padding:10px 12px; z-index:40; }
@@ -216,6 +411,37 @@ CSS_EXTRA = """
                  border-top:1px dashed var(--linea); padding-top:6px; }
   .flujo-links { font-size:11px; color:var(--tenue); margin-bottom:10px; }
   .flujo-links a { color:var(--acento); }
+  /* ---------- solapa Curso ---------- */
+  #curso-panel { position:fixed; top:52px; left:0; right:0; bottom:0; overflow:auto;
+                 padding:14px; background:var(--fondo); z-index:30; }
+  #curso-panel.oculto { display:none; }
+  .tema { border:1px solid var(--acento); border-radius:8px; padding:10px 12px;
+          margin-bottom:12px; background:var(--panel); }
+  .tema-bases { color:var(--tenue); font-size:11.5px; margin-top:4px; }
+  .cseccion { margin:10px 0 8px; font-size:11px; text-transform:uppercase;
+              letter-spacing:.7px; color:var(--tenue); display:flex; gap:10px; align-items:baseline; }
+  .cseccion b { color:var(--texto); font-size:13px; letter-spacing:0; text-transform:none; }
+  .cgrid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+           gap:10px; margin-bottom:14px; }
+  .ctarjeta { border:1px solid var(--linea); border-radius:8px; padding:9px 10px;
+              background:var(--panel); }
+  .ct-t { font-weight:600; margin-bottom:4px; }
+  .ct-d { color:var(--tenue); font-size:11.5px; }
+  .ct-pie { display:flex; gap:8px; align-items:center; margin-top:6px;
+            font-size:11px; color:var(--tenue); }
+  .ct-pie a { color:var(--acento); }
+  .corre { color:#fff; border-radius:4px; padding:1px 6px; font-size:10px; }
+  /* ---------- tarjeta fullscreen ---------- */
+  #carta-full { position:fixed; inset:0; background:rgba(6,7,9,.94); z-index:85;
+                overflow:auto; padding:30px 20px; }
+  #carta-full.oculto { display:none; }
+  #carta { max-width:640px; margin:0 auto; background:var(--panel);
+           border:1px solid var(--linea); border-radius:10px; padding:18px 20px; }
+  #carta h2 { margin:0 0 8px; font-size:20px; }
+  #carta .ct-pie { margin:10px 0; }
+  #carta .links a { display:block; margin:5px 0; color:var(--acento);
+                    word-break:break-all; font-size:12.5px; }
+  #carta .cerrar { float:right; }
 """
 
 JS_FLUJOS = """
@@ -240,6 +466,181 @@ function pintarFlujos(){
     + `</div>`).join("") + `</div>`;
 }
 """
+
+JS_SOLAPA = """
+// ------------------------------------------------------- solapa Curso
+function pintarCurso(){
+  const box = document.getElementById("curso-panel");
+  if (!box) return;
+  const grupos = new Map();
+  CURSO.forEach((c, idx) => { c.__k = idx; if(!grupos.has(c.cat)) grupos.set(c.cat,[]); grupos.get(c.cat).push(c); });
+  const color = {local:"#2fa47c", "local*":"#c9a227", pod:"#4f9cf0", nube:"#8d95a3", curso:"#6b7cff"};
+  box.innerHTML = `<div class="tema"><b>${esc(TEMA.titulo)}</b><div>${esc(TEMA.sujeto)}</div>`
+    + `<div class="tema-bases">${TEMA.bases.map(b => esc(b)).join(" · ")}</div>`
+    + `<div class="tema-bases">tablero ${esc(VERSION)} · ${CURSO.length} tarjetas · clic en tarjeta = pantalla completa</div></div>`
+    + [...grupos.entries()].map(([cat, arr]) =>
+      `<div class="cseccion"><b>${esc(cat)}</b><span>${arr.length}</span></div><div class="cgrid">` + arr.map(c =>
+        `<div class="ctarjeta" data-k="${c.__k}"><div class="ct-t">${esc(c.titulo)}</div>`
+        + `<div class="ct-d">${esc(c.detalle)}</div>`
+        + `<div class="ct-pie"><span class="corre" style="background:${color[c.corre]||"#666"}">${esc(c.corre)}</span>`
+        + `<span>${esc(c.modulo)}</span>`
+        + `<span>${(c.links||[]).length} link${(c.links||[]).length===1?"":"s"}</span>`
+        + `</div></div>`).join("") + `</div>`).join("");
+  box.querySelectorAll(".ctarjeta").forEach(el => el.onclick = () => abrirCarta(Number(el.dataset.k)));
+}
+// NOTA ES: la tarjeta abre en pantalla completa (overlay propio, no la
+// Polaroid de imágenes): título, detalle, badge, módulo y TODOS los links.
+function abrirCarta(k){
+  const c = CURSO[k]; if(!c) return;
+  const color = {local:"#2fa47c", "local*":"#c9a227", pod:"#4f9cf0", nube:"#8d95a3", curso:"#6b7cff"};
+  document.getElementById("carta").innerHTML =
+    `<button class="btn cerrar" id="carta-x">cerrar ✕</button>`
+    + `<h2>${esc(c.titulo)}</h2>`
+    + `<div class="ct-pie"><span class="corre" style="background:${color[c.corre]||"#666"}">${esc(c.corre)}</span>`
+    + `<span>${esc(c.modulo)}</span><span>${esc(c.cat)}</span></div>`
+    + `<div class="ct-d" style="font-size:13px;color:var(--texto)">${esc(c.detalle)}</div>`
+    + `<div class="links">${(c.links||[]).map(l =>
+        `<a href="${esc(l.u)}" target="_blank" rel="noopener">↗ ${esc(l.t)} — ${esc(l.u)}</a>`).join("")
+        || "<span style='color:var(--tenue)'>sin link verificado: ver tablero Miro</span>"}</div>`;
+  document.getElementById("carta-full").classList.remove("oculto");
+  document.getElementById("carta-x").onclick = () =>
+    document.getElementById("carta-full").classList.add("oculto");
+  window.scrollTo(0,0);
+}
+document.getElementById("carta-full").addEventListener("click", e => {
+  if (e.target.id === "carta-full") e.target.classList.add("oculto");
+});
+document.addEventListener("keydown", e => {
+  if (e.key === "Escape") document.getElementById("carta-full").classList.add("oculto");
+});
+function solapa(nombre){
+  ["repasadas", "curso", "matriz"].forEach(v => {
+    document.getElementById("tab-" + v).classList.toggle("activo", v === nombre);
+  });
+  const rep = nombre === "repasadas";
+  document.getElementById("contenido").style.display = rep ? "" : "none";
+  document.getElementById("facetas").style.display = rep ? "" : "none";
+  document.getElementById("flujos").classList.add("oculto");
+  document.getElementById("curso-panel").classList.toggle("oculto", nombre !== "curso");
+  document.getElementById("matriz-panel").classList.toggle("oculto", nombre !== "matriz");
+}
+// NOTA ES: sin estas dos líneas los botones existen pero el clic no hace
+// nada (fue la causa del "la solapa no funciona": todo rendía bien en Node,
+// pero ningún handler llamaba a solapa en el navegador).
+document.getElementById("tab-repasadas").onclick = () => solapa("repasadas");
+document.getElementById("tab-curso").onclick = () => solapa("curso");
+document.getElementById("tab-matriz").onclick = () => solapa("matriz");
+// NOTA ES: arranque con red: si una vista revienta en el navegador, el error
+// queda ESCRITO en la página (barra roja) en vez de silencio. Sin F12.
+function boot(){
+  const errs = [];
+  try { pintar(); } catch(e){ errs.push("repasadas: " + e.message); }
+  try { pintarFlujos(); } catch(e){ errs.push("flujos: " + e.message); }
+  try { pintarCurso(); } catch(e){ errs.push("curso: " + e.message); }
+  try { pintarMatriz(); } catch(e){ errs.push("matriz: " + e.message); }
+  if (errs.length) {
+    const d = document.createElement("div");
+    d.style.cssText = "position:fixed;bottom:0;left:0;right:0;background:#7a1f1f;color:#fff;"
+      + "padding:8px 12px;z-index:99;font-size:12px";
+    d.textContent = "ERRORES: " + errs.join(" | ");
+    document.body.appendChild(d);
+  }
+}
+// ------------------------------------------------------- solapa Matriz
+// NOTA ES: grilla de ejes medidos vs óptimo. Cada miniatura abre la Polaroid
+// (abrirMid traduce mid → índice visible). Sin librerías: divs + CSS.
+function filaPorMid(mid){
+  return DATOS.find(r => r.mid === mid);
+}
+function imgDims(r){
+  const dm = String(r.resolucion || "").match(/(\d+)\s*x\s*(\d+)/i);
+  return dm ? ` width="${dm[1]}" height="${dm[2]}"` : "";
+}
+function cartaMatriz(p, eje){
+  const r = filaPorMid(p.mid);
+  if (!r) return "";
+  const seg = (r.segundos != null) ? `<span>${r.segundos}s</span>` : "";
+  const esOpt = (eje.optimo != null && String(p.valor) === String(eje.optimo));
+  return `<div class="mcard" data-mid="${esc(p.mid)}">`
+    + `<img src="${esc(IMG[String(r.__k)] || "")}"${imgDims(r)} loading="lazy" alt="${esc(p.mid)}">`
+    + `<div class="mmeta"><b>${esc(p.mid)}</b>`
+    + `<span>${esc(String(p.valor))}${eje.unidad ? " " + esc(eje.unidad) : ""}</span>`
+    + seg + (esOpt ? `<span class="mopt">óptimo</span>` : "") + `</div></div>`;
+}
+function abrirMid(mid){
+  const r = filaPorMid(mid);
+  if (!r) return;
+  const vi = visibles.findIndex(x => x.__k === r.__k);
+  if (vi >= 0) abrir(vi);
+}
+function pintarMatriz(){
+  const box = document.getElementById("matriz-panel");
+  if (!box) return;
+  box.innerHTML = `<div class="tema"><b>Matriz de testeo — SD 1.5 · seed 42</b>`
+    + `<div class="tema-bases">Lo MEDIDO (miniaturas, con segundos) contra el ÓPTIMO (bandera). Clic = Polaroid.</div></div>`
+    + MATRIZ.map(eje => {
+      const cards = eje.puntos.map(p => cartaMatriz(p, eje)).join("");
+      let escala = "";
+      if (eje.tipo === "numerico") {
+        const vs = eje.puntos.map(p => p.valor);
+        const lo = (eje.min != null) ? eje.min : Math.min.apply(null, vs);
+        const hi = (eje.max != null) ? eje.max : Math.max.apply(null, vs);
+        const pos = v => (hi === lo) ? 50 : ((v - lo) / (hi - lo) * 100);
+        let banda = "";
+        if (eje.banda) {
+          const l = Math.max(0, Math.min(100, pos(eje.banda[0])));
+          const rr = Math.max(0, Math.min(100, pos(eje.banda[1])));
+          banda = `<div class="mbanda-work" style="left:${l}%;width:${Math.max(0, rr - l)}%" title="rango de trabajo"></div>`;
+        }
+        const ticks = eje.puntos.map(p => {
+          const cl = (eje.optimo != null && String(p.valor) === String(eje.optimo)) ? "mtick opt" : "mtick";
+          return `<div class="${cl}" style="left:${pos(p.valor)}%" title="${esc(p.mid)} = ${esc(String(p.valor))}"></div>`;
+        }).join("");
+        const flag = (eje.optimo != null)
+          ? `<div class="moptflag" style="left:${pos(eje.optimo)}%">▼ óptimo ${esc(String(eje.optimo))}</div>` : "";
+        escala = `<div class="mbanda">${banda}${ticks}${flag}</div>`;
+      }
+      return `<div class="cseccion"><b>${esc(eje.titulo)}</b><span>${eje.puntos.length}</span></div>`
+        + `<div class="mnota">${esc(eje.nota)}</div>` + escala + `<div class="mcards">${cards}</div>`;
+    }).join("");
+  box.querySelectorAll(".mcard").forEach(el => el.onclick = () => abrirMid(el.dataset.mid));
+}
+"""
+
+
+# --- Matriz de testeo: ejes medidos vs óptimo ----------------------------------
+# NOTA ES: segundos medidos 2026-10-29 (matriz-txt2img.md). "optimo" es el
+# default del flujo base salvo evidencia (steps: M15 no justifica 3× tiempo).
+# La fuerza LoRA solo se midió @0.8: el rango 0.6–0.9 es de trabajo, no medido.
+SEGUNDOS = {"M01": 195.4, "M03": 175.3, "M04": 160.3, "M05": 165.4, "M06": 175.3,
+            "M07": 170.2, "M08": 160.3, "M14": 65.1, "M15": 210.4, "M16": 140.2,
+            "M17": 135.2, "M18": 135.3, "M19": 120.2, "M20": 190.4}
+
+EJES_MATRIZ = [
+    {"titulo": "Steps (SD 1.5, resto fijo)", "tipo": "numerico", "unidad": "steps",
+     "optimo": 30,
+     "nota": "Medido 10→65s · 30→195s · 50→210s. Óptimo 30: el detalle extra de 50 no justifica 3× tiempo.",
+     "puntos": [{"mid": "M14", "valor": 10}, {"mid": "M01", "valor": 30}, {"mid": "M15", "valor": 50}]},
+    {"titulo": "CFG", "tipo": "numerico", "unidad": "cfg", "optimo": 7,
+     "nota": "Medido 3 / 7 / 12. Óptimo 7.",
+     "puntos": [{"mid": "M16", "valor": 3}, {"mid": "M01", "valor": 7}, {"mid": "M17", "valor": 12}]},
+    {"titulo": "Resolución", "tipo": "categorias", "unidad": "", "optimo": "768×512",
+     "nota": "512² rápido (120s) · base 768×512 · 768² detalle (190s).",
+     "puntos": [{"mid": "M19", "valor": "512×512"}, {"mid": "M01", "valor": "768×512"}, {"mid": "M20", "valor": "768×768"}]},
+    {"titulo": "Sampler", "tipo": "categorias", "unidad": "", "optimo": "euler + normal",
+     "nota": "Base euler+normal vs dpmpp_2m+karras.",
+     "puntos": [{"mid": "M01", "valor": "euler + normal"}, {"mid": "M18", "valor": "dpmpp_2m + karras"}]},
+    {"titulo": "LoRA · fuerza", "tipo": "numerico", "unidad": "strength", "optimo": 0.8,
+     "min": 0.5, "max": 1.0, "banda": [0.6, 0.9],
+     "nota": "Medido SOLO @0.8 (160–175s). Rango de trabajo 0.6–0.9: falta barrerlo.",
+     "puntos": [{"mid": m, "valor": 0.8} for m in ["M03", "M04", "M05", "M06", "M07", "M08"]]},
+    {"titulo": "LoRA · identidad", "tipo": "categorias", "unidad": "", "optimo": None,
+     "nota": "Misma seed y prompt en todo: el delta visible ES el LoRA.",
+     "puntos": [{"mid": "M01", "valor": "sin LoRA"}, {"mid": "M03", "valor": "Archvizcg"},
+                {"mid": "M04", "valor": "sandiese"}, {"mid": "M05", "valor": "BrutalistTech"},
+                {"mid": "M06", "valor": "Le Corbusier"}, {"mid": "M07", "valor": "room"},
+                {"mid": "M08", "valor": "XSarchitectural"}]},
+]
 
 
 def plantilla_curso(gal):
@@ -284,6 +685,12 @@ def plantilla_curso(gal):
             '      <div id="notas-box"></div>\n'
             '      <h3 id="lora-titulo">LoRA — descarga y qué observar</h3>\n'
             '      <div id="lora-box"></div>')
+    h = inj(h, '<h3 id="lora-titulo">LoRA — descarga y qué observar</h3>\n'
+               '      <div id="lora-box"></div>',
+            '<h3 id="lora-titulo">LoRA — descarga y qué observar</h3>\n'
+            '      <div id="lora-box"></div>\n'
+            '      <h3 id="wf-titulo">Workflow .json</h3>\n'
+            '      <div id="wf-box"></div>')
     # (inyección JS de la caja LoRA: más abajo, tras el render de notas,
     # porque su ancla es la salida de esa inyección)
     h = inj(h, 'document.getElementById("full").classList.add("on");',
@@ -307,6 +714,13 @@ def plantilla_curso(gal):
             ' + esc(li.url) + "</a>" : "") : "";\n'
             '  if (lt) lt.style.display = li ? "" : "none";\n'
             '  if (lb) lb.style.display = li ? "" : "none";')
+    h = inj(h, '  if (lb) lb.style.display = li ? "" : "none";',
+            '  if (lb) lb.style.display = li ? "" : "none";\n'
+            '  const wb = document.getElementById("wf-box"), wt = document.getElementById("wf-titulo");\n'
+            '  if (wb) wb.innerHTML = r.workflow\n'
+            '    ? \'<a href="\' + esc(r.workflow) + \'" download>descargar \' + esc(r.workflow.split("/").pop()) + "</a>" : "";\n'
+            '  if (wt) wt.style.display = r.workflow ? "" : "none";\n'
+            '  if (wb) wb.style.display = r.workflow ? "" : "none";')
     # (la inyección del render de notas vive más arriba, junto a la de la caja LoRA)
     h = inj(h, '</style>', CSS_EXTRA + '</style>')
     h = inj(h, '<button class="btn" id="f-toggle" title="Mostrar u ocultar filtros">Filtros</button>',
@@ -321,8 +735,53 @@ def plantilla_curso(gal):
             'document.getElementById("j-toggle").onclick = () =>\n'
             '  document.getElementById("flujos").classList.toggle("oculto");\n'
             + JS_FLUJOS)
+    h = inj(h, '<button class="btn" id="j-toggle" title="Flujos del curso y notas">Flujos</button>',
+            '<button class="btn" id="j-toggle" title="Flujos del curso y notas">Flujos</button>\n'
+            '  <button class="btn activo" id="tab-repasadas" title="Imágenes repasadas">Repasadas</button>\n'
+            '  <button class="btn" id="tab-curso" title="Tarjetas de lo que arma el curso">Curso</button>')
+    # NOTA ES: reserva de espacio anti-CLS (el auditor lo exige): si la fila
+    # trae resolución ("768x512"), se fija como width/height del <img>. Con el
+    # CSS existente (width:100%; height:auto) no hay distorsión y el navegador
+    # reserva la caja antes de cargar: cero saltos de layout.
+    h = inj(h, 'img.src = IMG[String(r.__i)] || ""; img.loading = "lazy"; img.alt = (r.prompt||"").slice(0,80);',
+            'img.src = IMG[String(r.__i)] || ""; img.loading = "lazy"; img.alt = (r.prompt||"").slice(0,80);\n'
+            '      const dm = String(r.resolucion||"").match(/(\\d+)\\s*x\\s*(\\d+)/i);\n'
+            '      if (dm) { img.width = +dm[1]; img.height = +dm[2]; }')
+    h = inj(h, 'const img = document.createElement("img"); img.src = IMG[String(r.__i)]||""; img.loading="lazy";',
+            'const img = document.createElement("img"); img.src = IMG[String(r.__i)]||""; img.loading="lazy";\n'
+            '      const dm2 = String(r.resolucion||"").match(/(\\d+)\\s*x\\s*(\\d+)/i);\n'
+            '      if (dm2) { img.width = +dm2[1]; img.height = +dm2[2]; }')
+    h = inj(h, '<div id="facetas"></div>\n<div id="flujos" class="oculto"></div>',
+            '<div id="facetas"></div>\n<div id="flujos" class="oculto"></div>\n'
+            '<div id="curso-panel" class="oculto"></div>\n'
+            '<div id="carta-full" class="oculto"><div id="carta"></div></div>')
+    h = inj(h, 'const FLUJOS = __FLUJOS__;',
+            'const FLUJOS = __FLUJOS__;\nconst CURSO = __CURSO__;\nconst TEMA = __TEMA__;')
+    h = inj(h, 'document.getElementById("j-toggle").onclick = () =>\n'
+               '  document.getElementById("flujos").classList.toggle("oculto");',
+            'document.getElementById("j-toggle").onclick = () =>\n'
+            '  document.getElementById("flujos").classList.toggle("oculto");\n'
+            + JS_SOLAPA)
     h = inj(h, '\npintar();\n\n// ------------------------------------------------- actualización',
-            '\npintar(); pintarFlujos();\n\n// ------------------------------------------------- actualización')
+            '\nboot();\n\n// ------------------------------------------------- actualización')
+    # NOTA ES: intensidad del LoRA en la tarjeta del mosaico y del lienzo
+    # (la Polaroid ya la muestra). Sin strength (M01, parámetros), solo nombre/tipo.
+    h = inj(h, 'p.textContent = l.nombre.replace(/\\.safetensors$/,""); pills.appendChild(p);',
+            'p.textContent = l.nombre.replace(/\\.safetensors$/,"") + (l.strength != null ? " @" + l.strength : ""); pills.appendChild(p);')
+    h = inj(h, 'n.appendChild(img); n.appendChild(b);',
+            'const pl = document.createElement("div"); pl.className = "pills";\n'
+            '      (r.loras||[]).slice(0,1).forEach(l => {\n'
+            '        const pp = document.createElement("span"); pp.className = "pill";\n'
+            '        pp.textContent = l.nombre.replace(/\\.safetensors$/,"") + (l.strength != null ? " @" + l.strength : ""); pl.appendChild(pp);\n'
+            '      });\n'
+            '      n.appendChild(img); n.appendChild(b); n.appendChild(pl);')
+    h = inj(h, '<div id="curso-panel" class="oculto"></div>',
+            '<div id="curso-panel" class="oculto"></div>\n<div id="matriz-panel" class="oculto"></div>')
+    h = inj(h, '<button class="btn" id="tab-curso" title="Tarjetas de lo que arma el curso">Curso</button>',
+            '<button class="btn" id="tab-curso" title="Tarjetas de lo que arma el curso">Curso</button>\n'
+            '  <button class="btn" id="tab-matriz" title="Matriz de testeo: medido vs óptimo">Matriz</button>')
+    h = inj(h, 'const TEMA = __TEMA__;',
+            'const TEMA = __TEMA__;\nconst MATRIZ = __MATRIZ__;')
     return h
 
 
@@ -376,12 +835,15 @@ def construir_filas(repasadas, indexador, gal):
         fila["flujo"] = rep.get("flujo", "—")
         fila["titulo"] = rep.get("titulo", os.path.basename(ruta))
         fila["notas"] = rep.get("notas", "")
+        fila["workflow"] = rep.get("workflow", "")
+        fila["mid"] = os.path.basename(rep.get("archivo", "")).split("_")[0]
+        fila["segundos"] = SEGUNDOS.get(fila["mid"])
         fila["abs_archivo"] = ruta
         filas.append(fila)
     return filas
 
 
-def copiar_y_generar(filas, out, gal, flujos, links):
+def copiar_y_generar(filas, out, gal, flujos, links, curso, tema):
     """Copia las imágenes a img-curso/ y escribe curso.html + curso-datos.json."""
     img_dir = os.path.join(out, "img-curso")
     if os.path.isdir(img_dir):
@@ -405,7 +867,10 @@ def copiar_y_generar(filas, out, gal, flujos, links):
             .replace("__IMG__", json.dumps(mapa, ensure_ascii=False))
             .replace("__VERSION__", json.dumps(version))
             .replace("__FLUJOS__", json.dumps(flujos, ensure_ascii=False))
-            .replace("__LINKS__", json.dumps(links, ensure_ascii=False)))
+            .replace("__LINKS__", json.dumps(links, ensure_ascii=False))
+            .replace("__CURSO__", json.dumps(curso, ensure_ascii=False))
+            .replace("__TEMA__", json.dumps(tema, ensure_ascii=False))
+            .replace("__MATRIZ__", json.dumps(EJES_MATRIZ, ensure_ascii=False)))
     with open(os.path.join(out, "curso.html"), "w", encoding="utf-8") as f:
         f.write(html)
     with open(os.path.join(out, "curso-datos.json"), "w", encoding="utf-8") as f:
@@ -631,7 +1096,7 @@ def main():
             rep = json.load(f).get("repasadas", [])
         filas = construir_filas(rep, indexador, gal)
         sincronizar_workflows(FLUJOS)
-        return copiar_y_generar(filas, out, gal, FLUJOS, LINKS)
+        return copiar_y_generar(filas, out, gal, FLUJOS, LINKS, construir_curso(), TEMA)
 
     version, n = una_pasada()
     print("Tablero del curso generado: %s" % os.path.join(out, "curso.html"))

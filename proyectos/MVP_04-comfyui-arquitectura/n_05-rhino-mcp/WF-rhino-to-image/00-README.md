@@ -34,6 +34,8 @@ Del texto del curso: *"The clay is the base for the edit LoRA: keep it clean, mo
 | [[proyectos/MVP_04-comfyui-arquitectura/n_05-rhino-mcp/WF-rhino-to-image/prompt-rhino-to-image-instruction-md|prompt-rhino-to-image-instruction-md]] | Convierte (volumetría + foto de material) en prompt JSON; pide tipo de edificio y ubicación |
 | [[proyectos/MVP_04-comfyui-arquitectura/n_05-rhino-mcp/WF-rhino-to-image/prompt-rhino-to-gaudi-instruction-md|prompt-rhino-to-gaudi-instruction-md]] | Reinterpreta la geometría en arcilla con la lógica de Gaudí (variante B, nombra a Gaudí) |
 | [[proyectos/MVP_04-comfyui-arquitectura/n_05-rhino-mcp/WF-rhino-to-image/prompt-rhino-to-image-esqueleto-json|prompt-rhino-to-image-esqueleto-json]] | La plantilla JSON de salida (la que va al CLIPTextEncode) |
+| [[proyectos/MVP_04-comfyui-arquitectura/n_05-rhino-mcp/WF-rhino-to-image/prompt-rhino-to-image-creativity-json-short|prompt-rhino-to-image-creativity-json-short]] | Modo convergente: massing + foto estética → JSON único sin option cards (CREATIVITY 9/10, versión corta) |
+| [[proyectos/MVP_04-comfyui-arquitectura/n_05-rhino-mcp/WF-rhino-to-image/prompt-rhino-to-image-creativity-json-full|prompt-rhino-to-image-creativity-json-full]] | Referencia canónica del modo convergente: workflow, tabla de inputs, template JSON y Rules & Constants |
 
 ## Orden de lectura
 

@@ -1,0 +1,16 @@
+%% R4 — Máquina de estados de una tarea (contrato + gobernanza A-D)
+stateDiagram-v2
+    [*] --> Pendiente : pide con file_ref + idem_key
+    Pendiente --> Validando : valida riesgo + file_ref
+    Validando --> EnEspera : C/D sin aprobación
+    Validando --> Ejecutando : A/B o C/D aprobada
+    EnEspera --> Ejecutando : aprueba en canal origen
+    EnEspera --> Cancelada : rechaza o vence
+    Ejecutando --> Hecha : outputs + provenance
+    Ejecutando --> Fallida : error + motivo
+    Ejecutando --> NoDisponible : runner apagado
+    Hecha --> Stale : versión nueva del insumo
+    Stale --> Pendiente : propone rehacer
+    Fallida --> Pendiente : reintenta con misma idem_key
+    Hecha --> [*]
+    Cancelada --> [*]

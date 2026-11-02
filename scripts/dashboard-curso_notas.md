@@ -32,6 +32,10 @@ roto a medias.
 - **`construir_filas()`** suma `lora_info`: cruza el primer LoRA del PNG con
   `LORAS` y arrastra `strength` desde la metadata (la que la galería ya muestra
   como `@ 0.8`). Sin LoRA del catálogo, `lora_info` es `None` y la caja se oculta.
+- **`construir_filas()`** suma `workflow`: ruta relativa del `.json` del grafo
+  (campo `workflow` del manifiesto, ej. `workflows/matriz-M01.json`). La
+  Polaroid lo muestra en `#wf-box` como link de descarga (misma carpeta del
+  sitio, sin backend). Sin workflow, título y caja se ocultan.
 - **Cirugía extra (2 anclas más, total 15)**:
   - HTML: tras `#notas-box`, `<h3 id="lora-titulo">` + `<div id="lora-box">`.
   - JS: tras el render de notas, arma la caja con concatenación (`+`, no
@@ -80,6 +84,16 @@ roto a medias.
 - **`manifiesto_inicial()`** — si no existe `curso.json`, lo crea con M01
   (baseline) y M03 (verificación visual hecha). Después crece a mano: agregar
   una fila y regenerar.
+- **`TEMA` + `construir_curso()`** — solapa Curso 1:1 del tablero Miro: cada
+  entrada tiene su tarjeta (qué es, a qué refiere, módulo, dónde corre) con
+  lista de links. Links SOLO con HTTP 200 verificado (CSV, inventario Miro,
+  los 3 del curso); lo demás queda "ver Miro". Clic en tarjeta → fullscreen
+  (`abrirCarta` + overlay `#carta-full`, cierra con ✕, fondo o Escape).
+- **Cirugía de solapas (5 anclas más)**: botones Repasadas/Curso en la barra,
+  `<div id="curso-panel">` de área completa, `CURSO`/`TEMA` como JSON,
+  `pintarCurso()` (banner del tema + tarjetas agrupadas por categoría con
+  badge de color por dónde corre) + `solapa()` que alterna las vistas, y
+  `pintarCurso()` en el arranque.
 - **`sincronizar_workflows()` + `aplicar_anotaciones()` + `huella_contenido()`**
   — el sync escribe la copia GX solo si falta o si la fuente cambió (huella
   del grafo SIN anotaciones: quita nodos `GX ·` y títulos gestionados). Tus
@@ -100,6 +114,13 @@ roto a medias.
 - **`main()`** — CLI (`--out`, `--curso`, `--serve`, `--una-vez`), una pasada,
   informe por terminal. Sin `--serve` termina; el servidor de la galería que
   ya corre (8890) sirve `curso.html` igual porque vive en la misma carpeta.
+- **`SEGUNDOS` + `EJES_MATRIZ` + solapa Matriz** — la matriz de testeo como
+  gráfico: 6 ejes (steps, cfg, resolución, sampler, LoRA·fuerza, LoRA·identidad)
+  con lo MEDIDO (miniaturas + segundos, clic = Polaroid) contra el ÓPTIMO
+  (bandera ▼; banda sombreada = rango de trabajo 0.6–0.9 en fuerza).
+  `mid` (M01…) y `segundos` viajan en cada fila; `MATRIZ` se inyecta como JSON.
+  La intensidad del LoRA también se lee en la tarjeta (pill `@ 0.8` en mosaico
+  y lienzo; la Polaroid ya la mostraba).
 
 ## Cómo agregar una repasada (flujo de trabajo)
 

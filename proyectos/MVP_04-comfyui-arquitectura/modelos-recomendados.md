@@ -1,9 +1,9 @@
 ---
 tipo: guia
 mvp: 04
-version: 1.1.0
+version: 1.4.0
 fecha_creacion: 2026-07-17
-ultima_actualizacion: 2026-07-19
+ultima_actualizacion: 2026-11-01
 tags: [mvp_04, modelos, comfyui, hardware, arquitectura]
 ---
 
@@ -18,7 +18,9 @@ Tarjeta AMD RX 570 con 8GB VRAM, corriendo ComfyUI vía DirectML. Modelos recome
 | #   | Modelo                               | Tipo             | VRAM                     | Calidad  | Velocidad | Descarga                                                                                  | Licencia   |
 | --- | ------------------------------------ | ---------------- | ------------------------ | -------- | --------- | ----------------------------------------------------------------------------------------- | ---------- |
 | 1   | **ArchitectureRealmix v1.1**         | Checkpoint SD1.5 | ✅ ya instalado           | ⭐⭐⭐      | ⚡⚡⚡       | [CivitAI](https://civitai.com/models/84958/architecturerealmix)                           | OpenRAIL-M |
-| 2   | **Juggernaut XL v9**                 | Checkpoint SDXL  | ⬇️ descargando (7.11 GB) | ⭐⭐⭐⭐⭐    | ⭐⚡⚡       | [HF: RunDiffusion/Juggernaut-XL-v9](https://huggingface.co/RunDiffusion/Juggernaut-XL-v9) | OpenRAIL++ |
+| 2   | **Juggernaut XL v9**                 | Checkpoint SDXL  | ✅ instalado (6.62 GiB)   | ⭐⭐⭐⭐⭐    | ⭐⚡⚡       | [HF: RunDiffusion/Juggernaut-XL-v9](https://huggingface.co/RunDiffusion/Juggernaut-XL-v9) | OpenRAIL++ |
+| 2b  | **RealVisXL V5.0 fp16 BakedVAE**     | Checkpoint SDXL  | ✅ instalado (6.46 GiB) 2026-11-01 | ⭐⭐⭐⭐⭐    | ⭐⭐⚡⚡      | [CivitAI v789646 fp16](https://civitai.com/models/139562?modelVersionId=789646) · [doc parámetros](https://civitai.com/models/139562) | merge OpenRAIL, **licencia a confirmar en ficha antes de uso comercial** |
+| 2c  | **RealVisXL V5.0 Lightning fp16 BakedVAE** | Checkpoint SDXL destilado | ✅ instalado (6.46 GiB) 2026-11-01 | ⭐⭐⭐⭐     | ⚡⚡⚡⚡      | [CivitAI v798204 fp16](https://civitai.com/models/139562?modelVersionId=798204) · [doc parámetros](https://civitai.com/models/139562) | merge OpenRAIL, **licencia a confirmar en ficha antes de uso comercial** |
 | 3   | **Z-Image Turbo GGUF Q4_K_S**        | Checkpoint (DiT) | ~4GB                     | ⭐⭐⭐⭐     | ⚡⚡⚡⚡      | [HF: city96/Z-Image-Turbo-GGUF](https://huggingface.co/city96/Z-Image-Turbo-GGUF)         | Apache 2.0 |
 | 4   | **Z-Image Base GGUF Q4_K_S**         | Checkpoint (DiT) | ~6GB                     | ⭐⭐⭐⭐⭐    | ⚡⚡        | [HF: city96/Z-Image-Base-GGUF](https://huggingface.co/city96/Z-Image-Base-GGUF)           | Apache 2.0 |
 | 5   | **Flux schnell GGUF Q4_K_S**         | Checkpoint (DiT) | ~8GB                     | ⭐⭐⭐⭐⭐    | ⚡⚡⚡       | [HF: city96/FLUX.1-schnell-GGUF](https://huggingface.co/city96/FLUX.1-schnell-GGUF)       | Apache 2.0 |
@@ -31,18 +33,53 @@ Tarjeta AMD RX 570 con 8GB VRAM, corriendo ComfyUI vía DirectML. Modelos recome
 
 #### Modelos instalados actualmente
 
-| Archivo | Tipo | Tamaño | Estado |
-|---------|------|--------|--------|
-| `architecturerealmix_v11.safetensors` | Checkpoint SD1.5 | 2.1 GB | ✅ Instalado |
-| `Juggernaut-XL_v9_RunDiffusionPhoto_v2.safetensors` | Checkpoint SDXL | 7.11 GB | ⬇️ Descargando |
-| `control_v11p_sd15_canny.safetensors` | ControlNet SD1.5 FP16 | 689 MB | ✅ Instalado |
-| `control_v11f1p_sd15_depth_fp16.safetensors` | ControlNet SD1.5 FP16 | 689 MB | ✅ Instalado |
+> Leyenda comercial: ✅ = uso comercial permitido · ⚠️ = limitado/condicional (leer condiciones) · ⛔ = NO comercial.
+> `Image/Rent/Sell` = valores de `allowCommercialUse` en Civitai (`Image` vender imágenes, `Rent` ofrecer generación como servicio, `Sell` vender el modelo/merges; `RentCivit` = solo dentro de Civitai). Open RAIL-M/++ = licencias StabilityAI/RunDiffusion: los outputs son tuyos, con restricciones por escrito.
+
+**CHECKPOINTS instalados**
+
+| Archivo | Base / peso | Para qué sirve | Comercial | Licencia / condiciones |
+|---------|-------------|----------------|-----------|------------------------|
+| `architecturerealmix_v11.safetensors` | SD 1.5 · 2.1 GB | Arquitectura/urbano/interior fotorreal liviano | ⛔ **NO** | El autor lo prohíbe explícitamente ([Civitai 84958](https://civitai.com/models/84958)): solo estudio personal; ni enseñanza sin su permiso + atribución. **Solo tests internos, nunca láminas de cliente** |
+| `Juggernaut-XL_v9_RunDiffusionPhoto_v2.safetensors` | SDXL · 6.62 GiB | Fotorrealismo general, probado en agencias | ✅ con límite | [Open RAIL-M](https://huggingface.co/RunDiffusion/Juggernaut-XL-v9) + cláusula RunDiffusion: **prohibido desplegarlo detrás de APIs pagas** sin licencia (`juggernaut@rundiffusion.com`). Renders para clientes OK |
+| `realvisxlV50_v50Bakedvae.safetensors` | SDXL fp16 · 6.46 GiB | Calidad final (30-35 steps) | ✅ | Open RAIL++-M ([realvisxl.com](https://realvisxl.com/)). SHA256 verificado 2026-11-01 |
+| `realvisxlV50_v50LightningBakedvae.safetensors` | SDXL fp16 destilado · 6.46 GiB | Iteración rápida (4-6 steps, CFG 1-2) | ✅ | Idem anterior. SHA256 verificado 2026-11-01 |
+| `sd-v1-5-inpainting-fp16.safetensors` | SD 1.5 · 2.1 GB | Inpaint/outpaint | ✅ | Open RAIL-M (base `runwayml/stable-diffusion-inpainting`) |
+
+**LORAS instaladas**
+
+| Archivo | Base | Para qué sirve | Comercial | Licencia / condiciones |
+|---------|------|----------------|-----------|------------------------|
+| `ArcvizXL_V01.safetensors` | SDXL 870 MB | Interior + exterior archviz | ✅ | `Image/Rent/Sell` ([Civitai 549260](https://civitai.com/models/549260)) |
+| `Architecture_Building.safetensors` | SD 1.5 218 MB | Edificios públicos, vistas aéreas | ✅ | `Image/Rent/Sell` ([Civitai 100737](https://civitai.com/models/100737)) |
+| `markerhandsketch-V1.safetensors` | SD 1.5 9 MB | Croquis estilo marker | ✅ | `Image/Rent/Sell` ([Civitai 34384](https://civitai.com/models/34384)) |
+| `Architectural_Massing.safetensors` | SDXL 218 MB | Massing/conceptos volumétricos | ⚠️ solo RentCivit | Sin `Image`: NO vender imágenes fuera de Civitai ([Civitai 724833](https://civitai.com/models/724833)) |
+| `JJ_Archvizcg_v2.safetensors` | SDXL? 144 MB | Hoteles/edificios (jjhuang) | ⚠️ solo RentCivit | Idem anterior |
+| `sandiese.safetensors` | SD 1.5 36 MB | Conceptos arquitectura | ⛔ | `allowCommercialUse` vacío |
+| `xsarchitectural-10superhighrise… .safetensors` | SDXL? 36 MB | Supertorres (familia XSarchitectural) | ⛔ probable | La familia XSarchitectural declara `[]` (verificado en 5 variantes) |
+| `archisketch-v1.safetensors` | ? 18 MB | Boceto arquitectónico | ⚠️ origen sin confirmar | No matchea CWG (ese prohíbe comercial explícito). Verificar hash vs ficha antes de usar |
+| `SLskyscraperrenderingXL_V1.0.safetensors` | SDXL 870 MB | Rascacielos render | ⚠️ origen sin confirmar | Sin match en Civitai. Verificar antes de uso comercial |
+| `landscape_architecture_sketch.safetensors` · `isometric-v1.safetensors` · `BrutalistTech-20.safetensors` · `room.safetensors` · `bookstore-xl.safetensors` · `baroque_architecture-….safetensors` · `Le Corbusier … .safetensors` | varios | varios | ⚠️ ver ficha | Buscar cada nombre en Civitai y leer `allowCommercialUse` |
+| `rhino-to-image-lora.basic.safetensors` | FLUX.2 121 MB | LoRA del curso Gaudí (interno) | ✅ propio | Entrenado por el estudio |
+
+**CONTROLNET + UPSCALER**
+
+| Archivo | Para qué sirve | Comercial | Licencia / condiciones |
+|---------|----------------|-----------|------------------------|
+| `control_v11p_sd15_canny/depth_fp16/scribble.safetensors` | Control geométrico SD 1.5 | ✅ | `openrail` (lllyasviel). Derivados fp16 comunitarios |
+| `RealESRGAN_x4plus.pth` | Upscale final | ⚠️ confirmar | Código BSD-3-Clause; pesos sin restricción adicional declarada — confirmar antes de producción masiva |
+
+**Regla operativa del estudio**: para láminas/entregables de cliente usar SOLO filas ✅ (Juggernaut con su cláusula, RealVisXL, ArcvizXL, Architecture_Building, markerhandsketch, inpainting, ControlNets lllyasviel). Todo lo ⛔/⚠️ queda para exploración interna salvo verificación escrita en esta tabla.
 
 #### Sugeridos para descargar (próximos)
 
-| Modelo | Tipo | Tamaño aprox. | Por qué | Link |
-|--------|------|----------------|---------|------|
-| **RealArchMix XL v2.0** | Checkpoint SDXL | 6.94 GB | Específico arquitectura, interiores + exteriores | [HF: John6666/realarchmix-xl-v20-sdxl](https://huggingface.co/John6666/realarchmix-xl-v20-sdxl) |
+| Modelo | Tipo | Tamaño aprox. | Por qué | Link | Estado |
+|--------|------|---------------|---------|------|--------|
+| **RealArchvis XL v5.0** | Checkpoint SDXL | 6.46 GiB | Específico arquitectura | [CivitAI 533040](https://civitai.com/models/533040) | ⛔ **Generation-Only por decisión del creador** (verificado en ficha 2026-11-01): NO descargable por diseño — ni login ni token lo destraban. Uso: solo onsite con Buzz (subasta ~10-20 k/semana). Vigilar mirror en [CivArchive](https://civarchive.com/models/533040) |
+| **RealArchmix XL v3.5** (jjhuang) | Checkpoint SDXL fp16 | 6.46 GiB | Espacios+arquitectura/interior/paisaje, compatible con sus LoRAs | [CivitAI 1323614](https://civitai.com/models/1323614?modelVersionId=2066579) | ⛔ Bloqueado 2026-11-01: `requires login` (SHA256 B6C880D8FC8884AD…). **Se destraba con cuenta+token Civitai** |
+| **Natty Realistic SDXL v2.0** | Checkpoint SDXL fp16 | 6.46 GiB | Fotorreal general, 78 reviews muy positivas (ago-2025) | [CivitAI 1884205](https://civitai.com/models/1884205/natty-realistic-sdxl) | ✅ Descarga abierta + espejos TensorArt/SeaArt — candidato D-modelo |
+| **Juggernaut XL v13 Ragnarok** | Checkpoint SDXL | 6.6 GiB | Mejora anatomía/manos vs v9-v11 (feb-2026, según InsiderLLM) | Buscar "Juggernaut Ragnarok" en Civitai | Candidato a probar (verificar descarga anónima antes) |
+| **RealArchMix XL v2.0** | Checkpoint SDXL | 6.94 GB | Específico arquitectura, interiores + exteriores | [HF: John6666/realarchmix-xl-v20-sdxl](https://huggingface.co/John6666/realarchmix-xl-v20-sdxl) | ⚠️ Formato diffusers/ (carpeta, no .safetensors único) — no prioritario |
 | **Z-Image Turbo GGUF Q4_K_S** | Checkpoint DiT | ~4 GB | Turbo 8 pasos, ideal para iteración rápida | [HF: city96/Z-Image-Turbo-GGUF](https://huggingface.co/city96/Z-Image-Turbo-GGUF) |
 | **Flux schnell GGUF Q4_K_S** | Checkpoint DiT | ~8 GB | 4 pasos, máxima velocidad | [HF: city96/FLUX.1-schnell-GGUF](https://huggingface.co/city96/FLUX.1-schnell-GGUF) |
 | **4x_foolhardy_Remacri** | Upscaler | ~100 MB | Upscale renders finales | [HF: locon/4x_foolhardy_Remacri](https://huggingface.co/locon/4x_foolhardy_Remacri) |
@@ -52,10 +89,11 @@ Tarjeta AMD RX 570 con 8GB VRAM, corriendo ComfyUI vía DirectML. Modelos recome
 
 **Orden de instalación sugerido:**
 
-1. ✅ **ArchitectureRealmix v1.1** — Ya instalado. Arrancá acá para tests inmediatos (SD 1.5, liviano).
-2. ⬇️ **Juggernaut XL v9** — El mejor fotorrealismo SDXL. Funciona para arquitectura, interiores, exteriores, y todo tipo de renders. **Cabe en 8GB** pero justo — usar resolución 832x1216 o 1216x832.
-3. ⬇️ **Z-Image Turbo GGUF Q4_K_S** — Alternativa ligera turbo (~4GB) para iteración rápida.
-4. ⬇️ **4x_foolhardy_Remacri** — Upscale de renders finales sin perder calidad.
+1. ✅ **ArchitectureRealmix v1.1** — Ya instalado. SOLO tests internos: su licencia **prohíbe uso comercial** (ver cuadro). Para láminas de cliente usar RealVisXL/Juggernaut.
+2. ✅ **Juggernaut XL v9** — Instalado. Fotorrealismo SDXL para arquitectura, interiores, exteriores.
+3. ✅ **RealVisXL V5.0 + Lightning (2026-11-01)** — Instalados. Lightning para iteración rápida (4-8 pasos), estándar para calidad final.
+4. ⬇️ **Z-Image Turbo GGUF Q4_K_S** — Alternativa ligera turbo (~4GB) para iteración rápida.
+5. ⬇️ **4x_foolhardy_Remacri** — Upscale de renders finales sin perder calidad.
 
 **Configuración Juggernaut XL v9 en tu hardware:**
 
@@ -69,7 +107,36 @@ VAE: Ya incluido en el checkpoint
 Upscale: 4xNMKD-Siax_200k, 15 steps, 0.3 denoise, 1.5x
 ```
 
-**Configuración AMD DirectML:**
+**Configuración RealVisXL V5.0 en tu hardware (verificado 2026-11-01):**
+
+```bash
+# Lightning (fase R rápida — doc oficial del creador)
+Sampler: DPM++ SDE Karras (o DPM++ SDE)
+Steps: 4-6
+CFG: 1-2.5
+Resolution fase R: 768x512 / 1024x640
+Negative: (worst quality, low quality, illustration, 3d, 2d, painting, cartoons, sketch), open mouth
+ENSD: 31337 (opcional, semilla de ruido del creador)
+
+# Estándar V5.0 (fase Q calidad)
+Sampler: DPM++ SDE Karras (30+ steps) o DPM++ 2M Karras (50+ steps)
+Steps: 30-35
+CFG: 3-4
+Resolution: 1216x832 (landscape) / 832x1216 (portrait)
+Negative: blurry, low quality, distorted, watermark, text, signature, cartoon, illustration,
+          warped perspective, melting geometry, bent windows (+ people si vacía)
+
+# Hires Fix (ambos, doc oficial)
+Upscaler: 4x-UltraSharp o 4x-NMKD-Superscale
+Denoise: 0.1-0.3 (Lightning: 3 steps, denoise 0.5)
+Upscale: 1.1-1.5x
+```
+
+**Por qué estos dos archivos rinden en la RX 570:**
+- **fp16**: 6.46 GiB vs 12.92 GiB del fp32 — la mitad de VRAM en pesos
+- **BakedVAE**: el servidor tiene `models/vae/` VACÍO — sin VAE horneado estos checkpoints no decodificarían
+- **Lightning destilado**: 4-6 pasos en vez de 30-50 → cada test de la fase R tarda minutos, no 651 s
+- **Flags ya activos en tu línea de arranque** (verificados en el proceso vivo PID 5176): `--directml 0 --force-fp16 --disable-cuda-malloc --lowvram --cpu-vae --disable-dynamic-vram
 
 ```bash
 # Lanzar ComfyUI con soporte AMD
@@ -137,6 +204,18 @@ Para cuando se necesite potencia sin inversión inicial:
 - Sesión de render intensiva (4h): ~$1.60-$3.20
 - Iteración diaria (1h): ~$0.40/día → ~$8/mes
 - vs. Comfy Cloud: $20/mes base + créditos
+
+**Tiers gratuitos (sin RunPod ni cloud pago) — verificado 2026-11-01:**
+
+| Vía | Cuota | Uso para el estudio |
+|-----|-------|---------------------|
+| **Kaggle** | ~30 h GPU/semana (T4x2), sesiones 12 h. Requiere teléfono + Internet ON | ComfyUI entero en notebook para tandas pesadas (video LTX, FLUX). Apagar al terminar |
+| **HF ZeroGPU** | 5 min GPU/día (2 min anónimo) | Probar un checkpoint en un Space antes de descargarlo (51 Spaces RealVisXL V5) |
+| **Lightning AI** | 15 créditos/mes | Desarrollo puntual |
+| **Comfy Cloud free** | 400 créditos | 1-2 corridas de referencia |
+| Google Colab free | T4 variable, límites no publicados | ⚠️ Riesgo de ToS con SD — no plan A |
+
+Detalle completo: [[wiki/glosario/software/proveedores-modelos-ia|proveedores-modelos-ia]] § GPU gratis.
 
 ## Guía de instalación de modelos
 

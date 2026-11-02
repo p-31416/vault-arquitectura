@@ -1,0 +1,24 @@
+{
+  "1": {
+    "class_type": "GeminiImageNode",
+    "inputs": {
+      "prompt": "Aerial mandala view of a fractal plaza path in front of Sagrada Familia Barcelona, sinuous walkable parabolic shell following Gaudi catenaries, branching IFS pattern in 3 scales, prefabricated fractal market modules clustered along the path, Voronoi phyllotaxis paving with recycled ceramic trencadis, green pockets with shrubs where the fractal opens, green roof over sunken reinterpretation museum below the shell with circular skylight oculi, people walking above looking down into museum, double circulation above and below, Eixample city blocks around, morning light, photorealistic urban render, highly detailed",
+      "model": "gemini-2.5-flash-image",
+      "seed": 42,
+      "aspect_ratio": "16:9"
+    },
+    "_meta": {
+      "title": "Nano Banana (requiere login Comfy org con créditos)"
+    }
+  },
+  "2": {
+    "class_type": "SaveImage",
+    "inputs": {
+      "filename_prefix": "fractal-hires/nanobanana",
+      "images": [
+        "1",
+        0
+      ]
+    }
+  }
+}

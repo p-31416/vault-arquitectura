@@ -2,8 +2,8 @@
 tipo: playbook
 codigo: pbk-agentes-vaultarq
 fecha_creacion: 2026-09-09
-ultima_actualizacion: 2026-10-20
-tags: [pbook, agentes, opencode, vaultworm-arq, brainstormy, subagent]
+ultima_actualizacion: 2026-10-30
+tags: [pbook, agentes, opencode, vaultworm-arq, brainstormy, tim, comfyui, subagent]
 ---
 
 # pbk-agentes-vaultarq — Agentes del vault
@@ -15,6 +15,7 @@ tags: [pbook, agentes, opencode, vaultworm-arq, brainstormy, subagent]
 - [[brainstormy — facilitador]])
 - [[fathom-pm — PM de reuniones]])
 - [[contenidos — curador academia]])
+- [[tim — director creativo]])
 - [[Comparativa]])
 - [[Cómo agregar un agente nuevo]])
 - [[Ejecución online (backlog)]])
@@ -30,6 +31,7 @@ tags: [pbook, agentes, opencode, vaultworm-arq, brainstormy, subagent]
 | `@fathom-pm` | subagent | 0.3 | Reuniones Fathom → `specs/` (SPEC/PLAN/TASKS/OKRs) → Leantime, regla pomodoro | Tras cada reunión + on-demand | `.opencode/agents/fathom-pm.md` |
 | `@contenidos` | subagent | 0.3 | Extiende la ficha de @sherlock (videos OBS + PDF/video manual) → reporte `raw/contenidos/` legible HITL → `wiki/fuentes/` con `s` (glosario vía `@vaultworm-arq`) | Tras ficha aprobada + on-demand | `.opencode/agents/contenidos.md` |
 | `@sherlock` | subagent | 0.2 | Investigador GENERAL tema libre (humano/redes/legado/papers/software manual-primero) bilingüe ES/EN+IT → `raw/research/` → `¿Avanzo?` → `@vaultworm-arq` + código paralelo anotado | On-demand (`@sherlock investiga <tema>`) | `.opencode/agents/sherlock.md` |
+| `@tim` | subagent | 0.4 | Director creativo de ComfyUI: idea/croquis/referencia → prompt (dialecto por modelo) + flujo de nodos + `workflow_*.json`; valida contra MCP, checklist pre-`s`, registra corridas | On-demand (`@tim prompt/flujo/flux2/video/json`) | `.opencode/agents/tim.md` |
 
 ## vaultworm-arq — bibliotecario
 
@@ -57,15 +59,21 @@ tags: [pbook, agentes, opencode, vaultworm-arq, brainstormy, subagent]
 
 **Frontera con @sherlock (2026-10-20):** la división es **la ficha de extracción aprobada por SOL**. `@sherlock` busca, descarga y extrae (transcripción + ficha en `raw/pdf/`) y entrega un stub en `raw/contenidos/`; `@contenidos` **extiende** esa ficha (template, resumen, destinos, tags) y con `s` la pasa a `wiki/fuentes/`. Las citas de una ficha se tratan como **candidatos**: se verifican (nivel 1), se listan y esperan `s` por fuente (nivel 2); nunca se encadenan solas (nivel 3). Un contenedor (special issue, repositorio) es *hub*, no fuente.
 
+## tim — director creativo
+
+**Cómo está conformado (código):** frontmatter + `temperature: 0.4` (balance: repite receta, propone variantes) + permisos con **deny por ruta**: `edit: {"*": allow, "wiki/**": deny, "activos/**": deny, ".git/**": deny}` + `bash: deny` + MCP selectivo (`comfyui_*` + `rhino_*` allow; `leantime_*`/`n8n_*`/`fathom_*`/`autocad_*`/`autodesk_*` deny). Cuerpo: Frontera + Delegación (sherlock/explore: traer, no decidir) + Misión 7 pasos (intake ≤2 preguntas → modelo → prompt → flujo → validar con MCP → registrar receta → siguiente paso) + Tabla de decisión + Plancha local + Léxico cine/foto + Reglas duras + Checklist antes del `s`.
+
+**Qué hace:** prompt + flujo SIEMPRE juntos, en el dialecto del modelo (keywords+negativo SD; prosa FLUX.1; prosa o JSON de 10 claves FLUX.2 — Iwan Baan, Phase One IQ4, 6 hex, film stock, referente real distinto por option card). Valida con `comfyui_get_system_stats` / `comfyui_list_local_models` / `comfyui_validate_workflow` antes de pedir el `s`; con `s` ejecuta y registra en el log del WF + índice [[proyectos/MVP_04-comfyui-arquitectura/prompt-coach/04-bitacora-corridas|04-bitacora-corridas]]. Plancha local RX 570: architecturerealmix_v11 (SD 1.5), Juggernaut-XL_v9 (SDXL), sd-v1-5-inpainting-fp16; FLUX/video queda con tag `requiere RunPod/Cloud`. **Cuándo:** on-demand (`@tim prompt/flujo/flux2/video/json`). Detail completo del uso: [[wiki/glosario/interno/pbooks/pbk-comfy-agent|pbk-comfy-agent]].
+
 ## Comparativa
 
-| | vaultworm-arq | brainstormy | fathom-pm | contenidos | sherlock |
-|---|---|---|---|---|---|
-| Temp | 0.3 (criterio) | 0.85 (cantidad) | 0.3 (criterio) | 0.3 (criterio) | 0.2 (criterio) |
-| Output | digest + propuestas wiki | ideas + Top 3 + JTBD | specs/ + plan pomodoro | reporte `raw/contenidos/` + `wiki/fuentes/` | informe `raw/research/` + ficha `raw/pdf/` |
-| Escribe wiki | solo `glosario/**` con `avanza` | solo si hay teoría nueva | `specs/` con `¿Avanzo?` | `wiki/fuentes/**` con `s` | nunca — entrega ficha y stub |
-| Trigger auto | sí (schedule diario) | no (mención) | no (tras reunión) | no (tras grabar/manual) | no (`@sherlock investiga <tema>`) |
-| Intake | `raw/sessions/` | prompt | `raw/reuniones/` | `activos/videos/` + manual SOL | web (`websearch/webfetch`) |
+| | vaultworm-arq | brainstormy | fathom-pm | contenidos | sherlock | tim |
+|---|---|---|---|---|---|---|
+| Temp | 0.3 (criterio) | 0.85 (cantidad) | 0.3 (criterio) | 0.3 (criterio) | 0.2 (criterio) | 0.4 (balance) |
+| Output | digest + propuestas wiki | ideas + Top 3 + JTBD | specs/ + plan pomodoro | reporte `raw/contenidos/` + `wiki/fuentes/` | informe `raw/research/` + ficha `raw/pdf/` | prompt + flujo + `workflow_*.json` + fila en bitácora |
+| Escribe wiki | solo `glosario/**` con `avanza` | solo si hay teoría nueva | `specs/` con `¿Avanzo?` | `wiki/fuentes/**` con `s` | nunca — entrega ficha y stub | nunca — `wiki/**` en deny de config |
+| Trigger auto | sí (schedule diario) | no (mención) | no (tras reunión) | no (tras grabar/manual) | no (`@sherlock investiga <tema>`) | no (`@tim prompt/flujo…`) |
+| Intake | `raw/sessions/` | prompt | `raw/reuniones/` | `activos/videos/` + manual SOL | web (`websearch/webfetch`) | prompt/croquis/vista Rhino + MCP ComfyUI |
 
 ## Cómo agregar un agente nuevo
 

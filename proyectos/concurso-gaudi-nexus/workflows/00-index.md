@@ -2,7 +2,7 @@
 tipo: indice
 proyecto: concurso-gaudi-nexus
 fecha_creacion: 2026-10-28
-ultima_actualizacion: 2026-10-28
+ultima_actualizacion: 2026-11-02
 tags: [concurso, gaudi-nexus, workflows, comfyui, runpod]
 idioma: es
 ---
@@ -10,6 +10,10 @@ idioma: es
 # Workflows del concurso — siete flujos, uno por módulo
 
 > Cada workflow se construye y se revisa **uno por uno**: grafo → validación estática → tres corridas A y una B → revisión de Sol → cierre en v1.0. El plan completo está en [[specs/261028-plan-workflows-adaptados-curso-ai-gaudi|plan maestro]].
+>
+> **Matriz de pruebas (organizada por flujos)**: [[proyectos/concurso-gaudi-nexus/workflows/00-matriz-pruebas-concurso|00-matriz-pruebas-concurso]] · **Cuadro ampliable** en `00-matriz-pruebas-concurso.excalidraw.md` (zoom/pan en Obsidian) + PNG en `activos/diagramas/matriz-pruebas-concurso.png`.
+>
+> **Set SDXL solo-vista**: [[proyectos/concurso-gaudi-nexus/workflows/sdxl-vista/01-index|sdxl-vista]] — un flujo por WF (01–07) para abrir en ComfyUI con drag-and-drop, sin ejecutar ni validar (R4 pendiente).
 
 ## Mapa
 

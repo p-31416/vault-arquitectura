@@ -1,7 +1,7 @@
 ﻿---
 tipo: indice
 fecha_creacion: 2026-10-30
-ultima_actualizacion: 2026-10-30
+ultima_actualizacion: 2026-11-02
 tags: [studio-os, guia-lectura, emilia, explicar-sistema]
 idioma: es
 ---
@@ -70,6 +70,14 @@ Se puede saltear sin culpa: ESTRUCTURA §10 (los 6 ADR son para decidir, no para
 - **Decisiones de construcción abiertas**: [[proyectos/MVP_07-studio-os-sistema/REQUISITOS#10 · Decisiones abiertas (con impacto y momento)\|REQUISITOS §10]] (250) — dónde vive el modelo, Tailscale vs alternativas, Rhino 8 vs 9, DPA de Runpod.
 
 ## 6 · Fuera de esta carpeta, pero a mano
+
+Novedades nov-2026, mismo sistema PI con rol holoarquitecto:
+
+- [[specs/261101-tabula-rasa-arquitecto-futuro-pi-os|Tabula rasa + PI OS]] — voz primigenia + arquitectura MVP 2 personas escalable a mediana.
+- [[specs/261102-plan-maestro-pi-por-temas|Plan maestro T1-T9]] — MCPs, modelos L0-L4, licencias, lámina Gaudí, loop moodboard→LoRA.
+- [[specs/261102-system-overview-pi|System overview]] — entry points → Hermes → backends N1-N4.
+- [[diagramas/pi-system-ingenieria|Ingeniería C4]] — contenedores, componentes, despliegue, ER, casos C-01 a C-13, estados, journeys.
+- [[specs/261101-guion-visual-pi-remotion|Guion + video 86 s]] — holoarquitecto, empresa sintética, storyboard.
 
 - [[proyectos/STUDIO_OS-Emilia/00-index|STUDIO_OS-Emilia]] — el piloto: fases comerciales, entregables y documentación vigente.
 - [[proyectos/STUDIO_OS-Emilia/04-plan-studio-os|Plan Studio OS v0.1]] — arquitectura de sistemas y roadmap modular previo.

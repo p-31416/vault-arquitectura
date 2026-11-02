@@ -46,6 +46,7 @@ Pay-as-you-go con modelos `cost=0` gratis incluso con key real. Anon: `OPENCODE_
 | `@fathom-pm` | subagent | 0.3 | Reuniones Fathom → `specs/` → Leantime (pomodoro) | `.opencode/agents/fathom-pm.md` |
 | `@contenidos` | subagent | 0.3 | Videos academia OBS → `wiki/estudio/` + pbooks | `.opencode/agents/contenidos.md` |
 | `@sherlock` | subagent | 0.2 | Investigador GENERAL tema libre bilingüe ES/EN+IT doc-oficial-primero → `raw/research/` HITL | `.opencode/agents/sherlock.md` |
+| `@tim` | subagent | 0.4 | Director creativo de ComfyUI → prompt (dialecto por modelo) + flujo + bitácora de corridas; MCP `comfyui_*`/`rhino_*` allow, resto deny; `wiki/**` en deny de config | `.opencode/agents/tim.md` |
 
 Registro completo (misión, triggers, permisos, cómo agregar uno): [[wiki/glosario/interno/pbooks/pbk-agentes-vaultarq|pbk-agentes-vaultarq]].
 
@@ -55,7 +56,7 @@ Registro completo (misión, triggers, permisos, cómo agregar uno): [[wiki/glosa
 
 ## Permissions y modo
 
-Cada agente declara `permission:` por herramienta (`read/grep/glob` allow, `bash` deny en ambos). `edit: allow` con `write` restringido a sus rutas: vaultworm-arq solo `raw/vaultworm-arq/` + `wiki/glosario/**` con `¿Avanzo?`; brainstormy solo `raw/brainstorm/` + `wiki/` si hay teoría nueva. Secrets vía `{env:}` nunca hardcodeados — ver capa OpenCode en [[wiki/glosario/interno/pbooks/pbk-config_ctas_git_github_opencode|pbk-config_ctas_git_github_opencode]].
+Cada agente declara `permission:` por herramienta (`read/grep/glob` allow, `bash` deny en ambos). `edit: allow` con `write` restringido a sus rutas: vaultworm-arq solo `raw/vaultworm-arq/` + `wiki/glosario/**` con `¿Avanzo?`; brainstormy solo `raw/brainstorm/` + `wiki/` si hay teoría nueva; tim usa restricción **por patrón en la config** (`edit: {"*": allow, "wiki/**": deny, "activos/**": deny}` — el último match gana, ver docs de permisos). Secrets vía `{env:}` nunca hardcodeados — ver capa OpenCode en [[wiki/glosario/interno/pbooks/pbk-config_ctas_git_github_opencode|pbk-config_ctas_git_github_opencode]].
 
 ## Servidores MCP del vault
 

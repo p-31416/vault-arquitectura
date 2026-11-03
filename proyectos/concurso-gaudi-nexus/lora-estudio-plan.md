@@ -89,7 +89,7 @@ idioma: es
 1. **Outputs de klein 9B como training data de un LoRA comercial:** la FLUX Non-Commercial License regula el uso del modelo y sus outputs; usar esos renders para entrenar un artefacto Apache 2.0 que se publica es zona gris → leer la cláusula exacta del texto de licencia de BFL.
 2. **Derechos sobre imágenes de obra de Gaudí** usadas en el moodboard (fotos de terceros: fotógrafos, Fundació) — qué puede entrar al dataset y con qué crédito.
 3. **El concurso:** ¿usar los renders con premio en metálico cuenta como uso comercial bajo Non-Commercial? (pregunta ya abierta en la ficha del LoRA del curso).
-4. **Precedentes:** estudios que publicaron LoRAs de estilo con su marca (qué licencia aplicaron y cómo redactaron el model card).
+4. **Precedentes:** resuelto en [[proyectos/concurso-gaudi-nexus/lora-precedentes-estudios|lora-precedentes-estudios]] (Nire Haus Artchitecture Non-Commercial sobre dev, mnml.ai ARCHVIZ con JSON workflow + funnel, Arch Soul Apache 2.0 versionado). Lección: sobre klein 4B publicamos Apache 2.0; sobre 9B/dev heredamos Non-Commercial.
 
 ## 7. Experimento E1 — primer `¿Avanzo?`
 
@@ -101,6 +101,7 @@ idioma: es
 
 ## 8. Conceptos relacionados
 
+- [[proyectos/concurso-gaudi-nexus/lora-precedentes-estudios|lora-precedentes-estudios]] — precedentes estudios con LoRA de marca (licencia + model card)
 - [[proyectos/MVP_04-comfyui-arquitectura/INDICE-RENDERS|INDICE-RENDERS]] — los 80 renders con metadata (dataset candidato)
 - [[proyectos/concurso-gaudi-nexus/index|concurso-gaudi-nexus]] — el proyecto
 - [[wiki/glosario/software/lora-rhino-to-image-gaudi|lora-rhino-to-image-gaudi]] — el LoRA del curso (receta de referencia)
@@ -116,6 +117,9 @@ idioma: es
 - `https://runpod.io/pricing` (2026-10-08: 3090 Community $0,22/h, 4090 $0,34/h, A5000 $0,16/h)
 - README `kohya-ss/sd-scripts` — FLUX.2 klein fuera de su matriz de soporte
 - `education.civitai.com` — upload wizard, licencias, on-site trainer
+- Guía oficial on-site trainer (verificada 2026-11-02): https://education.civitai.com/using-civitai-the-on-site-lora-trainer — bases, motores Kohya/AI-Toolkit/Musubi, retención 30 días
+- Guía oficial Training Studio (2026-10-26): https://education.civitai.com/civitais-guide-to-training-studio/
+- Comparativa CivitAI vs pod y veredicto: [[proyectos/concurso-gaudi-nexus/workflows/00-conclusiones|00-conclusiones]] §11
 
 ## 10. Contexto leído
 

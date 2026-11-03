@@ -44,6 +44,17 @@ degrade.
 **Sin dependencias.** Solo stdlib (`argparse`, `json`, `shutil`, `struct`,
 `urllib`, `datetime`). No necesita Pillow ni servidor: funciona con `file://`.
 
+## Modo embebido (para Emilia)
+
+```powershell
+P:\Anaconda\envs\comfyenv\python.exe scripts\dashboard-concurso.py --embebido proyectos\STUDIO_OS-Emilia\presentacion\dashboard-concurso.html
+```
+
+Genera un solo HTML autocontenido con miniaturas JPEG 520 px en base64
+(~50–80 KB por imagen): viaja por mail/WhatsApp y se commitea sin meter
+binarios a git. La versión full-res queda en `activos/web/concurso/` para
+revisión fina en Obsidian/pantalla grande.
+
 ## Para agregar una corrida
 
 1. Encolar en ComfyUI y anotar el `prompt_id`.

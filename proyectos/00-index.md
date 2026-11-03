@@ -30,6 +30,7 @@ _Índice de todos los proyectos del estudio._
 
 ## Referencias
 
+- [[proyectos/00-sistema-estudio|Sistema del estudio]] — el sistema de una persona (AutoCAD + planillas + Comfy + agente), a nivel vault
 - [[proyectos/prefijos-documentacion|Prefijos de documentación]] — guía de nomenclatura `readme-`, `00-filo-`, `01-spec-`, `02-ft-`, `03-log-`, `lisp-`
 
 ## Template

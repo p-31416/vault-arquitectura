@@ -17,15 +17,22 @@ Por qué existe:
 Cómo se usa:
     python scripts\\dashboard-concurso.py
     python scripts\\dashboard-concurso.py --out activos/web/concurso --comfy http://127.0.0.1:8188
+    python scripts\\dashboard-concurso.py --embebido proyectos/STUDIO_OS-Emilia/presentacion/dashboard-concurso.html
 
 Salida:
     activos/web/concurso/index.html   (HTML + CSS + JS en un solo archivo)
     activos/web/concurso/datos.json   (los datos, por si se quieren reusar)
     activos/web/concurso/img/         (copia de los PNG, sin reescalar)
+    Con --embebido: un solo HTML autocontenido (miniaturas base64) en la ruta
+    pedida, listo para compartir y commitear.
 """
 
 # NOTA ES: argparse = leer opciones de la línea de comandos sin if/else manual.
 import argparse
+# NOTA ES: base64 = embeber la miniatura dentro del HTML (vista para compartir).
+import base64
+# NOTA ES: io.BytesIO = guardar el JPEG en memoria sin archivo temporal.
+import io
 # NOTA ES: json = escribir y leer datos estructurados (el datos.json y el embed).
 import json
 # NOTA ES: os.path = armar rutas de archivos de forma portable (join, dirname).
@@ -123,6 +130,33 @@ ITEMS = [
             "segundos_fijo": 444.68,
         },
     ]
+
+
+try:
+    # NOTA ES: PIL solo hace falta para el modo embebido (miniaturas JPEG).
+    from PIL import Image
+except ImportError:
+    Image = None
+
+
+def thumb_b64(ruta, ancho=520):
+    """Devuelve la imagen como data URI JPEG de hasta 520 px de ancho.
+
+    NOTA ES: 520 px con calidad 80 deja cada thumb en ~50-80 KB: las 8
+    NOTA ES: corridas entran en ~0,5 MB y el HTML viaja por mail/WhatsApp.
+    """
+    if Image is not None:
+        im = Image.open(ruta).convert("RGB")
+        if im.width > ancho:
+            im = im.resize((ancho, round(im.height * ancho / im.width)))
+        buf = io.BytesIO()
+        im.save(buf, "JPEG", quality=80, optimize=True, progressive=True)
+        return "data:image/jpeg;base64," + base64.b64encode(
+            buf.getvalue()).decode("ascii")
+    # NOTA ES: sin PIL se embebe el PNG tal cual (pesa más, pero no se pierde nada).
+    with open(ruta, "rb") as f:
+        return "data:image/png;base64," + base64.b64encode(f.read()).decode(
+            "ascii")
 
 
 def medir_png(ruta):
@@ -275,10 +309,15 @@ document.addEventListener("keydown", e => {
 """
 
 
-def generar(raiz, out, comfy):
-    """Copia las imágenes y escribe el sitio. Devuelve cuántas entradas hizo."""
+def generar(raiz, out, comfy, embebido=False, nombre_html="index.html"):
+    """Copia las imágenes y escribe el sitio. Devuelve cuántas entradas hizo.
+
+    NOTA ES: con embebido=True no se copian PNG: cada imagen viaja como
+    NOTA ES: miniatura base64 dentro del HTML (versión para compartir).
+    """
     img_dir = os.path.join(out, "img")
-    os.makedirs(img_dir, exist_ok=True)   # NOTA ES: exist_ok=True = si ya existe, no falla.
+    if not embebido:
+        os.makedirs(img_dir, exist_ok=True)   # NOTA ES: exist_ok=True = si ya existe, no falla.
 
     datos = []
     for item in ITEMS:
@@ -286,8 +325,6 @@ def generar(raiz, out, comfy):
         if not os.path.isfile(origen):
             print("  falta: %s" % item["archivo"])
             continue
-        nombre = item["slug"] + ".png"
-        shutil.copy2(origen, os.path.join(img_dir, nombre))   # NOTA ES: copia byte a byte: NO se reescala.
         ancho, alto = medir_png(origen)
         seg = segundos_de_history(comfy, item["prompt_id"])
         if seg is None:
@@ -295,8 +332,16 @@ def generar(raiz, out, comfy):
             if seg is not None:
                 print("  %s: tiempo de respaldo %ss" % (item["slug"], seg))
         print("  %-16s %sx%s  %ss" % (item["slug"], ancho, alto, seg))
+        if embebido:
+            img = thumb_b64(origen)   # NOTA ES: data URI lista para el <img src>.
+            nombre = "(embebido)"
+        else:
+            nombre = item["slug"] + ".png"
+            shutil.copy2(os.path.join(raiz, item["archivo"]),
+                         os.path.join(img_dir, nombre))   # NOTA ES: copia byte a byte: NO se reescala.
+            img = "img/" + nombre
         datos.append({
-            "img": "img/" + nombre,
+            "img": img,
             "modelo": item["modelo"],
             "checkpoint": item["checkpoint"],
             "workflow": item["workflow"],
@@ -315,7 +360,7 @@ def generar(raiz, out, comfy):
     html = (HTML
             .replace("__DATOS__", json.dumps(datos, ensure_ascii=False))
             .replace("__RESUMEN__", resumen))
-    with open(os.path.join(out, "index.html"), "w", encoding="utf-8") as f:
+    with open(os.path.join(out, nombre_html), "w", encoding="utf-8") as f:
         f.write(html)
     with open(os.path.join(out, "datos.json"), "w", encoding="utf-8") as f:
         json.dump({"generado": datetime.now().isoformat(timespec="seconds"),
@@ -327,9 +372,22 @@ def main():
     ap = argparse.ArgumentParser(description="Tablero polaroid de las corridas del concurso.")
     ap.add_argument("--out", default="activos/web/concurso", help="carpeta del sitio")
     ap.add_argument("--comfy", default="http://127.0.0.1:8188", help="URL del ComfyUI")
+    ap.add_argument("--embebido", default=None, metavar="RUTA.html",
+                    help="genera versión autocontenida (miniaturas base64) en RUTA.html, lista para compartir")
     args = ap.parse_args()
 
     raiz = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # NOTA ES: la raíz del vault es el padre de scripts/.
+    if args.embebido:
+        # NOTA ES: el HTML compartible vive en presentacion/ (commiteado); las
+        # NOTA ES: imágenes full-res quedan en activos/ (fuera de git).
+        destino = os.path.abspath(os.path.join(raiz, args.embebido))
+        out = os.path.dirname(destino)
+        os.makedirs(out, exist_ok=True)
+        print("Generando embebido %s" % destino)
+        n = generar(raiz, out, args.comfy, embebido=True,
+                    nombre_html=os.path.basename(destino))
+        print("Listo: %d imágenes (miniaturas embebidas)" % n)
+        return
     out = os.path.abspath(os.path.join(raiz, args.out))
     os.makedirs(out, exist_ok=True)
 

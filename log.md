@@ -9,6 +9,14 @@ tags: [log, historico]
 
 Más nuevo → más arriba
 
+## 2026-11-02 — Membrana catenaria Kangaroo: .gh v1/v2 + trazabilidad a fuentes
+
+- **Definición paramétrica** `activos/proyectos/concurso-gaudi-nexus/grasshopper/membrana-catenaria.gh` → `v2` (34 objetos, 41 cables, 0 obsoletos, verificado por API): `MeshPlane` → anclas en 4 esquinas → `EdgeLengths` + `Load` → `Solver` → espejo en XY a bóveda → `Show` + `TriRemesh`. Después: esquinas a altura independiente (`H1–H4`) y malla de piso con depresión editable (`Prof` vía `Point Deform`). Sin columnas: apoya en el plano `z=0`.
+- **En escena Rhino**: membrana doble curvatura (catenaria X 7,5/0,6 × Y 8/0,8 invertida, 10 apoyos) + teselado triangular `s=1,2` + capas `CASCARA/CAMINO/VERDE/APOYOS/PISO/PROGRAMA_M2`. Loft reglado anterior eliminado (175 objetos), capas renombradas a definitivo.
+- **Fix v2**: el `Anchor` recibía 121 vértices contra 4 objetivos (`Index out of range` en cascada) → ahora `Anchor.P` toma las 4 esquinas.
+- **Trazabilidad documentada** en [[proyectos/concurso-gaudi-nexus/membrana-catenaria-gh|membrana-catenaria-gh]]: Parametric Monkey (verificado 200) + Makert Fig. 6 10×10 con carga puntual (verificado 200, réplica `fig6-malla-10x10.gh` pendiente de puente activo). Fila agregada en el índice del concurso.
+- **Puente Rhino intermitente** (`10061`/`10054`): cae y se relanza con `_RunPythonScript "…\scripts\rhino-mcp-server-rhino.py"`. Nota: `import math` + `def` que usa `math` falla en el servidor MCP ( scope ); resuelto con bucles inline.
+
 ## 2026-11-02 — Plan maestro PI por temas: MCPs, modelos, licencias y lámina Gaudí + System Overview + set ingeniería punto por punto + guion alineado + índice maestro
 
 - **Índice** `00-index.md` con sección Specs y diagramas nov-2026 (5 specs + ingeniería C4 + mapa PI) y fecha al 2026-11-02. **GUIA-LECTURA** §6 con lo nuevo nov-2026. Html sin "provisional": holoarquitecto como rol que dirige.

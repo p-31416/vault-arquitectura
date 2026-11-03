@@ -21,10 +21,13 @@ tags: [concurso, gaudi-nexus, barcelona, comfyui, workflows, rhino, fundacio-gau
 
 | Carpeta | Contenido | Puerta de entrada |
 |---------|-----------|------------------|
-| `WF-curso/` | Un documento por flujo (curso + WF SDXL + JSON) + verbatim origen y detalle SDXL, mira Miro y videos | [[proyectos/concurso-gaudi-nexus/WF-curso/00-index\|WF-curso/00-index]] |
+| `workflows/WF-curso/` | Un documento por flujo (curso + WF SDXL + JSON) + verbatim origen y detalle SDXL, mira Miro y videos | [[proyectos/concurso-gaudi-nexus/workflows/WF-curso/00-index\|WF-curso/00-index]] |
 | `workflows/` | Siete workflows ejecutables, uno por módulo, en orden de curso | [[proyectos/concurso-gaudi-nexus/workflows/00-index\|workflows/00-index]] |
 | `criterio/` | El checklist del jurado que cierra cada workflow | [[proyectos/concurso-gaudi-nexus/criterio/criterio-jurado\|criterio-jurado]] |
 | `reinterpretacion-programa-fractal.md` | Precepto rector: camino fractal, cáscara habitable y museo bajo plaza | [[proyectos/concurso-gaudi-nexus/reinterpretacion-programa-fractal\|reinterpretacion-programa-fractal]] |
+| `membrana-catenaria-gh.md` | Membrana catenaria paramétrica: método, archivos `.gh` y fuentes (Parametric Monkey + Makert Fig. 6) | [[proyectos/concurso-gaudi-nexus/membrana-catenaria-gh\|membrana-catenaria-gh]] |
+| `02-briefing-punto-a-punto.md` | Briefing punto a punto: encuadre, curso, entrega, legales | [[proyectos/concurso-gaudi-nexus/02-briefing-punto-a-punto\|02-briefing-punto-a-punto]] |
+| `03-programa-punto-a-punto.md` | Programa punto a punto: 1500-2000 m², A-E, doble hipótesis | [[proyectos/concurso-gaudi-nexus/03-programa-punto-a-punto\|03-programa-punto-a-punto]] |
 
 ## El plan
 
@@ -34,7 +37,7 @@ tags: [concurso, gaudi-nexus, barcelona, comfyui, workflows, rhino, fundacio-gau
 
 - **Tablero polaroid del concurso**: `activos/web/concurso/index.html` — las 4 corridas 01/11 (baseline + hires ×3) con modelo y segundos medidos, lista para revisión keeper/descartar de Sol.
 - [[proyectos/concurso-gaudi-nexus/workflows/00-matriz-pruebas-concurso|Matriz de pruebas]] — ~59 corridas previstas, 4 ejecutadas, con veredicto pendiente.
-- [[proyectos/concurso-gaudi-nexus/WF-curso/01-index-sdxl-vista|Set sdxl-vista]] — 7 WF listos para abrir en ComfyUI (R4 pendiente antes de la primera corrida).
+- [[proyectos/concurso-gaudi-nexus/workflows/WF-curso/01-index-sdxl-vista|Set sdxl-vista]] — 7 WF listos para abrir en ComfyUI (R4 pendiente antes de la primera corrida).
 
 ## Cómo se trabaja
 

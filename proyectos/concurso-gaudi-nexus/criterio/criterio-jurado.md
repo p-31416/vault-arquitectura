@@ -12,7 +12,7 @@ idioma: es
 
 > Este documento es el **criterio de aceptación** de los siete workflows: cada punto que salga del módulo 6 (Round Table, con Cas Esbach) se convierte en un check que el workflow tiene que satisfacer para pasar a v1.0.
 >
-> **Estado: borrador.** La fuente es la transcripción local del módulo 6, que está pendiente (ver [[proyectos/concurso-gaudi-nexus/WF-curso/flujo-06-round-table|flujo-06]]). El esqueleto de abajo ya está en uso: cada ficha de flujo trae su sección "Checks contra el criterio del jurado", y esos checks son la primera versión de este checklist.
+> **Estado: borrador.** La fuente es la transcripción local del módulo 6, que está pendiente (ver [[proyectos/concurso-gaudi-nexus/workflows/WF-curso/flujo-06-round-table|flujo-06]]). El esqueleto de abajo ya está en uso: cada ficha de flujo trae su sección "Checks contra el criterio del jurado", y esos checks son la primera versión de este checklist.
 
 ## De dónde sale la tesis
 
@@ -53,4 +53,4 @@ De ahí se derivan tres criterios que el estudio puede verificar en cada workflo
 
 ## Conceptos relacionados
 
-- [[proyectos/concurso-gaudi-nexus/WF-curso/flujo-06-round-table|Ficha del módulo 6]] · [[proyectos/concurso-gaudi-nexus/WF-curso/flujo-07-gaudi-workflow|Ficha del módulo 7]] · [[proyectos/concurso-gaudi-nexus/workflows/00-index|Workflows del concurso]] · [[specs/261028-plan-workflows-adaptados-curso-ai-gaudi|Plan maestro]] · [[specs/261019-plan-concurso-gaudi-nexus-ia|Plan del concurso]]
+- [[proyectos/concurso-gaudi-nexus/workflows/WF-curso/flujo-06-round-table|Ficha del módulo 6]] · [[proyectos/concurso-gaudi-nexus/workflows/WF-curso/flujo-07-gaudi-workflow|Ficha del módulo 7]] · [[proyectos/concurso-gaudi-nexus/workflows/00-index|Workflows del concurso]] · [[specs/261028-plan-workflows-adaptados-curso-ai-gaudi|Plan maestro]] · [[specs/261019-plan-concurso-gaudi-nexus-ia|Plan del concurso]]

@@ -19,17 +19,43 @@ Inpainting simple con SDXL para arquitectura: se pinta una máscara sobre la fot
 
 - `workflow_YT-01-sdxl-inpainting.json` (misma carpeta): **reconstrucción local** a partir de la transcripción, no el archivo del autor.
 - Archivo del autor (`Inpaint-SDXL-Architecture.json`): tras paywall de Patreon (USD 7,99, https://www.patreon.com/posts/simple-sdxl-135304292). Sin acceso: no copiar ni redistribuir; la reconstrucción es trabajo propio.
+- Checkpoint del video: **Juggernaut XL versión Ragnarok** (Civitai 133005, modelVersionId 1759168, `juggernautXL_ragnarok.safetensors`, 6,62 GiB). La reconstrucción usa v9 (instalado local); el swap es solo `ckpt_name` tras descargar Ragnarok.
 
 ## 3. Modelo y LoRA
 
 | Pieza | Dato del video | Link / estado |
 |---|---|---|
-| Checkpoint | Juggernaut XL | https://civitai.com/models/133005/juggernaut-xl · espejo HF https://huggingface.co/RunDiffusion/Juggernaut-XL-v9 |
+| Checkpoint | **EXACTO (pantalla)**: `juggernautXL_ragnarokBy.safetensors` = Ragnarok oficial (mismo SHA256 `dd08fa32…`, 6,62 GiB; el "By" es renombre de réplica, mismos bytes) | https://civitai.com/models/133005 (versión Ragnarok, modelVersionId 1759168; con tu token descarga directo) |
 | Base | SDXL 1.0 | corre en la RX 570 local |
-| LoRA | "custom LoRA for archviz", sin nombre ni link en el video | sin identificar; candidatos del estudio en [[proyectos/concurso-gaudi-nexus/WF-curso/00-modelos-sdxl-a-probar|00-modelos-sdxl-a-probar]] |
+| LoRA | **EXACTO (pantalla)**: `XL_sdxlaang_Aerial-Render.safetensors`, strength_model 0,85 / strength_clip 1,00 — archivo del autor, no publicado en abierto (sale del pack Patreon/Udemy). Ver §3.1 | variantes descargables en §3.2 |
+| ControlNet | **EXACTO (pantalla)**: `XL_controlnet-union-sdxl_promax.safetensors` (Union de xinsir) + `DepthAnythingPreprocessor` (comfyui_controlnet_aux), strength 0,15 | https://huggingface.co/xinsir/controlnet-union-sdxl-1.0 |
 | Licencia checkpoint | Open RAIL-M + cláusula RunDiffusion | ver §2 de 00-modelos-sdxl-a-probar |
 
-La reconstrucción usa solo el checkpoint (sin LoRA) para que valide y corra tal cual; el LoRA se agrega como paso opcional.
+La reconstrucción usa checkpoint v9 (instalado) sin LoRA para que valide y corra tal cual; Ragnarok y LoRA se agregan como paso opcional.
+
+### 3.1 Receta exacta del video (leída en pantalla, frames verificados)
+
+- `VAE Encode (for Inpainting)` con `grow_mask_by 6` (no `SetLatentNoiseMask`: el video usa el nodo de inpainting dedicado a denoise 1,0).
+- `KSampler`: `uni_pc_bh2` + `normal`, 30 steps, cfg 3,5, denoise 1,00, seed aleatoria.
+- `Image Resize by Longer Side` (comfyui-various): lado mayor a 1024, bicúbico — así entra la foto y la máscara coincide con el latente.
+- `Apply ControlNet`: strength **0,15** (solo ata morfología, no manda).
+- Positivo demo 1 (visible): "Tree, greenery…"; negativo visible: "watermark, text…".
+- Nodos extra a instalar: `comfyui-various` (resize) y `comfyui_controlnet_aux` (DepthAnything); el resto es core.
+
+### 3.2 Variantes descargables (cuando el exacto no está en abierto)
+
+El video menciona un LoRA de archviz y usa renders aéreos; ninguno con nombre público. Candidatos verificados en Civitai (requieren `CIVITAI_API_TOKEN`; hoy sin configurar las descargas dan 401):
+
+| LoRA | Uso | Trigger | Tamaño | Link |
+|---|---|---|---|---|
+| JJ's Archviz Birdview (XL v2.0) | vistas aéreas / birdview archviz | — (sin trigger publicado) | 435 MB | https://civitai.com/models/194584 |
+| Aerial Simulation \| Virtual Aerial Camera (v2.0) | cámara aérea virtual | `aerial photography` | 169 MB | https://civitai.com/models/123756 |
+| JJ's Archiviz architectural perspective (XL v2.0) | perspectiva arquitectónica | `Archiviz` | 870 MB | https://civitai.com/models/191596 |
+| Arcviz_Interior&Exterior (ArchvizXL_V01) | interior + exterior (el citado en WF-02) | `archviz 1` | 870 MB | https://civitai.com/models/549260 |
+| JZCGXL026-Aerial view (v1.0) | vista aérea | `jzcgxl001, aerial view` | 435 MB | https://civitai.com/models/363965 |
+| ArchViz Workflow (v1.0) | liviano para probar la cadena | `archviz` | 36 MB | https://civitai.com/models/2280607 |
+
+Uso: `LoraLoader` entre checkpoint y sampler, strength 0,6–0,8, y el trigger en el positivo. Probar primero el liviano (36 MB) para validar la cadena y después el pesado.
 
 ## 4. Nodos y docs oficiales
 
@@ -72,11 +98,12 @@ Una variable por corrida; el resto del grafo intacto.
 | T4 | Agregar una ventana | paño ciego | "punched window, dark aluminum frame, glass with interior hint, aligned sill height" | 0,7 | antepecho alineado, marco a plomo |
 | T5 | Cambiar material | paño | "travertine stone cladding" vs "board-formed concrete" | 0,7 | junta y escala del material |
 
-Escalera de denoise si el relleno no cierra: 0,5 (conservador) → 0,65 → 0,8 (libre). Variante de modelo: repetir T1–T2 con RealVisXL v5.0 (`dpmpp_sde` + `karras`, 30 steps, negativo del autor, §6.3 de [[proyectos/concurso-gaudi-nexus/WF-curso/00-modelos-sdxl-a-probar|00-modelos-sdxl-a-probar]]).
+Escalera de denoise si el relleno no cierra: 0,5 (conservador) → 0,65 → 0,8 (libre). Variante de modelo: repetir T1–T2 con RealVisXL v5.0 (`dpmpp_sde` + `karras`, 30 steps, negativo del autor, §6.3 de [[proyectos/concurso-gaudi-nexus/workflows/WF-curso/00-modelos-sdxl-a-probar|00-modelos-sdxl-a-probar]]).
 
 ## 7. Pendientes
 
-- Identificar el LoRA de archviz del video (no publicado) o fijar uno del estudio.
+- Bajar con tu token: Ragnarok (mismos bytes que el video) + `controlnet-union-sdxl-1.0` promax + 1 LoRA liviano (ArchViz Workflow 36 MB) para validar la cadena.
+- El LoRA exacto (`XL_sdxlaang_Aerial-Render`) solo sale del pack del autor (Patreon/Udemy); mientras tanto las variantes de §3.2 cubren el rol.
 - Probar la rama ControlNet opcional cuando el relleno ignore la morfología.
 - Registrar corridas en [[proyectos/concurso-gaudi-nexus/workflows/00-matriz-pruebas-concurso|la matriz]] con modelo, segundos y veredicto.
 
@@ -84,6 +111,7 @@ Escalera de denoise si el relleno no cierra: 0,5 (conservador) → 0,65 → 0,8 
 
 - Video: https://www.youtube.com/watch?v=px8POauudLY
 - Patreon del autor (archivo original, pago): https://www.patreon.com/posts/simple-sdxl-135304292
-- Juggernaut XL: https://civitai.com/models/133005/juggernaut-xl
+- Juggernaut XL versión Ragnarok (video): https://civitai.com/models/133005 (versión Ragnarok, modelVersionId 1759168, `juggernautXL_ragnarok.safetensors`)
+- LoRAs candidatos: https://civitai.com/models/194584 (birdview) · https://civitai.com/models/123756 (aerial) · https://civitai.com/models/191596 (perspectiva) · https://civitai.com/models/549260 (archviz int+ext) · https://civitai.com/models/2280607 (liviano)
 - Curso gratuito del canal: https://www.udemy.com/course/introducing-stablediffusion-comfyui-for-architectsdesigners/
 - Inpainting oficial ComfyUI: https://docs.comfy.org/tutorials/basic/inpaint

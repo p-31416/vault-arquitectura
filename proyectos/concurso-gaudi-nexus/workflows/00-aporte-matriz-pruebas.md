@@ -79,7 +79,7 @@ De `proyectos/MVP_04.02-comfyui-arquitectura/WF-04-serie-txt2img/WF-04-serie-txt
 ## 8. Conceptos relacionados
 
 - [[proyectos/concurso-gaudi-nexus/index|concurso-gaudi-nexus]]
-- [[proyectos/concurso-gaudi-nexus/WF-curso/00-index-flujos-origen|flujos — fichas del curso]]
+- [[proyectos/concurso-gaudi-nexus/workflows/WF-curso/00-index-flujos-origen|flujos — fichas del curso]]
 - [[proyectos/MVP_04.02-comfyui-arquitectura/WF-04-serie-txt2img/WF-04-serie-txt2img|WF-04 — receta SDXL validada]]
 - [[proyectos/MVP_04-comfyui-arquitectura/reglas-workflows-comfy|reglas-workflows-comfy]]
 - [[proyectos/STUDIO_OS-Emilia/presentacion/dashboard-comfy.html|dashboard-comfy]] (referencia visual, no wikilink)

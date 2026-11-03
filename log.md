@@ -9,6 +9,19 @@ tags: [log, historico]
 
 Más nuevo → más arriba
 
+## 2026-11-02 — Cierre: programa H1750 sobre plaza + DXF + membrana verificada
+
+- Programa dibujado sobre CADMapper (templo 170 m en 490,623; mancha libre SO por mapa de ocupación): 8 polilíneas exactas H1750 = 1750,0 en capas `PROG-*` con rótulos y metadata. Corrección D: 240 → 262,5 (Admin 100 + Logist 112,5 + Aseos 50).
+- DXF `earth2rhino3d/salidas/programa-H1750.dxf` offline con ezdxf (8 capas/polys/textos, suma verificada) — `sc.doc.Export` de 5600 objs cuelga el worker MCP. **Pendiente: guardar el `.3dm`** (capas `PROG-*` solo en memoria).
+- Membrana `.gh` final verificada (36 objs, 0 errores con solve registrado). Réplica Fig. 6 Makert queda para próxima sesión con puente estable.
+- Sesión completa en [[raw/sessions/2026-11-02-sesion-programa-plaza-dxf-membrana|2026-11-02-sesion-programa-plaza-dxf-membrana]].
+
+## 2026-11-02 — Fix TriRemesh/Show con docs oficiales: Show-antes-del-Solver + ConstructMesh + Length
+
+- Diagnóstico con documentación oficial (grasshopperdocs + tutorial CMU de Kangaroo2): `TriRemesh.Target` espera una **malla** ("Optional different target mesh"), no un número → el slider `s_tri` va a **`Length`** ("Target edge length"). Y el `Show` va **antes** del Solver (su salida son goals, no geometría); la malla resuelta se extrae de `Solver.O` — como `O` trae un árbol mixto (mallas + líneas + números según el orden de goals), se reconstruye determinísticamente con `ConstructMesh` desde `Solver.V` (puntos, siempre estables) + caras originales. `Boundary Surfaces` antes del `Area` para el centroide del piso.
+- Verificación real: documento registrado en el `DocumentServer` + `NewSolution` + volcado por componente → **0 errores, 0 warnings en 36 objetos**. (Lección: el solve headless sin registrar no computa nada e informa limpio en falso.)
+- Queda un solo archivo: `membrana-catenaria.gh` (`-v2` eliminado). Trazabilidad actualizada en [[proyectos/concurso-gaudi-nexus/membrana-catenaria-gh|membrana-catenaria-gh]].
+
 ## 2026-11-02 — Membrana catenaria Kangaroo: .gh v1/v2 + trazabilidad a fuentes
 
 - **Definición paramétrica** `activos/proyectos/concurso-gaudi-nexus/grasshopper/membrana-catenaria.gh` → `v2` (34 objetos, 41 cables, 0 obsoletos, verificado por API): `MeshPlane` → anclas en 4 esquinas → `EdgeLengths` + `Load` → `Solver` → espejo en XY a bóveda → `Show` + `TriRemesh`. Después: esquinas a altura independiente (`H1–H4`) y malla de piso con depresión editable (`Prof` vía `Point Deform`). Sin columnas: apoya en el plano `z=0`.

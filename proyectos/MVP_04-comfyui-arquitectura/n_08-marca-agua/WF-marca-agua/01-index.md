@@ -15,7 +15,7 @@ idioma: es
 
 | v | Fecha | JSON | Cambios | Estado |
 |---|-------|------|---------|--------|
-| 1.1 | 2026-11-02 | `workflow_marca_agua.json` | +`ImageInvert`: la máscara de `LoadImage` es `1-alfa` y pegaba los píxeles transparentes (fondo negro) | R4 clases OK, pendiente re-corrida |
+| 1.1 | 2026-11-02 | `workflow_marca_agua.json` | +`ImageInvert`: la máscara de `LoadImage` es `1-alfa` y pegaba los píxeles transparentes (fondo negro) | OK en A-02 |
 | 1.0 | 2026-11-02 | `workflow_marca_agua.json` | overlay marca+mask, posición fija, opacidad por blend | bug fondo negro (corrida A-01) |
 
 ## Config mínima

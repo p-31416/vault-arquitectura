@@ -4,11 +4,11 @@
 
 | Campo | Valor |
 |---|---|
-| Carpeta indexada | `P:\00-repos\ComfyUI\output` |
-| Renders totales | 94 |
-| Con metadata | 94 |
+| Carpeta indexada | `P:/00-repos/ComfyUI/output` |
+| Renders totales | 119 |
+| Con metadata | 119 |
 | Sin metadata | 0 |
-| Fecha del índice | 2026-10-29 |
+| Fecha del índice | 2026-11-02 |
 
 ## Renders con metadata
 
@@ -108,6 +108,31 @@
 | 2026-10-29 14:15 | `matriz/sd15/M18` | architecturerealmix_v11.safetensors | — | 30/7.0 | dpmpp_2m | 42 | 768x512 |
 | 2026-10-29 14:17 | `matriz/sd15/M19` | architecturerealmix_v11.safetensors | — | 30/7.0 | euler_ancestral | 42 | 512x512 |
 | 2026-10-29 14:20 | `matriz/sd15/M20` | architecturerealmix_v11.safetensors | — | 30/7.0 | euler_ancestral | 42 | 768x768 |
+| 2026-10-30 01:12 | `WF04-1.0.0` | architecturerealmix_v11.safetensors | — | 30/7.0 | euler | 42 | 768x512 |
+| 2026-10-30 01:20 | `GX-plaza-gaudi` | architecturerealmix_v11.safetensors | — | 30/7.0 | euler | 42 | 768x512 |
+| 2026-11-01 20:26 | `paralelo-R01-baseline` | Juggernaut-XL_v9_RunDiffusionPhoto_v2.safetensors | — | 35/4.0 | dpmpp_2m | 42 | 1216x832 |
+| 2026-11-01 20:45 | `fractal-hires/juggernaut` | Juggernaut-XL_v9_RunDiffusionPhoto_v2.safetensors | — | 30/4.0 | dpmpp_2m | 42 | 1344x768 |
+| 2026-11-01 21:04 | `fractal-hires/realvisxl` | realvisxlV50_v50Bakedvae.safetensors | — | 30/4.0 | dpmpp_2m | 42 | 1344x768 |
+| 2026-11-01 21:11 | `fractal-hires/lightning` | realvisxlV50_v50LightningBakedvae.safetensors | — | 6/1.5 | dpmpp_2m | 42 | 1344x768 |
+| 2026-11-02 11:16 | `gx-WF01` | Juggernaut-XL_v9_RunDiffusionPhoto_v2.safetensors | — | 30/4.0 | dpmpp_2m | 7 | 512x512 |
+| 2026-11-02 11:33 | `gx-WF01` | realvisxlV50_v50Bakedvae.safetensors | — | 30/4.0 | dpmpp_2m | 1055706042293973 | 512x512 |
+| 2026-11-02 11:46 | `gx-WF01` | realvisxlV50_v50LightningBakedvae.safetensors | — | 30/4.0 | dpmpp_2m | 986804835912458 | 512x512 |
+| 2026-11-02 11:57 | `gx-WF01` | realvisxlV50_v50LightningBakedvae.safetensors | — | 30/1.5 | dpmpp_sde | 367606774601827 | 512x512 |
+| 2026-11-02 12:02 | `gx-WF01` | realvisxlV50_v50LightningBakedvae.safetensors | — | 5/1.5 | dpmpp_sde | 7 | 512x512 |
+| 2026-11-02 12:06 | `gx-WF01` | realvisxlV50_v50Bakedvae.safetensors | — | 5/1.5 | dpmpp_sde | 147708660281885 | 512x512 |
+| 2026-11-02 12:14 | `gx-WF01` | realvisxlV50_v50Bakedvae.safetensors | — | 35/4.0 | dpmpp_2m | 7 | 512x512 |
+| 2026-11-02 20:58 | `n_08-marca-agua` | — | — | —/— | — | — | — |
+| 2026-11-02 21:44 | `n_08-marca-agua` | — | — | —/— | — | — | — |
+| 2026-11-02 22:05 | `n_08-marca-agua` | — | — | —/— | — | — | — |
+| 2026-11-02 22:05 | `n_08-marca-agua` | — | — | —/— | — | — | — |
+| 2026-11-02 22:06 | `n_08-marca-agua` | — | — | —/— | — | — | — |
+| 2026-11-02 22:06 | `n_08-marca-agua` | — | — | —/— | — | — | — |
+| 2026-11-02 22:06 | `n_08-marca-agua` | — | — | —/— | — | — | — |
+| 2026-11-02 22:06 | `n_08-marca-agua` | — | — | —/— | — | — | — |
+| 2026-11-02 22:08 | `n_08-marca-agua` | — | — | —/— | — | — | — |
+| 2026-11-02 22:08 | `n_08-marca-agua` | — | — | —/— | — | — | — |
+| 2026-11-02 22:44 | `gx-A-01` | Juggernaut-XL_v9_RunDiffusionPhoto_v2.safetensors | — | 30/4.0 | dpmpp_2m | 42 | — |
+| 2026-11-02 23:27 | `gx-B-01` | Juggernaut-XL_v9_RunDiffusionPhoto_v2.safetensors | — | 50/3.0 | dpmpp_2m | 42 | — |
 
 ## Prompts (para reusar)
 
@@ -205,3 +230,18 @@
 - **matriz/sd15/M18** — `a contemporary market and digital culture centre in Barcelona beside the Sagrada Familia, board-formed concrete and glass facade, colonnade of inclined columns, deep loggias, warm stone paving with market stalls, people `
 - **matriz/sd15/M19** — `a contemporary market and digital culture centre in Barcelona beside the Sagrada Familia, board-formed concrete and glass facade, colonnade of inclined columns, deep loggias, warm stone paving with market stalls, people `
 - **matriz/sd15/M20** — `a contemporary market and digital culture centre in Barcelona beside the Sagrada Familia, board-formed concrete and glass facade, colonnade of inclined columns, deep loggias, warm stone paving with market stalls, people `
+- **WF04-1.0.0** — `estilo architecturerealmix, casa moderna de hormigon, ventanales grandes, fachada minimalista, rodeada de arboles, luz natural suave, fotorrealista, fotografia de arquitectura, 8k | borroso, baja calidad, deformado, marc`
+- **GX-plaza-gaudi** — `estilo architecturerealmix, plaza frente a la Sagrada Familia en Barcelona al atardecer, estructura monumental de luminarias inspirada en las catenarias de Gaudi sobre la plaza, cadenas colgantes de luces calidas siguien`
+- **paralelo-R01-baseline** — `photorealistic, raw photo, 8k uhd, architecture photography, modern single-family house, clean geometric volumes, white stucco facade, floor-to-ceiling windows, flat roof, minimal landscaping, morning sunlight, sharp sha`
+- **fractal-hires/juggernaut** — `Aerial mandala view of a fractal plaza path in front of Sagrada Familia Barcelona, sinuous walkable parabolic shell following Gaudi catenaries, branching IFS pattern in 3 scales, prefabricated fractal market modules clus`
+- **fractal-hires/realvisxl** — `Aerial mandala view of a fractal plaza path in front of Sagrada Familia Barcelona, sinuous walkable parabolic shell following Gaudi catenaries, branching IFS pattern in 3 scales, prefabricated fractal market modules clus`
+- **fractal-hires/lightning** — `Aerial mandala view of a fractal plaza path in front of Sagrada Familia Barcelona, sinuous walkable parabolic shell following Gaudi catenaries, branching IFS pattern in 3 scales, prefabricated fractal market modules clus`
+- **gx-WF01** — `architectural concept render, catenary arches pavilion inspired by Gaudi, stone and brick, fractal branching columns, park background, soft daylight, photorealistic, 8k uhd, masterpiece | blurry, low quality, distorted, `
+- **gx-WF01** — `architectural concept render, catenary arches pavilion inspired by Gaudi, stone and brick, fractal branching columns, park background, soft daylight, photorealistic, 8k uhd, masterpiece | blurry, low quality, distorted, `
+- **gx-WF01** — `quiero una imagen desde la plaza de la sagrada familia, que muestre un camino de mosaicos teselados tipo escher, con forma triangular y diferentes colores siempre respetando los colores tierra de la fachada de la sagrada`
+- **gx-WF01** — `dame una imagen de la fachada de la pasion de la sagrada familia | blurry, low quality, distorted, watermark, text, cartoon, illustration, oversaturated`
+- **gx-WF01** — `Distant wide view across the plaza facing the Passion facade of the Sagrada Familia in Barcelona, rising in the background against a pale sky. Foreground dominated by a tessellated mosaic pathway of interlocking triangul`
+- **gx-WF01** — `Distant wide view across the plaza facing the Passion facade of the Sagrada Familia in Barcelona, rising in the background against a pale sky. Foreground dominated by a tessellated mosaic pathway of interlocking triangul`
+- **gx-WF01** — `Distant wide view across the plaza facing the Passion facade of the Sagrada Familia in Barcelona, rising in the background against a pale sky. Foreground dominated by a tessellated mosaic pathway of interlocking triangul`
+- **gx-A-01** — `architectural concept, building with metal coat and sunscreen, concrete , glass, metalic mesh | blurry, low quality, distorted, watermark, text, signature, cartoon, illustration, warped perspective, melting geometry`
+- **gx-B-01** — `modern building with metallic perforated sunscreen parasols in front, concrete coffered block with glass behind, green roof on top, architectural photography, morning light, photorealistic, high detail | blurry, low qual`

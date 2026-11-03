@@ -67,7 +67,17 @@ Cuatro corridas locales 512² en el día, todas `success`, 0 USD de nube. Compar
 | w01-mosaicos | WF-01 | RealVisXL Lightning | mosaicos Escher + colores tierra Pasión (es) | 512×512 | 334 s | `sdxl-vista/w01-lightning-mosaicos-512.png` |
 | w01-pasion | WF-01 | RealVisXL Lightning | fachada Pasión + receta autor (dpmpp_sde, cfg 1.5) | 512×512 | 445 s | `sdxl-vista/w01-lightning-pasion-512.png` |
 
-> Tablero: `activos/web/concurso/index.html` (8 imágenes con las 4 de hoy). Binarios en `activos/proyectos/concurso-gaudi-nexus/sdxl-vista/` (fuera de git). prompt_id en `scripts/dashboard-concurso.py` (`ITEMS`).
+Nueve corridas locales más 02/11 noche (todas `success`): prompt EN de plaza Pasión ×3 (Lightning seed 7 en 5 steps, RealVisXL seed aleatoria en 5 steps, RealVisXL seed 7 en receta completa 35 steps) + serie IPAdapter calco-estilo (A-01 v1 denoise 0.55, B-01 v2 con CN canny + strong style 0.85 → descartado, ver [[proyectos/concurso-gaudi-nexus/workflows/WF-Comfy-YT/20-reporte-corridas-YT|reporte YT]]).
+
+| Test | WF | Modelo | Prompt | Resolución | Duración | Salida |
+|---|---|---|---|---|---:|---|
+| w01-pasion-en | WF-01 | RealVisXL Lightning | plaza Pasión EN, seed 7, 5 steps cfg 1.5 | 512×512 | 84 s | `sdxl-vista/w01-lightning-pasion-en-512.png` |
+| w01-realvisxl-en | WF-01 | RealVisXL v5.0 | mismo prompt EN, seed aleatoria | 512×512 | 89 s | `sdxl-vista/w01-realvisxl-pasion-en-512.png` |
+| w01-realvisxl-35 | WF-01 | RealVisXL v5.0 | mismo prompt EN, seed 7, 35 steps cfg 4 | 512×512 | 271 s | `sdxl-vista/w01-realvisxl-pasion-en-seed7-512.png` |
+| gx-A-01 calco | IPAdapter | Juggernaut-XL v9 | calco azcona-003 + style transfer, denoise 0.55 | 512×512 | 438 s | `ipadapter-calco-estilo/a01-calco-azcona-003.png` |
+| gx-B-01 calco | IPAdapter | Juggernaut-XL v9 | calco 002 + estilo 006, CN 1.0, denoise 0.45, 50 steps | 512×512 | 699 s | `ipadapter-calco-estilo/b01-calco-estilo-v2-512.png` |
+
+> Tablero: `activos/web/concurso/index.html` (23 imágenes con las 9 de hoy). Binarios en `activos/proyectos/concurso-gaudi-nexus/sdxl-vista/` e `ipadapter-calco-estilo/` (fuera de git). prompt_id en `scripts/dashboard-concurso.py` (`ITEMS`).
 
 ---
 

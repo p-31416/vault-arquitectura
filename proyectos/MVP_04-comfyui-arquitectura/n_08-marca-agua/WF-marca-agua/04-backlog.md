@@ -10,8 +10,8 @@ idioma: es
 # 04-backlog — WF-marca-agua
 
 - [x] Bug fondo negro (A-01) diagnosticado y fixeado en v1.1 con `ImageInvert` (máscara `1-alfa`).
-- [ ] Re-corrida A-02 con v1.1 y los mismos archivos.
-- [ ] Verificar semántica de `blend_factor` en `normal` (0 plena / 1 invisible) contra el resultado.
+- [x] Re-corrida A-02 con v1.1: marca pegada limpia, sin fondo negro.
+- [x] Semántica de `blend_factor` verificada en A-02: 0.3 deja marca visible y sutil.
 - [ ] Posición inferior-derecha automática (v2): leer tamaño de base con nodo de tamaño y calcular `x,y` en vez de fijos.
 - [ ] Marca en mosaico / repetida (v2): tiling para fotos de entrega.
 - [ ] PDF: fuera de Comfy (`LoadImage` no lee PDF); va por script/n8n — cuenta pendiente en [[proyectos/00-sistema-estudio|00-sistema-estudio]] §7.

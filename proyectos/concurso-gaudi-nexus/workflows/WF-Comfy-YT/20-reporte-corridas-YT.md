@@ -28,6 +28,21 @@ idioma: es
 
 ## Corridas
 
+### gx-B-01 segunda vuelta — foto Fluk + estilo croquis — 2026-11-02 23:54
+
+- Probamos: geometría `catenaria-flux-2026-11-03.jpg` (foto Fluk: cáscara nervada + pináculos + plaza con gente y árboles) + estilo `azcona-croquis006.jpg`, mismo v2 (CN 1.0, strong 0.85, denoise 0.45). Salida: `P:\00-repos\ComfyUI\output\gx-B-01_00002_.png`.
+- Sucedió: composición conservada (cáscara, pináculos, plaza) y por fin hay materia (metal, cielo, solado). Pero el detalle fino se derritió: gente fantasma, árboles en manchas verdes, interior embarrado, vidrio fundido. El estilo-croquis impuso tratamiento de dibujo sobre los detalles de la foto.
+- Veredicto Sol: **descartar** ("hizo cualquier cosa").
+- Solución: preservar la foto — denoise 0.45→0.3, style 0.85→0.5 (solo tinte), CN 1.0→0.8. Próxima: gx-B-03.
+
+### gx-B-01 — IPAdapter calco→estilo v2 512 — 2026-11-02 23:27
+
+- Probamos: calco `azcona-croquis002.jpg` (fachada líneas) + estilo `azcona-croquis006.jpg` (aérea marcador gris + verde leve), CN canny 1.0, strong style 0.85, denoise 0.45, 50 pasos CFG 3.0.
+- Config: Juggernaut v9, 512², seed 42. Salida: `P:\00-repos\ComfyUI\output\gx-B-01_00001_.png`.
+- Sucedió: geometría clavada (el CN funcionó, sin deformación) pero sigue croquis: apenas un verde lavado, nada de sunscreen metálico ni hormigón. Causa raíz: la referencia 006 **es otro croquis** (grises + verde leve), no el editado Photoshop con materiales — el IPAdapter copió fielmente... un estilo de croquis.
+- Veredicto Sol: **descartar** ("pésima").
+- Solución: apuntar el nodo estilo al verdadero editado Photoshop con materiales (sunscreen, hormigón, vidrio, verde) + aflojar CN a 0.7 + denoise 0.6 para que las superficies puedan materializarse. Próxima: gx-B-02.
+
 ### Pendiente — P-01 captura Google + dibujo (F-03 depth 0.5)
 
 - Probamos: pendiente primera corrida Sol

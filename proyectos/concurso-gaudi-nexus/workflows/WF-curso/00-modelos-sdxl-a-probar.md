@@ -50,10 +50,10 @@ Los tres SDXL comparten arquitectura, así que **cualquiera entra en los 7 WF ca
 | Modelo | Tipo | Tamaño | Por qué suma | Link | Estado |
 |---|---|---|---|---|---|
 | **Natty Realistic SDXL v2.0** | Checkpoint SDXL | 6,46 GiB | Fotorreal general, descarga abierta, espejos en TensorArt/SeaArt | https://civitai.com/models/1884205/natty-realistic-sdxl | Listo para probar |
-| **Juggernaut XL Ragnarok** | Checkpoint SDXL | 6,62 GiB | Versión actual del video YT-01 (modelVersionId 1759168, `juggernautXL_ragnarok.safetensors`) | https://civitai.com/models/133005 | Requiere `CIVITAI_API_TOKEN` |
+| **Juggernaut XL Ragnarok** | Checkpoint SDXL | 6,62 GiB | Versión actual del video YT-01 (modelVersionId 1759168, `juggernautXL_ragnarok.safetensors`, SHA256 verificado) | https://civitai.com/models/133005 | **Instalado 2026-11-02** |
 | **RealArchmix XL v3.5** | Checkpoint SDXL fp16 | 6,46 GiB | Espacios + arquitectura + interior + paisaje; compatible con los LoRAs del mismo autor | https://civitai.com/models/1323614?modelVersionId=2066579 | Se destraba con cuenta + token Civitai |
 | **RealArchvis XL v5.0** | Checkpoint SDXL | 6,46 GiB | Específico de arquitectura | https://civitai.com/models/533040 | Generation-Only: se consigue en subasta con Buzz; vigilar espejo en CivArchive |
-| **ControlNet Union SDXL** | ControlNet | ~1,5 GB | Control geométrico unificado para SDXL; entra en WF-03/06/07 | https://huggingface.co/xinsir/controlnet-union-sdxl-1.0 | Descarga directa |
+| **ControlNet Union SDXL (promax)** | ControlNet | 2,34 GiB | El del video YT-01 (`XL_controlnet-union-sdxl_promax.safetensors`); entra en WF-03/06/07 | https://huggingface.co/xinsir/controlnet-union-sdxl-1.0 | **Instalado 2026-11-02** |
 | **4x_foolhardy_Remacri** | Upscaler | 67 MB | Cierre de lámina sin re-muestrear | https://huggingface.co/uwg/upscaler/tree/main/ESRGAN | Licencia CC BY-NC: solo exploración |
 | **4x-ClearRealityV1** | Upscaler | ~70 MB | Alternativa de nitidez para láminas | https://huggingface.co/Kim2091/ClearRealityV1 | Licencia CC BY-NC: solo exploración |
 
@@ -193,6 +193,13 @@ Tiempos medidos de referencia (RX 570, `--lowvram --cpu-vae`): 1216×832 en 609 
 - **Luz:** coherencia de sombras entre arcos y suelo.
 - **Escala humana:** proporción creíble de personas y vegetación.
 - **Artefactos:** manos, barandillas, textos inventados, marcas de agua.
+
+## 9. Cómo se descargan los modelos (método verificado 2026-11-02)
+
+- Token: `CIVITAI_API_TOKEN` en `.env` raíz (preset **Read Only** alcanza: incluye ModelsRead; el tope de Buzz no aplica a descargas; sin límite publicado salvo 429 anti-abuso).
+- Método que funcionó: `curl.exe -L -C - --retry 5 -H "Authorization: Bearer $t"` (reanuda con `-C`; el primer intento de Ragnarok se cortó a 0,66 GB y se completó así).
+- Verificar siempre: tamaño en GB + SHA256 cuando el hash oficial se conoce (Ragnarok `dd08fa32…` = mismos bytes que el video YT-01); después R en el navegador de ComfyUI.
+- Pendiente: el `download_model` del agente sigue sin poder anclar el `models/` (el servidor reporta `main.py` relativo). Fix: lanzar con ruta absoluta (`"%COMFYUI_PATH%\main.py"` en el `.bat`) + reiniciar ComfyUI + reconectar MCP.
 
 ## Referencias
 

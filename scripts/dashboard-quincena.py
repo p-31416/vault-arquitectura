@@ -123,18 +123,24 @@ def clasificar(sesion):
     texto = (" ".join(sesion["tags"]) + " " + sesion["titulo"]).lower()
     # NOTA ES: se parte también por : @ . ( ) para que "tim:" y "@tim" valgan como "tim".
     palabras = set(re.split(r"[\s\-_/,.:@()]+", texto))
-    # NOTA ES: claves cortas (pi, cad, set, cal, tim) solo valen como palabra
+    # NOTA ES: claves cortas (pi, cad, cal, tim) solo valen como palabra
     # NOTA ES: completa: así "pip-install" queda fuera de hermes y "último" fuera de comfy.
-    # NOTA ES: "3d" quedó fuera a propósito: también nombra al grafo 3D web, que es hermes.
+    # NOTA ES: "set" quedó fuera: también nombra una tanda de flujos ("set Comfy").
     if "pi" in palabras or "cal" in palabras or "agenda" in palabras:
         return "hermes"
-    if "cad" in palabras or "set" in palabras:
+    if "cad" in palabras:
         return "autocad"
     if "tim" in palabras:
         return "comfy"
     # NOTA ES: el LoRA se llama "rhino-to-image" pero corre en Comfy: el nombre
     # NOTA ES: del LoRA no decide, decide el modelo que lo ejecuta.
     if "lora" in palabras or "flux" in texto or "txt2img" in texto:
+        return "comfy"
+    # NOTA ES: "flow" como palabra completa (Google Flow/Whisk); el substring
+    # NOTA ES: vive en "workflow" y no sirve para clasificar.
+    if "flow" in palabras or "whisk" in palabras:
+        return "comfy"
+    if "nanobanana" in texto or "banano" in texto:
         return "comfy"
     for tema, claves in _REGLAS_TEMA:
         if any(c in texto for c in claves):

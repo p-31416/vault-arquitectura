@@ -20,4 +20,4 @@ Clases verificadas en el código del servidor (`nodes.py` + `comfy_extras/nodes_
 | # | Fecha | Foto | Marca | scale | x,y | blend | Resultado |
 |---|-------|------|-------|-------|-----|-------|-----------|
 | A-01 (v1.0) | 2026-11-02 | w01-realvisxl-512.png | ISOLOGO_PITAU (2).png | 0.25 | 40,40 | 0.3 | **bug**: marca con rectángulo negro → `salidas/n_08-A-01.png`. Causa: máscara sin invertir pegó los píxeles transparentes |
-| A-02 (v1.1) | — | misma | misma | 0.25 | 40,40 | 0.3 | pendiente re-corrida con `ImageInvert` |
+| A-02 (v1.1) | 2026-11-02 | casa blanca pileta (otra foto) | ISOLOGO_PITAU (2).png | 0.25 | 40,40 | 0.3 | **OK**: π arriba-izquierda, limpio, sin fondo negro → `salidas/n_08-A-02.png`. Nota: sobre follaje se pierde; probar scale 0.35 u opacidad mayor |

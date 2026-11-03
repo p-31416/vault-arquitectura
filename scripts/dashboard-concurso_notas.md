@@ -55,6 +55,19 @@ Genera un solo HTML autocontenido con miniaturas JPEG 520 px en base64
 binarios a git. La versión full-res queda en `activos/web/concurso/` para
 revisión fina en Obsidian/pantalla grande.
 
+## Entradas Flow (Google Labs, sin ComfyUI)
+
+Las 7 `nb-flow-*` apuntan a JPEGs de `activos/.../nanobanana2.1/` con
+`prompt_id: flow-web`: `/history` devuelve vacío y el tablero muestra
+"sin dato" con la nota de origen. `medir_imagen()` usa PIL para JPEG
+(con fallback a `medir_png`), y `--embebido` las comprime a thumbs.
+
+## Entradas Pollinations (navegador, sin ComfyUI)
+
+Las 5 `pol-*` apuntan a JPEGs de `activos/.../pollinations-tests/` con
+`prompt_id: pollinations-web`: mismo tratamiento que Flow (tiempo "sin dato",
+nota con modelo y fecha). Prompts exactos pendientes del historial del navegador.
+
 ## Para agregar una corrida
 
 1. Encolar en ComfyUI y anotar el `prompt_id`.

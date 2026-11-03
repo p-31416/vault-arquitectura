@@ -102,7 +102,7 @@ Escalera de denoise si el relleno no cierra: 0,5 (conservador) → 0,65 → 0,8 
 
 ## 7. Pendientes
 
-- Bajar con tu token: Ragnarok (mismos bytes que el video) + `controlnet-union-sdxl-1.0` promax + 1 LoRA liviano (ArchViz Workflow 36 MB) para validar la cadena.
+- ✅ Descargado 2026-11-02: Ragnarok (SHA256 `dd08fa32…` verificado, mismos bytes que el video) + Union promax (`XL_controlnet-union-sdxl_promax.safetensors`, el del video) + LoRA liviano (`ArteFactoryLab_LORA-10.safetensors`, 36 MB, trigger `archviz`).
 - El LoRA exacto (`XL_sdxlaang_Aerial-Render`) solo sale del pack del autor (Patreon/Udemy); mientras tanto las variantes de §3.2 cubren el rol.
 - Probar la rama ControlNet opcional cuando el relleno ignore la morfología.
 - Registrar corridas en [[proyectos/concurso-gaudi-nexus/workflows/00-matriz-pruebas-concurso|la matriz]] con modelo, segundos y veredicto.

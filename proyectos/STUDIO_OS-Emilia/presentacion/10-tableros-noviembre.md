@@ -19,7 +19,7 @@ tags: [dashboard, tableros, presentacion, studio-os, quincena, concurso, referen
 
 [dashboard-quincena.html](dashboard-quincena.html) — 164 KB, sin imágenes externas.
 
-- **KPIs**: 40 sesiones · 12 días con actividad · 16 specs · 58 scripts · 15 renders · 5 commits.
+- **KPIs**: 50 sesiones · 13 días con actividad · 16 specs · 58 scripts · 30 renders en disco · 8 commits.
 - **Solapa SESSIONS**: línea de tiempo por día con tags y bullets + tabla de sesiones.
 - **Solapa TEMAS**: Rhino 3D + massing (7) · ComfyUI + concurso (9) · AutoCAD 2D (4) · Hermes + Sistema Operativo (20), cada tarjeta con descripción, rutas del vault, sesiones y plans.
 - Buscador por palabra + tablas de specs, scripts, commits y pendientes.
@@ -28,7 +28,7 @@ tags: [dashboard, tableros, presentacion, studio-os, quincena, concurso, referen
 
 ## 2. Corridas del concurso (polaroid con tiempos)
 
-[dashboard-concurso.html](dashboard-concurso.html) — 8 imágenes en miniatura embebida.
+[dashboard-concurso.html](dashboard-concurso.html) — 35 imágenes en miniatura embebida (4 baseline/hires + 4 WF-01 + 10 marca-agua + 5 WF-01 EN y calco + 7 Nano Banana Flow + 5 Pollinations).
 
 - 4 corridas 01/11 (baseline + hires ×3, Juggernaut/RealVisXL/Lightning) + 4 WF-01 de hoy (comparativa de checkpoint, prompting en español, receta del autor), con modelo y segundos medidos.
 - Clic para agrandar, flechas para pasar. La versión full-res para revisión fina vive en `activos/web/concurso/`.

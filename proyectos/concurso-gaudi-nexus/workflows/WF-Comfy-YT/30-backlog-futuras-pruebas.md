@@ -44,6 +44,16 @@ idioma: es
 - [ ] **N1** — Instalar CameraAngleSelector por git URL + restart (paso previo a V1).
 - [ ] **N2** — Andamiaje `comfy node scaffold` para un nodo propio mínimo (ej. prompter de cámaras Gaudí). Fuente: [[raw/research/2026-11-03-sherlock-custom-nodes-comfyui|sherlock-custom-nodes]] §2–3.
 
+### FLUX.2 Dev en RunPod (tutorial Comfy)
+
+Fuente: [FLUX.2 Dev en ComfyUI](https://docs.comfy.org/tutorials/flux/flux-2-dev) (verificado 2026-11-03 — 200) + [Klein 4B Guide](https://docs.comfy.org/tutorials/flux/flux-2-klein) (verificado 2026-11-03 — 200).
+
+Stack tutorial: `text_encoders/mistral_3_small_flux2_bf16.safetensors` + `diffusion_models/flux2_dev_fp8mixed.safetensors` + `vae/flux2-vae.safetensors` (18.3 GB). ComfyUI 0.3.72+ con Workflow Templates. Pod sugerido RTX 3090 24 GB $0.22/h o RTX 4090 24 GB $0.34/h, volumen 30 GB+.
+
+- [ ] **F6** — Klein 4B destilado en pod económico: T2I cáscara + Edit con 2 refs plaza (nodos 42 + 46), mide latencia y VRAM 8.4 GB.
+- [ ] **F7** — Mockup adaptado a arquitectura (`image_flux2_fp8.json`): Sagrada real + textura hormigón sobre volumen base, evalúa consistencia multi-ref.
+- [ ] **F8** — Dev puro + Dev Cloud (`image_flux2_text_to_image.json` luego `?template=image_flux2_fp8`): compara prompt estructurado + color hex para paleta concurso, registra en reporte.
+
 ## 2. Pendientes YT existentes (unificados aquí, detalle en cada ficha)
 
 | # | Prueba | Estado | Fuente |

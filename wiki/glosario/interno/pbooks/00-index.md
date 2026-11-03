@@ -16,6 +16,7 @@ Colección de guías operativas y procedimientos técnicos para el día a día d
 - [[pbk-alertas-contabo|Alertas de seguridad de Contabo]] — **Canónico**: flujo de respuesta a mails de Contabo (kernel CVE, PHP RCE, outage), verificación y registro.
 - [[pbk-config_ctas_git_github_opencode|Gestión y Separación de Cuentas (Git, GitHub, OpenCode)]] — Matriz de identidades, rutas de credenciales, archivos de configuración, verificación en 30 seg y conexión/desconexión de proveedores IA.
 - [[pbk-instalacion-codex|Réplica vault con Codex (Windows)]] — **Canónico**: CLI+Desktop, sandbox elevated/unelevated, MCPs espejo (Fathom/Leantime/Autodesk/AutoCAD), rutina sin PC (n8n vs Actions). Ref Brais Codex 101.
+- [[pbk-opencode-linux|Vault con OpenCode en Linux (terminal)]] — **2026-11-02**: install v2, auth Console (ex-Zen) con otra cuenta, clon del vault, modo plan solo-lectura, qué viaja y qué queda en la PC principal.
 
 ## PM y gestión del estudio
 

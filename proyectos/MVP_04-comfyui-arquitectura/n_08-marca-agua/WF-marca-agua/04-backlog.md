@@ -9,7 +9,8 @@ idioma: es
 
 # 04-backlog — WF-marca-agua
 
-- [ ] R4 contra `/object_info` + primera corrida con foto y marca reales.
+- [x] Bug fondo negro (A-01) diagnosticado y fixeado en v1.1 con `ImageInvert` (máscara `1-alfa`).
+- [ ] Re-corrida A-02 con v1.1 y los mismos archivos.
 - [ ] Verificar semántica de `blend_factor` en `normal` (0 plena / 1 invisible) contra el resultado.
 - [ ] Posición inferior-derecha automática (v2): leer tamaño de base con nodo de tamaño y calcular `x,y` en vez de fijos.
 - [ ] Marca en mosaico / repetida (v2): tiling para fotos de entrega.

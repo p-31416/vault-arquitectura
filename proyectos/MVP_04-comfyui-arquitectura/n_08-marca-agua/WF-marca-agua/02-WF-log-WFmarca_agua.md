@@ -9,14 +9,15 @@ idioma: es
 
 # 02-WF-log-WFmarca_agua
 
-> Log de todas las corridas. Sin corridas todavía.
+> Primera corrida hecha por Sol con v1.0: bug + fix documentados abajo.
 
-## R4 — validación estática (pendiente)
+## R4 — validación estática
 
-Antes de encolar: verificar en `/object_info` del servidor `LoadImage` · `ImageScaleBy` · `MaskToImage` · `ImageToMask` · `ImageCompositeMasked` · `ImageBlend` · `SaveImage`, y que `PONER-foto.jpg` / `PONER-marca.png` existan en `input/`.
+Clases verificadas en el código del servidor (`nodes.py` + `comfy_extras/nodes_mask.py`): `LoadImage` (máscara = `1-alfa`, línea 1771) · `ImageScaleBy` · `MaskToImage` · `ImageInvert` · `ImageToMask` · `ImageCompositeMasked` · `ImageBlend` · `SaveImage`. Archivos de entrada existen en `input/`: `ISOLOGO_PITAU (2).png` (RGBA 693×378) + `w01-realvisxl-512.png` (RGB 512²).
 
 ## Corridas
 
 | # | Fecha | Foto | Marca | scale | x,y | blend | Resultado |
 |---|-------|------|-------|-------|-----|-------|-----------|
-| — | — | — | — | — | — | — | pendiente primera corrida |
+| A-01 (v1.0) | 2026-11-02 | w01-realvisxl-512.png | ISOLOGO_PITAU (2).png | 0.25 | 40,40 | 0.3 | **bug**: marca con rectángulo negro → `salidas/n_08-A-01.png`. Causa: máscara sin invertir pegó los píxeles transparentes |
+| A-02 (v1.1) | — | misma | misma | 0.25 | 40,40 | 0.3 | pendiente re-corrida con `ImageInvert` |

@@ -16,9 +16,9 @@ idioma: es
 | 1 | `LoadImage` | foto base, `image: PONER-foto.jpg` (se usa solo IMAGE; su MASK se ignora) |
 | 2 | `LoadImage` | marca PNG con alfa, `image: PONER-marca.png` (IMAGE + MASK del alfa) |
 | 3 | `ImageScaleBy` | marca a `scale_by` 0.25, `bilinear` (conserva aspecto) |
-| 4-6 | `MaskToImage` → `ImageScaleBy` → `ImageToMask` | máscara del alfa al mismo factor (canal `red`); sin esto la máscara queda en tamaño original y el composite falla |
-| 7 | `ImageCompositeMasked` | pega marca sobre foto en `x` 40 / `y` 40, `resize_source: false`, `mask` de 6 |
-| 8 | `ImageBlend` | `image1` composite + `image2` foto, `normal`, `blend_factor` 0.3 (0 = marca plena, 1 = invisible) |
-| 9 | `SaveImage` | prefijo `n_08-marca-agua` |
+| 4-7 | `MaskToImage` → `ImageScaleBy` → `ImageInvert` → `ImageToMask` | máscara del alfa al mismo factor + **invertida** (canal `red`); `LoadImage` entrega `1-alfa` (`nodes.py:1771`), sin invertir se pegan los píxeles transparentes = fondo negro |
+| 8 | `ImageCompositeMasked` | pega marca sobre foto en `x` 40 / `y` 40, `resize_source: false`, `mask` de 7 |
+| 9 | `ImageBlend` | `image1` composite + `image2` foto, `normal`, `blend_factor` 0.3 (0 = marca plena, 1 = invisible) |
+| 10 | `SaveImage` | prefijo `n_08-marca-agua` |
 
 Sin sampler ni checkpoint: R1 (escala 512) no aplica; el composite corre a resolución original.

@@ -9,13 +9,14 @@ idioma: es
 
 # WF-marca-agua — índice
 
-> Flujo v1.0 en construcción. R4 (validación contra `/object_info`) pendiente antes de la primera corrida.
+> Flujo v1.1. Clases verificadas en `nodes.py`/`nodes_mask.py` del servidor (R4 de clases OK).
 
 ## Versiones
 
 | v | Fecha | JSON | Cambios | Estado |
 |---|-------|------|---------|--------|
-| 1.0 | 2026-11-02 | `workflow_marca_agua.json` | overlay marca+mask, posición fija, opacidad por blend | R4 pendiente |
+| 1.1 | 2026-11-02 | `workflow_marca_agua.json` | +`ImageInvert`: la máscara de `LoadImage` es `1-alfa` y pegaba los píxeles transparentes (fondo negro) | R4 clases OK, pendiente re-corrida |
+| 1.0 | 2026-11-02 | `workflow_marca_agua.json` | overlay marca+mask, posición fija, opacidad por blend | bug fondo negro (corrida A-01) |
 
 ## Config mínima
 

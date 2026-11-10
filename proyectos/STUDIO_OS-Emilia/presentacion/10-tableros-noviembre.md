@@ -19,7 +19,7 @@ tags: [dashboard, tableros, presentacion, studio-os, quincena, concurso, referen
 
 [dashboard-quincena.html](dashboard-quincena.html) — 164 KB, sin imágenes externas.
 
-- **KPIs**: 51 sesiones · 13 días con actividad · 16 specs · 58 scripts · 30 renders en disco · 9 commits.
+- **KPIs**: 42 sesiones · 13 días con actividad · 14 specs · 45 scripts · 30 renders en disco · 9 commits (21/10→10/11).
 - **Solapa SESSIONS**: línea de tiempo por día con tags y bullets + tabla de sesiones.
 - **Solapa TEMAS**: Rhino 3D + massing (7) · ComfyUI + concurso (9) · AutoCAD 2D (4) · Hermes + Sistema Operativo (20), cada tarjeta con descripción, rutas del vault, sesiones y plans.
 - Buscador por palabra + tablas de specs, scripts, commits y pendientes.

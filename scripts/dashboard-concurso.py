@@ -17,7 +17,8 @@ Por qué existe:
 Cómo se usa:
     python scripts\\dashboard-concurso.py
     python scripts\\dashboard-concurso.py --out activos/web/concurso --comfy http://127.0.0.1:8188
-    python scripts\\dashboard-concurso.py --embebido proyectos/STUDIO_OS-Emilia/presentacion/dashboard-concurso.html
+    python scripts\\dashboard-concurso.py --embebido proyectos\\STUDIO_OS-Emilia\\presentacion\\dashboard-concurso.html
+    python scripts\\dashboard-concurso.py --historial proyectos\\MVP_04-comfyui-arquitectura\\INDICE-RENDERS.json --historial-dir P:\\00-repos\\ComfyUI\\output
 
 Salida:
     activos/web/concurso/index.html   (HTML + CSS + JS en un solo archivo)
@@ -417,6 +418,26 @@ def thumb_b64(ruta, ancho=520):
             "ascii")
 
 
+def thumb_file(origen, destino, ancho=480):
+    """Guarda una miniatura JPEG (vista Historial en la versión de activos)."""
+    if Image is None:
+        shutil.copy2(origen, destino)
+        return
+    im = Image.open(origen).convert("RGB")
+    if im.width > ancho:
+        im = im.resize((ancho, round(im.height * ancho / im.width)))
+    im.save(destino, "JPEG", quality=72, optimize=True, progressive=True)
+
+
+def cargar_historial(indice_path):
+    """Lee el INDICE-RENDERS.json (lista o dict con items)."""
+    with open(indice_path, encoding="utf-8") as f:
+        datos = json.load(f)
+    if isinstance(datos, list):
+        return datos
+    return datos.get("items", datos.get("renders", []))
+
+
 def medir_png(ruta):
     """Devuelve (ancho, alto) leyendo la cabecera IHDR del PNG.
 
@@ -481,6 +502,14 @@ HTML = """<!doctype html>
   header { padding:28px 24px 10px; max-width:1400px; margin:0 auto; }
   h1 { margin:0 0 6px; font-size:22px; font-weight:650; letter-spacing:-.01em; }
   header p { margin:0; color:var(--gris); font-size:13px; }
+  .tabs { display:flex; gap:8px; padding:12px 24px 2px; max-width:1400px; margin:0 auto; }
+  .tabs button { flex:1; padding:10px; font-size:13px; font-weight:650; letter-spacing:.05em;
+           border-radius:8px; border:1px solid #2a2e35; background:#171a20; color:var(--gris); cursor:pointer; }
+  .tabs button.on { background:var(--acento); border-color:var(--acento); color:#15171b; }
+  .chips { display:flex; flex-wrap:wrap; gap:8px; padding:12px 24px 0; max-width:1400px; margin:0 auto; }
+  .chips button { padding:6px 12px; font-size:12px; border-radius:20px;
+           border:1px solid #2a2e35; background:#171a20; color:var(--gris); cursor:pointer; }
+  .chips button.on { background:#e9ebef; color:#15171b; border-color:#e9ebef; }
   .grilla { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
             gap:16px; padding:18px 24px 60px; max-width:1400px; margin:0 auto; }
   .card { background:var(--papel); color:var(--tinta); border-radius:4px; padding:10px 10px 0;
@@ -509,9 +538,14 @@ HTML = """<!doctype html>
 </head>
 <body>
 <header>
-  <h1>Concurso Gaudí Nexus — corridas del 2026-11-01</h1>
+  <h1>Concurso Gaudí Nexus — selección + historial ComfyUI</h1>
   <p>__RESUMEN__</p>
+  <nav class="tabs">
+    <button id="tab-sel" class="on" onclick="solapa('sel')">SELECCIÓN</button>
+    <button id="tab-hist" onclick="solapa('hist')">HISTORIAL POR MODELO</button>
+  </nav>
 </header>
+<div class="chips" id="chips" style="display:none"></div>
 <div class="grilla" id="grilla"></div>
 
 <div id="polaroid">
@@ -526,7 +560,10 @@ HTML = """<!doctype html>
 
 <script>
 const DATOS = __DATOS__;
+const HIST = __HIST__;
+const MODELOS = __MODELOS__;
 const grilla = document.getElementById("grilla");
+const chipsBox = document.getElementById("chips");
 const overlay = document.getElementById("polaroid");
 const grande = document.getElementById("grande");
 const meta = document.getElementById("meta");
@@ -538,24 +575,55 @@ function segundos(r) {
   return m ? `${m} min ${s} s` : `${s} s`;
 }
 
-DATOS.forEach((r, i) => {
-  const card = document.createElement("div");
-  card.className = "card";
-  card.innerHTML = `<img src="${r.img}" alt="${r.modelo}" loading="lazy">
-    <div class="pie"><b>${r.modelo}</b><span>${segundos(r)}</span></div>`;
-  card.addEventListener("click", () => abrir(i));
-  grilla.appendChild(card);
-});
+let VISTA = "sel", FILTRO = null;
+// NOTA JS: la lista visible depende de la solapa y del chip de modelo activo.
+function listaActual() {
+  if (VISTA === "hist" && FILTRO) return HIST.filter(r => r.modelo === FILTRO);
+  return VISTA === "hist" ? HIST : DATOS;
+}
+function pintarChips() {
+  chipsBox.style.display = VISTA === "hist" ? "" : "none";
+  if (VISTA !== "hist") return;
+  let h = `<button data-m="" class="${!FILTRO ? "on" : ""}">Todos (${HIST.length})</button>`;
+  h += MODELOS.map(m => `<button data-m="${m.m}" class="${FILTRO === m.m ? "on" : ""}">${m.m} (${m.n})</button>`).join("");
+  chipsBox.innerHTML = h;
+  chipsBox.querySelectorAll("button").forEach(b => b.addEventListener("click", () => {
+    FILTRO = b.dataset.m || null; pintarChips(); pintarGrilla();
+  }));
+}
+function pintarGrilla() {
+  grilla.innerHTML = "";
+  listaActual().forEach((r, i) => {
+    const card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML = `<img src="${r.img}" alt="${r.modelo}" loading="lazy">
+      <div class="pie"><b>${r.modelo}</b><span>${segundos(r)}</span></div>`;
+    card.addEventListener("click", () => abrir(i));
+    grilla.appendChild(card);
+  });
+}
+// NOTA JS: las solapas cambian de vista sin recargar: selección curada vs historial.
+function solapa(cual) {
+  VISTA = cual; FILTRO = null;
+  document.getElementById("tab-sel").classList.toggle("on", cual === "sel");
+  document.getElementById("tab-hist").classList.toggle("on", cual === "hist");
+  pintarChips(); pintarGrilla();
+}
+pintarChips(); pintarGrilla();
 
 function abrir(i) {
-  actual = (i + DATOS.length) % DATOS.length;
-  const r = DATOS[actual];
+  const L = listaActual();
+  actual = (i + L.length) % L.length;
+  const r = L[actual];
   grande.src = r.img;
-  meta.innerHTML = `<span><b>${r.modelo}</b></span>
+  // NOTA JS: la ficha muestra receta (sampler/steps/cfg/seed/fecha) cuando viene del historial.
+  let meta = `<span><b>${r.modelo}</b></span>
     <span>${r.ancho}x${r.alto}</span>
     <span>${segundos(r)}</span>
-    <span>${r.workflow}</span>
-    <span class="nota">${r.nota || ""}</span>`;
+    <span>${r.workflow}</span>`;
+  if (r.sampler) meta += `<span>${r.sampler} · ${r.steps} steps · cfg ${r.cfg} · seed ${r.seed}</span><span>${r.fecha || ""}</span>`;
+  meta += `<span class="nota">${r.prompt || r.nota || ""}</span>`;
+  document.getElementById("meta").innerHTML = meta;
   overlay.classList.add("on");
 }
 function cerrar() { overlay.classList.remove("on"); }
@@ -576,11 +644,14 @@ document.addEventListener("keydown", e => {
 """
 
 
-def generar(raiz, out, comfy, embebido=False, nombre_html="index.html"):
+def generar(raiz, out, comfy, embebido=False, nombre_html="index.html",
+            historial_json=None, hist_dirs=None):
     """Copia las imágenes y escribe el sitio. Devuelve cuántas entradas hizo.
 
     NOTA ES: con embebido=True no se copian PNG: cada imagen viaja como
     NOTA ES: miniatura base64 dentro del HTML (versión para compartir).
+    NOTA ES: con historial_json se suma la vista HISTORIAL POR MODELO desde el
+    NOTA ES: INDICE-RENDERS.json (todo ComfyUI, agrupado por checkpoint).
     """
     img_dir = os.path.join(out, "img")
     if not embebido:
@@ -621,17 +692,62 @@ def generar(raiz, out, comfy, embebido=False, nombre_html="index.html"):
 
     con_tiempo = [d["segundos"] for d in datos if d["segundos"]]
     total = sum(con_tiempo)
-    resumen = "%d imágenes · %.1f min de GPU en total · %s" % (
+    resumen = "%d selección · %.1f min de GPU en total · %s" % (
         len(datos), total / 60.0, datetime.now().strftime("%Y-%m-%d %H:%M"))
+
+    hist = []
+    modelos = []
+    if historial_json:
+        filas = cargar_historial(os.path.abspath(
+            os.path.join(raiz, historial_json)))
+        if not embebido:
+            os.makedirs(os.path.join(out, "img-hist"), exist_ok=True)
+        conteo = {}
+        for i, f in enumerate(filas):
+            origen = None
+            for carpeta in (hist_dirs or []):
+                cand = os.path.join(carpeta, f.get("archivo", ""))
+                if os.path.isfile(cand):
+                    origen = cand
+                    break
+            if origen is None:
+                cand = f.get("abs_archivo")
+                origen = cand if cand and os.path.isfile(cand) else None
+            if origen is None:
+                continue
+            ancho, alto = medir_imagen(origen)
+            if embebido:
+                img = thumb_b64(origen, 360)   # NOTA ES: thumbs más chicos: son 119.
+            else:
+                nombre = "h%03d.jpg" % i
+                thumb_file(origen, os.path.join(out, "img-hist", nombre))
+                img = "img-hist/" + nombre
+            mod = f.get("modelo") or "sin-modelo"
+            conteo[mod] = conteo.get(mod, 0) + 1
+            hist.append({"img": img, "modelo": mod, "checkpoint": mod,
+                         "workflow": f.get("workflow") or "?",
+                         "nota": "", "ancho": ancho, "alto": alto,
+                         "segundos": None, "prompt_id": "",
+                         "sampler": f.get("sampler"), "steps": f.get("steps"),
+                         "cfg": f.get("cfg"), "seed": f.get("seed"),
+                         "fecha": f.get("fecha"),
+                         "prompt": (f.get("prompt") or "")[:140]})
+        modelos = [{"m": m, "n": n} for m, n in sorted(
+            conteo.items(), key=lambda kv: -kv[1])]
+        print("  historial: %d renders en %d modelos" % (len(hist), len(modelos)))
+        resumen += " · %d historial (%d modelos)" % (len(hist), len(modelos))
 
     html = (HTML
             .replace("__DATOS__", json.dumps(datos, ensure_ascii=False))
+            .replace("__HIST__", json.dumps(hist, ensure_ascii=False))
+            .replace("__MODELOS__", json.dumps(modelos, ensure_ascii=False))
             .replace("__RESUMEN__", resumen))
     with open(os.path.join(out, nombre_html), "w", encoding="utf-8") as f:
         f.write(html)
     with open(os.path.join(out, "datos.json"), "w", encoding="utf-8") as f:
         json.dump({"generado": datetime.now().isoformat(timespec="seconds"),
-                   "resumen": resumen, "items": datos}, f, indent=2, ensure_ascii=False)
+                   "resumen": resumen, "items": datos, "historial": hist,
+                   "modelos": modelos}, f, indent=2, ensure_ascii=False)
     return len(datos)
 
 
@@ -641,7 +757,14 @@ def main():
     ap.add_argument("--comfy", default="http://127.0.0.1:8188", help="URL del ComfyUI")
     ap.add_argument("--embebido", default=None, metavar="RUTA.html",
                     help="genera versión autocontenida (miniaturas base64) en RUTA.html, lista para compartir")
+    ap.add_argument("--historial", default=None, metavar="INDICE.json",
+                    help="suma la vista HISTORIAL POR MODELO desde un INDICE-RENDERS.json")
+    ap.add_argument("--historial-dir", action="append", default=[], metavar="DIR",
+                    help="carpeta de renders del índice (repetible)")
     args = ap.parse_args()
+
+    hist_dirs = args.historial_dir or ["P:/00-repos/ComfyUI/output"]
+    comunes = dict(historial_json=args.historial, hist_dirs=hist_dirs)
 
     raiz = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # NOTA ES: la raíz del vault es el padre de scripts/.
     if args.embebido:
@@ -652,14 +775,14 @@ def main():
         os.makedirs(out, exist_ok=True)
         print("Generando embebido %s" % destino)
         n = generar(raiz, out, args.comfy, embebido=True,
-                    nombre_html=os.path.basename(destino))
+                    nombre_html=os.path.basename(destino), **comunes)
         print("Listo: %d imágenes (miniaturas embebidas)" % n)
         return
     out = os.path.abspath(os.path.join(raiz, args.out))
     os.makedirs(out, exist_ok=True)
 
     print("Generando %s" % out)
-    n = generar(raiz, out, args.comfy)
+    n = generar(raiz, out, args.comfy, **comunes)
     print("Listo: %d imágenes" % n)
     print("Abrir: %s" % os.path.join(out, "index.html"))
 

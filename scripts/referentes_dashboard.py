@@ -184,12 +184,15 @@ PLANTILLA = r"""<!doctype html>
 <script>
 const DATA = __DATA__;
 const AXES = DATA.ejes;
-const ORDEN_EJES = ["tema","estrategia","material","representacion","estado","uso"];
+const ORDEN_EJES = ["tema","estrategia","material","representacion","programa","escala","estado","uso"];
 const ETIQUETA = {tema:"Tema",estrategia:"Estrategia",material:"Material",
-  representacion:"Representación",estado:"Estado",uso:"Uso"};
+  representacion:"Representación",programa:"Programa",escala:"Escala",estado:"Estado",uso:"Uso"};
 const VISTAS = [
   {n:"Todo", s:{}},
   {n:"Shortlist", s:{tags:{estado:["shortlist"]}}},
+  {n:"Mercado", s:{tags:{programa:["mercado"]}}},
+  {n:"Cultura", s:{tags:{programa:["cultura"]}}},
+  {n:"Plaza", s:{tags:{programa:["plaza"]}}},
   {n:"Fachadas y pieles", s:{tags:{tema:["fachada","piel"]}}},
   {n:"Biomimética", s:{tags:{tema:["biomimetica"]}}},
   {n:"Estructura", s:{tags:{tema:["estructura"]}}},

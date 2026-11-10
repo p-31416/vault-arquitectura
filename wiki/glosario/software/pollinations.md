@@ -13,6 +13,7 @@ Generación de imagen por API con tier gratis real. Lo usa el estudio para proto
 
 - [[#Descripción]]
 - [[#Autenticación]]
+- [[#Registro como generador]]
 - [[#Uso básico imagen]]
 - [[#Workflow n8n Telegram]]
 - [[#Flujos con flux para n8n]]
@@ -68,6 +69,27 @@ Invoke-WebRequest -Uri $url -Headers @{Authorization="Bearer $key"} -OutFile cat
 
 - `proyectos/concurso-gaudi-nexus/` para vistas rápidas de plaza.
 - `raw/sessions/2026-11-02-sesion-telegram-pollinations.md` pipe original.
+
+---
+
+## Registro como generador
+
+Pollinations queda registrado como generador de imágenes del estudio para exploración y eval en Telegram, con tier gratis real.
+
+| Campo | Valor |
+|---|---|
+| Base | `https://gen.pollinations.ai` |
+| Key estudio | `.env` `POLLINATIONS_API_KEY=sk_...`, permiso `image`, creada 2026-11-03 |
+| Modelos en uso | `flux.1-schnell` exploración, `flux.1.1-pro` lámina, `z-image-turbo` nítido, `kontext` edición con foto |
+| Costo observado | flux 0.002, z-image 0.004, 1.1-pro y kontext 0.03, sana 0.0001, sdxl-lightning-free 0 |
+| Límites operativos | Anónimo 1 por vez 45 s entre pedidos con 402 hasta siguiente slot; con key límite dado por saldo Pollen + `per_user_rpm` por modelo; Telegram 5 MB por URL y 10 MB multipart; n8n `Timeout` 120-180 s |
+| Registro n8n | Workflow `Eval imagen Telegram — Pollinations vs OpenRouter` (`YLrbR8z4sPHPnJBy`), inactivo hasta cargar credencial |
+
+Por qué resulta gratis: cuenta con grants diarios de Pollen, modelos con costo 0 Pollen efectivo (`flux` con grants), tier anónimo rate-limited por IP para prototipar, y llaves prepagas x402 con USDC para montos puntuales. Documentado en `gen.pollinations.ai/docs` (auth, precios en Pollen, x402) y `text.pollinations.ai/APIDOCS.md` (GET libre, USD 0.01 por request vía x402, rate-limited por IP).
+
+### Auth simplificada en n8n
+
+En el nodo `HTTP Pollinations` figura `authentication: genericCredentialType` + `genericAuthType: httpTemplatedCustomAuth`. Eso es la credencial genérica con template: n8n arma el header `Authorization: Bearer TU_SK_` desde un template, en vez de usar credencial predefinida (`openRouterApi`, `telegramApi`). Viene así desde la creación del workflow (versión única autosalvada 2026-11-02T14:08:22Z, creada por AI Builder), por eso siempre la viste. Hoy el template figura vacío: hay que abrir el nodo → Credentials → crear Header Auth con la `sk_` del `.env` → Save → Test. Con eso deja de fallar la rama `poll:`.
 
 ---
 

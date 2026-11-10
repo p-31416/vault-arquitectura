@@ -35,6 +35,8 @@ import json
 import os
 # NOTA ES: re = expresiones regulares para fechas y encabezados markdown.
 import re
+# NOTA ES: unicodedata = quitar tildes para comparar ("gráfica" vale como "grafica").
+import unicodedata
 # NOTA ES: subprocess = correr git log y leer su salida sin bloquear.
 import subprocess
 
@@ -103,26 +105,38 @@ _REGLAS_TEMA = [
                 "empresa sint", "tabula rasa", "remotion", "fathom",
                 "telegram", "n8n", "jina", "pollinations", "leantime",
                 "contabo", "monitoreo", "presentacion pi", "meta-arquitecto",
-                "puerta", "agente", "agenda"]),
+                "puerta", "agente", "agenda", "vault", "wiki", "glosario",
+                "agentes", "agents", "mes1", "presentacion", "cerebro",
+                "emilia", "zen", "opencode", "cuentas", "vaultworm",
+                "ingesta", "takeout", "curacion", "single-file", "digest",
+                "pbooks", "unificacion", "handy", "stt", "dictado", "legal",
+                "brais", "codex", "studio", "mcp", "fix", "vista-grafica",
+                "baudrillard", "dashboard-vault", "mes-1", "auditoria",
+                "software", "encoding", "indices"]),
     ("rhino", ["rhino", "massing", "clipping", "hatch", "trama", "corte",
                "uruguay", "caba", "obelisco", "osm", "overpass", "cadmapper",
                "earth2rhino", "grasshopper", "hops", "malla",
                "seccion", "tejido urbano", "grasshopper"]),
     ("autocad", ["autocad", "replanteo", "autolisp", "lisp", "araoz",
-                 "locales", "set_01", "set-01", "cuadro-locales", "bloque"]),
+                 "locales", "set_01", "set-01", "cuadro-locales", "bloque",
+                 "mvp_02", "mvp02"]),
     ("comfy", ["comfy", "txt2img", "img2img", "img2video", "lora", "galeria",
                "matriz", "flux", "sdxl", "higgsfield", "concurso", "gaudi",
                "nexus", "catenaria", "fractal", "render", "hires", "baseline",
-                "curso", "muestra", "video", "heygen", "sagrada", "pasion",
-                "escher", "mosaico", "fachada"]),
+               "curso", "muestra", "video", "heygen", "sagrada", "pasion",
+               "escher", "mosaico", "fachada", "moodboard", "wf0",
+               "sherlock", "referentes", "inpaint", "bjarke", "nanobanana",
+               "pollinations"]),
 ]
 
 
 def clasificar(sesion):
     """Devuelve la clave de tema por tags + título (una sesión, un tema)."""
     texto = (" ".join(sesion["tags"]) + " " + sesion["titulo"]).lower()
-    # NOTA ES: se parte también por : @ . ( ) para que "tim:" y "@tim" valgan como "tim".
-    palabras = set(re.split(r"[\s\-_/,.:@()]+", texto))
+    # NOTA ES: sin tildes para comparar: "gráfica" y "grafica" son lo mismo.
+    texto_n = "".join(c for c in unicodedata.normalize("NFD", texto)
+                      if unicodedata.category(c) != "Mn")
+    palabras = set(re.split(r"[\s\-_/,.:@()]+", texto_n))
     # NOTA ES: claves cortas (pi, cad, cal, tim) solo valen como palabra
     # NOTA ES: completa: así "pip-install" queda fuera de hermes y "último" fuera de comfy.
     # NOTA ES: "set" quedó fuera: también nombra una tanda de flujos ("set Comfy").
@@ -131,6 +145,9 @@ def clasificar(sesion):
     if "cad" in palabras:
         return "autocad"
     if "tim" in palabras:
+        return "comfy"
+    # NOTA ES: "wf" solo como palabra ("WF-03" sí, cualquier otra cosa con wf dentro no).
+    if "wf" in palabras:
         return "comfy"
     # NOTA ES: el LoRA se llama "rhino-to-image" pero corre en Comfy: el nombre
     # NOTA ES: del LoRA no decide, decide el modelo que lo ejecuta.
@@ -143,7 +160,9 @@ def clasificar(sesion):
     if "nanobanana" in texto or "banano" in texto:
         return "comfy"
     for tema, claves in _REGLAS_TEMA:
-        if any(c in texto for c in claves):
+        # NOTA ES: cada clave prueba exacta y con guiones como espacios
+        # NOTA ES: ("vista-grafica" matchea "vista gráfica" una vez sin tildes).
+        if any(c in texto or c.replace("-", " ") in texto_n for c in claves):
             return tema
     return "otros"
 

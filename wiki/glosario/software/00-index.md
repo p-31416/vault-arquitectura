@@ -19,6 +19,7 @@ Catálogo de comandos, funciones y variables de todos los softwares del estudio.
 | ComfyUI | [[wiki/glosario/software/comfyui|comfyui]] |
 | Comfy Cloud vs RunPod | [[wiki/glosario/software/comfy-cloud-vs-runpod|comfy-cloud-vs-runpod]] — dónde renderizar: límites, privacidad, costos y qué sirve para el concurso |
 | FLUX.2 [klein] 9B | [[wiki/glosario/software/flux2-klein-9b|flux2-klein-9b]] — DiT 9B, edición multi-referencia, stack de instalación y grafo |
+| FLUX.1 (schnell/dev/pro/kontext) | [[wiki/glosario/software/flux1|flux1]] — familia base 12B, exploración gratis vía Pollinations, lámina y edición |
 | LoRA rhino-to-image | [[wiki/glosario/software/lora-rhino-to-image-gaudi|lora-rhino-to-image-gaudi]] — LoRA rank 16 sobre FLUX.2 klein 9B (curso AI×Gaudí) |
 | LoRAs locales | [[wiki/glosario/software/lora-locales-comfyui|lora-locales-comfyui]] — 17 LoRAs que corren en el RX 570: base, rank, trigger, VRAM y los que piden login |
 | Unreal Engine | [[wiki/glosario/software/unreal-engine|unreal-engine]] |

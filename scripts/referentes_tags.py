@@ -21,7 +21,7 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
-EJES = ["tema", "estrategia", "material", "representacion", "uso", "estado"]
+EJES = ["tema", "estrategia", "material", "representacion", "programa", "escala", "uso", "estado"]
 CAMPOS_TEXTO = ["obra", "autor", "anio", "ciudad", "nota", "fuente_original"]
 EXT = {".jpg", ".jpeg", ".png", ".webp"}
 
@@ -82,7 +82,8 @@ def main():
             "fuente_original": "", "fecha_alta": datetime.now().strftime("%Y-%m-%d"),
             "fecha_pin": "", "nota": "",
             "tags": {"tema": ["sin-clasificar"], "estrategia": [], "material": [],
-                     "representacion": [], "uso": [args.slug], "estado": ["shortlist"]},
+                     "representacion": [], "programa": [], "escala": [],
+                     "uso": [args.slug], "estado": ["shortlist"]},
         })
         nuevas += 1
 

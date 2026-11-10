@@ -38,7 +38,7 @@ for(const [ax,vals] of Object.entries(state.tags)){
 }
 ```
 
-Ejes: `tema · estrategia · material · representacion · estado · uso`.
+Ejes: `tema · estrategia · material · representacion · programa · escala · estado · uso`. Los dos del concurso (`programa`: mercado/cultura/plaza; `escala`: detalle/edificio/urbano) se cargan en `tags.csv` y quedan como vistas fijas (Mercado / Cultura / Plaza).
 
 ## Cada vista es un link
 
@@ -69,3 +69,9 @@ Ejemplos:
 4. Para actualizar: regenerar y volver a arrastrar (misma URL con deploy nuevo).
 
 Los binarios siguen fuera de git: se publica el HTML autocontenido, no la carpeta `activos/`.
+
+## Compartirlo con Emilia (3 niveles + Hermes)
+
+1. **Ya mismo**: el HTML de `proyectos/STUDIO_OS-Emilia/presentacion/dashboard-referentes-aixgaudi.html` viaja por mail/WhatsApp o se abre en su compu tras `git pull`. Cada vista filtrada es un link (`#tema=...`) que se pega en el chat.
+2. **Online sin cuentas**: arrastrar ese mismo HTML a Netlify Drop y pasarle la URL.
+3. **Con Hermes (arquitectura objetivo)**: el tablero vive servido en `pitau.tech`; Emilia pide por Telegram ("mostrame cáscaras de ladrillo") y Hermes responde con la vista ya filtrada + regenera el HTML cuando entran referentes nuevos. Ella nunca edita CSV: manda fotos por Telegram, Hermes las archiva en `activos/`, las deja `sin-clasificar` y avisa para clasificar a un clic.

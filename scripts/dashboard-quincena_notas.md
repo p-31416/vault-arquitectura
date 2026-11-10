@@ -61,7 +61,10 @@ rango: muestra huecos además de avances, que es lo que pide un reporte.
   en el vault), rutas, las sesiones del tema y sus plans.
 - La clasificación vive en `TEMAS` + `_REGLAS_TEMA` + `clasificar()` arriba
   del script: una sesión cae en un solo tema, por tags + título, con claves
-  cortas (`pi`, `cad`, `set`, `3d`) exigidas como palabra completa.
+  cortas como palabra completa (`pi`, `cad`, `tim`, `wf`, `flow`, `whisk`),
+  sin tildes para comparar y lista editable de programas.
+- **Historia completa**: el mismo script genera `activos/web/historia/` con
+  `--desde 2026-06-28` (123 sesiones, cero "otros") → `presentacion/dashboard-historia.html`.
 - El buscador filtra ambas vistas.
 
 ## Para regenerar con otro período

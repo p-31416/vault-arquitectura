@@ -26,6 +26,7 @@ Personas y estudios/organizaciones que inspiran la práctica del estudio.
 | [[wiki/glosario/referentes/fredy-fortich|fredy-fortich]] | persona | MVRDV NEXT (BIM+IA) | [[wiki/glosario/referentes/mvrdv|mvrdv]] |
 | [[wiki/glosario/referentes/ben-van-berkel|ben-van-berkel]] | persona | Fundador UNStudio | [[wiki/glosario/referentes/ia-estudios-internacionales|ia-estudios-internacionales]] |
 | [[wiki/glosario/referentes/carlos-banon|carlos-banon]] | persona | SUTD + FORMAS.AI | [[wiki/glosario/conceptos/cerebro-digital-karpathy|cerebro-digital-karpathy]] |
+| [[wiki/glosario/referentes/black-forest-labs|black-forest-labs]] | organización | IA generativa / familia FLUX (1, 2, 3) | [[wiki/glosario/software/flux1|flux1]] · [[wiki/glosario/software/flux2-klein-9b|flux2-klein-9b]] |
 | [[wiki/glosario/referentes/google|google]] | organización | Tech / management creativo | [[wiki/glosario/conceptos/marco-creativo-google-pixar|marco-creativo-google-pixar]] |
 | [[wiki/glosario/referentes/pixar-animation-studios|pixar-animation-studios]] | estudio | Animación / creatividad colectiva | [[wiki/glosario/conceptos/braintrust-pixar|braintrust-pixar]] |
 | [[wiki/glosario/referentes/ed-catmull|ed-catmull]] | persona | Cofundador Pixar / *Creativity, Inc.* | [[wiki/glosario/conceptos/braintrust-pixar|braintrust-pixar]] |

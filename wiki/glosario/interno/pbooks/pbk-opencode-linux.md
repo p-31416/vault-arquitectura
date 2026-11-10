@@ -57,13 +57,21 @@ opencode auth login
 
 Elegir el provider de OpenCode Console y pegar la key. Verificar con `opencode auth list`.
 
-## 4 · Clonar el vault
+## 4 · Clonar el vault (primera vez en la otra compu)
 
 ```bash
 mkdir -p ~/repos && cd ~/repos
 git clone https://github.com/p-31416/vault-arquitectura.git
 cd vault-arquitectura
 ```
+
+Si GitHub pide credenciales (repo privado), una sola vez:
+
+```bash
+gh auth login   # o: git config --global credential.helper store
+```
+
+Sino, genera un token (Settings → Developer settings → Personal access tokens, permiso `repo`) y úsalo como contraseña del usuario de GitHub.
 
 ## 5 · Abrir el vault con el agente
 
@@ -80,6 +88,15 @@ Adentro, `Tab` cambia al agente **plan** (solo lectura: analiza sin editar ni ej
 Comandos útiles: `/models` (elegir modelo) · `Esc` (interrumpir) · `/exit` (salir). `/init` no hace falta: el `AGENTS.md` ya existe y se commitea.
 
 Para una sola pregunta sin abrir el TUI: `opencode run "¿qué contiene este vault sobre X?"`.
+
+## 5bis · Traer lo nuevo (cada vez que prendas la otra compu)
+
+```bash
+cd ~/repos/vault-arquitectura
+git pull
+```
+
+Baja sesiones, tableros y specs del día. Los HTML de `presentacion/` se abren con doble clic desde el explorador de archivos.
 
 ## 6 · Qué viaja y qué queda en la PC principal
 

@@ -66,6 +66,7 @@ tbody th{font-size:14px}.mlink{color:var(--blue);cursor:pointer;font-weight:700}
 <button class="tab" data-v="v2">② Tabla doble entrada</button>
 <button class="tab" data-v="v3">③ Fichas por modelo</button>
 <button class="tab" data-v="v4">④ Por prueba</button>
+<button class="tab" data-v="v5">⑤ Agente pi imágenes</button>
 </div>
 
 <!-- VISTA 1: por proveedor (original) -->
@@ -249,6 +250,37 @@ tbody th{font-size:14px}.mlink{color:var(--blue);cursor:pointer;font-weight:700}
 <p>Tip: si Flow lo corta, en 2 pasadas (mercado+fractal+piso primero, después auditorio+techos+recorrido con la primera como referencia). Guardar semilla de la base.</p></div>
 
 <p class="center" style="margin-top:16px">Total estimado batería: <b class="price">~$0.50–0.70</b> · orden: gratis (CF + Flow + grants) → web NB → OR pago con Seedream ÚLTIMO · Sunburst solo usos específicos · <b>local ahora</b> (probes + web) → <b>n8n después</b> (tools).</p>
+</div>
+
+<!-- VISTA 5: agente pi imágenes — capacidades y cómo funciona -->
+<div class="view" id="v5">
+<div class="sheet"><h2>Agente pi imágenes — qué sabe hacer</h2>
+<p>Asistente n8n de generación para arquitectura. Habla español, escribe prompts en inglés. <b>12 tools</b> en 3 carriles sin repetir rol: <b>CF gratis default · Pollinations con seed/URL · OpenRouter pago por calidad</b>. Modelo cerebro: <code>openrouter/z-ai/glm-5.3-flash</code>. Skills: <code>prompting-arquitectura</code> + <code>prompt-cascara-gaudi</code> (solo concurso).</p>
+<p><b>Tamaño mínimo + formato:</b> SIEMPRE ~0.9-1 MP. Apaisado 16:9 / cuadrado 1:1 / vertical 9:16. Pollinations 1280 máx (pro múltiplos 32, mai mínimo 768). OpenRouter 1K fija + aspect_ratio AI. CF schnell fijo 1024².</p></div>
+<div class="panel" style="margin-bottom:14px"><table style="min-width:0"><tbody>
+<tr><th style="width:220px">Regla de elección (router)</th><td><b>Default Cloudflare</b> (cuota 10k Neurons/día gratis). Si CF falla o necesitas <b>seed / URL pública / texto exacto</b> → Pollinations. Si necesitas <b>máxima fidelidad</b> y hay presupuesto → OpenRouter (barato → calidad → max). Cada tool registra pedido → modelo → costo → veredicto.</td></tr>
+<tr><th>Qué pasa al límite</th><td><b>Pollinations al límite (429 / sin grants / sin saldo Pollen):</b> el agente cambia a <code>generar_cf / editar_cf</code> y avisa <code>Pollinations sin cuota — sigo en CF gratis</code>. <b>Cloudflare al límite (10k Neurons/día o 720 req/min):</b> cambia a Pollinations equivalente (<code>generar_explorar</code> por <code>generar_cf</code>, <code>editar_imagen</code> por <code>editar_cf</code>) y avisa el corte UTC 00:00. <b>Ambos caídos:</b> usa OpenRouter si hay crédito, si no pausa y pide OK. Nunca reintenta en bucle el mismo carril.</td></tr>
+<tr><th>Sin duplicar modelos</th><td>Guía del dashboard: cada operación tiene su modelo. <b>schnell</b> = exploración (CF gratis, Pol solo si pide seed) · <b>klein-4b</b> = edición conserva+cambia (CF gratis, OR barato solo si pide 4MP/pago) · <b>z-image</b> = nitidez volumen · <b>mai-flash</b> = texto · <b>kontext/1.1-pro</b> = identidad/lámina · <b>Seedream/NB/GPT</b> = geometría/interiores/póster (OR). El agente no ofrece el mismo modelo en dos carriles para lo mismo.</td></tr>
+<tr><th>Versiones FLUX claras</th><td><b>schnell = FLUX.1 schnell 12B (2024, Apache 2.0)</b> destilado veloz txt2img, 4 steps, sin seed en CF. <b>klein-4b = FLUX.2 klein 4B (2026, Apache 2.0)</b> familia FLUX.2, edición + txt2img, 1–4 refs, seed + guidance. No son la misma versión: schnell es FLUX.1, klein-4b es FLUX.2.</td></tr>
+<tr><th>Qué es primer MP</th><td><b>MP = megapíxel = 1.024×1.024 ≈ 1M píxeles.</b> En OpenRouter FLUX.2 el precio es por MP de salida: <b>primer MP</b> = costo base de arrancar la imagen (ej klein $0.014, pro $0.03, max $0.07). <b>MP siguientes</b> = cada millón extra (ej max $0.03). 1024² = 1 MP paga 1× · 2048² = 4 MP paga base + 3× extra. Refs de entrada se cobran aparte por MP.</td></tr>
+</tbody></table></div>
+<div class="panel"><table>
+<thead><tr><th>Tool</th><th>Modelo</th><th>Carril</th><th>Precio ref</th></tr></thead>
+<tbody>
+<tr><th>generar_cf</th><td>FLUX.1 schnell 1024²</td><td>CF sub-workflow IMG Generar CF</td><td class="price">~173 Neurons (~58/día)</td></tr>
+<tr><th>editar_cf</th><td>FLUX.2 klein-4b 1 ref</td><td>CF sub-workflow IMG Editar CF</td><td class="price">~125 Neurons (~80/día)</td></tr>
+<tr><th>generar_explorar</th><td>flux.1-schnell 1280×720</td><td>Pol IMG Generar</td><td class="price">$0.002</td></tr>
+<tr><th>generar_nitido</th><td>z-image-turbo 1280×720</td><td>Pol IMG Generar</td><td class="price">~$0.004</td></tr>
+<tr><th>generar_texto</th><td>mai-image-2.6-flash 1280×768</td><td>Pol IMG Generar</td><td class="price">~$0.016</td></tr>
+<tr><th>generar_lamina</th><td>flux.1.1-pro 1280×704</td><td>Pol IMG Generar</td><td class="price">~$0.03</td></tr>
+<tr><th>generar_ideogram</th><td>ideogram-v4-turbo</td><td>Pol IMG Generar</td><td class="price">~$0.03</td></tr>
+<tr><th>editar_imagen</th><td>flux.1-kontext-pro</td><td>Pol edits (URL pública)</td><td class="price">~$0.03/edit</td></tr>
+<tr><th>generar_or_barato</th><td>flux.2-klein-4b</td><td>OR IMG Generar OR</td><td class="price">$0.014/MP</td></tr>
+<tr><th>generar_or_calidad</th><td>flux.2-pro</td><td>OR IMG Generar OR</td><td class="price">$0.03/MP</td></tr>
+<tr><th>generar_or_seedream</th><td>seedream-5-0-pro</td><td>OR IMG Generar OR 1K</td><td class="price">desde ~$0.045</td></tr>
+<tr><th>generar_or_max</th><td>flux.2-max</td><td>OR IMG Generar OR</td><td class="price">$0.07 primer MP</td></tr>
+</tbody></table></div>
+<p class="center">n8n: <code>IMG Generar</code> (Pol) · <code>IMG Generar CF</code> · <code>IMG Editar CF</code> · <code>IMG Generar OR</code> · presupuesto agente $1/mes · memoria n8n activa.</p>
 </div>
 
 <div class="foot">Fuentes: catálogos vivos Pollinations/OpenRouter · BFL docs · fal.ai/pricing · probes CF · benchmarks Arena/VibeDex/LLM Stats.<br>

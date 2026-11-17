@@ -45,6 +45,12 @@ proyectos/concurso-gaudi-nexus/**/salidas/
 proyectos/concurso-gaudi-nexus/**/inputs/
 proyectos/concurso-gaudi-nexus/**/ref/
 proyectos/concurso-gaudi-nexus/**/workflows/**/assets/
+proyectos/MVP_08-casa-moderna/**/salidas/
+proyectos/MVP_08-casa-moderna/**/_archivados/
+proyectos/MVP_09-croquis-render/**/salidas/
+proyectos/MVP_09-workerFLUX/**/generaciones/
+proyectos/cct-centro-cultural-tigre/**/salidas/
+proyectos/aizpurua-3257-3259/*.pdf
 
 # Diagramas exportados + presupuestos PDF — binarios fuera de git
 diagramas/*.png

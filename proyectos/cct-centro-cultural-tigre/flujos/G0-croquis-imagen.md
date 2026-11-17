@@ -29,19 +29,19 @@ Cola verificada vacía tras cancelar (running 0, pending 0). Reglas: un solo tra
 
 ### G0 — pájaro directo txt2img (Lightning 6 pasos, seed 42)
 
-![cct-G0-v01 pájaro aéreo río + parasoles](salidas/cct-G0-v01-pajaro-aereo.png)
+[![cct-G0-v01 pájaro aéreo río + parasoles](activos/proyectos/cct-centro-cultural-tigre/flujos/salidas/thumbs/cct-G0-v01-pajaro-aereo.jpg)](activos/proyectos/cct-centro-cultural-tigre/flujos/salidas/cct-G0-v01-pajaro-aereo.png)
 
 Veredicto: arquitectura presente (barras + parasoles + río + verde), técnica derivó a acuarela sepia en vez de tinta B/N (cfg 1.5 obedece poco el negativo). Siguiente: versión B/N en RealVis estándar 32 pasos cfg 4.
 
 ### G1 — detalle Azcona v01 (Canny SD1.5, denoise 0.75) ❌ descartar
 
-![cct-G1-v01 detalle Azcona quemado](salidas/cct-G1-v01-detalle.png)
+[![cct-G1-v01 detalle Azcona quemado](activos/proyectos/cct-centro-cultural-tigre/flujos/salidas/thumbs/cct-G1-v01-detalle.jpg)](activos/proyectos/cct-centro-cultural-tigre/flujos/salidas/cct-G1-v01-detalle.png)
 
 Veredicto: quemada y abstracta (sobreexpuesta, hormigón lavado, sin vanos legibles). Causa: denoise 0.75 alto + Canny 0.31/0.59 que lee el rayado del croquis como textura + base inpainting SD1.5. Siguiente: v02 con denoise 0.55 (una variable por corrida).
 
 ### G1 — detalle Azcona v02 (Canny SD1.5, denoise 0.55) ❌ descartar
 
-![cct-G1-v02 detalle ruido azul](salidas/cct-G1-v02-detalle.png)
+[![cct-G1-v02 detalle ruido azul](activos/proyectos/cct-centro-cultural-tigre/flujos/salidas/thumbs/cct-G1-v02-detalle.jpg)](activos/proyectos/cct-centro-cultural-tigre/flujos/salidas/cct-G1-v02-detalle.png)
 
 Veredicto: ruido azul/rosa siguiendo las líneas, nada fotorrealista. Diagnóstico: el Canny del rayado denso es puro ruido y el SD1.5 a 512 no levanta fotorrealismo de un croquis a mano. Se abandona la vía SD1.5 para este croquis. Siguiente: v03 SDXL RealVis estándar img2img vertical 832×1216, denoise 0.7, sin ControlNet (calidad foto primero, geometría después).
 
@@ -59,13 +59,13 @@ Params: RealVis estándar, 1024×1216, dpmpp_2m/karras 32 pasos cfg 4, denoise 0
 
 ### G5 — fin0003 v01 (RealVis, denoise 0.65) ⚠️ a medio camino
 
-![cct-G5-v01 fin0003 limpio pero dibujo](salidas/cct-G5-v01-fin0003.png)
+[![cct-G5-v01 fin0003 limpio pero dibujo](activos/proyectos/cct-centro-cultural-tigre/flujos/salidas/thumbs/cct-G5-v01-fin0003.jpg)](activos/proyectos/cct-centro-cultural-tigre/flujos/salidas/cct-G5-v01-fin0003.png)
 
 Veredicto: geometría perfecta pero NO es foto — es tu croquis limpio (líneas B/N, personitas apenas modeladas, pérgola y baranda intactas). Causa: denoise 0.65 conserva demasiado trazo y el modelo lo renderiza como contenido. Siguiente: v02 denoise 0.8 (suelta la línea, arriesga geometría).
 
 ### G5 — fin0003 v03 (txt2img + scribble SDXL 0.8, denoise 1.0) ⚠️ primera imagen real
 
-![cct-G5-v03 scribble foto malla perforada](salidas/cct-G5-v03-scribble.png)
+[![cct-G5-v03 scribble foto malla perforada](activos/proyectos/cct-centro-cultural-tigre/flujos/salidas/thumbs/cct-G5-v03-scribble.jpg)](activos/proyectos/cct-centro-cultural-tigre/flujos/salidas/cct-G5-v03-scribble.png)
 
 Veredicto: primera foto de verdad (12 min). Materiales presentes: malla metálica perforada tipo hunter douglas, columnas acero, vigas madera pérgola, verde, deck. Falta: vista más frontal que tu lateral de 3er piso, sin doble altura interior legible ni personitas. Siguiente: v04 strength 0.7 + prompt con patio/personas primero (una variable).
 

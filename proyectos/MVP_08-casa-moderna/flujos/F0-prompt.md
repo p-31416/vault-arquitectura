@@ -9,7 +9,7 @@ idioma: es
 
 # F0 — prompt casa base (Buenos Aires, hormigón visto)
 
-> JSON canónico: `workflow_F0b-casa-base_realvis.json` — RealVisXL V5.0 estándar (`realvisxlV50_v50Bakedvae.safetensors`), 1216x832, 32 steps, cfg 4, seed 42 (ya trae este prompt + títulos 🔵/🔴). Keeper verificada 2026-11-12: `salidas/casa-F0b-v01-T3-steps40-keeper.png`.
+> JSON canónico: `workflow_F0b-casa-base_realvis.json` — RealVisXL V5.0 estándar (`realvisxlV50_v50Bakedvae.safetensors`), 1216x832, 32 steps, cfg 4, seed 42 (ya trae este prompt + títulos 🔵/🔴). Keeper verificada 2026-11-12: [activos/proyectos/MVP_08-casa-moderna/flujos/salidas/casa-F0b-v01-T3-steps40-keeper.png].
 > Archivado: `workflow_F0-casa-base_lightning.json` → `_archivados/` (Lightning 512 salía blanda/deformada).
 > Convención fija del estudio: **positivo en azul, negativo en rojo**. En el canvas: clic derecho en el nodo → Color → azul/rojo (una vez; el título 🔵/🔴 ya viene en el JSON).
 
@@ -65,10 +65,10 @@ El seed es el número del sorteo inicial de ruido: **mismo seed + mismo prompt +
 
 | # | Cambio | Esperado | Salida |
 |---|---|---|---|
-| T1 | base tal cual (seed 42) | base referencia | `salidas/casa-F0b-v01-T1-seed42.png` |
-| T2 | seed aleatorio 1104876903174892 | otra casa, mismo estilo | `salidas/casa-F0b-v01-T2-seed1104876903174892.png` |
-| T3 | steps 40, seed 42 | ✅ KEEPER Sol 2026-11-12 | `salidas/casa-F0b-v01-T3-steps40-keeper.png` |
-| T4 | cfg 5, seed 42 | quemó listones (rojizo) | `salidas/casa-F0b-v01-T4-cfg5.png` |
-| T5 | 832×1216 vertical, seed 42 | otra casa (cambia el ruido) | `salidas/casa-F0b-v01-T5-vertical.png` |
+| T1 | base tal cual (seed 42) | base referencia | [activos/proyectos/MVP_08-casa-moderna/flujos/salidas/casa-F0b-v01-T1-seed42.png] |
+| T2 | seed aleatorio 1104876903174892 | otra casa, mismo estilo | [activos/proyectos/MVP_08-casa-moderna/flujos/salidas/casa-F0b-v01-T2-seed1104876903174892.png] |
+| T3 | steps 40, seed 42 | ✅ KEEPER Sol 2026-11-12 | [activos/proyectos/MVP_08-casa-moderna/flujos/salidas/casa-F0b-v01-T3-steps40-keeper.png] |
+| T4 | cfg 5, seed 42 | quemó listones (rojizo) | [activos/proyectos/MVP_08-casa-moderna/flujos/salidas/casa-F0b-v01-T4-cfg5.png] |
+| T5 | 832×1216 vertical, seed 42 | otra casa (cambia el ruido) | [activos/proyectos/MVP_08-casa-moderna/flujos/salidas/casa-F0b-v01-T5-vertical.png] |
 
 Keeper T3 → alimenta F1–F4. Registrar en dashboard casa + reporte 20.

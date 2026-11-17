@@ -10,11 +10,11 @@ idioma: es
 # MVP 04.03 — casa moderna (flujos vigentes, todo local $0)
 
 > Reemplaza los flujos viejos SD1.5/Juggernaut-lento (marcados `OBSOLETO — ver MVP 08`, sin borrar).
-> Base canónica: RealVisXL V5.0 estándar 1216x832, 32 steps, cfg 4, seed 42 (keeper F0b verificada 2026-11-12). Salidas: `casa-{WF}-v{NN}-{variante}.png`.
+> Base canónica: RealVisXL V5.0 estándar 1216x832, 32 steps, cfg 4, seed 42 (keeper F0b verificada 2026-11-12). Salidas: `casa-{WF}-v{NN}-{variante}.png` en [activos/proyectos/MVP_08-casa-moderna/flujos/salidas/].
 
 ## Cómo abrir y ver antes de correr
 
-Entradas y salidas van encadenadas por nombre: la salida de F0 (`salidas/casa-F0b-v01-T3-steps40-keeper.png`) es la entrada de F1/F2/F4. Copiarla a `P:\00-repos\ComfyUI\input\`.
+Entradas y salidas van encadenadas por nombre: la salida de F0 ([activos/proyectos/MVP_08-casa-moderna/flujos/salidas/casa-F0b-v01-T3-steps40-keeper.png]) es la entrada de F1/F2/F4. Copiarla a `P:\00-repos\ComfyUI\input\`.
 
 1. Arrastrar el JSON a `http://127.0.0.1:8188`. Leer nodos y params abajo. Recién entonces encolar.
 2. Si el LoadImage pide otro archivo, se edita el widget (F3: tu foto con máscara pintada, opacidad ~75%; F5: la keeper final que elijas).
@@ -23,7 +23,7 @@ Entradas y salidas van encadenadas por nombre: la salida de F0 (`salidas/casa-F0
 ## Los 7 flujos
 
 ### F0 — base casa hormigón+madera, canónica RealVis (`workflow_F0b-casa-base_realvis.json`)
-Descripción: txt2img que genera la keeper `salidas/casa-F0b-v01-T3-steps40-keeper.png` (verificada 2026-11-12: hormigón encofrado + listones + carpintería negra, patio, tarde).
+Descripción: txt2img que genera la keeper [activos/proyectos/MVP_08-casa-moderna/flujos/salidas/casa-F0b-v01-T3-steps40-keeper.png] (verificada 2026-11-12: hormigón encofrado + listones + carpintería negra, patio, tarde).
 Objetivo: punto de partida único; todo lo demás parte de esta imagen, no de prompts nuevos.
 Prompt + KSampler + 5 pruebas: [[proyectos/MVP_08-casa-moderna/flujos/F0-prompt|F0-prompt]] (positivo 🔵 en azul, negativo 🔴 en rojo).
 
@@ -55,4 +55,4 @@ Objetivo: lámina nítida. En RX 570 correr por mitades o reservar para cierre.
 
 ## Registro y dashboard
 
-Cada corrida: `salidas/casa-{WF}-v{NN}-{variante}.png` + fila en `scripts/dashboard-casa.py` ITEMS + `activos/web/casa-moderna/index.html` (generar con `P:\Anaconda\envs\comfyenv\python.exe scripts/dashboard-casa.py`).
+Cada corrida: [activos/proyectos/MVP_08-casa-moderna/flujos/salidas/casa-{WF}-v{NN}-{variante}.png] + fila en `scripts/dashboard-casa.py` ITEMS + `activos/web/casa-moderna/index.html` (generar con `P:\Anaconda\envs\comfyenv\python.exe scripts/dashboard-casa.py`).

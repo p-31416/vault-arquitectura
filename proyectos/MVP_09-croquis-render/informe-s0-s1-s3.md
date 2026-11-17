@@ -24,19 +24,22 @@ idioma: es
 
 `workflow_S0-croquis.json` · markerhandsketch 0.7 · seed 42. Misma familia que la keeper F0: dos volúmenes, pantallas de listones, vanos y patio legibles.
 
-![[proyectos/MVP_09-croquis-render/flujos/salidas/casa-S0cro-v01-T1-marker.png]]
+![S0 croquis marker](activos/proyectos/MVP_09-croquis-render/flujos/salidas/thumbs/casa-S0cro-v01-T1-marker.jpg)
+> Full: [activos/proyectos/MVP_09-croquis-render/flujos/salidas/casa-S0cro-v01-T1-marker.png]
 
 ### S1-T1 — render directo ⚠️ quedó dibujo (6 min)
 
 `workflow_S1-croquis-render.json` · denoise 0.55. La línea del croquis domina: sale foto-dibujo, no foto. Geometría respetada al 100% (vano por vano), pero no cruza a fotorrealismo.
 
-![[proyectos/MVP_09-croquis-render/flujos/salidas/casa-S1ren-v01-T1-d055-quedo-dibujo.png]]
+![S1 render directo](activos/proyectos/MVP_09-croquis-render/flujos/salidas/thumbs/casa-S1ren-v01-T1-d055-quedo-dibujo.jpg)
+> Full: [activos/proyectos/MVP_09-croquis-render/flujos/salidas/casa-S1ren-v01-T1-d055-quedo-dibujo.png]
 
 ### S3-T1 — render + LoRA ⚠️ casi igual a S1 (6 min)
 
 `workflow_S3-lora.json` · ArcvizXL 0.6, denoise 0.55. El LoRA a 0.6 casi no mueve la aguja frente a S1: confirma que el freno es el denoise, no el estilo.
 
-![[proyectos/MVP_09-croquis-render/flujos/salidas/casa-S3lora-v01-T1-d055-quedo-dibujo.png]]
+![S3 render LoRA](activos/proyectos/MVP_09-croquis-render/flujos/salidas/thumbs/casa-S3lora-v01-T1-d055-quedo-dibujo.jpg)
+> Full: [activos/proyectos/MVP_09-croquis-render/flujos/salidas/casa-S3lora-v01-T1-d055-quedo-dibujo.png]
 
 ## Veredicto y próximo paso
 

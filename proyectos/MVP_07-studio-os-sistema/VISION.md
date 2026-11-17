@@ -8,7 +8,7 @@ pais: Argentina
 fase: especificacion
 fecha_inicio: 2026-10-28
 fecha_estimada_entrega: s/d
-ultima_actualizacion: 2026-10-28
+ultima_actualizacion: 2026-11-16
 estado: activo
 tags: [mvp_07, studio-os, vision, hermes, stack, opensource, free-first, cuaderno-digital]
 idioma: es
@@ -78,6 +78,24 @@ Si eso no está, el resultado no cuenta, por lindo que sea. Ese criterio decide 
 > **¿Cuánto cuesta que un junior pueda trabajar como un senior?**
 
 En horas del senior que se ahorran. Es la métrica que importa: el estudio no crece por tener más gente, crece porque la gente nueva llega más rápido a la calidad de la gente vieja.
+
+## 1.6 Raíz metodológica — System First (hereda filo MVP_01)
+
+> **Lo primero es el sistema. La IA acompaña como herramienta extra sobre una base que entrega.**
+
+Esta VISION integra la filosofía de [[proyectos/MVP_01-dibujo_ia/00-filo-mvp_01|filo MVP_01]]: documentar procesos, dibujar con lenguaje natural, validar en AutoCAD desde 10 años de práctica docente, y proyectar la misma metodología hacia Revit, Rhino, Grasshopper, Blender y ComfyUI.
+
+Herencia viva:
+
+- **Menor esfuerzo posible:** del pensamiento a la pantalla con fricción mínima, con lenguaje natural como interfaz y escala hacia lectura por máquina.
+- **Biblioteca viva de decisiones del estudio:** convenciones, tolerancias y defaults opinados, revisables por humanos antes de ejecutar.
+- **Progresión por niveles:** cada nivel incorpora el anterior, se prueba en plano/obra real y se documenta en `.md` antes del código.
+- **Espíritu software-agnóstico:** la metodología trasciende AutoCAD; MCP es la envoltura que permite conversar en lenguaje natural sin salir del entorno.
+- **Tablero como origen:** trazo a mano desde los 7 años, intención + imagen de referencia + marcar encima + iterar, con ControlNet hacia materia construible.
+
+Horizonte 2027: **de prompt engineering a loop engineering** — loops medibles con semilla, parámetros y registro que multiplican la capacidad del estudio.
+
+Referentes de ingeniería que sostienen este camino: Unix modular, software libre, arquitectura por contrato, IDP con golden paths, MCP stateless + Agent Skills. Ver síntesis en [[proyectos/MVP_01-dibujo_ia/00-filo-mvp_01|filo]] y análisis 2026-11-16 en sesión.
 
 ---
 
@@ -190,7 +208,7 @@ Una fila por pieza. **Siempre primero las alternativas libres y open source**; e
 
 | Pieza | Alternativas (libres / open source primero) | Elegida hoy | Costo y licencia |
 |---|---|---|---|
-| **Agente (cara al cliente)** | **Hermes** (MIT) · OpenClaw (MIT) · Claude Code / Codex (cerrados) | **Hermes** | gratis, MIT, se hospeda en el VPS |
+| **Agente (cara al cliente)** | **Hermes** (MIT) · OpenClaw (MIT) · Claude Code / Codex (cerrados) | **Hermes** | gratis, MIT, se hospeda en el VPS. Research 20 fuentes sept-nov 2026: `raw/research/2026-11-17-hermes-sistemas-imagen-video.md` |
 | **Herramienta de desarrollo (nuestra)** | **OpenCode** (+ Antigravity) | **OpenCode** | tu suscripción |
 | **Modelos de lenguaje** | **Ollama** + modelos abiertos (Qwen 3, Llama 3.1) · **OpenRouter** (API) · **OpenCode Go** (suscripción) | **OpenCode Go** hoy → Ollama en el estudio → OpenRouter si hace falta | de USD 10/mes a USD 0 |
 | **Imágenes (IA)** | **ComfyUI** (GPL) + SD 1.5 / SDXL (OpenRAIL) + FLUX.2 klein 4B (Apache 2.0) · versión cloud de Comfy · **Runpod** (GPU en la nube) | **ComfyUI local en esta PC (RX 570)** para las pruebas; después, flujos para probar en la infraestructura del estudio (cada 15 días) y, si hace falta, cloud de Comfy o Runpod | gratis; la nube es excepción |
@@ -210,7 +228,7 @@ Una fila por pieza. **Siempre primero las alternativas libres y open source**; e
 | **Cuaderno digital (publicación)** | **Quartz** (MIT) · MkDocs Material (MIT) · Nextcloud + Pages · Obsidian Publish (pago) · SilverBullet / Joplin | a definir en ESTRUCTURA, con el requisito: **público, tipo libro, sin conocimientos técnicos** | gratis |
 | **Portal de iteraciones** | Quartz / MkDocs · **PhotoPrism** (AGPL) · **Piwigo** · Nextcloud + Memories | Quartz sobre el índice de renders | gratis |
 | **Fotos de obra** | Nextcloud + Memories (búsqueda y tags) · **Immich** (AGPL) | a definir (§6.8) | gratis, self-hosted |
-| **Visión por computadora** | **Qwen-VL** (Apache 2.0) en Ollama · **CLIP / SigLIP** (Apache/MIT) · **exiftool** (libre) · **OpenCV** (Apache 2.0) | a definir (§6.8) | gratis, local |
+| **Visión por computadora** | **vision_analyze** (Hermes, toolset vision) + **Qwen-VL** (Apache 2.0) en Ollama · **exiftool** + tags · **CLIP / SigLIP / OpenCV** solo si el piloto lo pide | croquis ya con vision_analyze + Qwen-VL local; fotos de obra con incidencias en piloto | gratis, local |
 | **Correo al cliente** | plantillas en el vault + **Gmail API** · nodo de email de n8n | Hermes redacta; lo manda una persona o el propio Hermes con aprobación previa | gratis |
 | **Chatwoot · Instagram · WhatsApp** | — | **no se usan por ahora** | — |
 
@@ -238,6 +256,7 @@ Una fila por pieza. **Siempre primero las alternativas libres y open source**; e
 7. **Seguridad y privacidad.** Se decide qué sale del entorno del estudio y qué no. Los planos son documento legal: no salen.
 8. **Reproducibilidad.** Un proceso se puede volver a ejecutar con los mismos parámetros y dar un resultado comparable.
 9. **Escalabilidad progresiva.** Se empieza con un MVP chico y se amplía con pruebas reales.
+10. **System First, piezas intercambiables, loop engineering.** El sistema sostiene la entrega con trazabilidad completa; la IA suma como herramienta extra. Modelos, motores y agentes se reemplazan por contrato. Los loops medidos con semilla y registro multiplican la capacidad del estudio hacia 2027. Raíz: [[proyectos/MVP_01-dibujo_ia/00-filo-mvp_01|filo MVP_01]] § origen, principio rector y progresión.
 
 ## 6.2 La regla de automatizar vs. hacerlas a mano
 
@@ -310,7 +329,7 @@ El plan detallado, con criterios de entrada y salida por tramo, está en [[proye
 |---|---|---|
 | 1 | **Qué se automatiza primero**: la auditoría de planos · los compromisos con fecha · el cuaderno digital · la documentación de obra | la que más duela hoy en el estudio |
 | 2 | **Cómo se publica el cuaderno** para que lo use Emilia sin conocimientos técnicos | Quartz · MkDocs · Nextcloud + Pages · otro |
-| 3 | **Qué pasa con las fotos de obra**: modelo de visión local que etiqueta y propone incidencias · solo EXIF y tags manuales · dejarlo para más adelante | a definir con el piloto |
+| 3 | **Qué pasa con las fotos de obra**: croquis ya con vision_analyze + Qwen-VL local · fotos con EXIF + tags manuales ahora · incidencias con visión en piloto | croquis activo, incidencias en T6 |
 
 Las decisiones de construcción (dónde vive el modelo, si n8n se queda, red privada, Rhino 8 vs 9, el DPA de Runpod) están en [[proyectos/MVP_07-studio-os-sistema/REQUISITOS#10 · Decisiones abiertas|REQUISITOS §10]], con su impacto y el momento en que hay que tomarlas.
 
@@ -321,6 +340,10 @@ Las decisiones de construcción (dónde vive el modelo, si n8n se queda, red pri
 | El producto se llama **Studio OS** y es replicable; el piloto es el estudio de Emilia | 28/10/2026 |
 | **Hermes** es el agente de cara al cliente (OpenCode es para nuestro desarrollo) | 28/10/2026 |
 | **n8n** como orquestador | 28/10/2026 |
+| El agente de imagen (n8n) es tool/subagente de Hermes (router 1->N), no segundo agente | 16/11/2026 |
+| Base abierta: FLUX 3 Image Klein / klein 4B (SDXL relegado); LoRAs propios = propiedad del estudio | 16/11/2026 |
+| Video IA excluido hasta fin de ano (S9 en T5+); 3D via Trellis/Tripo en fal o pod | 16/11/2026 |
+| Licencias edu no valen para produccion; APS free tier (300 min/mes) independiente de la licencia | 16/11/2026 |
 | **AutoCAD versión completa** (no LT) | 28/10/2026 |
 | **Un agente por estudio** (no uno por persona) | 28/10/2026 |
 | **Telegram** como interfase del día a día; Discord para lo visual | 28/10/2026 |

@@ -1,0 +1,58 @@
+%% Sistema Studio OS — cerebro Hermes intercambiable compacto
+flowchart TB
+    SOL([Sol])
+    EMI([Emilia])
+    HERM[Hermes Agent — gateway siempre encendido]
+    MODELO[MODELO INTERCAMBIABLE — OpenCode Go / Ollama VPS / OpenRouter]
+    MCPHUB[MCP HUB — contratos por toolsets]
+    KAN[Kanban sintetico — boards por proyecto]
+    CRON[Cron + memoria + skills]
+    MCVault[MCP vault]
+    MCReg[MCP registry Postgres]
+    MCN8N[MCP n8n-official]
+    MCAD[MCP AutoCAD]
+    MCRH[MCP Rhino Hops]
+    MCFC[MCP FreeCAD IFC]
+    MCCOM[MCP ComfyUI]
+    MCRUN[Runner P1 P3]
+    MCDR[MCP Drive]
+    N8N[N8N flujos deterministas]
+    LEAN[Leantime tablero humano]
+    IMGAG[Subagente imagen 1 a N]
+    COMFY[ComfyUI + fal + Runpod]
+    PG[(PostgreSQL registro)]
+    VAULT[(Vault canonico)]
+    VIS[vision_analyze + Qwen-VL]
+    NET[Tailscale sin puertos publicos]
+    VPS[VPS N1]
+    PCEST[PC estudio N2]
+    PCDEV[PC desarrollo N3]
+
+    SOL --> HERM
+    EMI --> HERM
+    MODELO -. reemplazo por contrato .-> HERM
+    HERM --> MCPHUB
+    HERM --> KAN
+    HERM --> CRON
+    MCPHUB --> MCVault
+    MCPHUB --> MCReg
+    MCPHUB --> MCN8N
+    MCPHUB --> MCAD
+    MCPHUB --> MCRH
+    MCPHUB --> MCFC
+    MCPHUB --> MCCOM
+    MCPHUB --> MCRUN
+    MCPHUB --> MCDR
+    MCN8N --> N8N
+    N8N --> LEAN
+    N8N --> PG
+    HERM --> IMGAG
+    IMGAG --> COMFY
+    MCVault --> VAULT
+    VIS --> VAULT
+    KAN --> PG
+    LEAN --> PG
+    NET --- VPS
+    NET --- PCEST
+    NET --- PCDEV
+    HERM --- NET

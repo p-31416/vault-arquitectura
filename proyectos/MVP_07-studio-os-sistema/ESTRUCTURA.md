@@ -8,7 +8,7 @@ pais: Argentina
 fase: especificacion
 fecha_inicio: 2026-10-28
 fecha_estimada_entrega: s/d
-ultima_actualizacion: 2026-10-28
+ultima_actualizacion: 2026-11-16
 estado: activo
 tags: [mvp_07, studio-os, estructura, arquitectura, hermes, mcp, tailscale, runpod, seguridad]
 idioma: es
@@ -109,11 +109,13 @@ idioma: es
 
 | Etapa | Modelo | Por qué |
 |---|---|---|
-| Ahora | **OpenCode Go** (suscripción USD 10) | ya está paga y sirve para el primer tramo |
-| Después | **segunda instancia de Hermes en el estudio con Ollama** (modelo local) | el material del estudio no sale de la red |
+| Ahora | **OpenCode Go** (suscripción USD 10, cuenta propia de Sol) | ya está paga y sirve para el primer tramo; identidad de desarrollo transferible por `HERMES_HOME` |
+| Interno barato | **Ollama chico en VPS** (Qwen 3 1.7B / Llama 3.2 1B-3B) para curaduría, etiquetado y memoria | baja consumo de la suscripción; `auxiliary.background_review provider: auto` + `curator consolidate: false` |
+| Después | **segunda instancia de Hermes en el estudio con Ollama** (modelo local) | el material sensible no sale de la red |
 | Si hace falta | **OpenRouter** con API y precio definidos | capacidad puntual, con el costo a la vista |
+| Imagen | **OpenRouter Images API** (una credencial, 14 refs, costo por llamada) + Pollinations (grants/Paid Pollen) + fal (video/3D) | imagen puntual con costo + revision a la vista |
 
-**Opciones de modelo local**: Ollama con modelos abiertos (Qwen 3, Llama 3.1). **Dónde vive** (esta PC con 32 GB, el VPS con 8 GB o la nube) es una decisión abierta: en ESTRUCTURA se compara el costo en RAM y la dependencia de que la máquina esté prendida.
+**Decisión 2026-11-16**: Ollama chico convive en el VPS con Hermes (3 GB + modelo chico con tope), cuenta OpenCode Go sigue a nombre propio. **Dónde vive** el modelo mayor queda para segunda instancia en estudio cuando el volumen lo pida.
 
 ## 3.4 Los modos de ejecución
 
@@ -139,6 +141,7 @@ Sobre esos modos se construyen **tres perfiles**: **nube oficial** (herramientas
 |---|---|
 | **Opciones** | **AutoCAD versión completa** (con su Core Console para lo headless) · **FreeCAD** (GPL, también BIM, corre en Linux) · LibreCAD · QCAD · ODA File Converter · ezdxf (solo DXF) |
 | **Elegida** | AutoCAD completo en el estudio · FreeCAD como alternativa libre y siempre abierta en la otra PC de desarrollo |
+| **Licencia** | AutoCAD completo = suscripcion comercial (edu = solo aprendizaje, sin obra de cliente); APS Automation = tier gratis 300 min/mes por motor, luego tokens; ezdxf/ODA/LibreCAD/QCAD = $0 |
 | **Para qué** | auditar DWG (capas, escalas, referencias externas, unidades), preparar sheets, publicar PDF, comparar versiones |
 | **Límites** | la versión **LT no habilita la vía cloud** (APS Design Automation); con la versión completa, sí. En la PC del estudio el MCP ya habla con AutoCAD por COM |
 | **Trampa conocida** | el LISP de arranque (`acad.lsp`) es incompatible con Core Console y rompe la publicación en segundo plano: hay que aislarlo |
@@ -149,6 +152,7 @@ Sobre esos modos se construyen **tres perfiles**: **nube oficial** (herramientas
 |---|---|
 | **Opciones** | **Rhino 8** (ya) · **Rhino 9** (a comparar) + **Hops** · FreeCAD · Blender + Bonsai · OpenSCAD · CadQuery / OCP |
 | **Elegida** | Rhino (8 o 9, a comparar) + **Hops** para Grasshopper sin pantalla |
+| **Licencia** | Rhino = licencia comercial + host Windows (local o VM cloud); Hops incluido; sin reemplazo abierto pleno |
 | **Para qué** | inspeccionar el `.3dm`, medir, ejecutar definiciones de Grasshopper, exportar; hoy ya se hacen cortes, tramas y hojas |
 | **Límites** | sin la aplicación abierta no hay geometría: de ahí Hops y el runner con watchdog |
 | **Pendiente** | diferencias Rhino 8 vs 9 (licencia, versiones, Hops) |
@@ -159,6 +163,7 @@ Sobre esos modos se construyen **tres perfiles**: **nube oficial** (herramientas
 |---|---|
 | **Opciones** | **FreeCAD** (módulo BIM) · **IfcOpenShell** (LGPL) + su **IfcMCP** oficial · Bonsai (Blender) · xBIM |
 | **Elegida** | FreeCAD + IfcOpenShell |
+| **Licencia** | FreeCAD (LGPL) + IfcOpenShell (LGPL) + Bonsai (GPL) = $0 y aptos comercial; Revit nativo = suscripcion |
 | **Para qué** | inspeccionar, extraer propiedades, validar y comparar modelos |
 | **Límite** | **no hay un IFC real del estudio todavía**: hasta que exista, esto es una hipótesis |
 
@@ -170,6 +175,9 @@ Sobre esos modos se construyen **tres perfiles**: **nube oficial** (herramientas
 | **Elegida** | ComfyUI local en esta PC (RX 570) para las pruebas → flujos para probar en la infraestructura del estudio (cada 15 días) → cloud de Comfy o Runpod como excepción |
 | **Para qué** | render fotorreal, variantes controladas, el flujo Rhino→imagen del concurso |
 | **Límites** | los 8 GB no alcanzan para 9B: la GPU en la nube es **la excepción**, no la regla. Los modelos deben tener licencia comercial permisiva |
+| **Licencia** | klein 4B Apache 2.0, Z-Image Apache 2.0, SDXL OpenRAIL, FLUX.3 Kommunity (<), cerrados = API comercial |
+| **Base** | FLUX 3 Image Klein / klein 4B (actualizado 16/11/2026, SDXL relegado a ecosistema) |
+| **API costo verificado 17/11** | Nano Banana 2 `$0.50 in / $60 image-out / $3 texto por 1M` (~$0.067 en 1K) · Seedream 5.0 Pro `$0.045 base / $0.09 en 2K / $0.003 ref` · router elige por `usage.cost` real (RF-23). Refs: https://openrouter.ai/google/gemini-3.1-flash-image · https://openrouter.ai/bytedance-seed/seedream-5-0-pro |
 
 ## 4.5 Visualización
 
@@ -192,9 +200,10 @@ Sobre esos modos se construyen **tres perfiles**: **nube oficial** (herramientas
 
 | | |
 |---|---|
-| **Agenda** | **Cal.com** (gratis ahora → self-hosted con usuarios después, hay que ver cómo se instala) · Proton Cal · Radicale |
-| **Proyectos** | **Leantime** (ya, con su MySQL) · Vikunja · Taiga · OpenProject |
-| **Decisión** | seguimos con Leantime salvo que se Evaluation |
+| **Agenda** | **Cal.com** (gratis ahora → self-hosted con usuarios después) · Proton Cal · Radicale |
+| **Proyectos humanos** | **Leantime** (ya, con su MySQL) · Vikunja · Taiga · OpenProject |
+| **Proyectos sintéticos** | **Hermes Kanban** — board durable multi-perfil (`~/.hermes/kanban.db`), dispatcher en gateway, workers como procesos OS con `kanban_*` tools. Tableros por proyecto con `--board`, vista unificada por registro central |
+| **Decisión** | seguimos con Leantime para lo humano + Hermes Kanban para lo sintético; el registro une ambos por `task_id` + `idem_key` + `provenance`. Refs: Kanban https://hermes-agent.nousresearch.com/docs/user-guide/features/kanban · tutorial https://hermes-agent.nousresearch.com/docs/user-guide/features/kanban-tutorial · lanes https://hermes-agent.nousresearch.com/docs/user-guide/features/kanban-worker-lanes |
 
 ## 4.8 Datos de clientes y portal
 
@@ -272,6 +281,8 @@ Todos los componentes hablan el mismo idioma: **un sobre de tarea**. Así el reg
 | **Secretos** | `.env` por servicio, permisos 600, fuera de git. En el repo, una clave se filtra con el primer push |
 | **Backup** | restic o borg sobre el vault, la base y las configuraciones; copia **verificable** (una copia que no se probó no es un backup) |
 | **Acceso remoto** | SSH por la red privada. Si se necesita acceso desde fuera (soporte), se habilita Tailscale SSH conephemeral keys, no abrir el puerto 22 |
+| **Autoría Sol / Emilia** | cada tarea guarda `requested_by` (chat_id:user_id Telegram) + hilo de obra + `approved_by`. `TELEGRAM_ALLOWED_USERS` incluye ambos, `GATEWAY_ALLOWED_USERS` solo Sol; skills y memoria con `write_approval: true` |
+| **Aviso a Sol** | Sol recibe mensaje solo cuando algo modifica el sistema (nivel C/D, skill nueva, memoria). Lo operativo de Emilia corre sin interrumpir |
 
 ---
 
@@ -281,7 +292,7 @@ Todos los componentes hablan el mismo idioma: **un sobre de tarea**. Así el reg
 
 | Pieza | Cómo | Opciones (libres primero) |
 |---|---|---|
-| **Escaneo** | foto o escaneo → archivo + metadata (fecha, proyecto, tipo) | el propio móvil con una app de escaneo; o el flujo de Hermes con un modelo de visión (Qwen-VL) que etiqueta |
+| **Escaneo** | foto o escaneo → archivo + metadata (fecha, proyecto, tipo) | `vision_analyze` (Hermes) + Qwen-VL local en Ollama para etiquetar; el móvil como captura |
 | **Anclaje a la wiki** | cada croquis escaneado queda referenciado desde la entrada del wiki que documenta | enlaces entre `.md` + el índice del vault |
 | **Publicación** | el cuaderno se publica como sitio navegable | **Quartz** (MIT) · MkDocs Material · Nextcloud + Pages |
 | **Navegación** | índice visual, filtros por proyecto, tipo y fecha | los mismos, más una portada con índice |
@@ -370,6 +381,26 @@ Formato Nygard. Las decisiones de **producto** están en [[proyectos/MVP_07-stud
 **Alternativas.** *Cloudflare Tunnel*: expone por HTTP público; útil para portales, no para red privada. *WireGuard puro*: más trabajo de configuración y sin descubrimiento de nombres.
 
 **Consecuencias.** *Positivas*: red en minutos, sin puertos abiertos, acceso por nombre. *Negativas*: dependencia de un servicio de correo para la autenticación del tailnet (Tailscale) — a considerar si eso molesta en un estudio. *Riesgos*: equipos que se caen del tailnet → hay que documentar el reingreso.
+
+### ADR · Routing Ollama chico en VPS + cuenta OpenCode propia (2026-11-16)
+
+**Contexto.** Hermes consume suscripción OpenCode Go en cada turno. Curaduría, etiquetado y memoria admiten modelo barato sin perder calidad de orquestación.
+
+**Decisión.** OpenCode Go sigue a nombre de Sol como identidad de desarrollo. En el VPS convive Ollama chico (Qwen 3 1.7B / Llama 3.2) para lo interno: `background_review provider: auto`, curador sin consolidación LLM hasta 20+ skills. Arranque T0 inventario, backend Docker ahora, SSH como puente después.
+
+**Alternativas.** *Todo por OpenCode Go*: simple pero quema suscripción. *Segunda instancia local ya*: ideal para material sensible, pide máquina encendida.
+
+**Consecuencias.** *Positivas*: baja costo, mantiene calidad donde importa. *Negativas*: tope RAM estricto en VPS. *Riesgos*: modelo chico alucina → solo tareas internas, nunca criterio ni publicación.
+
+### ADR · Roles Sol / Emilia con aviso solo en modificación (2026-11-16)
+
+**Contexto.** Dos usuarios Telegram: Sol arma estructura, Emilia opera. Emilia no necesita preguntas técnicas y su uso no puede desordenar lo construido.
+
+**Decisión.** Ambos en `TELEGRAM_ALLOWED_USERS`, solo Sol en `GATEWAY_ALLOWED_USERS`. Emilia opera en lectura y propuesta (nivel A/B); toda escritura C/D, skill nueva o memoria cae a `pending` y avisa a Sol. Registro guarda `requested_by` + hilo de obra + `approved_by` para discriminar aportes.
+
+**Alternativas.** *Mismo permiso total*: riesgo de desorden. *Emilia solo consulta*: frena su autonomía.
+
+**Consecuencias.** *Positivas*: autonomía sin ruptura, autoría trazable. *Negativas*: Sol como cuello en C/D. *Riesgos*: DM saturado → agrupar avisos por obra y digest diario.
 
 ---
 

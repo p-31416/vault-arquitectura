@@ -66,3 +66,14 @@ Esto asegura que el framework **crece con el estudio**, no al revés.
 ## Sobre el MCP (futuro)
 
 El MCP server no es un fin en sí mismo. Es la envoltura que permite que la IA converse con AutoCAD (y después con Revit, comfyuiMCP, etc.), dándole la capacidad de ejecutar comandos, leer datos y modificar dibujos en tiempo real. Cuando la lógica AutoLISP esté madura, el MCP la vuelve accesible desde lenguaje natural puro. en antigravity puedo seleccionar el MCP que quiero trabajar sin salir del entorno y siempre con la misma metodología de trabajo detrás
+
+## Filosofía del tablero 2026-11-12
+
+Diseño a mano desde los 7 años con tablero técnico como modo elegido de pensar.
+El trazo a mano abre el proyecto, la máquina acompaña con materia construible.
+El sistema modular nace del piso Sagrada Familia: octógono / hexágono que se abre
+en triángulos hacia otra pisada, con piezas enteras y fragmentos que portan
+espacios de feria autónomos y agrupables, en lectura abierta y en lectura cerrada
+de mercado modular. El método avanza con escribir intención + imagen de referencia
++ marcar encima + iterar, donde ControlNet interpreta el trazo hacia viga y columna
+de hormigón. Fuente: [[raw/sessions/2026-11-12-sesion-filosofia-tablero-modular|sesión tablero modular]].

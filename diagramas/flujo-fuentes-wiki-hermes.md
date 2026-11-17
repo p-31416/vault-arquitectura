@@ -7,7 +7,7 @@ tags: [diagrama, fuentes, wiki, hermes, replicable]
 
 # Flujo fuentes → wiki → Hermes (replicable)
 
-Cada fuente tiene su flujo y su script. Hermes replica ejecutando la misma tabla. Ver visión en [[proyectos/MVP_07-studio-os-sistema/VISION|VISION]] §2 y §4, y el filo en [[specs/261029-filo-vault-v2|filo-vault-v2]].
+Cada fuente tiene su flujo y su script. Hermes replica ejecutando la misma tabla. Ver visión en [[proyectos/MVP_07-studio-os-sistema/VISION|VISION]] §2 y §4, y el filo en [[specs/archived/261029-filo-vault-v2|filo-vault-v2]].
 
 ![[diagramas/flujo-fuentes-wiki-hermes.drawio.svg|900]]
 

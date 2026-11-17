@@ -3,7 +3,7 @@ tipo: software
 software: comfy-cloud-vs-runpod
 categoria: decision
 fecha_creacion: 2026-10-21
-ultima_actualizacion: 2026-10-21
+ultima_actualizacion: 2026-11-12
 tags: [glosario, software, comfyui, comfy-cloud, runpod, privacidad, licencias, costo, gaudi, concurso]
 ---
 
@@ -38,8 +38,55 @@ El concurso exige **un modelo de IA entrenado con material de la Fundació Anton
 | **Privacidad: el grafo y los archivos** | En tu disco | En tu cuenta de Comfy (retención: "el tiempo necesario para operar, analizar y mejorar el servicio") | ídem |
 | **Privacidad: prompts e imágenes** | Van al pod (disco efímero cifrado; al terminar el pod, **no queda rastro**) | Quedan en la cuenta de Comfy; si usás **Partner Nodes**, además se reenvían al proveedor (Nano Banana, etc.) con sus propias políticas | ídem |
 | **El Agent** | El chat vive en tu máquina, **pero el mensaje + el workflow van al servicio online de Comfy** | Ídem + el chat se guarda en la nube | ídem |
-| **Costo** | **$0,22/h** (3090 Community) · $0,34/h (4090) · $0,35/h (A40 48 GB) | $20/mes · 50.400 créditos/año | $0 · 400 créditos/mes ≈ **25 min de GPU** |
+| **Costo** | **$0,22/h** (3090 Community) · $0,34/h (4090) · $0,35/h (A40 48 GB) | $20/mes · 4.200 créditos/mes | $0 · **5 corridas gratis** (free tier actual, sin tarjeta) |
 | **Veredicto** | **La ruta del concurso y del trabajo de cliente** | Producción de imagen sin LoRA propio, con fricción de plataforma | **Pruebas gratis de los workflows oficiales del curso** |
+
+## Qué significa "pesos abiertos" en Black Forest Labs
+
+Pesos abiertos = se descargan los archivos del modelo y corren en hardware propio (PC, pod, servidor), además de ajustarlos (fine-tune/LoRA). No equivale a open source: el código de inferencia es abierto, pero **los datos y el código de entrenamiento son privados** y cada modelo trae su licencia, que es lo único que manda sobre el uso comercial. Casi todo FLUX es open-weight, no open-source. Solo klein 4B, schnell y pocos más (Z-Image, Qwen-Image 1.0) son Apache 2.0 de verdad.
+
+## Mapa de modelos para arquitectura (noviembre 2026)
+
+Ranking open-weight (Artificial Analysis, 7-nov-2026): Qwen-Image-2.1 (1045), FLUX 3 Image Klein (1043) y Fibo 2.0 (1039) empatados arriba, ~214 Elo debajo del mejor cerrado. El Elo mide preferencia general, no renders de arquitectura: valida con tus prompts.
+
+| Modelo                                           | Salida                              | Licencia                 | Comercial estudio                              | VRAM                               | LoRA                  | Veredicto                                         |
+| ------------------------------------------------ | ----------------------------------- | ------------------------ | ---------------------------------------------- | ---------------------------------- | --------------------- | ------------------------------------------------- |
+| **FLUX.3 Image Klein** (BFL, 15-oct-2026, 5.6B)  | 4K nativo, bbox, 10 refs, edición   | **Kommunity** (<$5M/año) | ✅ Imágenes sí; ❌ LoRA comercial = licencia BFL | 1 GPU consumer (INT8/FP8/NVFP4)    | Base sí, comercial no | **Calidad + cliente**: el mejor hoy para entregar |
+| **FLUX.2 klein 4B** (BFL, 15-ene-2026)           | txt2img + edición 4 refs            | **Apache 2.0**           | ✅ Todo libre                                   | 8.4 GB (12 GB para entrenar)       | ✅ Comercial libre     | **Libertad total**: exploración + LoRA propio     |
+| **FLUX.2 klein 9B** (BFL, 15-ene-2026)           | txt2img + edición 4 refs            | Non-Commercial           | ❌ Licencia o API                               | ~20–24 GB                          | Solo no-comercial     | Concurso, no cliente                              |
+| **FLUX.2 dev** (BFL, 15-ene-2026, 32B)           | Mejor escena compleja open          | Non-Commercial           | ❌ Licencia o API                               | >80 GB BF16 (NVFP4 en 24 GB justo) | Solo no-comercial     | Máxima calidad, pod grande                        |
+| **Qwen-Image-2.1** (Alibaba, 20-sep-2026, 7B+8B) | 10 refs, RGBA, anotaciones, edición | Qwen Research (NC)       | ❌ Sin grant Alibaba                            | ~24 GB                             | Solo investigación    | Mejor crudo, pero no comercial                    |
+| **Z-Image-Turbo** (Alibaba, nov-2025, 6B)        | 8 pasos, texto EN/CN, fotorrealismo | **Apache 2.0**           | ✅ Todo libre                                   | 16 GB (GGUF Q4 ~5 GB)              | ✅                     | **Volumen + velocidad** gratis                    |
+| **FLUX.1 schnell/dev** (BFL, ago-2024, 12B)      | schnell rápido, dev calidad         | Apache 2.0 / NC          | schnell ✅, dev ❌                               | 24 GB (GGUF Q4 ~8 GB)              | schnell sí            | schnell = exploración barata                      |
+| **HunyuanImage 3.0** (Tencent, 80B MoE)          | Gran escala local                   | Ojo: no aplica en UE     | ⚠️ Revisar                                     | Cluster                            | —                     | Solo con gran hardware                            |
+| SDXL + ecosistema                                | Miles de LoRAs/ControlNets          | Apache/Creactive         | ✅                                              | 8 GB                               | ✅                     | Inpaint y control fino local                      |
+
+Entrenar LoRA: `ai-toolkit` (Ostris) cubre FLUX.1/FLUX.2/klein, Qwen-Image, Z-Image y SDXL. Tiempos: klein 4B 1–3 h en 12 GB; 9B pide ~22 GB; dev pide pod grande. **En Comfy Cloud no se entrena nada** (ningún plan lo permite).
+
+## Solo la GPU: tres formas de pagar
+
+La duda "¿existe usar solo la placa?" se responde con tres productos distintos:
+
+1. **Pod (RunPod)**: una máquina Linux completa con GPU. Instalás ComfyUI, bajás modelos, abrís la UI en el navegador, probás flujos. Pagás **por segundo prendido** (idle también quema) + storage. Ideal para probar e iterar.
+2. **Serverless (RunPod Serverless, Comfy Deployments, fal, Replicate)**: mandás un request, una GPU se prende, ejecuta y se apaga. Pagás **por ejecución** (arranque + proceso + idle corto). Ideal para producción repetible (el agente llamando al mismo flujo), no para experimentar en la UI.
+3. **API (Pollinations, Cloudflare, BFL, fal)**: no hay GPU visible: prompt por HTTP, imagen de vuelta. Ideal para volumen y para el agente conversacional.
+
+Para el estudio: **explorar en pod, producir repetible en serverless/API, geometría fina en local**.
+
+## Qué dicen los creadores de arquitectura
+
+Del índice propio (`wiki/fuentes/00-index-yt.md`), pendientes de ver en este orden:
+
+| Creador | Video | Por qué importa |
+|---|---|---|
+| **Paul Hansen** | [AI x Archviz Free ComfyUI FLUX2 x LTX 2.5](https://www.youtube.com/watch?v=946yTMjz-go) (30:01) | Flujo archviz gratis FLUX2 + video, el más cercano al pipeline del estudio |
+| **Alphonso Peluso** | [The Ultimate ComfyUi Workflow for Architects](https://www.youtube.com/watch?v=-zmgjdB8E1U) (1:28) | Workflow completo para arquitectos |
+| **za_Lab** | [QWEN GGUF en ComfyUI](https://www.youtube.com/watch?v=bLoW-tZEkik) + [SDXL Inpainting](https://www.youtube.com/watch?v=px8POauudLY) | Qwen para arquitectura + inpaint preciso |
+| **ArquiKev** (ES) | [¿Qué MODELOS puedes usar en COMFYUI?](https://www.youtube.com/watch?v=LRLyH0dmFEk) | Mapa de modelos en español |
+| **LightSketch** | [Ideas to renders in seconds](https://www.youtube.com/watch?v=UG5wVg4zcZc) | Velocidad idea→render |
+| **Morfeo Academy** (ES) | [Nano Banana en ComfyUI](https://www.youtube.com/watch?v=fP7VStOfJJ4) + [Comfy+n8n](https://www.youtube.com/watch?v=7n7A9emeiVQ) | Edición y automatización en español |
+| **Dorian Oslov** | [n8n + Comfy en RunPod $0.15/24GB](https://www.youtube.com/watch?v=RgrEAge_5Kk) | El pod exacto que el estudio necesita |
+| **ComfyUI oficial** | [Model Jam releases](https://www.youtube.com/watch?v=7V7Aazicx-s) + [Kontext LoRA training](https://www.youtube.com/watch?v=U9QKhRMKIwc) | Novedades y entrenamiento LoRA |
 
 ## Qué puede y qué no puede cada una
 
@@ -61,9 +108,9 @@ El concurso exige **un modelo de IA entrenado con material de la Fundació Anton
 
 ### Comfy Cloud Free (0 USD)
 
-- ✅ 400 créditos/mes (≈25 min de GPU a 0,266 cr/s), mismos modelos y nodos, sin tarjeta.
-- ✅ **Alcanza para la calibración**: probar los workflows oficiales del curso (RHINO-TO-IMAGE, IMAGE-EDIT, SPECTRUM) y ver si el grafo corre tal cual.
-- ❌ Los créditos **no se acumulan**: renuevan cada mes.
+- ✅ **5 corridas gratis** en GPU real, sin tarjeta (free tier actual 2026-11-12).
+- ✅ Sirve para ver si un workflow oficial corre tal cual.
+- ❌ No es un tier de trabajo: 5 corridas no sostienen producción.
 
 ### RunPod + ComfyUI propio
 
@@ -103,6 +150,30 @@ El concurso exige **un modelo de IA entrenado con material de la Fundació Anton
 - **El flujo completo en un pod**: bajar el modelo base (klein 4B, Apache 2.0) + el dataset propio → entrenar con `ai-toolkit` (o kohya) → el `.safetensors` sale en `models/loras` → usar en el mismo pod o en local.
 - **Para poder usarlo después en Comfy Cloud**: hay que publicarlo en un repo de Hugging Face (importable desde Creator+) **o** seguir usándolo en local/pod (que es lo razonable: el LoRA propio es material de trabajo del estudio).
 
+## Licencias: qué se puede correr dónde (verificado BFL 2026-11-12)
+
+"Pesos abiertos" significa que se pueden bajar los archivos y correrlos en hardware propio (PC, pod, servidor), además de ajustarlos (fine-tune/LoRA). No equivale a open source: la licencia de los pesos manda sobre el uso comercial.
+
+| Modelo | Licencia | Comercial en local/pod | VRAM |
+|---|---|---|---|
+| klein **4B** destilado / 4B Base | **Apache 2.0** | ✅ Sí, sin costo ni permiso | 8.4 / 9.2 GB |
+| klein **9B** / 9B Base | FLUX Non-Commercial | ❌ Requiere licencia paga (o vía API, que incluye derechos) | ~20–24 GB |
+| **FLUX.3 Image Klein (5.6B, 4K nativo)** | **FLUX Kommunity License** | ⚠️ Imágenes comerciales si <$5M/año (revisar + declarar IA); fine-tunes comerciales = licencia BFL | 1 GPU consumer |
+| FLUX.1 schnell | Apache 2.0 | ✅ Sí | 12B params |
+| FLUX.1 dev, kontext dev, FLUX.2 dev | FLUX Non-Commercial | ❌ Solo test/evaluación no productiva | — |
+
+Matiz: la NC restringe **correr los pesos** con fin comercial; los outputs (renders) son del estudio. Para trabajo de cliente la vía limpia es klein 4B o la API de BFL. **klein 4B Apache 2.0 es el modelo que escala al hardware del estudio**: hoy no entra en la RX 570 (8.4 vs 8 GB), pero entra en cualquier pod barato y en cualquier GPU futura, y admite LoRA con 12 GB (~1–3 h por LoRA con ai-toolkit).
+
+## Cómo cobra RunPod (verificado docs 2026-11-12)
+
+Modelo mental: **no se cobra por imagen, se cobra por tiempo de pod prendido**.
+
+- **GPU por segundo, solo con el pod corriendo** — prendido idle también quema crédito. Facturación cada 5 min, créditos prepagos, mínimo 1 h de saldo para desplegar. Saldo en $0 → apaga solo (con network volume conserva datos, sin volume termina y se pierde todo).
+- **Storage separado (la trampa clásica)**: disco contenedor $0.10/GB/mes (se borra al parar) · disco de volumen $0.10 corriendo / **$0.20 parado** · network volume $0.07/GB/mes (<1 TB) siempre, sobrevive al terminate. 100 GB olvidados = $20/mes en volumen o $7/mes en network volume.
+- **Stop ≠ Terminate**: Stop libera la GPU (corta el cómputo) pero el disco sigue facturando; Terminate borra todo lo local y solo sobrevive el network volume.
+- **Serverless** (otro producto): paga por ejecución (arranque + proceso + idle 5s), escala a cero. Para probar modelos interactivos no sirve; sirve para exponer endpoints.
+- **Hábito de costo**: modelos en network volume → Terminate al terminar → próximo pod monta el mismo volume, cero re-descarga. Sesión de 2 h en 3090 ≈ **$0.44** + centavos de storage.
+
 ## Qué sirve específicamente para el concurso
 
 Los requisitos técnicos del concurso (verificados en el plan `261019-plan-concurso-gaudi-nexus-ia`):
@@ -134,6 +205,8 @@ Los requisitos técnicos del concurso (verificados en el plan `261019-plan-concu
 
 **Costo del concurso completo: $1-2** (RunPod puntual) frente a $20-35/mes de suscripción permanente. Para una línea de trabajo que el 16/12 cierra, lo razonable es **pagar por uso, no por suscripción**.
 
+**Recomendación del estudio (2026-11-12):** explorar tipos de flujo con klein 4B (Apache 2.0, gratis en API/pod) y replicar en grande con **FLUX.3 Image Klein** (mejor calidad open, imágenes comerciales bajo $5M). El LoRA propio se entrena sobre klein 4B en pod. Qwen-Image-2.1 se mira pero no se usa para cliente (licencia NC).
+
 ## Conceptos relacionados
 
 - [[wiki/glosario/software/comfyui|comfyui]] — nodos, modelos y flujos del estudio
@@ -159,3 +232,14 @@ Los requisitos técnicos del concurso (verificados en el plan `261019-plan-concu
 - [RunPod — Keeping data secure on cloud GPUs](https://www.runpod.io/articles/guides/keep-data-secure-cloud-gpus) (verificado 2026-10-21 — 200)
 - [RunPod — Privacy Policy](https://www.runpod.io/legal/privacy-policy) (verificado 2026-10-21 — 200)
 - [Comfy Cloud vs alternativas: límites reales (upload directo inexistente, nodos, precios)](https://www.earngenix.com/blog/what-is-comfy-cloud) (verificado 2026-10-21 — 200)
+- [BFL — FLUX.2 klein: tabla de variantes, licencias y VRAM](https://bfl.ai/models/flux-2-klein) (verificado 2026-11-12 — 200)
+- [BFL — Cómo funciona el licenciamiento FLUX (open-weights vs API)](https://help.bfl.ai/articles/9272590838-self-serve-dev-license-overview-pricing) (verificado 2026-11-12 — 200)
+- [BFL — Correr o entrenar klein en local (4B Apache 2.0, 9B NC)](https://help.bfl.ai/articles/7108141705-can-i-run-or-fine-tune-flux-2-klein-locally) (verificado 2026-11-12 — 200)
+- [RunPod — Billing overview (créditos, por segundo, storage, saldo $0)](https://docs.runpod.io/accounts-billing/billing) (verificado 2026-11-12 — 200)
+- [RunPod — Pods pricing (on-demand, stop vs terminate, storage)](https://docs.runpod.io/pods/pricing) (verificado 2026-11-12 — 200)
+- [RunPod — Serverless pricing (pago por ejecución, escala a cero)](https://docs.runpod.io/serverless/pricing) (verificado 2026-11-12 — 200)
+- [Cloudflare — Workers AI pricing (10.000 Neurons/día gratis, flux-1-schnell ~58/img, klein-4b)](https://developers.cloudflare.com/workers-ai/platform/pricing/) (verificado 2026-11-12 — 200)
+- [BFL — FLUX 3 Image Klein (5.6B, open weights, Kommunity License)](https://bfl.ai/blog/flux-3-image-klein) (verificado 2026-11-12 — 200)
+- [Pinggy — Mejores modelos open para self-host 2026 (Qwen-2.1 #1, licencias)](https://pinggy.io/blog/best_free_open_source_ai_image_generators_to_self_host) (verificado 2026-11-12 — 200)
+- [gpuwerk — Mejores modelos locales nov-2026 (Elo, VRAM, licencias)](https://gpuwerk.com/blog/local-image-generation-models) (verificado 2026-11-12 — 200)
+- [BuilderAI — Stack open-source imagen 2026 (ai-toolkit, licencias dev)](https://builderai.tools/blog/best-open-source-image-generation-stack-2026) (verificado 2026-11-12 — 200)

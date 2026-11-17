@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Matriz Modelos × Proveedores — pi imágenes</title>
+<style>
+:root{--bg:#f5f5f7;--card:#ffffff;--ink:#1d1d1f;--sub:#6e6e73;--line:#e5e5ea;--blue:#0071e3;--green:#34c759;--violet:#af52de;--orange:#ff9f0a;--red:#ff3b30}
+@media (prefers-color-scheme:dark){:root{--bg:#000000;--card:#1c1c1e;--ink:#f5f5f7;--sub:#98989d;--line:#38383a}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1240px;margin:0 auto;padding:36px 20px 80px}
+.hero{text-align:center}.hero h1{font-size:38px;letter-spacing:-.02em;margin:0}.hero h1 span{background:linear-gradient(90deg,#0071e3,#af52de,#ff375f);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--sub);font-size:16px}
+.tabs{display:flex;gap:10px;justify-content:center;margin:22px 0 26px;flex-wrap:wrap}
+.tab{font-size:15px;font-weight:600;padding:10px 24px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--sub);cursor:pointer}
+.tab.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.view{display:none}.view.on{display:block}
+.legend{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:6px 0 22px}
+.pill{font-size:13px;padding:6px 14px;border-radius:999px;background:var(--card);border:1px solid var(--line);color:var(--sub)}
+.pill b{color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:16px}
+.card,.ficha{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.card h2,.ficha h2{font-size:20px;margin:0}.role,.fam{color:var(--sub);font-size:14px;margin:2px 0 12px}
+.fam{font-size:13px}
+.prov{border-top:1px solid var(--line);padding:12px 0 4px}
+.prov.pref{border:2px solid #d4a017;border-radius:14px;padding:12px 14px;margin:10px 0;background:linear-gradient(180deg,rgba(212,160,23,.10),rgba(212,160,23,.03))}
+.gold{display:inline-block;background:linear-gradient(135deg,#f9dc5c,#d4a017);color:#3a2b00;font-weight:800;font-size:11px;letter-spacing:.06em;padding:3px 12px;border-radius:999px;margin-left:6px;vertical-align:middle;box-shadow:0 1px 6px rgba(212,160,23,.5)}
+.free{display:inline-block;background:linear-gradient(135deg,#7df9a2,#34c759);color:#063312;font-weight:800;font-size:11px;letter-spacing:.06em;padding:3px 12px;border-radius:999px;margin-left:6px;vertical-align:middle;box-shadow:0 1px 6px rgba(52,199,89,.5)}
+.prov h3{font-size:13px;text-transform:uppercase;letter-spacing:.08em;margin:0 0 8px}
+.prov h3 .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px}
+.dot-pol{background:var(--orange)}.dot-cf{background:var(--green)}.dot-or{background:var(--violet)}
+.kv{display:grid;grid-template-columns:86px 1fr;gap:4px 10px;font-size:14px;margin-bottom:6px}
+.kv dt{color:var(--sub)}.kv dd{margin:0}
+.ficha p{font-size:14px;line-height:1.6;margin:8px 0}
+.ficha dl{display:grid;grid-template-columns:110px 1fr;gap:4px 10px;font-size:13.5px}
+.ficha dt{color:var(--sub)}.ficha dd{margin:0}
+.tag{display:inline-block;font-size:12px;padding:2px 10px;border-radius:999px;margin:0 4px 4px 0;background:var(--bg);border:1px solid var(--line)}
+.price{font-weight:700;color:var(--green);white-space:nowrap}.ok{color:var(--green);font-weight:600}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:8px;overflow-x:auto;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+table{border-collapse:collapse;width:100%;min-width:1060px;font-size:13.5px}
+th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+thead th{background:var(--bg);font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--sub)}
+tbody th{font-size:14px}.mlink{color:var(--blue);cursor:pointer;font-weight:700}.mlink:hover{text-decoration:underline}
+.yes{color:var(--green);font-weight:700}.no{color:var(--sub)}
+.back{display:inline-block;margin-top:12px;font-size:13px;color:var(--blue);cursor:pointer}
+.sheet{background:var(--card);border:1px solid var(--line);border-left:4px solid #d4a017;border-radius:14px;padding:16px 22px;margin:0 0 14px}
+.sheet h2{margin:0 0 4px;font-size:18px}.sheet p{font-size:14px;line-height:1.65;margin:6px 0}
+.sheet code{background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:12px}
+.sheet .pr{color:var(--sub)}
+.center{color:var(--sub);font-size:13px;text-align:center}
+.delivery{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-top:26px}
+.dlv{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 20px;font-size:14px;min-width:200px;text-align:center}
+.dlv b{display:block;font-size:15px;margin-bottom:4px}
+.foot{margin-top:30px;color:var(--sub);font-size:12.5px;text-align:center;line-height:1.8}
+.foot code{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:12px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="hero">
+<h1>Modelos <span>×</span> Proveedores</h1>
+<p>Qué acepta cada modelo como input, cuánto cuesta y por dónde se cablea — verificado nov-2026 · <b>abrir en navegador</b> (no se ve en Obsidian)</p>
+</div>
+<div class="tabs">
+<button class="tab on" data-v="v1">① Por proveedor</button>
+<button class="tab" data-v="v2">② Tabla doble entrada</button>
+<button class="tab" data-v="v3">③ Fichas por modelo</button>
+<button class="tab" data-v="v4">④ Por prueba</button>
+</div>
+
+<!-- VISTA 1: por proveedor (original) -->
+<div class="view on" id="v1">
+<div class="legend">
+<span class="pill"><b>Pollinations</b> · SOLO gratis (grants, límite diario a medir)</span>
+<span class="pill"><b>Cloudflare Workers AI</b> · 10k Neurons/día · cuenta propia</span>
+<span class="pill"><b>OpenRouter</b> · 1 key · TODO lo pago va por acá · <code>usage.cost</code></span>
+</div>
+<div class="grid">
+<div class="card"><h2>Seedream 5.0 Pro</h2><div class="role">Geometría · mejor juicio contextual (6/8 Rangy)</div>
+<div class="prov"><h3><span class="dot dot-pol"></span>Pollinations · <span class="free">FREE con grants</span></h3>
+<dl class="kv"><dt>Input</dt><dd><span class="tag">prompt</span><span class="tag">img URL (edits)</span></dd><dt>Precio</dt><dd class="price">$0.035 / img flat</dd><dt>Regla</dt><dd>pago NO se usa en Pol → vía OpenRouter</dd></dl></div>
+<div class="prov pref"><h3><span class="dot dot-or"></span>OpenRouter Images<span class="gold">P ★</span></h3>
+<dl class="kv"><dt>Input</dt><dd><span class="tag">prompt</span><span class="tag">14 refs https/base64</span><span class="tag">seed</span><span class="tag">1K/2K</span><span class="tag">aspecto</span></dd><dt>Precio</dt><dd class="price">desde $0.045 / img</dd><dt>Refs</dt><dd>https pública <b>o base64</b> (no hace falta hostear) — 14 en OR vs URL pública en Pol</dd><dt>n8n</dt><dd>1 tool rota el slug</dd></dl></div></div>
+<div class="card"><h2>NanoBanana 2.1</h2><div class="role">Interiores fotorrealistas · grounding + SynthID</div>
+<div class="prov"><h3><span class="dot dot-pol"></span>Pollinations · <span class="free">FREE con grants</span></h3>
+<dl class="kv"><dt>Input</dt><dd><span class="tag">prompt</span><span class="tag">img URL (edits)</span></dd><dt>Precio</dt><dd class="price">paid_only → NO se usa</dd><dt>Regla</dt><dd>todo lo pago va por OpenRouter</dd></dl></div>
+<div class="prov pref"><h3><span class="dot dot-or"></span>OpenRouter · chat<span class="gold">P ★</span></h3>
+<dl class="kv"><dt>Input</dt><dd><span class="tag">imagen+texto</span><span class="tag">sale imagen+texto</span></dd><dt>Precio</dt><dd class="price">~$0.039 / img</dd><dt>Por qué</dt><dd>misma key del agente, sin recarga; refs por chat</dd><dt>Web manual</dt><dd><span class="tag">Flow / app Gemini</span> <span class="free">FREE</span> (NB 2.1 · 2.0 · 2 Lite, sin params)</dd><dt>n8n</dt><dd>chat/completions + image_url (key existente)</dd></dl></div></div>
+<div class="card"><h2>GPT-image 2.6 sunburst</h2><div class="role">Collage · textura · póster con texto · máscara multi-turno</div>
+<div class="prov"><h3><span class="dot dot-pol"></span>Pollinations · paid_only → NO se usa</h3>
+<dl class="kv"><dt>Input</dt><dd><span class="tag">prompt</span><span class="tag">img URL (edits)</span></dd><dt>Regla</dt><dd>todo lo pago va por OpenRouter</dd></dl></div>
+<div class="prov pref"><h3><span class="dot dot-or"></span>OpenRouter Images<span class="gold">P ★</span></h3>
+<dl class="kv"><dt>Input</dt><dd><span class="tag">prompt</span><span class="tag">16 refs https/base64</span><span class="tag">máscara</span><span class="tag">quality low→max</span><span class="tag">n≤10</span></dd><dt>Precio</dt><dd>$8/M in + $30/M out imagen (sin flat: depende de calidad; ver <code>usage.cost</code>)</dd><dt>Nota</dt><dd>el más caro en texto: solo textura/póster</dd></dl></div></div>
+<div class="card"><h2>FLUX klein-4b (edición)</h2><div class="role">Conserva+cambia · multi-ref · carril $0 del estudio</div>
+<div class="prov pref"><h3><span class="dot dot-cf"></span>Cloudflare<span class="gold">P ★</span><span class="free">FREE</span></h3>
+<dl class="kv"><dt>Input</dt><dd><span class="tag">multipart</span><span class="tag">1–4 refs ≤512px</span><span class="tag">seed</span><span class="tag">guidance</span><span class="tag">steps=4</span></dd><dt>Nota</dt><dd>si la imagen supera 512px se achica antes de enviar (fuentes <code>*-512</code>)</dd><dt>Precio</dt><dd class="price">~125–175 Neurons / edit</dd><dt>n8n</dt><dd class="ok">tool editar_cf ✅</dd></dl></div>
+<div class="prov"><h3><span class="dot dot-pol"></span>Pollinations · klein</h3>
+<dl class="kv"><dt>Input</dt><dd><span class="tag">prompt</span></dd><dt>Precio</dt><dd class="price">$0.005 / img</dd></dl></div></div>
+<div class="card"><h2>FLUX schnell (txt2img)</h2><div class="role">Exploración barata · bases y series</div>
+<div class="prov pref"><h3><span class="dot dot-cf"></span>Cloudflare<span class="gold">P ★</span><span class="free">FREE</span></h3>
+<dl class="kv"><dt>Input</dt><dd><span class="tag">prompt</span><span class="tag">steps</span> <span class="tag">sin seed/size</span></dd><dt>Precio</dt><dd class="price">~173 Neurons / 1024²</dd><dt>n8n</dt><dd class="ok">tool generar_cf ✅</dd></dl></div>
+<div class="prov"><h3><span class="dot dot-pol"></span>Pollinations<span class="free">FREE con grants</span></h3>
+<dl class="kv"><dt>Input</dt><dd><span class="tag">prompt</span><span class="tag">size/seed</span></dd><dt>Precio</dt><dd class="price">$0.002 / o grants</dd></dl></div></div>
+<div class="card"><h2>FLUX Kontext / 1.1-pro / Ideogram</h2><div class="role">Edición fiel · lámina · esquemas</div>
+<div class="prov pref"><h3><span class="dot dot-pol"></span>Pollinations<span class="gold">P ★</span></h3>
+<dl class="kv"><dt>kontext</dt><dd class="price">$0.03 · URL pública + 1 variable</dd><dt>1.1-pro</dt><dd class="price">$0.03 · lámina 1280×704</dd><dt>ideogram v4</dt><dd class="price">$0.03–0.10 · esquemas</dd><dt>n8n</dt><dd class="ok">editar_imagen / generar_lamina ✅ · <span class="ok">preferida ★</span></dd><dt>Alternativa</dt><dd>BFL API directa (Fill inpaint / Expand outpaint con máscara, por imagen)</dd><dt>Vía pago</dt><dd>Pol $0.03 NO se usa · OR sin verificar — en espera</dd></dl></div></div>
+</div>
+<div class="delivery">
+<div class="dlv"><b>📱 Telegram</b>imagen full-res · primero en probar</div>
+<div class="dlv"><b>💾 Drive</b>01-generada → markup tablet → 03-regenerada</div>
+<div class="dlv"><b>✉️ Mail</b>link + aviso · sin Telegram en tablet</div>
+</div>
+</div>
+
+<!-- VISTA 2: tabla doble entrada -->
+<div class="view" id="v2">
+<div class="panel" style="margin-bottom:14px"><table style="min-width:0"><tbody>
+<tr><th style="width:220px">Veredicto: no hay ganador único</th><td>Cada operación tiene su modelo: <b>geometría → Seedream (OR)</b> · <b>interiores → NB 2.1 (OR chat)</b> · <b>textura/póster → GPT 2.6 (Pollinations, precio fijo)</b> · <b>esquemas → Ideogram</b> · <b>edits $0 → klein-4b (CF)</b> · <b>exploración $0 → schnell (CF)</b> · <b>lámina/máscara → Kontext/1.1-pro (Pol)</b>. Por eso decide el <b>agente con el router</b>, no una herramienta fija. Pollinations admite más capacidad (refs, tamaños) que CF, pero sus grants son gotero: lo gratis de verdad es CF (10k Neurons/día) y lo predecible es Paid Pollen/OR.</td></tr>
+</tbody></table></div>
+<div class="panel"><table>
+<thead><tr><th>Modelo</th><th>Prompt</th><th>Referencias</th><th>Seed</th><th>Res. máx</th><th>Aspectos</th><th>Inpaint / máscara</th><th>Outpaint</th><th>Texto exacto</th><th>Upscale / 4K</th><th>Extra</th><th>Precio ref</th></tr></thead>
+<tbody>
+<tr><th><a class="mlink" data-f="f-seed">Seedream 5.0 Pro</a></th><td class="yes">✓</td><td class="yes">14 (OR)</td><td class="yes">✓</td><td>2K</td><td class="yes">1:1→21:9</td><td class="no">—</td><td class="no">—</td><td class="yes">✓</td><td>2K</td><td>juicio contextual</td><td class="price">$0.045 OR · $0.035 Pol</td></tr>
+<tr><th><a class="mlink" data-f="f-nb21">NanoBanana 2.1</a></th><td class="yes">✓</td><td class="yes">14</td><td class="yes">✓</td><td>4K</td><td class="yes">✓</td><td class="no">—</td><td class="no">—</td><td class="yes">✓</td><td class="yes">4K+SynthID</td><td>grounding/búsqueda</td><td class="price">~$0.039</td></tr>
+<tr><th><a class="mlink" data-f="f-nb20">NanoBanana 2.0</a></th><td class="yes">✓</td><td class="yes">refs</td><td class="yes">✓</td><td>2K</td><td class="yes">✓</td><td class="no">—</td><td class="no">—</td><td class="yes">✓</td><td>—</td><td>reserva de 2.1</td><td class="price">~$0.03–0.05</td></tr>
+<tr><th><a class="mlink" data-f="f-gpt">GPT-image 2.6</a></th><td class="yes">✓</td><td class="yes">refs (16 en OR)</td><td>—</td><td>—</td><td class="yes">✓</td><td class="yes">multi-turno</td><td class="no">—</td><td class="yes">top</td><td>—</td><td>collage/motion-blur</td><td class="price">$8+$30/M · ~$0.05 Pol ★</td></tr>
+<tr><th><a class="mlink" data-f="f-ideo">Ideogram v4</a></th><td class="yes">✓</td><td class="no">—</td><td>—</td><td>—</td><td class="yes">✓</td><td class="no">—</td><td class="no">—</td><td class="yes">✓</td><td>—</td><td>esquemas</td><td class="price">$0.03 turbo</td></tr>
+<tr><th><a class="mlink" data-f="f-klein">klein-4b (CF)</a></th><td class="yes">✓</td><td class="yes">1–4 (&lt;512px)</td><td class="yes">✓</td><td>1 MP</td><td class="yes">w×h</td><td class="no">vía Kontext</td><td class="no">vía Expand</td><td class="yes">✓</td><td class="no">—</td><td>guidance 1–8</td><td class="price">~150 Neurons</td></tr>
+<tr><th><a class="mlink" data-f="f-schnell">schnell (CF)</a></th><td class="yes">✓</td><td class="no">—</td><td class="no">no acepta</td><td>1024²</td><td class="no">fijo</td><td class="no">—</td><td class="no">—</td><td>débil</td><td class="no">—</td><td>steps=4</td><td class="price">~173 Neurons</td></tr>
+<tr><th><a class="mlink" data-f="f-kontext">Kontext / 1.1-pro</a></th><td class="yes">✓</td><td class="yes">URL pública</td><td class="yes">✓</td><td>1280×704</td><td>limitado</td><td class="yes">Fill+erase</td><td class="yes">Expand</td><td class="yes">✓</td><td class="no">—</td><td>identidad 1 variable</td><td class="price">$0.03 Pol</td></tr>
+</tbody></table></div>
+<p class="center">Clic en el modelo → salta a su ficha (solapa ③). ✓ = nativo · vía = otro servicio · — = no tiene.<br>
+<b>Batería:</b> T1 fotorrealismo · T2 conserva+cambia 1 variable · T3 multi-ref al máximo · T4 texto exacto · T5 resolución/aspecto · T6 seed×2 + guidance · T7 máscara zonal · T8 grounding/búsqueda · T9 croquis→render.</p>
+</div>
+
+<!-- VISTA 3: fichas -->
+<div class="view" id="v3"><div class="grid">
+<div class="ficha" id="f-seed"><h2>Seedream 5.0 Pro</h2><div class="fam">ByteDance Seed · 2026 · cerrada comercial</div>
+<p>Generación y edición con juicio contextual (6/8 Rangy). En la demo: la mejor <b>geometría</b>.</p>
+<dl><dt>Parámetros</dt><dd>14 refs, seed, 1K/2K, 20 aspectos, PNG/JPEG, fondo</dd><dt>Entrenamiento</dt><dd>No publicado</dd><dt>Precio</dt><dd class="price">$0.045 OR · $0.035 Pollinations</dd><dt>Mejor uso</dt><dd>TM→render fiel, vanos, materia</dd></dl>
+<p><b>Uso (preferida ★ OpenRouter):</b> prompt + hasta 14 refs (https o base64, sin hostear) + seed + 1K/2K + aspecto. Una tool n8n rota el slug.</p>
+<p><b>Pruebas al límite:</b> T3 refs 2→6→14 (¿a cuántas pierde la geometría?) · T1 fotorrealismo · T5 2K. Límite a buscar: deriva geométrica.</p>
+<p><b>Costo estimado:</b> ~$0.045 c/u → batería T1+T3+T5 ≈ $0.30.</p>
+<a class="back" data-v="v2">← volver a la tabla</a></div>
+<div class="ficha" id="f-nb21"><h2>NanoBanana 2.1</h2><div class="fam">Google Gemini · 2026 · API comercial</div>
+<p>Interiores fotorrealistas con base real: <b>grounding con búsqueda</b>, 14 refs, 1K/2K/4K, marca SynthID. En la demo y la serie TM: mejor interiores.</p>
+<dl><dt>Parámetros</dt><dd>in/out imagen+texto, 14 refs, seed</dd><dt>Entrenamiento</dt><dd>No publicado (familia Gemini)</dd><dt>Precio</dt><dd class="price">~$0.039 (OR y Pollinations)</dd><dt>Mejor uso</dt><dd>Interiores, iteración, contexto real</dd></dl>
+<p><b>Uso (preferida ★ OpenRouter chat):</b> imagen+texto de entrada y salida, key existente del agente, sin recarga.</p>
+<p><b>Pruebas al límite:</b> T8 grounding con búsqueda · T2 interiores fieles · T3 14 refs · T7 zonal. Límite: invento en densos (wall-hung).</p>
+<p><b>Costo estimado:</b> ~$0.039 c/u → batería ≈ $0.25.</p>
+<a class="back" data-v="v2">← volver a la tabla</a></div>
+<div class="ficha" id="f-nb20"><h2>NanoBanana 2.0</h2><div class="fam">Google Gemini · 2026 · API comercial</div>
+<p>Generación previa de la familia; reserva si 2.1 falla o cambia precio. Misma ruta generations+edits.</p>
+<dl><dt>Parámetros</dt><dd>refs, seed (paid_only)</dd><dt>Entrenamiento</dt><dd>No publicado</dd><dt>Precio</dt><dd class="price">~$0.03–0.05</dd><dt>Mejor uso</dt><dd>Backup de 2.1</dd></dl>
+<p><b>Uso:</b> espejo de 2.1 para comparar y decidir cuál queda.</p>
+<p><b>Pruebas al límite:</b> T1/T2 espejo contra 2.1, misma base.</p>
+<p><b>Costo estimado:</b> ~$0.04 c/u → comparativa ≈ $0.10.</p>
+<a class="back" data-v="v2">← volver a la tabla</a></div>
+<div class="ficha" id="f-gpt"><h2>GPT-image 2.6 sunburst</h2><div class="fam">OpenAI · 2026 · API comercial</div>
+<p>Top Arena en instrucción y texto (familia 2.5: 1424.6/1466). <b>Collage, textura, motion-blur, póster</b> y edición por máscara multi-turno. El más caro en texto: medir <code>usage.cost</code> por llamada.</p>
+<dl><dt>Parámetros</dt><dd>refs, máscara, aspectos</dd><dt>Entrenamiento</dt><dd>No publicado</dd><dt>Precio</dt><dd class="price">$8/M in + $30/M out · ~$0.05 Pol</dd><dt>Mejor uso</dt><dd>Textura, collage, texto exacto</dd></dl>
+<p><b>Uso (preferida ★ OpenRouter):</b> Images API con quality/refs/máscara; medir <code>usage.cost</code> (sin flat: depende de calidad). Pollinations pago no se usa.</p>
+<p><b>Pruebas al límite:</b> T4 póster con texto · T7 máscara multi-turno · T2 collage/textura. Límite: costo por llamada (medir <code>usage.cost</code>).</p>
+<p><b>Costo estimado:</b> ~$0.05 flat c/u → batería ≈ $0.20.</p>
+<a class="back" data-v="v2">← volver a la tabla</a></div>
+<div class="ficha" id="f-ideo"><h2>Ideogram v4</h2><div class="fam">Ideogram · 2025–26 · API comercial</div>
+<p>Esquemas y formas simplificadas (veredicto demo). Barata en turbo para iterar dibujo.</p>
+<dl><dt>Parámetros</dt><dd>prompt, aspectos</dd><dt>Entrenamiento</dt><dd>No publicado</dd><dt>Precio</dt><dd class="price">$0.03 turbo · $0.06 · $0.10</dd><dt>Mejor uso</dt><dd>Esquemas, ideación</dd></dl>
+<p><b>Uso (preferida ★ Pollinations, única vía):</b> prompt + aspecto, turbo para iterar.</p>
+<p><b>Pruebas al límite:</b> T9 croquis→esquema · T4 simple. Límite: ¿supera a scribble abierto?</p>
+<p><b>Costo estimado:</b> $0.03 c/u → batería ≈ $0.10.</p>
+<a class="back" data-v="v2">← volver a la tabla</a></div>
+<div class="ficha" id="f-klein"><h2>FLUX.2 klein-4b</h2><div class="fam">Black Forest Labs · familia FLUX.2 · Apache 2.0 · 4B</div>
+<p>Edición conserva+cambia multi-ref, interactiva. Carril $0 del estudio en Cloudflare (multipart, guidance 1–8) y pod local.</p>
+<dl><dt>Parámetros</dt><dd>1–4 refs &lt;512px, seed, guidance, steps=4</dd><dt>Entrenamiento</dt><dd>Destilada; LoRA vía ai-toolkit</dd><dt>Precio</dt><dd class="price">~150 Neurons · $0.005 Pol</dd><dt>Mejor uso</dt><dd>Edits fieles, series, base LoRA</dd></dl>
+<p><b>Uso (preferida ★ Cloudflare):</b> multipart 1–4 refs ≤512px (achicar antes), seed, guidance 1–8, steps=4. Tool <code>editar_cf</code> ✅.</p>
+<p><b>Pruebas al límite:</b> T6 seed×2 + guidance 8 vs 1.5 · T2 1 variable · batería W ya hecha. Límite: cuota 10k/día.</p>
+<p><b>Costo estimado:</b> $0 (cuota) · vía Pol $0.005.</p>
+<a class="back" data-v="v2">← volver a la tabla</a></div>
+<div class="ficha" id="f-schnell"><h2>FLUX.1 schnell</h2><div class="fam">Black Forest Labs · familia FLUX.1 (2024) · Apache 2.0 = abierta · 12B</div>
+<p>Texto→imagen veloz para exploración y bases. Sin seed ni tamaño (solo prompt+steps en CF).</p>
+<dl><dt>Parámetros</dt><dd>prompt, steps</dd><dt>Entrenamiento</dt><dd>Destilada de FLUX.1</dd><dt>Precio</dt><dd class="price">~173 Neurons · $0.002 Pol</dd><dt>Mejor uso</dt><dd>Bases, series, pruebas baratas</dd></dl>
+<p><b>Uso (preferida ★ Cloudflare):</b> solo prompt+steps (sin seed/size). Tool <code>generar_cf</code> ✅.</p>
+<p><b>Pruebas al límite:</b> bases y series T1 · batería W hecha. Límite: cuota diaria.</p>
+<p><b>Costo estimado:</b> $0 (cuota).</p>
+<a class="back" data-v="v2">← volver a la tabla</a></div>
+<div class="ficha" id="f-kontext"><h2>FLUX Kontext / 1.1-pro</h2><div class="fam">Black Forest Labs · 2025 · API comercial</div>
+<p>Identidad preservada editando: Fill (inpaint+erase), Expand (outpaint), 1 variable por pasada. 1.1-pro para lámina 1280×704.</p>
+<dl><dt>Parámetros</dt><dd>imagen URL pública + instrucción</dd><dt>Entrenamiento</dt><dd>No publicado</dd><dt>Precio</dt><dd class="price">$0.03 c/u (Pol)</dd><dt>Mejor uso</dt><dd>Vano, lamas, lámina</dd></dl>
+<p><b>Uso (preferida ★ Pollinations):</b> imagen URL pública + instrucción, 1 variable, máx 3 seguidas. Alternativa BFL directa Fill/Expand.</p>
+<p><b>Pruebas al límite:</b> T2 vano · T7 zonal. Límite: grants (0.03 c/u).</p>
+<p><b>Costo estimado:</b> $0.03 c/u → batería ≈ $0.15.</p>
+<a class="back" data-v="v2">← volver a la tabla</a></div>
+</div></div>
+
+<!-- VISTA 4: por prueba -->
+<div class="view" id="v4">
+
+<div class="sheet"><h2>T1 · Fotorrealismo txt2img — 2 escenas × N modelos</h2>
+<p><b>Escena A (ciudad):</b> vista de manzana común de Buenos Aires entre medianeras — no pasaje: calle con vereda, fachadas continuas de 2–3 pisos, planta baja comercial, toldos, plátanos. <b>Escena B (campo):</b> casa de campo con entorno — arboleda, alambrado, cielo amplio; mide árboles y perspectiva.</p>
+<p><b>Resolución única:</b> 1024×1024 para todas (compatible CF + OR 1:1 + Pollinations).</p>
+<p><b>Prompt base A (EN) — copiar a Flow:</b> <code>Photorealistic exterior, modern single-family house between party walls on a typical Buenos Aires block: board-formed exposed concrete walls, black aluminum windows, warm wood soffits and screens, bold concrete cantilever over the entrance, flat roof, 24mm tilt-shift, overcast noon light, phone photo, eye level</code></p>
+<p><b>Prompt base B (EN) — copiar a Flow:</b> <code>Photorealistic exterior, same modern house isolated on the pampas: board-formed exposed concrete walls, black aluminum glazing, wood brise-soleil, bold cantilevered concrete volume, flat roof, rows of eucalyptus, wire fence, dirt road, dramatic late afternoon sky, phone photo</code></p>
+<p>Tip Flow: subir la P1A como imagen de referencia para la B + agregar <code>same architecture as the reference image</code>.</p>
+<p><b>Pruebas ordenadas P1-P7 (gratis primero, key al final):</b><br>
+- <b>P1 - schnell FLUX.1 en CF - FREE - yo local:</b> base A+B tal cual (linea de base 0).<br>
+- <b>P2 - schnell FLUX.1 en Pollinations - FREE grants - yo local:</b> misma base (compara CF vs grants).<br>
+- <b>P3 - klein FLUX.2 edit sobre P1 en CF - FREE - yo local:</b> klein-4b en CF NO tiene modo txt2img (exige imagen); edita la salida de P1 a vista frontal simetrica (nada corre local, todo nube).<br>
+- <b>P4 - NB 2.1 en web/Flow - FREE - vos:</b> pegas el prompt + real Buenos Aires references (mide grounding).<br>
+- <b>P5 - NB 2.1 por OpenRouter - NO SE HACE:</b> Flow cubre; OR queda para despues, al automatizar con el agente.<br>
+- <b>P6 - GPT-image-1-mini por OR - PAGO key - yo/n8n:</b> base + cartel del almacen (mide si el barato deletrea; sunburst NO va en T1). Estimado OR: 2.50/M in + 8/M out = ~0.01-0.03/img segun quality (verificado hoy).<br>
+- <b>P7 - Seedream 5.0 Pro por OR - PAGO key - ULTIMO:</b> base + 1 ref de fachada (mide geometria con referencia). Estimado OR: desde 0.045/img (verificado).</p>
+<p><b>Costo T1 (2 escenas x 7):</b> P1-P4 GRATIS - P6 ~0.01-0.03 + P7 ~0.045 = <b>~0.10 USD</b> por escena (solo con tu OK, una por una).</p></div>
+
+<div class="sheet"><h2>T2 · Conserva+cambia</h2>
+<p><b>Objetivo:</b> obediencia — una variable sin inventar. Base: <code>cf-casa-base.jpg</code>. Instrucción: <code>same house at night, warm windows glowing, rest identical</code>.</p>
+<p><b>Modelos (gratis primero):</b> klein-4b FLUX.2 (CF 🟢) ★ · NB 2.1 web (Flow 🟢) · NB 2.1 (OR) · Seedream (OR, último). <b>Marcado:</b> Telegram (dibujar sobre la foto) o tablet vía Drive (<code>02-marcada</code>). <b>Dónde y costo:</b> <span class="free">GRATIS</span> CF + Flow (yo local + vos web) · <b>Pago (OR, con OK):</b> ~$0.03–0.10. <b>Local:</b> <code>editar_cf</code> ya opera; resto manual.</p></div>
+
+<div class="sheet"><h2>T3 · Multi-ref al máximo + collage + estilo</h2>
+<p><b>Objetivo:</b> ¿a cuántas refs pierde la geometría? (2→6→14). Collage: <code>combine these images into one coherent scene</code> (GPT/NB). Estilo: <code>follow the material style of image 2</code> (Seedream/NB/klein).</p>
+<p><b>Refs (gratis primero):</b> klein-4b FLUX.2 CF hasta 4 refs 🟢 → NB web (Flow, refs por chat) → OR: Seedream 14/NB 14 (base64 sin hostear) ÚLTIMO. En Pollinations pedirían URL pública (no se usa pago).</p></div>
+
+<div class="sheet"><h2>T4 · Texto exacto</h2>
+<p><b>Objetivo:</b> quién deletrea. Strings: <code>GAUDI NEXUS</code> · <code>OBRA — AIZPURUA 3257</code>.</p>
+<p><b>Modelos (solo pago OR, Seedream ÚLTIMO):</b> GPT 2.6 ★ (OR, medir: específico, no T1) · GPT-image-1-mini (OR, barato ~$0.01: ¿el chico deletrea?) · Seedream (OR, último). Ideogram/mai-flash: pago solo-Pol → en espera. <b>Dónde y costo:</b> <b>Pago (OR, con OK)</b> — a medir antes de correr.</p></div>
+
+<div class="sheet"><h2>T5 · Resolución y aspecto</h2>
+<p><b>Objetivo:</b> $/píxel útil. Topes: Seedream 2K · NB 4K (capamos a 2K) · klein 1 MP · schnell 1024² · Kontext 1280×704. Sin 4K por decisión; 2K solo si lo amerita.</p>
+<p><b>Dónde y costo:</b> <span class="free">GRATIS</span> topes CF (yo) · <b>Pago (OR, con OK):</b> ~$0.15 (mide <code>usage.cost</code> por salto).</p></div>
+
+<div class="sheet"><h2>T6 · Seed y guidance</h2>
+<p><b>Objetivo:</b> ¿repite el resultado? klein: seed configurable + guidance 8 (obedece) vs 1.5 (conserva); schnell <b>sin seed</b>; OR: parámetro seed. Hallazgo W6: en destilados la seed no fija bytes — la consistencia es la referencia, no la semilla. <b>Dónde y costo:</b> <span class="free">GRATIS</span> CF (yo).</p></div>
+
+<div class="sheet"><h2>T7 · Máscara zonal</h2>
+<p><b>Objetivo:</b> cambiar solo un paño. <b>Cómo se marca:</b> editor de Telegram sobre la foto, captura marcada que se sube, o tablet en Drive (rojo = cambiar).</p>
+<p><b>Modelos:</b> GPT multi-turno ★ (OR) · Kontext Fill (BFL directa o en espera). klein sin máscara: solo instrucción. <b>Dónde y costo:</b> <b>Pago (OR/BFL, con OK)</b> — a medir antes de correr.</p></div>
+
+<div class="sheet"><h2>T8 · Grounding (qué puede buscar)</h2>
+<p><b>Objetivo:</b> NB busca en la web y trae lo real: una <b>textura</b> (microcemento X), un <b>lugar</b> (esquina CABA), un <b>material</b>. Test: <code>buscá [X] y aplicalo a esta imagen</code>. Solo NB. <b>Dónde y costo:</b> <span class="free">GRATIS</span> en web/Flow (vos) · <b>Pago:</b> ~$0.05 por API (OR, con OK).</p></div>
+
+<div class="sheet"><h2>T9 · Croquis→render (tus croquis)</h2>
+<p><b>Objetivo:</b> ¿entiende dibujo? Insumos: <code>activos/croquis/pajaro.jpg</code>, <code>azcona-croquis001.jpg</code>, <code>croquis-fin0006.jpg</code> y el set Tigre. Prompt sketch→render + marcado sobre captura.</p>
+<p><b>Prompt T9 centro cultural (copiar a NanoBanana/Flow):</b><br><code>Photorealistic close-up of an exterior double-height space in a cultural center, at the eye level of a person standing on the upper floor. Background: exposed concrete structure, columns and beams. Thin black steel columns and floating railing. Wood deck floor. A person in the foreground leaning over the railing with slight motion blur. Exterior cladding of Hunter Douglas type sunscreens: modular perforated aluminum panels with different perforated dot transparency patterns. Second plane: concrete structure. Far background: museum interior structure with distant curtain wall. Overcast daylight, phone photo.</code></p>
+<p><b>Modelos (gratis primero):</b> klein FLUX.2 (CF 🟢) ★ · NB 2.1 web (Flow 🟢: acepta croquis+texto igual que la app, pero sin seed/nº refs/guidance/costo medido/batch → eso va por API) · NB 2.1 (OR). Ideogram: pago solo-Pol → en espera. <b>Dónde y costo:</b> <span class="free">GRATIS</span> CF (yo) + Flow (vos) · <b>Pago:</b> ~$0.05 NB OR (con OK).</p></div>
+
+<p class="center" style="margin-top:16px">Total estimado batería: <b class="price">~$0.50–0.70</b> · orden: gratis (CF + Flow + grants) → web NB → OR pago con Seedream ÚLTIMO · Sunburst solo usos específicos · <b>local ahora</b> (probes + web) → <b>n8n después</b> (tools).</p>
+</div>
+
+<div class="foot">Fuentes: catálogos vivos Pollinations/OpenRouter · BFL docs · fal.ai/pricing · probes CF · benchmarks Arena/VibeDex/LLM Stats.<br>
+Archivo: <code>diagramas/matriz-modelos-proveedores.html</code> · <b>abrir en navegador</b>, no en Obsidian.</div>
+</div>
+<script>
+var tabs=document.querySelectorAll('.tab');
+function show(id){document.querySelectorAll('.view').forEach(function(v){v.classList.toggle('on',v.id===id)});tabs.forEach(function(t){t.classList.toggle('on',t.dataset.v===id)});window.scrollTo(0,0)}
+tabs.forEach(function(t){t.addEventListener('click',function(){show(t.dataset.v)})});
+document.querySelectorAll('.mlink').forEach(function(a){a.addEventListener('click',function(){show('v3');setTimeout(function(){var e=document.getElementById(a.dataset.f);if(e)e.scrollIntoView({behavior:'smooth',block:'center'})},60)})});
+document.querySelectorAll('.back').forEach(function(a){a.addEventListener('click',function(){show(a.dataset.v)})});
+</script>
+</body>
+</html>

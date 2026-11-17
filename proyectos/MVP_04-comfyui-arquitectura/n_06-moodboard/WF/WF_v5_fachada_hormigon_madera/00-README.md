@@ -8,6 +8,8 @@ tags: [mvp_04, n_06, moodboard, comfyui, directml, fachada, hormigon, madera, ha
 
 # WF_v5_fachada_hormigon_madera — Fachada hormigón visto + madera oscura (corrección Hamad)
 
+> ⚠️ OBSOLETO desde 2026-11-12 — ver vigente [[proyectos/MVP_08-casa-moderna/00-index|MVP 08 casa moderna]] (F4-material en RealVisXL Lightning). Se conserva como referencia, no encolar.
+
 Corrección de `WF_v2_batch` tras corrida `351ff3db` (30/09/2026): los outputs derivaron a villa toscana. Este WF alinea prompts a casa Hamad (hormigón visto, madera oscura, volumen elevado, puente, bosque pinos).
 
 - **Base:** `WF_v2_batch` (`n_06-moodboard-WF_v2_batch.json`) — 12 nodos, Canny + Realmimix. R1 ImageScale 512 → ajustado a 768x512 / 512x768 según orientación para no recortar puente/voladizo.

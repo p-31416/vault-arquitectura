@@ -8,6 +8,8 @@ tags: [index, img2img, mvp04, croquis]
 
 # n_02 — img2img: Croquis → Render
 
+> ⚠️ OBSOLETO desde 2026-11-12 — ver vigente [[proyectos/MVP_08-casa-moderna/00-index|MVP 08 casa moderna]] (SDXL Lightning local, sin SD1.5). Se conserva como referencia, no encolar.
+
 Transformación de croquis arquitectónicos en renders fotorrealistas. Pipeline SD 1.5 con ArchitectureRealmix v1.1 + imagen de entrada.
 
 - [[prompts-log]] — Log detallado de corridas

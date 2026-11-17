@@ -236,18 +236,18 @@ Lectura: escribir siempre en EN, fijar vista (`distant wide-angle view`), materi
 
 Catálogo live `GET /image/models` 2026-11-03 (103 modelos totales). Gratis-tier = `paid_only=false`:
 
-| Modelo | Precio Pollen | Alias | Nota |
-|---|---|---|---|
-| `community/scriptsnsenses-sys/flux-2-dev-free` | 0 | — | FLUX 2 Dev gratis, loguea prompts |
-| `community/scriptsnsenses-sys/sdxl-lightning-free` | 0 | — | SDXL Lightning gratis |
-| `microsoft/mai-image-2.6-flash` | 0.00001425 + tokens | — | Fotorreal + texto preciso |
-| `lykon/dreamshaper-8-lcm` | 0.0001 | `sana`, `dreamshaper` | Casi instantáneo, detalle simple |
-| `community/MarcosFRG/sdxl-lightning` | 0.0012 | — | SDXL 1024px rápido |
-| `black-forest-labs/flux.1-schnell` | 0.002 | `flux` | Rápido, recomendado default |
-| `tongyi-mai/z-image-turbo` | 0.004 | `z-image` | Instantáneo, nítido upscaleado |
-| `black-forest-labs/flux.2-klein-4b` | 0.005 | `flux-klein`, `klein` | Gen + edición hasta 2.4 MP |
-| `black-forest-labs/flux.1.1-pro` | 0.03 | — | Dimensiones precisas |
-| `black-forest-labs/flux.1-kontext-pro` | 0.03 | `kontext` | Edición por instrucción |
+| Modelo                                             | Precio Pollen       | Alias                 | Nota                              |
+| -------------------------------------------------- | ------------------- | --------------------- | --------------------------------- |
+| `community/scriptsnsenses-sys/flux-2-dev-free`     | 0                   | —                     | FLUX 2 Dev gratis, loguea prompts |
+| `community/scriptsnsenses-sys/sdxl-lightning-free` | 0                   | —                     | SDXL Lightning gratis             |
+| `microsoft/mai-image-2.6-flash`                    | 0.00001425 + tokens | —                     | Fotorreal + texto preciso         |
+| `lykon/dreamshaper-8-lcm`                          | 0.0001              | `sana`, `dreamshaper` | Casi instantáneo, detalle simple  |
+| `community/MarcosFRG/sdxl-lightning`               | 0.0012              | —                     | SDXL 1024px rápido                |
+| `black-forest-labs/flux.1-schnell`                 | 0.002               | `flux`                | Rápido, recomendado default       |
+| `tongyi-mai/z-image-turbo`                         | 0.004               | `z-image`             | Instantáneo, nítido upscaleado    |
+| `black-forest-labs/flux.2-klein-4b`                | 0.005               | `flux-klein`, `klein` | Gen + edición hasta 2.4 MP        |
+| `black-forest-labs/flux.1.1-pro`                   | 0.03                | —                     | Dimensiones precisas              |
+| `black-forest-labs/flux.1-kontext-pro`             | 0.03                | `kontext`             | Edición por instrucción           |
 
 `sana` es alias de `dreamshaper-8-lcm`, no modelo separado. `flux` = `flux.1-schnell`, 0 Pollen efectivo en cuenta con grants.
 

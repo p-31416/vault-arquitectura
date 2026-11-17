@@ -1,13 +1,51 @@
 ---
 tipo: log
 fecha_creacion: 2026-06-28
-ultima_actualizacion: 2026-11-01
+ultima_actualizacion: 2026-11-11
 tags: [log, historico]
 ---
 
 # Log de operaciones
 
 Más nuevo → más arriba
+
+## 2026-11-12 — Filosofía tablero + dibujo iterativo interpretativo
+
+- Sesión [[raw/sessions/2026-11-12-sesion-filosofia-tablero-modular|filosofía tablero modular]]: voz Sol intacta (tablero a los 7 años, pluma, piso Sagrada Familia octógono/hexágono partido en triángulos hacia otra pisada, feria modular junto/separado, doble lectura abierto/cerrado, loop escribir+referencia+marcar+iterar con ControlNet interpretativo hacia viga/columna hormigón).
+- Concepto nuevo [[wiki/glosario/conceptos/dibujo-iterativo-interpretativo|dibujo-iterativo-interpretativo]]: definición + sistema modular feria + loop + ControlNet interpretativo, con referencias verificadas 200 (ControlNet GitHub + ComfyUI Wiki).
+- Propuesta lista para `00-filo-mvp_01` (solo edita Sol por regla MVP): párrafo filosofía del tablero 2026-11-12 pendiente de pegado.
+
+## 2026-11-12 — ADR modelo-antes-que-flujo (conclusión del mes)
+
+- ADR aceptada: [[specs/261112-adr-modelo-antes-que-flujo|modelo-antes-que-flujo]] — orden modelo → hardware → flujo; carriles klein 4B (explorar/LorA libre), FLUX.3 Image Klein (entregar a cliente), Z-Image-Turbo (volumen); Qwen-2.1 en observación (NC).
+- Camino: explorar klein 4B (API/pod + medir GGUF Q4 local) → replicar FLUX.3-Klein → LoRA propio en pod → geometría fina local/pod → producción serverless/API + agente pi imágenes.
+
+## 2026-11-12 — Convención flujo vs agente + archivado `Emilia Imagenes - Telegram`
+
+- Convención fijada: **flujo** = workflow n8n · **nodo agente** = AI Agent dentro de un flujo · **agente** = primera clase (artefacto con skills y canal propios). "El agente" siempre refiere al de primera clase.
+- Acción: workflow `Emilia Imagenes - Telegram` (`neldyz3v1gz5cZ7q`) archivado — el camino de imágenes vive en el agente `pi imágenes` (`FWGtRuylIqexTigj`, draft validado, sin publicar).
+- Queda activo: Eval (`YLrbR8z4sPHPNJB`) + sub-workflow `IMG Generar` (publicado).
+- Pendiente: publicar el agente + billing Pollinations (grants agotados el 11/11).
+
+## 2026-11-12 — Fuentes vuelve a andar: webhook re-registrado + credencial Sheets reconectada
+
+- Síntoma: links al grupo os.emi-fuentes no registraban desde el 05/11; el mensaje de hoy ni generaba ejecución.
+- Causa 1: credencial `ppi-EmiliaOS_Google Sheets account` inválida (OAuth expirado) → `Append Fuentes Sheet2` fallaba con `credential-invalid` (verificado en ejecución 3995 del Router).
+- Causa 2: webhook de Telegram registrado por el test del workflow `Emilia Imagenes - Telegram` (creado 12/11, inactivo, con Telegram Trigger) → Telegram entregaba a una URL muerta, cero ejecuciones hoy.
+- Acción: Router despublicado y republicado con la versión buena `e4a475f8` (webhook re-registrado); el borrador tocado hoy 15:20 UTC quedó intacto sin publicar. Credencial reconectada en UI por Sol.
+- Verificación: ejecución 4011 `success` 2026-11-12T15:35Z, fila en `Fuentes-Inbox`.
+- Pendiente durable: Fix A (publish OAuth en GCP) + Fix B (Service Account para Sheets) — decisión 6 del plan maestro.
+
+## 2026-11-12 — MVP 08 casa moderna: diagnóstico, 10 flujos YT, keeper RealVis F0b
+
+- Sesión [[raw/sessions/2026-11-12-sesion-mvp08-casa-moderna|2026-11-12-sesion-mvp08-casa-moderna]]: reporte Open Higgsfield vs Higgsfield, loop Telegram sin agente, diagnóstico (nodos OK, faltaban archivos), .bat unificados + relanzamiento, 10 flujos YT, matriz local/pod/cloud con doctrina §5, plan casa→3D→Gaudí, MVP 08 nuevo con 7 JSON validados + `F0-prompt` Buenos Aires + dashboard casa.
+- Keeper F0b: RealVisXL v5.0 1216x832 seed 42 (`casa-F0b-v01_00001_.png`, `ComfyUI/output/`) — hormigón encofrado + listones + carpintería negra, luz tarde. Mañana: F1 cámara sobre la keeper.
+
+## 2026-11-11 — Fuerza motriz + SPEC filosófico práctico con citas humanas intactas
+
+- Sesión [[raw/sessions/2026-11-11-sesion-fuerza-motriz-arquitectura|2026-11-11-sesion-fuerza-motriz-arquitectura]]: voz Sol conservada palabra por palabra, con separación clara entre aportes humanos y lectura IA, más tesis historia 3 humano y máquina, fuerza motriz en IA, arquitectura de arquitectura, bracitos operativos y vista gráfica.
+- SPEC [[specs/261111-sistema-filosofico-practico-arquitectura|sistema-filosofico-practico-arquitectura]]: integración de VISION ESTRUCTURA REQUISITOS IMPLEMENTACION + filosofía Hermes + plan maestro T1-T9 + system overview + ingeniería C4, con 4 nodos, contrato file_ref, raw formato máquina, wiki formato humano, scripts didácticos, N8N determinista, gobernanza A-D y checklist CABA conurbano Europa.
+- Digest [[raw/vaultworm-arq/digest-2026-11-11|digest-2026-11-11]] para evaluación de otro agente, con topics, entidades, propuestas y preguntas.
 
 ## 2026-11-02 — Cierre: programa H1750 sobre plaza + DXF + membrana verificada
 

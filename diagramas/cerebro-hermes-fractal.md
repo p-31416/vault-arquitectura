@@ -7,7 +7,7 @@ tags: [diagrama, filosofia, hermes, wiki, fractal, rizoma]
 
 # Cerebro fractal y rizomático — cómo las fuentes alimentan a Hermes
 
-Filosofía en palabras: [[specs/261029-filosofia-hermes|filosofía de Hermes]]. Flujos con scripts reales: [[diagramas/flujo-fuentes-wiki-hermes|flujo fuentes → wiki → Hermes]].
+Filosofía en palabras: [[specs/archived/261029-filosofia-hermes|filosofía de Hermes]]. Flujos con scripts reales: [[diagramas/flujo-fuentes-wiki-hermes|flujo fuentes → wiki → Hermes]].
 
 ![[diagramas/cerebro-hermes-fractal.drawio.svg|900]]
 

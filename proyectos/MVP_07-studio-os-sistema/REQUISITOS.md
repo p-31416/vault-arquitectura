@@ -8,7 +8,7 @@ pais: Argentina
 fase: especificacion
 fecha_inicio: 2026-10-28
 fecha_estimada_entrega: s/d
-ultima_actualizacion: 2026-10-28
+ultima_actualizacion: 2026-11-16
 estado: activo
 tags: [mvp_07, studio-os, requisitos, rf, rnf, criterios, metricas, plan]
 idioma: es
@@ -65,6 +65,8 @@ Sobre todo eso, el sistema hace tres cosas:
 | Multi-estudio | el producto se valida con un piloto |
 | Base de grafos dedicada | un grafo de verdad sobre las relaciones del registro alcanza |
 | Un panel propio | la interfase del día a día es Telegram; el portal es para el cuaderno y las iteraciones |
+| Video IA generativo | excluido hasta fin de ano (S9 en T5+) |
+| Licencias edu/NC en produccion | edu = aprendizaje; NC = no cliente; verificar antes de integrar |
 
 ---
 
@@ -138,6 +140,10 @@ Sobre todo eso, el sistema hace tres cosas:
 | **RF-18** | Toda tarea queda registrada con origen, versión, herramienta, parámetros, tiempos y responsable | todos | A |
 | **RF-19** | Un cambio de versión marca los productos dependientes como desactualizados y propone qué rehacer | C-06, C-10 | A |
 | **RF-20** | Las aprobaciones quedan con persona, hora y contenido aprobado | C-04, C-07, C-09 | — |
+| **RF-21** | El pedido de imagen elige modelo por router con review (pedido -> modelo -> costo -> veredicto) | C-09 | B |
+| **RF-22** | Croquis/plano a escala: canvas fijo + calibracion + verificacion en CAD antes de firmar | C-05 | B |
+| **RF-23** | Costo visible por ejecucion (imagen, video, 3D, GPU) antes y despues de gastar | todos | B |
+| **RF-24** | FLOSS-first: licencia verificada (comercial-ok) antes de integrar modelo o software | todos | A |
 
 ---
 
@@ -160,6 +166,7 @@ Sobre todo eso, el sistema hace tres cosas:
 | **RNF-13 · Interoperabilidad** | los datos que salen del estudio se exportan en formatos abiertos (IFC, glTF, SVG, Markdown) | revisión de exportaciones |
 | **RNF-14 · Respaldo comprobable** | existe una copia cifrada de lo que no se puede recuperar, y se **probó** restaurándola | prueba de restauración |
 | **RNF-15 · Accesible sin conocimientos técnicos** | el cuaderno y el portal se usan sin saber técnica (lo usa Emilia) | prueba con alguien no técnico |
+| **RNF-16 · Licencias en produccion** | nada con licencia edu o NC toca obra de cliente ni produccion | revision de licencias por pieza |
 
 ---
 

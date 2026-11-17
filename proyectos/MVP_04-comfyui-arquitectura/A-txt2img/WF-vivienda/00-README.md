@@ -9,6 +9,8 @@ tags: [readme, navegacion, vivienda, txt2img, sdxl]
 
 # 00-README — Guía de Navegación WF-vivienda
 
+> ⚠️ OBSOLETO desde 2026-11-12 — ver vigente [[proyectos/MVP_08-casa-moderna/00-index|MVP 08 casa moderna]] (Lightning rápido en vez de Juggernaut 35 pasos). Se conserva como referencia, no encolar.
+
 **Flujo:** txt2img vivienda unifamiliar — SDXL (Juggernaut XL v9)  
 **Nivel:** n_01-txt2img  
 **Modelo:** `Juggernaut-XL_v9_RunDiffusionPhoto_v2.safetensors`  

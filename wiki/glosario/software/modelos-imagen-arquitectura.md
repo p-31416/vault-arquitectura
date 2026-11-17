@@ -1,14 +1,14 @@
 ---
 tipo: software
 fecha_creacion: 2026-11-03
-ultima_actualizacion: 2026-11-03
-tags: [glosario, software, imagen-ia, arquitectura, flux, qwen, nano-banana]
+ultima_actualizacion: 2026-11-16
+tags: [glosario, software, imagen-ia, arquitectura, flux, qwen, nano-banana, seedream, flujos-nativos]
 idioma: es
 ---
 
 # Modelos imagen arquitectura
 
-Guía viva para elegir motor de imagen en el estudio, desde exploración veloz hacia entrega cuidada.
+Guía viva para elegir motor de imagen en el estudio, desde exploración veloz hacia entrega cuidada. **SDXL deja de ser base**: queda como ecosistema (ControlNet + LoRAs legacy). Base abierta nueva: FLUX 3 Image Klein / klein 4B.
 
 - [[#Resumen]]
 - [[#Mejor cerrado]]
@@ -75,6 +75,35 @@ Linaje Black Forest Labs:
 
 Competencia abierta: `Qwen-Image`, `Z-Image`, `Krea 2`, `MOSS-Image`, `HunyuanImage 3.0 80B MoE`, `HiDream`, `Wan`. Competencia cerrada: `GPT Image`, `Nano Banana`, `Seedream`, `MAI-Image`, `Muse`, `Reve`, `Grok Imagine`, `Ideogram`, `Recraft` vectores, `Midjourney` arte.
 
+## Flujos nativos por modelo — qué ya sabe hacer de base (verificado 2026-11-16)
+
+Sin ControlNet ni nodos: lo que el modelo trae de fábrica. Fuentes: [BFL FLUX 3 Klein](https://docs.bfl.ai/flux_3/flux3_image_klein) (edit+10 refs+bbox+LoRA, verificado hoy) + [OpenRouter Seedream 5.0 Pro](https://openrouter.ai/bytedance-seed/seedream-5-0-pro) (14 refs+seed+aspecto, verificado hoy) + catálogos vivos Pollinations/OpenRouter.
+
+| Modelo | txt2img | Edit instrucción | Multi-ref | Máscara inpaint | Outpaint | Layout bbox | Texto exacto | 4K / upscale | Cámara | LoRA propio | Licencia |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| **FLUX 3 Image Klein** 5.6B | ✅ +upsampler | ✅ | 10 refs | vía Kontext/Fill | vía Expand | ✅ | ✅ | ✅ 4K nativo | por instrucción+ref | ✅ Base rank 32, ~4.5 h 1 GPU | Kommunity (<$5M) |
+| **klein 4B** | ✅ | ✅ | hasta 10 refs | vía Kontext | — | — | ✅ | 1 MP | por instrucción+ref | ✅ ai-toolkit | **Apache 2.0** |
+| Kontext pro/max | ✅ | ✅ identidad | ✅ | ✅ Fill + erase | ✅ Expand | — | ✅ | — | conserva toma | ❌ | API comercial |
+| **Seedream 5.0 Pro** | ✅ | ✅ 14 refs (OR) | 14 | — | — | — | ✅ | 1K/2K | por instrucción+ref | ❌ | API comercial |
+| **NanoBanana 2/2.1** | ✅ | ✅ 14 refs | 14 | — | — | — | ✅ | 1K/2K/4K + SynthID | por instrucción+ref | ❌ | API comercial |
+| **GPT-image 2.5/2.6** sunburst | ✅ | ✅ multi-turno | ✅ | ✅ máscara | — | — | ✅ top | — | por instrucción+ref | ❌ | API comercial |
+| Ideogram v4 | ✅ esquemas | ✅ | — | — | — | — | ✅ | — | — | ❌ | API comercial |
+| Qwen-Image-2.1 7B | ✅ Turbo 8 pasos | ✅ 10 refs | 10 + RGBA | — | — | — | ✅ | — | — | ✅ | research (comercial vía acuerdo) |
+| Z-Image-Turbo | ✅ veloz | — | — | — | — | — | — | — | — | ✅ | **Apache 2.0** |
+| SDXL 1.0 | ✅ | vía img2img | vía IPAdapter | vía nodos | vía nodos | vía CN | débil | vía upscaler | vía ControlNet | ✅ miles | OpenRAIL (ecosistema) |
+
+Lectura: **cámara y layout paramétricos no existen en ningún modelo** (solo bbox en FLUX 3 + instrucción con referencia). Inpaint/outpaint con máscara dibujada = Kontext/Fill/Expand o Comfy. Todo lo demás (estación, hora, material, vano, textura) ya es edición por instrucción: no justifica flujo propio.
+
+## Base mejor que XL — pesos abiertos (orden del estudio)
+
+1. **FLUX 3 Image Klein** 5.6B: mejor calidad abierta usable (Kommunity, 4K, bbox, LoRA). Pide 24 GB en BF16, INT8 en 8 GB, pod para entrenar.
+2. **klein 4B**: Apache 2.0 pleno, interactivo, LoRA barato. El que escala al hardware del estudio.
+3. **Qwen-Image-2.1**: top calidad cruda, edición 10 refs + RGBA; licencia research (mirar, no cliente).
+4. **Z-Image-Turbo**: throughput Apache 2.0, volumen barato.
+5. SDXL: relegado a ecosistema (sus ControlNet/LoRAs se reutilizan, no se entrena nada nuevo encima).
+
+Novedad: `seedream-5-5` en catálogo (sucesor del 5.0) y `FLUX.2` como familia de transición — evaluar antes de fijar defaults.
+
 ## LoRA para arquitectura
 
 LoRA aporta estilo propio y consistencia de serie; identidad de lugar avanza también con referencias + ControlNet.
@@ -88,6 +117,7 @@ Flujo estudio con RX 570 8 GB: `[[wiki/glosario/software/pollinations|Pollinatio
 
 ## Decisiones para el estudio
 
+- Base abierta (ya no XL): **FLUX 3 Image Klein** (calidad, 4K, bbox, LoRA Base) + **klein 4B** (Apache 2.0, interactivo, LoRA barato). SDXL queda solo como ecosistema legacy.
 - Exploración diaria: `flux.1-schnell` vía `[[wiki/glosario/software/pollinations|Pollinations]]` + `[[wiki/glosario/software/n8n|n8n]]` + `[[wiki/glosario/software/telegram|Telegram]]`.
 - Lámina cuidada: `flux.1.1-pro` 1280x704 seed fijo.
 - Identidad Sagrada: foto real + `kontext`, 3-8 refs.
@@ -95,6 +125,19 @@ Flujo estudio con RX 570 8 GB: `[[wiki/glosario/software/pollinations|Pollinatio
 - Edición quirúrgica texto/máscara: `GPT Image 2.5 Sunburst`.
 - Valor masivo: `Qwen 2512` / `z-image-turbo`.
 - Salto local futuro: `FLUX 3 Klein INT8` en 8 GB, `Qwen-2512` Apache 2.0 para tipografía.
+
+## Documentación oficial por modelo (verificada 2026-11-12)
+
+Regla del estudio: cada modelo enlaza su documentación canónica (BFL docs + tutorial Comfy + pesos HF). Índice maestro: índice oficial BFL.
+
+| Modelo | Doc principal | API / ComfyUI / Pesos | Guías |
+|---|---|---|---|
+| **FLUX 3 Image Klein** | [BFL docs](https://docs.bfl.ai/flux_3/flux3_image_klein) (200: specs, upsampler obligatorio, LoRA rank 32) | [API ref](https://docs.bfl.ai/api-reference/utility/generate-an-image-with-flux-3-klein) · [LoRA guide](https://docs.bfl.ai/flux_3/flux3_image_klein_lora_guide) · [Comfy tutorial](https://docs.comfy.org/tutorials/flux/flux-3-klein) (200: workflows JSON, int8, `<ref_image_N>`) · [Pesos Comfy HF](https://huggingface.co/black-forest-labs/flux-3-image-klein-comfy) | [Prompting summary](https://docs.bfl.ai/guides/prompting_summary) · [Multi-ref editing](https://docs.bfl.ai/guides/prompting_editing_multi_reference) |
+| **FLUX.2 klein 4B/9B** | [API 4B](https://docs.bfl.ai/api-reference/models/generate-or-edit-an-image-with-flux2-klein-4b) · [API 9B](https://docs.bfl.ai/api-reference/models/generate-or-edit-an-image-with-flux2-klein-9b) | [Training](https://docs.bfl.ai/flux_2/flux2_klein_training) · [Style training](https://docs.bfl.ai/flux_2/flux2_klein_training_example) · [Comfy tutorial](https://docs.comfy.org/tutorials/flux/flux-2-klein) (verificado 2026-10-20) | [FLUX.2 overview](https://docs.bfl.ai/flux_2/flux2_overview) · [Image editing](https://docs.bfl.ai/flux_2/flux2_image_editing) |
+| **Kontext pro/max** | [Overview](https://docs.bfl.ai/kontext/kontext_overview) (BFL recomienda FLUX.2 para proyectos nuevos) | [API pro](https://docs.bfl.ai/api-reference/models/edit-or-create-an-image-with-flux1-kontext-pro) | [Text-to-image](https://docs.bfl.ai/kontext/kontext_text_to_image) · [Editing](https://docs.bfl.ai/kontext/kontext_image_editing) |
+| **FLUX1.1 pro** | [API ref](https://docs.bfl.ai/flux_models/flux_1_1_pro) | [Ultra mode](https://docs.bfl.ai/flux_models/flux_1_1_pro_ultra_raw) | — |
+| **FLUX.1 dev / Fill** | [API dev](https://docs.bfl.ai/api-reference/models/generate-an-image-with-flux1-dev) | [Fill inpainting](https://docs.bfl.ai/api-reference/models/inpaint-an-image-with-flux1-fill-pro-using-an-input-image-and-mask) | — |
+| Croquis→render, interior | — | — | [Drawing rendering](https://docs.bfl.ai/guides/usecases_editing_drawing_rendering) · [Interior design](https://docs.bfl.ai/guides/usecases_editing_interior_design) · [Character consistency](https://docs.bfl.ai/guides/usecases_editing_character_consistency) |
 
 ## Conceptos relacionados
 

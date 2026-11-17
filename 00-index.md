@@ -35,6 +35,8 @@ Usar `proyectos/template/` para nuevos proyectos.
 
 ## Specs y diagramas — nov-2026, mismo sistema PI
 
+- [[specs/261111-plan-maestro-studio-os|Plan maestro Studio OS]] — documento único: tesis, 2 capas, entrega Emilia 35d, sprint 2 días, migración, backend Obsidian
+
 - [[specs/261101-tabula-rasa-arquitecto-futuro-pi-os|Tabula rasa + PI OS]] — voz primigenia de Sol + arquitectura para MVP 2 personas
 - [[specs/261102-plan-maestro-pi-por-temas|Plan maestro por temas]] — T1-T9, MCPs, modelos, licencias, lámina Gaudí
 - [[specs/261102-system-overview-pi|System overview]] — entry points → Hermes → backends

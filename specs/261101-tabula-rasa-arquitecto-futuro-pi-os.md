@@ -115,6 +115,6 @@ Criterios de aceptación vigentes en [[proyectos/MVP_07-studio-os-sistema/REQUIS
 ## Referencias verificadas en vault
 
 - [[proyectos/MVP_07-studio-os-sistema/VISION|VISION]] · [[proyectos/MVP_07-studio-os-sistema/ESTRUCTURA|ESTRUCTURA]] · [[proyectos/MVP_07-studio-os-sistema/REQUISITOS|REQUISITOS]] · [[proyectos/MVP_07-studio-os-sistema/IMPLEMENTACION-HERMES|IMPLEMENTACION-HERMES]]
-- [[wiki/glosario/conceptos/meta-arquitecto|meta-arquitecto]] · [[wiki/glosario/interno/standares/ptech-filosofia|ptech-filosofia]] · [[specs/261029-filosofia-hermes|filosofía Hermes]]
+- [[wiki/glosario/conceptos/meta-arquitecto|meta-arquitecto]] · [[wiki/glosario/interno/standares/ptech-filosofia|ptech-filosofia]] · [[specs/archived/261029-filosofia-hermes|filosofía Hermes]]
 - [[raw/reuniones/2026-11-01-chatgpt-diseno-sistema-operativo-pi|transcript ChatGPT]] · [[specs/261101-doc-chatgpt-diseno-pi-os|análisis ChatGPT]]
 - [[proyectos/MVP_02-autocad-standards/readme-mvp_02|MVP_02]] · [[proyectos/MVP_05-rhino-mcp/pbook-rhino-mcp|MVP_05]] · [[proyectos/MVP_04-comfyui-arquitectura/readme-mvp_04|MVP_04]] · [[raw/research/2026-10-30-hermes-rhino-remoto|Hermes Rhino remoto]]

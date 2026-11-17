@@ -33,6 +33,13 @@
 - [x] T9b/T9c correcciones: T9b SIN CAMBIO (klein ignoró 2 variables juntas — verificado visualmente, error mío darlo por bueno); T9c solo quitar columna (guidance 8, 1 variable) ✅ — regla: 1 variable por pasada
 - [x] T9d medido objetivamente: dif 13.6/255 = ruido, el edit no aterriza; klein-4b CF devuelve variantes, no ejecuta cambios semánticos finos — marcado ⚠️ en dashboard; opciones: NB web manual, Seedream/GPT pago con OK, Kontext (grants insuficientes)
 - [x] T9e desde cero (croquis + prompt completo corregido): dif 61/255, piel perforada protagonista ✅ — regla: corrección grande = regenerar, no editar
+- [x] TG plaza fractal schnell CF gratis (prompt + escala 100×100/40-60/pasto): teselado triangular + verde + Sagrada ✅, mercado/cáscaras fuera → partir en 2 pasadas
+- [x] Tanda gratis: TG-2 klein (puestos + 3 cáscaras sobre base ✅) + T6 seed42×2 (mismo layout, seed SÍ ordena en klein — matiza W6) + sana-256 goteo vivo (0.0007)
+- [x] Tanda Sagrada paga ($0.151): Seedream Pro $0.09 (mercado hexagonal + cáscara ondulante, el más cercano) + GPT-2.6 con ref $0.061 (respeta layout) + schnell mercado CF + sana grants (masa blanca, no rinde)
+- [ ] CIERRE 17/11: veredicto SOL = ninguno aprueba, todos malísimos; el más cercano NB en Flow. Mejoras: (1) brief fractal demasiado denso para 1 pasada → partir en capas (piso → mercado → cáscaras → auditorio); (2) Seedream/GPT con ref + seed fija + 2K; (3) NB Flow con el prompt TG enriquecido; (4) control geométrico real = ControlNet/Comfy, no prompt solo. Gasto OR del día: $0.33
+- [x] Croquis color ext_clr001-003 → klein CF gratis: casa lamas ✅, fachada curtain ✅, terraza pérgola ✅ — el color guía material; serie en dashboard
+- [x] Prompt mercado fractal Sagrada Familia (pedido SOL 17/11, completo abajo) — para Flow/Seedream
+- [x] OR key cargada: 6 gens (flash $0.018, 1-mini ~$0.033, NB2.1 ~$0.037 c/u; total $0.178) — T1A: seedflash diseñado, 1-mini BA, NB2.1 el más real; T9 líneas: 1-mini mejor brief, seedflash deriva encuadre, NB inventa contexto
 - [x] Loop Drive para tablet (S7b en plan): 01-generada + prompt.md → mail con link → markup en tablet → 02-marcada → Drive Trigger → 03-regenerada; convención de nombres = contrato; MCP oficial en preview, usar nodos n8n
 - [x] Entrega triple (Telegram + Drive + mail) + matriz HTML Apple-style [[diagramas/matriz-modelos-proveedores|matriz-modelos-proveedores.html]]: inputs aceptados + precios + cableado n8n por modelo y proveedor
 - [ ] REGLA (pedido SOL): el HTML no se ve en Obsidian — cada entrega HTML avisa cómo abrirla (doble click → navegador); por defecto preferir formatos nativos Obsidian (md, excalidraw, mermaid, svg embebido)
